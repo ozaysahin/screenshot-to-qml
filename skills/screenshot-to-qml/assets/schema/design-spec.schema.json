@@ -1,0 +1,435 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://github.com/screenshot-to-qml/design-spec.schema.json",
+ "title": "screenshot-to-qml design spec",
+ "description": "Measured description of one screen. Units are design px (screenshot px / dpr).",
+ "type": "object",
+ "required": [
+  "meta",
+  "tokens",
+  "nodes",
+  "text"
+ ],
+ "properties": {
+  "meta": {
+   "type": "object",
+   "required": [
+    "designSize",
+    "dpr"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "title": {
+     "type": [
+      "string",
+      "null"
+     ]
+    },
+    "source": {
+     "type": "string",
+     "description": "screenshot file name"
+    },
+    "designSize": {
+     "$ref": "#/$defs/size"
+    },
+    "dpr": {
+     "type": "number",
+     "exclusiveMinimum": 0
+    },
+    "captureSize": {
+     "$ref": "#/$defs/size"
+    },
+    "profile": {
+     "enum": [
+      "desktop",
+      "embedded-gpu",
+      "embedded-sw"
+     ]
+    },
+    "mode": {
+     "enum": [
+      "production",
+      "fidelity"
+     ]
+    },
+    "target": {
+     "enum": [
+      "pyside6",
+      "cpp",
+      "both"
+     ]
+    },
+    "layout": {
+     "enum": [
+      "canvas",
+      "responsive"
+     ]
+    },
+    "minQt": {
+     "type": "string",
+     "pattern": "^6\\.\\d+$"
+    },
+    "lang": {
+     "type": "string"
+    },
+    "fonts": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "css"
+      ],
+      "properties": {
+       "css": {
+        "type": "string"
+       },
+       "qtFamily": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "files": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "weights": {
+        "type": "array",
+        "items": {
+         "type": "integer"
+        }
+       }
+      }
+     }
+    }
+   }
+  },
+  "tokens": {
+   "type": "object",
+   "properties": {
+    "color": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "object",
+      "required": [
+       "hex"
+      ],
+      "properties": {
+       "hex": {
+        "$ref": "#/$defs/hex"
+       },
+       "alpha": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+       },
+       "src": {
+        "$ref": "#/$defs/src"
+       },
+       "conf": {
+        "$ref": "#/$defs/conf"
+       }
+      }
+     }
+    },
+    "space": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "number",
+      "minimum": 0
+     }
+    },
+    "radius": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "number",
+      "minimum": 0
+     }
+    },
+    "shadow": {
+     "type": "object"
+    },
+    "typeScale": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "family",
+       "px",
+       "weight"
+      ],
+      "properties": {
+       "family": {
+        "type": "string"
+       },
+       "px": {
+        "type": "number",
+        "exclusiveMinimum": 0
+       },
+       "weight": {
+        "type": "integer",
+        "minimum": 100,
+        "maximum": 1000
+       },
+       "lineHeight": {
+        "type": [
+         "number",
+         "string"
+        ]
+       },
+       "letterSpacing": {
+        "type": "number"
+       }
+      }
+     }
+    }
+   }
+  },
+  "nodes": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "bbox"
+    ],
+    "properties": {
+     "id": {
+      "type": "string",
+      "minLength": 1
+     },
+     "role": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "parent": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "bbox": {
+      "$ref": "#/$defs/bbox"
+     },
+     "style": {
+      "type": "object"
+     },
+     "layout": {
+      "type": "object"
+     },
+     "state": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "model": {
+      "type": "object",
+      "required": [
+       "count"
+      ],
+      "properties": {
+       "name": {
+        "type": "string"
+       },
+       "count": {
+        "type": "integer",
+        "minimum": 1
+       },
+       "itemId": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      }
+     },
+     "value": {
+      "type": "string"
+     },
+     "src": {
+      "$ref": "#/$defs/src"
+     },
+     "conf": {
+      "$ref": "#/$defs/conf"
+     }
+    }
+   }
+  },
+  "text": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "string",
+     "bbox"
+    ],
+    "properties": {
+     "string": {
+      "type": "string",
+      "minLength": 1
+     },
+     "owner": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "bbox": {
+      "$ref": "#/$defs/bbox"
+     },
+     "lines": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "color": {
+      "$ref": "#/$defs/color"
+     },
+     "align": {
+      "type": "string"
+     },
+     "font": {
+      "type": "object",
+      "properties": {
+       "family": {
+        "type": "string"
+       },
+       "px": {
+        "type": "number"
+       },
+       "weight": {
+        "type": "integer"
+       },
+       "lineHeight": {
+        "type": [
+         "number",
+         "string"
+        ]
+       },
+       "letterSpacing": {
+        "type": "number"
+       }
+      }
+     },
+     "ocrConf": {
+      "type": "number"
+     },
+     "baseline": {
+      "type": "number",
+      "description": "first-line baseline y in design px (optional; scorers compare baselines when present)"
+     }
+    }
+   }
+  },
+  "icons": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "bbox"
+    ],
+    "properties": {
+     "match": {
+      "type": [
+       "string",
+       "null"
+      ],
+      "description": "set:name, e.g. lucide:gauge, fa:industry"
+     },
+     "score": {
+      "type": "number"
+     },
+     "owner": {
+      "type": [
+       "string",
+       "null"
+      ]
+     },
+     "bbox": {
+      "$ref": "#/$defs/bbox"
+     },
+     "color": {
+      "$ref": "#/$defs/color"
+     },
+     "kind": {
+      "enum": [
+       "svg",
+       "font-glyph",
+       "raster"
+      ]
+     }
+    }
+   }
+  },
+  "colorsUsed": {
+   "type": "array"
+  },
+  "data": {
+   "type": [
+    "object",
+    "null"
+   ]
+  },
+  "states": {
+   "type": "object"
+  }
+ },
+ "$defs": {
+  "hex": {
+   "type": "string",
+   "pattern": "^#[0-9A-Fa-f]{6}$"
+  },
+  "color": {
+   "type": "object",
+   "required": [
+    "hex"
+   ],
+   "properties": {
+    "hex": {
+     "$ref": "#/$defs/hex"
+    },
+    "alpha": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    }
+   }
+  },
+  "bbox": {
+   "type": "array",
+   "items": {
+    "type": "number"
+   },
+   "minItems": 4,
+   "maxItems": 4
+  },
+  "size": {
+   "type": "array",
+   "items": {
+    "type": "number",
+    "exclusiveMinimum": 0
+   },
+   "minItems": 2,
+   "maxItems": 2
+  },
+  "src": {
+   "enum": [
+    "measured",
+    "inferred",
+    "assumed",
+    "truth"
+   ]
+  },
+  "conf": {
+   "type": "number",
+   "minimum": 0,
+   "maximum": 1
+  }
+ }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Hat 3 · Dolum İstasyonu</title>
+
+
+<style>
+@font-face{font-family:'Barlow';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/Barlow-Bold.ttf') format('truetype');}
+@font-face{font-family:'Barlow';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/Barlow-Medium.ttf') format('truetype');}
+@font-face{font-family:'Barlow';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Barlow-Regular.ttf') format('truetype');}
+@font-face{font-family:'Barlow';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Barlow-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'JetBrains Mono';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/JetBrainsMono-Bold.ttf') format('truetype');}
+@font-face{font-family:'JetBrains Mono';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/JetBrainsMono-Medium.ttf') format('truetype');}
+@font-face{font-family:'JetBrains Mono';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/JetBrainsMono-Regular.ttf') format('truetype');}
+@font-face{font-family:'Font Awesome 7 Free';font-weight:900;font-style:normal;font-display:block;src:url('../../../assets/fonts/fa-solid-900.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #0B0F14;
+  --color-panel: #121821;
+  --color-panel-2: #18212D;
+  --color-border: #243042;
+  --color-text: #E6EDF5;
+  --color-text-muted: #8A98AB;
+  --color-text-dim: #5B6878;
+  --color-accent: #38BDF8;
+  --color-accent-deep: #0284C7;
+  --color-ok: #22C55E;
+  --color-warn: #F59E0B;
+  --color-danger: #EF4444;
+  --color-ok-soft: rgba(34, 197, 94, 0.14);
+  --color-warn-soft: rgba(245, 158, 11, 0.14);
+  --color-danger-soft: rgba(239, 68, 68, 0.14);
+  --color-accent-soft: rgba(56, 189, 248, 0.12);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px;
+  --radius-sm: 8px; --radius-md: 10px; --radius-lg: 14px; --radius-xl: 16px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Barlow', sans-serif; font-size: 16px; line-height: 1.4; }
+.mono { font-family: 'JetBrains Mono', monospace; font-variant-numeric: tabular-nums; }
+.fa { font-family: 'Font Awesome 7 Free'; font-weight: 900; font-style: normal; line-height: 1; display: inline-block; }
+.muted { color: var(--color-text-muted); }
+
+.topbar { height: 76px; padding: 0 32px; display: flex; align-items: center; gap: 24px; background: var(--color-panel); border-bottom: 1px solid var(--color-border); }
+.brand { display: flex; align-items: center; gap: 14px; width: 520px; }
+.logo { width: 44px; height: 44px; border-radius: var(--radius-md); background: var(--color-accent-soft); color: var(--color-accent); display: grid; place-items: center; font-size: 20px; }
+.brand .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-text-muted); line-height: 16px; }
+.brand h1 { font-size: 22px; font-weight: 600; line-height: 28px; }
+.run-pill { display: flex; align-items: center; gap: 12px; height: 44px; padding: 0 20px 0 16px; border-radius: var(--radius-pill); background: var(--color-ok-soft); border: 1px solid rgba(34, 197, 94, 0.35); }
+.run-pill .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--color-ok); box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.22); }
+.run-pill b { font-size: 16px; font-weight: 700; letter-spacing: 1px; color: var(--color-ok); }
+.run-pill span { font-size: 15px; color: var(--color-text-muted); }
+.top-right { margin-left: auto; display: flex; align-items: center; gap: 28px; }
+.chip { height: 36px; padding: 0 14px; border-radius: var(--radius-sm); background: var(--color-panel-2); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 500; }
+.chip .fa { font-size: 14px; color: var(--color-text-muted); }
+.clock { text-align: right; }
+.clock .time { font-size: 28px; font-weight: 500; line-height: 32px; letter-spacing: -0.5px; }
+.clock .date { font-size: 13px; color: var(--color-text-muted); line-height: 16px; }
+
+.main { height: 960px; padding: 24px 32px; display: grid; grid-template-columns: 520px 1fr 520px; gap: 24px; }
+.panel { background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 24px; display: flex; flex-direction: column; }
+.panel-head { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.panel-head .fa { font-size: 18px; color: var(--color-accent); }
+.panel-head h2 { font-size: 18px; font-weight: 600; line-height: 24px; }
+.panel-head .aside { margin-left: auto; font-size: 14px; color: var(--color-text-muted); }
+
+.tanks { display: flex; gap: 20px; justify-content: space-between; }
+.tank { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.vessel { position: relative; width: 124px; height: 548px; border-radius: var(--radius-xl); background: var(--color-panel-2); border: 2px solid var(--color-border); overflow: hidden; }
+.vessel .fill { position: absolute; left: 0; right: 0; bottom: 0; background: linear-gradient(0deg, var(--color-accent-deep) 0%, var(--color-accent) 100%); }
+.vessel.low .fill { background: linear-gradient(0deg, #B45309 0%, var(--color-warn) 100%); }
+.vessel .tick { position: absolute; left: 0; width: 16px; height: 2px; background: var(--color-border); }
+.vessel .pct { position: absolute; left: 0; right: 0; bottom: 16px; text-align: center; font-size: 30px; font-weight: 700; line-height: 36px; }
+.tank .name { font-size: 18px; font-weight: 600; line-height: 22px; }
+.tank .content { font-size: 15px; color: var(--color-text-muted); line-height: 18px; margin-top: -10px; }
+.tank .liters { font-size: 14px; color: var(--color-text-muted); line-height: 18px; }
+.tank .liters b { color: var(--color-text); font-weight: 500; }
+.tank .warn-tag { height: 26px; padding: 0 10px; border-radius: var(--radius-pill); background: var(--color-warn-soft); color: var(--color-warn); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.tank .warn-tag .fa { font-size: 11px; }
+.tank .ok-tag { height: 26px; padding: 0 10px; border-radius: var(--radius-pill); background: var(--color-ok-soft); color: var(--color-ok); font-size: 13px; font-weight: 600; display: flex; align-items: center; }
+.env { margin-top: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.env-item { background: var(--color-panel-2); border-radius: var(--radius-md); padding: 16px; }
+.env-item .label { font-size: 14px; color: var(--color-text-muted); display: flex; align-items: center; gap: 8px; line-height: 18px; }
+.env-item .label .fa { font-size: 13px; }
+.env-item .value { font-size: 28px; font-weight: 500; line-height: 34px; margin-top: 6px; }
+.env-item .value small { font-size: 16px; color: var(--color-text-muted); margin-left: 4px; }
+
+.center { display: flex; flex-direction: column; gap: 24px; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.kpi { background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px 24px; height: 164px; display: flex; flex-direction: column; }
+.kpi .label { font-size: 15px; color: var(--color-text-muted); display: flex; align-items: center; gap: 10px; line-height: 20px; }
+.kpi .label .fa { font-size: 14px; color: var(--color-accent); }
+.kpi .value { font-size: 52px; font-weight: 500; line-height: 60px; margin-top: 10px; letter-spacing: -1px; }
+.kpi .value small { font-size: 18px; font-weight: 400; color: var(--color-text-muted); letter-spacing: 0; margin-left: 8px; }
+.kpi .foot { margin-top: auto; font-size: 14px; line-height: 18px; color: var(--color-text-muted); }
+.kpi .foot .up { color: var(--color-ok); font-weight: 600; }
+.kpi .foot .down { color: var(--color-warn); font-weight: 600; }
+.chart-card { flex: 1; }
+.legend { display: flex; gap: 20px; margin-left: auto; font-size: 14px; color: var(--color-text-muted); }
+.legend i { display: inline-block; width: 16px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 8px; background: var(--color-accent); }
+.legend i.ref { background: repeating-linear-gradient(90deg, var(--color-warn) 0 6px, transparent 6px 10px); }
+
+.right { display: flex; flex-direction: column; gap: 24px; }
+.badge { min-width: 28px; height: 24px; padding: 0 8px; border-radius: var(--radius-pill); background: var(--color-danger); color: #fff; font-size: 13px; font-weight: 700; display: grid; place-items: center; }
+.alarms { display: flex; flex-direction: column; gap: 10px; }
+.alarm { display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 16px 0 0; border-radius: var(--radius-md); background: var(--color-panel-2); overflow: hidden; }
+.alarm .sev { width: 5px; align-self: stretch; }
+.alarm .ic { width: 32px; height: 32px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 14px; }
+.alarm .txt { flex: 1; min-width: 0; }
+.alarm .code { font-size: 12px; color: var(--color-text-muted); line-height: 16px; }
+.alarm .msg { font-size: 15px; font-weight: 500; line-height: 20px; white-space: nowrap; }
+.alarm .when { font-size: 13px; color: var(--color-text-muted); }
+.alarm.danger .sev { background: var(--color-danger); } .alarm.danger .ic { background: var(--color-danger-soft); color: var(--color-danger); }
+.alarm.warn .sev { background: var(--color-warn); } .alarm.warn .ic { background: var(--color-warn-soft); color: var(--color-warn); }
+.alarm.info .sev { background: var(--color-accent); } .alarm.info .ic { background: var(--color-accent-soft); color: var(--color-accent); }
+
+.segment { display: grid; grid-template-columns: repeat(3, 1fr); padding: 4px; gap: 4px; border-radius: var(--radius-md); background: var(--color-panel-2); border: 1px solid var(--color-border); }
+.segment div { height: 52px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 16px; font-weight: 500; color: var(--color-text-muted); }
+.segment div.on { background: var(--color-accent); color: #04121C; font-weight: 600; }
+.slider-row { margin-top: 28px; }
+.slider-row .top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.slider-row .top span { font-size: 15px; color: var(--color-text-muted); }
+.slider-row .top b { font-size: 22px; font-weight: 500; }
+.slider-row .top b small { font-size: 14px; color: var(--color-text-muted); font-weight: 400; margin-left: 6px; }
+.slider { position: relative; height: 36px; }
+.slider .track { position: absolute; left: 0; right: 0; top: 14px; height: 8px; border-radius: var(--radius-pill); background: var(--color-panel-2); border: 1px solid var(--color-border); }
+.slider .fill { position: absolute; left: 0; top: 14px; height: 8px; border-radius: var(--radius-pill); background: var(--color-accent); }
+.slider .handle { position: absolute; top: 0; width: 36px; height: 36px; margin-left: -18px; border-radius: 50%; background: var(--color-text); border: 6px solid var(--color-accent); }
+.slider-scale { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--color-text-dim); }
+.controls { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: auto; padding-top: 20px; }
+.btn { height: 80px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; gap: 14px; font-size: 20px; font-weight: 700; letter-spacing: 1px; border: none; }
+.btn .fa { font-size: 20px; }
+.btn.start { background: var(--color-ok); color: #052E14; opacity: 0.35; }
+.btn.pause { background: var(--color-panel-2); color: var(--color-warn); border: 2px solid var(--color-warn); }
+.btn.estop { grid-column: 1 / 3; height: 100px; background: var(--color-danger); color: #fff; font-size: 26px; letter-spacing: 2px; box-shadow: inset 0 -6px 0 rgba(0, 0, 0, 0.25); }
+.btn.estop .fa { font-size: 28px; }
+
+.statusbar { height: 44px; padding: 0 32px; display: flex; align-items: center; gap: 32px; background: var(--color-panel); border-top: 1px solid var(--color-border); font-size: 14px; color: var(--color-text-muted); }
+.statusbar .ok { color: var(--color-ok); display: flex; align-items: center; gap: 8px; }
+.statusbar .ok i { width: 8px; height: 8px; border-radius: 50%; background: var(--color-ok); display: inline-block; }
+.statusbar b { color: var(--color-text); font-weight: 500; }
+.statusbar .ver { margin-left: auto; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo"><i class="fa"></i></div>
+    <div>
+      <div class="eyebrow">Nova Makine</div>
+      <h1>Hat 3 · Dolum İstasyonu</h1>
+    </div>
+  </div>
+  <div class="run-pill">
+    <span class="dot"></span><b>ÇALIŞIYOR</b><span class="mono">02:14:36</span>
+  </div>
+  <div class="top-right">
+    <div class="chip"><i class="fa"></i>B Vardiyası</div>
+    <div class="chip"><i class="fa"></i>Operatör: M. Yıldız</div>
+    <div class="clock">
+      <div class="time mono">14:32:07</div>
+      <div class="date">Perşembe, 25.09.2026</div>
+    </div>
+  </div>
+</header>
+
+<main class="main">
+  <section class="panel">
+    <div class="panel-head"><i class="fa"></i><h2>Tank Seviyeleri</h2><span class="aside">Son güncelleme 2 sn önce</span></div>
+    <div class="tanks">
+      <div class="tank">
+        <div class="vessel"><div class="fill" style="height:72%"></div>
+          <div class="tick" style="top:25%"></div><div class="tick" style="top:50%"></div><div class="tick" style="top:75%"></div>
+          <div class="pct mono">72%</div></div>
+        <div class="name">Tank A</div><div class="content">Süt</div>
+        <div class="liters mono"><b>7.200</b> / 10.000 L</div>
+        <div class="ok-tag">Normal</div>
+      </div>
+      <div class="tank">
+        <div class="vessel low"><div class="fill" style="height:18%"></div>
+          <div class="tick" style="top:25%"></div><div class="tick" style="top:50%"></div><div class="tick" style="top:75%"></div>
+          <div class="pct mono">18%</div></div>
+        <div class="name">Tank B</div><div class="content">Şurup</div>
+        <div class="liters mono"><b>1.800</b> / 10.000 L</div>
+        <div class="warn-tag"><i class="fa"></i>Düşük</div>
+      </div>
+      <div class="tank">
+        <div class="vessel"><div class="fill" style="height:91%"></div>
+          <div class="tick" style="top:25%"></div><div class="tick" style="top:50%"></div><div class="tick" style="top:75%"></div>
+          <div class="pct mono">91%</div></div>
+        <div class="name">Tank C</div><div class="content">Su</div>
+        <div class="liters mono"><b>9.100</b> / 10.000 L</div>
+        <div class="ok-tag">Normal</div>
+      </div>
+    </div>
+    <div class="env">
+      <div class="env-item">
+        <div class="label"><i class="fa"></i>Ürün Sıcaklığı</div>
+        <div class="value mono">4,2<small>°C</small></div>
+      </div>
+      <div class="env-item">
+        <div class="label"><i class="fa"></i>Aktif Nozul</div>
+        <div class="value mono">6/6<small>hazır</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="center">
+    <div class="kpis">
+      <div class="kpi">
+        <div class="label"><i class="fa"></i>Üretim Hızı</div>
+        <div class="value mono">1.248<small>şişe/dk</small></div>
+        <div class="foot">Hedef 1.200 · <span class="up">+%4,0</span></div>
+      </div>
+      <div class="kpi">
+        <div class="label"><i class="fa"></i>Vardiya Üretimi</div>
+        <div class="value mono">58.392</div>
+        <div class="foot">Hedef 60.000 · %97,3 tamamlandı</div>
+      </div>
+      <div class="kpi">
+        <div class="label"><i class="fa"></i>OEE</div>
+        <div class="value mono">%87,4</div>
+        <div class="foot">Dün %85,1 · <span class="up">+2,3 puan</span></div>
+      </div>
+      <div class="kpi">
+        <div class="label"><i class="fa"></i>Red Oranı</div>
+        <div class="value mono">%0,62</div>
+        <div class="foot">Limit %1,00 · <span class="down">+0,08 puan</span></div>
+      </div>
+    </div>
+    <div class="panel chart-card">
+      <div class="panel-head"><i class="fa"></i><h2>Dolum Basıncı</h2>
+        <div class="legend"><span><i></i>Ölçülen</span><span><i class="ref"></i>Hedef 2,40 bar</span></div></div>
+      <svg id="pressure" viewBox="0 0 718 442" width="718" height="442"><line x1="52" x2="690" y1="412" y2="412" stroke="#243042" stroke-width="1"></line><text x="42" y="416" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,1</text><line x1="52" x2="690" y1="331.6" y2="331.6" stroke="#243042" stroke-width="1"></line><text x="42" y="335.6" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,2</text><line x1="52" x2="690" y1="251.2" y2="251.2" stroke="#243042" stroke-width="1"></line><text x="42" y="255.2" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,3</text><line x1="52" x2="690" y1="170.8" y2="170.8" stroke="#243042" stroke-width="1"></line><text x="42" y="174.8" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,4</text><line x1="52" x2="690" y1="90.4" y2="90.4" stroke="#243042" stroke-width="1"></line><text x="42" y="94.4" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,5</text><line x1="52" x2="690" y1="10" y2="10" stroke="#243042" stroke-width="1"></line><text x="42" y="14" text-anchor="end" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">2,6</text><text x="52" y="436" text-anchor="middle" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">13:30</text><text x="211.5" y="436" text-anchor="middle" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">13:45</text><text x="371" y="436" text-anchor="middle" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">14:00</text><text x="530.5" y="436" text-anchor="middle" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">14:15</text><text x="690" y="436" text-anchor="middle" fill="#5B6878" font-family="JetBrains Mono" font-size="13" font-weight="400">14:30</text><line x1="52" x2="690" y1="170.8" y2="170.8" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="6 4"></line><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#38BDF8" stop-opacity="0.28"></stop><stop offset="1" stop-color="#38BDF8" stop-opacity="0"></stop></linearGradient></defs><path d="M52,178.84 C55.4,177.55 66.46,177.23 73.27,170.8 C80.07,164.37 87.73,141.21 94.53,138.64 C101.34,136.07 108.99,156.01 115.8,154.72 C122.61,153.43 130.26,133.17 137.07,130.6 C143.87,128.03 151.53,134.78 158.33,138.64 C165.14,142.5 172.79,154.72 179.6,154.72 C186.41,154.72 194.06,136.07 200.87,138.64 C207.67,141.21 215.33,166.94 222.13,170.8 C228.94,174.66 236.59,158.9 243.4,162.76 C250.21,166.62 257.86,188.49 264.67,194.92 C271.47,201.35 279.13,201.67 285.93,202.96 C292.74,204.25 300.39,204.25 307.2,202.96 C314.01,201.67 321.66,191.06 328.47,194.92 C335.27,198.78 342.93,223.22 349.73,227.08 C356.54,230.94 364.19,222.9 371,219.04 C377.81,215.18 385.46,192.67 392.27,202.96 C399.07,213.25 406.73,269.21 413.53,283.36 C420.34,297.51 427.99,291.4 434.8,291.4 C441.61,291.4 449.26,310.37 456.07,283.36 C462.87,256.35 470.53,140.57 477.33,122.56 C484.14,104.55 491.79,169.51 498.6,170.8 C505.41,172.09 513.06,134.46 519.87,130.6 C526.67,126.74 534.33,144.11 541.13,146.68 C547.94,149.25 555.59,146.68 562.4,146.68 C569.21,146.68 576.86,146.68 583.67,146.68 C590.47,146.68 598.13,149.25 604.93,146.68 C611.74,144.11 619.39,126.74 626.2,130.6 C633.01,134.46 640.66,165.65 647.47,170.8 C654.27,175.95 661.93,161.47 668.73,162.76 C675.54,164.05 686.6,176.27 690,178.84 L690,412 L52,412 Z" fill="url(#g1)" stroke="none"></path><path d="M52,178.84 C55.4,177.55 66.46,177.23 73.27,170.8 C80.07,164.37 87.73,141.21 94.53,138.64 C101.34,136.07 108.99,156.01 115.8,154.72 C122.61,153.43 130.26,133.17 137.07,130.6 C143.87,128.03 151.53,134.78 158.33,138.64 C165.14,142.5 172.79,154.72 179.6,154.72 C186.41,154.72 194.06,136.07 200.87,138.64 C207.67,141.21 215.33,166.94 222.13,170.8 C228.94,174.66 236.59,158.9 243.4,162.76 C250.21,166.62 257.86,188.49 264.67,194.92 C271.47,201.35 279.13,201.67 285.93,202.96 C292.74,204.25 300.39,204.25 307.2,202.96 C314.01,201.67 321.66,191.06 328.47,194.92 C335.27,198.78 342.93,223.22 349.73,227.08 C356.54,230.94 364.19,222.9 371,219.04 C377.81,215.18 385.46,192.67 392.27,202.96 C399.07,213.25 406.73,269.21 413.53,283.36 C420.34,297.51 427.99,291.4 434.8,291.4 C441.61,291.4 449.26,310.37 456.07,283.36 C462.87,256.35 470.53,140.57 477.33,122.56 C484.14,104.55 491.79,169.51 498.6,170.8 C505.41,172.09 513.06,134.46 519.87,130.6 C526.67,126.74 534.33,144.11 541.13,146.68 C547.94,149.25 555.59,146.68 562.4,146.68 C569.21,146.68 576.86,146.68 583.67,146.68 C590.47,146.68 598.13,149.25 604.93,146.68 C611.74,144.11 619.39,126.74 626.2,130.6 C633.01,134.46 640.66,165.65 647.47,170.8 C654.27,175.95 661.93,161.47 668.73,162.76 C675.54,164.05 686.6,176.27 690,178.84" fill="none" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="690" cy="178.84" r="5" fill="#121821" stroke="#38BDF8" stroke-width="2.5"></circle></svg>
+    </div>
+  </section>
+
+  <section class="right">
+    <div class="panel">
+      <div class="panel-head"><i class="fa"></i><h2>Aktif Alarmlar</h2><span class="aside"></span><div class="badge">3</div></div>
+      <div class="alarms">
+        <div class="alarm danger"><div class="sev"></div><div class="ic"><i class="fa"></i></div>
+          <div class="txt"><div class="code mono">A-214 · 14:28</div><div class="msg">Tank B seviyesi kritik eşiğe yakın</div></div></div>
+        <div class="alarm warn"><div class="sev"></div><div class="ic"><i class="fa"></i></div>
+          <div class="txt"><div class="code mono">W-031 · 14:05</div><div class="msg">Filtre değişimine 36 saat kaldı</div></div></div>
+        <div class="alarm warn"><div class="sev"></div><div class="ic"><i class="fa"></i></div>
+          <div class="txt"><div class="code mono">W-017 · 13:52</div><div class="msg">Basınç dalgalanması algılandı</div></div></div>
+        <div class="alarm info"><div class="sev"></div><div class="ic"><i class="fa"></i></div>
+          <div class="txt"><div class="code mono">I-008 · 13:30</div><div class="msg">Vardiya değişimi 16:00'da</div></div></div>
+      </div>
+    </div>
+    <div class="panel" style="flex:1">
+      <div class="panel-head"><i class="fa"></i><h2>Çalışma Modu</h2></div>
+      <div class="segment">
+        <div class="on">Otomatik</div>
+        <div>Manuel</div>
+        <div>Bakım</div>
+      </div>
+      <div class="slider-row">
+        <div class="top"><span>Hedef Hat Hızı</span><b class="mono">1.200<small>şişe/dk</small></b></div>
+        <div class="slider">
+          <div class="track"></div><div class="fill" style="width:60%"></div><div class="handle" style="left:60%"></div>
+        </div>
+        <div class="slider-scale mono"><span>0</span><span>500</span><span>1.000</span><span>1.500</span><span>2.000</span></div>
+      </div>
+      <div class="controls">
+        <div class="btn start"><i class="fa"></i>BAŞLAT</div>
+        <div class="btn pause"><i class="fa"></i>DURAKLAT</div>
+        <div class="btn estop"><i class="fa"></i>ACİL DURDUR</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="statusbar">
+  <span class="ok"><i></i>PLC bağlı</span>
+  <span>Reçete: <b>R-12 · Ayran 250 ml</b></span>
+  <span>Parti: <b class="mono">LOT-26-0925-B</b></span>
+  <span class="ver mono">HMI-03 · v2.4.1</span>
+</footer>
+
+
+
+
+
+</body></html>

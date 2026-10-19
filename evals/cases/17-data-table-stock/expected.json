@@ -1,0 +1,52 @@
+{
+ "id": "17-data-table-stock",
+ "summary": "1366x768 dense inventory table: frozen SKU column, horizontal scroll, depot groups, inline editing.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1366,
+   768
+  ],
+  "dpr": 1,
+  "designSize": [
+   1366,
+   768
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Toolbar: search field with value 'kablo' and clear button, 'Filtreler' button with badge '3', column menu, 'Dışa aktar' and 'Ürün ekle'.",
+  "Frozen first column (SKU in IBM Plex Mono) with an edge shadow; the last column cut at the viewport edge (horizontal scroll), styled horizontal scrollbar.",
+  "Group headers Ankara (expanded, 6 rows), Bursa (collapsed), İstanbul (expanded, 8 rows) with totals; zebra stripes within groups.",
+  "Numeric columns right-aligned with tabular figures and Turkish separators ('1.248', '₺3.450,00').",
+  "Stock-level mini bar with reorder tick; status pill component with 3 variants.",
+  "Row NW-6005-G in editing state: focused price field with ring, '₺' prefix, right-aligned value.",
+  "Header: uppercase labels with Turkish İ, ascending sort arrow on SKU, hovered resize handle.",
+  "Totals row, '1–14 / 326', rows-per-page ComboBox, pagination with disabled first/previous."
+ ],
+ "niceToHave": [
+  "Column widths from data.",
+  "Sorting and grouping through a proxy model."
+ ],
+ "allowedApproximations": [
+  "Frozen-edge shadow as a gradient Rectangle.",
+  "Scrollbar as a styled ScrollBar."
+ ],
+ "forbidden": [
+  "Dropping the cut column or shrinking columns to fit.",
+  "Flattening group rows into data rows."
+ ]
+}

@@ -1,0 +1,3446 @@
+{
+ "meta": {
+  "id": "16-mobile-chat",
+  "title": "Android ekip sohbeti — balonlar, sesli mesaj, yazıyor göstergesi (2x DPR)",
+  "category": "mobile",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   360,
+   800
+  ],
+  "dpr": 2,
+  "captureSize": [
+   720,
+   1600
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Be Vietnam Pro",
+    "qtFamily": "Be Vietnam Pro",
+    "legacyFamily": "Be Vietnam Pro",
+    "files": [
+     "BeVietnamPro-Bold.ttf",
+     "BeVietnamPro-Medium.ttf",
+     "BeVietnamPro-Regular.ttf",
+     "BeVietnamPro-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "appbar": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#16181D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#16181D"
+   },
+   "text-2": {
+    "hex": "#3C414B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3C414B"
+   },
+   "muted": {
+    "hex": "#737985",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#737985"
+   },
+   "border": {
+    "hex": "#E8EAEE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E8EAEE"
+   },
+   "chip": {
+    "hex": "#EEF0F3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EEF0F3"
+   },
+   "incoming": {
+    "hex": "#EFF1F4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EFF1F4"
+   },
+   "primary": {
+    "hex": "#0D7F72",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0D7F72"
+   },
+   "primary-soft": {
+    "hex": "#E2F3F0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E2F3F0"
+   },
+   "on-primary": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "on-primary-2": {
+    "hex": "#BFE6DF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#BFE6DF"
+   },
+   "read": {
+    "hex": "#8FF0DE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#8FF0DE"
+   },
+   "wave": {
+    "hex": "#B9BEC8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B9BEC8"
+   },
+   "heart": {
+    "hex": "#F03E5A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F03E5A"
+   },
+   "online": {
+    "hex": "#2FB344",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2FB344"
+   },
+   "selin": {
+    "hex": "#D6336C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#D6336C"
+   },
+   "burak": {
+    "hex": "#1C7ED6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1C7ED6"
+   },
+   "ayse": {
+    "hex": "#E8590C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E8590C"
+   },
+   "extra": {
+    "hex": "#868E96",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#868E96"
+   },
+   "quote": {
+    "hex": "#FFC4D6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFC4D6"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0
+  },
+  "radius": {
+   "bubble": 18.0,
+   "tail": 4.0,
+   "quote": 8.0,
+   "field": 22.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "chip": {
+    "css": "0 1px 3px rgba(22, 24, 29, 0.14)"
+   },
+   "appbar": {
+    "css": "0 1px 0 rgba(22, 24, 29, 0.06)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Be Vietnam Pro",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.1,
+    "count": 1,
+    "example": "Tasarım Ekibi"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Günaydın! Onboarding ekranlarının son hâ"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Mesaj yazın…"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "14:32"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Sprint demosu Cuma 14:00'te, Oda 2"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Selin Yıldız"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "2"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Bugün"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "8 üye · 3 çevrimiçi"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "09:12"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "count": 8,
+    "example": "SY"
+   },
+   {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 13,
+    "letterSpacing": 0.8,
+    "count": 1,
+    "example": "SABİTLENMİŞ MESAJ"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "statusBar",
+   "role": "StatusBar",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    360,
+    28
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     18
+    ]
+   }
+  },
+  {
+   "id": "appBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    28,
+    360,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     4,
+     0,
+     4
+    ]
+   }
+  },
+  {
+   "id": "backButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    4,
+    38,
+    40,
+    40
+   ],
+   "style": {
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "40px",
+    "rows": "40px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatarStack",
+   "role": null,
+   "parent": "appBar",
+   "bbox": [
+    48,
+    42,
+    104,
+    32
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "memberStack",
+    "count": 3,
+    "itemId": "stackAvatar"
+   }
+  },
+  {
+   "id": "stackAvatar[0]",
+   "role": "Avatar",
+   "parent": "avatarStack",
+   "bbox": [
+    48,
+    42,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D6336C",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stackAvatar[1]",
+   "role": "Avatar",
+   "parent": "avatarStack",
+   "bbox": [
+    72,
+    42,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1C7ED6",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stackAvatar[2]",
+   "role": "Avatar",
+   "parent": "avatarStack",
+   "bbox": [
+    96,
+    42,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8590C",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stackMore",
+   "role": "Badge",
+   "parent": "avatarStack",
+   "bbox": [
+    120,
+    42,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF0F3",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "callButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    276,
+    38,
+    40,
+    40
+   ],
+   "style": {
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "40px",
+    "rows": "40px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "moreButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    316,
+    38,
+    40,
+    40
+   ],
+   "style": {
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "40px",
+    "rows": "40px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "pinnedBar",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    0,
+    88,
+    360,
+    46
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E8EAEE",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     },
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E8EAEE",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "messageList",
+   "role": "ListView",
+   "parent": null,
+   "bbox": [
+    0,
+    134,
+    360,
+    590
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     12,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "dateSeparator",
+   "role": "Chip",
+   "parent": "messageList",
+   "bbox": [
+    149.5,
+    146,
+    60.98,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF0F3",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "thread",
+   "role": null,
+   "parent": "messageList",
+   "bbox": [
+    12,
+    170,
+    336,
+    488
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "messages",
+    "count": 6,
+    "itemId": "messageRow"
+   }
+  },
+  {
+   "id": "messageRow[0]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    182,
+    336,
+    88
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     0,
+     44,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "bubbleIn[0]",
+   "role": "Bubble",
+   "parent": "messageRow[0]",
+   "bbox": [
+    46,
+    182,
+    258,
+    88
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EFF1F4",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     18,
+     18,
+     4
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "messageRow[1]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    272,
+    336,
+    54
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     0,
+     44,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "messageAvatar[0]",
+   "role": "Avatar",
+   "parent": "messageRow[1]",
+   "bbox": [
+    12,
+    298,
+    28,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D6336C",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "bubbleIn[1]",
+   "role": "Bubble",
+   "parent": "messageRow[1]",
+   "bbox": [
+    46,
+    272,
+    258,
+    54
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EFF1F4",
+     "alpha": 1.0
+    },
+    "radius": [
+     4,
+     18,
+     18,
+     4
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "messageRow[2]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    338,
+    336,
+    71
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     0,
+     44,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "messageAvatar[1]",
+   "role": "Avatar",
+   "parent": "messageRow[2]",
+   "bbox": [
+    12,
+    381,
+    28,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1C7ED6",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "bubbleIn[2]",
+   "role": "Bubble",
+   "parent": "messageRow[2]",
+   "bbox": [
+    46,
+    338,
+    258,
+    71
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EFF1F4",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     18,
+     18,
+     4
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "messageRow[3]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    421,
+    336,
+    106
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "flex-end",
+    "align": "flex-end",
+    "padding": [
+     0,
+     0,
+     0,
+     64
+    ]
+   }
+  },
+  {
+   "id": "bubbleOut[0]",
+   "role": "Bubble",
+   "parent": "messageRow[3]",
+   "bbox": [
+    76,
+    421,
+    272,
+    106
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     18,
+     4,
+     18
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "replyQuote",
+   "role": "Panel",
+   "parent": "bubbleOut[0]",
+   "bbox": [
+    84,
+    429,
+    256,
+    45
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.14
+    },
+    "radius": 8,
+    "border": [
+     {
+      "side": "left",
+      "width": 3,
+      "color": {
+       "hex": "#FFC4D6",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     5,
+     10,
+     6,
+     10
+    ]
+   }
+  },
+  {
+   "id": "messageRow[4]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    529,
+    336,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "flex-end",
+    "align": "flex-end",
+    "padding": [
+     0,
+     0,
+     0,
+     64
+    ]
+   }
+  },
+  {
+   "id": "bubbleOut[1]",
+   "role": "Bubble",
+   "parent": "messageRow[4]",
+   "bbox": [
+    97.42,
+    529,
+    250.58,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     4,
+     4,
+     18
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "reactionChip",
+   "role": "Chip",
+   "parent": "bubbleOut[1]",
+   "bbox": [
+    107.42,
+    556,
+    39.92,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E8EAEE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 3.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#16181D",
+       "alpha": 0.14
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 3,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     6
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "messageRow[5]",
+   "role": "ListItem",
+   "parent": "thread",
+   "bbox": [
+    12,
+    585,
+    336,
+    73
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     0,
+     44,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "messageAvatar[2]",
+   "role": "Avatar",
+   "parent": "messageRow[5]",
+   "bbox": [
+    12,
+    630,
+    28,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8590C",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "voiceBubble",
+   "role": "Bubble",
+   "parent": "messageRow[5]",
+   "bbox": [
+    46,
+    585,
+    208,
+    73
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EFF1F4",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     18,
+     18,
+     4
+    ]
+   },
+   "layout": {
+    "padding": [
+     7,
+     12,
+     7,
+     12
+    ]
+   }
+  },
+  {
+   "id": "playButton",
+   "role": "IconButton",
+   "parent": "voiceBubble",
+   "bbox": [
+    58,
+    613,
+    36,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "36px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "waveform",
+   "role": "Waveform",
+   "parent": "voiceBubble",
+   "bbox": [
+    104,
+    611,
+    138,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 2,
+    "justify": "normal",
+    "align": "center"
+   },
+   "model": {
+    "name": "waveform",
+    "count": 28,
+    "itemId": "waveBar"
+   },
+   "value": "0.32"
+  },
+  {
+   "id": "waveBar[0]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    104,
+    620,
+    3,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[1]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    109,
+    618,
+    3,
+    10
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[2]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    114,
+    615.5,
+    3,
+    15
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[3]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    119,
+    618.5,
+    3,
+    9
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[4]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    124,
+    614,
+    3,
+    18
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[5]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    129,
+    612,
+    3,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[6]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    134,
+    616,
+    3,
+    14
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[7]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    139,
+    617.5,
+    3,
+    11
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[8]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    144,
+    613,
+    3,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[9]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    149,
+    611,
+    3,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[10]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    154,
+    614.5,
+    3,
+    17
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[11]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    159,
+    618,
+    3,
+    10
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[12]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    164,
+    619.5,
+    3,
+    7
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[13]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    169,
+    616.5,
+    3,
+    13
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[14]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    174,
+    613.5,
+    3,
+    19
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[15]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    179,
+    615,
+    3,
+    16
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[16]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    184,
+    617.5,
+    3,
+    11
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[17]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    189,
+    614,
+    3,
+    18
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[18]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    194,
+    612,
+    3,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[19]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    199,
+    616,
+    3,
+    14
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[20]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    204,
+    618.5,
+    3,
+    9
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[21]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    209,
+    619.5,
+    3,
+    7
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[22]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    214,
+    617,
+    3,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[23]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    219,
+    615,
+    3,
+    16
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[24]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    224,
+    618,
+    3,
+    10
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[25]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    229,
+    619,
+    3,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[26]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    234,
+    620,
+    3,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "waveBar[27]",
+   "role": null,
+   "parent": "waveform",
+   "bbox": [
+    239,
+    621,
+    3,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B9BEC8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {}
+  },
+  {
+   "id": "typingRow",
+   "role": "ListItem",
+   "parent": "messageList",
+   "bbox": [
+    12,
+    670,
+    336,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     0,
+     44,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "messageAvatar[3]",
+   "role": "Avatar",
+   "parent": "typingRow",
+   "bbox": [
+    12,
+    676,
+    28,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1C7ED6",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "typingIndicator",
+   "role": "Bubble",
+   "parent": "typingRow",
+   "bbox": [
+    46,
+    670,
+    57,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EFF1F4",
+     "alpha": 1.0
+    },
+    "radius": [
+     18,
+     18,
+     18,
+     4
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "composer",
+   "role": "Footer",
+   "parent": null,
+   "bbox": [
+    0,
+    724,
+    360,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     8,
+     8,
+     8,
+     6
+    ]
+   }
+  },
+  {
+   "id": "attachButton",
+   "role": "IconButton",
+   "parent": "composer",
+   "bbox": [
+    6,
+    734,
+    40,
+    40
+   ],
+   "style": {
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "40px",
+    "rows": "40px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "messageField",
+   "role": "TextField",
+   "parent": "composer",
+   "bbox": [
+    52,
+    732,
+    250,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF0F3",
+     "alpha": 1.0
+    },
+    "radius": 22
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     16
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "micButton",
+   "role": "Button",
+   "parent": "composer",
+   "bbox": [
+    308,
+    732,
+    44,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D7F72",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "44px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "gestureBar",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    0,
+    784,
+    360,
+    16
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "360px",
+    "rows": "16px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "14:32",
+   "owner": "statusBar",
+   "bbox": [
+    18,
+    6,
+    35.59,
+    16
+   ],
+   "baseline": 19,
+   "lines": 1,
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SY",
+   "owner": "stackAvatar[0]",
+   "bbox": [
+    57.14,
+    51.5,
+    13.7,
+    13
+   ],
+   "baseline": 61.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "BÖ",
+   "owner": "stackAvatar[1]",
+   "bbox": [
+    80.22,
+    51.5,
+    15.55,
+    13
+   ],
+   "baseline": 61.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "AK",
+   "owner": "stackAvatar[2]",
+   "bbox": [
+    104.48,
+    51.5,
+    15.02,
+    13
+   ],
+   "baseline": 61.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "+3",
+   "owner": "stackMore",
+   "bbox": [
+    129.23,
+    51.5,
+    13.52,
+    13
+   ],
+   "baseline": 61.5,
+   "lines": 1,
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tasarım Ekibi",
+   "owner": "appBar",
+   "bbox": [
+    160,
+    39.5,
+    106.23,
+    20
+   ],
+   "baseline": 55.5,
+   "lines": 1,
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "8 üye · 3 çevrimiçi",
+   "owner": "appBar",
+   "bbox": [
+    160,
+    60.5,
+    104.91,
+    15
+   ],
+   "baseline": 72.5,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SABİTLENMİŞ MESAJ",
+   "owner": "pinnedBar",
+   "bbox": [
+    29,
+    95.5,
+    118.61,
+    13
+   ],
+   "baseline": 105.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0D7F72",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 13,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Sprint demosu Cuma 14:00'te, Oda 2",
+   "owner": "pinnedBar",
+   "bbox": [
+    29,
+    109.5,
+    231.86,
+    16
+   ],
+   "baseline": 122.5,
+   "lines": 1,
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün",
+   "owner": "dateSeparator",
+   "bbox": [
+    161.5,
+    150,
+    36.98,
+    15
+   ],
+   "baseline": 162,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Selin Yıldız",
+   "owner": "bubbleIn[0]",
+   "bbox": [
+    58,
+    189,
+    64.61,
+    15
+   ],
+   "baseline": 201,
+   "lines": 1,
+   "color": {
+    "hex": "#D6336C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Günaydın! Onboarding ekranlarının son hâli dosyada.",
+   "owner": "bubbleIn[0]",
+   "bbox": [
+    58,
+    207,
+    202.31,
+    38
+   ],
+   "baseline": 221,
+   "lines": 2,
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09:12",
+   "owner": "bubbleIn[0]",
+   "bbox": [
+    264.53,
+    252,
+    29.47,
+    14
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "SY",
+   "owner": "messageAvatar[0]",
+   "bbox": [
+    19.14,
+    305.5,
+    13.7,
+    13
+   ],
+   "baseline": 315.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Özellikle 3. adımdaki izin metnine bakabilir misiniz?",
+   "owner": "bubbleIn[1]",
+   "bbox": [
+    58,
+    280,
+    225.75,
+    38
+   ],
+   "baseline": 294,
+   "lines": 2,
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09:12",
+   "owner": "bubbleIn[1]",
+   "bbox": [
+    264.53,
+    305,
+    29.47,
+    14
+   ],
+   "baseline": 316,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "BÖ",
+   "owner": "messageAvatar[1]",
+   "bbox": [
+    18.22,
+    388.5,
+    15.55,
+    13
+   ],
+   "baseline": 398.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Burak Öztürk",
+   "owner": "bubbleIn[2]",
+   "bbox": [
+    58,
+    345,
+    78.11,
+    15
+   ],
+   "baseline": 357,
+   "lines": 1,
+   "color": {
+    "hex": "#1C7ED6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Metin biraz uzun olmuş, bence iki satıra indirelim.",
+   "owner": "bubbleIn[2]",
+   "bbox": [
+    58,
+    363,
+    221.44,
+    38
+   ],
+   "baseline": 377,
+   "lines": 2,
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09:18",
+   "owner": "bubbleIn[2]",
+   "bbox": [
+    264.72,
+    388,
+    29.28,
+    14
+   ],
+   "baseline": 399,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Selin Yıldız",
+   "owner": "replyQuote",
+   "bbox": [
+    97,
+    434,
+    64.61,
+    15
+   ],
+   "baseline": 446,
+   "lines": 1,
+   "color": {
+    "hex": "#FFC4D6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Özellikle 3. adımdaki izin metnine…",
+   "owner": "replyQuote",
+   "bbox": [
+    97,
+    451,
+    219.06,
+    16
+   ],
+   "baseline": 464,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.86
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kısalttım, butonu da “Devam et” olarak güncelledim.",
+   "owner": "bubbleOut[0]",
+   "bbox": [
+    88,
+    481,
+    216.73,
+    38
+   ],
+   "baseline": 495,
+   "lines": 2,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09:24",
+   "owner": "bubbleOut[0]",
+   "bbox": [
+    287.3,
+    506.5,
+    32.7,
+    14
+   ],
+   "baseline": 517.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BFE6DF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Prototipi de güncellerim.",
+   "owner": "bubbleOut[1]",
+   "bbox": [
+    109.42,
+    537,
+    168.09,
+    18
+   ],
+   "baseline": 551,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09:25",
+   "owner": "bubbleOut[1]",
+   "bbox": [
+    287.52,
+    542.5,
+    32.48,
+    14
+   ],
+   "baseline": 553.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BFE6DF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2",
+   "owner": "reactionChip",
+   "bbox": [
+    130.42,
+    559,
+    7.92,
+    15
+   ],
+   "baseline": 571,
+   "lines": 1,
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "AK",
+   "owner": "messageAvatar[2]",
+   "bbox": [
+    18.48,
+    637.5,
+    15.02,
+    13
+   ],
+   "baseline": 647.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ayşe Kaya",
+   "owner": "voiceBubble",
+   "bbox": [
+    58,
+    592,
+    61.81,
+    15
+   ],
+   "baseline": 604,
+   "lines": 1,
+   "color": {
+    "hex": "#E8590C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0:42",
+   "owner": "voiceBubble",
+   "bbox": [
+    104,
+    637,
+    25.34,
+    14
+   ],
+   "baseline": 648,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "09:31",
+   "owner": "voiceBubble",
+   "bbox": [
+    212.44,
+    637,
+    29.56,
+    14
+   ],
+   "baseline": 648,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "BÖ",
+   "owner": "messageAvatar[3]",
+   "bbox": [
+    18.22,
+    683.5,
+    15.55,
+    13
+   ],
+   "baseline": 693.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Burak yazıyor…",
+   "owner": "typingRow",
+   "bbox": [
+    113,
+    679,
+    87.55,
+    15
+   ],
+   "baseline": 691,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Mesaj yazın…",
+   "owner": "messageField",
+   "bbox": [
+    68,
+    745,
+    89.09,
+    18
+   ],
+   "baseline": 759,
+   "lines": 1,
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Be Vietnam Pro",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "tabler:wifi",
+   "owner": "statusBar",
+   "bbox": [
+    288,
+    6,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler:antenna-bars-5",
+   "owner": "statusBar",
+   "bbox": [
+    308,
+    6,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:battery-4",
+   "owner": "statusBar",
+   "bbox": [
+    328,
+    6,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "lucide:arrow-left",
+   "owner": "backButton",
+   "bbox": [
+    13,
+    47,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:phone",
+   "owner": "callButton",
+   "bbox": [
+    285,
+    47,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:ellipsis-vertical",
+   "owner": "moreButton",
+   "bbox": [
+    325,
+    47,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:pin",
+   "owner": "pinnedBar",
+   "bbox": [
+    330,
+    102,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:check-check",
+   "owner": "bubbleOut[0]",
+   "bbox": [
+    323,
+    506,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#8FF0DE",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "lucide:check-check",
+   "owner": "bubbleOut[1]",
+   "bbox": [
+    323,
+    542,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#8FF0DE",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:heart",
+   "owner": "reactionChip",
+   "bbox": [
+    114.42,
+    560.5,
+    13,
+    13
+   ],
+   "color": {
+    "hex": "#F03E5A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:player-play",
+   "owner": "playButton",
+   "bbox": [
+    69,
+    623,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "lucide:paperclip",
+   "owner": "attachButton",
+   "bbox": [
+    15,
+    743,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:smile",
+   "owner": "messageField",
+   "bbox": [
+    238,
+    744,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:camera",
+   "owner": "messageField",
+   "bbox": [
+    270,
+    744,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:mic",
+   "owner": "micButton",
+   "bbox": [
+    320,
+    744,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 31,
+   "where": [
+    "fill",
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B9BEC8",
+    "alpha": 1.0
+   },
+   "count": 19,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0D7F72",
+    "alpha": 1.0
+   },
+   "count": 14,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#737985",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#16181D",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#3C414B",
+    "alpha": 1.0
+   },
+   "count": 7,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E8EAEE",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EFF1F4",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1C7ED6",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#D6336C",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E8590C",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EEF0F3",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFC4D6",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "border",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#BFE6DF",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8FF0DE",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.14
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.86
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F03E5A",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "chat": {
+   "title": "Tasarım Ekibi",
+   "subtitle": "8 üye · 3 çevrimiçi",
+   "memberStack": [
+    "SY",
+    "BÖ",
+    "AK"
+   ],
+   "moreMembers": 3,
+   "pinned": "Sprint demosu Cuma 14:00'te, Oda 2"
+  },
+  "members": {
+   "Selin Yıldız": {
+    "initials": "SY",
+    "color": "#D6336C"
+   },
+   "Burak Öztürk": {
+    "initials": "BÖ",
+    "color": "#1C7ED6"
+   },
+   "Ayşe Kaya": {
+    "initials": "AK",
+    "color": "#E8590C"
+   }
+  },
+  "messages": [
+   {
+    "type": "date",
+    "text": "Bugün"
+   },
+   {
+    "from": "Selin Yıldız",
+    "text": "Günaydın! Onboarding ekranlarının son hâli dosyada.",
+    "time": "09:12",
+    "groupPos": "first"
+   },
+   {
+    "from": "Selin Yıldız",
+    "text": "Özellikle 3. adımdaki izin metnine bakabilir misiniz?",
+    "time": "09:12",
+    "groupPos": "last"
+   },
+   {
+    "from": "Burak Öztürk",
+    "text": "Metin biraz uzun olmuş, bence iki satıra indirelim.",
+    "time": "09:18",
+    "groupPos": "single"
+   },
+   {
+    "from": "me",
+    "text": "Kısalttım, butonu da “Devam et” olarak güncelledim.",
+    "time": "09:24",
+    "read": true,
+    "replyTo": {
+     "from": "Selin Yıldız",
+     "text": "Özellikle 3. adımdaki izin metnine…"
+    },
+    "groupPos": "first"
+   },
+   {
+    "from": "me",
+    "text": "Prototipi de güncellerim.",
+    "time": "09:25",
+    "read": true,
+    "reactions": [
+     {
+      "icon": "heart",
+      "count": 2
+     }
+    ],
+    "groupPos": "last"
+   },
+   {
+    "from": "Ayşe Kaya",
+    "type": "voice",
+    "duration": "0:42",
+    "played": 9,
+    "time": "09:31",
+    "groupPos": "single"
+   }
+  ],
+  "waveform": [
+   6,
+   10,
+   15,
+   9,
+   18,
+   22,
+   14,
+   11,
+   20,
+   24,
+   17,
+   10,
+   7,
+   13,
+   19,
+   16,
+   11,
+   18,
+   22,
+   14,
+   9,
+   7,
+   12,
+   16,
+   10,
+   8,
+   6,
+   4
+  ],
+  "typing": "Burak",
+  "composer": {
+   "placeholder": "Mesaj yazın…"
+  }
+ },
+ "states": {}
+}

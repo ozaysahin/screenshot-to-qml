@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Demlik &amp; Fırın — Sipariş</title>
+<script type="application/json" id="case-meta">
+{"id": "02-kiosk-kafe", "title": "Dikey self-servis sipariş kiosku", "category": "kiosk", "profile": "embedded-gpu",
+ "viewport": [1080, 1920], "dpr": 1, "fonts": ["Manrope"]}
+</script>
+<script type="application/json" id="case-data">
+{"products": [{"name": "Türk Kahvesi", "desc": "Közde, çifte kavrulmuş", "price": 85},
+              {"name": "Latte", "desc": "Çift shot, yulaf sütü seçeneğiyle", "price": 110, "qty": 2},
+              {"name": "Filtre Kahve", "desc": "Etiyopya Yirgacheffe", "price": 95},
+              {"name": "Cold Brew", "desc": "18 saat soğuk demleme", "price": 120}],
+ "cart": {"items": 3, "total": 315}}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #FFF8F1;
+  --color-surface: #FFFFFF;
+  --color-ink: #2B1D14;
+  --color-muted: #8B7B6E;
+  --color-border: #F0E4D8;
+  --color-accent: #FF6B3D;
+  --color-accent-soft: #FFE6DA;
+  --color-promo-from: #FF8A4C;
+  --color-promo-to: #FF5A36;
+  --color-peach: #FDE7D8; --color-peach-ink: #C2410C;
+  --color-latte: #EFE6DC; --color-latte-ink: #7C5A3C;
+  --color-sage: #E3EFE0; --color-sage-ink: #3F6B3A;
+  --color-sky: #DDEFF5; --color-sky-ink: #0E7490;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 40px; --space-8: 56px;
+  --radius-md: 18px; --radius-lg: 20px; --radius-xl: 28px; --radius-2xl: 32px; --radius-pill: 999px;
+  --shadow-card: 0 10px 30px rgba(43, 29, 20, 0.07), 0 2px 6px rgba(43, 29, 20, 0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Manrope', sans-serif; position: relative; }
+svg.ic { width: 1em; height: 1em; display: block; }
+.page { padding: 48px 56px 0; }
+
+.header { display: flex; align-items: center; gap: 20px; }
+.logo { width: 72px; height: 72px; border-radius: 50%; background: var(--color-ink); color: var(--color-bg); display: grid; place-items: center; font-size: 36px; }
+.brand h1 { font-size: 30px; font-weight: 800; line-height: 36px; letter-spacing: -0.5px; }
+.brand p { font-size: 18px; font-weight: 500; color: var(--color-muted); line-height: 24px; }
+.header .right { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+.lang { display: flex; padding: 6px; border-radius: var(--radius-pill); background: var(--color-surface); border: 1px solid var(--color-border); }
+.lang div { width: 64px; height: 48px; border-radius: var(--radius-pill); display: grid; place-items: center; font-size: 18px; font-weight: 700; color: var(--color-muted); }
+.lang div.on { background: var(--color-ink); color: var(--color-bg); }
+.serve { height: 60px; padding: 0 24px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; }
+.serve svg { font-size: 22px; }
+
+.greet { margin-top: 56px; }
+.greet h2 { font-size: 60px; font-weight: 800; line-height: 68px; letter-spacing: -1.5px; }
+.greet p { font-size: 24px; font-weight: 500; color: var(--color-muted); line-height: 32px; margin-top: 12px; }
+
+.promo { margin-top: 40px; height: 272px; border-radius: var(--radius-2xl); background: linear-gradient(135deg, var(--color-promo-from) 0%, var(--color-promo-to) 100%); position: relative; overflow: hidden; padding: 40px 48px; color: #fff; }
+.promo .tag { display: inline-flex; height: 36px; padding: 0 16px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); align-items: center; font-size: 15px; font-weight: 800; letter-spacing: 1.2px; }
+.promo h3 { font-size: 46px; font-weight: 800; line-height: 54px; margin-top: 18px; letter-spacing: -1px; }
+.promo .price { display: flex; align-items: baseline; gap: 16px; margin-top: 16px; }
+.promo .price b { font-size: 40px; font-weight: 800; line-height: 48px; }
+.promo .price s { font-size: 26px; font-weight: 600; color: rgba(255, 255, 255, 0.7); }
+.promo .bubble { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.16); display: grid; place-items: center; color: #fff; }
+.promo .b1 { width: 240px; height: 240px; right: 150px; top: 16px; font-size: 104px; }
+.promo .b2 { width: 190px; height: 190px; right: -20px; top: 108px; font-size: 84px; background: rgba(255, 255, 255, 0.24); }
+.promo .bubble svg { stroke-width: 1.5; }
+
+.tabs { margin-top: 44px; display: flex; gap: 16px; margin-right: -56px; overflow: hidden; }
+.tab { flex: none; height: 76px; padding: 0 32px 0 26px; border-radius: var(--radius-pill); background: var(--color-surface); border: 2px solid var(--color-border); display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--color-ink); }
+.tab svg { font-size: 26px; color: var(--color-muted); }
+.tab.on { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-bg); }
+.tab.on svg { color: var(--color-accent); }
+
+.sec { margin-top: 48px; display: flex; align-items: baseline; gap: 14px; }
+.sec h4 { font-size: 34px; font-weight: 800; line-height: 40px; letter-spacing: -0.5px; }
+.sec span { font-size: 20px; font-weight: 600; color: var(--color-muted); }
+.sec a { margin-left: auto; font-size: 20px; font-weight: 700; color: var(--color-accent); display: flex; align-items: center; gap: 6px; text-decoration: none; }
+
+.grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.card { background: var(--color-surface); border-radius: var(--radius-xl); padding: 20px 20px 24px; box-shadow: var(--shadow-card); border: 2px solid transparent; }
+.card.sel { border-color: var(--color-accent); }
+.art { height: 176px; border-radius: var(--radius-lg); display: grid; place-items: center; font-size: 92px; position: relative; }
+.art svg { stroke-width: 1.5; }
+.art .badge { position: absolute; left: 16px; top: 16px; height: 34px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-ink); font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+.art .badge svg { font-size: 16px; color: var(--color-accent); stroke-width: 2.5; }
+.card h5 { font-size: 27px; font-weight: 800; line-height: 34px; margin-top: 20px; letter-spacing: -0.3px; }
+.card p { font-size: 18px; font-weight: 500; color: var(--color-muted); line-height: 24px; margin-top: 4px; }
+.card .row { display: flex; align-items: center; margin-top: 20px; }
+.card .row b { font-size: 30px; font-weight: 800; line-height: 36px; }
+.add { margin-left: auto; width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--color-accent); color: #fff; display: grid; place-items: center; font-size: 32px; }
+.add svg { stroke-width: 2.5; }
+.stepper { margin-left: auto; height: 64px; border-radius: var(--radius-md); background: var(--color-accent-soft); display: flex; align-items: center; padding: 6px; gap: 6px; }
+.stepper .s { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; color: var(--color-accent); background: var(--color-surface); }
+.stepper .s svg { stroke-width: 2.5; }
+.stepper .s.plus { background: var(--color-accent); color: #fff; }
+.stepper span { width: 44px; text-align: center; font-size: 26px; font-weight: 800; }
+
+.cart { position: absolute; left: 32px; right: 32px; bottom: 32px; height: 140px; border-radius: var(--radius-2xl); background: var(--color-ink); color: #fff; display: flex; align-items: center; padding: 0 28px 0 28px; gap: 22px; box-shadow: 0 -12px 40px rgba(43, 29, 20, 0.18); }
+.cart .bag { width: 84px; height: 84px; border-radius: 24px; background: rgba(255, 255, 255, 0.1); display: grid; place-items: center; font-size: 38px; position: relative; }
+.cart .bag i { position: absolute; right: -6px; top: -6px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent); font-style: normal; font-size: 16px; font-weight: 800; display: grid; place-items: center; border: 3px solid var(--color-ink); }
+.cart .sum p { font-size: 19px; font-weight: 600; color: rgba(255, 255, 255, 0.64); line-height: 24px; }
+.cart .sum b { font-size: 40px; font-weight: 800; line-height: 48px; letter-spacing: -0.5px; }
+.pay { margin-left: auto; height: 92px; padding: 0 36px 0 44px; border-radius: 24px; background: var(--color-accent); display: flex; align-items: center; gap: 14px; font-size: 26px; font-weight: 800; }
+.pay svg { font-size: 30px; stroke-width: 2.5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="header" data-node="header" data-role="Header">
+    <div class="logo" data-node="logo" data-role="Icon"><i data-icon="lucide:coffee" class="ic"></i></div>
+    <div class="brand"><h1>Demlik &amp; Fırın</h1><p>Kızılay Şubesi</p></div>
+    <div class="right">
+      <div class="lang" data-node="langToggle" data-role="SegmentedControl" data-value="tr">
+        <div class="on" data-node="langTr" data-role="SegmentItem" data-state="selected">TR</div>
+        <div data-node="langEn" data-role="SegmentItem">EN</div>
+      </div>
+      <div class="serve" data-node="serviceChip" data-role="Chip"><i data-icon="lucide:utensils" class="ic"></i>Masaya servis</div>
+    </div>
+  </header>
+
+  <section class="greet" data-node="greeting">
+    <h2>Bugün ne içmek<br>istersin?</h2>
+    <p>Siparişini seç, 5 dakikada masana getirelim.</p>
+  </section>
+
+  <section class="promo" data-node="promo" data-role="Banner">
+    <div class="tag">GÜNÜN FIRSATI</div>
+    <h3>Latte + Kruvasan</h3>
+    <div class="price"><b>145 ₺</b><s>180 ₺</s></div>
+    <div class="bubble b1"><i data-icon="lucide:coffee" class="ic"></i></div>
+    <div class="bubble b2"><i data-icon="lucide:croissant" class="ic"></i></div>
+  </section>
+
+  <nav class="tabs" data-node="categoryTabs" data-role="TabBar" data-model="categories">
+    <div class="tab on" data-node="tab" data-role="Tab" data-state="selected"><i data-icon="lucide:coffee" class="ic"></i>Kahveler</div>
+    <div class="tab" data-node="tab" data-role="Tab"><i data-icon="lucide:leaf" class="ic"></i>Çaylar</div>
+    <div class="tab" data-node="tab" data-role="Tab"><i data-icon="lucide:croissant" class="ic"></i>Fırından</div>
+    <div class="tab" data-node="tab" data-role="Tab"><i data-icon="lucide:cup-soda" class="ic"></i>Soğuk İçecekler</div>
+    <div class="tab" data-node="tab" data-role="Tab"><i data-icon="lucide:cake-slice" class="ic"></i>Tatlılar</div>
+  </nav>
+
+  <div class="sec" data-node="sectionHead"><h4>Kahveler</h4><span>12 ürün</span><a>Tümünü gör <i data-icon="lucide:arrow-right" class="ic"></i></a></div>
+
+  <section class="grid" data-node="products" data-role="Grid" data-model="products">
+    <article class="card" data-node="product" data-role="ProductCard">
+      <div class="art" style="background:var(--color-peach);color:var(--color-peach-ink)"><span class="badge"><i data-icon="lucide:flame" class="ic"></i>Çok satan</span><i data-icon="lucide:coffee" class="ic"></i></div>
+      <h5>Türk Kahvesi</h5><p>Közde, çifte kavrulmuş</p>
+      <div class="row"><b>85 ₺</b><div class="add" data-node="addButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div></div>
+    </article>
+    <article class="card sel" data-node="product" data-role="ProductCard" data-state="selected">
+      <div class="art" style="background:var(--color-latte);color:var(--color-latte-ink)"><i data-icon="lucide:milk" class="ic"></i></div>
+      <h5>Latte</h5><p>Çift shot, yulaf sütü seçeneği</p>
+      <div class="row"><b>110 ₺</b>
+        <div class="stepper" data-node="qtyStepper" data-role="SpinBox" data-value="2">
+          <div class="s"><i data-icon="lucide:minus" class="ic"></i></div><span>2</span><div class="s plus"><i data-icon="lucide:plus" class="ic"></i></div>
+        </div></div>
+    </article>
+    <article class="card" data-node="product" data-role="ProductCard">
+      <div class="art" style="background:var(--color-sage);color:var(--color-sage-ink)"><i data-icon="lucide:bean" class="ic"></i></div>
+      <h5>Filtre Kahve</h5><p>Etiyopya Yirgacheffe</p>
+      <div class="row"><b>95 ₺</b><div class="add" data-node="addButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div></div>
+    </article>
+    <article class="card" data-node="product" data-role="ProductCard">
+      <div class="art" style="background:var(--color-sky);color:var(--color-sky-ink)"><span class="badge"><i data-icon="lucide:snowflake" class="ic"></i>Yeni</span><i data-icon="lucide:cup-soda" class="ic"></i></div>
+      <h5>Cold Brew</h5><p>18 saat soğuk demleme</p>
+      <div class="row"><b>120 ₺</b><div class="add" data-node="addButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div></div>
+    </article>
+  </section>
+</div>
+
+<footer class="cart" data-node="cartBar" data-role="BottomBar">
+  <div class="bag"><i data-icon="lucide:shopping-bag" class="ic"></i><i>3</i></div>
+  <div class="sum"><p>Sepetim · 3 ürün</p><b>315 ₺</b></div>
+  <div class="pay" data-node="payButton" data-role="Button">Ödemeye Geç<i data-icon="lucide:arrow-right" class="ic"></i></div>
+</footer>
+</body>
+</html>

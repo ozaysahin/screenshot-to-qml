@@ -1,0 +1,116 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install ruff
+      - run: ruff check .
+      - name: QML format and lint (examples + template kit)
+        run: |
+          pip install "PySide6>=6.8"
+          for d in skills/screenshot-to-qml/examples/hmi-dolum/project skills/screenshot-to-qml/examples/controls-gallery/project skills/screenshot-to-qml/assets/templates/project; do
+            (cd "$d" && find qml -name '*.qml' ! -name 'Main.*.qml' -print0 | xargs -0 -n1 sh -c 'pyside6-qmlformat "$0" | diff -q - "$0" >/dev/null || { echo "not formatted: $0"; exit 1; }' \
+              && find "$PWD/qml" -name '*.qml' ! -name 'Main.*.qml' -print0 | xargs -0 pyside6-qmllint -I qml --max-warnings 0) || exit 1
+          # absolute paths: qmllint 6.12 misses a file's own qmldir singleton entry for relative paths
+          done
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Qt runtime libraries + Xvfb
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-tur xvfb libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
+            libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xinerama0 libxcb-xfixes0 \
+            libegl1 libgl1 libopengl0 libfontconfig1 libdbus-1-3
+      - run: pip install -r skills/screenshot-to-qml/scripts/requirements.txt pytest playwright
+      - run: python -m playwright install --with-deps chromium     # HTML-input path (tests/test_html.py)
+      - run: pytest -q
+      - name: Reference example check
+        run: |
+          python skills/screenshot-to-qml/scripts/check.py skills/screenshot-to-qml/examples/hmi-dolum/project \
+            --source skills/screenshot-to-qml/examples/hmi-dolum/input.png \
+            --spec skills/screenshot-to-qml/examples/hmi-dolum/design-spec.json \
+            --out-dir check-artifacts
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: example-check
+          path: check-artifacts/
+
+  cpp-host:
+    # the same qml/ tree built as C++ against Qt 6.8 (the minimum), run headless and compared
+    # with the PySide6 render; then bundled with cmake --install and run from the bundle
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.8.3"
+          dir: ${{ runner.temp }}
+          cache: true
+          setup-python: false
+          set-env: false      # keep LD_LIBRARY_PATH / QT_PLUGIN_PATH clean for PySide6's own Qt
+      - run: echo "QT_SDK=${{ runner.temp }}/Qt/6.8.3/gcc_64" >> "$GITHUB_ENV"
+      - name: Build tools, Xvfb, Qt runtime libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build libgl-dev libegl-dev libvulkan-dev xvfb libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
+            libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xinerama0 libxcb-xfixes0 \
+            libegl1 libgl1 libopengl0 libfontconfig1 libdbus-1-3 tesseract-ocr tesseract-ocr-tur
+      - run: pip install -r skills/screenshot-to-qml/scripts/requirements.txt pytest
+      - name: C++ host tests (test_targets.py builds the controls gallery)
+        run: QT_DIR="$QT_SDK" pytest -q -rs tests/test_targets.py
+      - name: HMI example, both hosts (check.py builds the C++ host and gates parity)
+        run: |
+          python skills/screenshot-to-qml/scripts/check.py skills/screenshot-to-qml/examples/hmi-dolum/project \
+            --source skills/screenshot-to-qml/examples/hmi-dolum/input.png \
+            --spec skills/screenshot-to-qml/examples/hmi-dolum/design-spec.json \
+            --out-dir cpp-check --qt "$QT_SDK"
+      - name: Bundle with cmake --install and run the bundle
+        run: |
+          P=skills/screenshot-to-qml/examples/hmi-dolum/project
+          python skills/screenshot-to-qml/scripts/deploy.py $P --target cpp --platform desktop --build --qt "$QT_SDK"
+          APP_GRAB=$PWD/cpp-check/bundle.png APP_GRAB_SIZE=1920x1080 xvfb-run -a -s "-screen 0 1984x1144x24" \
+            env -u LD_LIBRARY_PATH $P/dist/bin/hat-3-dolum-hmi
+          python -c "import cv2,sys; from skimage.metrics import structural_similarity as s; a,b=(cv2.imread(p,0) for p in sys.argv[1:]); v=s(a,b); print('bundle vs render SSIM', v); sys.exit(0 if v >= 0.99 else 1)" cpp-check/bundle.png cpp-check/render.png
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cpp-check
+          path: |
+            cpp-check/*.png
+            cpp-check/*.json
+
+  eval-cases-rebuild:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install playwright fonttools brotli pyyaml && python -m playwright install --with-deps chromium
+      - run: python evals/tools/build_case.py
+      - name: Show drift against the committed cases (Chromium versions may differ slightly)
+        run: git diff --stat -- evals/cases

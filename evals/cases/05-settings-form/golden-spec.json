@@ -1,0 +1,3357 @@
+{
+ "meta": {
+  "id": "05-settings-form",
+  "title": "Ayarlar ekranı — form kontrolleri ve state'ler",
+  "category": "form",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1280,
+   800
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Plus Jakarta Sans",
+    "qtFamily": "Plus Jakarta Sans",
+    "legacyFamily": "Plus Jakarta Sans",
+    "files": [
+     "PlusJakartaSans-Bold.ttf",
+     "PlusJakartaSans-Medium.ttf",
+     "PlusJakartaSans-Regular.ttf",
+     "PlusJakartaSans-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F6F7FB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F6F7FB"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#0F172A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F172A"
+   },
+   "text-2": {
+    "hex": "#334155",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#334155"
+   },
+   "muted": {
+    "hex": "#64748B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#64748B"
+   },
+   "placeholder": {
+    "hex": "#94A3B8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#94A3B8"
+   },
+   "border": {
+    "hex": "#E2E8F0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E2E8F0"
+   },
+   "border-strong": {
+    "hex": "#CBD5E1",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#CBD5E1"
+   },
+   "primary": {
+    "hex": "#4F46E5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4F46E5"
+   },
+   "primary-soft": {
+    "hex": "#EEF2FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EEF2FF"
+   },
+   "focus-ring": {
+    "hex": "#4F46E5",
+    "alpha": 0.22,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(79, 70, 229, 0.22)"
+   },
+   "danger": {
+    "hex": "#DC2626",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#DC2626"
+   },
+   "danger-soft": {
+    "hex": "#FEF2F2",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FEF2F2"
+   },
+   "success": {
+    "hex": "#16A34A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#16A34A"
+   },
+   "warning": {
+    "hex": "#D97706",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#D97706"
+   },
+   "disabled-bg": {
+    "hex": "#F1F5F9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F1F5F9"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "8": 32.0,
+   "10": 40.0
+  },
+  "radius": {
+   "sm": 5.0,
+   "md": 8.0,
+   "lg": 10.0,
+   "xl": 14.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(15, 23, 42, 0.05)"
+   },
+   "knob": {
+    "css": "0 1px 3px rgba(15, 23, 42, 0.25)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 24,
+    "weight": 700,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "Genel"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "count": 1,
+    "example": "Ayarlar"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Cihaz bilgileri"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Genel"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "Ekran"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 13,
+    "example": "Cihazın kimliği, ekranı ve bildirim terc"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "%70"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 13,
+    "example": "Çevrimiçi"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Lobi-Kiosk-02 · v4.2.0"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Geçerli bir adres girin (ör. https://10."
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "12 gün 4 saattir açık"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Kritik hatalar bu adrese gönderilir."
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "1"
+   },
+   {
+    "family": "Plus Jakarta Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Pro lisans"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "settingsNav",
+   "role": "Sidebar",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    264,
+    800
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "right",
+      "width": 1,
+      "color": {
+       "hex": "#E2E8F0",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     28,
+     16,
+     20,
+     16
+    ]
+   }
+  },
+  {
+   "id": "menu",
+   "role": null,
+   "parent": "settingsNav",
+   "bbox": [
+    16,
+    102,
+    231,
+    292
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "sections",
+    "count": 7,
+    "itemId": "menuItem"
+   }
+  },
+  {
+   "id": "menuItem[0]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    102,
+    231,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF2FF",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "menuItem[1]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    144,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "menuItem[2]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    186,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "menuItem[3]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    228,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "menuItem[4]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    270,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "menuItem[5]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    312,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "menuItem[6]",
+   "role": "NavItem",
+   "parent": "menu",
+   "bbox": [
+    16,
+    354,
+    231,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "deviceStatus",
+   "role": null,
+   "parent": "settingsNav",
+   "bbox": [
+    16,
+    708,
+    231,
+    72
+   ],
+   "style": {
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "flex-start",
+    "padding": [
+     14,
+     14,
+     14,
+     14
+    ]
+   }
+  },
+  {
+   "id": "pageTitle",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    304,
+    28,
+    936,
+    54
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "identityCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    304,
+    104,
+    458,
+    434
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "deviceNameField",
+   "role": "TextField",
+   "parent": "identityCard",
+   "bbox": [
+    325,
+    187,
+    416,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "locationField",
+   "role": "TextField",
+   "parent": "identityCard",
+   "bbox": [
+    325,
+    269,
+    416,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#4F46E5",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 4.0,
+      "color": {
+       "hex": "#4F46E5",
+       "alpha": 0.22
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "focused"
+   ]
+  },
+  {
+   "id": "emailField",
+   "role": "TextField",
+   "parent": "identityCard",
+   "bbox": [
+    325,
+    351,
+    416,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "serverField",
+   "role": "TextField",
+   "parent": "identityCard",
+   "bbox": [
+    325,
+    455,
+    416,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FEF2F2",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#DC2626",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "error"
+   ]
+  },
+  {
+   "id": "dangerCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    304,
+    558,
+    458,
+    84
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "resetButton",
+   "role": "Button",
+   "parent": "dangerCard",
+   "bbox": [
+    645.72,
+    580,
+    95.28,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FCA5A5",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "displayCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    782,
+    104,
+    458,
+    289
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "brightnessSlider",
+   "role": "Slider",
+   "parent": "displayCard",
+   "bbox": [
+    803,
+    193,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.7"
+  },
+  {
+   "id": "autoBrightnessSwitch",
+   "role": "Switch",
+   "parent": "displayCard",
+   "bbox": [
+    1175,
+    257,
+    44,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#4F46E5",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "themeSegment",
+   "role": "SegmentedControl",
+   "parent": "displayCard",
+   "bbox": [
+    803,
+    332,
+    202,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F5F9",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   "value": "light"
+  },
+  {
+   "id": "themeLight",
+   "role": "SegmentItem",
+   "parent": "themeSegment",
+   "bbox": [
+    807,
+    336,
+    64.67,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 7,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.12
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64.6719px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "themeDark",
+   "role": "SegmentItem",
+   "parent": "themeSegment",
+   "bbox": [
+    871.67,
+    336,
+    64.67,
+    32
+   ],
+   "style": {
+    "radius": 7
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64.6719px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "themeSystem",
+   "role": "SegmentItem",
+   "parent": "themeSegment",
+   "bbox": [
+    936.34,
+    336,
+    64.67,
+    32
+   ],
+   "style": {
+    "radius": 7
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64.6719px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "timeoutSelect",
+   "role": "ComboBox",
+   "parent": "displayCard",
+   "bbox": [
+    1017,
+    332,
+    202,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "space-between",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "notifyCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    782,
+    413,
+    458,
+    273
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "notifyChecks",
+   "role": null,
+   "parent": "notifyCard",
+   "bbox": [
+    803,
+    466,
+    416,
+    116
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 12,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "ckErrors",
+   "role": "CheckBox",
+   "parent": "notifyChecks",
+   "bbox": [
+    803,
+    466,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "ckUpdates",
+   "role": "CheckBox",
+   "parent": "notifyChecks",
+   "bbox": [
+    803,
+    498,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "ckWeekly",
+   "role": "CheckBox",
+   "parent": "notifyChecks",
+   "bbox": [
+    803,
+    530,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "ckMaintenance",
+   "role": "CheckBox",
+   "parent": "notifyChecks",
+   "bbox": [
+    803,
+    562,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "frequencyGroup",
+   "role": "RadioGroup",
+   "parent": "notifyCard",
+   "bbox": [
+    803,
+    645,
+    416,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "value": "instant"
+  },
+  {
+   "id": "rdInstant",
+   "role": "RadioButton",
+   "parent": "frequencyGroup",
+   "bbox": [
+    803,
+    645,
+    71.31,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "rdHourly",
+   "role": "RadioButton",
+   "parent": "frequencyGroup",
+   "bbox": [
+    894.31,
+    645,
+    101.63,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rdDaily",
+   "role": "RadioButton",
+   "parent": "frequencyGroup",
+   "bbox": [
+    1015.94,
+    645,
+    104.33,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "actionBar",
+   "role": "Footer",
+   "parent": null,
+   "bbox": [
+    264,
+    732,
+    1016,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E2E8F0",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     40,
+     0,
+     40
+    ]
+   }
+  },
+  {
+   "id": "defaultsButton",
+   "role": "Button",
+   "parent": "actionBar",
+   "bbox": [
+    824.5,
+    746.5,
+    137.44,
+    40
+   ],
+   "style": {
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "cancelButton",
+   "role": "Button",
+   "parent": "actionBar",
+   "bbox": [
+    973.94,
+    746.5,
+    64.17,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "saveButton",
+   "role": "Button",
+   "parent": "actionBar",
+   "bbox": [
+    1050.11,
+    746.5,
+    189.89,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#4F46E5",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.1
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.15
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "Ayarlar",
+   "owner": "settingsNav",
+   "bbox": [
+    28,
+    29,
+    66.27,
+    25
+   ],
+   "baseline": 50,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Lobi-Kiosk-02 · v4.2.0",
+   "owner": "settingsNav",
+   "bbox": [
+    28,
+    60,
+    138.09,
+    16
+   ],
+   "baseline": 73,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Genel",
+   "owner": "menuItem[0]",
+   "bbox": [
+    58,
+    113,
+    40.19,
+    18
+   ],
+   "baseline": 128,
+   "lines": 1,
+   "color": {
+    "hex": "#4F46E5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekran",
+   "owner": "menuItem[1]",
+   "bbox": [
+    58,
+    155,
+    37.38,
+    18
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ses",
+   "owner": "menuItem[2]",
+   "bbox": [
+    58,
+    197,
+    24.8,
+    18
+   ],
+   "baseline": 212,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ağ",
+   "owner": "menuItem[3]",
+   "bbox": [
+    58,
+    239,
+    18.36,
+    18
+   ],
+   "baseline": 254,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güvenlik",
+   "owner": "menuItem[4]",
+   "bbox": [
+    58,
+    281,
+    57.66,
+    18
+   ],
+   "baseline": 296,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güncellemeler",
+   "owner": "menuItem[5]",
+   "bbox": [
+    58,
+    323,
+    98.14,
+    18
+   ],
+   "baseline": 338,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1",
+   "owner": "menuItem[5]",
+   "bbox": [
+    222.78,
+    325,
+    4.44,
+    13
+   ],
+   "baseline": 336,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hakkında",
+   "owner": "menuItem[6]",
+   "bbox": [
+    58,
+    365,
+    62.44,
+    18
+   ],
+   "baseline": 380,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "deviceStatus",
+   "bbox": [
+    49,
+    725,
+    58.05,
+    16
+   ],
+   "baseline": 738,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 gün 4 saattir açık",
+   "owner": "deviceStatus",
+   "bbox": [
+    49,
+    747,
+    107.58,
+    15
+   ],
+   "baseline": 759,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Genel",
+   "owner": "pageTitle",
+   "bbox": [
+    304,
+    29,
+    67.06,
+    30
+   ],
+   "baseline": 54,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 24,
+    "weight": 700,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihazın kimliği, ekranı ve bildirim tercihleri.",
+   "owner": "pageTitle",
+   "bbox": [
+    304,
+    63,
+    268.02,
+    18
+   ],
+   "baseline": 78,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz bilgileri",
+   "owner": "identityCard",
+   "bbox": [
+    349,
+    125,
+    94.98,
+    19
+   ],
+   "baseline": 141,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz adı",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    163,
+    55.56,
+    16
+   ],
+   "baseline": 176,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Lobi-Kiosk-02",
+   "owner": "deviceNameField",
+   "bbox": [
+    338,
+    198,
+    97.23,
+    18
+   ],
+   "baseline": 213,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konum",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    245,
+    44.14,
+    16
+   ],
+   "baseline": 258,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çankaya Şubesi · Zemin kat",
+   "owner": "locationField",
+   "bbox": [
+    338,
+    280,
+    177.47,
+    18
+   ],
+   "baseline": 295,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yönetici e-postası",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    327,
+    113.78,
+    16
+   ],
+   "baseline": 340,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ornek@firma.com",
+   "owner": "emailField",
+   "bbox": [
+    362,
+    362,
+    119.11,
+    18
+   ],
+   "baseline": 377,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kritik hatalar bu adrese gönderilir.",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    397,
+    186.09,
+    15
+   ],
+   "baseline": 409,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sunucu adresi",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    431,
+    87.45,
+    16
+   ],
+   "baseline": 444,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "http://10.0.0",
+   "owner": "serverField",
+   "bbox": [
+    338,
+    466,
+    88.19,
+    18
+   ],
+   "baseline": 481,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Geçerli bir adres girin (ör. https://10.0.0.5)",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    501,
+    241.09,
+    15
+   ],
+   "baseline": 513,
+   "lines": 1,
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Fabrika ayarlarına dön",
+   "owner": "dangerCard",
+   "bbox": [
+    325,
+    579,
+    158.33,
+    19
+   ],
+   "baseline": 595,
+   "lines": 1,
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüm yerel veriler silinir, geri alınamaz.",
+   "owner": "dangerCard",
+   "bbox": [
+    325,
+    603,
+    216.03,
+    16
+   ],
+   "baseline": 616,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sıfırla",
+   "owner": "resetButton",
+   "bbox": [
+    686.72,
+    591,
+    37.28,
+    18
+   ],
+   "baseline": 606,
+   "lines": 1,
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekran",
+   "owner": "displayCard",
+   "bbox": [
+    827,
+    125,
+    40.8,
+    19
+   ],
+   "baseline": 141,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Parlaklık",
+   "owner": "displayCard",
+   "bbox": [
+    803,
+    165,
+    51.64,
+    16
+   ],
+   "baseline": 178,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%70",
+   "owner": "displayCard",
+   "bbox": [
+    1188.92,
+    165,
+    30.08,
+    16
+   ],
+   "baseline": 178,
+   "lines": 1,
+   "color": {
+    "hex": "#4F46E5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Otomatik parlaklık",
+   "owner": "displayCard",
+   "bbox": [
+    803,
+    250,
+    114.53,
+    16
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ortam ışığına göre ayarlanır",
+   "owner": "displayCard",
+   "bbox": [
+    803,
+    272,
+    152.13,
+    15
+   ],
+   "baseline": 284,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tema",
+   "owner": "displayCard",
+   "bbox": [
+    803,
+    308,
+    33.44,
+    16
+   ],
+   "baseline": 321,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Açık",
+   "owner": "themeLight",
+   "bbox": [
+    825.91,
+    344,
+    26.84,
+    16
+   ],
+   "baseline": 357,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Koyu",
+   "owner": "themeDark",
+   "bbox": [
+    888.08,
+    344,
+    31.84,
+    16
+   ],
+   "baseline": 357,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sistem",
+   "owner": "themeSystem",
+   "bbox": [
+    947.19,
+    344,
+    42.97,
+    16
+   ],
+   "baseline": 357,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekran zaman aşımı",
+   "owner": "displayCard",
+   "bbox": [
+    1017,
+    308,
+    112.11,
+    16
+   ],
+   "baseline": 321,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5 dakika",
+   "owner": "timeoutSelect",
+   "bbox": [
+    1030,
+    343,
+    54.5,
+    18
+   ],
+   "baseline": 358,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bildirimler",
+   "owner": "notifyCard",
+   "bbox": [
+    827,
+    434,
+    72.53,
+    19
+   ],
+   "baseline": 450,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hata bildirimleri",
+   "owner": "ckErrors",
+   "bbox": [
+    831,
+    467,
+    100.88,
+    18
+   ],
+   "baseline": 482,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güncelleme duyuruları",
+   "owner": "ckUpdates",
+   "bbox": [
+    831,
+    499,
+    147.66,
+    18
+   ],
+   "baseline": 514,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Haftalık rapor e-postası",
+   "owner": "ckWeekly",
+   "bbox": [
+    831,
+    531,
+    156.09,
+    18
+   ],
+   "baseline": 546,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bakım hatırlatmaları",
+   "owner": "ckMaintenance",
+   "bbox": [
+    831,
+    563,
+    128.06,
+    18
+   ],
+   "baseline": 578,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pro lisans",
+   "owner": "ckMaintenance",
+   "bbox": [
+    1161.63,
+    565,
+    49.38,
+    13
+   ],
+   "baseline": 576,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gönderim sıklığı",
+   "owner": "notifyCard",
+   "bbox": [
+    803,
+    617,
+    99.41,
+    16
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Anında",
+   "owner": "rdInstant",
+   "bbox": [
+    829,
+    646,
+    45.31,
+    18
+   ],
+   "baseline": 661,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Saatlik özet",
+   "owner": "rdHourly",
+   "bbox": [
+    920.31,
+    646,
+    75.63,
+    18
+   ],
+   "baseline": 661,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Günlük özet",
+   "owner": "rdDaily",
+   "bbox": [
+    1041.94,
+    646,
+    78.33,
+    18
+   ],
+   "baseline": 661,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2 kaydedilmemiş değişiklik",
+   "owner": "actionBar",
+   "bbox": [
+    320,
+    758.5,
+    162.2,
+    16
+   ],
+   "baseline": 771.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Varsayılana dön",
+   "owner": "defaultsButton",
+   "bbox": [
+    840.5,
+    757.5,
+    105.44,
+    18
+   ],
+   "baseline": 772.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İptal",
+   "owner": "cancelButton",
+   "bbox": [
+    990.94,
+    757.5,
+    30.17,
+    18
+   ],
+   "baseline": 772.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Değişiklikleri kaydet",
+   "owner": "saveButton",
+   "bbox": [
+    1090.11,
+    757.5,
+    133.89,
+    18
+   ],
+   "baseline": 772.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Plus Jakarta Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:settings",
+   "owner": "menuItem[0]",
+   "bbox": [
+    28,
+    113,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#4F46E5",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:monitor",
+   "owner": "menuItem[1]",
+   "bbox": [
+    28,
+    155,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:volume-2",
+   "owner": "menuItem[2]",
+   "bbox": [
+    28,
+    197,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:wifi",
+   "owner": "menuItem[3]",
+   "bbox": [
+    28,
+    239,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:shield-check",
+   "owner": "menuItem[4]",
+   "bbox": [
+    28,
+    281,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:refresh-cw",
+   "owner": "menuItem[5]",
+   "bbox": [
+    28,
+    323,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:info",
+   "owner": "menuItem[6]",
+   "bbox": [
+    28,
+    365,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:tablet-smartphone",
+   "owner": "identityCard",
+   "bbox": [
+    325,
+    127,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:mail",
+   "owner": "emailField",
+   "bbox": [
+    338,
+    363,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-alert",
+   "owner": "serverField",
+   "bbox": [
+    712,
+    467,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:rotate-ccw",
+   "owner": "resetButton",
+   "bbox": [
+    662.72,
+    592,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "displayCard",
+   "bbox": [
+    803,
+    127,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevrons-up-down",
+   "owner": "timeoutSelect",
+   "bbox": [
+    1190,
+    344,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "notifyCard",
+   "bbox": [
+    803,
+    436,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "ckErrors",
+   "bbox": [
+    806,
+    470,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "ckUpdates",
+   "bbox": [
+    806,
+    502,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "saveButton",
+   "bbox": [
+    1066.11,
+    758.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#E2E8F0",
+    "alpha": 1.0
+   },
+   "count": 26,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "count": 22,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "count": 21,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 18,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#CBD5E1",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#4F46E5",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "border",
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#DC2626",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FCA5A5",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EEF2FF",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FEF2F2",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F1F5F9",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  }
+ ],
+ "data": {
+  "fields": {
+   "deviceName": "Lobi-Kiosk-02",
+   "location": "Çankaya Şubesi · Zemin kat",
+   "adminEmail": "",
+   "serverUrl": "http://10.0.0"
+  },
+  "display": {
+   "brightness": 0.7,
+   "autoBrightness": true,
+   "theme": "light",
+   "timeout": "5 dakika"
+  },
+  "notify": {
+   "errors": true,
+   "updates": true,
+   "weekly": false,
+   "maintenance": {
+    "checked": false,
+    "disabled": true
+   },
+   "frequency": "instant"
+  }
+ },
+ "states": {}
+}

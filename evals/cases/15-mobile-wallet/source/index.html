@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Varda — Cüzdan</title>
+
+
+<style>
+@font-face{font-family:'Mulish';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/Mulish-Bold.ttf') format('truetype');}
+@font-face{font-family:'Mulish';font-weight:800;font-style:normal;font-display:block;src:url('../../../assets/fonts/Mulish-ExtraBold.ttf') format('truetype');}
+@font-face{font-family:'Mulish';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/Mulish-Medium.ttf') format('truetype');}
+@font-face{font-family:'Mulish';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Mulish-Regular.ttf') format('truetype');}
+@font-face{font-family:'Mulish';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Mulish-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #F4F5FA;
+  --color-surface: #FFFFFF;
+  --color-ink: #12132B;
+  --color-text-2: #3B3E5B;
+  --color-muted: #7D809B;
+  --color-border: #E9EAF2;
+  --color-track: #E8E9F1;
+  --color-primary: #2747F0;
+  --color-primary-soft: #EAEEFF;
+  --color-card-a: #0C1A4F;
+  --color-card-b: #2446E8;
+  --color-card-c: #3FA2F7;
+  --color-income: #12A150;
+  --color-danger: #F0445A;
+  --color-amber: #FFF3DC; --color-amber-ink: #D97706;
+  --color-green: #E2F7EA; --color-green-ink: #12A150;
+  --color-brown: #F5ECE4; --color-brown-ink: #95592B;
+  --color-violet: #EEEAFE; --color-violet-ink: #6A48E6;
+  --color-red: #FFEAE4; --color-red-ink: #E4572E;
+  --color-sky: #E0F1FD; --color-sky-ink: #0A84D6;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 18px; --radius-xl: 24px; --radius-pill: 999px;
+  --shadow-card: 0 16px 32px -10px rgba(36, 70, 232, 0.55);
+  --shadow-soft: 0 2px 10px rgba(18, 19, 43, 0.06);
+  --shadow-nav: 0 -6px 24px rgba(18, 19, 43, 0.07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 393px; height: 852px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Mulish', sans-serif; position: relative; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.sb { height: 47px; padding: 14px 26px 0 34px; display: flex; align-items: center; }
+.sb b { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
+.sb .r { margin-left: auto; display: flex; gap: 5px; align-items: center; }
+.sb .r svg.ic { width: 18px; height: 18px; stroke-width: 2.2; }
+
+.hdr { margin-top: 4px; padding: 0 20px; height: 44px; display: flex; align-items: center; gap: 12px; }
+.av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(140deg, #FFC56B 0%, #FF7A6B 100%); color: #fff; font-size: 16px; font-weight: 800; display: grid; place-items: center; flex: none; }
+.hdr .who span { display: block; font-size: 13px; font-weight: 600; line-height: 17px; color: var(--color-muted); }
+.hdr .who b { display: block; font-size: 18px; font-weight: 800; line-height: 23px; letter-spacing: -0.2px; }
+.iconbtn { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: var(--color-surface); box-shadow: var(--shadow-soft); display: grid; place-items: center; position: relative; color: var(--color-ink); }
+.iconbtn svg.ic { width: 22px; height: 22px; }
+.iconbtn .dot { position: absolute; top: 10px; right: 11px; width: 9px; height: 9px; border-radius: 50%; background: var(--color-danger); border: 2px solid var(--color-surface); }
+
+.card { margin: 16px 20px 0; height: 176px; border-radius: var(--radius-xl); padding: 18px 20px; color: #fff; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, var(--color-card-a) 0%, var(--color-card-b) 58%, var(--color-card-c) 100%); box-shadow: var(--shadow-card); }
+.card .orb { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.08); }
+.card .orb.o1 { width: 220px; height: 220px; right: -86px; top: -104px; }
+.card .orb.o2 { width: 150px; height: 150px; right: -34px; bottom: -92px; background: rgba(255, 255, 255, 0.06); }
+.card > * { position: relative; }
+.card .orb { position: absolute; }
+.ctop { display: flex; align-items: center; gap: 6px; height: 20px; }
+.ctop .lbl { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.78); }
+.ctop svg.ic { width: 16px; height: 16px; color: rgba(255, 255, 255, 0.78); }
+.brand { margin-left: auto; display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 800; letter-spacing: -0.2px; }
+.brand svg { width: 20px; height: 20px; display: block; }
+.bal { margin-top: 4px; font-size: 34px; line-height: 40px; font-weight: 800; letter-spacing: -0.6px; font-variant-numeric: tabular-nums; }
+.bal small { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; color: rgba(255, 255, 255, 0.82); }
+.delta { margin-top: 4px; display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 10px 0 8px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.16); font-size: 12px; font-weight: 700; }
+.delta svg.ic { width: 14px; height: 14px; stroke-width: 2.4; color: #7CF0B0; }
+.cbot { position: absolute; left: 20px; right: 20px; bottom: 16px; display: flex; align-items: flex-end; }
+.cbot .holder { display: block; font-size: 10px; font-weight: 700; line-height: 13px; letter-spacing: 1.2px; text-transform: uppercase; color: rgba(255, 255, 255, 0.66); }
+.cbot .num { display: block; margin-top: 3px; font-size: 15px; font-weight: 700; line-height: 18px; letter-spacing: 1.6px; }
+.cbot .exp { margin-left: auto; text-align: right; }
+.cbot .exp span { display: block; font-size: 10px; font-weight: 700; line-height: 13px; letter-spacing: 1.2px; color: rgba(255, 255, 255, 0.66); }
+.cbot .exp b { display: block; margin-top: 3px; font-size: 14px; font-weight: 700; line-height: 18px; }
+.cbot svg.ic { width: 22px; height: 22px; margin-left: 16px; margin-bottom: -2px; color: rgba(255, 255, 255, 0.9); }
+
+.actions { margin-top: 18px; padding: 0 22px; display: flex; justify-content: space-between; }
+.qa { width: 70px; display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; line-height: 16px; color: var(--color-text-2); }
+.qa .circ { width: 52px; height: 52px; border-radius: 50%; background: var(--color-surface); box-shadow: var(--shadow-soft); display: grid; place-items: center; color: var(--color-primary); }
+.qa .circ svg.ic { width: 22px; height: 22px; stroke-width: 2.2; }
+.qa.primary .circ { background: var(--color-primary); color: #fff; box-shadow: 0 8px 16px -6px rgba(39, 71, 240, 0.6); }
+
+.sechead { margin-top: 20px; padding: 0 20px; height: 34px; display: flex; align-items: center; }
+.sechead h2 { font-size: 17px; font-weight: 800; line-height: 22px; letter-spacing: -0.2px; }
+.seg { margin-left: auto; height: 34px; padding: 3px; border-radius: var(--radius-pill); background: var(--color-track); display: flex; }
+.seg div { width: 62px; border-radius: var(--radius-pill); display: grid; place-items: center; font-size: 12px; font-weight: 700; color: var(--color-muted); }
+.seg div.on { background: var(--color-surface); color: var(--color-ink); box-shadow: 0 1px 3px rgba(18, 19, 43, 0.12); }
+
+.txlist { padding: 0 20px; }
+.grp h3 { margin-top: 12px; height: 16px; font-size: 12px; font-weight: 700; line-height: 16px; color: var(--color-muted); padding-left: 4px; }
+.rows { margin-top: 2px; background: var(--color-surface); border-radius: var(--radius-lg); box-shadow: var(--shadow-soft); }
+.tx { height: 50px; padding: 0 14px 0 12px; display: flex; align-items: center; gap: 12px; position: relative; }
+.tx + .tx::before { content: ''; position: absolute; left: 62px; right: 14px; top: 0; height: 1px; background: var(--color-border); }
+.tile { width: 36px; height: 36px; border-radius: var(--radius-md); display: grid; place-items: center; flex: none; }
+.tile svg.ic { width: 19px; height: 19px; stroke-width: 2; }
+.tx .t { flex: 1; min-width: 0; }
+.tx .t b { display: block; font-size: 14px; font-weight: 700; line-height: 18px; white-space: nowrap; }
+.tx .t span { display: block; font-size: 12px; font-weight: 500; line-height: 16px; color: var(--color-muted); white-space: nowrap; }
+.tx .a { text-align: right; }
+.tx .a b { display: block; font-size: 14px; font-weight: 800; line-height: 18px; font-variant-numeric: tabular-nums; letter-spacing: -0.1px; }
+.tx .a b.in { color: var(--color-income); }
+.tx .a span { display: block; font-size: 12px; font-weight: 500; line-height: 16px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+.nav { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; background: var(--color-surface); border-top: 1px solid var(--color-border); box-shadow: var(--shadow-nav); display: flex; padding: 8px 8px 0; }
+.ni { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 700; line-height: 14px; color: var(--color-muted); }
+.ni svg.ic { width: 24px; height: 24px; }
+.ni.on { color: var(--color-primary); }
+.ni.raised { justify-content: flex-end; height: 42px; }
+.ni .fab { position: absolute; top: -32px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(145deg, #3D6BFF 0%, var(--color-primary) 100%); color: #fff; display: grid; place-items: center; border: 4px solid var(--color-bg); box-shadow: 0 10px 20px -6px rgba(39, 71, 240, 0.6); }
+.ni .fab svg.ic { width: 24px; height: 24px; stroke-width: 2.2; }
+.ni.raised { position: relative; }
+.home-ind { position: absolute; left: 50%; bottom: 8px; width: 134px; height: 5px; margin-left: -67px; border-radius: 3px; background: var(--color-ink); }
+</style>
+</head>
+<body>
+<div class="sb"><b>9:41</b><div class="r"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-antenna-bars-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M6 18l0 -3"></path> <path d="M10 18l0 -6"></path> <path d="M14 18l0 -9"></path> <path d="M18 18l0 -12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 18l.01 0"></path> <path d="M9.172 15.172a4 4 0 0 1 5.656 0"></path> <path d="M6.343 12.343a8 8 0 0 1 11.314 0"></path> <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-battery-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M6 7h11a2 2 0 0 1 2 2v.5a.5 .5 0 0 0 .5 .5a.5 .5 0 0 1 .5 .5v3a.5 .5 0 0 1 -.5 .5a.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"></path> <path d="M7 10l0 4"></path> <path d="M10 10l0 4"></path> <path d="M13 10l0 4"></path> <path d="M16 10l0 4"></path></svg></div></div>
+
+<header class="hdr">
+  <div class="av">DA</div>
+  <div class="who"><span>İyi akşamlar,</span><b>Deniz Aksoy</b></div>
+  <div class="iconbtn"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path> <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg><span class="dot"></span></div>
+</header>
+
+<section class="card">
+  <div class="orb o1"></div><div class="orb o2"></div>
+  <div class="ctop"><span class="lbl">Toplam bakiye</span><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path> <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path></svg>
+    <div class="brand"><svg viewBox="0 0 20 20"><rect width="20" height="20" rx="6" fill="rgba(255,255,255,0.22)"></rect><path d="M5.5 6l4.5 8.5L14.5 6" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>varda</div></div>
+  <div class="bal">₺48.215<small>,70</small></div>
+  <div class="delta"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 17l6 -6l4 4l8 -8"></path> <path d="M14 7l7 0l0 7"></path></svg>+₺2.340,00 bu ay</div>
+  <div class="cbot">
+    <div><span class="holder">Deniz Aksoy</span><span class="num">•••• 4821</span></div>
+    <div class="exp"><span>SKT</span><b>09/29</b></div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-nfc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M11 20a3 3 0 0 1 -3 -3v-11l5 5"></path> <path d="M13 4a3 3 0 0 1 3 3v11l-5 -5"></path> <path d="M4 7a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v10a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3l0 -10"></path></svg>
+  </div>
+</section>
+
+<div class="actions">
+  <div class="qa primary"><div class="circ"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M17 7l-10 10"></path> <path d="M8 7l9 0l0 9"></path></svg></div>Gönder</div>
+  <div class="qa"><div class="circ"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-arrow-down-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M17 7l-10 10"></path> <path d="M16 17l-9 0l0 -9"></path></svg></div>İste</div>
+  <div class="qa"><div class="circ"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 5l0 14"></path> <path d="M5 12l14 0"></path></svg></div>Yükle</div>
+  <div class="qa"><div class="circ"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2m4 -14h6m-6 4h6m-2 4h2"></path></svg></div>Öde</div>
+</div>
+
+<div class="sechead">
+  <h2>Son işlemler</h2>
+  <div class="seg">
+    <div class="on">Tümü</div>
+    <div>Gelen</div>
+    <div>Giden</div>
+  </div>
+</div>
+
+<div class="txlist">
+  <section class="grp">
+    <h3>Bugün</h3>
+    <div class="rows">
+      <div class="tx"><div class="tile" style="background:var(--color-amber);color:var(--color-amber-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-shopping-cart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path> <path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path> <path d="M17 17h-11v-14h-2"></path> <path d="M6 5l14 1l-1 7h-13"></path></svg></div>
+        <div class="t"><b>Yeşilvadi Market</b><span>Market · Kart •• 4821</span></div><div class="a"><b>−₺486,50</b><span>14:32</span></div></div>
+      <div class="tx"><div class="tile" style="background:var(--color-green);color:var(--color-green-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-arrow-down-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M17 7l-10 10"></path> <path d="M16 17l-9 0l0 -9"></path></svg></div>
+        <div class="t"><b>Elif Şahin</b><span>Gelen transfer</span></div><div class="a"><b class="in">+₺750,00</b><span>11:05</span></div></div>
+      <div class="tx"><div class="tile" style="background:var(--color-brown);color:var(--color-brown-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 14c.83 .642 2.077 1.017 3.5 1c1.423 .017 2.67 -.358 3.5 -1c.83 -.642 2.077 -1.017 3.5 -1c1.423 -.017 2.67 .358 3.5 1"></path> <path d="M8 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path> <path d="M12 3a2.4 2.4 0 0 0 -1 2a2.4 2.4 0 0 0 1 2"></path> <path d="M3 10h14v5a6 6 0 0 1 -6 6h-2a6 6 0 0 1 -6 -6v-5"></path> <path d="M16.746 16.726a3 3 0 1 0 .252 -5.555"></path></svg></div>
+        <div class="t"><b>Kahve Durağı</b><span>Kafe ve restoran</span></div><div class="a"><b>−₺92,00</b><span>08:47</span></div></div>
+    </div>
+  </section>
+  <section class="grp">
+    <h3>Dün</h3>
+    <div class="rows">
+      <div class="tx"><div class="tile" style="background:var(--color-violet);color:var(--color-violet-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9"></path> <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path> <path d="M12 12l0 .01"></path> <path d="M3 13a20 20 0 0 0 18 0"></path></svg></div>
+        <div class="t"><b>Orbita Yazılım A.Ş.</b><span>Maaş ödemesi</span></div><div class="a"><b class="in">+₺42.500,00</b><span>09:00</span></div></div>
+      <div class="tx"><div class="tile" style="background:var(--color-red);color:var(--color-red-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 10.941c2.333 -3.308 .167 -7.823 -1 -8.941c0 3.395 -2.235 5.299 -3.667 6.706c-1.43 1.408 -2.333 3.294 -2.333 5.588c0 3.704 3.134 6.706 7 6.706c3.866 0 7 -3.002 7 -6.706c0 -1.712 -1.232 -4.403 -2.333 -5.588c-2.084 3.353 -3.257 3.353 -4.667 2.235"></path></svg></div>
+        <div class="t"><b>Başkent Doğalgaz</b><span>Fatura · Otomatik ödeme</span></div><div class="a"><b>−₺1.284,35</b><span>18:20</span></div></div>
+      <div class="tx"><div class="tile" style="background:var(--color-sky);color:var(--color-sky-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M4 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path> <path d="M16 17a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path> <path d="M4 17h-2v-11a1 1 0 0 1 1 -1h14a5 7 0 0 1 5 7v5h-2m-4 0h-8"></path> <path d="M16 5l1.5 7l4.5 0"></path> <path d="M2 10l15 0"></path> <path d="M7 5l0 5"></path> <path d="M12 5l0 5"></path></svg></div>
+        <div class="t"><b>Metro Kart Yükleme</b><span>Ulaşım</span></div><div class="a"><b>−₺200,00</b><span>08:12</span></div></div>
+    </div>
+  </section>
+</div>
+
+<nav class="nav">
+  <div class="ni on"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-home" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12.707 2.293l9 9c.63 .63 .184 1.707 -.707 1.707h-1v6a3 3 0 0 1 -3 3h-1v-7a3 3 0 0 0 -2.824 -2.995l-.176 -.005h-2a3 3 0 0 0 -3 3v7h-1a3 3 0 0 1 -3 -3v-6h-1c-.89 0 -1.337 -1.077 -.707 -1.707l9 -9a1 1 0 0 1 1.414 0m.293 11.707a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883 -.993l.117 -.007z"></path></svg>Ana sayfa</div>
+  <div class="ni"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -8"></path> <path d="M3 10l18 0"></path> <path d="M7 15l.01 0"></path> <path d="M11 15l2 0"></path></svg>Kartlar</div>
+  <div class="ni raised"><div class="fab"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M5 12h14"></path> <path d="M3 7v-2a2 2 0 0 1 2 -2h2"></path> <path d="M3 17v2a2 2 0 0 0 2 2h2"></path> <path d="M17 3h2a2 2 0 0 1 2 2v2"></path> <path d="M17 21h2a2 2 0 0 0 2 -2v-2"></path></svg></div>Tara</div>
+  <div class="ni"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-chart-pie" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-6.8a2 2 0 0 1 -2 -2v-7a.9 .9 0 0 0 -1 -.8"></path> <path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a1 1 0 0 1 -1 -1v-4.5"></path></svg>İstatistik</div>
+  <div class="ni"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path></svg>Profil</div>
+  <div class="home-ind"></div>
+</nav>
+
+
+</body></html>

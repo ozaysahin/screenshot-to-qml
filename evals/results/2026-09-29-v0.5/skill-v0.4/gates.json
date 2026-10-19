@@ -1,0 +1,453 @@
+{
+ "01-hmi-dolum": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "Button 'Otomatik' at (1398, 578): no visible pressed state (control.down)"
+   ],
+   "errorCount": 1
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "02-kiosk-kafe": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "fail",
+   "errors": [
+    "PromoBanner 'Günün fırsatı: Latte + Kruvasa' at (56, 396): keyboard focus is not visible (draw a ring on visualFocus)"
+   ],
+   "errorCount": 1
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "PillButton 'Tümünü gör' at (881, 848): no visible pressed state (control.down)",
+    "QuantityStepper 'Adet: 2' at (830, 1204): no visible pressed state (control.down)"
+   ],
+   "errorCount": 2
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "03-dashboard-dark": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "NavItem 'Genel Bakış' at (16, 164): no visible pressed state (control.down)",
+    "SegmentButton '7G' at (854, 273): no visible pressed state (control.down)"
+   ],
+   "errorCount": 2
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "04-dashboard-light": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "NavTab 'Özet' at (197, 0): no visible pressed state (control.down)"
+   ],
+   "errorCount": 1
+  },
+  "i18n": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DeviceRow.qml:63: user-visible string without qsTr(): text: \"kWh\"",
+    "qml/App/FlowRow.qml:61: user-visible string without qsTr(): text: \"kWh\"",
+    "qml/App/SolarCard.qml:99: user-visible string without qsTr(): text: \"kW\""
+   ],
+   "errorCount": 3
+  }
+ },
+ "05-settings-form": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "NavItem 'Genel' at (16, 102): no visible pressed state (control.down)",
+    "SegmentButton 'Açık' at (807, 336): no visible pressed state (control.down)"
+   ],
+   "errorCount": 2
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "06-mobile-aliskanlik": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "NavButton 'Bugün' at (12, 756): no visible pressed state (control.down)"
+   ],
+   "errorCount": 1
+  },
+  "i18n": {
+   "status": "fail",
+   "errors": [
+    "qml/App/StatusBar.qml:33: user-visible string without qsTr(): model: [\"antenna-bars-5\", \"wifi\", \"battery-3\"]"
+   ],
+   "errorCount": 1
+  }
+ },
+ "07-data-table": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "FilterChip 'Tür: Jetson' at (500, 180): no visible pressed state (control.down)",
+    "SegmentButton 'Liste görünümü' at (1318, 180): no visible pressed state (control.down)",
+    "SortHeaderButton 'Son görülme, yeniden eskiye' at (1093, 242): no visible pressed state (control.down)",
+    "PageButton '1' at (1179, 805): no visible pressed state (control.down)"
+   ],
+   "errorCount": 4
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "08-glass-home": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "fail",
+   "errors": [
+    "PillButton 'Salon hoparlörü' at (376, 616): no visible pressed state (control.down)",
+    "ToggleSwitch 'Salon ışıkları' at (814, 360): no visible pressed state (control.down)",
+    "RoundIconButton 'Sıcaklığı azalt' at (1118, 350): no visible pressed state (control.down)",
+    "RoundIconButton 'Sıcaklığı artır' at (1168, 350): no visible pressed state (control.down)",
+    "ToggleSwitch 'Perdeler' at (814, 628): no visible pressed state (control.down)",
+    "SceneChip 'Film gecesi' at (48, 704): no visible pressed state (control.down)"
+   ],
+   "errorCount": 6
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ }
+}

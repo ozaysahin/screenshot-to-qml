@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Kazan Dairesi B · Genel Bakış</title>
+<script type="application/json" id="case-meta">
+{"id": "11-hmi-boiler", "title": "Yüksek performanslı HMI — kazan dairesi mimik şeması", "category": "hmi", "profile": "embedded-gpu",
+ "viewport": [1280, 800], "dpr": 1, "fonts": ["Rajdhani"]}
+</script>
+<script type="application/json" id="case-data">
+{"alarm": {"priority": 2, "time": "14:31:52", "tag": "TT-104", "text": "K-101 baca gazı sıcaklığı yüksek", "value": 212, "limit": 200, "unit": "°C", "active": 1, "acknowledged": false},
+ "boilers": [{"tag": "K-101", "state": "running", "load": 0.62, "level": 0.64, "burner": "on"},
+             {"tag": "K-102", "state": "standby", "load": 0, "level": 0.62, "burner": "off"}],
+ "pumps": [{"tag": "P-201", "state": "running"}, {"tag": "P-202", "state": "stopped"}],
+ "valves": [{"tag": "V-101", "state": "open", "orientation": "h"}, {"tag": "V-102", "state": "closed", "orientation": "h"}, {"tag": "V-301", "state": "open", "orientation": "v"}],
+ "sensorTags": [
+  {"tag": "TT-104", "value": "212", "unit": "°C", "x": 174, "y": 22, "alarm": true},
+  {"tag": "TT-101", "value": "78,4", "unit": "°C", "x": 372, "y": 52},
+  {"tag": "TT-102", "value": "41,2", "unit": "°C", "x": 372, "y": 302},
+  {"tag": "TT-201", "value": "72,1", "unit": "°C", "x": 612, "y": 142},
+  {"tag": "TT-202", "value": "66,4", "unit": "°C", "x": 612, "y": 236},
+  {"tag": "TT-203", "value": "55,8", "unit": "°C", "x": 612, "y": 330},
+  {"tag": "PT-201", "value": "2,35", "unit": "bar", "x": 730, "y": 132},
+  {"tag": "FT-201", "value": "213", "unit": "L/dk", "x": 730, "y": 182},
+  {"tag": "TT-301", "value": "54,6", "unit": "°C", "x": 730, "y": 366},
+  {"tag": "PT-301", "value": "21,4", "unit": "mbar", "x": 104, "y": 456}],
+ "setpoints": [{"name": "Kazan gidiş sıcaklığı", "loop": "TIC-101", "pv": "78,4", "sp": "80,0", "unit": "°C", "step": 0.5},
+               {"name": "Tampon tank sıcaklığı", "loop": "TIC-201", "pv": "72,1", "sp": "75,0", "unit": "°C", "step": 0.5},
+               {"name": "Sistem basıncı", "loop": "PIC-201", "pv": "2,35", "sp": "2,40", "unit": "bar", "step": 0.05}],
+ "mode": "auto",
+ "softKeys": ["Genel bakış", "Kazanlar", "Pompalar", "Trendler", "Alarmlar", "Ayarlar"], "selectedKey": 0}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #C9CCCF;
+  --color-panel: #D9DBDD;
+  --color-surface: #E8EAEB;
+  --color-surface-2: #F1F2F3;
+  --color-border: #A4A9AE;
+  --color-border-strong: #6F757B;
+  --color-ink: #1D2125;
+  --color-text-2: #3F454B;
+  --color-muted: #62696F;
+  --color-dark: #343A40;
+  --color-on-dark: #F1F2F3;
+  --color-on-dark-muted: #AEB4BA;
+  --color-softkey-bar: #B4B8BC;
+  --color-equipment: #50565C;
+  --color-level: #AFBECB;
+  --color-level-line: #7E93A6;
+  --color-supply: #9A5E55;
+  --color-return: #587590;
+  --color-gas: #9E8A3E;
+  --color-flue: #BBBFC3;
+  --color-alarm: #F2A516;
+  --color-alarm-edge: #A86F00;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-xs: 3px; --radius-sm: 4px; --radius-md: 6px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 800px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Rajdhani', sans-serif; font-size: 16px; line-height: 20px; display: flex; flex-direction: column; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+/* ---------- title bar */
+.titlebar { height: 44px; flex: none; background: var(--color-dark); color: var(--color-on-dark); display: flex; align-items: center; padding: 0 var(--space-4); gap: var(--space-4); }
+.plant { font-size: 18px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.sep { width: 1px; height: 20px; background: var(--color-equipment); }
+.screen { font-size: 18px; font-weight: 500; color: var(--color-on-dark); }
+.tb-right { margin-left: auto; display: flex; align-items: center; gap: var(--space-6); font-size: 15px; font-weight: 500; color: var(--color-on-dark-muted); }
+.tb-right .item { display: flex; align-items: center; gap: 6px; }
+.tb-right .item svg.ic { width: 16px; height: 16px; }
+.tb-right b { color: var(--color-on-dark); font-weight: 600; }
+.clock { font-size: 22px; font-weight: 600; color: var(--color-on-dark); letter-spacing: 0.5px; }
+
+/* ---------- alarm banner */
+.alarm { height: 56px; flex: none; background: var(--color-alarm); border-bottom: 2px solid var(--color-alarm-edge); display: flex; align-items: center; padding: 0 var(--space-3) 0 var(--space-4); gap: var(--space-3); color: var(--color-ink); }
+.alarm .sym { width: 36px; height: 36px; display: grid; place-items: center; }
+.alarm .sym svg.ic { width: 30px; height: 30px; stroke-width: 2.25; }
+.prio { height: 26px; padding: 0 8px; border: 2px solid var(--color-ink); border-radius: var(--radius-xs); display: flex; align-items: center; font-size: 14px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+.alarm .msg { display: flex; flex-direction: column; }
+.alarm .msg b { font-size: 20px; font-weight: 700; line-height: 22px; }
+.alarm .msg span { font-size: 15px; font-weight: 500; line-height: 18px; color: var(--color-text-2); }
+.alarm .when { margin-left: auto; text-align: right; display: flex; flex-direction: column; }
+.alarm .when b { font-size: 20px; font-weight: 700; line-height: 22px; }
+.alarm .when span { font-size: 14px; font-weight: 500; line-height: 18px; color: var(--color-text-2); }
+.ack { height: 42px; padding: 0 18px 0 14px; border-radius: var(--radius-sm); background: var(--color-dark); color: var(--color-on-dark); display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 700; letter-spacing: 1px; }
+.ack svg.ic { width: 20px; height: 20px; stroke-width: 2.5; }
+
+/* ---------- main */
+.main { flex: 1; display: flex; gap: var(--space-3); padding: var(--space-3); min-height: 0; }
+.panel { background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.mimic-panel { width: 884px; flex: none; padding: 14px 16px 16px; display: flex; flex-direction: column; }
+.phead { height: 28px; display: flex; align-items: center; gap: var(--space-3); margin-bottom: 10px; }
+.phead h2 { font-size: 20px; font-weight: 700; line-height: 24px; }
+.phead .sub { font-size: 15px; font-weight: 500; color: var(--color-muted); }
+.legend { margin-left: auto; display: flex; align-items: center; gap: var(--space-5); font-size: 14px; font-weight: 600; color: var(--color-text-2); }
+.legend span { display: flex; align-items: center; gap: 8px; }
+.legend i { width: 22px; height: 4px; border-radius: 2px; display: block; }
+.mimic { position: relative; width: 852px; height: 534px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-sm); overflow: hidden; }
+.mimic svg.diagram { position: absolute; left: 0; top: 0; display: block; }
+.diagram text { font-family: 'Rajdhani', sans-serif; fill: var(--color-ink); }
+.diagram .eq-tag { font-size: 22px; font-weight: 700; }
+.diagram .eq-sub { font-size: 14px; font-weight: 600; fill: var(--color-text-2); }
+.diagram .dev-tag { font-size: 15px; font-weight: 700; }
+.diagram .dev-state { font-size: 13px; font-weight: 600; fill: var(--color-text-2); letter-spacing: 0.4px; }
+.diagram .line-lbl { font-size: 13px; font-weight: 700; fill: var(--color-muted); letter-spacing: 0.8px; }
+
+.burner { position: absolute; width: 36px; height: 48px; display: grid; place-items: center; }
+.burner svg.ic { width: 20px; height: 20px; }
+.burner.on { color: var(--color-on-dark); }
+.burner.off { color: var(--color-equipment); }
+
+.tags { position: absolute; left: 0; top: 0; width: 852px; height: 534px; pointer-events: none; }
+.tag { position: absolute; pointer-events: auto; min-width: 72px; padding: 3px 8px 4px; background: var(--color-surface-2); border: 1px solid var(--color-border-strong); border-radius: var(--radius-xs); display: flex; flex-direction: column; }
+.tag .t { font-size: 12px; font-weight: 600; line-height: 14px; color: var(--color-muted); letter-spacing: 0.6px; }
+.tag .v { font-size: 19px; font-weight: 700; line-height: 20px; color: var(--color-ink); white-space: nowrap; }
+.tag .v small { font-size: 13px; font-weight: 600; color: var(--color-muted); margin-left: 3px; }
+.tag.in-tank { width: 80px; align-items: center; }
+.tag.alarm-tag { background: var(--color-alarm); border: 2px solid var(--color-ink); padding: 2px 30px 3px 7px; }
+.tag.alarm-tag .t { color: var(--color-ink); }
+.tag.alarm-tag .v small { color: var(--color-ink); }
+.tag.alarm-tag svg.ic { position: absolute; right: 6px; top: 50%; margin-top: -9px; width: 18px; height: 18px; stroke-width: 2.5; color: var(--color-ink); }
+
+/* ---------- setpoint panel */
+.sp-panel { flex: 1; padding: 14px 16px 16px; display: flex; flex-direction: column; }
+.sps { display: flex; flex-direction: column; gap: 12px; }
+.sp { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 10px 12px 12px; }
+.sp .row1 { display: flex; align-items: baseline; justify-content: space-between; }
+.sp .name { font-size: 17px; font-weight: 700; line-height: 20px; }
+.sp .loop { font-size: 13px; font-weight: 600; color: var(--color-muted); letter-spacing: 0.6px; }
+.sp .pv { font-size: 15px; font-weight: 500; color: var(--color-muted); line-height: 18px; margin-top: 2px; }
+.sp .pv b { color: var(--color-ink); font-weight: 700; }
+.stepper { display: flex; gap: 8px; margin-top: 10px; height: 56px; }
+.step { width: 64px; height: 56px; flex: none; border-radius: var(--radius-sm); background: var(--color-surface-2); border: 2px solid var(--color-border-strong); display: grid; place-items: center; color: var(--color-ink); }
+.step svg.ic { width: 26px; height: 26px; stroke-width: 2.75; }
+.spv { flex: 1; border-radius: var(--radius-sm); background: var(--color-surface-2); border: 1px solid var(--color-border); display: flex; align-items: baseline; justify-content: center; gap: 5px; padding-top: 9px; }
+.spv b { font-size: 34px; font-weight: 700; line-height: 36px; letter-spacing: 0.5px; }
+.spv span { font-size: 17px; font-weight: 600; color: var(--color-muted); }
+.spv em { font-style: normal; font-size: 13px; font-weight: 700; color: var(--color-muted); letter-spacing: 0.8px; margin-right: 6px; }
+
+.mode { margin-top: auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 12px; }
+.mode .txt { flex: 1; }
+.mode .txt b { display: block; font-size: 17px; font-weight: 700; line-height: 20px; }
+.mode .txt span { font-size: 14px; font-weight: 500; color: var(--color-muted); line-height: 18px; }
+.mode .state { font-size: 16px; font-weight: 700; letter-spacing: 1px; }
+.switch { width: 92px; height: 48px; flex: none; border-radius: var(--radius-md); background: var(--color-dark); position: relative; }
+.switch .knob { position: absolute; top: 4px; left: 48px; width: 40px; height: 40px; border-radius: var(--radius-sm); background: var(--color-surface-2); }
+
+/* ---------- soft keys */
+.softkeys { height: 72px; flex: none; background: var(--color-softkey-bar); border-top: 1px solid var(--color-border-strong); display: flex; gap: var(--space-2); padding: 8px var(--space-3); }
+.key { flex: 1; min-width: 0; height: 56px; border-radius: var(--radius-sm); background: var(--color-surface); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: 10px; padding: 0 14px 0 10px; color: var(--color-ink); position: relative; }
+.key .fk { width: 28px; height: 22px; border-radius: var(--radius-xs); border: 1px solid var(--color-border-strong); display: grid; place-items: center; font-size: 13px; font-weight: 700; color: var(--color-muted); flex: none; }
+.key svg.ic { width: 22px; height: 22px; }
+.key .lbl { font-size: 17px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap; }
+.key.on { background: var(--color-dark); border-color: var(--color-dark); color: var(--color-on-dark); }
+.key.on .fk { border-color: var(--color-on-dark-muted); color: var(--color-on-dark-muted); }
+.key .count { margin-left: auto; min-width: 26px; height: 24px; padding: 0 6px; border-radius: var(--radius-xs); background: var(--color-alarm); border: 1px solid var(--color-alarm-edge); display: grid; place-items: center; font-size: 15px; font-weight: 700; color: var(--color-ink); }
+</style>
+</head>
+<body>
+<header class="titlebar" data-node="titleBar" data-role="Header">
+  <div class="plant" data-node="plantName">Kazan dairesi · Blok B</div>
+  <div class="sep"></div>
+  <div class="screen" data-node="screenTitle" data-role="Title">Genel bakış</div>
+  <div class="tb-right">
+    <div class="item" data-node="plcStatus" data-role="StatusIndicator"><i data-icon="lucide:network" class="ic"></i>PLC-01 <b>bağlı</b></div>
+    <div class="item" data-node="operator"><i data-icon="lucide:user" class="ic"></i>Operatör <b>S. Aydın</b></div>
+    <div class="item" data-node="date">30.09.2026</div>
+    <div class="clock" data-node="clock" data-role="Clock">14:32:07</div>
+  </div>
+</header>
+
+<section class="alarm" data-node="alarmBanner" data-role="Banner" data-state="active">
+  <div class="sym"><i data-icon="lucide:triangle-alert" class="ic"></i></div>
+  <div class="prio" data-node="alarmPriority" data-role="Badge">Öncelik 2</div>
+  <div class="msg"><b>K-101 baca gazı sıcaklığı yüksek</b><span>TT-104 = 212 °C · Limit 200 °C · Brülör yükü düşürüldü</span></div>
+  <div class="when"><b>14:31:52</b><span>1 aktif alarm · onay bekliyor</span></div>
+  <div class="ack" data-node="ackButton" data-role="Button"><i data-icon="lucide:check" class="ic"></i>ONAYLA</div>
+</section>
+
+<main class="main">
+  <section class="panel mimic-panel" data-node="mimicPanel" data-role="Panel">
+    <div class="phead">
+      <h2>Proses şeması</h2><span class="sub">Isı üretimi ve tampon tank</span>
+      <div class="legend" data-node="lineLegend">
+        <span><i style="background:var(--color-supply)"></i>Gidiş</span>
+        <span><i style="background:var(--color-return)"></i>Dönüş</span>
+        <span><i style="background:var(--color-gas)"></i>Doğalgaz</span>
+      </div>
+    </div>
+    <div class="mimic" data-node="mimic" data-role="Canvas">
+      <svg class="diagram" data-node="mimicDiagram" data-role="Diagram" width="852" height="534" viewBox="0 0 852 534">
+        <defs>
+          <clipPath id="k101"><rect x="120" y="86" width="240" height="120" rx="22"/></clipPath>
+          <clipPath id="k102"><rect x="120" y="330" width="240" height="120" rx="22"/></clipPath>
+        </defs>
+
+        <!-- pipes -->
+        <g fill="none" stroke-width="4" stroke-linecap="butt" data-node="pipes">
+          <path stroke="#9E8A3E" d="M40,534 V156 Q40,146 50,146 H84"/>
+          <path stroke="#9E8A3E" d="M40,390 H84"/>
+          <path stroke="#9A5E55" d="M320,86 V50 Q320,40 330,40 H642 Q652,40 652,50 V70"/>
+          <path stroke="#587590" d="M590,176 H360"/>
+          <path stroke="#9A5E55" d="M320,330 V300 Q320,290 330,290 H590"/>
+          <path stroke="#587590" d="M590,420 H360"/>
+          <path stroke="#9A5E55" d="M714,120 H838"/>
+          <path stroke="#587590" d="M852,420 H714"/>
+        </g>
+
+        <!-- flow arrows -->
+        <g data-node="flowArrows">
+          <path fill="#7A6A2C" d="M40,508 l-7,10 h14 z"/>
+          <path fill="#7A6A2C" d="M40,262 l-7,10 h14 z"/>
+          <path fill="#7A4841" d="M430,40 l-10,-7 v14 z"/>
+          <path fill="#7A4841" d="M606,40 l-10,-7 v14 z"/>
+          <path fill="#435B72" d="M398,176 l10,-7 v14 z"/>
+          <path fill="#435B72" d="M540,176 l10,-7 v14 z"/>
+          <path fill="#7A4841" d="M430,290 l-10,-7 v14 z"/>
+          <path fill="#435B72" d="M398,420 l10,-7 v14 z"/>
+          <path fill="#435B72" d="M540,420 l10,-7 v14 z"/>
+          <path fill="#7A4841" d="M852,120 l-14,-9 v18 z"/>
+          <path fill="#435B72" d="M770,420 l10,-7 v14 z"/>
+        </g>
+
+        <!-- flue stacks -->
+        <rect x="150" y="30" width="16" height="56" fill="#BBBFC3" stroke="#6F757B" stroke-width="1.5"/>
+        <rect x="150" y="296" width="16" height="34" fill="#BBBFC3" stroke="#6F757B" stroke-width="1.5"/>
+
+        <!-- boilers -->
+        <g data-node="boilers" data-model="boilers">
+          <g data-node="boiler" data-role="Vessel" data-state="running" data-value="0.64">
+            <rect x="120" y="86" width="240" height="120" rx="22" fill="#E8EAEB"/>
+            <rect x="120" y="129.2" width="240" height="76.8" fill="#AFBECB" clip-path="url(#k101)"/>
+            <line x1="120" y1="129.2" x2="360" y2="129.2" stroke="#7E93A6" stroke-width="1.5" clip-path="url(#k101)"/>
+            <rect x="120" y="86" width="240" height="120" rx="22" fill="none" stroke="#50565C" stroke-width="2"/>
+            <rect x="84" y="122" width="36" height="48" rx="4" fill="#343A40" stroke="#343A40" stroke-width="2"/>
+            <text class="eq-tag" x="240" y="157" text-anchor="middle">K-101</text>
+            <text class="eq-sub" x="240" y="176" text-anchor="middle">ÇALIŞIYOR · YÜK %62</text>
+            <text class="eq-sub" x="346" y="196" text-anchor="end">SEVİYE %64</text>
+          </g>
+          <g data-node="boiler" data-role="Vessel" data-state="standby" data-value="0.62">
+            <rect x="120" y="330" width="240" height="120" rx="22" fill="#E8EAEB"/>
+            <rect x="120" y="375.6" width="240" height="74.4" fill="#AFBECB" clip-path="url(#k102)"/>
+            <line x1="120" y1="375.6" x2="360" y2="375.6" stroke="#7E93A6" stroke-width="1.5" clip-path="url(#k102)"/>
+            <rect x="120" y="330" width="240" height="120" rx="22" fill="none" stroke="#50565C" stroke-width="2"/>
+            <rect x="84" y="366" width="36" height="48" rx="4" fill="#E8EAEB" stroke="#50565C" stroke-width="2"/>
+            <text class="eq-tag" x="240" y="402" text-anchor="middle">K-102</text>
+            <text class="eq-sub" x="240" y="421" text-anchor="middle">BEKLEMEDE</text>
+            <text class="eq-sub" x="346" y="440" text-anchor="end">SEVİYE %62</text>
+          </g>
+        </g>
+
+        <!-- buffer tank -->
+        <g data-node="bufferTank" data-role="Vessel">
+          <rect x="604" y="480" width="8" height="22" fill="#6F757B"/>
+          <rect x="692" y="480" width="8" height="22" fill="#6F757B"/>
+          <rect x="586" y="500" width="132" height="4" fill="#6F757B"/>
+          <rect x="590" y="70" width="124" height="412" rx="34" fill="#E8EAEB" stroke="#50565C" stroke-width="2"/>
+          <text class="eq-tag" x="652" y="106" text-anchor="middle">T-201</text>
+          <text class="eq-sub" x="652" y="124" text-anchor="middle">TAMPON TANK</text>
+          <text class="eq-sub" x="652" y="460" text-anchor="middle">3.000 L</text>
+        </g>
+
+        <!-- pumps -->
+        <g data-node="pumps" data-model="pumps">
+          <g data-node="pump" data-role="Pump" data-state="running">
+            <circle cx="470" cy="176" r="20" fill="#343A40" stroke="#343A40" stroke-width="2"/>
+            <path d="M457,176 L477,164.5 V187.5 Z" fill="#F1F2F3"/>
+            <text class="dev-tag" x="470" y="147" text-anchor="middle">P-201</text>
+            <text class="dev-state" x="470" y="214" text-anchor="middle">ÇALIŞIYOR</text>
+          </g>
+          <g data-node="pump" data-role="Pump" data-state="stopped">
+            <circle cx="470" cy="420" r="20" fill="#E8EAEB" stroke="#343A40" stroke-width="2"/>
+            <path d="M457,420 L477,408.5 V431.5 Z" fill="none" stroke="#343A40" stroke-width="2" stroke-linejoin="round"/>
+            <text class="dev-tag" x="470" y="391" text-anchor="middle">P-202</text>
+            <text class="dev-state" x="470" y="458" text-anchor="middle">DURUYOR</text>
+          </g>
+        </g>
+
+        <!-- valves -->
+        <g data-node="valves" data-model="valves">
+          <g data-node="valve" data-role="Valve" data-state="open">
+            <line x1="530" y1="40" x2="530" y2="24" stroke="#343A40" stroke-width="2"/>
+            <rect x="521" y="18" width="18" height="7" rx="1" fill="#343A40"/>
+            <path d="M515,30 L530,40 L515,50 Z M545,30 L530,40 L545,50 Z" fill="#343A40" stroke="#343A40" stroke-width="2" stroke-linejoin="round"/>
+            <text class="dev-tag" x="530" y="70" text-anchor="middle">V-101</text>
+            <text class="dev-state" x="530" y="85" text-anchor="middle">AÇIK</text>
+          </g>
+          <g data-node="valve" data-role="Valve" data-state="closed">
+            <line x1="530" y1="290" x2="530" y2="274" stroke="#343A40" stroke-width="2"/>
+            <rect x="521" y="268" width="18" height="7" rx="1" fill="#343A40"/>
+            <path d="M515,280 L530,290 L515,300 Z M545,280 L530,290 L545,300 Z" fill="#F1F2F3" stroke="#343A40" stroke-width="2" stroke-linejoin="round"/>
+            <text class="dev-tag" x="530" y="320" text-anchor="middle">V-102</text>
+            <text class="dev-state" x="530" y="335" text-anchor="middle">KAPALI</text>
+          </g>
+          <g data-node="valve" data-role="Valve" data-state="open">
+            <line x1="40" y1="470" x2="24" y2="470" stroke="#343A40" stroke-width="2"/>
+            <rect x="18" y="461" width="7" height="18" rx="1" fill="#343A40"/>
+            <path d="M30,455 L40,470 L50,455 Z M30,485 L40,470 L50,485 Z" fill="#343A40" stroke="#343A40" stroke-width="2" stroke-linejoin="round"/>
+            <text class="dev-tag" x="58" y="468" text-anchor="start">V-301</text>
+            <text class="dev-state" x="58" y="483" text-anchor="start">AÇIK</text>
+          </g>
+        </g>
+
+        <!-- line labels -->
+        <text class="line-lbl" x="838" y="104" text-anchor="end">ISITMA GİDİŞ</text>
+        <text class="line-lbl" x="838" y="446" text-anchor="end">ISITMA DÖNÜŞ</text>
+        <text class="line-lbl" x="54" y="524" text-anchor="start">DOĞALGAZ GİRİŞİ</text>
+      </svg>
+
+      <div class="burner on" data-node="burner" data-role="Indicator" data-state="on" style="left:84px;top:122px"><i data-icon="lucide:flame" class="ic"></i></div>
+      <div class="burner off" data-node="burner" data-role="Indicator" data-state="off" style="left:84px;top:366px"><i data-icon="lucide:flame" class="ic"></i></div>
+
+      <div class="tags" data-node="sensorTags" data-model="sensorTags">
+        <div class="tag alarm-tag" data-node="sensorTag" data-role="Readout" data-state="error" style="left:174px;top:22px"><span class="t">TT-104</span><span class="v">212<small>°C</small></span><i data-icon="lucide:triangle-alert" class="ic"></i></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:372px;top:52px"><span class="t">TT-101</span><span class="v">78,4<small>°C</small></span></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:372px;top:302px"><span class="t">TT-102</span><span class="v">41,2<small>°C</small></span></div>
+        <div class="tag in-tank" data-node="sensorTag" data-role="Readout" style="left:612px;top:142px"><span class="t">TT-201</span><span class="v">72,1<small>°C</small></span></div>
+        <div class="tag in-tank" data-node="sensorTag" data-role="Readout" style="left:612px;top:236px"><span class="t">TT-202</span><span class="v">66,4<small>°C</small></span></div>
+        <div class="tag in-tank" data-node="sensorTag" data-role="Readout" style="left:612px;top:330px"><span class="t">TT-203</span><span class="v">55,8<small>°C</small></span></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:730px;top:132px"><span class="t">PT-201</span><span class="v">2,35<small>bar</small></span></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:730px;top:182px"><span class="t">FT-201</span><span class="v">213<small>L/dk</small></span></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:730px;top:366px"><span class="t">TT-301</span><span class="v">54,6<small>°C</small></span></div>
+        <div class="tag" data-node="sensorTag" data-role="Readout" style="left:104px;top:456px"><span class="t">PT-301</span><span class="v">21,4<small>mbar</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel sp-panel" data-node="setpointPanel" data-role="Panel">
+    <div class="phead"><h2>Ayar değerleri</h2><span class="sub">Kazan grubu</span></div>
+    <div class="sps" data-node="setpoints" data-model="setpoints">
+      <div class="sp" data-node="setpoint" data-role="SpinBox" data-value="80.0">
+        <div class="row1"><span class="name">Kazan gidiş sıcaklığı</span><span class="loop">TIC-101</span></div>
+        <div class="pv">Ölçülen <b>78,4 °C</b></div>
+        <div class="stepper">
+          <div class="step" data-node="stepDown" data-role="Button"><i data-icon="lucide:minus" class="ic"></i></div>
+          <div class="spv"><em>SP</em><b>80,0</b><span>°C</span></div>
+          <div class="step" data-node="stepUp" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div>
+        </div>
+      </div>
+      <div class="sp" data-node="setpoint" data-role="SpinBox" data-value="75.0">
+        <div class="row1"><span class="name">Tampon tank sıcaklığı</span><span class="loop">TIC-201</span></div>
+        <div class="pv">Ölçülen <b>72,1 °C</b></div>
+        <div class="stepper">
+          <div class="step" data-node="stepDown" data-role="Button"><i data-icon="lucide:minus" class="ic"></i></div>
+          <div class="spv"><em>SP</em><b>75,0</b><span>°C</span></div>
+          <div class="step" data-node="stepUp" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div>
+        </div>
+      </div>
+      <div class="sp" data-node="setpoint" data-role="SpinBox" data-value="2.40">
+        <div class="row1"><span class="name">Sistem basıncı</span><span class="loop">PIC-201</span></div>
+        <div class="pv">Ölçülen <b>2,35 bar</b></div>
+        <div class="stepper">
+          <div class="step" data-node="stepDown" data-role="Button"><i data-icon="lucide:minus" class="ic"></i></div>
+          <div class="spv"><em>SP</em><b>2,40</b><span>bar</span></div>
+          <div class="step" data-node="stepUp" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div>
+        </div>
+      </div>
+    </div>
+    <div class="mode" data-node="modeRow">
+      <div class="txt"><b>Kontrol modu</b><span>Kaskad sıralama</span></div>
+      <span class="state">OTOMATİK</span>
+      <div class="switch" data-node="modeSwitch" data-role="Switch" data-state="checked" data-value="auto"><div class="knob"></div></div>
+    </div>
+  </section>
+</main>
+
+<nav class="softkeys" data-node="softKeys" data-role="TabBar" data-model="softKeys">
+  <div class="key on" data-node="softKey" data-role="Button" data-state="selected"><span class="fk">F1</span><i data-icon="lucide:layout-dashboard" class="ic"></i><span class="lbl">Genel bakış</span></div>
+  <div class="key" data-node="softKey" data-role="Button"><span class="fk">F2</span><i data-icon="lucide:flame" class="ic"></i><span class="lbl">Kazanlar</span></div>
+  <div class="key" data-node="softKey" data-role="Button"><span class="fk">F3</span><i data-icon="lucide:fan" class="ic"></i><span class="lbl">Pompalar</span></div>
+  <div class="key" data-node="softKey" data-role="Button"><span class="fk">F4</span><i data-icon="lucide:chart-line" class="ic"></i><span class="lbl">Trendler</span></div>
+  <div class="key" data-node="softKey" data-role="Button"><span class="fk">F5</span><i data-icon="lucide:bell" class="ic"></i><span class="lbl">Alarmlar</span><span class="count" data-node="alarmCount" data-role="Badge">1</span></div>
+  <div class="key" data-node="softKey" data-role="Button"><span class="fk">F6</span><i data-icon="lucide:settings" class="ic"></i><span class="lbl">Ayarlar</span></div>
+</nav>
+</body>
+</html>

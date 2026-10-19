@@ -1,0 +1,52 @@
+{
+ "id": "11-hmi-boiler",
+ "summary": "1280x800 ISA-101-style boiler-room HMI (embedded-gpu): alarm banner, vector mimic diagram, setpoint steppers, soft keys.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1280,
+   800
+  ],
+  "dpr": 1,
+  "designSize": [
+   1280,
+   800
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "embedded-gpu",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Fixed 1280x800 canvas in a grayscale palette; color only for pipes, the amber alarm and running/selected states. No shadows, gradients or blur.",
+  "Alarm banner with priority badge, message, time and a dark 'ONAYLA' button; the same alarm marks tag TT-104 in the diagram.",
+  "Mimic diagram drawn as vectors (Shape paths): pipe runs with rounded elbows in 3 colors, flow arrows, stacks, tank legs.",
+  "Boilers from a model of 2 (running / standby) with level fills clipped to the body and burner boxes that are filled when on.",
+  "Pumps from a model of 2 (running filled, stopped outline) and valves from a model of 3 (open filled, closed outline).",
+  "Sensor readouts from a model of 10 placed at the data coordinates, values with comma decimals.",
+  "Setpoint panel: 3 setpoints from a model with -/+ buttons at least 56 px tall; mode switch checked ('OTOMATİK').",
+  "Soft-key bar: 6 keys from a model with F1-F6 hints; 'GENEL BAKIŞ' selected; 'ALARMLAR' has a count badge."
+ ],
+ "niceToHave": [
+  "One delegate per equipment type whose state drives the fill.",
+  "Steppers apply a step with locale formatting."
+ ],
+ "allowedApproximations": [
+  "Diagram text placed by bounding box.",
+  "Elbows drawn as quadratic curves."
+ ],
+ "forbidden": [
+  "MultiEffect/shadows/blur (embedded-gpu flat HMI).",
+  "A raster image of the diagram."
+ ]
+}

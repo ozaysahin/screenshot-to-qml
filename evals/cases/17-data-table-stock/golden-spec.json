@@ -1,0 +1,8201 @@
+{
+ "meta": {
+  "id": "17-data-table-stock",
+  "title": "Yoğun stok tablosu — sabit sütun, gruplama, satır içi düzenleme",
+  "category": "table",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1366,
+   768
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1366,
+   768
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Public Sans",
+    "qtFamily": "Public Sans",
+    "legacyFamily": "Public Sans",
+    "files": [
+     "PublicSans-Bold.ttf",
+     "PublicSans-Medium.ttf",
+     "PublicSans-Regular.ttf",
+     "PublicSans-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   },
+   {
+    "css": "IBM Plex Mono",
+    "qtFamily": "IBM Plex Mono",
+    "legacyFamily": "IBM Plex Mono Medium",
+    "files": [
+     "IBMPlexMono-Medium.ttf",
+     "IBMPlexMono-Regular.ttf",
+     "IBMPlexMono-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F3F5F8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F3F5F8"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "stripe": {
+    "hex": "#F6F8FB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F6F8FB"
+   },
+   "head": {
+    "hex": "#F4F6F9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F4F6F9"
+   },
+   "group": {
+    "hex": "#EDF1F6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EDF1F6"
+   },
+   "ink": {
+    "hex": "#111827",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#111827"
+   },
+   "text-2": {
+    "hex": "#374151",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#374151"
+   },
+   "muted": {
+    "hex": "#6B7280",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6B7280"
+   },
+   "dim": {
+    "hex": "#9CA3AF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#9CA3AF"
+   },
+   "border": {
+    "hex": "#E3E7ED",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E3E7ED"
+   },
+   "border-strong": {
+    "hex": "#CDD4DE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#CDD4DE"
+   },
+   "primary": {
+    "hex": "#1D63D8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1D63D8"
+   },
+   "primary-soft": {
+    "hex": "#EAF1FD",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EAF1FD"
+   },
+   "edit-row": {
+    "hex": "#F2F7FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F2F7FF"
+   },
+   "focus-ring": {
+    "hex": "#1D63D8",
+    "alpha": 0.22,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(29, 99, 216, 0.22)"
+   },
+   "ok": {
+    "hex": "#15803D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#15803D"
+   },
+   "ok-soft": {
+    "hex": "#E7F6EC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E7F6EC"
+   },
+   "ok-bar": {
+    "hex": "#22A35A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#22A35A"
+   },
+   "low": {
+    "hex": "#B45309",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B45309"
+   },
+   "low-soft": {
+    "hex": "#FEF3E2",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FEF3E2"
+   },
+   "low-bar": {
+    "hex": "#F0A020",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0A020"
+   },
+   "out": {
+    "hex": "#C2262E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C2262E"
+   },
+   "out-soft": {
+    "hex": "#FDECEC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FDECEC"
+   },
+   "track": {
+    "hex": "#E6EAF0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E6EAF0"
+   },
+   "scroll-track": {
+    "hex": "#EEF1F5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EEF1F5"
+   },
+   "scroll-thumb": {
+    "hex": "#BCC5D2",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#BCC5D2"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0
+  },
+  "radius": {
+   "xs": 3.0,
+   "sm": 5.0,
+   "md": 6.0,
+   "lg": 10.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(17, 24, 39, 0.05), 0 1px 3px rgba(17, 24, 39, 0.04)"
+   },
+   "frozen": {
+    "css": "6px 0 8px -4px rgba(17, 24, 39, 0.14)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Public Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Raftan"
+   },
+   {
+    "family": "Public Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Stok envanteri"
+   },
+   {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "10.379"
+   },
+   {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 15,
+    "example": "Envanter"
+   },
+   {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 20,
+    "example": "Genel bakış"
+   },
+   {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 85,
+    "example": "kablo"
+   },
+   {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "1–14 / 326"
+   },
+   {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 14,
+    "example": "FO-8810-SM"
+   },
+   {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "2"
+   },
+   {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Sayfa başına"
+   },
+   {
+    "family": "Public Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Tüm depolar"
+   },
+   {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 14,
+    "example": "Tükendi"
+   },
+   {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "DA"
+   },
+   {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "326"
+   },
+   {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "count": 10,
+    "example": "SKU"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "appBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1366,
+    48
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 28,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     24
+    ]
+   }
+  },
+  {
+   "id": "brand",
+   "role": null,
+   "parent": "appBar",
+   "bbox": [
+    24,
+    9.5,
+    82.86,
+    28
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "mainNav",
+   "role": "TabBar",
+   "parent": "appBar",
+   "bbox": [
+    134.86,
+    -0.5,
+    411.02,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "mainNav",
+    "count": 5,
+    "itemId": "navTab"
+   }
+  },
+  {
+   "id": "navTab[0]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    134.86,
+    -0.5,
+    91.31,
+    48
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "navTab[1]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    230.17,
+    -0.5,
+    74.27,
+    48
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#1D63D8",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "navTab[2]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    308.44,
+    -0.5,
+    84.56,
+    48
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "navTab[3]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    397,
+    -0.5,
+    72.23,
+    48
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "navTab[4]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    473.23,
+    -0.5,
+    72.64,
+    48
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "depotSelect",
+   "role": "ComboBox",
+   "parent": "appBar",
+   "bbox": [
+    1092.08,
+    8.5,
+    129.92,
+    30
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E3E7ED",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "helpButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    1230,
+    7.5,
+    32,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "32px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "notifButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    1270,
+    7.5,
+    32,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "32px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "userAvatar",
+   "role": "Avatar",
+   "parent": "appBar",
+   "bbox": [
+    1314,
+    9.5,
+    28,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#DCE8FB",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stockTable",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    24,
+    60,
+    1318,
+    696
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E3E7ED",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#111827",
+       "alpha": 0.05
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 3.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#111827",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "clip": true
+   }
+  },
+  {
+   "id": "toolbar",
+   "role": "ToolBar",
+   "parent": "stockTable",
+   "bbox": [
+    25,
+    61,
+    1316,
+    52
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "searchField",
+   "role": "TextField",
+   "parent": "toolbar",
+   "bbox": [
+    206.7,
+    70.5,
+    260,
+    32
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CDD4DE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     10
+    ]
+   },
+   "value": "kablo"
+  },
+  {
+   "id": "filterButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    474.7,
+    70.5,
+    116.16,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EAF1FD",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A9C4F2",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "columnsButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    598.86,
+    70.5,
+    117.59,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CDD4DE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "exportButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    1116.23,
+    70.5,
+    104.95,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CDD4DE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "addButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    1229.19,
+    70.5,
+    99.81,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1D63D8",
+     "alpha": 1.0
+    },
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "tableViewport",
+   "role": "TableView",
+   "parent": "stockTable",
+   "bbox": [
+    25,
+    113,
+    1316,
+    584
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "stockGrid",
+   "role": "Table",
+   "parent": "tableViewport",
+   "bbox": [
+    25,
+    113,
+    1722,
+    584
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "depotGroups",
+    "count": 3,
+    "itemId": "groupHeader"
+   }
+  },
+  {
+   "id": "headerRow",
+   "role": "HeaderRow",
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    113,
+    1722,
+    36
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "headerCell[0]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    25,
+    113,
+    150,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 6.0,
+      "y": 0.0,
+      "blur": 8.0,
+      "spread": -4.0,
+      "color": {
+       "hex": "#111827",
+       "alpha": 0.14
+      },
+      "inset": false
+     },
+     {
+      "x": -1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "headerCell[1]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    175,
+    113,
+    270,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "resizeHandle",
+   "role": "SplitHandle",
+   "parent": "headerCell[1]",
+   "bbox": [
+    443,
+    119,
+    4,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1D63D8",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "position": "absolute"
+   },
+   "state": [
+    "hover"
+   ]
+  },
+  {
+   "id": "headerCell[2]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    445,
+    113,
+    124,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[3]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    569,
+    113,
+    150,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[4]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    719,
+    113,
+    76,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[5]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    795,
+    113,
+    112,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[6]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    907,
+    113,
+    116,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[7]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    1023,
+    113,
+    140,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[8]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    1163,
+    113,
+    104,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "headerCell[9]",
+   "role": "HeaderCell",
+   "parent": "headerRow",
+   "bbox": [
+    1267,
+    113,
+    112,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4F6F9",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 1.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "groupHeader[0]",
+   "role": "TableRow",
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    149,
+    1722,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "expanded"
+   ],
+   "value": "Ankara"
+  },
+  {
+   "id": "groupItems[0]",
+   "role": null,
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    181,
+    1722,
+    180
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "ankaraRows",
+    "count": 6,
+    "itemId": "stockRow"
+   }
+  },
+  {
+   "id": "stockRow[0]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    181,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[0]",
+   "role": "ProgressBar",
+   "parent": "stockRow[0]",
+   "bbox": [
+    807,
+    192.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.000"
+  },
+  {
+   "id": "statusPill[0]",
+   "role": "Badge",
+   "parent": "stockRow[0]",
+   "bbox": [
+    1175,
+    185.5,
+    68.61,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FDECEC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "out"
+  },
+  {
+   "id": "stockRow[1]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    211,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[1]",
+   "role": "ProgressBar",
+   "parent": "stockRow[1]",
+   "bbox": [
+    807,
+    222.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.515"
+  },
+  {
+   "id": "statusPill[1]",
+   "role": "Badge",
+   "parent": "stockRow[1]",
+   "bbox": [
+    1175,
+    215.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[2]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    241,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[2]",
+   "role": "ProgressBar",
+   "parent": "stockRow[2]",
+   "bbox": [
+    807,
+    252.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.624"
+  },
+  {
+   "id": "statusPill[2]",
+   "role": "Badge",
+   "parent": "stockRow[2]",
+   "bbox": [
+    1175,
+    245.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[3]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    271,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[3]",
+   "role": "ProgressBar",
+   "parent": "stockRow[3]",
+   "bbox": [
+    807,
+    282.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.086"
+  },
+  {
+   "id": "statusPill[3]",
+   "role": "Badge",
+   "parent": "stockRow[3]",
+   "bbox": [
+    1175,
+    275.5,
+    68.72,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FEF3E2",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "low"
+  },
+  {
+   "id": "stockRow[4]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    301,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "editing"
+   ]
+  },
+  {
+   "id": "stockLevel[4]",
+   "role": "ProgressBar",
+   "parent": "stockRow[4]",
+   "bbox": [
+    807,
+    312.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.633"
+  },
+  {
+   "id": "priceEditor",
+   "role": "TextField",
+   "parent": "stockRow[4]",
+   "bbox": [
+    911,
+    303.5,
+    108,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 5,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1D63D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 3.0,
+      "color": {
+       "hex": "#1D63D8",
+       "alpha": 0.22
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "flex-end",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   },
+   "state": [
+    "focused",
+    "editing"
+   ],
+   "value": "3450.00"
+  },
+  {
+   "id": "statusPill[4]",
+   "role": "Badge",
+   "parent": "stockRow[4]",
+   "bbox": [
+    1175,
+    305.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[5]",
+   "role": "TableRow",
+   "parent": "groupItems[0]",
+   "bbox": [
+    25,
+    331,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[5]",
+   "role": "ProgressBar",
+   "parent": "stockRow[5]",
+   "bbox": [
+    807,
+    342.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.880"
+  },
+  {
+   "id": "statusPill[5]",
+   "role": "Badge",
+   "parent": "stockRow[5]",
+   "bbox": [
+    1175,
+    335.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "groupHeader[1]",
+   "role": "TableRow",
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    361,
+    1722,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "collapsed"
+   ],
+   "value": "Bursa"
+  },
+  {
+   "id": "groupHeader[2]",
+   "role": "TableRow",
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    393,
+    1722,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "expanded"
+   ],
+   "value": "İstanbul"
+  },
+  {
+   "id": "groupItems[1]",
+   "role": null,
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    425,
+    1722,
+    240
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "istanbulRows",
+    "count": 8,
+    "itemId": "stockRow"
+   }
+  },
+  {
+   "id": "stockRow[6]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    425,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[6]",
+   "role": "ProgressBar",
+   "parent": "stockRow[6]",
+   "bbox": [
+    807,
+    436.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.000"
+  },
+  {
+   "id": "statusPill[6]",
+   "role": "Badge",
+   "parent": "stockRow[6]",
+   "bbox": [
+    1175,
+    429.5,
+    68.61,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FDECEC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "out"
+  },
+  {
+   "id": "stockRow[7]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    455,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[7]",
+   "role": "ProgressBar",
+   "parent": "stockRow[7]",
+   "bbox": [
+    807,
+    466.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.116"
+  },
+  {
+   "id": "statusPill[7]",
+   "role": "Badge",
+   "parent": "stockRow[7]",
+   "bbox": [
+    1175,
+    459.5,
+    68.72,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FEF3E2",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "low"
+  },
+  {
+   "id": "stockRow[8]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    485,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[8]",
+   "role": "ProgressBar",
+   "parent": "stockRow[8]",
+   "bbox": [
+    807,
+    496.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.483"
+  },
+  {
+   "id": "statusPill[8]",
+   "role": "Badge",
+   "parent": "stockRow[8]",
+   "bbox": [
+    1175,
+    489.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[9]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    515,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[9]",
+   "role": "ProgressBar",
+   "parent": "stockRow[9]",
+   "bbox": [
+    807,
+    526.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.160"
+  },
+  {
+   "id": "statusPill[9]",
+   "role": "Badge",
+   "parent": "stockRow[9]",
+   "bbox": [
+    1175,
+    519.5,
+    68.72,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FEF3E2",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "low"
+  },
+  {
+   "id": "stockRow[10]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    545,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[10]",
+   "role": "ProgressBar",
+   "parent": "stockRow[10]",
+   "bbox": [
+    807,
+    556.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.776"
+  },
+  {
+   "id": "statusPill[10]",
+   "role": "Badge",
+   "parent": "stockRow[10]",
+   "bbox": [
+    1175,
+    549.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[11]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    575,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[11]",
+   "role": "ProgressBar",
+   "parent": "stockRow[11]",
+   "bbox": [
+    807,
+    586.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.618"
+  },
+  {
+   "id": "statusPill[11]",
+   "role": "Badge",
+   "parent": "stockRow[11]",
+   "bbox": [
+    1175,
+    579.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[12]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    605,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[12]",
+   "role": "ProgressBar",
+   "parent": "stockRow[12]",
+   "bbox": [
+    807,
+    616.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.608"
+  },
+  {
+   "id": "statusPill[12]",
+   "role": "Badge",
+   "parent": "stockRow[12]",
+   "bbox": [
+    1175,
+    609.5,
+    62.25,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7F6EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "ok"
+  },
+  {
+   "id": "stockRow[13]",
+   "role": "TableRow",
+   "parent": "groupItems[1]",
+   "bbox": [
+    25,
+    635,
+    1722,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "stockLevel[13]",
+   "role": "ProgressBar",
+   "parent": "stockRow[13]",
+   "bbox": [
+    807,
+    646.5,
+    84,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E6EAF0",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.220"
+  },
+  {
+   "id": "statusPill[13]",
+   "role": "Badge",
+   "parent": "stockRow[13]",
+   "bbox": [
+    1175,
+    639.5,
+    68.72,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FEF3E2",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     7
+    ]
+   },
+   "value": "low"
+  },
+  {
+   "id": "totalsRow",
+   "role": "TableRow",
+   "parent": "stockGrid",
+   "bbox": [
+    25,
+    665,
+    1722,
+    32
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "hScrollBar",
+   "role": "ScrollBar",
+   "parent": "stockTable",
+   "bbox": [
+    25,
+    697,
+    1316,
+    14
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     4,
+     0,
+     150
+    ]
+   },
+   "value": "0"
+  },
+  {
+   "id": "hScrollThumb",
+   "role": null,
+   "parent": "hScrollBar",
+   "bbox": [
+    179,
+    700.5,
+    859,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#BCC5D2",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "tableFooter",
+   "role": "Footer",
+   "parent": "stockTable",
+   "bbox": [
+    25,
+    711,
+    1316,
+    44
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E3E7ED",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "pageRange",
+   "role": null,
+   "parent": "tableFooter",
+   "bbox": [
+    41,
+    724.5,
+    70.13,
+    18
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rowsPerPage",
+   "role": "ComboBox",
+   "parent": "tableFooter",
+   "bbox": [
+    993,
+    719.5,
+    54.5,
+    28
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CDD4DE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     9
+    ]
+   },
+   "value": "14"
+  },
+  {
+   "id": "pagination",
+   "role": "Pagination",
+   "parent": "tableFooter",
+   "bbox": [
+    1059.5,
+    719.5,
+    269.5,
+    28
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 2,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "value": "1"
+  }
+ ],
+ "text": [
+  {
+   "string": "Raftan",
+   "owner": "brand",
+   "bbox": [
+    60,
+    14.5,
+    46.86,
+    17
+   ],
+   "baseline": 28.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Genel bakış",
+   "owner": "navTab[0]",
+   "bbox": [
+    144.86,
+    14.5,
+    71.31,
+    15
+   ],
+   "baseline": 26.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Envanter",
+   "owner": "navTab[1]",
+   "bbox": [
+    240.17,
+    14.5,
+    54.27,
+    15
+   ],
+   "baseline": 26.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Satın alma",
+   "owner": "navTab[2]",
+   "bbox": [
+    318.44,
+    14.5,
+    64.56,
+    15
+   ],
+   "baseline": 26.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sevkiyat",
+   "owner": "navTab[3]",
+   "bbox": [
+    407,
+    14.5,
+    52.23,
+    15
+   ],
+   "baseline": 26.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raporlar",
+   "owner": "navTab[4]",
+   "bbox": [
+    483.23,
+    14.5,
+    52.64,
+    15
+   ],
+   "baseline": 26.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüm depolar",
+   "owner": "depotSelect",
+   "bbox": [
+    1123.08,
+    16.5,
+    69.92,
+    14
+   ],
+   "baseline": 27.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DA",
+   "owner": "userAvatar",
+   "bbox": [
+    1320.22,
+    17.5,
+    15.56,
+    12
+   ],
+   "baseline": 27.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1D63D8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Stok envanteri",
+   "owner": "toolbar",
+   "bbox": [
+    41,
+    77.5,
+    100.69,
+    17
+   ],
+   "baseline": 91.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "326",
+   "owner": "toolbar",
+   "bbox": [
+    157.69,
+    80.5,
+    21.02,
+    12
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kablo",
+   "owner": "searchField",
+   "bbox": [
+    240.7,
+    78.5,
+    33.05,
+    15
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Filtreler",
+   "owner": "filterButton",
+   "bbox": [
+    506.7,
+    78.5,
+    49.16,
+    15
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1D63D8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "filterButton",
+   "bbox": [
+    567.19,
+    80.5,
+    7.33,
+    12
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sütunlar",
+   "owner": "columnsButton",
+   "bbox": [
+    630.86,
+    78.5,
+    53.59,
+    15
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dışa aktar",
+   "owner": "exportButton",
+   "bbox": [
+    1148.23,
+    78.5,
+    61.95,
+    15
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ürün ekle",
+   "owner": "addButton",
+   "bbox": [
+    1260.19,
+    78.5,
+    58.81,
+    15
+   ],
+   "baseline": 90.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SKU",
+   "owner": "headerCell[0]",
+   "bbox": [
+    37,
+    124.5,
+    24.02,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "ÜRÜN ADI",
+   "owner": "headerCell[1]",
+   "bbox": [
+    187,
+    124.5,
+    56.23,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "KATEGORİ",
+   "owner": "headerCell[2]",
+   "bbox": [
+    457,
+    124.5,
+    58.86,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "TEDARİKÇİ",
+   "owner": "headerCell[3]",
+   "bbox": [
+    581,
+    124.5,
+    62.14,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "STOK",
+   "owner": "headerCell[4]",
+   "bbox": [
+    751.42,
+    124.5,
+    31.58,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase",
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "SEVİYE",
+   "owner": "headerCell[5]",
+   "bbox": [
+    807,
+    124.5,
+    41.66,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "BİRİM FİYAT",
+   "owner": "headerCell[6]",
+   "bbox": [
+    942.8,
+    124.5,
+    68.2,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase",
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "STOK DEĞERİ",
+   "owner": "headerCell[7]",
+   "bbox": [
+    1073.38,
+    124.5,
+    77.63,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase",
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "DURUM",
+   "owner": "headerCell[8]",
+   "bbox": [
+    1175,
+    124.5,
+    42.77,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "SON GİRİŞ",
+   "owner": "headerCell[9]",
+   "bbox": [
+    1279,
+    124.5,
+    60.08,
+    12
+   ],
+   "baseline": 134.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Depo: Ankara · 6 ürün",
+   "owner": "groupHeader[0]",
+   "bbox": [
+    58,
+    156.5,
+    130.77,
+    15
+   ],
+   "baseline": 168.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4.424",
+   "owner": "groupHeader[0]",
+   "bbox": [
+    742.69,
+    156.5,
+    40.31,
+    15
+   ],
+   "baseline": 168.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺757.639,20",
+   "owner": "groupHeader[0]",
+   "bbox": [
+    1061.3,
+    156.5,
+    89.7,
+    15
+   ],
+   "baseline": 168.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "FO-8810-SM",
+   "owner": "stockRow[0]",
+   "bbox": [
+    37,
+    187.5,
+    75.02,
+    16
+   ],
+   "baseline": 200.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Fiber optik patch kablo SC-LC 5 m",
+   "owner": "stockRow[0]",
+   "bbox": [
+    187,
+    187.5,
+    206.75,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ağ",
+   "owner": "stockRow[0]",
+   "bbox": [
+    457,
+    187.5,
+    17.11,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Linkora Ağ",
+   "owner": "stockRow[0]",
+   "bbox": [
+    581,
+    187.5,
+    64.89,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "stockRow[0]",
+   "bbox": [
+    773.89,
+    187.5,
+    9.11,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺412,00",
+   "owner": "stockRow[0]",
+   "bbox": [
+    952.48,
+    187.5,
+    58.52,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺0,00",
+   "owner": "stockRow[0]",
+   "bbox": [
+    1110.69,
+    187.5,
+    40.31,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tükendi",
+   "owner": "statusPill[0]",
+   "bbox": [
+    1193,
+    188.5,
+    42.61,
+    14
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#C2262E",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18.09.2026",
+   "owner": "stockRow[0]",
+   "bbox": [
+    1279,
+    187.5,
+    80.61,
+    15
+   ],
+   "baseline": 199.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "HD-2201-4K",
+   "owner": "stockRow[1]",
+   "bbox": [
+    37,
+    217.5,
+    75.02,
+    16
+   ],
+   "baseline": 230.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "HDMI 2.1 kablo 3 m, örgülü",
+   "owner": "stockRow[1]",
+   "bbox": [
+    187,
+    217.5,
+    161.61,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Görüntü",
+   "owner": "stockRow[1]",
+   "bbox": [
+    457,
+    217.5,
+    49.36,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekranix Dağıtım",
+   "owner": "stockRow[1]",
+   "bbox": [
+    581,
+    217.5,
+    95.36,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "412",
+   "owner": "stockRow[1]",
+   "bbox": [
+    755.69,
+    217.5,
+    27.31,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺349,50",
+   "owner": "stockRow[1]",
+   "bbox": [
+    952.48,
+    217.5,
+    58.52,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺143.994,00",
+   "owner": "stockRow[1]",
+   "bbox": [
+    1061.3,
+    217.5,
+    89.7,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[1]",
+   "bbox": [
+    1193,
+    218.5,
+    36.25,
+    14
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "29.09.2026",
+   "owner": "stockRow[1]",
+   "bbox": [
+    1279,
+    217.5,
+    80.61,
+    15
+   ],
+   "baseline": 229.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "KB-1042-S",
+   "owner": "stockRow[2]",
+   "bbox": [
+    37,
+    247.5,
+    67.52,
+    16
+   ],
+   "baseline": 260.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "USB-C – USB-C şarj kablosu 1 m",
+   "owner": "stockRow[2]",
+   "bbox": [
+    187,
+    247.5,
+    190.83,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj kabloları",
+   "owner": "stockRow[2]",
+   "bbox": [
+    457,
+    247.5,
+    79.84,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Voltek Elektronik",
+   "owner": "stockRow[2]",
+   "bbox": [
+    581,
+    247.5,
+    103.06,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.248",
+   "owner": "stockRow[2]",
+   "bbox": [
+    742.69,
+    247.5,
+    40.31,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺189,90",
+   "owner": "stockRow[2]",
+   "bbox": [
+    952.48,
+    247.5,
+    58.52,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺236.995,20",
+   "owner": "stockRow[2]",
+   "bbox": [
+    1061.3,
+    247.5,
+    89.7,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[2]",
+   "bbox": [
+    1193,
+    248.5,
+    36.25,
+    14
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "29.09.2026",
+   "owner": "stockRow[2]",
+   "bbox": [
+    1279,
+    247.5,
+    80.61,
+    15
+   ],
+   "baseline": 259.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "KB-1043-B",
+   "owner": "stockRow[3]",
+   "bbox": [
+    37,
+    277.5,
+    67.52,
+    16
+   ],
+   "baseline": 290.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "USB-C – Lightning kablo 2 m",
+   "owner": "stockRow[3]",
+   "bbox": [
+    187,
+    277.5,
+    170.59,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj kabloları",
+   "owner": "stockRow[3]",
+   "bbox": [
+    457,
+    277.5,
+    79.84,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Voltek Elektronik",
+   "owner": "stockRow[3]",
+   "bbox": [
+    581,
+    277.5,
+    103.06,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "86",
+   "owner": "stockRow[3]",
+   "bbox": [
+    764.8,
+    277.5,
+    18.2,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺249,00",
+   "owner": "stockRow[3]",
+   "bbox": [
+    952.48,
+    277.5,
+    58.52,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺21.414,00",
+   "owner": "stockRow[3]",
+   "bbox": [
+    1070.39,
+    277.5,
+    80.61,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Az kaldı",
+   "owner": "statusPill[3]",
+   "bbox": [
+    1193,
+    278.5,
+    42.72,
+    14
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "22.09.2026",
+   "owner": "stockRow[3]",
+   "bbox": [
+    1279,
+    277.5,
+    80.61,
+    15
+   ],
+   "baseline": 289.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "NW-6005-G",
+   "owner": "stockRow[4]",
+   "bbox": [
+    37,
+    307.5,
+    67.52,
+    16
+   ],
+   "baseline": 320.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cat6 UTP ağ kablosu, 305 m makara",
+   "owner": "stockRow[4]",
+   "bbox": [
+    187,
+    307.5,
+    220.47,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ağ",
+   "owner": "stockRow[4]",
+   "bbox": [
+    457,
+    307.5,
+    17.11,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Linkora Ağ",
+   "owner": "stockRow[4]",
+   "bbox": [
+    581,
+    307.5,
+    64.89,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "38",
+   "owner": "stockRow[4]",
+   "bbox": [
+    764.8,
+    307.5,
+    18.2,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺",
+   "owner": "priceEditor",
+   "bbox": [
+    918,
+    307.5,
+    9.11,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "3.450,00",
+   "owner": "priceEditor",
+   "bbox": [
+    947.09,
+    307.5,
+    62.41,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺131.100,00",
+   "owner": "stockRow[4]",
+   "bbox": [
+    1061.3,
+    307.5,
+    89.7,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[4]",
+   "bbox": [
+    1193,
+    308.5,
+    36.25,
+    14
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "26.09.2026",
+   "owner": "stockRow[4]",
+   "bbox": [
+    1279,
+    307.5,
+    80.61,
+    15
+   ],
+   "baseline": 319.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "PW-3301-EU",
+   "owner": "stockRow[5]",
+   "bbox": [
+    37,
+    337.5,
+    75.02,
+    16
+   ],
+   "baseline": 350.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güç kablosu C13, 1,8 m",
+   "owner": "stockRow[5]",
+   "bbox": [
+    187,
+    337.5,
+    138.5,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güç",
+   "owner": "stockRow[5]",
+   "bbox": [
+    457,
+    337.5,
+    24.16,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Akım Kablo",
+   "owner": "stockRow[5]",
+   "bbox": [
+    581,
+    337.5,
+    68.84,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2.640",
+   "owner": "stockRow[5]",
+   "bbox": [
+    742.69,
+    337.5,
+    40.31,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺84,90",
+   "owner": "stockRow[5]",
+   "bbox": [
+    961.59,
+    337.5,
+    49.41,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺224.136,00",
+   "owner": "stockRow[5]",
+   "bbox": [
+    1061.3,
+    337.5,
+    89.7,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[5]",
+   "bbox": [
+    1193,
+    338.5,
+    36.25,
+    14
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30.09.2026",
+   "owner": "stockRow[5]",
+   "bbox": [
+    1279,
+    337.5,
+    80.61,
+    15
+   ],
+   "baseline": 349.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Depo: Bursa · 4 ürün",
+   "owner": "groupHeader[1]",
+   "bbox": [
+    58,
+    368.5,
+    122.75,
+    15
+   ],
+   "baseline": 380.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.960",
+   "owner": "groupHeader[1]",
+   "bbox": [
+    742.69,
+    368.5,
+    40.31,
+    15
+   ],
+   "baseline": 380.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺212.480,00",
+   "owner": "groupHeader[1]",
+   "bbox": [
+    1061.3,
+    368.5,
+    89.7,
+    15
+   ],
+   "baseline": 380.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Depo: İstanbul · 8 ürün",
+   "owner": "groupHeader[2]",
+   "bbox": [
+    58,
+    400.5,
+    137.45,
+    15
+   ],
+   "baseline": 412.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5.955",
+   "owner": "groupHeader[2]",
+   "bbox": [
+    742.69,
+    400.5,
+    40.31,
+    15
+   ],
+   "baseline": 412.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺993.688,20",
+   "owner": "groupHeader[2]",
+   "bbox": [
+    1061.3,
+    400.5,
+    89.7,
+    15
+   ],
+   "baseline": 412.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "AU-5120-3",
+   "owner": "stockRow[6]",
+   "bbox": [
+    37,
+    431.5,
+    67.52,
+    16
+   ],
+   "baseline": 444.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3,5 mm stereo ses kablosu 1,5 m",
+   "owner": "stockRow[6]",
+   "bbox": [
+    187,
+    431.5,
+    196.52,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ses",
+   "owner": "stockRow[6]",
+   "bbox": [
+    457,
+    431.5,
+    22.61,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tınısan Ses",
+   "owner": "stockRow[6]",
+   "bbox": [
+    581,
+    431.5,
+    68.22,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "stockRow[6]",
+   "bbox": [
+    773.89,
+    431.5,
+    9.11,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺74,90",
+   "owner": "stockRow[6]",
+   "bbox": [
+    961.59,
+    431.5,
+    49.41,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺0,00",
+   "owner": "stockRow[6]",
+   "bbox": [
+    1110.69,
+    431.5,
+    40.31,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tükendi",
+   "owner": "statusPill[6]",
+   "bbox": [
+    1193,
+    432.5,
+    42.61,
+    14
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#C2262E",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "11.09.2026",
+   "owner": "stockRow[6]",
+   "bbox": [
+    1279,
+    431.5,
+    80.61,
+    15
+   ],
+   "baseline": 443.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "CX-7004-75",
+   "owner": "stockRow[7]",
+   "bbox": [
+    37,
+    461.5,
+    75.02,
+    16
+   ],
+   "baseline": 474.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Koaksiyel anten kablosu 10 m",
+   "owner": "stockRow[7]",
+   "bbox": [
+    187,
+    461.5,
+    177.67,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Görüntü",
+   "owner": "stockRow[7]",
+   "bbox": [
+    457,
+    461.5,
+    49.36,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekranix Dağıtım",
+   "owner": "stockRow[7]",
+   "bbox": [
+    581,
+    461.5,
+    95.36,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "58",
+   "owner": "stockRow[7]",
+   "bbox": [
+    764.8,
+    461.5,
+    18.2,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺139,90",
+   "owner": "stockRow[7]",
+   "bbox": [
+    952.48,
+    461.5,
+    58.52,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺8.114,20",
+   "owner": "stockRow[7]",
+   "bbox": [
+    1079.48,
+    461.5,
+    71.52,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Az kaldı",
+   "owner": "statusPill[7]",
+   "bbox": [
+    1193,
+    462.5,
+    42.72,
+    14
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "24.09.2026",
+   "owner": "stockRow[7]",
+   "bbox": [
+    1279,
+    461.5,
+    80.61,
+    15
+   ],
+   "baseline": 473.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "DP-2410-M",
+   "owner": "stockRow[8]",
+   "bbox": [
+    37,
+    491.5,
+    67.52,
+    16
+   ],
+   "baseline": 504.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DisplayPort 1.4 kablo 2 m",
+   "owner": "stockRow[8]",
+   "bbox": [
+    187,
+    491.5,
+    151.98,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Görüntü",
+   "owner": "stockRow[8]",
+   "bbox": [
+    457,
+    491.5,
+    49.36,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekranix Dağıtım",
+   "owner": "stockRow[8]",
+   "bbox": [
+    581,
+    491.5,
+    95.36,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "290",
+   "owner": "stockRow[8]",
+   "bbox": [
+    755.69,
+    491.5,
+    27.31,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺459,90",
+   "owner": "stockRow[8]",
+   "bbox": [
+    952.48,
+    491.5,
+    58.52,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺133.371,00",
+   "owner": "stockRow[8]",
+   "bbox": [
+    1061.3,
+    491.5,
+    89.7,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[8]",
+   "bbox": [
+    1193,
+    492.5,
+    36.25,
+    14
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "27.09.2026",
+   "owner": "stockRow[8]",
+   "bbox": [
+    1279,
+    491.5,
+    80.61,
+    15
+   ],
+   "baseline": 503.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "HD-2204-8K",
+   "owner": "stockRow[9]",
+   "bbox": [
+    37,
+    521.5,
+    75.02,
+    16
+   ],
+   "baseline": 534.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "HDMI 2.1 kablo 5 m, 8K",
+   "owner": "stockRow[9]",
+   "bbox": [
+    187,
+    521.5,
+    139.97,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Görüntü",
+   "owner": "stockRow[9]",
+   "bbox": [
+    457,
+    521.5,
+    49.36,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekranix Dağıtım",
+   "owner": "stockRow[9]",
+   "bbox": [
+    581,
+    521.5,
+    95.36,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "64",
+   "owner": "stockRow[9]",
+   "bbox": [
+    764.8,
+    521.5,
+    18.2,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺689,00",
+   "owner": "stockRow[9]",
+   "bbox": [
+    952.48,
+    521.5,
+    58.52,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺44.096,00",
+   "owner": "stockRow[9]",
+   "bbox": [
+    1070.39,
+    521.5,
+    80.61,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Az kaldı",
+   "owner": "statusPill[9]",
+   "bbox": [
+    1193,
+    522.5,
+    42.72,
+    14
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "25.09.2026",
+   "owner": "stockRow[9]",
+   "bbox": [
+    1279,
+    521.5,
+    80.61,
+    15
+   ],
+   "baseline": 533.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "KB-1050-W",
+   "owner": "stockRow[10]",
+   "bbox": [
+    37,
+    551.5,
+    67.52,
+    16
+   ],
+   "baseline": 564.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "USB-A – USB-C kablo 1 m, beyaz",
+   "owner": "stockRow[10]",
+   "bbox": [
+    187,
+    551.5,
+    192.58,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj kabloları",
+   "owner": "stockRow[10]",
+   "bbox": [
+    457,
+    551.5,
+    79.84,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Voltek Elektronik",
+   "owner": "stockRow[10]",
+   "bbox": [
+    581,
+    551.5,
+    103.06,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3.105",
+   "owner": "stockRow[10]",
+   "bbox": [
+    742.69,
+    551.5,
+    40.31,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺129,00",
+   "owner": "stockRow[10]",
+   "bbox": [
+    952.48,
+    551.5,
+    58.52,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺400.545,00",
+   "owner": "stockRow[10]",
+   "bbox": [
+    1061.3,
+    551.5,
+    89.7,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[10]",
+   "bbox": [
+    1193,
+    552.5,
+    36.25,
+    14
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30.09.2026",
+   "owner": "stockRow[10]",
+   "bbox": [
+    1279,
+    551.5,
+    80.61,
+    15
+   ],
+   "baseline": 563.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "KB-1061-G",
+   "owner": "stockRow[11]",
+   "bbox": [
+    37,
+    581.5,
+    67.52,
+    16
+   ],
+   "baseline": 594.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Mıknatıslı şarj kablosu 1 m",
+   "owner": "stockRow[11]",
+   "bbox": [
+    187,
+    581.5,
+    158.16,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj kabloları",
+   "owner": "stockRow[11]",
+   "bbox": [
+    457,
+    581.5,
+    79.84,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Voltek Elektronik",
+   "owner": "stockRow[11]",
+   "bbox": [
+    581,
+    581.5,
+    103.06,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "742",
+   "owner": "stockRow[11]",
+   "bbox": [
+    755.69,
+    581.5,
+    27.31,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺219,00",
+   "owner": "stockRow[11]",
+   "bbox": [
+    952.48,
+    581.5,
+    58.52,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺162.498,00",
+   "owner": "stockRow[11]",
+   "bbox": [
+    1061.3,
+    581.5,
+    89.7,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[11]",
+   "bbox": [
+    1193,
+    582.5,
+    36.25,
+    14
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "28.09.2026",
+   "owner": "stockRow[11]",
+   "bbox": [
+    1279,
+    581.5,
+    80.61,
+    15
+   ],
+   "baseline": 593.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "NW-6012-B",
+   "owner": "stockRow[12]",
+   "bbox": [
+    37,
+    611.5,
+    67.52,
+    16
+   ],
+   "baseline": 624.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cat6A S/FTP patch kablo 2 m",
+   "owner": "stockRow[12]",
+   "bbox": [
+    187,
+    611.5,
+    178.45,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ağ",
+   "owner": "stockRow[12]",
+   "bbox": [
+    457,
+    611.5,
+    17.11,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Linkora Ağ",
+   "owner": "stockRow[12]",
+   "bbox": [
+    581,
+    611.5,
+    64.89,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.520",
+   "owner": "stockRow[12]",
+   "bbox": [
+    742.69,
+    611.5,
+    40.31,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺96,50",
+   "owner": "stockRow[12]",
+   "bbox": [
+    961.59,
+    611.5,
+    49.41,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺146.680,00",
+   "owner": "stockRow[12]",
+   "bbox": [
+    1061.3,
+    611.5,
+    89.7,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Stokta",
+   "owner": "statusPill[12]",
+   "bbox": [
+    1193,
+    612.5,
+    36.25,
+    14
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "29.09.2026",
+   "owner": "stockRow[12]",
+   "bbox": [
+    1279,
+    611.5,
+    80.61,
+    15
+   ],
+   "baseline": 623.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "PW-3310-TR",
+   "owner": "stockRow[13]",
+   "bbox": [
+    37,
+    641.5,
+    75.02,
+    16
+   ],
+   "baseline": 654.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "IBM Plex Mono",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Uzatma kablosu 5'li, 3 m",
+   "owner": "stockRow[13]",
+   "bbox": [
+    187,
+    641.5,
+    147.36,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güç",
+   "owner": "stockRow[13]",
+   "bbox": [
+    457,
+    641.5,
+    24.16,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Akım Kablo",
+   "owner": "stockRow[13]",
+   "bbox": [
+    581,
+    641.5,
+    68.84,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "176",
+   "owner": "stockRow[13]",
+   "bbox": [
+    755.69,
+    641.5,
+    27.31,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺559,00",
+   "owner": "stockRow[13]",
+   "bbox": [
+    952.48,
+    641.5,
+    58.52,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺98.384,00",
+   "owner": "stockRow[13]",
+   "bbox": [
+    1070.39,
+    641.5,
+    80.61,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Az kaldı",
+   "owner": "statusPill[13]",
+   "bbox": [
+    1193,
+    642.5,
+    42.72,
+    14
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 11.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23.09.2026",
+   "owner": "stockRow[13]",
+   "bbox": [
+    1279,
+    641.5,
+    80.61,
+    15
+   ],
+   "baseline": 653.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Toplam",
+   "owner": "totalsRow",
+   "bbox": [
+    37,
+    673.5,
+    44.98,
+    15
+   ],
+   "baseline": 685.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "· 14 ürün",
+   "owner": "totalsRow",
+   "bbox": [
+    85.02,
+    673.5,
+    50.89,
+    15
+   ],
+   "baseline": 685.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10.379",
+   "owner": "totalsRow",
+   "bbox": [
+    733.59,
+    673.5,
+    49.41,
+    15
+   ],
+   "baseline": 685.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "₺1.751.327,40",
+   "owner": "totalsRow",
+   "bbox": [
+    1048.3,
+    673.5,
+    102.7,
+    15
+   ],
+   "baseline": 685.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Public Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1–14 / 326",
+   "owner": "pageRange",
+   "bbox": [
+    41,
+    725.5,
+    70.13,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Sayfa başına",
+   "owner": "tableFooter",
+   "bbox": [
+    906.45,
+    725.5,
+    74.55,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14",
+   "owner": "rowsPerPage",
+   "bbox": [
+    1003,
+    725.5,
+    17.5,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1",
+   "owner": "pagination",
+   "bbox": [
+    1129.13,
+    725.5,
+    8.75,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2",
+   "owner": "pagination",
+   "bbox": [
+    1159.13,
+    725.5,
+    8.75,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "3",
+   "owner": "pagination",
+   "bbox": [
+    1189.13,
+    725.5,
+    8.75,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "…",
+   "owner": "pagination",
+   "bbox": [
+    1218.48,
+    725.5,
+    10.03,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "24",
+   "owner": "pagination",
+   "bbox": [
+    1245.5,
+    725.5,
+    17.5,
+    15
+   ],
+   "baseline": 737.5,
+   "lines": 1,
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Public Sans",
+    "px": 12.5,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:boxes",
+   "owner": "brand",
+   "bbox": [
+    30,
+    15.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:warehouse",
+   "owner": "depotSelect",
+   "bbox": [
+    1103.08,
+    16.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "depotSelect",
+   "bbox": [
+    1199,
+    16.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-help",
+   "owner": "helpButton",
+   "bbox": [
+    1238,
+    15.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "notifButton",
+   "bbox": [
+    1278,
+    15.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:search",
+   "owner": "searchField",
+   "bbox": [
+    217.7,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "searchField",
+   "bbox": [
+    443.7,
+    80.5,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-filter",
+   "owner": "filterButton",
+   "bbox": [
+    485.7,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#1D63D8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:columns-3",
+   "owner": "columnsButton",
+   "bbox": [
+    609.86,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "columnsButton",
+   "bbox": [
+    690.45,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:download",
+   "owner": "exportButton",
+   "bbox": [
+    1127.23,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addButton",
+   "bbox": [
+    1239.19,
+    79,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-up",
+   "owner": "headerCell[0]",
+   "bbox": [
+    65.02,
+    124,
+    13,
+    13
+   ],
+   "color": {
+    "hex": "#1D63D8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "groupHeader[0]",
+   "bbox": [
+    37,
+    157,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.25,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "groupHeader[1]",
+   "bbox": [
+    37,
+    369,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.25,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "groupHeader[2]",
+   "bbox": [
+    37,
+    401,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.25,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevrons-up-down",
+   "owner": "rowsPerPage",
+   "bbox": [
+    1026.5,
+    726.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevrons-left",
+   "owner": "pagination",
+   "bbox": [
+    1066,
+    726,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#C7CDD6",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-left",
+   "owner": "pagination",
+   "bbox": [
+    1096,
+    726,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#C7CDD6",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "pagination",
+   "bbox": [
+    1277.5,
+    726,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevrons-right",
+   "owner": "pagination",
+   "bbox": [
+    1307.5,
+    726,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#6B7280",
+    "alpha": 1.0
+   },
+   "count": 74,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#374151",
+    "alpha": 1.0
+   },
+   "count": 56,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#111827",
+    "alpha": 1.0
+   },
+   "count": 40,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E3E7ED",
+    "alpha": 1.0
+   },
+   "count": 22,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#CDD4DE",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E6EAF0",
+    "alpha": 1.0
+   },
+   "count": 14,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1D63D8",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "border",
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F4F6F9",
+    "alpha": 1.0
+   },
+   "count": 10,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E7F6EC",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A9C4F2",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FEF3E2",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FDECEC",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C2262E",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C7CDD6",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#DCE8FB",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EAF1FD",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#BCC5D2",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  }
+ ],
+ "data": {
+  "total": 326,
+  "range": [
+   1,
+   14
+  ],
+  "pageSize": 14,
+  "pages": 24,
+  "search": "kablo",
+  "activeFilters": 3,
+  "sort": {
+   "column": "sku",
+   "order": "asc"
+  },
+  "groupBy": "depot",
+  "frozenColumns": 1,
+  "scrollLeft": 0,
+  "editing": {
+   "sku": "NW-6005-G",
+   "column": "unitPrice",
+   "value": "3.450,00"
+  },
+  "groups": [
+   {
+    "depot": "Ankara",
+    "count": 6,
+    "expanded": true
+   },
+   {
+    "depot": "Bursa",
+    "count": 4,
+    "expanded": false,
+    "stock": 1960,
+    "value": 212480
+   },
+   {
+    "depot": "İstanbul",
+    "count": 8,
+    "expanded": true
+   }
+  ],
+  "columns": [
+   {
+    "id": "sku",
+    "label": "SKU",
+    "width": 150,
+    "frozen": true
+   },
+   {
+    "id": "name",
+    "label": "Ürün adı",
+    "width": 270
+   },
+   {
+    "id": "category",
+    "label": "Kategori",
+    "width": 124
+   },
+   {
+    "id": "supplier",
+    "label": "Tedarikçi",
+    "width": 150
+   },
+   {
+    "id": "stock",
+    "label": "Stok",
+    "width": 76,
+    "align": "right"
+   },
+   {
+    "id": "level",
+    "label": "Seviye",
+    "width": 112
+   },
+   {
+    "id": "unitPrice",
+    "label": "Birim fiyat",
+    "width": 116,
+    "align": "right"
+   },
+   {
+    "id": "value",
+    "label": "Stok değeri",
+    "width": 140,
+    "align": "right"
+   },
+   {
+    "id": "status",
+    "label": "Durum",
+    "width": 104
+   },
+   {
+    "id": "lastIn",
+    "label": "Son giriş",
+    "width": 112
+   },
+   {
+    "id": "shelf",
+    "label": "Raf",
+    "width": 88
+   },
+   {
+    "id": "barcode",
+    "label": "Barkod",
+    "width": 150
+   },
+   {
+    "id": "updatedBy",
+    "label": "Güncelleyen",
+    "width": 130
+   }
+  ],
+  "totals": {
+   "stock": 10379,
+   "value": 1751327.4
+  },
+  "rows": [
+   {
+    "depot": "Ankara",
+    "sku": "FO-8810-SM",
+    "name": "Fiber optik patch kablo SC-LC 5 m",
+    "category": "Ağ",
+    "supplier": "Linkora Ağ",
+    "stock": 0,
+    "unitPrice": 412,
+    "value": 0,
+    "capacity": 400,
+    "reorderPoint": 60,
+    "status": "Tükendi",
+    "lastIn": "18.09.2026"
+   },
+   {
+    "depot": "Ankara",
+    "sku": "HD-2201-4K",
+    "name": "HDMI 2.1 kablo 3 m, örgülü",
+    "category": "Görüntü",
+    "supplier": "Ekranix Dağıtım",
+    "stock": 412,
+    "unitPrice": 349.5,
+    "value": 143994,
+    "capacity": 800,
+    "reorderPoint": 120,
+    "status": "Stokta",
+    "lastIn": "29.09.2026"
+   },
+   {
+    "depot": "Ankara",
+    "sku": "KB-1042-S",
+    "name": "USB-C – USB-C şarj kablosu 1 m",
+    "category": "Şarj kabloları",
+    "supplier": "Voltek Elektronik",
+    "stock": 1248,
+    "unitPrice": 189.9,
+    "value": 236995.2,
+    "capacity": 2000,
+    "reorderPoint": 300,
+    "status": "Stokta",
+    "lastIn": "29.09.2026"
+   },
+   {
+    "depot": "Ankara",
+    "sku": "KB-1043-B",
+    "name": "USB-C – Lightning kablo 2 m",
+    "category": "Şarj kabloları",
+    "supplier": "Voltek Elektronik",
+    "stock": 86,
+    "unitPrice": 249,
+    "value": 21414,
+    "capacity": 1000,
+    "reorderPoint": 150,
+    "status": "Az kaldı",
+    "lastIn": "22.09.2026"
+   },
+   {
+    "depot": "Ankara",
+    "sku": "NW-6005-G",
+    "name": "Cat6 UTP ağ kablosu, 305 m makara",
+    "category": "Ağ",
+    "supplier": "Linkora Ağ",
+    "stock": 38,
+    "unitPrice": 3450,
+    "value": 131100,
+    "capacity": 60,
+    "reorderPoint": 12,
+    "status": "Stokta",
+    "lastIn": "26.09.2026"
+   },
+   {
+    "depot": "Ankara",
+    "sku": "PW-3301-EU",
+    "name": "Güç kablosu C13, 1,8 m",
+    "category": "Güç",
+    "supplier": "Akım Kablo",
+    "stock": 2640,
+    "unitPrice": 84.9,
+    "value": 224136,
+    "capacity": 3000,
+    "reorderPoint": 400,
+    "status": "Stokta",
+    "lastIn": "30.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "AU-5120-3",
+    "name": "3,5 mm stereo ses kablosu 1,5 m",
+    "category": "Ses",
+    "supplier": "Tınısan Ses",
+    "stock": 0,
+    "unitPrice": 74.9,
+    "value": 0,
+    "capacity": 600,
+    "reorderPoint": 80,
+    "status": "Tükendi",
+    "lastIn": "11.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "CX-7004-75",
+    "name": "Koaksiyel anten kablosu 10 m",
+    "category": "Görüntü",
+    "supplier": "Ekranix Dağıtım",
+    "stock": 58,
+    "unitPrice": 139.9,
+    "value": 8114.2,
+    "capacity": 500,
+    "reorderPoint": 75,
+    "status": "Az kaldı",
+    "lastIn": "24.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "DP-2410-M",
+    "name": "DisplayPort 1.4 kablo 2 m",
+    "category": "Görüntü",
+    "supplier": "Ekranix Dağıtım",
+    "stock": 290,
+    "unitPrice": 459.9,
+    "value": 133371,
+    "capacity": 600,
+    "reorderPoint": 90,
+    "status": "Stokta",
+    "lastIn": "27.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "HD-2204-8K",
+    "name": "HDMI 2.1 kablo 5 m, 8K",
+    "category": "Görüntü",
+    "supplier": "Ekranix Dağıtım",
+    "stock": 64,
+    "unitPrice": 689,
+    "value": 44096,
+    "capacity": 400,
+    "reorderPoint": 80,
+    "status": "Az kaldı",
+    "lastIn": "25.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "KB-1050-W",
+    "name": "USB-A – USB-C kablo 1 m, beyaz",
+    "category": "Şarj kabloları",
+    "supplier": "Voltek Elektronik",
+    "stock": 3105,
+    "unitPrice": 129,
+    "value": 400545,
+    "capacity": 4000,
+    "reorderPoint": 500,
+    "status": "Stokta",
+    "lastIn": "30.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "KB-1061-G",
+    "name": "Mıknatıslı şarj kablosu 1 m",
+    "category": "Şarj kabloları",
+    "supplier": "Voltek Elektronik",
+    "stock": 742,
+    "unitPrice": 219,
+    "value": 162498,
+    "capacity": 1200,
+    "reorderPoint": 150,
+    "status": "Stokta",
+    "lastIn": "28.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "NW-6012-B",
+    "name": "Cat6A S/FTP patch kablo 2 m",
+    "category": "Ağ",
+    "supplier": "Linkora Ağ",
+    "stock": 1520,
+    "unitPrice": 96.5,
+    "value": 146680,
+    "capacity": 2500,
+    "reorderPoint": 300,
+    "status": "Stokta",
+    "lastIn": "29.09.2026"
+   },
+   {
+    "depot": "İstanbul",
+    "sku": "PW-3310-TR",
+    "name": "Uzatma kablosu 5'li, 3 m",
+    "category": "Güç",
+    "supplier": "Akım Kablo",
+    "stock": 176,
+    "unitPrice": 559,
+    "value": 98384,
+    "capacity": 800,
+    "reorderPoint": 200,
+    "status": "Az kaldı",
+    "lastIn": "23.09.2026"
+   }
+  ]
+ },
+ "states": {}
+}

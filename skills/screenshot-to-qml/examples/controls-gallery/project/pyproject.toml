@@ -1,0 +1,9 @@
+[project]
+name = "controls-gallery"
+version = "0.1.0"
+description = "Controls Gallery — native Qt Quick UI"
+requires-python = ">=3.10"
+dependencies = ["PySide6-Essentials>=6.8"]
+
+[tool.pyside6-project]
+files = ["main.py", "qml/App/qmldir", "qml/App/Main.qml", "qml/App/Style/qmldir", "qml/App/Style/Theme.qml", "qml/App/Style/Icons.qml", "qml/App/Controls/qmldir"]

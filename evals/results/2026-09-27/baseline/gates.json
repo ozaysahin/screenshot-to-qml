@@ -1,0 +1,720 @@
+{
+ "01-hmi-dolum": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/ActionButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/AlarmItem.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/EmergencyStopButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/FaIcon.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/FooterBar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/HeaderBar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/HmiData.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/PressureChart.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SpeedSlider.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/StatusPill.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/TankGauge.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 12
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AlarmItem.qml:60: font literal: font.pixelSize: 12",
+    "qml/App/AlarmItem.qml:72: font literal: font.pixelSize: 15",
+    "qml/App/AlarmsPanel.qml:28: color literal: color: \"#ffffff\"",
+    "qml/App/AlarmsPanel.qml:31: font literal: font.pixelSize: 13",
+    "qml/App/ControlPanel.qml:38: font literal: font.pixelSize: 15",
+    "qml/App/ControlPanel.qml:47: font literal: font.pixelSize: 14",
+    "qml/App/ControlPanel.qml:57: font literal: font.pixelSize: 22",
+    "qml/App/ControlPanel.qml:84: color literal: foreground: HmiData.running ? Theme.startFg : \"#ffffff\"",
+    "qml/App/EmergencyStopButton.qml:29: color literal: color: \"#ffffff\"",
+    "qml/App/EmergencyStopButton.qml:34: color literal: color: \"#ffffff\"",
+    "qml/App/EmergencyStopButton.qml:37: font literal: font.pixelSize: 26",
+    "qml/App/FooterBar.qml:35: font literal: font.pixelSize: 14",
+    "qml/App/FooterBar.qml:44: font literal: font.pixelSize: 14",
+    "qml/App/FooterBar.qml:54: font literal: font.pixelSize: 14",
+    "qml/App/FooterBar.qml:63: font literal: font.pixelSize: 14",
+    "qml/App/FooterBar.qml:73: font literal: font.pixelSize: 14",
+    "qml/App/FooterBar.qml:85: font literal: font.pixelSize: 14",
+    "qml/App/HeaderBar.qml:45: font literal: font.pixelSize: 12",
+    "qml/App/HeaderBar.qml:57: font literal: font.pixelSize: 22",
+    "qml/App/HeaderBar.qml:95: font literal: font.pixelSize: 28"
+   ],
+   "errorCount": 53
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "02-kiosk-kafe": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AppHeader.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/CartBar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/CategoryChip.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/ProductCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/PromoBanner.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/QuantityStepper.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SoftShadow.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Theme.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 9
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/CartBar.qml:55: color literal: color: \"white\"",
+    "qml/App/CartBar.qml:78: color literal: color: \"white\"",
+    "qml/App/CartBar.qml:102: color literal: color: \"white\"",
+    "qml/App/Main.qml:59: color literal: price: 85; icon: \"coffee\"; tone: \"rust\"; tile: \"#FDE7D8\"",
+    "qml/App/Main.qml:64: color literal: price: 110; icon: \"milk\"; tone: \"brown\"; tile: \"#EFE6DC\"",
+    "qml/App/Main.qml:69: color literal: price: 95; icon: \"bean\"; tone: \"green\"; tile: \"#E3EFE0\"",
+    "qml/App/Main.qml:74: color literal: price: 120; icon: \"cup-soda\"; tone: \"teal\"; tile: \"#DDEFF5\"",
+    "qml/App/PromoBanner.qml:58: color literal: fillColor: Qt.rgba(1, 1, 1, 0.16)",
+    "qml/App/PromoBanner.qml:69: color literal: fillColor: Qt.rgba(1, 1, 1, 0.24)",
+    "qml/App/PromoBanner.qml:111: color literal: color: Qt.rgba(1, 1, 1, 0.2)",
+    "qml/App/PromoBanner.qml:122: color literal: color: \"white\"",
+    "qml/App/PromoBanner.qml:134: color literal: color: \"white\"",
+    "qml/App/PromoBanner.qml:149: color literal: color: \"white\"",
+    "qml/App/PromoBanner.qml:158: color literal: color: \"white\"",
+    "qml/App/PromoBanner.qml:168: color literal: color: \"white\""
+   ],
+   "errorCount": 15
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "03-dashboard-dark": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DeploymentsTable.qml:54: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:73: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:77: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:78: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:83: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:96: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:103: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:109: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:118: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:137: [unqualified] Unqualified access",
+    "qml/App/DeploymentsTable.qml:144: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:61: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:78: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:117: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:117: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:117: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:118: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:121: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:126: [unqualified] Unqualified access",
+    "qml/App/LatencyChart.qml:129: [unqualified] Unqualified access"
+   ],
+   "errorCount": 35
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DashboardData.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeploymentsTable.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/KpiCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/LatencyChart.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/ModelDonut.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/NavItem.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Sidebar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Sparkline.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/StatusPill.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/TopBar.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 10
+  },
+  "runtime": {
+   "status": "fail",
+   "errors": [
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/DeploymentsTable.qml:87:17: QML Icon: Invalid image provider: image://icon/cpu/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/DeploymentsTable.qml:87:17: QML Icon: Invalid image provider: image://icon/scan-face/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/DeploymentsTable.qml:87:17: QML Icon: Invalid image provider: image://icon/cpu/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/DeploymentsTable.qml:87:17: QML Icon: Invalid image provider: image://icon/circuit-board/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/DeploymentsTable.qml:41:9: QML Icon: Invalid image provider: image://icon/chevron-right/7c5cff",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/ModelDonut.qml:137:5: QML Icon: Invalid image provider: image://icon/sparkles/7c5cff",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:87:13: QML Icon: Invalid image provider: image://icon/arrow-up-right/34d399",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:27:9: QML Icon: Invalid image provider: image://icon/cpu/7c5cff",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:87:13: QML Icon: Invalid image provider: image://icon/arrow-down-right/34d399",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:27:9: QML Icon: Invalid image provider: image://icon/timer/22d3ee",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:87:13: QML Icon: Invalid image provider: image://icon/arrow-up-right/fbbf24",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:27:9: QML Icon: Invalid image provider: image://icon/gauge/fbbf24",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:87:13: QML Icon: Invalid image provider: image://icon/arrow-up-right/f87171",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/KpiCard.qml:27:9: QML Icon: Invalid image provider: image://icon/triangle-alert/f87171",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/TopBar.qml:138:9: QML Icon: Invalid image provider: image://icon/plus/ffffff",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/TopBar.qml:111:9: QML Icon: Invalid image provider: image://icon/chevron-down/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/TopBar.qml:98:9: QML Icon: Invalid image provider: image://icon/calendar/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/TopBar.qml:38:9: QML Icon: Invalid image provider: image://icon/search/5d6275",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/Sidebar.qml:209:9: QML Icon: Invalid image provider: image://icon/log-out/8b90a3",
+    "QML: file:///home/claude/evalruns/baseline/03-dashboard-dark/project/qml/App/NavItem.qml:35:5: QML Icon: Invalid image provider: image://icon/users/8b90a3"
+   ],
+   "errorCount": 28
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DeploymentsTable.qml:26: font literal: font.pixelSize: 15",
+    "qml/App/DeploymentsTable.qml:37: font literal: font.pixelSize: 13",
+    "qml/App/DeploymentsTable.qml:57: font literal: font.pixelSize: 11",
+    "qml/App/DeploymentsTable.qml:99: font literal: font.pixelSize: 13",
+    "qml/App/DeploymentsTable.qml:106: font literal: font.pixelSize: 13",
+    "qml/App/DeploymentsTable.qml:113: font literal: font.pixelSize: 13",
+    "qml/App/DeploymentsTable.qml:140: font literal: font.pixelSize: 13",
+    "qml/App/DeploymentsTable.qml:147: font literal: font.pixelSize: 13",
+    "qml/App/KpiCard.qml:38: font literal: font.pixelSize: 13",
+    "qml/App/KpiCard.qml:51: font literal: font.pixelSize: 32",
+    "qml/App/KpiCard.qml:60: font literal: font.pixelSize: 16",
+    "qml/App/KpiCard.qml:97: font literal: font.pixelSize: 12",
+    "qml/App/KpiCard.qml:107: font literal: font.pixelSize: 12",
+    "qml/App/LatencyChart.qml:30: font literal: font.pixelSize: 15",
+    "qml/App/LatencyChart.qml:37: font literal: font.pixelSize: 12",
+    "qml/App/LatencyChart.qml:71: font literal: font.pixelSize: 12",
+    "qml/App/LatencyChart.qml:105: font literal: font.pixelSize: 12",
+    "qml/App/LatencyChart.qml:138: font literal: font.pixelSize: 11",
+    "qml/App/LatencyChart.qml:151: font literal: font.pixelSize: 11",
+    "qml/App/LatencyChart.qml:166: color literal: GradientStop { position: 0.0; color: Qt.rgba(34 / 255, 211 / 255, 238 / 255, 0.10) }"
+   ],
+   "errorCount": 58
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "04-dashboard-light": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DeviceCard.qml:73: [unqualified] Unqualified access",
+    "qml/App/DeviceCard.qml:94: [unqualified] Unqualified access",
+    "qml/App/GridCard.qml:71: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:160: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:161: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:162: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:163: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:163: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:164: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:167: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:177: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:177: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:178: [unqualified] Unqualified access",
+    "qml/App/SolarCard.qml:179: [unqualified] Unqualified access",
+    "qml/App/TopBar.qml:61: [unqualified] Unqualified access",
+    "qml/App/TopBar.qml:90: [unqualified] Unqualified access",
+    "qml/App/WeeklyChartCard.qml:85: [unqualified] Unqualified access",
+    "qml/App/WeeklyChartCard.qml:85: [unqualified] Unqualified access",
+    "qml/App/WeeklyChartCard.qml:85: [unqualified] Unqualified access",
+    "qml/App/WeeklyChartCard.qml:86: [unqualified] Unqualified access"
+   ],
+   "errorCount": 33
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/BatteryCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeviceCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GridCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Icon.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/IconData.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/RingGauge.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SolarCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/ToolbarButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/UiText.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/WeeklyChartCard.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 10
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/Card.qml:10: color literal: property color ambientColor: Qt.rgba(22 / 255, 32 / 255, 26 / 255, 0.09)",
+    "qml/App/Card.qml:13: color literal: property color contactColor: Qt.rgba(22 / 255, 32 / 255, 26 / 255, 0.14)",
+    "qml/App/SolarCard.qml:17: color literal: ambientColor: Qt.rgba(1, 122 / 255, 26 / 255, 0.34)",
+    "qml/App/SolarCard.qml:59: color literal: color: Qt.rgba(1, 1, 1, 0.92)",
+    "qml/App/SolarCard.qml:67: color literal: color: Qt.rgba(1, 1, 1, 0.92)",
+    "qml/App/SolarCard.qml:79: color literal: color: \"white\"",
+    "qml/App/SolarCard.qml:87: color literal: color: \"white\"",
+    "qml/App/SolarCard.qml:95: color literal: color: Qt.rgba(1, 1, 1, 0.86)",
+    "qml/App/SolarCard.qml:105: color literal: color: Qt.rgba(1, 1, 1, 0.22)",
+    "qml/App/SolarCard.qml:120: color literal: color: \"white\"",
+    "qml/App/SolarCard.qml:135: color literal: color: \"white\"",
+    "qml/App/SolarCard.qml:167: color literal: color: index === root.currentIndex ? \"white\" : Qt.rgba(1, 1, 1, 0.38)",
+    "qml/App/SolarCard.qml:181: color literal: color: Qt.rgba(1, 1, 1, 0.8)",
+    "qml/App/ToolbarButton.qml:22: color literal: color: primary ? (hover.hovered ? \"#26342b\" : Theme.ink)",
+    "qml/App/ToolbarButton.qml:23: color literal: : (hover.hovered ? \"#f8faf9\" : Theme.surface)",
+    "qml/App/TopBar.qml:35: color literal: color: \"white\"",
+    "qml/App/TopBar.qml:113: color literal: color: \"white\"",
+    "qml/App/TopBar.qml:143: color literal: color: \"white\""
+   ],
+   "errorCount": 18
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "05-settings-form": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/GeneralPage.qml:356: [unqualified] Unqualified access",
+    "qml/App/GeneralPage.qml:355: [unqualified] Unqualified access",
+    "qml/App/GeneralPage.qml:355: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:53: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:55: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:57: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:58: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:72: [unqualified] Unqualified access",
+    "qml/App/SegmentedControl.qml:73: [unqualified] Unqualified access",
+    "qml/App/SelectBox.qml:58: [unqualified] Unqualified access",
+    "qml/App/SelectBox.qml:63: [unqualified] Unqualified access",
+    "qml/App/SelectBox.qml:62: [unqualified] Unqualified access",
+    "qml/App/Sidebar.qml:65: [unqualified] Unqualified access",
+    "qml/App/Sidebar.qml:66: [unqualified] Unqualified access",
+    "qml/App/TextBox.qml:33: [unqualified] Unqualified access",
+    "qml/App/TextBox.qml:37: [unqualified] Unqualified access"
+   ],
+   "errorCount": 16
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AppButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/BrightnessSlider.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/CheckRow.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GeneralPage.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/NavItem.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/RadioOption.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SegmentedControl.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SelectBox.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SettingsModel.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Sidebar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/TextBox.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/ToggleSwitch.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 13
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AppButton.qml:11: color literal: readonly property color foreground: variant === \"primary\" ? \"#FFFFFF\"",
+    "qml/App/AppButton.qml:27: font literal: font.pixelSize: 14",
+    "qml/App/AppButton.qml:57: color literal: color: Qt.rgba(15 / 255, 23 / 255, 42 / 255, 0.04)",
+    "qml/App/AppButton.qml:67: color literal: return control.down ? \"#3730A3\" : control.hovered ? Theme.primaryHover : Theme.primary",
+    "qml/App/AppText.qml:7: font literal: font.pixelSize: 14",
+    "qml/App/BrightnessSlider.qml:50: color literal: color: Qt.rgba(15 / 255, 23 / 255, 42 / 255, 0.05)",
+    "qml/App/Card.qml:49: font literal: font.pixelSize: 15",
+    "qml/App/FieldLabel.qml:5: font literal: font.pixelSize: 13",
+    "qml/App/GeneralPage.qml:31: font literal: font.pixelSize: 24",
+    "qml/App/GeneralPage.qml:110: font literal: font.pixelSize: 12",
+    "qml/App/GeneralPage.qml:136: font literal: font.pixelSize: 12",
+    "qml/App/GeneralPage.qml:154: font literal: font.pixelSize: 15",
+    "qml/App/GeneralPage.qml:163: font literal: font.pixelSize: 13",
+    "qml/App/GeneralPage.qml:202: font literal: font.pixelSize: 13",
+    "qml/App/GeneralPage.qml:234: font literal: font.pixelSize: 12",
+    "qml/App/GeneralPage.qml:324: font literal: font.pixelSize: 11",
+    "qml/App/Main.qml:71: font literal: font.pixelSize: 24",
+    "qml/App/Main.qml:114: font literal: font.pixelSize: 13",
+    "qml/App/NavItem.qml:30: font literal: font.pixelSize: 14",
+    "qml/App/NavItem.qml:48: font literal: font.pixelSize: 11"
+   ],
+   "errorCount": 33
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "06-mobile-aliskanlik": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/BottomNav.qml:48: [unqualified] Unqualified access",
+    "qml/App/BottomNav.qml:50: [unqualified] Unqualified access",
+    "qml/App/BottomNav.qml:51: [unqualified] Unqualified access",
+    "qml/App/BottomNav.qml:52: [unqualified] Unqualified access",
+    "qml/App/BottomNav.qml:77: [unqualified] Unqualified access",
+    "qml/App/Main.qml:175: [unqualified] Unqualified access",
+    "qml/App/Main.qml:176: [unqualified] Unqualified access",
+    "qml/App/Main.qml:233: [unqualified] Unqualified access",
+    "qml/App/Main.qml:238: [unqualified] Unqualified access",
+    "qml/App/Main.qml:238: [unqualified] Unqualified access",
+    "qml/App/Main.qml:241: [unqualified] Unqualified access",
+    "qml/App/Main.qml:241: [unqualified] Unqualified access",
+    "qml/App/Main.qml:248: [unqualified] Unqualified access",
+    "qml/App/Main.qml:248: [unqualified] Unqualified access",
+    "qml/App/Main.qml:249: [unqualified] Unqualified access",
+    "qml/App/Main.qml:250: [unqualified] Unqualified access",
+    "qml/App/Main.qml:250: [unqualified] Unqualified access",
+    "qml/App/Main.qml:251: [unqualified] Unqualified access",
+    "qml/App/Main.qml:251: [unqualified] Unqualified access",
+    "qml/App/Main.qml:251: [unqualified] Unqualified access"
+   ],
+   "errorCount": 24
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/BottomNav.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DayChip.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/HabitCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/HeroCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/StatusBar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Theme.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 7
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/BottomNav.qml:27: color literal: color: Qt.rgba(30 / 255, 27 / 255, 46 / 255, 0.07)",
+    "qml/App/BottomNav.qml:97: color literal: color: Qt.rgba(109 / 255, 93 / 255, 252 / 255, 0.62)",
+    "qml/App/DayChip.qml:42: color literal: color: chip.selected ? Qt.rgba(1, 1, 1, 0.8) : Theme.textMuted",
+    "qml/App/HabitCard.qml:11: color literal: property color tileColor: \"#EDE9FE\"",
+    "qml/App/HeroCard.qml:35: color literal: color: Qt.rgba(109 / 255, 93 / 255, 252 / 255, 0.40)",
+    "qml/App/HeroCard.qml:66: color literal: fillColor: Qt.rgba(1, 1, 1, 0.12)",
+    "qml/App/HeroCard.qml:93: color literal: color: Qt.rgba(1, 1, 1, 0.85)",
+    "qml/App/HeroCard.qml:103: color literal: color: \"white\"",
+    "qml/App/HeroCard.qml:112: color literal: color: Qt.rgba(1, 1, 1, 0.9)",
+    "qml/App/HeroCard.qml:123: color literal: color: Qt.rgba(1, 1, 1, 0.22)",
+    "qml/App/HeroCard.qml:139: color literal: color: \"white\"",
+    "qml/App/HeroCard.qml:158: color literal: color: \"white\"",
+    "qml/App/Main.qml:42: color literal: ListElement { kind: \"water\"; label: \"Su iç\";        detail: \"\";                   icon: \"d",
+    "qml/App/Main.qml:43: color literal: ListElement { kind: \"check\"; label: \"Kitap oku\";    detail: \"20 dk · tamamlandı\"; icon: \"b",
+    "qml/App/Main.qml:44: color literal: ListElement { kind: \"steps\"; label: \"10.000 adım\";  detail: \"7.412 adım\";         icon: \"w",
+    "qml/App/Main.qml:45: color literal: ListElement { kind: \"check\"; label: \"Meditasyon\";   detail: \"10 dk · 19:00\";      icon: \"y",
+    "qml/App/Main.qml:46: color literal: ListElement { kind: \"check\"; label: \"23:30'da uyu\"; detail: \"8 saat uyku\";        icon: \"m",
+    "qml/App/Main.qml:96: color literal: color: \"white\"",
+    "qml/App/Main.qml:130: color literal: color: Qt.rgba(30 / 255, 27 / 255, 46 / 255, 0.035)",
+    "qml/App/ProgressRing.qml:9: color literal: property color trackColor: Qt.rgba(1, 1, 1, 0.3)"
+   ],
+   "errorCount": 20
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "07-data-table": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/DeviceRow.qml:35: [missing-property] Member \"colCheck\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:44: [missing-property] Member \"colDevice\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:56: [missing-property] Member \"colSerial\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:56: [missing-property] Member \"colDevice\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:63: [missing-property] Member \"colSerial\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:71: [missing-property] Member \"colType\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:72: [missing-property] Member \"colLocation\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:72: [missing-property] Member \"colType\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:77: [missing-property] Member \"colLocation\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:78: [missing-property] Member \"colStatus\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:78: [missing-property] Member \"colLocation\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:83: [missing-property] Member \"colStatus\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:88: [missing-property] Member \"colCpu\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceRow.qml:93: [missing-property] Member \"colSeen\" not found on type \"QQuickItem\"",
+    "qml/App/DeviceTable.qml:115: [unqualified] Unqualified access",
+    "qml/App/DeviceTable.qml:116: [unqualified] Unqualified access",
+    "qml/App/DeviceTable.qml:117: [unqualified] Unqualified access",
+    "qml/App/DeviceTable.qml:119: [unqualified] Unqualified access",
+    "qml/App/DeviceTable.qml:120: [unqualified] Unqualified access",
+    "qml/App/FilterBar.qml:112: [unqualified] Unqualified access"
+   ],
+   "errorCount": 25
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/ActionButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/CpuMeter.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeviceModel.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeviceRow.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeviceTable.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/FilterBar.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/FilterChip.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Icon.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/IconButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/PageButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/PageHeader.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Pagination.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/StatusPill.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/TableCheckBox.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/TopBar.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 16
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/ActionButton.qml:20: color literal: color: Qt.rgba(0.06, 0.09, 0.16, btn.primary ? 0.10 : 0.06)",
+    "qml/App/ActionButton.qml:44: color literal: color: btn.primary ? \"#ffffff\" : Theme.text2",
+    "qml/App/CpuMeter.qml:31: font literal: font.pixelSize: 12",
+    "qml/App/DeviceRow.qml:67: font literal: font.pixelSize: 13",
+    "qml/App/DeviceTable.qml:44: color literal: color: Qt.rgba(0.06, 0.09, 0.16, 0.13)",
+    "qml/App/DeviceTable.qml:135: font literal: font.pixelSize: 13",
+    "qml/App/FilterBar.qml:32: font literal: font.pixelSize: 14",
+    "qml/App/FilterBar.qml:63: font literal: font.pixelSize: 13",
+    "qml/App/FilterChip.qml:59: font literal: font.pixelSize: 13",
+    "qml/App/FilterChip.qml:68: font literal: font.pixelSize: 13",
+    "qml/App/HeaderLabel.qml:6: font literal: font.pixelSize: 12",
+    "qml/App/PageButton.qml:23: font literal: font.pixelSize: 13",
+    "qml/App/PageButton.qml:25: color literal: color: cell.current ? \"#ffffff\" : (cell.enabled ? Theme.text2 : Theme.text3)",
+    "qml/App/PageHeader.qml:22: font literal: font.pixelSize: 13",
+    "qml/App/PageHeader.qml:32: font literal: font.pixelSize: 13",
+    "qml/App/PageHeader.qml:46: font literal: font.pixelSize: 24",
+    "qml/App/PageHeader.qml:61: font literal: font.pixelSize: 12",
+    "qml/App/Pagination.qml:25: font literal: font.pixelSize: 13",
+    "qml/App/Pagination.qml:39: font literal: font.pixelSize: 13",
+    "qml/App/StatusPill.qml:36: font literal: font.pixelSize: 12"
+   ],
+   "errorCount": 23
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "08-glass-home": {
+  "lint": {
+   "status": "fail",
+   "errors": [
+    "qml/App/Backdrop.qml:16: [unqualified] Unqualified access",
+    "qml/App/Backdrop.qml:17: [unqualified] Unqualified access",
+    "qml/App/Backdrop.qml:18: [unqualified] Unqualified access",
+    "qml/App/Backdrop.qml:19: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:65: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:66: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:67: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:67: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:71: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:72: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:72: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:73: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:74: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:74: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:74: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:75: [unqualified] Unqualified access",
+    "qml/App/GlassSurface.qml:77: [unqualified] Unqualified access"
+   ],
+   "errorCount": 17
+  },
+  "format": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AlbumArt.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/CircleButton.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/DeviceCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GaussianGradient.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GlassBorder.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GlassSurface.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GlowLayer.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/GradientShape.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Header.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Icon.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Main.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/MediaSlider.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/NowPlayingCard.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/SceneChip.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Theme.qml: not qmlformat-clean (run qmlformat -i)",
+    "qml/App/Toggle.qml: not qmlformat-clean (run qmlformat -i)"
+   ],
+   "errorCount": 16
+  },
+  "runtime": {
+   "status": "fail",
+   "errors": [
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/SceneChip.qml:54:5: QML Icon: Invalid image provider: image://icons/plus/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/SceneChip.qml:54:5: QML Icon: Invalid image provider: image://icons/door-open/d9f5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/SceneChip.qml:54:5: QML Icon: Invalid image provider: image://icons/sunrise/d9f5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/SceneChip.qml:54:5: QML Icon: Invalid image provider: image://icons/bed-double/d9f5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/SceneChip.qml:54:5: QML Icon: Invalid image provider: image://icons/clapperboard/ff0b1020/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/Main.qml:162:17: QML Icon: Invalid image provider: image://icons/lock/ff4ade80/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/DeviceCard.qml:80:9: QML Icon: Invalid image provider: image://icons/shield-check/ff4ade80/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/DeviceCard.qml:80:9: QML Icon: Invalid image provider: image://icons/blinds/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/CircleButton.qml:23:5: QML Icon: Invalid image provider: image://icons/plus/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/CircleButton.qml:23:5: QML Icon: Invalid image provider: image://icons/minus/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/DeviceCard.qml:80:9: QML Icon: Invalid image provider: image://icons/snowflake/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/DeviceCard.qml:80:9: QML Icon: Invalid image provider: image://icons/lightbulb/fffcd34d/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:236:9: QML Icon: Invalid image provider: image://icons/speaker/fff5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:211:5: QML Icon: Invalid image provider: image://icons/volume-2/9ef5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:190:9: QML Icon: Invalid image provider: image://icons/repeat/ff22d3ee/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:181:9: QML Icon: Invalid image provider: image://icons/skip-forward/9ef5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:165:13: QML Icon: Invalid image provider: image://icons/play/ff0b1020/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:128:9: QML Icon: Invalid image provider: image://icons/skip-back/9ef5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/NowPlayingCard.qml:120:9: QML Icon: Invalid image provider: image://icons/shuffle/9ef5f7ff/2",
+    "QML: file:///home/claude/evalruns/baseline/08-glass-home/project/qml/App/Header.qml:42:5: QML Icon: Invalid image provider: image://icons/moon-star/9ef5f7ff/2"
+   ],
+   "errorCount": 20
+  },
+  "hardcode": {
+   "status": "fail",
+   "errors": [
+    "qml/App/AlbumArt.qml:35: color literal: GradientStop { position: 0.00; color: \"#8b5cf6\" }",
+    "qml/App/AlbumArt.qml:36: color literal: GradientStop { position: 0.25; color: \"#ec4899\" }",
+    "qml/App/AlbumArt.qml:37: color literal: GradientStop { position: 0.50; color: \"#f59e0b\" }",
+    "qml/App/AlbumArt.qml:38: color literal: GradientStop { position: 0.75; color: \"#06b6d4\" }",
+    "qml/App/AlbumArt.qml:39: color literal: GradientStop { position: 1.00; color: \"#8b5cf6\" }",
+    "qml/App/AlbumArt.qml:50: color literal: color: Qt.rgba(0, 0, 0, 0.3)",
+    "qml/App/GaussianGradient.qml:10: color literal: property color color: \"white\"",
+    "qml/App/GaussianGradient.qml:21: color literal: return Qt.rgba(color.r, color.g, color.b, color.a * strength * Math.exp(-k * k))",
+    "qml/App/GlassBorder.qml:20: color literal: return Qt.rgba(1, 1, 1, s.alpha * root.strength)",
+    "qml/App/GlowLayer.qml:14: color literal: property color color: \"white\"",
+    "qml/App/GradientShape.qml:24: color literal: return Qt.rgba(from.r + (to.r - from.r) * t, from.g + (to.g - from.g) * t,",
+    "qml/App/Main.qml:30: color literal: color: Qt.rgba(0, 0, 0, 0.35)",
+    "qml/App/Main.qml:98: color literal: from: Qt.rgba(65 / 255, 48 / 255, 96 / 255, 1.0)",
+    "qml/App/Main.qml:99: color literal: to: Qt.rgba(16 / 255, 73 / 255, 131 / 255, 0.03)",
+    "qml/App/MediaSlider.qml:65: color literal: color: \"white\"",
+    "qml/App/NowPlayingCard.qml:234: color literal: color: Qt.rgba(1, 1, 1, 0.12)",
+    "qml/App/SceneChip.qml:39: color literal: GradientStop { position: 0.0; color: Qt.rgba(0, 0, 0, 0.2) }",
+    "qml/App/SceneChip.qml:40: color literal: GradientStop { position: 1.0; color: Qt.rgba(0, 0, 0, 0.0) }",
+    "qml/App/StatusPill.qml:45: color literal: color: \"#1e1033\""
+   ],
+   "errorCount": 19
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ }
+}

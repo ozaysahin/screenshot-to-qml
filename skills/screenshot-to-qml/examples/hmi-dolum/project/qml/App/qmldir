@@ -1,0 +1,17 @@
+module App
+singleton MockData 1.0 MockData.qml
+Main 1.0 Main.qml
+TopBar 1.0 TopBar.qml
+StatusPill 1.0 StatusPill.qml
+InfoChip 1.0 InfoChip.qml
+ClockLabel 1.0 ClockLabel.qml
+TankPanel 1.0 TankPanel.qml
+TankGauge 1.0 TankGauge.qml
+EnvStat 1.0 EnvStat.qml
+KpiCard 1.0 KpiCard.qml
+PressureCard 1.0 PressureCard.qml
+LineChart 1.0 LineChart.qml
+AlarmPanel 1.0 AlarmPanel.qml
+AlarmItem 1.0 AlarmItem.qml
+ControlPanel 1.0 ControlPanel.qml
+StatusBar 1.0 StatusBar.qml

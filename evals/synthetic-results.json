@@ -1,0 +1,246 @@
+{
+ "fonts": {
+  "sheets": 17,
+  "screenFamilyAcc": 0.9411764705882353,
+  "runs": 170,
+  "runFamilyAcc": 0.9470588235294117,
+  "weightWithin100": 1.0,
+  "pxMAE": 0.7086956521739133,
+  "falseOutside": 0,
+  "perSheet": [
+   {
+    "family": "Roboto",
+    "screenFamily": "Roboto",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0273
+   },
+   {
+    "family": "Open Sans",
+    "screenFamily": "Open Sans",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.051
+   },
+   {
+    "family": "Lato",
+    "screenFamily": "Lato",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0783
+   },
+   {
+    "family": "Montserrat",
+    "screenFamily": "Montserrat",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.1159
+   },
+   {
+    "family": "Poppins",
+    "screenFamily": "Poppins",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0642
+   },
+   {
+    "family": "Rubik",
+    "screenFamily": "Rubik",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0584
+   },
+   {
+    "family": "Work Sans",
+    "screenFamily": "Work Sans",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0601
+   },
+   {
+    "family": "Fira Sans",
+    "screenFamily": "Fira Sans",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.1228
+   },
+   {
+    "family": "Source Sans 3",
+    "screenFamily": "Source Sans 3",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0487
+   },
+   {
+    "family": "Figtree",
+    "screenFamily": "Hind",
+    "ok": false,
+    "outside": false,
+    "agreement": 0.0018
+   },
+   {
+    "family": "Lexend",
+    "screenFamily": "Lexend",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0912
+   },
+   {
+    "family": "Urbanist",
+    "screenFamily": "Urbanist",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.1617
+   },
+   {
+    "family": "IBM Plex Sans",
+    "screenFamily": "IBM Plex Sans",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0139
+   },
+   {
+    "family": "Ubuntu",
+    "screenFamily": "Ubuntu",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0412
+   },
+   {
+    "family": "Fira Code",
+    "screenFamily": "Fira Code",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0149
+   },
+   {
+    "family": "Source Code Pro",
+    "screenFamily": "Source Code Pro",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.043
+   },
+   {
+    "family": "Roboto Mono",
+    "screenFamily": "Roboto Mono",
+    "ok": true,
+    "outside": false,
+    "agreement": 0.0065
+   }
+  ]
+ },
+ "outside": {
+  "sheets": 12,
+  "flagged": 7,
+  "flaggedRate": 0.5833333333333334,
+  "perSheet": [
+   {
+    "family": "Epilogue",
+    "screenFamily": "Barlow",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1079
+   },
+   {
+    "family": "Chivo",
+    "screenFamily": "Noto Sans",
+    "ok": false,
+    "outside": false,
+    "agreement": 0.0046
+   },
+   {
+    "family": "Commissioner",
+    "screenFamily": "Open Sans",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1206
+   },
+   {
+    "family": "Golos Text",
+    "screenFamily": "Geist",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1459
+   },
+   {
+    "family": "Gabarito",
+    "screenFamily": "Hind",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1809
+   },
+   {
+    "family": "Kumbh Sans",
+    "screenFamily": "DM Sans",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.094
+   },
+   {
+    "family": "Libre Franklin",
+    "screenFamily": "Public Sans",
+    "ok": false,
+    "outside": false,
+    "agreement": -0.0233
+   },
+   {
+    "family": "Cabin",
+    "screenFamily": "Titillium Web",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1656
+   },
+   {
+    "family": "Jost",
+    "screenFamily": "Heebo",
+    "ok": false,
+    "outside": false,
+    "agreement": -0.0686
+   },
+   {
+    "family": "Overpass",
+    "screenFamily": "Karla",
+    "ok": false,
+    "outside": true,
+    "agreement": -0.1798
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "screenFamily": "Schibsted Grotesk",
+    "ok": false,
+    "outside": false,
+    "agreement": -0.0584
+   },
+   {
+    "family": "Wix Madefor Text",
+    "screenFamily": "Nunito Sans",
+    "ok": false,
+    "outside": false,
+    "agreement": -0.0134
+   }
+  ]
+ },
+ "shadows": {
+  "cards": 24,
+  "detected": 1.0,
+  "xMAE": 0.031666666666666676,
+  "yMAE": 0.12291666666666656,
+  "blurMAE": 1.1083333333333334,
+  "spreadMAE": 0.5650000000000001,
+  "alphaMAE": 0.018833333333333327,
+  "xP90": 0.11700000000000006,
+  "yP90": 0.18799999999999953,
+  "blurP90": 2.2779999999999996,
+  "spreadP90": 1.946,
+  "alphaP90": 0.041400000000000034
+ },
+ "gradients": {
+  "boxes": 24,
+  "angleMAE": 0.037499999999999055,
+  "angleP90": 0.09999999999999432,
+  "endDeltaE": 0.15388006280651217,
+  "endDeltaEP90": 0.500491063287018,
+  "stopCountAcc": 0.9583333333333334,
+  "residual": 0.32750000000000007
+ }
+}

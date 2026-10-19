@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>EdgeWatch — Genel Bakış</title>
+
+
+<style>
+@font-face{font-family:'Inter';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/Inter-Bold.ttf') format('truetype');}
+@font-face{font-family:'Inter';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/Inter-Medium.ttf') format('truetype');}
+@font-face{font-family:'Inter';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Inter-Regular.ttf') format('truetype');}
+@font-face{font-family:'Inter';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Inter-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'Space Grotesk';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/SpaceGrotesk-Bold.ttf') format('truetype');}
+@font-face{font-family:'Space Grotesk';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/SpaceGrotesk-Medium.ttf') format('truetype');}
+@font-face{font-family:'Space Grotesk';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/SpaceGrotesk-Regular.ttf') format('truetype');}
+@font-face{font-family:'Space Grotesk';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/SpaceGrotesk-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #0A0B10;
+  --color-sidebar: #0E1017;
+  --color-surface: #12141C;
+  --color-surface-2: #1A1D28;
+  --color-border: #232736;
+  --color-text: #ECEEF5;
+  --color-muted: #8B90A3;
+  --color-dim: #5D6275;
+  --color-violet: #7C5CFF;
+  --color-violet-soft: rgba(124, 92, 255, 0.16);
+  --color-cyan: #22D3EE;
+  --color-green: #34D399;
+  --color-green-soft: rgba(52, 211, 153, 0.14);
+  --color-red: #F87171;
+  --color-red-soft: rgba(248, 113, 113, 0.14);
+  --color-amber: #FBBF24;
+  --color-amber-soft: rgba(251, 191, 36, 0.14);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 32px;
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 14px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 20px; display: flex; }
+svg.ic { width: 18px; height: 18px; display: block; flex: none; }
+.num { font-family: 'Space Grotesk', sans-serif; }
+
+.side { width: 240px; height: 900px; background: var(--color-sidebar); border-right: 1px solid var(--color-border); padding: 20px 16px; display: flex; flex-direction: column; flex: none; }
+.logo { display: flex; align-items: center; gap: 10px; padding: 0 8px; }
+.logo .mark { width: 32px; height: 32px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-violet) 0%, var(--color-cyan) 100%); display: grid; place-items: center; color: #fff; }
+.logo b { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -0.3px; }
+.ws { margin-top: 20px; height: 44px; padding: 0 12px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px; }
+.ws .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-green); }
+.ws div { flex: 1; } .ws small { display: block; font-size: 11px; color: var(--color-muted); line-height: 14px; } .ws span { font-size: 13px; font-weight: 500; line-height: 16px; }
+.ws svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.group { margin-top: 24px; }
+.group h6 { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-dim); padding: 0 12px; margin-bottom: 8px; line-height: 16px; }
+.nav { height: 38px; padding: 0 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; color: var(--color-muted); font-weight: 500; position: relative; }
+.nav + .nav { margin-top: 2px; }
+.nav.on { background: var(--color-surface-2); color: var(--color-text); }
+.nav.on::before { content: ''; position: absolute; left: -16px; top: 9px; width: 3px; height: 20px; border-radius: 0 3px 3px 0; background: var(--color-violet); }
+.nav.on svg { color: var(--color-violet); }
+.nav .count { margin-left: auto; font-size: 12px; color: var(--color-dim); }
+.nav .alert { margin-left: auto; min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--radius-pill); background: var(--color-red); color: #0A0B10; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.quota { margin-top: auto; padding: 14px; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); }
+.quota .t { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-muted); }
+.quota .t b { color: var(--color-text); font-weight: 600; }
+.bar { height: 6px; border-radius: var(--radius-pill); background: var(--color-surface-2); margin-top: 10px; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--color-violet), var(--color-cyan)); }
+.user { margin-top: 14px; display: flex; align-items: center; gap: 10px; padding: 0 4px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: #2A2340; color: #C4B5FD; font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+.user .who { flex: 1; } .user b { display: block; font-size: 13px; font-weight: 600; line-height: 18px; } .user span { font-size: 12px; color: var(--color-muted); line-height: 16px; }
+.user svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+
+.main { flex: 1; padding: 24px 32px 24px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.top { display: flex; align-items: center; gap: 12px; }
+.top h1 { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; line-height: 32px; letter-spacing: -0.5px; }
+.top p { font-size: 13px; color: var(--color-muted); line-height: 18px; margin-top: 2px; }
+.top .sp { flex: 1; }
+.search { width: 300px; height: 40px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px; padding: 0 8px 0 12px; color: var(--color-dim); }
+.search .ph { flex: 1; font-size: 13px; white-space: nowrap; }
+.kbd { height: 24px; padding: 0 7px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-surface-2); font-size: 11px; font-weight: 500; color: var(--color-muted); display: grid; place-items: center; }
+.btn { height: 40px; padding: 0 14px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+.btn.ghost { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); }
+.btn.ghost svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.btn.primary { background: var(--color-violet); color: #fff; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 6px 20px rgba(124, 92, 255, 0.35); }
+.btn.primary svg.ic { width: 16px; height: 16px; }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.kpi { height: 132px; padding: 18px 20px; position: relative; }
+.kpi .l { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--color-muted); font-weight: 500; }
+.kpi .l i { width: 28px; height: 28px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.kpi .l i svg.ic { width: 16px; height: 16px; }
+.kpi .v { font-size: 32px; font-weight: 600; line-height: 38px; height: 38px; margin-top: 14px; letter-spacing: -0.5px; }
+.kpi .v small { font-size: 16px; color: var(--color-muted); font-weight: 500; margin-left: 4px; letter-spacing: 0; }
+.kpi .d { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--color-dim); }
+.pill { height: 22px; padding: 0 8px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.pill svg.ic { width: 12px; height: 12px; }
+.pill.g { background: var(--color-green-soft); color: var(--color-green); }
+.pill.r { background: var(--color-red-soft); color: var(--color-red); }
+.pill.a { background: var(--color-amber-soft); color: var(--color-amber); }
+.kpi svg.spark { position: absolute; right: 20px; top: 58px; }
+
+.row2 { display: grid; grid-template-columns: 1fr 420px; gap: 20px; height: 322px; }
+.ch { padding: 20px 20px 12px; display: flex; flex-direction: column; }
+.ch-head { display: flex; align-items: flex-start; gap: 16px; }
+.ch-head h3 { font-size: 15px; font-weight: 600; line-height: 20px; }
+.ch-head p { font-size: 12px; color: var(--color-muted); line-height: 16px; margin-top: 2px; }
+.seg { margin-left: auto; display: flex; padding: 3px; border-radius: var(--radius-md); background: var(--color-surface-2); border: 1px solid var(--color-border); }
+.seg div { height: 26px; padding: 0 12px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--color-muted); }
+.seg div.on { background: var(--color-border); color: var(--color-text); }
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--color-muted); margin-top: 14px; }
+.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+.donut-wrap { display: flex; align-items: center; gap: 24px; margin-top: 18px; }
+.donut { position: relative; width: 156px; height: 156px; flex: none; }
+.donut .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.donut .c b { font-size: 30px; font-weight: 600; line-height: 34px; }
+.donut .c span { font-size: 12px; color: var(--color-muted); }
+.mlist { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.mrow { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.mrow i { width: 10px; height: 10px; border-radius: 3px; }
+.mrow span { flex: 1; color: var(--color-text); white-space: nowrap; }
+.mrow b { font-weight: 600; } .mrow em { font-style: normal; color: var(--color-muted); width: 34px; text-align: right; }
+.foot-note { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-border); font-size: 12px; color: var(--color-muted); display: flex; align-items: center; gap: 8px; }
+.foot-note svg.ic { width: 14px; height: 14px; color: var(--color-violet); }
+
+.tbl { flex: 1; padding: 18px 20px 8px; display: flex; flex-direction: column; min-height: 0; }
+.tbl .ch-head a { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--color-violet); display: flex; align-items: center; gap: 4px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--color-dim); height: 32px; border-bottom: 1px solid var(--color-border); }
+td { height: 46px; border-bottom: 1px solid var(--color-border); font-size: 13px; }
+tr:last-child td { border-bottom: none; }
+td.dev { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+td.dev i { width: 28px; height: 28px; border-radius: var(--radius-md); background: var(--color-surface-2); display: grid; place-items: center; color: var(--color-muted); }
+td.dev i svg.ic { width: 15px; height: 15px; }
+td.mono { font-family: 'Space Grotesk', sans-serif; color: var(--color-muted); }
+td.muted { color: var(--color-muted); }
+.st { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; }
+.st::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.st.ok { background: var(--color-green-soft); color: var(--color-green); }
+.st.err { background: var(--color-red-soft); color: var(--color-red); }
+.st.run { background: var(--color-violet-soft); color: #A996FF; }
+.prog { display: inline-block; width: 80px; height: 4px; border-radius: 2px; background: var(--color-surface-2); vertical-align: middle; margin-left: 10px; overflow: hidden; }
+.prog i { display: block; height: 100%; width: 64%; background: var(--color-violet); }
+</style>
+</head>
+<body>
+<aside class="side">
+  <div class="logo"><div class="mark"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"></path> <path d="M4 6h.01"></path> <path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"></path> <path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"></path> <path d="M12 18h.01"></path> <path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"></path> <circle cx="12" cy="12" r="2"></circle> <path d="m13.41 10.59 5.66-5.66"></path></svg></div><b>EdgeWatch</b></div>
+  <div class="ws"><span class="dot"></span><div><small>Çalışma alanı</small><span>Ankara Saha · Prod</span></div><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevrons-up-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"></path> <path d="m7 9 5-5 5 5"></path></svg></div>
+  <div class="group">
+    <h6>İzleme</h6>
+    <nav>
+      <div class="nav on"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-layout-dashboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="7" height="9" x="3" y="3" rx="1"></rect> <rect width="7" height="5" x="14" y="3" rx="1"></rect> <rect width="7" height="9" x="14" y="12" rx="1"></rect> <rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>Genel Bakış</div>
+      <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"></path> <path d="M12 2v2"></path> <path d="M17 20v2"></path> <path d="M17 2v2"></path> <path d="M2 12h2"></path> <path d="M2 17h2"></path> <path d="M2 7h2"></path> <path d="M20 12h2"></path> <path d="M20 17h2"></path> <path d="M20 7h2"></path> <path d="M7 20v2"></path> <path d="M7 2v2"></path> <rect x="4" y="4" width="16" height="16" rx="2"></rect> <rect x="8" y="8" width="8" height="8" rx="1"></rect></svg>Cihazlar<span class="count">134</span></div>
+      <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path> <path d="m3.3 7 8.7 5 8.7-5"></path> <path d="M12 22V12"></path></svg>Modeller<span class="count">18</span></div>
+      <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg>Uyarılar<span class="alert">3</span></div>
+      <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path> <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"></path> <path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"></path> <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"></path></svg>Dağıtımlar</div>
+    </nav>
+  </div>
+  <div class="group">
+    <h6>Yönetim</h6>
+    <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path> <path d="M16 3.128a4 4 0 0 1 0 7.744"></path> <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path> <circle cx="9" cy="7" r="4"></circle></svg>Ekip</div>
+    <div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path> <circle cx="12" cy="12" r="3"></circle></svg>Ayarlar</div>
+  </div>
+  <div class="quota"><div class="t"><span>GPU kotası</span><b>%67</b></div><div class="bar"><i style="width:67%"></i></div></div>
+  <div class="user"><div class="avatar">SY</div><div class="who"><b>Selin Yurt</b><span>Platform yöneticisi</span></div><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-log-out" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 17 5-5-5-5"></path> <path d="M21 12H9"></path> <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path></svg></div>
+</aside>
+
+<main class="main">
+  <div class="top">
+    <div><h1>Genel Bakış</h1><p>Son güncelleme 14:32 · 128 cihaz çevrimiçi</p></div>
+    <div class="sp"></div>
+    <div class="search"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path> <circle cx="11" cy="11" r="8"></circle></svg><span class="ph">Cihaz, model veya etiket ara…</span><span class="kbd">Ctrl K</span></div>
+    <div class="btn ghost"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>Son 7 gün<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+    <div class="btn primary"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Yeni Dağıtım</div>
+  </div>
+
+  <section class="kpis">
+    <div class="card kpi">
+      <div class="l"><i style="background:var(--color-violet-soft);color:var(--color-violet)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"></path> <path d="M12 2v2"></path> <path d="M17 20v2"></path> <path d="M17 2v2"></path> <path d="M2 12h2"></path> <path d="M2 17h2"></path> <path d="M2 7h2"></path> <path d="M20 12h2"></path> <path d="M20 17h2"></path> <path d="M20 7h2"></path> <path d="M7 20v2"></path> <path d="M7 2v2"></path> <rect x="4" y="4" width="16" height="16" rx="2"></rect> <rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></i>Aktif Cihaz</div>
+      <div class="v num">128<small>/134</small></div>
+      <div class="d"><span class="pill g"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path> <path d="M7 17 17 7"></path></svg>+4</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp0" viewBox="0 0 96 36" width="96" height="36"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.25"></stop><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"></stop></linearGradient></defs><path d="M1,28.92 C2.37,27.73 6.81,24.13 9.55,21.52 C12.28,18.92 15.36,13.63 18.09,12.63 C20.83,11.63 23.9,15.9 26.64,15.29 C29.37,14.68 32.45,9.02 35.18,8.82 C37.92,8.61 40.99,11.8 43.73,14.01 C46.46,16.23 49.54,19.48 52.27,22.68 C55.01,25.88 58.08,32.87 60.82,34 C63.55,35.13 66.63,30.63 69.36,29.73 C72.1,28.82 75.17,29.65 77.91,28.34 C80.64,27.03 83.72,25.74 86.45,21.52 C89.19,17.31 93.63,5.12 95,2 L95,36 L1,36 Z" fill="url(#g1)"></path><path d="M1,28.92 C2.37,27.73 6.81,24.13 9.55,21.52 C12.28,18.92 15.36,13.63 18.09,12.63 C20.83,11.63 23.9,15.9 26.64,15.29 C29.37,14.68 32.45,9.02 35.18,8.82 C37.92,8.61 40.99,11.8 43.73,14.01 C46.46,16.23 49.54,19.48 52.27,22.68 C55.01,25.88 58.08,32.87 60.82,34 C63.55,35.13 66.63,30.63 69.36,29.73 C72.1,28.82 75.17,29.65 77.91,28.34 C80.64,27.03 83.72,25.74 86.45,21.52 C89.19,17.31 93.63,5.12 95,2" fill="none" stroke="#7C5CFF" stroke-width="1.75" stroke-linecap="round"></path></svg>
+    </div>
+    <div class="card kpi">
+      <div class="l"><i style="background:rgba(34,211,238,.14);color:var(--color-cyan)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"></line> <line x1="12" x2="15" y1="14" y2="11"></line> <circle cx="12" cy="14" r="8"></circle></svg></i>Ort. Çıkarım Süresi</div>
+      <div class="v num">23,4<small>ms</small></div>
+      <div class="d"><span class="pill g"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-down-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10"></path> <path d="M17 7v10H7"></path></svg>%4,1</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp1" viewBox="0 0 96 36" width="96" height="36"><defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.25"></stop><stop offset="1" stop-color="#22D3EE" stop-opacity="0"></stop></linearGradient></defs><path d="M1,4.8 C2.37,4.51 6.81,3.44 9.55,2.99 C12.28,2.55 15.36,0.39 18.09,2 C20.83,3.61 23.9,10.16 26.64,13.03 C29.37,15.89 32.45,17.87 35.18,19.9 C37.92,21.92 40.99,23.43 43.73,25.68 C46.46,27.94 49.54,33.18 52.27,34 C55.01,34.82 58.08,32.02 60.82,30.84 C63.55,29.65 66.63,28.34 69.36,26.59 C72.1,24.84 75.17,20.55 77.91,19.9 C80.64,19.25 83.72,22.92 86.45,22.52 C89.19,22.11 93.63,18.19 95,17.37 L95,36 L1,36 Z" fill="url(#g2)"></path><path d="M1,4.8 C2.37,4.51 6.81,3.44 9.55,2.99 C12.28,2.55 15.36,0.39 18.09,2 C20.83,3.61 23.9,10.16 26.64,13.03 C29.37,15.89 32.45,17.87 35.18,19.9 C37.92,21.92 40.99,23.43 43.73,25.68 C46.46,27.94 49.54,33.18 52.27,34 C55.01,34.82 58.08,32.02 60.82,30.84 C63.55,29.65 66.63,28.34 69.36,26.59 C72.1,24.84 75.17,20.55 77.91,19.9 C80.64,19.25 83.72,22.92 86.45,22.52 C89.19,22.11 93.63,18.19 95,17.37" fill="none" stroke="#22D3EE" stroke-width="1.75" stroke-linecap="round"></path></svg>
+    </div>
+    <div class="card kpi">
+      <div class="l"><i style="background:var(--color-amber-soft);color:var(--color-amber)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"></path> <path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg></i>GPU Kullanımı</div>
+      <div class="v num">%67</div>
+      <div class="d"><span class="pill a"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path> <path d="M7 17 17 7"></path></svg>%8,2</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp2" viewBox="0 0 96 36" width="96" height="36"><defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBBF24" stop-opacity="0.25"></stop><stop offset="1" stop-color="#FBBF24" stop-opacity="0"></stop></linearGradient></defs><path d="M1,16.33 C2.37,16.45 6.81,16.28 9.55,17.06 C12.28,17.85 15.36,19.07 18.09,21.22 C20.83,23.37 23.9,28.45 26.64,30.5 C29.37,32.54 32.45,34.14 35.18,34 C37.92,33.86 40.99,30.8 43.73,29.6 C46.46,28.4 49.54,28.84 52.27,26.51 C55.01,24.18 58.08,17.78 60.82,15.03 C63.55,12.28 66.63,10.98 69.36,9.33 C72.1,7.67 75.17,5.79 77.91,4.69 C80.64,3.58 83.72,2.84 86.45,2.41 C89.19,1.98 93.63,2.07 95,2 L95,36 L1,36 Z" fill="url(#g3)"></path><path d="M1,16.33 C2.37,16.45 6.81,16.28 9.55,17.06 C12.28,17.85 15.36,19.07 18.09,21.22 C20.83,23.37 23.9,28.45 26.64,30.5 C29.37,32.54 32.45,34.14 35.18,34 C37.92,33.86 40.99,30.8 43.73,29.6 C46.46,28.4 49.54,28.84 52.27,26.51 C55.01,24.18 58.08,17.78 60.82,15.03 C63.55,12.28 66.63,10.98 69.36,9.33 C72.1,7.67 75.17,5.79 77.91,4.69 C80.64,3.58 83.72,2.84 86.45,2.41 C89.19,1.98 93.63,2.07 95,2" fill="none" stroke="#FBBF24" stroke-width="1.75" stroke-linecap="round"></path></svg>
+    </div>
+    <div class="card kpi">
+      <div class="l"><i style="background:var(--color-red-soft);color:var(--color-red)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-triangle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path> <path d="M12 9v4"></path> <path d="M12 17h.01"></path></svg></i>Açık Uyarı</div>
+      <div class="v num">3</div>
+      <div class="d"><span class="pill r"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path> <path d="M7 17 17 7"></path></svg>+2</span>son 24 saatte</div>
+      <svg class="spark" id="sp3" viewBox="0 0 96 36" width="96" height="36"><defs><linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F87171" stop-opacity="0.25"></stop><stop offset="1" stop-color="#F87171" stop-opacity="0"></stop></linearGradient></defs><path d="M1,28.18 C2.37,28.23 6.81,27.88 9.55,28.46 C12.28,29.05 15.36,31.57 18.09,31.84 C20.83,32.11 23.9,29.81 26.64,30.15 C29.37,30.5 32.45,34.53 35.18,34 C37.92,33.47 40.99,29.14 43.73,26.87 C46.46,24.6 49.54,22.22 52.27,19.83 C55.01,17.44 58.08,14.8 60.82,11.95 C63.55,9.09 66.63,2.57 69.36,2 C72.1,1.43 75.17,7.62 77.91,8.38 C80.64,9.15 83.72,5.67 86.45,6.79 C89.19,7.9 93.63,13.96 95,15.33 L95,36 L1,36 Z" fill="url(#g4)"></path><path d="M1,28.18 C2.37,28.23 6.81,27.88 9.55,28.46 C12.28,29.05 15.36,31.57 18.09,31.84 C20.83,32.11 23.9,29.81 26.64,30.15 C29.37,30.5 32.45,34.53 35.18,34 C37.92,33.47 40.99,29.14 43.73,26.87 C46.46,24.6 49.54,22.22 52.27,19.83 C55.01,17.44 58.08,14.8 60.82,11.95 C63.55,9.09 66.63,2.57 69.36,2 C72.1,1.43 75.17,7.62 77.91,8.38 C80.64,9.15 83.72,5.67 86.45,6.79 C89.19,7.9 93.63,13.96 95,15.33" fill="none" stroke="#F87171" stroke-width="1.75" stroke-linecap="round"></path></svg>
+    </div>
+  </section>
+
+  <section class="row2">
+    <div class="card ch">
+      <div class="ch-head"><div><h3>Çıkarım Gecikmesi</h3><p>Tüm filo, milisaniye</p></div>
+        <div class="seg">
+          <div>24S</div><div class="on">7G</div><div>30G</div></div></div>
+      <div class="legend"><span><i style="background:var(--color-violet)"></i>p50</span><span><i style="background:var(--color-cyan)"></i>p95</span></div>
+      <svg id="lat" viewBox="0 0 654 212" width="654" height="212"><line x1="32" x2="638" y1="186" y2="186" stroke="#232736" stroke-width="1" stroke-dasharray="3 4"></line><text x="22" y="190" text-anchor="end" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">0</text><line x1="32" x2="638" y1="142.5" y2="142.5" stroke="#232736" stroke-width="1" stroke-dasharray="3 4"></line><text x="22" y="146.5" text-anchor="end" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">15</text><line x1="32" x2="638" y1="99" y2="99" stroke="#232736" stroke-width="1" stroke-dasharray="3 4"></line><text x="22" y="103" text-anchor="end" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">30</text><line x1="32" x2="638" y1="55.5" y2="55.5" stroke="#232736" stroke-width="1" stroke-dasharray="3 4"></line><text x="22" y="59.5" text-anchor="end" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">45</text><line x1="32" x2="638" y1="12" y2="12" stroke="#232736" stroke-width="1" stroke-dasharray="3 4"></line><text x="22" y="16" text-anchor="end" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">60</text><text x="32" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Cum</text><text x="133" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Cmt</text><text x="234" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Paz</text><text x="335" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Pzt</text><text x="436" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Sal</text><text x="537" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Çar</text><text x="638" y="206" text-anchor="middle" fill="#5D6275" font-family="Inter" font-size="11" font-weight="400">Per</text><defs><linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22D3EE" stop-opacity="0.1"></stop><stop offset="1" stop-color="#22D3EE" stop-opacity="0"></stop></linearGradient><linearGradient id="g6" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7C5CFF" stop-opacity="0.35"></stop><stop offset="1" stop-color="#7C5CFF" stop-opacity="0"></stop></linearGradient></defs><path d="M32,66.52 C35.59,64.8 47.26,57.41 54.44,55.79 C61.63,54.17 69.71,57.53 76.89,56.37 C84.07,55.21 92.15,48.54 99.33,48.54 C106.52,48.54 114.6,54.47 121.78,56.37 C128.96,58.27 137.04,58.16 144.22,60.43 C151.4,62.7 159.48,70.86 166.67,70.58 C173.85,70.3 181.93,58.41 189.11,58.69 C196.29,58.97 204.37,70.32 211.56,72.32 C218.74,74.32 226.82,72.64 234,71.16 C241.18,69.68 249.26,60.72 256.44,63.04 C263.63,65.36 271.71,84.92 278.89,85.66 C286.07,86.4 294.15,69.21 301.33,67.68 C308.52,66.15 316.6,76.32 323.78,76.09 C330.96,75.86 339.04,66.79 346.22,66.23 C353.4,65.67 361.48,73.63 368.67,72.61 C375.85,71.59 383.93,62.26 391.11,59.85 C398.29,57.44 406.37,57.07 413.56,57.53 C420.74,57.99 428.82,62.38 436,62.75 C443.18,63.12 451.26,59.34 458.44,59.85 C465.63,60.36 473.71,63.57 480.89,65.94 C488.07,68.31 496.15,73.34 503.33,74.64 C510.52,75.94 518.6,73.78 525.78,74.06 C532.96,74.34 541.04,74.9 548.22,76.38 C555.4,77.86 563.48,82.04 570.67,83.34 C577.85,84.64 585.93,85.71 593.11,84.5 C600.29,83.29 608.37,75.94 615.56,75.8 C622.74,75.66 634.41,82.38 638,83.63 L638,186 L32,186 Z" fill="url(#g5)" stroke="none"></path><path d="M32,66.52 C35.59,64.8 47.26,57.41 54.44,55.79 C61.63,54.17 69.71,57.53 76.89,56.37 C84.07,55.21 92.15,48.54 99.33,48.54 C106.52,48.54 114.6,54.47 121.78,56.37 C128.96,58.27 137.04,58.16 144.22,60.43 C151.4,62.7 159.48,70.86 166.67,70.58 C173.85,70.3 181.93,58.41 189.11,58.69 C196.29,58.97 204.37,70.32 211.56,72.32 C218.74,74.32 226.82,72.64 234,71.16 C241.18,69.68 249.26,60.72 256.44,63.04 C263.63,65.36 271.71,84.92 278.89,85.66 C286.07,86.4 294.15,69.21 301.33,67.68 C308.52,66.15 316.6,76.32 323.78,76.09 C330.96,75.86 339.04,66.79 346.22,66.23 C353.4,65.67 361.48,73.63 368.67,72.61 C375.85,71.59 383.93,62.26 391.11,59.85 C398.29,57.44 406.37,57.07 413.56,57.53 C420.74,57.99 428.82,62.38 436,62.75 C443.18,63.12 451.26,59.34 458.44,59.85 C465.63,60.36 473.71,63.57 480.89,65.94 C488.07,68.31 496.15,73.34 503.33,74.64 C510.52,75.94 518.6,73.78 525.78,74.06 C532.96,74.34 541.04,74.9 548.22,76.38 C555.4,77.86 563.48,82.04 570.67,83.34 C577.85,84.64 585.93,85.71 593.11,84.5 C600.29,83.29 608.37,75.94 615.56,75.8 C622.74,75.66 634.41,82.38 638,83.63" fill="none" stroke="#22D3EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M32,123.94 C35.59,123.2 47.26,120.18 54.44,119.3 C61.63,118.42 69.71,118.99 76.89,118.43 C84.07,117.87 92.15,116.24 99.33,115.82 C106.52,115.4 114.6,114.94 121.78,115.82 C128.96,116.7 137.04,120.03 144.22,121.33 C151.4,122.63 159.48,123.94 166.67,123.94 C173.85,123.94 181.93,120.63 189.11,121.33 C196.29,122.03 204.37,126.76 211.56,128.29 C218.74,129.82 226.82,131.13 234,130.9 C241.18,130.67 249.26,126.93 256.44,126.84 C263.63,126.75 271.71,130.37 278.89,130.32 C286.07,130.27 294.15,127.11 301.33,126.55 C308.52,125.99 316.6,127.4 323.78,126.84 C330.96,126.28 339.04,123.53 346.22,123.07 C353.4,122.61 361.48,124.64 368.67,123.94 C375.85,123.24 383.93,119.93 391.11,118.72 C398.29,117.51 406.37,116.35 413.56,116.4 C420.74,116.45 428.82,118.55 436,119.01 C443.18,119.47 451.26,118.74 458.44,119.3 C465.63,119.86 473.71,120.82 480.89,122.49 C488.07,124.16 496.15,128.9 503.33,129.74 C510.52,130.58 518.6,127.52 525.78,127.71 C532.96,127.9 541.04,129.88 548.22,130.9 C555.4,131.92 563.48,133.3 570.67,134.09 C577.85,134.88 585.93,136.71 593.11,135.83 C600.29,134.95 608.37,129.69 615.56,128.58 C622.74,127.47 634.41,128.82 638,128.87 L638,186 L32,186 Z" fill="url(#g6)" stroke="none"></path><path d="M32,123.94 C35.59,123.2 47.26,120.18 54.44,119.3 C61.63,118.42 69.71,118.99 76.89,118.43 C84.07,117.87 92.15,116.24 99.33,115.82 C106.52,115.4 114.6,114.94 121.78,115.82 C128.96,116.7 137.04,120.03 144.22,121.33 C151.4,122.63 159.48,123.94 166.67,123.94 C173.85,123.94 181.93,120.63 189.11,121.33 C196.29,122.03 204.37,126.76 211.56,128.29 C218.74,129.82 226.82,131.13 234,130.9 C241.18,130.67 249.26,126.93 256.44,126.84 C263.63,126.75 271.71,130.37 278.89,130.32 C286.07,130.27 294.15,127.11 301.33,126.55 C308.52,125.99 316.6,127.4 323.78,126.84 C330.96,126.28 339.04,123.53 346.22,123.07 C353.4,122.61 361.48,124.64 368.67,123.94 C375.85,123.24 383.93,119.93 391.11,118.72 C398.29,117.51 406.37,116.35 413.56,116.4 C420.74,116.45 428.82,118.55 436,119.01 C443.18,119.47 451.26,118.74 458.44,119.3 C465.63,119.86 473.71,120.82 480.89,122.49 C488.07,124.16 496.15,128.9 503.33,129.74 C510.52,130.58 518.6,127.52 525.78,127.71 C532.96,127.9 541.04,129.88 548.22,130.9 C555.4,131.92 563.48,133.3 570.67,134.09 C577.85,134.88 585.93,136.71 593.11,135.83 C600.29,134.95 608.37,129.69 615.56,128.58 C622.74,127.47 634.41,128.82 638,128.87" fill="none" stroke="#7C5CFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="638" cy="128.87" r="5" fill="#12141C" stroke="#7C5CFF" stroke-width="2.5"></circle></svg>
+    </div>
+    <div class="card ch">
+      <div class="ch-head"><div><h3>Model Dağılımı</h3><p>Cihaz başına aktif model</p></div></div>
+      <div class="donut-wrap">
+        <div class="donut"><svg id="donut" viewBox="0 0 156 156" width="156" height="156"><path d="M80.41,9.04 A69,69 0 0 1 96.36,144.51" fill="none" stroke="#7C5CFF" stroke-width="18" stroke-linecap="butt"></path><path d="M91.68,145.63 A69,69 0 0 1 9.38,85.25" fill="none" stroke="#22D3EE" stroke-width="18" stroke-linecap="butt"></path><path d="M9.04,80.44 A69,69 0 0 1 41.89,19.2" fill="none" stroke="#FBBF24" stroke-width="18" stroke-linecap="butt"></path><path d="M46.08,16.83 A69,69 0 0 1 75.59,9.04" fill="none" stroke="#5D6275" stroke-width="18" stroke-linecap="butt"></path></svg><div class="c"><b class="num">134</b><span>cihaz</span></div></div>
+        <div class="mlist">
+          <div class="mrow"><i style="background:var(--color-violet)"></i><span>YOLOv8n</span><b>62</b><em>%46</em></div>
+          <div class="mrow"><i style="background:var(--color-cyan)"></i><span>RT-DETR-L</span><b>37</b><em>%28</em></div>
+          <div class="mrow"><i style="background:var(--color-amber)"></i><span>FaceNet-TR</span><b>24</b><em>%18</em></div>
+          <div class="mrow"><i style="background:var(--color-dim)"></i><span>Diğer</span><b>11</b><em>%8</em></div>
+        </div>
+      </div>
+      <div class="foot-note"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path> <path d="M20 2v4"></path> <path d="M22 4h-4"></path> <circle cx="4" cy="20" r="2"></circle></svg>YOLOv8n-int8 geçişi 12 cihazda bekliyor</div>
+    </div>
+  </section>
+
+  <section class="card tbl">
+    <div class="ch-head"><div><h3>Son Dağıtımlar</h3></div><a>Tümü <svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></a></div>
+    <table>
+      <thead><tr><th style="width:26%">Cihaz</th><th style="width:18%">Model</th><th style="width:12%">Sürüm</th><th style="width:22%">Durum</th><th style="width:11%">Süre</th><th>Zaman</th></tr></thead>
+      <tbody>
+        <tr><td class="dev"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"></path> <path d="M12 2v2"></path> <path d="M17 20v2"></path> <path d="M17 2v2"></path> <path d="M2 12h2"></path> <path d="M2 17h2"></path> <path d="M2 7h2"></path> <path d="M20 12h2"></path> <path d="M20 17h2"></path> <path d="M20 7h2"></path> <path d="M7 20v2"></path> <path d="M7 2v2"></path> <rect x="4" y="4" width="16" height="16" rx="2"></rect> <rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></i>jetson-orin-a12</td><td>YOLOv8n</td><td class="mono">v3.2.0</td><td><span class="st ok">Başarılı</span></td><td class="muted">42 sn</td><td class="muted">2 dk önce</td></tr>
+        <tr><td class="dev"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-scan-face" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"></path> <path d="M17 3h2a2 2 0 0 1 2 2v2"></path> <path d="M21 17v2a2 2 0 0 1-2 2h-2"></path> <path d="M7 21H5a2 2 0 0 1-2-2v-2"></path> <path d="M8 14s1.5 2 4 2 4-2 4-2"></path> <path d="M9 9h.01"></path> <path d="M15 9h.01"></path></svg></i>rpi5-kapi-03</td><td>FaceNet-TR</td><td class="mono">v1.8.1</td><td><span class="st run">Sürüyor</span><span class="prog"><i></i></span></td><td class="muted">—</td><td class="muted">şimdi</td></tr>
+        <tr><td class="dev"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20v2"></path> <path d="M12 2v2"></path> <path d="M17 20v2"></path> <path d="M17 2v2"></path> <path d="M2 12h2"></path> <path d="M2 17h2"></path> <path d="M2 7h2"></path> <path d="M20 12h2"></path> <path d="M20 17h2"></path> <path d="M20 7h2"></path> <path d="M7 20v2"></path> <path d="M7 2v2"></path> <rect x="4" y="4" width="16" height="16" rx="2"></rect> <rect x="8" y="8" width="8" height="8" rx="1"></rect></svg></i>jetson-nano-b07</td><td>RT-DETR-L</td><td class="mono">v2.0.4</td><td><span class="st err">Başarısız</span></td><td class="muted">1 dk 12 sn</td><td class="muted">18 dk önce</td></tr>
+        <tr><td class="dev"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circuit-board" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect> <path d="M11 9h4a2 2 0 0 0 2-2V3"></path> <circle cx="9" cy="9" r="2"></circle> <path d="M7 21v-4a2 2 0 0 1 2-2h4"></path> <circle cx="15" cy="15" r="2"></circle></svg></i>kv260-hat-2</td><td>YOLOv8n-int8</td><td class="mono">v3.2.0</td><td><span class="st ok">Başarılı</span></td><td class="muted">58 sn</td><td class="muted">34 dk önce</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+
+
+
+
+</body></html>

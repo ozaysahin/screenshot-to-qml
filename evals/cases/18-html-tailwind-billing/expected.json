@@ -1,0 +1,49 @@
+{
+ "id": "18-html-tailwind-billing",
+ "summary": "HTML INPUT. 1280x800 'Plan ve faturalama' page written with Tailwind CSS v4 utilities (oklch palette).",
+ "input": {
+  "file": "source/index.html",
+  "renderAt": {
+   "designSize": [
+    1280,
+    800
+   ],
+   "dpr": 1
+  },
+  "fonts": "source/fonts (the build's font files)"
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Values come from the HTML: Tailwind v4 palette converted from oklch to sRGB (indigo-600 #4F39F6, zinc-500 #71717B), not v3 hex values.",
+  "Sidebar: 8 nav items from a model in two groups with uppercase headers; 'Plan ve faturalama' selected with a count badge.",
+  "Billing Switch checked between 'Aylık' and 'Yıllık' with the '2 ay bedava' badge.",
+  "Plan cards from a model of 3: current plan with a disabled button (enabled:false), recommended plan with a 2 px ring and badge, 'Özel fiyat' plan.",
+  "Usage: 3 progress bars from a model (0.6 / 0.684 / 0.912), the last amber with a warning icon.",
+  "Payment method card with masked number, expiry, 'Varsayılan' badge and 'Değiştir' button.",
+  "Invoices: 4 rows from a model, right-aligned amounts, one status-badge component with 3 variants, download icon buttons."
+ ],
+ "niceToHave": [
+  "Theme token names mirror Tailwind (zinc500, indigo600 …).",
+  "Prices switch monthly/yearly from data."
+ ],
+ "allowedApproximations": [
+  "Tailwind multi-layer shadow + ring as a border plus one shadow."
+ ],
+ "forbidden": [
+  "WebEngine/WebView rendering of the HTML.",
+  "Parsing the CSS at runtime."
+ ]
+}

@@ -1,0 +1,3565 @@
+{
+ "meta": {
+  "id": "04-dashboard-light",
+  "title": "Açık tema ev enerjisi panosu (Windows %125 ölçek)",
+  "category": "dashboard",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1440,
+   900
+  ],
+  "dpr": 1.25,
+  "captureSize": [
+   1800,
+   1125
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "DM Sans",
+    "qtFamily": "DM Sans",
+    "legacyFamily": "DM Sans",
+    "files": [
+     "DMSans-Bold.ttf",
+     "DMSans-Medium.ttf",
+     "DMSans-Regular.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F3F6F4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F3F6F4"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#16201A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#16201A"
+   },
+   "muted": {
+    "hex": "#6B7A70",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6B7A70"
+   },
+   "dim": {
+    "hex": "#9AA79F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#9AA79F"
+   },
+   "border": {
+    "hex": "#E3E8E4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E3E8E4"
+   },
+   "primary": {
+    "hex": "#1F9D55",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1F9D55"
+   },
+   "primary-soft": {
+    "hex": "#E4F4EA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E4F4EA"
+   },
+   "sun": {
+    "hex": "#FFB020",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFB020"
+   },
+   "sun-deep": {
+    "hex": "#FF7A1A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF7A1A"
+   },
+   "consumption": {
+    "hex": "#B4C3D3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B4C3D3"
+   },
+   "blue": {
+    "hex": "#3B82F6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3B82F6"
+   },
+   "blue-soft": {
+    "hex": "#E7F0FE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E7F0FE"
+   },
+   "rose": {
+    "hex": "#F0506E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0506E"
+   }
+  },
+  "space": {
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "7": 28.0,
+   "8": 40.0
+  },
+  "radius": {
+   "sm": 10.0,
+   "md": 12.0,
+   "lg": 16.0,
+   "xl": 20.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(16, 24, 20, 0.06), 0 8px 24px rgba(16, 24, 20, 0.06)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "DM Sans",
+    "px": 48,
+    "weight": 700,
+    "lineHeight": 56,
+    "letterSpacing": -1.5,
+    "count": 1,
+    "example": "4,82"
+   },
+   {
+    "family": "DM Sans",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -0.8,
+    "count": 1,
+    "example": "%78"
+   },
+   {
+    "family": "DM Sans",
+    "px": 28,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": -0.6,
+    "count": 1,
+    "example": "İyi günler, Deniz"
+   },
+   {
+    "family": "DM Sans",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.4,
+    "count": 2,
+    "example": "12,6"
+   },
+   {
+    "family": "DM Sans",
+    "px": 22,
+    "weight": 500,
+    "lineHeight": 56,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "kW"
+   },
+   {
+    "family": "DM Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "Güneşli"
+   },
+   {
+    "family": "DM Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "~1 sa 45 dk"
+   },
+   {
+    "family": "DM Sans",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Ev Bataryası"
+   },
+   {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Özet"
+   },
+   {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Üretim"
+   },
+   {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Bugün ürettiğin enerji, evinin 1,8 günlü"
+   },
+   {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "DK"
+   },
+   {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "25 Eylül 2026"
+   },
+   {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Ankara · 24°C"
+   },
+   {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "kWh"
+   },
+   {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Canlı"
+   },
+   {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Günün tepesi 5,07 kW · 12:00"
+   },
+   {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Şebekeye verilen"
+   },
+   {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Şarj oluyor"
+   },
+   {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "kWh"
+   },
+   {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 14,
+    "example": "13,3 kWh"
+   },
+   {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Tam dolum"
+   },
+   {
+    "family": "DM Sans",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "06"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "navbar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1440,
+    72
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E3E8E4",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 40,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     40,
+     0,
+     40
+    ]
+   }
+  },
+  {
+   "id": "logo",
+   "role": null,
+   "parent": "navbar",
+   "bbox": [
+    40,
+    17.5,
+    116.78,
+    36
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "tabs",
+   "role": "TabBar",
+   "parent": "navbar",
+   "bbox": [
+    196.78,
+    -0.5,
+    422.48,
+    72
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "tabs",
+    "count": 5,
+    "itemId": "tab"
+   }
+  },
+  {
+   "id": "tab[0]",
+   "role": "Tab",
+   "parent": "tabs",
+   "bbox": [
+    196.78,
+    -0.5,
+    62.53,
+    72
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#1F9D55",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "tab[1]",
+   "role": "Tab",
+   "parent": "tabs",
+   "bbox": [
+    267.31,
+    -0.5,
+    75.19,
+    72
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "tab[2]",
+   "role": "Tab",
+   "parent": "tabs",
+   "bbox": [
+    350.5,
+    -0.5,
+    83.69,
+    72
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "tab[3]",
+   "role": "Tab",
+   "parent": "tabs",
+   "bbox": [
+    442.19,
+    -0.5,
+    81.98,
+    72
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "tab[4]",
+   "role": "Tab",
+   "parent": "tabs",
+   "bbox": [
+    532.17,
+    -0.5,
+    87.09,
+    72
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "weatherChip",
+   "role": "Chip",
+   "parent": "navbar",
+   "bbox": [
+    1154.31,
+    15.5,
+    141.69,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F3F6F4",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "notifButton",
+   "role": "Button",
+   "parent": "navbar",
+   "bbox": [
+    1308,
+    15.5,
+    40,
+    40
+   ],
+   "style": {
+    "radius": 50,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E3E8E4",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "38px",
+    "rows": "38px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar",
+   "role": "Avatar",
+   "parent": "navbar",
+   "bbox": [
+    1360,
+    15.5,
+    40,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1F9D55",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "40px",
+    "rows": "40px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "greeting",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    40,
+    100,
+    1360,
+    60
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "dateButton",
+   "role": "Button",
+   "parent": "greeting",
+   "bbox": [
+    1078.63,
+    109,
+    176.88,
+    42
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E3E8E4",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "reportButton",
+   "role": "Button",
+   "parent": "greeting",
+   "bbox": [
+    1267.5,
+    109,
+    132.5,
+    42
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16201A",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "solarCard",
+   "role": "StatCard",
+   "parent": null,
+   "bbox": [
+    40,
+    180,
+    560,
+    250
+   ],
+   "style": {
+    "fillImage": "linear-gradient(155deg, rgb(255, 176, 32) 0%, rgb(255, 122, 26) 100%)",
+    "radius": 20,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 12.0,
+      "blur": 28.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FF7A1A",
+       "alpha": 0.28
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "hourlyChart",
+   "role": "BarChart",
+   "parent": "solarCard",
+   "bbox": [
+    276,
+    218,
+    300,
+    190
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "batteryCard",
+   "role": "StatCard",
+   "parent": null,
+   "bbox": [
+    620,
+    180,
+    380,
+    250
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 20,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "batteryRing",
+   "role": "ProgressRing",
+   "parent": "batteryCard",
+   "bbox": [
+    644,
+    251,
+    132,
+    132
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.78"
+  },
+  {
+   "id": "gridCard",
+   "role": "StatCard",
+   "parent": null,
+   "bbox": [
+    1020,
+    180,
+    380,
+    250
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 20,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "gridSplit",
+   "role": "Progress",
+   "parent": "gridCard",
+   "bbox": [
+    1044,
+    374,
+    332,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B4C3D3",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.8"
+  },
+  {
+   "id": "weeklyCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    40,
+    448,
+    844,
+    418
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 20,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "weeklyChart",
+   "role": "BarChart",
+   "parent": "weeklyCard",
+   "bbox": [
+    64,
+    528,
+    796,
+    316
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "deviceCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    904,
+    448,
+    496,
+    418
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 20,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101814",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "devices",
+   "role": null,
+   "parent": "deviceCard",
+   "bbox": [
+    928,
+    532,
+    448,
+    272
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 18,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "devices",
+    "count": 5,
+    "itemId": "device"
+   }
+  },
+  {
+   "id": "device[0]",
+   "role": "ListItem",
+   "parent": "devices",
+   "bbox": [
+    928,
+    532,
+    448,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "40px 335.781px 48.2188px",
+    "rows": "24.5px 15.5px",
+    "columnGap": 12,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "device[1]",
+   "role": "ListItem",
+   "parent": "devices",
+   "bbox": [
+    928,
+    590,
+    448,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "40px 336.172px 47.8281px",
+    "rows": "24.5px 15.5px",
+    "columnGap": 12,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "device[2]",
+   "role": "ListItem",
+   "parent": "devices",
+   "bbox": [
+    928,
+    648,
+    448,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "40px 339.391px 44.6094px",
+    "rows": "24.5px 15.5px",
+    "columnGap": 12,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "device[3]",
+   "role": "ListItem",
+   "parent": "devices",
+   "bbox": [
+    928,
+    706,
+    448,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "40px 339.156px 44.8438px",
+    "rows": "24.5px 15.5px",
+    "columnGap": 12,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "device[4]",
+   "role": "ListItem",
+   "parent": "devices",
+   "bbox": [
+    928,
+    764,
+    448,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "40px 336.047px 47.9531px",
+    "rows": "24.5px 15.5px",
+    "columnGap": 12,
+    "rowGap": "normal"
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "Güneşli",
+   "owner": "logo",
+   "bbox": [
+    86,
+    22.5,
+    70.78,
+    26
+   ],
+   "baseline": 42.5,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "Özet",
+   "owner": "tab[0]",
+   "bbox": [
+    210.78,
+    24.5,
+    34.53,
+    20
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Üretim",
+   "owner": "tab[1]",
+   "bbox": [
+    281.31,
+    24.5,
+    47.19,
+    20
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüketim",
+   "owner": "tab[2]",
+   "bbox": [
+    364.5,
+    24.5,
+    55.69,
+    20
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Batarya",
+   "owner": "tab[3]",
+   "bbox": [
+    456.19,
+    24.5,
+    53.98,
+    20
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raporlar",
+   "owner": "tab[4]",
+   "bbox": [
+    546.17,
+    24.5,
+    59.09,
+    20
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · 24°C",
+   "owner": "weatherChip",
+   "bbox": [
+    1194.31,
+    26.5,
+    87.69,
+    18
+   ],
+   "baseline": 40.5,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DK",
+   "owner": "avatar",
+   "bbox": [
+    1370.47,
+    26.5,
+    19.05,
+    18
+   ],
+   "baseline": 40.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İyi günler, Deniz",
+   "owner": "greeting",
+   "bbox": [
+    40,
+    99,
+    202.97,
+    37
+   ],
+   "baseline": 127,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 28,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": -0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün ürettiğin enerji, evinin 1,8 günlük ihtiyacını karşılıyor.",
+   "owner": "greeting",
+   "bbox": [
+    40,
+    139,
+    395.61,
+    20
+   ],
+   "baseline": 154,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "25 Eylül 2026",
+   "owner": "dateButton",
+   "bbox": [
+    1121.63,
+    121,
+    90.88,
+    18
+   ],
+   "baseline": 135,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Rapor indir",
+   "owner": "reportButton",
+   "bbox": [
+    1309.5,
+    121,
+    74.5,
+    18
+   ],
+   "baseline": 135,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Anlık Üretim",
+   "owner": "solarCard",
+   "bbox": [
+    92,
+    203,
+    79.34,
+    18
+   ],
+   "baseline": 217,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.9
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4,82",
+   "owner": "solarCard",
+   "bbox": [
+    64,
+    236,
+    94.77,
+    63
+   ],
+   "baseline": 284,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 48,
+    "weight": 700,
+    "lineHeight": 56,
+    "letterSpacing": -1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "kW",
+   "owner": "solarCard",
+   "bbox": [
+    162.77,
+    262,
+    33.25,
+    29
+   ],
+   "baseline": 284,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 22,
+    "weight": 500,
+    "lineHeight": 56,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Günün tepesi 5,07 kW · 12:00",
+   "owner": "solarCard",
+   "bbox": [
+    64,
+    310,
+    173.83,
+    17
+   ],
+   "baseline": 323,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Canlı",
+   "owner": "solarCard",
+   "bbox": [
+    92,
+    384,
+    32.19,
+    17
+   ],
+   "baseline": 397,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "06",
+   "owner": "hourlyChart",
+   "bbox": [
+    281.28,
+    389,
+    14.52,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09",
+   "owner": "hourlyChart",
+   "bbox": [
+    356.28,
+    389,
+    14.52,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12",
+   "owner": "hourlyChart",
+   "bbox": [
+    433.61,
+    389,
+    9.78,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "15",
+   "owner": "hourlyChart",
+   "bbox": [
+    508.42,
+    389,
+    10.43,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ev Bataryası",
+   "owner": "batteryCard",
+   "bbox": [
+    644,
+    204,
+    95.64,
+    21
+   ],
+   "baseline": 220,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj oluyor",
+   "owner": "batteryCard",
+   "bbox": [
+    903.81,
+    207,
+    62.19,
+    16
+   ],
+   "baseline": 219,
+   "lines": 1,
+   "color": {
+    "hex": "#1F9D55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%78",
+   "owner": "batteryRing",
+   "bbox": [
+    680.22,
+    287,
+    59.56,
+    39
+   ],
+   "baseline": 317,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "13,3 kWh",
+   "owner": "batteryRing",
+   "bbox": [
+    686.06,
+    326,
+    47.88,
+    16
+   ],
+   "baseline": 338,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tam dolum",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    246,
+    61.14,
+    16
+   ],
+   "baseline": 258,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "~1 sa 45 dk",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    262,
+    89.61,
+    22
+   ],
+   "baseline": 279,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şarj gücü",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    298,
+    51.36,
+    16
+   ],
+   "baseline": 310,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "+1,4 kW",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    314,
+    62.39,
+    22
+   ],
+   "baseline": 331,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sağlık",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    350,
+    31.59,
+    16
+   ],
+   "baseline": 362,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%96",
+   "owner": "batteryCard",
+   "bbox": [
+    798,
+    366,
+    36.92,
+    22
+   ],
+   "baseline": 383,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şebeke",
+   "owner": "gridCard",
+   "bbox": [
+    1044,
+    204,
+    57.63,
+    21
+   ],
+   "baseline": 220,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Net üretici",
+   "owner": "gridCard",
+   "bbox": [
+    1303.86,
+    207,
+    62.14,
+    16
+   ],
+   "baseline": 219,
+   "lines": 1,
+   "color": {
+    "hex": "#1F9D55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şebekeye verilen",
+   "owner": "gridCard",
+   "bbox": [
+    1102,
+    246,
+    100.48,
+    17
+   ],
+   "baseline": 259,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12,6",
+   "owner": "gridCard",
+   "bbox": [
+    1102,
+    263,
+    38.47,
+    29
+   ],
+   "baseline": 285,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "gridCard",
+   "bbox": [
+    1143.47,
+    271,
+    29.39,
+    18
+   ],
+   "baseline": 285,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şebekeden alınan",
+   "owner": "gridCard",
+   "bbox": [
+    1102,
+    308,
+    105.25,
+    17
+   ],
+   "baseline": 321,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3,1",
+   "owner": "gridCard",
+   "bbox": [
+    1102,
+    325,
+    25.5,
+    29
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "gridCard",
+   "bbox": [
+    1130.5,
+    333,
+    29.39,
+    18
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Verilen %80",
+   "owner": "gridCard",
+   "bbox": [
+    1044,
+    390,
+    65.7,
+    16
+   ],
+   "baseline": 402,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Alınan %20",
+   "owner": "gridCard",
+   "bbox": [
+    1314.75,
+    390,
+    61.25,
+    16
+   ],
+   "baseline": 402,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Haftalık Üretim ve Tüketim",
+   "owner": "weeklyCard",
+   "bbox": [
+    64,
+    470,
+    206.53,
+    21
+   ],
+   "baseline": 486,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "22–28 Eylül · kWh",
+   "owner": "weeklyCard",
+   "bbox": [
+    64,
+    494,
+    106.23,
+    17
+   ],
+   "baseline": 507,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Üretim",
+   "owner": "weeklyCard",
+   "bbox": [
+    737.25,
+    482,
+    39.83,
+    17
+   ],
+   "baseline": 495,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüketim",
+   "owner": "weeklyCard",
+   "bbox": [
+    813.08,
+    482,
+    46.92,
+    17
+   ],
+   "baseline": 495,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "weeklyChart",
+   "bbox": [
+    81.78,
+    808,
+    8.22,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10",
+   "owner": "weeklyChart",
+   "bbox": [
+    78.05,
+    737.5,
+    11.95,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "20",
+   "owner": "weeklyChart",
+   "bbox": [
+    74.98,
+    667,
+    15.02,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30",
+   "owner": "weeklyChart",
+   "bbox": [
+    74.69,
+    596.5,
+    15.31,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "40",
+   "owner": "weeklyChart",
+   "bbox": [
+    74.5,
+    526,
+    15.5,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pzt",
+   "owner": "weeklyChart",
+   "bbox": [
+    145.7,
+    824,
+    17.46,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sal",
+   "owner": "weeklyChart",
+   "bbox": [
+    254.77,
+    824,
+    16.17,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çar",
+   "owner": "weeklyChart",
+   "bbox": [
+    361.64,
+    824,
+    20.13,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Per",
+   "owner": "weeklyChart",
+   "bbox": [
+    470.4,
+    824,
+    19.29,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cum",
+   "owner": "weeklyChart",
+   "bbox": [
+    575.48,
+    824,
+    26.19,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cmt",
+   "owner": "weeklyChart",
+   "bbox": [
+    685.13,
+    824,
+    24.3,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Paz",
+   "owner": "weeklyChart",
+   "bbox": [
+    796.35,
+    824,
+    18.72,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz Tüketimi",
+   "owner": "deviceCard",
+   "bbox": [
+    928,
+    470,
+    114.19,
+    21
+   ],
+   "baseline": 486,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün · toplam 15,2 kWh",
+   "owner": "deviceCard",
+   "bbox": [
+    928,
+    494,
+    144.64,
+    17
+   ],
+   "baseline": 507,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Klima",
+   "owner": "device[0]",
+   "bbox": [
+    980,
+    535.25,
+    38,
+    18
+   ],
+   "baseline": 549.25,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5,8",
+   "owner": "device[0]",
+   "bbox": [
+    1327.78,
+    534.75,
+    21.02,
+    18
+   ],
+   "baseline": 548.75,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "device[0]",
+   "bbox": [
+    1350.8,
+    536.75,
+    25.2,
+    16
+   ],
+   "baseline": 548.75,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Buzdolabı",
+   "owner": "device[1]",
+   "bbox": [
+    980,
+    593.25,
+    66.98,
+    18
+   ],
+   "baseline": 607.25,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,4",
+   "owner": "device[1]",
+   "bbox": [
+    1328.17,
+    592.75,
+    20.63,
+    18
+   ],
+   "baseline": 606.75,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "device[1]",
+   "bbox": [
+    1350.8,
+    594.75,
+    25.2,
+    16
+   ],
+   "baseline": 606.75,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çamaşır Makinesi",
+   "owner": "device[2]",
+   "bbox": [
+    980,
+    651.25,
+    120.81,
+    18
+   ],
+   "baseline": 665.25,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1,8",
+   "owner": "device[2]",
+   "bbox": [
+    1331.39,
+    650.75,
+    17.41,
+    18
+   ],
+   "baseline": 664.75,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "device[2]",
+   "bbox": [
+    1350.8,
+    652.75,
+    25.2,
+    16
+   ],
+   "baseline": 664.75,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Aydınlatma",
+   "owner": "device[3]",
+   "bbox": [
+    980,
+    709.25,
+    77.8,
+    18
+   ],
+   "baseline": 723.25,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1,4",
+   "owner": "device[3]",
+   "bbox": [
+    1331.16,
+    708.75,
+    17.64,
+    18
+   ],
+   "baseline": 722.75,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "device[3]",
+   "bbox": [
+    1350.8,
+    710.75,
+    25.2,
+    16
+   ],
+   "baseline": 722.75,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Diğer",
+   "owner": "device[4]",
+   "bbox": [
+    980,
+    767.25,
+    35.86,
+    18
+   ],
+   "baseline": 781.25,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3,8",
+   "owner": "device[4]",
+   "bbox": [
+    1328.05,
+    766.75,
+    20.75,
+    18
+   ],
+   "baseline": 780.75,
+   "lines": 1,
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kWh",
+   "owner": "device[4]",
+   "bbox": [
+    1350.8,
+    768.75,
+    25.2,
+    16
+   ],
+   "baseline": 780.75,
+   "lines": 1,
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "DM Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:sun",
+   "owner": "logo",
+   "bbox": [
+    48,
+    25.5,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun-medium",
+   "owner": "weatherChip",
+   "bbox": [
+    1168.31,
+    26.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FF7A1A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "notifButton",
+   "bbox": [
+    1318,
+    25.5,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar-days",
+   "owner": "dateButton",
+   "bbox": [
+    1095.63,
+    121,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "dateButton",
+   "bbox": [
+    1220.5,
+    121,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:download",
+   "owner": "reportButton",
+   "bbox": [
+    1283.5,
+    121,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "solarCard",
+   "bbox": [
+    64,
+    202,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.9
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:battery-charging",
+   "owner": "batteryCard",
+   "bbox": [
+    883.81,
+    208,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#1F9D55",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-up-right",
+   "owner": "gridCard",
+   "bbox": [
+    1056,
+    260,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#1F9D55",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-down-left",
+   "owner": "gridCard",
+   "bbox": [
+    1056,
+    322,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#3B82F6",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:air-vent",
+   "owner": "device[0]",
+   "bbox": [
+    939,
+    543,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:refrigerator",
+   "owner": "device[1]",
+   "bbox": [
+    939,
+    601,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:washing-machine",
+   "owner": "device[2]",
+   "bbox": [
+    939,
+    659,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:lamp",
+   "owner": "device[3]",
+   "bbox": [
+    939,
+    717,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plug",
+   "owner": "device[4]",
+   "bbox": [
+    939,
+    775,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#16201A",
+    "alpha": 1.0
+   },
+   "count": 34,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6B7A70",
+    "alpha": 1.0
+   },
+   "count": 25,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 13,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#9AA79F",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E3E8E4",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1F9D55",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "border",
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "count": 5,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.9
+   },
+   "count": 2,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F3F6F4",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B4C3D3",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF7A1A",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#3B82F6",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "hourly": {
+   "unit": "kW",
+   "hours": [
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17"
+   ],
+   "values": [
+    0.2,
+    1.32,
+    2.55,
+    3.58,
+    4.42,
+    4.83,
+    5.07,
+    4.54,
+    4.23,
+    3.64,
+    2.51,
+    1.43
+   ],
+   "current": 8
+  },
+  "weekly": {
+   "unit": "kWh",
+   "days": [
+    "Pzt",
+    "Sal",
+    "Çar",
+    "Per",
+    "Cum",
+    "Cmt",
+    "Paz"
+   ],
+   "today": 3,
+   "production": [
+    28.4,
+    31.2,
+    24.6,
+    33.5,
+    29.8,
+    35.1,
+    32.7
+   ],
+   "consumption": [
+    22.1,
+    20.4,
+    23.8,
+    21.6,
+    24.9,
+    26.3,
+    25.2
+   ]
+  },
+  "battery": {
+   "level": 0.78,
+   "state": "charging",
+   "powerKw": 1.4
+  },
+  "devices": [
+   {
+    "name": "Klima",
+    "kwh": 5.8
+   },
+   {
+    "name": "Buzdolabı",
+    "kwh": 2.4
+   },
+   {
+    "name": "Çamaşır Makinesi",
+    "kwh": 1.8
+   },
+   {
+    "name": "Aydınlatma",
+    "kwh": 1.4
+   },
+   {
+    "name": "Diğer",
+    "kwh": 3.8
+   }
+  ]
+ },
+ "states": {}
+}

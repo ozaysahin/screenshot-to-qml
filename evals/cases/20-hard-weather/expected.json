@@ -1,0 +1,53 @@
+{
+ "id": "20-hard-weather",
+ "summary": "HARD CASE. 1280x800 editorial weather dashboard at DPR 2 in a font that is not in the skill's catalog (Bricolage Grotesque).",
+ "input": {
+  "file": "input.png",
+  "size": [
+   2560,
+   1600
+  ],
+  "dpr": 2,
+  "designSize": [
+   1280,
+   800
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Font: the family is not in the font catalog; the README names it as unidentified and documents the substitute (or the user-supplied file) and its metric fit.",
+  "Background: light base plus 3 large radial gradients; translucent white cards with 1 px border and soft shadow.",
+  "Huge '24°' filled with a 150-degree 3-stop gradient applied to the glyphs.",
+  "Sun-path card: dashed semicircle, gradient trail to the sun at 60 % of the day, sunrise/sunset labels.",
+  "Weekly card: vertical rotated label 'HAFTALIK TAHMİN', 7 rows from a model, range bars on a shared 16-28 °C scale with the gradient mapped to the scale.",
+  "Hourly strip of 8 from a model with 'Şimdi' selected.",
+  "Air-quality ring: 270-degree conic gradient with a knob and '42' in the center.",
+  "Wind compass with the needle rotated 225 degrees."
+ ],
+ "niceToHave": [
+  "Bars, ring and needle driven by data.",
+  "Details list from a model."
+ ],
+ "allowedApproximations": [
+  "Gradient-text interpolation.",
+  "Arc dash pattern.",
+  "Shadow as one layer.",
+  "Ring hollow via Shape arcs."
+ ],
+ "forbidden": [
+  "Raster crops of the input."
+ ]
+}

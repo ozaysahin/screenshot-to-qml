@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Evim — Akıllı Ev Paneli</title>
+<script type="application/json" id="case-meta">
+{"id": "08-glass-home", "title": "Zor vaka — glassmorphism akıllı ev paneli", "category": "hard", "profile": "desktop",
+ "viewport": [1280, 800], "dpr": 2, "fonts": ["Outfit"],
+ "hardFeatures": ["backdrop-filter blur", "gradient border (mask-composite)", "blurred background blobs", "conic gradient", "multi-layer shadow", "glow"]}
+</script>
+<script type="application/json" id="case-data">
+{"nowPlaying": {"title": "Gece Yarısı Treni", "artist": "Koyu Mavi", "album": "Liman", "position": "1:42", "duration": "3:58", "progress": 0.43, "volume": 0.6, "output": "Salon hoparlörü", "repeat": true},
+ "rooms": [{"name": "Salon ışıkları", "state": "on", "level": 0.6}, {"name": "Klima", "state": "cooling", "target": 22}, {"name": "Perdeler", "state": "closed"}, {"name": "Güvenlik", "state": "armed"}],
+ "scenes": ["Film gecesi", "Uyku", "Sabah", "Dışarıdayım"], "activeScene": 0}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #0B1020;
+  --color-blob-violet: #7C3AED;
+  --color-blob-cyan: #06B6D4;
+  --color-blob-pink: #EC4899;
+  --color-glass: rgba(255, 255, 255, 0.07);
+  --color-glass-strong: rgba(255, 255, 255, 0.13);
+  --color-text: #F5F7FF;
+  --color-muted: rgba(245, 247, 255, 0.62);
+  --color-dim: rgba(245, 247, 255, 0.38);
+  --color-accent-from: #A78BFA;
+  --color-accent-to: #22D3EE;
+  --color-warm: #FCD34D;
+  --color-green: #4ADE80;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-10: 40px; --space-12: 48px;
+  --radius-md: 16px; --radius-lg: 22px; --radius-xl: 28px; --radius-pill: 999px;
+  --shadow-glass: 0 24px 60px rgba(3, 6, 20, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-glow: 0 0 32px rgba(167, 139, 250, 0.55), 0 8px 24px rgba(34, 211, 238, 0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 800px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Outfit', sans-serif; position: relative; }
+svg.ic { width: 22px; height: 22px; display: block; flex: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.75; }
+.b1 { width: 560px; height: 560px; left: -140px; top: -180px; background: radial-gradient(circle, var(--color-blob-violet) 0%, rgba(124, 58, 237, 0) 70%); }
+.b2 { width: 620px; height: 620px; left: 820px; top: 300px; background: radial-gradient(circle, var(--color-blob-cyan) 0%, rgba(6, 182, 212, 0) 70%); }
+.b3 { width: 420px; height: 420px; left: 420px; top: 480px; background: radial-gradient(circle, var(--color-blob-pink) 0%, rgba(236, 72, 153, 0) 70%); opacity: 0.6; }
+.wrap { position: relative; padding: 36px 48px; display: flex; flex-direction: column; height: 800px; }
+
+.glass { position: relative; background: var(--color-glass); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border-radius: var(--radius-xl); box-shadow: var(--shadow-glass); }
+.glass::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 42%, rgba(255, 255, 255, 0.18) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+
+.top { display: flex; align-items: flex-end; gap: 28px; }
+.clock { font-size: 104px; font-weight: 300; line-height: 100px; letter-spacing: -4px; }
+.when p { font-size: 20px; font-weight: 500; line-height: 26px; }
+.when span { display: flex; align-items: center; gap: 8px; font-size: 16px; color: var(--color-muted); margin-top: 6px; }
+.when span svg.ic { width: 18px; height: 18px; }
+.top .sp { flex: 1; }
+.who { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 8px 0 20px; border-radius: var(--radius-pill); margin-bottom: 8px; }
+.who b { font-size: 15px; font-weight: 500; }
+.who i { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #F9A8D4, #A78BFA); display: grid; place-items: center; font-style: normal; font-size: 14px; font-weight: 600; color: #1E1033; }
+
+.grid { display: grid; grid-template-columns: 500px 1fr; gap: 24px; margin-top: 32px; height: 512px; }
+.player { padding: 28px; display: flex; flex-direction: column; }
+.player .lbl { font-size: 13px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-dim); display: flex; align-items: center; gap: 8px; }
+.player .lbl i { width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); box-shadow: 0 0 8px var(--color-green); }
+.trk { display: flex; gap: 22px; margin-top: 20px; align-items: center; }
+.art { width: 132px; height: 132px; border-radius: var(--radius-lg); background: conic-gradient(from 210deg, #F59E0B, #EC4899, #8B5CF6, #06B6D4, #F59E0B); position: relative; flex: none; box-shadow: 0 16px 36px rgba(236, 72, 153, 0.35); }
+.art::after { content: ''; position: absolute; left: 44px; top: 44px; width: 44px; height: 44px; border-radius: 50%; background: var(--color-bg); box-shadow: 0 0 0 10px rgba(11, 16, 32, 0.35); }
+.trk h2 { font-size: 28px; font-weight: 600; line-height: 34px; letter-spacing: -0.4px; }
+.trk p { font-size: 16px; color: var(--color-muted); margin-top: 4px; }
+.prog { margin-top: 30px; }
+.bar { position: relative; height: 6px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.14); }
+.bar .f { position: absolute; left: 0; top: 0; bottom: 0; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--color-accent-from), var(--color-accent-to)); }
+.bar .k { position: absolute; top: -5px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(34, 211, 238, 0.8); }
+.times { display: flex; justify-content: space-between; font-size: 13px; color: var(--color-dim); margin-top: 10px; font-variant-numeric: tabular-nums; }
+.ctl { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding: 0 8px; }
+.ctl .s { color: var(--color-muted); position: relative; }
+.ctl .s.on { color: var(--color-accent-to); }
+.ctl .s.on::after { content: ''; position: absolute; left: 9px; bottom: -10px; width: 4px; height: 4px; border-radius: 50%; background: var(--color-accent-to); }
+.ctl .m svg.ic { width: 28px; height: 28px; }
+.play { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, var(--color-accent-from) 0%, var(--color-accent-to) 100%); display: grid; place-items: center; color: #0B1020; box-shadow: var(--shadow-glow); }
+.play svg.ic { width: 30px; height: 30px; fill: #0B1020; }
+.vol { margin-top: auto; display: flex; align-items: center; gap: 14px; color: var(--color-muted); }
+.vol .bar { flex: 1; }
+.vol .bar .f { background: rgba(255, 255, 255, 0.85); }
+.out { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-glass-strong); font-size: 13px; color: var(--color-text); }
+.out svg.ic { width: 16px; height: 16px; }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 24px; }
+.tile { padding: 22px 24px; display: flex; flex-direction: column; }
+.tile .h { display: flex; align-items: center; gap: 14px; }
+.tile .ico { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-glass-strong); display: grid; place-items: center; color: var(--color-text); }
+.tile h3 { font-size: 18px; font-weight: 500; line-height: 24px; }
+.tile .sub { font-size: 14px; color: var(--color-muted); line-height: 18px; }
+.tile .big { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; }
+.tile .big b { font-size: 44px; font-weight: 300; line-height: 48px; letter-spacing: -1.5px; }
+.tile .big b small { font-size: 20px; font-weight: 400; color: var(--color-muted); letter-spacing: 0; margin-left: 2px; }
+.tile.active { background: linear-gradient(145deg, rgba(167, 139, 250, 0.30) 0%, rgba(34, 211, 238, 0.12) 100%); }
+.tile.active .ico { background: rgba(252, 211, 77, 0.18); color: var(--color-warm); box-shadow: 0 0 24px rgba(252, 211, 77, 0.45); }
+.sw { width: 52px; height: 30px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.16); position: relative; flex: none; }
+.sw::after { content: ''; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); }
+.sw.on { background: linear-gradient(90deg, var(--color-accent-from), var(--color-accent-to)); }
+.sw.on::after { left: 25px; background: #fff; }
+.pm { display: flex; gap: 10px; }
+.pm div { width: 40px; height: 40px; border-radius: 50%; background: var(--color-glass-strong); display: grid; place-items: center; }
+.pm svg.ic { width: 18px; height: 18px; }
+.sec-ok { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-green); }
+.sec-ok svg.ic { width: 16px; height: 16px; }
+
+.scenes { display: flex; gap: 16px; margin-top: 24px; }
+.scene { height: 60px; padding: 0 24px 0 18px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; }
+.scene svg.ic { width: 20px; height: 20px; color: var(--color-muted); }
+.scene.on { background: linear-gradient(135deg, var(--color-accent-from) 0%, var(--color-accent-to) 100%); color: #0B1020; font-weight: 600; box-shadow: var(--shadow-glow); }
+.scene.on svg.ic { color: #0B1020; }
+.scene.on::before { display: none; }
+.scenes .add { width: 60px; padding: 0; justify-content: center; }
+.scenes .add svg.ic { color: var(--color-text); }
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
+  <header class="top" data-node="header" data-role="Header">
+    <div class="clock" data-node="clock" data-role="Clock">21:47</div>
+    <div class="when"><p>Perşembe, 25 Eylül</p><span><i data-icon="lucide:moon-star" class="ic"></i>Ankara · 17° · Açık</span></div>
+    <div class="sp"></div>
+    <div class="who glass" data-node="profileChip" data-role="Chip"><b>Evim · 4 kişi evde</b><i>MA</i></div>
+  </header>
+
+  <section class="grid">
+    <div class="glass player" data-node="playerCard" data-role="MediaPlayer">
+      <div class="lbl"><i></i>Şimdi çalıyor</div>
+      <div class="trk"><div class="art" data-node="albumArt" data-role="Image"></div>
+        <div><h2>Gece Yarısı Treni</h2><p>Koyu Mavi · Liman</p></div></div>
+      <div class="prog"><div class="bar" data-node="seekBar" data-role="Slider" data-value="0.43"><div class="f" style="width:43%"></div><div class="k" style="left:43%"></div></div>
+        <div class="times"><span>1:42</span><span>-2:16</span></div></div>
+      <div class="ctl" data-node="transport" data-role="ToolBar">
+        <div class="s"><i data-icon="lucide:shuffle" class="ic"></i></div>
+        <div class="s m"><i data-icon="lucide:skip-back" class="ic"></i></div>
+        <div class="play" data-node="playButton" data-role="Button" data-state="playing"><i data-icon="lucide:pause" class="ic"></i></div>
+        <div class="s m"><i data-icon="lucide:skip-forward" class="ic"></i></div>
+        <div class="s on" data-state="checked"><i data-icon="lucide:repeat" class="ic"></i></div>
+      </div>
+      <div class="vol"><i data-icon="lucide:volume-2" class="ic"></i>
+        <div class="bar" data-node="volumeSlider" data-role="Slider" data-value="0.6"><div class="f" style="width:60%"></div><div class="k" style="left:60%;box-shadow:none"></div></div>
+        <div class="out" data-node="outputChip" data-role="Chip"><i data-icon="lucide:speaker" class="ic"></i>Salon hoparlörü</div></div>
+    </div>
+
+    <div class="tiles" data-node="roomTiles" data-model="rooms">
+      <div class="glass tile active" data-node="tile" data-role="ToggleTile" data-state="checked">
+        <div class="h"><div class="ico"><i data-icon="lucide:lightbulb" class="ic"></i></div><div><h3>Salon ışıkları</h3><div class="sub">Sıcak beyaz · 2700K</div></div></div>
+        <div class="big"><b>60<small>%</small></b><div class="sw on" data-node="tileSwitch" data-role="Switch" data-state="checked"></div></div>
+      </div>
+      <div class="glass tile" data-node="tile" data-role="ThermostatTile">
+        <div class="h"><div class="ico"><i data-icon="lucide:snowflake" class="ic"></i></div><div><h3>Klima</h3><div class="sub">Soğutma · Oda 24,5°</div></div></div>
+        <div class="big"><b>22<small>°C</small></b><div class="pm"><div><i data-icon="lucide:minus" class="ic"></i></div><div><i data-icon="lucide:plus" class="ic"></i></div></div></div>
+      </div>
+      <div class="glass tile" data-node="tile" data-role="ToggleTile">
+        <div class="h"><div class="ico"><i data-icon="lucide:blinds" class="ic"></i></div><div><h3>Perdeler</h3><div class="sub">Salon · Yatak odası</div></div></div>
+        <div class="big"><b style="font-size:32px;line-height:40px;letter-spacing:-0.5px">Kapalı</b><div class="sw" data-node="tileSwitch" data-role="Switch"></div></div>
+      </div>
+      <div class="glass tile" data-node="tile" data-role="StatusTile">
+        <div class="h"><div class="ico" style="color:var(--color-green)"><i data-icon="lucide:shield-check" class="ic"></i></div><div><h3>Güvenlik</h3><div class="sub">Gece modu</div></div></div>
+        <div class="big"><b style="font-size:32px;line-height:40px;letter-spacing:-0.5px">Aktif</b><span class="sec-ok"><i data-icon="lucide:lock" class="ic"></i>4 kapı kilitli</span></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="scenes" data-node="scenes" data-role="SegmentedControl" data-model="scenes">
+    <div class="scene on" data-node="scene" data-role="Button" data-state="selected"><i data-icon="lucide:clapperboard" class="ic"></i>Film gecesi</div>
+    <div class="scene glass" data-node="scene" data-role="Button"><i data-icon="lucide:bed-double" class="ic"></i>Uyku</div>
+    <div class="scene glass" data-node="scene" data-role="Button"><i data-icon="lucide:sunrise" class="ic"></i>Sabah</div>
+    <div class="scene glass" data-node="scene" data-role="Button"><i data-icon="lucide:door-open" class="ic"></i>Dışarıdayım</div>
+    <div class="scene glass add" data-node="addScene" data-role="Button"><i data-icon="lucide:plus" class="ic"></i></div>
+  </nav>
+</div>
+</body>
+</html>

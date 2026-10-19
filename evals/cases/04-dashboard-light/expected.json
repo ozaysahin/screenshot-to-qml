@@ -1,0 +1,46 @@
+{
+ "id": "04-dashboard-light",
+ "summary": "1440x900 light energy dashboard captured at 125% scale (input is 1800x1125).",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1800,
+   1125
+  ],
+  "dpr": 1.25,
+  "designSize": [
+   1440,
+   900
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Fractional DPR 1.25 handled: design size 1440x900, no off-by-one layout drift.",
+  "Top navigation tabs with underline indicator on 'Özet'.",
+  "Solar card: 155-degree gradient, 12 hourly bars with the current hour highlighted in white.",
+  "Battery ring at 78% with gradient stroke and centered labels.",
+  "Weekly grouped bar chart: 7 days x 2 series, y-ticks 0-40, today's label bold.",
+  "Device consumption list of 5 rows from a model with proportional progress bars.",
+  "Multi-layer card shadow approximated (MultiEffect on Qt 6.8; RectangularShadow only when minQt >= 6.9)."
+ ],
+ "niceToHave": [
+  "Bar values bound to mock data, not hard-coded heights."
+ ],
+ "allowedApproximations": [
+  "Two-layer shadow merged into one."
+ ],
+ "forbidden": []
+}

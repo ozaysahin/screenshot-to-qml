@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Kuzgun Fiber — Ağ Operasyon Merkezi</title>
+<script type="application/json" id="case-meta">
+{"id": "10-dashboard-ops-dark", "title": "Koyu tema ağ operasyon merkezi (NOC) panosu", "category": "dashboard", "profile": "desktop",
+ "viewport": [1920, 1080], "dpr": 1, "fonts": ["Sora", "DM Mono"]}
+</script>
+<script type="application/json" id="case-data">
+{"now": "14:32:07",
+ "gauges": [
+  {"name": "CPU", "value": 0.47, "threshold": 0.85, "state": "ok", "caption": "12 omurga cihazı", "peak": "%71 · 21:40"},
+  {"name": "Bellek", "value": 0.81, "threshold": 0.85, "state": "warning", "caption": "ort. 12 cihaz", "peak": "%84 · 22:10"},
+  {"name": "Bant genişliği", "value": 0.66, "threshold": 0.90, "state": "ok", "caption": "786 / 1.200 Gbps", "peak": "%96 · 21:00"}],
+ "throughput": {"unit": "Gbps", "stepMinutes": 30, "labels": ["14:30", "17:30", "20:30", "23:30", "02:30", "05:30", "08:30", "11:30", "14:30"],
+  "download": [585, 587, 619, 628, 666, 680, 678, 703, 725, 783, 820, 856, 878, 904, 899, 880, 839, 795, 762, 728, 666, 532, 448, 353, 320, 309, 285, 260, 203, 185, 176, 181, 220, 254, 301, 339, 365, 369, 395, 442, 479, 504, 528, 532, 536, 568, 590, 616, 612],
+  "upload": [126, 139, 140, 150, 168, 168, 175, 179, 194, 213, 222, 236, 234, 245, 240, 232, 216, 205, 194, 175, 158, 116, 101, 77, 72, 65, 52, 47, 39, 27, 30, 27, 33, 38, 55, 54, 61, 64, 76, 78, 92, 101, 113, 117, 122, 126, 137, 147, 174]},
+ "heatmap": {"region": "İstanbul Anadolu", "unit": "ms", "metric": "p95", "week": "21–27 Eylül 2026",
+  "days": ["Pzt", "Sal", "Çar", "Per", "Cum", "Cmt", "Paz"], "steps": [10, 20, 35, 50],
+  "colors": ["#16323F", "#1B5E6B", "#2E9C8F", "#E0A93F", "#E5564E"],
+  "values": [
+   [15, 4, 4, 5, 5, 7, 8, 9, 11, 15, 16, 18, 22, 21, 20, 22, 23, 20, 31, 34, 41, 40, 37, 25],
+   [8, 8, 4, 4, 5, 4, 6, 7, 11, 13, 13, 16, 14, 22, 21, 18, 19, 23, 27, 29, 41, 42, 38, 26],
+   [8, 4, 6, 5, 10, 4, 4, 15, 15, 13, 17, 14, 18, 23, 23, 22, 19, 23, 25, 34, 38, 40, 37, 24],
+   [13, 11, 10, 9, 10, 9, 5, 11, 14, 12, 13, 16, 16, 21, 62, 67, 41, 23, 26, 30, 36, 36, 39, 29],
+   [14, 7, 8, 9, 4, 8, 10, 13, 17, 16, 14, 20, 17, 21, 24, 20, 21, 28, 30, 29, 35, 58, 54, 29],
+   [15, 8, 6, 7, 4, 4, 11, 12, 15, 19, 22, 26, 27, 23, 24, 25, 25, 25, 26, 31, 44, 50, 46, 26],
+   [12, 10, 6, 10, 7, 7, 7, 7, 15, 13, 19, 26, 22, 25, 28, 27, 26, 24, 28, 34, 44, 47, 45, 24]]},
+ "incidents": [
+  {"id": "INC-20931", "severity": "Kritik", "title": "Ankara–İstanbul omurga hattında paket kaybı", "where": "core-ank-01 · xe-0/0/3", "duration": "00:47:12", "owner": "BY"},
+  {"id": "INC-20928", "severity": "Yüksek", "title": "Karşıyaka OLT hat kartı yanıt vermiyor", "where": "olt-izm-07 · 1.184 abone etkilendi", "duration": "01:12:40", "owner": "SA"},
+  {"id": "INC-20925", "severity": "Yüksek", "title": "DNS çözümleme gecikmesi eşiği aştı", "where": "dns-ist-02 · p95 184 ms", "duration": "00:22:05", "owner": "EK"},
+  {"id": "INC-20919", "severity": "Orta", "title": "Bursa POP'ta UPS bataryadan besleniyor", "where": "pop-brs-01 · şarj %38", "duration": "02:05:31", "owner": "MÇ"},
+  {"id": "INC-20917", "severity": "Orta", "title": "BGP komşuluğunda tekrarlayan kopma", "where": "edge-ank-03 · AS64512", "duration": "03:41:09", "owner": "BY"}]}
+</script>
+<!--@fonts-->
+<!--@charts-->
+<style>
+:root {
+  --color-bg: #080B11;
+  --color-topbar: #0C1018;
+  --color-surface: #0F141D;
+  --color-surface-2: #151C28;
+  --color-surface-3: #1B2433;
+  --color-border: #1E2736;
+  --color-border-strong: #2A3547;
+  --color-text: #E6EBF3;
+  --color-text-2: #BAC3D2;
+  --color-muted: #7F8BA0;
+  --color-dim: #556176;
+  --color-teal: #2DD4BF;
+  --color-teal-soft: rgba(45, 212, 191, 0.12);
+  --color-cyan: #38BDF8;
+  --color-violet: #A78BFA;
+  --color-blue: #6AA8FF;
+  --color-blue-soft: rgba(106, 168, 255, 0.12);
+  --color-amber: #F5B544;
+  --color-amber-soft: rgba(245, 181, 68, 0.13);
+  --color-orange: #FB8B4B;
+  --color-orange-soft: rgba(251, 139, 75, 0.13);
+  --color-red: #F0616D;
+  --color-red-soft: rgba(240, 97, 109, 0.14);
+  --color-heat-0: #16323F;
+  --color-heat-1: #1B5E6B;
+  --color-heat-2: #2E9C8F;
+  --color-heat-3: #E0A93F;
+  --color-heat-4: #E5564E;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-xs: 3px; --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-pill: 999px;
+  --shadow-live: 0 0 0 4px rgba(240, 97, 109, 0.18);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Sora', sans-serif; font-size: 14px; line-height: 20px; }
+svg.ic { width: 18px; height: 18px; display: block; flex: none; }
+.mono { font-family: 'DM Mono', monospace; }
+
+/* top bar */
+.topbar { height: 64px; background: var(--color-topbar); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); gap: var(--space-5); }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand .mk { width: 32px; height: 32px; border-radius: var(--radius-md); background: linear-gradient(135deg, #2DD4BF 0%, #3B82F6 100%); display: grid; place-items: center; color: #06121A; }
+.brand .mk svg.ic { width: 18px; height: 18px; stroke-width: 2.4; }
+.brand b { font-size: 16px; font-weight: 600; letter-spacing: -0.2px; }
+.brand span { height: 20px; padding: 0 6px; border-radius: var(--radius-xs); background: var(--color-surface-3); color: var(--color-muted); font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 500; line-height: 20px; }
+.vsep { width: 1px; height: 24px; background: var(--color-border-strong); }
+.crumbs { display: flex; align-items: center; gap: var(--space-2); font-size: 13px; color: var(--color-muted); }
+.crumbs svg.ic { width: 14px; height: 14px; color: var(--color-dim); }
+.crumbs b { color: var(--color-text); font-weight: 500; }
+.live { height: 26px; padding: 0 10px 0 9px; border-radius: var(--radius-pill); border: 1px solid rgba(240, 97, 109, 0.35); background: var(--color-red-soft); display: flex; align-items: center; gap: var(--space-2); font-size: 11px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: #FF8E97; }
+.live i { width: 7px; height: 7px; border-radius: 50%; background: var(--color-red); box-shadow: var(--shadow-live); }
+.topbar .sp { flex: 1; }
+.search { width: 380px; height: 38px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: 10px; padding: 0 8px 0 12px; color: var(--color-dim); font-size: 13px; }
+.search svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.search .ph { flex: 1; white-space: nowrap; }
+.kbd { width: 22px; height: 22px; border-radius: var(--radius-xs); border: 1px solid var(--color-border-strong); background: var(--color-surface-2); font-family: 'DM Mono', monospace; font-size: 12px; color: var(--color-muted); display: grid; place-items: center; }
+.clock { display: flex; align-items: baseline; gap: 6px; font-family: 'DM Mono', monospace; font-size: 15px; font-weight: 500; color: var(--color-text); }
+.clock small { font-size: 11px; font-weight: 400; color: var(--color-dim); }
+.ib { width: 38px; height: 38px; border-radius: var(--radius-md); border: 1px solid var(--color-border); display: grid; place-items: center; color: var(--color-text-2); position: relative; }
+.ib .badge { position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--radius-pill); background: var(--color-red); color: #fff; font-size: 10px; font-weight: 600; display: grid; place-items: center; border: 2px solid var(--color-topbar); box-sizing: content-box; line-height: 18px; }
+.av { width: 34px; height: 34px; border-radius: 50%; background: #243552; color: #9CC2FF; font-size: 12px; font-weight: 600; display: grid; place-items: center; }
+
+/* grid */
+.content { padding: var(--space-6); display: flex; flex-direction: column; gap: var(--space-5); height: 1016px; }
+.rowA { display: grid; grid-template-columns: 300px 300px 300px 1fr; gap: var(--space-5); height: 270px; }
+.rowB { display: grid; grid-template-columns: 1fr 680px; gap: var(--space-5); height: 342px; }
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--space-5); display: flex; flex-direction: column; min-width: 0; position: relative; }
+.hd { display: flex; align-items: flex-start; gap: var(--space-3); height: 40px; flex: none; }
+.hd h3 { font-size: 15px; font-weight: 600; line-height: 20px; letter-spacing: -0.1px; }
+.hd p { font-size: 12px; line-height: 18px; color: var(--color-muted); }
+.hd .r { margin-left: auto; display: flex; align-items: center; gap: var(--space-3); }
+.chip { height: 22px; padding: 0 8px; border-radius: var(--radius-pill); font-size: 11px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.chip i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.chip.ok { background: var(--color-teal-soft); color: var(--color-teal); }
+.chip.warn { background: var(--color-amber-soft); color: var(--color-amber); }
+
+/* gauges */
+.gwrap { position: relative; height: 130px; margin-top: 6px; display: flex; justify-content: center; }
+.gwrap svg { display: block; }
+.gval { position: absolute; left: 0; right: 0; top: 58px; text-align: center; }
+.gval b { display: block; font-size: 38px; font-weight: 600; line-height: 44px; letter-spacing: -1px; }
+.gval span { font-size: 12px; line-height: 16px; color: var(--color-muted); }
+.gscale { position: absolute; left: 27px; right: 27px; top: 116px; display: flex; justify-content: space-between; font-family: 'DM Mono', monospace; font-size: 11px; line-height: 14px; color: var(--color-dim); }
+.gfoot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--color-border); display: flex; justify-content: space-between; }
+.gfoot div { display: flex; flex-direction: column; gap: 2px; }
+.gfoot div + div { align-items: flex-end; }
+.gfoot small { font-size: 10px; line-height: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-dim); }
+.gfoot b { font-family: 'DM Mono', monospace; font-size: 13px; line-height: 16px; font-weight: 500; color: var(--color-text-2); }
+
+/* throughput */
+.legend { display: flex; gap: var(--space-5); }
+.lg { display: flex; align-items: center; gap: var(--space-2); font-size: 12px; color: var(--color-muted); }
+.lg i { width: 10px; height: 10px; border-radius: var(--radius-xs); }
+.lg b { font-family: 'DM Mono', monospace; font-size: 14px; font-weight: 500; color: var(--color-text); }
+#tput { margin-top: 12px; display: block; }
+
+/* heatmap */
+.combo { height: 30px; padding: 0 8px 0 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-strong); background: var(--color-surface-2); display: flex; align-items: center; gap: var(--space-2); font-size: 12px; font-weight: 500; color: var(--color-text); white-space: nowrap; }
+.combo svg.ic { width: 14px; height: 14px; color: var(--color-muted); }
+.combo svg.ic.pin { color: var(--color-teal); }
+.hscale { display: flex; align-items: center; gap: 6px; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--color-muted); }
+.hscale .sw { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.hscale .sw i { width: 34px; height: 8px; border-radius: 2px; }
+.hscale .sw span { line-height: 12px; font-size: 10px; }
+.hm { display: grid; grid-template-columns: 36px 1fr; column-gap: var(--space-2); margin-top: 14px; }
+.days { display: grid; grid-template-rows: repeat(7, 28px); row-gap: 4px; font-size: 12px; color: var(--color-muted); }
+.days span { line-height: 28px; }
+.cells { display: grid; grid-template-columns: repeat(24, 1fr); grid-template-rows: repeat(7, 28px); gap: 4px; }
+.cells i { display: block; border-radius: var(--radius-xs); }
+.hours { grid-column: 2; display: grid; grid-template-columns: repeat(8, 1fr); margin-top: 8px; font-family: 'DM Mono', monospace; font-size: 11px; line-height: 16px; color: var(--color-dim); }
+
+/* incidents */
+.count { height: 20px; min-width: 20px; padding: 0 6px; border-radius: var(--radius-pill); background: var(--color-surface-3); color: var(--color-text-2); font-size: 11px; font-weight: 600; display: grid; place-items: center; }
+.link { font-size: 12px; font-weight: 600; color: var(--color-blue); display: flex; align-items: center; gap: 2px; }
+.link svg.ic { width: 14px; height: 14px; }
+.incs { margin-top: 4px; display: flex; flex-direction: column; }
+.inc { height: 50px; display: grid; grid-template-columns: 70px 1fr 28px 84px; align-items: center; column-gap: var(--space-4); border-top: 1px solid var(--color-border); }
+.inc:first-child { border-top: none; }
+.sev { height: 22px; border-radius: var(--radius-xs); font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.sev.crit { background: var(--color-red-soft); color: var(--color-red); box-shadow: inset 0 0 0 1px rgba(240, 97, 109, 0.35); }
+.sev.high { background: var(--color-orange-soft); color: var(--color-orange); }
+.sev.mid { background: var(--color-amber-soft); color: var(--color-amber); }
+.inc .t { min-width: 0; }
+.inc .t b { display: block; font-size: 13px; font-weight: 500; line-height: 18px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.inc .t span { display: flex; gap: var(--space-2); font-size: 12px; line-height: 16px; color: var(--color-muted); white-space: nowrap; }
+.inc .t em { font-style: normal; font-family: 'DM Mono', monospace; color: var(--color-dim); }
+.owner { width: 26px; height: 26px; border-radius: 50%; font-size: 10px; font-weight: 600; display: grid; place-items: center; }
+.dur { display: flex; align-items: center; justify-content: flex-end; gap: 6px; font-family: 'DM Mono', monospace; font-size: 13px; color: var(--color-text-2); }
+.dur svg.ic { width: 14px; height: 14px; color: var(--color-dim); }
+
+/* log */
+.logc { height: 316px; padding: 14px 0 0; overflow: hidden; }
+.logc .hd { height: 32px; padding: 0 var(--space-5); align-items: center; }
+.logc .hd p { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--color-dim); }
+.seg { display: flex; padding: 2px; border-radius: var(--radius-sm); background: var(--color-surface-2); border: 1px solid var(--color-border); }
+.seg div { height: 24px; padding: 0 10px; border-radius: 4px; display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--color-muted); }
+.seg div em { font-style: normal; font-family: 'DM Mono', monospace; font-size: 11px; color: var(--color-dim); }
+.seg div.on { background: var(--color-surface-3); color: var(--color-text); }
+.btn { height: 30px; padding: 0 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--color-text-2); }
+.btn svg.ic { width: 14px; height: 14px; }
+.rate { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--color-muted); }
+.log { margin-top: 12px; height: 256px; overflow: hidden; border-top: 1px solid var(--color-border); background: #0B1017; padding: 0 var(--space-5); }
+.ln { height: 22px; font-family: 'DM Mono', monospace; font-size: 13px; line-height: 22px; white-space: pre; color: var(--color-text-2); }
+.ln .ts { color: var(--color-dim); }
+.ln .lv { padding: 1px 4px; border-radius: var(--radius-xs); font-weight: 500; }
+.ln .lv.info { color: var(--color-blue); background: var(--color-blue-soft); }
+.ln .lv.warn { color: var(--color-amber); background: var(--color-amber-soft); }
+.ln .lv.err { color: var(--color-red); background: var(--color-red-soft); }
+.ln .src { color: var(--color-violet); }
+.ln .kv { color: var(--color-muted); }
+.ln.hl { background: rgba(240, 97, 109, 0.06); margin: 0 calc(var(--space-5) * -1); padding: 0 var(--space-5); }
+</style>
+</head>
+<body>
+<header class="topbar" data-node="topBar" data-role="Header">
+  <div class="brand" data-node="brand"><div class="mk"><i data-icon="lucide:radio-tower" class="ic"></i></div><b>Kuzgun Fiber</b><span>NOC</span></div>
+  <div class="vsep"></div>
+  <nav class="crumbs" data-node="breadcrumbs" data-role="Breadcrumb">Ağ Operasyonları<i data-icon="lucide:chevron-right" class="ic"></i>Marmara Bölgesi<i data-icon="lucide:chevron-right" class="ic"></i><b>Genel durum</b></nav>
+  <div class="live" data-node="liveIndicator" data-role="Badge"><i></i>Canlı</div>
+  <div class="sp"></div>
+  <div class="search" data-node="searchField" data-role="TextField" data-state="placeholder"><i data-icon="lucide:search" class="ic"></i><span class="ph">Cihaz, IP adresi veya olay no ara…</span><span class="kbd">/</span></div>
+  <div class="clock" data-node="clock">14:32:07<small>UTC+3</small></div>
+  <div class="ib" data-node="alertsButton" data-role="IconButton"><i data-icon="lucide:bell" class="ic"></i><span class="badge">3</span></div>
+  <div class="av" data-node="userAvatar" data-role="Avatar">MÇ</div>
+</header>
+
+<main class="content">
+  <section class="rowA">
+    <div class="card" data-node="gaugeCard" data-role="Panel">
+      <div class="hd"><div><h3>CPU</h3><p>12 omurga cihazı</p></div><div class="r"><span class="chip ok" data-node="gaugeState" data-role="Badge"><i></i>Normal</span></div></div>
+      <div class="gwrap" data-node="gauge" data-role="Gauge" data-value="0.47"><svg id="gauge0"></svg><div class="gval"><b>%47</b><span>ort. son 5 dk</span></div><div class="gscale"><span>0</span><span>100</span></div></div>
+      <div class="gfoot"><div><small>Tepe (24 sa)</small><b>%71 · 21:40</b></div><div><small>Eşik</small><b>%85</b></div></div>
+    </div>
+    <div class="card" data-node="gaugeCard" data-role="Panel">
+      <div class="hd"><div><h3>Bellek</h3><p>ort. 12 cihaz</p></div><div class="r"><span class="chip warn" data-node="gaugeState" data-role="Badge"><i></i>Uyarı</span></div></div>
+      <div class="gwrap" data-node="gauge" data-role="Gauge" data-value="0.81"><svg id="gauge1"></svg><div class="gval"><b>%81</b><span>ort. son 5 dk</span></div><div class="gscale"><span>0</span><span>100</span></div></div>
+      <div class="gfoot"><div><small>Tepe (24 sa)</small><b>%84 · 22:10</b></div><div><small>Eşik</small><b>%85</b></div></div>
+    </div>
+    <div class="card" data-node="gaugeCard" data-role="Panel">
+      <div class="hd"><div><h3>Bant genişliği</h3><p>786 / 1.200 Gbps</p></div><div class="r"><span class="chip ok" data-node="gaugeState" data-role="Badge"><i></i>Normal</span></div></div>
+      <div class="gwrap" data-node="gauge" data-role="Gauge" data-value="0.66"><svg id="gauge2"></svg><div class="gval"><b>%66</b><span>anlık kullanım</span></div><div class="gscale"><span>0</span><span>100</span></div></div>
+      <div class="gfoot"><div><small>Tepe (24 sa)</small><b>%96 · 21:00</b></div><div><small>Eşik</small><b>%90</b></div></div>
+    </div>
+    <div class="card" data-node="throughputCard" data-role="Panel">
+      <div class="hd"><div><h3>Trafik hacmi</h3><p>Son 24 saat · Gbps · 30 dk ortalama</p></div>
+        <div class="r legend" data-node="throughputLegend"><span class="lg"><i style="background:var(--color-cyan)"></i>İndirme<b>612</b></span><span class="lg"><i style="background:var(--color-violet)"></i>Yükleme<b>174</b></span></div></div>
+      <svg id="tput" data-node="throughputChart" data-role="Chart"></svg>
+    </div>
+  </section>
+
+  <section class="rowB">
+    <div class="card" data-node="heatmapCard" data-role="Panel">
+      <div class="hd"><div><h3>Bölge gecikmesi</h3><p>21–27 Eylül · saatlik p95 · ms</p></div>
+        <div class="r">
+          <div class="hscale" data-node="heatLegend">
+            <div class="sw"><i style="background:var(--color-heat-0)"></i><span>&lt;10</span></div>
+            <div class="sw"><i style="background:var(--color-heat-1)"></i><span>10–20</span></div>
+            <div class="sw"><i style="background:var(--color-heat-2)"></i><span>20–35</span></div>
+            <div class="sw"><i style="background:var(--color-heat-3)"></i><span>35–50</span></div>
+            <div class="sw"><i style="background:var(--color-heat-4)"></i><span>&gt;50</span></div>
+          </div>
+          <div class="combo" data-node="regionSelect" data-role="ComboBox" data-value="İstanbul Anadolu"><i data-icon="lucide:map-pin" class="ic pin"></i>İstanbul Anadolu<i data-icon="lucide:chevron-down" class="ic"></i></div>
+        </div></div>
+      <div class="hm">
+        <div class="days" data-node="heatDays"><span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cmt</span><span>Paz</span></div>
+        <div class="cells" id="cells" data-node="heatmap" data-role="Chart" data-model="latencyCells"></div>
+        <div class="hours" data-node="heatHours"><span>00</span><span>03</span><span>06</span><span>09</span><span>12</span><span>15</span><span>18</span><span>21</span></div>
+      </div>
+    </div>
+
+    <div class="card" data-node="incidentsCard" data-role="Panel">
+      <div class="hd"><div style="display:flex;align-items:center;gap:8px"><h3>Açık olaylar</h3><span class="count">5</span></div><div class="r"><span class="link" data-node="incidentsLink" data-role="Button">Olay yönetimi<i data-icon="lucide:chevron-right" class="ic"></i></span></div></div>
+      <div class="incs" data-node="incidents" data-model="incidents">
+        <div class="inc" data-node="incidentRow" data-role="ListItem"><span class="sev crit" data-node="severityChip" data-role="Chip" data-value="Kritik">Kritik</span><div class="t"><b>Ankara–İstanbul omurga hattında paket kaybı</b><span><em>INC-20931</em>core-ank-01 · xe-0/0/3</span></div><span class="owner" style="background:#2B2140;color:#C9B5FF">BY</span><span class="dur"><i data-icon="lucide:timer" class="ic"></i>00:47:12</span></div>
+        <div class="inc" data-node="incidentRow" data-role="ListItem"><span class="sev high" data-node="severityChip" data-role="Chip" data-value="Yüksek">Yüksek</span><div class="t"><b>Karşıyaka OLT hat kartı yanıt vermiyor</b><span><em>INC-20928</em>olt-izm-07 · 1.184 abone etkilendi</span></div><span class="owner" style="background:#16333A;color:#7FE3D3">SA</span><span class="dur"><i data-icon="lucide:timer" class="ic"></i>01:12:40</span></div>
+        <div class="inc" data-node="incidentRow" data-role="ListItem"><span class="sev high" data-node="severityChip" data-role="Chip" data-value="Yüksek">Yüksek</span><div class="t"><b>DNS çözümleme gecikmesi eşiği aştı</b><span><em>INC-20925</em>dns-ist-02 · p95 184 ms</span></div><span class="owner" style="background:#3A2A18;color:#FFC983">EK</span><span class="dur"><i data-icon="lucide:timer" class="ic"></i>00:22:05</span></div>
+        <div class="inc" data-node="incidentRow" data-role="ListItem"><span class="sev mid" data-node="severityChip" data-role="Chip" data-value="Orta">Orta</span><div class="t"><b>Bursa POP'ta UPS bataryadan besleniyor</b><span><em>INC-20919</em>pop-brs-01 · şarj %38</span></div><span class="owner" style="background:#243552;color:#9CC2FF">MÇ</span><span class="dur"><i data-icon="lucide:timer" class="ic"></i>02:05:31</span></div>
+        <div class="inc" data-node="incidentRow" data-role="ListItem"><span class="sev mid" data-node="severityChip" data-role="Chip" data-value="Orta">Orta</span><div class="t"><b>BGP komşuluğunda tekrarlayan kopma</b><span><em>INC-20917</em>edge-ank-03 · AS64512</span></div><span class="owner" style="background:#2B2140;color:#C9B5FF">BY</span><span class="dur"><i data-icon="lucide:timer" class="ic"></i>03:41:09</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card logc" data-node="logPanel" data-role="Panel">
+    <div class="hd">
+      <div style="display:flex;align-items:baseline;gap:12px"><h3>Sistem günlüğü</h3><p>syslog · core-*, edge-*, olt-*, dns-*</p></div>
+      <div class="r">
+        <span class="rate">1.284 satır/dk</span>
+        <div class="seg" data-node="logFilter" data-role="TabBar" data-value="all"><div class="on" data-node="logFilterTab" data-role="Tab" data-state="selected">Tümü</div><div data-node="logFilterTab" data-role="Tab">WARN<em>37</em></div><div data-node="logFilterTab" data-role="Tab">ERR<em>6</em></div></div>
+        <div class="btn" data-node="pauseButton" data-role="Button"><i data-icon="lucide:pause" class="ic"></i>Duraklat</div>
+      </div>
+    </div>
+    <div class="log" data-node="logLines" data-model="logLines">
+<div class="ln hl" data-node="logLine" data-role="ListItem"><span class="ts">14:32:07.412</span>  <span class="lv err">ERR</span>   <span class="src">core-ank-01</span>    xe-0/0/3 paket kaybı eşiği aşıldı  <span class="kv">loss=2.4% rtt=48ms peer=core-ist-02</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:32:05.087</span>  <span class="lv info">INFO</span>  <span class="src">edge-ank-03</span>    BGP oturumu kuruldu  <span class="kv">neighbor=10.20.0.1 asn=64512 prefixes=812344</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:32:04.550</span>  <span class="lv warn">WARN</span>  <span class="src">dns-ist-02</span>     çözümleme gecikmesi yüksek  <span class="kv">p95=184ms qps=48210 cache_hit=71%</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:32:01.903</span>  <span class="lv info">INFO</span>  <span class="src">olt-izm-07</span>     ONT yeniden kaydoldu  <span class="kv">pon=1/1/4 ont=37 rx=-21.4dBm</span></div>
+<div class="ln hl" data-node="logLine" data-role="ListItem"><span class="ts">14:31:58.271</span>  <span class="lv err">ERR</span>   <span class="src">olt-izm-07</span>     hat kartı yanıt vermiyor  <span class="kv">slot=3 retries=5 subscribers=1184</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:55.640</span>  <span class="lv info">INFO</span>  <span class="src">core-ist-02</span>    LSP yeniden yönlendirildi  <span class="kv">lsp=ank-ist-primary via=core-esk-01</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:52.118</span>  <span class="lv warn">WARN</span>  <span class="src">pop-brs-01</span>     UPS bataryadan çalışıyor  <span class="kv">charge=38% runtime=22m</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:49.764</span>  <span class="lv info">INFO</span>  <span class="src">radius-01</span>      oturum açıldı  <span class="kv">user=fbr-4482917 nas=bng-ank-02 ip=100.64.18.23</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:47.332</span>  <span class="lv info">INFO</span>  <span class="src">bng-ank-02</span>     DHCP havuzu kullanımı güncellendi  <span class="kv">pool=ank-res-3 used=78%</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:44.905</span>  <span class="lv warn">WARN</span>  <span class="src">edge-ank-03</span>    BGP komşu durumu değişti  <span class="kv">neighbor=10.20.0.1 state=Idle→Active</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:41.480</span>  <span class="lv info">INFO</span>  <span class="src">netflow-col</span>    dışa aktarım tamamlandı  <span class="kv">flows=2184906 window=60s</span></div>
+<div class="ln" data-node="logLine" data-role="ListItem"><span class="ts">14:31:38.027</span>  <span class="lv info">INFO</span>  <span class="src">core-esk-01</span>    arayüz sayaçları sıfırlandı  <span class="kv">if=et-0/0/1 by=otomasyon</span></div>
+    </div>
+  </section>
+</main>
+
+<script>
+const D = JSON.parse(document.getElementById('case-data').textContent);
+const NS = 'http://www.w3.org/2000/svg';
+const mk = (tag, a, p) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const f2 = v => Number(v.toFixed(2));
+// semicircle gauges: track + value arc (round caps) + threshold tick, no needle
+const colors = { ok: '#2DD4BF', warning: '#F5B544', critical: '#F0616D' };
+D.gauges.forEach((g, i) => {
+  const svg = document.getElementById("gauge" + i);
+  const r = 96, sw = 14, W = 2 * r + sw + 20, H = r + sw / 2 + 10;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('width', W); svg.setAttribute('height', H);
+  const cx = W / 2, cy = r + sw / 2 + 8;
+  const pt = (v, rr) => [cx - rr * Math.cos(Math.PI * v), cy - rr * Math.sin(Math.PI * v)];
+  const arc = (v0, v1) => { const a = pt(v0, r), b = pt(v1, r); return `M${f2(a[0])},${f2(a[1])} A${r},${r} 0 0 1 ${f2(b[0])},${f2(b[1])}`; };
+  mk('path', { d: arc(0, 1), fill: 'none', stroke: '#1B2433', 'stroke-width': sw, 'stroke-linecap': 'round' }, svg);
+  mk('path', { d: arc(0, g.value), fill: 'none', stroke: colors[g.state === 'warning' ? 'warning' : 'ok'], 'stroke-width': sw, 'stroke-linecap': 'round' }, svg);
+  const t0 = pt(g.threshold, r + sw / 2 + 2), t1 = pt(g.threshold, r - sw / 2 - 2);
+  mk('line', { x1: f2(t0[0]), y1: f2(t0[1]), x2: f2(t1[0]), y2: f2(t1[1]), stroke: '#E6EBF3', 'stroke-width': 2, 'stroke-linecap': 'round', 'stroke-opacity': 0.75 }, svg);
+});
+// throughput area chart (2 series, gradient fill)
+const tp = document.getElementById('tput');
+const tc = tp.parentElement;
+Charts.line(tp, {
+  width: tc.clientWidth - 40, height: tc.clientHeight - 20 - 40 - 12 - 20, padding: { l: 44, r: 20, t: 8, b: 24 },
+  xCount: 49, yMin: 0, yMax: 1000, yTicks: [0, 250, 500, 750, 1000], yFormat: v => v.toLocaleString('tr-TR'),
+  xLabels: D.throughput.labels, grid: '#1B2433', gridDash: '2 4', labelColor: '#556176', font: 'DM Mono', fontSize: 11,
+  series: [
+    { values: D.throughput.download, color: '#38BDF8', width: 2, area: [0.34, 0.02], dot: 'last' },
+    { values: D.throughput.upload, color: '#A78BFA', width: 2, area: [0.32, 0.02], dot: 'last' }
+  ], dotFill: '#0F141D'
+});
+// heatmap cells: 7 x 24, 5-step scale
+const cells = document.getElementById('cells');
+const H = D.heatmap;
+H.values.forEach((row, d) => row.forEach((v, h) => {
+  const step = H.steps.filter(s => v >= s).length;
+  const c = document.createElement('i');
+  c.dataset.node = 'heatCell'; c.dataset.value = String(v);
+  c.style.background = `var(--color-heat-${step})`;
+  cells.appendChild(c);
+}));
+Charts.done();
+</script>
+</body>
+</html>

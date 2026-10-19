@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>kıvılcım · Şarj oturumu</title>
+<script type="application/json" id="case-meta">
+{"id": "12-ev-charger", "title": "EV şarj istasyonu — 7 inç dokunmatik, aktif oturum", "category": "kiosk", "profile": "embedded-sw",
+ "viewport": [1024, 600], "dpr": 1, "fonts": ["Titillium Web"]}
+</script>
+<script type="application/json" id="case-data">
+{"station": {"id": "ANK-0417", "site": "Kızılay Otoparkı", "socket": "B"},
+ "session": {"id": "2609 3041 7218", "start": "14:07", "elapsed": "25:14", "unitPrice": "9,00", "currency": "₺"},
+ "battery": {"percent": 70, "start": 22, "target": 80, "segments": 20, "lit": 14, "eta": "14:41"},
+ "stats": [{"label": "Aktarılan enerji", "value": "32,6", "unit": "kWh", "sub": "Oturum başından beri"},
+           {"label": "Anlık güç", "value": "98,4", "unit": "kW", "sub": "400 V · 246 A"},
+           {"label": "Kalan süre", "value": "9", "unit": "dk", "sub": "Hedef %80'e kadar"},
+           {"label": "Tutar", "value": "293,40", "unit": "₺", "sub": "KDV dahil"}],
+ "connector": {"type": "CCS2", "kind": "DC", "maxPower": 180},
+ "languages": ["TR", "EN", "DE"], "language": "TR"}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #0C151E;
+  --color-panel: #131F2B;
+  --color-panel-2: #1B2937;
+  --color-border: #243547;
+  --color-text: #EAF2F8;
+  --color-text-2: #BCCAD6;
+  --color-muted: #8196A9;
+  --color-dim: #5A6E81;
+  --color-accent: #2FE39A;
+  --color-accent-2: #15BF7B;
+  --color-accent-ink: #04281A;
+  --color-accent-soft: #123A2E;
+  --color-seg-off: #213244;
+  --color-danger: #EC4B51;
+  --color-danger-2: #C8323A;
+  --color-on-danger: #FFFFFF;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px; --radius-xl: 16px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1024px; height: 600px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Titillium Web', sans-serif; font-size: 16px; line-height: 22px; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* top bar */
+.topbar { height: 64px; background: var(--color-panel); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); gap: var(--space-4); }
+.logo { width: 40px; height: 40px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 100%); display: grid; place-items: center; color: var(--color-accent-ink); }
+.logo svg.ic { width: 22px; height: 22px; fill: var(--color-accent-ink); }
+.brand { font-size: 26px; font-weight: 700; line-height: 30px; letter-spacing: -0.3px; }
+.divider { width: 1px; height: 28px; background: var(--color-border); }
+.site { display: flex; flex-direction: column; }
+.site b { font-size: 16px; font-weight: 600; line-height: 20px; color: var(--color-text); }
+.site span { font-size: 13px; line-height: 17px; color: var(--color-muted); }
+.top-right { margin-left: auto; display: flex; align-items: center; gap: var(--space-5); }
+.net { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-muted); }
+.net svg.ic { width: 18px; height: 18px; color: var(--color-accent); }
+.langs { display: flex; gap: 4px; padding: 4px; border-radius: var(--radius-md); background: var(--color-bg); border: 1px solid var(--color-border); }
+.lang { width: 52px; height: 36px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 16px; font-weight: 700; color: var(--color-muted); letter-spacing: 0.5px; }
+.lang.on { background: var(--color-accent); color: var(--color-accent-ink); }
+.clock { font-size: 26px; font-weight: 600; line-height: 30px; }
+
+/* layout */
+.content { padding: var(--space-5) var(--space-6) 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.row { display: flex; gap: var(--space-4); }
+.card { background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+
+/* hero */
+.hero { width: 608px; height: 268px; flex: none; padding: 20px 24px 0; display: flex; flex-direction: column; }
+.hero-top { display: flex; align-items: center; justify-content: space-between; }
+.chip { height: 32px; padding: 0 14px 0 10px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.chip svg.ic { width: 16px; height: 16px; fill: var(--color-accent); }
+.eta { font-size: 16px; color: var(--color-muted); }
+.eta b { color: var(--color-text); font-weight: 600; }
+.pct-row { display: flex; align-items: flex-end; gap: var(--space-5); margin-top: 6px; }
+.pct { font-size: 104px; font-weight: 700; line-height: 104px; letter-spacing: -2px; }
+.pct-info { padding-bottom: 16px; }
+.pct-info span { display: block; font-size: 16px; line-height: 20px; color: var(--color-muted); }
+.pct-info b { display: block; font-size: 20px; font-weight: 600; line-height: 26px; color: var(--color-text-2); margin-top: 2px; }
+.segbar { position: relative; margin-top: 12px; }
+.segs { display: flex; gap: 4px; height: 40px; }
+.seg { flex: 1; border-radius: 5px; background: var(--color-seg-off); }
+.seg.on { background: var(--color-accent); }
+.target { position: absolute; top: -6px; bottom: -6px; width: 3px; border-radius: 2px; background: var(--color-text); left: calc((100% - 76px) * 0.8 + 62px - 1.5px); }
+.scale { position: relative; height: 20px; margin-top: 10px; font-size: 14px; line-height: 20px; color: var(--color-dim); font-weight: 600; }
+.scale span { position: absolute; top: 0; }
+.scale .mid { left: 50%; transform: translateX(-50%); }
+.scale .end { right: 0; }
+.scale .tg { left: calc((100% - 76px) * 0.8 + 62px); transform: translateX(-50%); color: var(--color-text); }
+
+/* right column */
+.side { flex: 1; display: flex; flex-direction: column; gap: var(--space-3); }
+.conn { height: 128px; padding: 16px; display: flex; align-items: center; gap: var(--space-4); }
+.conn-ico { width: 96px; height: 96px; flex: none; border-radius: var(--radius-lg); background: var(--color-panel-2); border: 1px solid var(--color-border); display: grid; place-items: center; }
+.conn-txt .lbl { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.conn-txt .lbl svg.ic { width: 14px; height: 14px; }
+.conn-txt h2 { font-size: 34px; font-weight: 700; line-height: 38px; margin-top: 2px; }
+.conn-txt p { font-size: 15px; line-height: 20px; color: var(--color-text-2); margin-top: 2px; }
+.session { height: 128px; padding: 14px 16px; display: flex; flex-direction: column; }
+.session .lbl { font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.sid { font-size: 24px; font-weight: 600; line-height: 30px; letter-spacing: 2px; margin-top: 2px; }
+.kv { display: flex; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--color-border); }
+.kv div { flex: 1; }
+.kv div + div { padding-left: 12px; }
+.kv span { display: block; font-size: 13px; line-height: 16px; color: var(--color-muted); }
+.kv b { display: flex; align-items: center; font-size: 17px; font-weight: 600; line-height: 22px; margin-top: 2px; }
+.kv b svg.ic { width: 15px; height: 15px; stroke-width: 2.5; margin: 0 -3px 0 1px; }
+
+/* stat tiles */
+.stats { display: flex; gap: var(--space-3); }
+.stat { flex: 1; height: 124px; padding: 14px 18px; display: flex; flex-direction: column; }
+.stat .lbl { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.stat .lbl svg.ic { width: 18px; height: 18px; color: var(--color-accent); }
+.stat .val { display: flex; align-items: baseline; margin-top: 8px; }
+.stat .val b { font-size: 42px; font-weight: 700; line-height: 46px; letter-spacing: -0.5px; }
+.stat .val span { font-size: 18px; font-weight: 600; color: var(--color-muted); margin-left: 6px; }
+.stat .val .cur { align-self: center; width: 32px; height: 32px; margin: 2px -4px 0 -7px; stroke-width: 3; color: var(--color-text); }
+.stat .sub { font-size: 14px; line-height: 18px; color: var(--color-dim); margin-top: 4px; font-weight: 600; }
+
+/* actions */
+.actions { display: flex; align-items: center; gap: var(--space-4); margin-top: 4px; }
+.btn { height: 72px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; gap: 12px; }
+.help { width: 200px; background: var(--color-panel-2); border: 1px solid var(--color-border); font-size: 22px; font-weight: 600; color: var(--color-text); }
+.help svg.ic { width: 26px; height: 26px; color: var(--color-text-2); }
+.hint { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; color: var(--color-muted); }
+.hint svg.ic { width: 22px; height: 22px; color: var(--color-dim); }
+.stop { width: 420px; background: linear-gradient(180deg, var(--color-danger) 0%, var(--color-danger-2) 100%); color: var(--color-on-danger); font-size: 28px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.stop svg.ic { width: 26px; height: 26px; fill: var(--color-on-danger); }
+</style>
+</head>
+<body>
+<header class="topbar" data-node="topBar" data-role="Header">
+  <div class="logo" data-node="logo" data-role="Icon"><i data-icon="lucide:zap" class="ic"></i></div>
+  <div class="brand" data-node="brand">kıvılcım</div>
+  <div class="divider"></div>
+  <div class="site" data-node="stationInfo"><b>ANK-0417 · Soket B</b><span>Kızılay Otoparkı, Ankara</span></div>
+  <div class="top-right">
+    <div class="net" data-node="netStatus" data-role="StatusIndicator"><i data-icon="lucide:signal" class="ic"></i>Çevrimiçi</div>
+    <div class="langs" data-node="languageSelector" data-role="SegmentedControl" data-model="languages" data-value="TR">
+      <div class="lang on" data-node="langButton" data-role="Button" data-state="selected">TR</div>
+      <div class="lang" data-node="langButton" data-role="Button">EN</div>
+      <div class="lang" data-node="langButton" data-role="Button">DE</div>
+    </div>
+    <div class="clock" data-node="clock" data-role="Clock">14:32</div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="row">
+    <section class="card hero" data-node="chargeCard" data-role="Panel">
+      <div class="hero-top">
+        <div class="chip" data-node="stateChip" data-role="Chip" data-state="charging"><i data-icon="lucide:zap" class="ic"></i>Şarj ediliyor</div>
+        <div class="eta">Tahmini bitiş <b>14:41</b></div>
+      </div>
+      <div class="pct-row">
+        <div class="pct" data-node="batteryPercent">%70</div>
+        <div class="pct-info"><span>Batarya doluluğu</span><b>Başlangıç %22 · Hedef %80</b></div>
+      </div>
+      <div class="segbar" data-node="batteryBar" data-role="ProgressBar" data-value="0.7">
+        <div class="segs" data-node="segments" data-model="segments">
+          <div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div>
+          <div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div>
+          <div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg on" data-node="segment" data-state="checked"></div><div class="seg" data-node="segment"></div>
+          <div class="seg" data-node="segment"></div><div class="seg" data-node="segment"></div><div class="seg" data-node="segment"></div><div class="seg" data-node="segment"></div><div class="seg" data-node="segment"></div>
+        </div>
+        <div class="target" data-node="targetMarker" data-value="0.8"></div>
+      </div>
+      <div class="scale tnum"><span>%0</span><span class="mid">%50</span><span class="tg">Hedef %80</span><span class="end">%100</span></div>
+    </section>
+
+    <div class="side">
+      <section class="card conn" data-node="connectorCard" data-role="Card">
+        <div class="conn-ico" data-node="connectorIcon" data-role="Icon">
+          <svg width="64" height="72" viewBox="0 0 64 72" fill="none" stroke-width="2">
+            <path d="M19.35,6 H44.65 A22,22 0 1 1 19.35,6 Z" stroke="#BCCAD6"/>
+            <circle cx="25" cy="13" r="3" stroke="#BCCAD6"/><circle cx="39" cy="13" r="3" stroke="#BCCAD6"/>
+            <circle cx="19" cy="25.5" r="4.2" stroke="#5A6E81"/><circle cx="32" cy="25.5" r="4.2" stroke="#BCCAD6"/><circle cx="45" cy="25.5" r="4.2" stroke="#5A6E81"/>
+            <circle cx="25" cy="37" r="4.2" stroke="#5A6E81"/><circle cx="39" cy="37" r="4.2" stroke="#5A6E81"/>
+            <rect x="11" y="50" width="42" height="21" rx="10.5" stroke="#BCCAD6"/>
+            <circle cx="22.5" cy="60.5" r="5.5" fill="#2FE39A" stroke="#2FE39A"/><circle cx="41.5" cy="60.5" r="5.5" fill="#2FE39A" stroke="#2FE39A"/>
+          </svg>
+        </div>
+        <div class="conn-txt">
+          <div class="lbl"><i data-icon="lucide:plug-zap" class="ic"></i>Bağlı konnektör</div>
+          <h2>CCS2</h2>
+          <p>DC hızlı şarj · maks. 180 kW</p>
+        </div>
+      </section>
+      <section class="card session" data-node="sessionCard" data-role="Card">
+        <div class="lbl">Oturum no</div>
+        <div class="sid tnum" data-node="sessionId">2609 3041 7218</div>
+        <div class="kv tnum">
+          <div><span>Başlangıç</span><b>14:07</b></div>
+          <div><span>Geçen süre</span><b>25:14</b></div>
+          <div><span>Birim fiyat</span><b>9,00<i data-icon="lucide:turkish-lira" class="ic"></i>/kWh</b></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="stats" data-node="stats" data-model="stats">
+    <div class="card stat" data-node="stat" data-role="Card">
+      <div class="lbl"><i data-icon="lucide:battery-charging" class="ic"></i>Aktarılan enerji</div>
+      <div class="val tnum"><b>32,6</b><span>kWh</span></div>
+      <div class="sub">Oturum başından beri</div>
+    </div>
+    <div class="card stat" data-node="stat" data-role="Card">
+      <div class="lbl"><i data-icon="lucide:gauge" class="ic"></i>Anlık güç</div>
+      <div class="val tnum"><b>98,4</b><span>kW</span></div>
+      <div class="sub">400 V · 246 A</div>
+    </div>
+    <div class="card stat" data-node="stat" data-role="Card">
+      <div class="lbl"><i data-icon="lucide:timer" class="ic"></i>Kalan süre</div>
+      <div class="val tnum"><b>9</b><span>dk</span></div>
+      <div class="sub">Hedef %80'e kadar</div>
+    </div>
+    <div class="card stat" data-node="stat" data-role="Card">
+      <div class="lbl"><i data-icon="lucide:receipt-turkish-lira" class="ic"></i>Tutar</div>
+      <div class="val tnum"><i data-icon="lucide:turkish-lira" class="ic cur"></i><b>293,40</b></div>
+      <div class="sub">KDV dahil</div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <div class="btn help" data-node="helpButton" data-role="Button"><i data-icon="lucide:circle-help" class="ic"></i>Yardım</div>
+    <div class="hint" data-node="stopHint"><i data-icon="lucide:credit-card" class="ic"></i>Kartınızı okutarak da şarjı durdurabilirsiniz.</div>
+    <div class="btn stop" data-node="stopButton" data-role="Button"><i data-icon="lucide:square" class="ic"></i>Şarjı durdur</div>
+  </div>
+</main>
+</body>
+</html>

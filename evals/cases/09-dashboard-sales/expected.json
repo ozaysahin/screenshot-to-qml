@@ -1,0 +1,53 @@
+{
+ "id": "09-dashboard-sales",
+ "summary": "1440x900 light sales-analytics dashboard captured at DPR 1.5 (input is 2160x1350).",
+ "input": {
+  "file": "input.png",
+  "size": [
+   2160,
+   1350
+  ],
+  "dpr": 1.5,
+  "designSize": [
+   1440,
+   900
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "DPR 1.5 handled: Theme values and layout in 1440x900 design pixels, no drift from the fractional scale.",
+  "Icon-only rail (72 px) from a model of 6 items with the chart item selected; settings button and 'EK' avatar pinned to the bottom.",
+  "Header: exclusive segmented control Gün/Hafta/Ay with 'Ay' checked, date-range button, primary 'Rapor indir' button.",
+  "Four KPI cards from a model; uppercase Turkish labels ('TOPLAM CİRO'); one delta-chip component with up (green) and down (red) variants.",
+  "Revenue chart: 12 months, 'Bu dönem' solid with area gradient, 'Önceki dönem' dashed; data from a model, not hand-drawn paths.",
+  "Static hover state: guide line at 'May', both points highlighted, dark tooltip with 'Mayıs 2026' and two ₺ values.",
+  "Conversion funnel from a model of 4 bars of decreasing width with counts and percentages.",
+  "Category share: one stacked bar of 5 segments with gaps plus a 5-row legend model.",
+  "Top products: 5 rows from a model with initials tiles, right-aligned tabular numbers and share bars."
+ ],
+ "niceToHave": [
+  "Segmented control switches chart data from mock models.",
+  "Tooltip position computed from the hovered index."
+ ],
+ "allowedApproximations": [
+  "Curve smoothing may differ.",
+  "Two-layer tooltip and card shadows merged into one."
+ ],
+ "forbidden": [
+  "Dashed series drawn as a solid line.",
+  "Chart or tooltip embedded as an image."
+ ]
+}

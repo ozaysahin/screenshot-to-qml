@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Sırdaş — Giriş yap</title>
+
+
+<style>
+@font-face{font-family:'Red Hat Display';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatDisplay-Bold.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Display';font-weight:800;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatDisplay-ExtraBold.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Display';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatDisplay-Medium.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Display';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatDisplay-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Text';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatText-Medium.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Text';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatText-Regular.ttf') format('truetype');}
+@font-face{font-family:'Red Hat Text';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/RedHatText-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #0B0D13;
+  --color-panel: #0F1119;
+  --color-surface: #131722;
+  --color-surface-2: #191D29;
+  --color-border: #262C3A;
+  --color-border-strong: #343B4D;
+  --color-ink: #F3F4F8;
+  --color-text-2: #C5CAD6;
+  --color-muted: #8C94A7;
+  --color-dim: #5F6679;
+  --color-primary: #7C6CFF;
+  --color-primary-busy: #6A5BE6;
+  --color-primary-text: #B3AAFF;
+  --color-glow-violet: rgba(124, 92, 255, 0.55);
+  --color-glow-blue: rgba(40, 110, 255, 0.42);
+  --color-glow-magenta: rgba(206, 70, 230, 0.34);
+  --color-success: #3DD08F;
+  --color-warning: #F4B740;
+  --color-warning-soft: rgba(244, 183, 64, 0.12);
+  --color-glass: rgba(255, 255, 255, 0.06);
+  --color-glass-border: rgba(255, 255, 255, 0.10);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-10: 40px; --space-12: 48px;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 12px; --radius-xl: 16px; --radius-panel: 24px; --radius-pill: 999px;
+  --shadow-toast: 0 18px 40px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35);
+  --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 800px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Red Hat Text', sans-serif; font-size: 14px; line-height: 20px; display: flex; padding: var(--space-4); }
+svg.ic { width: 18px; height: 18px; display: block; flex: none; }
+.display { font-family: 'Red Hat Display', sans-serif; }
+
+/* brand panel */
+.brand-panel { position: relative; width: 600px; flex: none; border-radius: var(--radius-panel); overflow: hidden; border: 1px solid var(--color-glass-border); padding: 40px var(--space-12) 36px; display: flex; flex-direction: column;
+  background:
+    radial-gradient(520px 420px at 8% 4%, var(--color-glow-violet), transparent 70%),
+    radial-gradient(560px 480px at 104% 92%, var(--color-glow-blue), transparent 70%),
+    radial-gradient(380px 320px at 70% 38%, var(--color-glow-magenta), transparent 72%),
+    var(--color-panel); }
+.dial { position: absolute; right: -170px; top: -150px; width: 460px; height: 460px; color: #fff; opacity: 0.08; }
+.logo { display: flex; align-items: center; gap: 10px; position: relative; }
+.logo-mark { width: 34px; height: 34px; border-radius: var(--radius-md); background: #fff; color: var(--color-bg); display: grid; place-items: center; }
+.logo-mark svg { width: 20px; height: 20px; display: block; }
+.logo b { font-family: 'Red Hat Display', sans-serif; font-size: 22px; line-height: 28px; font-weight: 800; letter-spacing: -0.4px; }
+.pitch { margin-top: auto; position: relative; }
+.eyebrow { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-primary-text); }
+.pitch h2 { margin-top: var(--space-4); font-family: 'Red Hat Display', sans-serif; font-size: 44px; line-height: 50px; font-weight: 800; letter-spacing: -1.2px; }
+.pitch h2 span { color: var(--color-primary-text); }
+.pitch p { margin-top: var(--space-4); font-size: 16px; line-height: 24px; color: var(--color-text-2); max-width: 440px; }
+.features { margin-top: var(--space-8); display: flex; flex-direction: column; gap: var(--space-5); }
+.feature { display: flex; gap: var(--space-4); align-items: flex-start; }
+.feature .tile { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--color-glass); border: 1px solid var(--color-glass-border); display: grid; place-items: center; color: #DAD5FF; flex: none; }
+.feature .tile svg.ic { width: 20px; height: 20px; }
+.feature b { display: block; font-size: 15px; line-height: 20px; font-weight: 600; }
+.feature span { display: block; margin-top: 2px; font-size: 14px; line-height: 20px; color: var(--color-muted); }
+.panel-foot { margin-top: 56px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--color-muted); position: relative; }
+.status { display: flex; align-items: center; gap: var(--space-2); }
+.status i { width: 8px; height: 8px; border-radius: 50%; background: var(--color-success); box-shadow: 0 0 0 3px rgba(61, 208, 143, 0.18); }
+
+/* form side */
+.side { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; }
+.form { width: 384px; margin-top: 128px; }
+.form h1 { font-family: 'Red Hat Display', sans-serif; font-size: 30px; line-height: 38px; font-weight: 700; letter-spacing: -0.6px; }
+.form .lead { margin-top: 6px; font-size: 15px; line-height: 22px; color: var(--color-muted); }
+.field { margin-top: var(--space-5); }
+.form .field:first-of-type { margin-top: 28px; }
+.field label { display: block; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--color-text-2); margin-bottom: var(--space-2); }
+.input { height: 46px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: 10px; padding: 0 14px; font-size: 15px; color: var(--color-ink); }
+.input svg.ic { width: 18px; height: 18px; color: var(--color-dim); }
+.input .val { flex: 1; min-width: 0; white-space: nowrap; }
+.input .ok { color: var(--color-success); }
+.input.masked .val { letter-spacing: 2px; font-size: 20px; }
+.input .eye { width: 30px; height: 30px; margin-right: -6px; border-radius: var(--radius-sm); display: grid; place-items: center; }
+.input .eye svg.ic { color: var(--color-muted); }
+.hint { display: flex; align-items: center; gap: 6px; margin-top: var(--space-2); font-size: 13px; line-height: 18px; color: var(--color-warning); }
+.hint svg.ic { width: 15px; height: 15px; }
+.row { display: flex; align-items: center; justify-content: space-between; margin-top: var(--space-5); }
+.check { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--color-text-2); }
+.box { width: 18px; height: 18px; border-radius: 5px; background: var(--color-primary); display: grid; place-items: center; color: #fff; }
+.box svg.ic { width: 12px; height: 12px; stroke-width: 3.5; }
+.link { font-size: 14px; font-weight: 600; color: var(--color-primary-text); }
+.submit { margin-top: var(--space-6); height: 48px; border-radius: var(--radius-md); background: var(--color-primary-busy); display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 15px; font-weight: 600; color: rgba(255, 255, 255, 0.86); box-shadow: var(--shadow-button); }
+.spinner { width: 18px; height: 18px; display: block; }
+.divider { display: flex; align-items: center; gap: var(--space-4); margin-top: var(--space-6); font-size: 13px; color: var(--color-dim); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
+.alts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-top: var(--space-6); }
+.btn-sec { height: 44px; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); background: var(--color-surface); display: flex; align-items: center; justify-content: center; gap: var(--space-2); font-size: 14px; font-weight: 600; color: var(--color-ink); }
+.btn-sec svg.ic { width: 17px; height: 17px; color: var(--color-text-2); }
+.signup { margin-top: 28px; text-align: center; font-size: 14px; color: var(--color-muted); }
+.signup b { font-weight: 600; color: var(--color-primary-text); }
+.side-foot { position: absolute; left: 40px; right: 0; bottom: 31px; display: flex; align-items: center; justify-content: space-between; font-size: 13px; color: var(--color-dim); }
+.side-foot .secure { display: flex; align-items: center; gap: 6px; }
+.side-foot .secure svg.ic { width: 15px; height: 15px; }
+.lang { display: flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); color: var(--color-text-2); }
+.lang svg.ic { width: 15px; height: 15px; color: var(--color-muted); }
+
+/* toast */
+.toast { position: absolute; top: 0; right: 0; width: 372px; border-radius: var(--radius-lg); background: var(--color-surface-2); border: 1px solid var(--color-border-strong); box-shadow: var(--shadow-toast); overflow: hidden; }
+.toast .body { display: flex; gap: var(--space-3); padding: 14px 12px 14px 14px; }
+.toast .icon { width: 34px; height: 34px; border-radius: var(--radius-sm); background: var(--color-warning-soft); color: var(--color-warning); display: grid; place-items: center; flex: none; }
+.toast .icon svg.ic { width: 18px; height: 18px; }
+.toast .txt { flex: 1; min-width: 0; }
+.toast b { display: block; font-size: 14px; line-height: 20px; font-weight: 600; }
+.toast p { margin-top: 2px; font-size: 13px; line-height: 18px; color: var(--color-muted); }
+.toast .close { width: 26px; height: 26px; border-radius: var(--radius-sm); display: grid; place-items: center; color: var(--color-muted); margin-top: -2px; }
+.toast .close svg.ic { width: 16px; height: 16px; }
+.toast .timer { height: 3px; background: var(--color-border); }
+.toast .timer i { display: block; height: 100%; background: var(--color-warning); }
+</style>
+</head>
+<body>
+<aside class="brand-panel">
+  <svg class="dial" viewBox="0 0 520 520" fill="none" stroke="currentColor" aria-hidden="true">
+    <circle cx="260" cy="260" r="258" stroke-width="2"></circle>
+    <circle cx="260" cy="260" r="200" stroke-width="2"></circle>
+    <circle cx="260" cy="260" r="200" stroke-width="14" stroke-dasharray="2 19.2"></circle>
+    <circle cx="260" cy="260" r="136" stroke-width="2"></circle>
+    <circle cx="260" cy="260" r="72" stroke-width="2"></circle>
+    <path d="M260 188 V120" stroke-width="6" stroke-linecap="round"></path>
+  </svg>
+  <div class="logo">
+    <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"></rect><path d="M8 10V7a4 4 0 0 1 8 0v3"></path><circle cx="12" cy="15.5" r="1.4" fill="currentColor" stroke="none"></circle></svg></span>
+    <b>Sırdaş</b>
+  </div>
+  <div class="pitch">
+    <div class="eyebrow">Kurumsal şifre kasası</div>
+    <h2>Tüm şifreleriniz, <span>tek bir güvenli kasada.</span></h2>
+    <p>Ekibinizin hesaplarını, anahtarlarını ve kartlarını tek yerden paylaşın; erişimi saniyeler içinde geri alın.</p>
+    <div class="features">
+      <div class="feature"><span class="tile"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-lock-keyhole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="16" r="1"></circle> <rect x="3" y="10" width="18" height="12" rx="2"></rect> <path d="M7 10V7a5 5 0 0 1 10 0v3"></path></svg></span><div><b>Sıfır bilgi mimarisi</b><span>Şifreleriniz cihazınızda şifrelenir; anahtarınızı biz bile göremeyiz.</span></div></div>
+      <div class="feature"><span class="tile"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path> <path d="M16 3.128a4 4 0 0 1 0 7.744"></path> <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path> <circle cx="9" cy="7" r="4"></circle></svg></span><div><b>Ekip kasaları</b><span>Paylaşılan erişimleri rol bazlı izinlerle yönetin.</span></div></div>
+      <div class="feature"><span class="tile"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-radar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"></path> <path d="M4 6h.01"></path> <path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"></path> <path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"></path> <path d="M12 18h.01"></path> <path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"></path> <circle cx="12" cy="12" r="2"></circle> <path d="m13.41 10.59 5.66-5.66"></path></svg></span><div><b>Sızıntı taraması</b><span>Ele geçirilen şifreler için anında uyarı alın.</span></div></div>
+    </div>
+  </div>
+  <div class="panel-foot">
+    <span>© 2026 Sırdaş Yazılım A.Ş.</span>
+    <span class="status"><i></i>Tüm sistemler çalışıyor</span>
+  </div>
+</aside>
+
+<main class="side">
+  <form class="form">
+    <h1>Tekrar hoş geldiniz</h1>
+    <p class="lead">Kasanıza erişmek için hesabınızla giriş yapın.</p>
+
+    <div class="field"><label>E-posta</label>
+      <div class="input"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path> <rect x="2" y="4" width="20" height="16" rx="2"></rect></svg><span class="val">deniz.aksoy@kuzeylojistik.com</span><svg xmlns="http://www.w3.org/2000/svg" class="ic ok lucide lucide-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="m16 9-5.5 5.5L8 12"></path></svg></div></div>
+
+    <div class="field"><label>Şifre</label>
+      <div class="input masked"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect> <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg><span class="val">••••••••••</span><span class="eye"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path> <circle cx="12" cy="12" r="3"></circle></svg></span></div>
+      <div class="hint"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-big-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-6a1 1 0 0 1 1-1h3.293a.707.707 0 0 0 .5-1.207l-7.086-7.086a1 1 0 0 0-1.414 0l-7.086 7.086a.707.707 0 0 0 .5 1.207H8a1 1 0 0 1 1 1z"></path></svg>Caps Lock açık. Şifreler büyük/küçük harfe duyarlıdır.</div></div>
+
+    <div class="row">
+      <div class="check"><span class="box"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>Beni hatırla</div>
+      <span class="link">Şifremi unuttum</span>
+    </div>
+
+    <div class="submit">
+      <svg class="spinner" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="rgba(255,255,255,0.28)" stroke-width="2.5"></circle><path d="M12 3a9 9 0 0 1 9 9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"></path></svg>
+      Giriş yapılıyor…
+    </div>
+
+    <div class="divider">veya</div>
+
+    <div class="alts">
+      <div class="btn-sec"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-building-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h4"></path> <path d="M10 8h4"></path> <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path> <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path> <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path></svg>Kurumsal SSO</div>
+      <div class="btn-sec"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-key-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"></path> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>Güvenlik anahtarı</div>
+    </div>
+
+    <p class="signup">Hesabınız yok mu? <b>14 gün ücretsiz deneyin</b></p>
+  </form>
+
+  <div class="side-foot">
+    <span class="secure"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path> <path d="m9 12 2 2 4-4"></path></svg>Uçtan uca şifreli bağlantı</span>
+    <span class="lang"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path> <path d="M2 12h20"></path></svg>Türkçe<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></span>
+  </div>
+
+  <div class="toast">
+    <div class="body">
+      <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-clock-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6v6l4 2"></path> <path d="M20 12v5"></path> <path d="M20 21h.01"></path> <path d="M21.25 8.2A10 10 0 1 0 16 21.16"></path></svg></span>
+      <div class="txt"><b>Oturum süreniz doldu</b><p>Güvenliğiniz için 30 dakika işlem yapılmadığında oturum kapatılır. Lütfen tekrar giriş yapın.</p></div>
+      <span class="close"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path> <path d="m6 6 12 12"></path></svg></span>
+    </div>
+    <div class="timer"><i style="width:62%"></i></div>
+  </div>
+</main>
+
+
+</body></html>

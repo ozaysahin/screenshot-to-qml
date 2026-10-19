@@ -1,0 +1,48 @@
+{
+ "id": "19-html-css-board",
+ "summary": "HTML INPUT. 1366x768 content-calendar kanban at DPR 2 written in hand-written HTML/CSS with real form elements.",
+ "input": {
+  "file": "source/index.html",
+  "renderAt": {
+   "designSize": [
+    1366,
+    768
+   ],
+   "dpr": 2
+  },
+  "fonts": "source/fonts (the build's font files)"
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Values come from the HTML/CSS: :root custom properties become Theme tokens; Karla bundled.",
+  "Board: 4 equal columns with status dot, count badge (3/4/2/3) and menu button; card models of 3/4/2/3.",
+  "Card delegate: uppercase channel tag (Turkish İ), title up to 2 lines, due date (overdue red), checklist 'n/m' with a progress bar, avatar stack with '+1'.",
+  "Search TextField with value 'sonbahar' and 'Ctrl K' hint; two ComboBoxes ('Tüm kanallar', 'Ekim 2026').",
+  "CheckBox 'Gecikenleri vurgula' checked; view toggle Pano/Liste exclusive with 'Pano' checked; primary 'Yeni içerik'.",
+  "Top bar: logo, workspace switcher, nav with 'İçerikler' current, bell with dot, avatar.",
+  "'Kart ekle' button after the last card of every column."
+ ],
+ "niceToHave": [
+  "Card models loaded from JSON mirroring the markup."
+ ],
+ "allowedApproximations": [
+  "Card ring shadow as a border plus one shadow.",
+  "Checkmark drawn as an icon."
+ ],
+ "forbidden": [
+  "WebEngine/WebView rendering of the HTML."
+ ]
+}

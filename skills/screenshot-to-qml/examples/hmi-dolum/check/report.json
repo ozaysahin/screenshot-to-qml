@@ -1,0 +1,1724 @@
+{
+ "pass": true,
+ "metrics": {
+  "globalSSIM": 0.9944,
+  "regionSSIMMin": 0.9431,
+  "colorDeltaEMax": 0.43,
+  "geometryMaxPx": 1.93,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.79,
+  "textOnTargetRate": 1.0
+ },
+ "worstRegions": [
+  {
+   "id": "shift",
+   "role": "Chip",
+   "ssim": 0.9431,
+   "bbox": [
+    1408.52,
+    19.5,
+    122.92,
+    36
+   ],
+   "ssimUnaligned": 0.9173,
+   "alignShift": [
+    1.0,
+    0.0
+   ],
+   "limit": 0.9
+  },
+  {
+   "id": "operator",
+   "role": "Chip",
+   "ssim": 0.95,
+   "bbox": [
+    1559.44,
+    19.5,
+    170.16,
+    36
+   ],
+   "ssimUnaligned": 0.9337,
+   "alignShift": [
+    1.0,
+    0.0
+   ],
+   "limit": 0.9
+  },
+  {
+   "id": "runState",
+   "role": "StatusPill",
+   "ssim": 0.9618,
+   "bbox": [
+    576,
+    15.5,
+    231.39,
+    44
+   ],
+   "ssimUnaligned": 0.9459,
+   "alignShift": [
+    -1.0,
+    0.0
+   ],
+   "limit": 0.9
+  }
+ ],
+ "failures": [],
+ "details": {
+  "regions": [
+   {
+    "id": "shift",
+    "role": "Chip",
+    "ssim": 0.9431,
+    "bbox": [
+     1408.52,
+     19.5,
+     122.92,
+     36
+    ],
+    "ssimUnaligned": 0.9173,
+    "alignShift": [
+     1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "operator",
+    "role": "Chip",
+    "ssim": 0.95,
+    "bbox": [
+     1559.44,
+     19.5,
+     170.16,
+     36
+    ],
+    "ssimUnaligned": 0.9337,
+    "alignShift": [
+     1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "runState",
+    "role": "StatusPill",
+    "ssim": 0.9618,
+    "bbox": [
+     576,
+     15.5,
+     231.39,
+     44
+    ],
+    "ssimUnaligned": 0.9459,
+    "alignShift": [
+     -1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "logo",
+    "role": "Icon",
+    "ssim": 0.9773,
+    "bbox": [
+     32,
+     15.5,
+     44,
+     44
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tanks",
+    "role": null,
+    "ssim": 0.9819,
+    "bbox": [
+     57,
+     169,
+     470,
+     678
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarmBadge",
+    "role": "Badge",
+    "ssim": 0.9837,
+    "bbox": [
+     1835,
+     125,
+     28,
+     24
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tankPanel",
+    "role": "Panel",
+    "ssim": 0.9873,
+    "bbox": [
+     32,
+     100,
+     520,
+     912
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "topbar",
+    "role": "Header",
+    "ssim": 0.9918,
+    "bbox": [
+     0,
+     0,
+     1920,
+     76
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "btnPause",
+    "role": "Button",
+    "ssim": 0.993,
+    "bbox": [
+     1636,
+     791,
+     227,
+     80
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "pressureChart",
+    "role": "LineChart",
+    "ssim": 0.9932,
+    "bbox": [
+     601,
+     545,
+     718,
+     442
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarm[0]",
+    "role": "ListItem",
+    "ssim": 0.9932,
+    "bbox": [
+     1393,
+     169,
+     470,
+     64
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarm[1]",
+    "role": "ListItem",
+    "ssim": 0.9936,
+    "bbox": [
+     1393,
+     243,
+     470,
+     64
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "pressureCard",
+    "role": "Panel",
+    "ssim": 0.9938,
+    "bbox": [
+     576,
+     476,
+     768,
+     536
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarm[3]",
+    "role": "ListItem",
+    "ssim": 0.9942,
+    "bbox": [
+     1393,
+     391,
+     470,
+     64
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarms",
+    "role": null,
+    "ssim": 0.9943,
+    "bbox": [
+     1393,
+     169,
+     470,
+     286
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarm[2]",
+    "role": "ListItem",
+    "ssim": 0.9953,
+    "bbox": [
+     1393,
+     317,
+     470,
+     64
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "alarmPanel",
+    "role": "Panel",
+    "ssim": 0.9955,
+    "bbox": [
+     1368,
+     100,
+     520,
+     380
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "vessel[0]",
+    "role": null,
+    "ssim": 0.996,
+    "bbox": [
+     66.66,
+     169,
+     124,
+     548
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "envNozzle",
+    "role": "Stat",
+    "ssim": 0.9963,
+    "bbox": [
+     300,
+     892,
+     227,
+     95
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tank[0]",
+    "role": "Gauge",
+    "ssim": 0.9966,
+    "bbox": [
+     57,
+     169,
+     143.33,
+     678
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "vessel[2]",
+    "role": null,
+    "ssim": 0.9966,
+    "bbox": [
+     393.31,
+     169,
+     124,
+     548
+    ],
+    "ssimUnaligned": 0.9461,
+    "alignShift": [
+     1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tank[2]",
+    "role": "Gauge",
+    "ssim": 0.9967,
+    "bbox": [
+     383.66,
+     169,
+     143.33,
+     678
+    ],
+    "ssimUnaligned": 0.9461,
+    "alignShift": [
+     1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "brand",
+    "role": null,
+    "ssim": 0.9975,
+    "bbox": [
+     32,
+     15.5,
+     520,
+     44
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tank[1]",
+    "role": "Gauge",
+    "ssim": 0.9978,
+    "bbox": [
+     220.33,
+     169,
+     143.33,
+     678
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "kpi[1]",
+    "role": "StatCard",
+    "ssim": 0.9978,
+    "bbox": [
+     972,
+     100,
+     372,
+     164
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "kpi[0]",
+    "role": "StatCard",
+    "ssim": 0.9983,
+    "bbox": [
+     576,
+     100,
+     372,
+     164
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "kpi[3]",
+    "role": "StatCard",
+    "ssim": 0.9984,
+    "bbox": [
+     972,
+     288,
+     372,
+     164
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "kpis",
+    "role": null,
+    "ssim": 0.9985,
+    "bbox": [
+     576,
+     100,
+     768,
+     352
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "controlPanel",
+    "role": "Panel",
+    "ssim": 0.9987,
+    "bbox": [
+     1368,
+     504,
+     520,
+     508
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "kpi[2]",
+    "role": "StatCard",
+    "ssim": 0.9988,
+    "bbox": [
+     576,
+     288,
+     372,
+     164
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "btnEmergency",
+    "role": "Button",
+    "ssim": 0.9988,
+    "bbox": [
+     1393,
+     887,
+     470,
+     100
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "envTemp",
+    "role": "Stat",
+    "ssim": 0.9989,
+    "bbox": [
+     57,
+     892,
+     227,
+     95
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "btnStart",
+    "role": "Button",
+    "ssim": 0.999,
+    "bbox": [
+     1393,
+     791,
+     227,
+     80
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "vessel[1]",
+    "role": null,
+    "ssim": 0.9991,
+    "bbox": [
+     229.98,
+     169,
+     124,
+     548
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedControl",
+    "role": null,
+    "ssim": 0.9991,
+    "bbox": [
+     1393,
+     663,
+     470,
+     105.59
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "modeSegment",
+    "role": "SegmentedControl",
+    "ssim": 0.9994,
+    "bbox": [
+     1393,
+     573,
+     470,
+     62
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedSlider",
+    "role": "Slider",
+    "ssim": 0.9994,
+    "bbox": [
+     1393,
+     707.8,
+     470,
+     36
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "statusBar",
+    "role": "StatusBar",
+    "ssim": 0.9995,
+    "bbox": [
+     0,
+     1036,
+     1920,
+     44
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "modeAuto",
+    "role": "SegmentItem",
+    "ssim": 0.9996,
+    "bbox": [
+     1398,
+     578,
+     150.66,
+     52
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "modeManual",
+    "role": "SegmentItem",
+    "ssim": 0.9999,
+    "bbox": [
+     1552.66,
+     578,
+     150.67,
+     52
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "modeService",
+    "role": "SegmentItem",
+    "ssim": 0.9999,
+    "bbox": [
+     1707.33,
+     578,
+     150.67,
+     52
+    ],
+    "limit": 0.9
+   }
+  ],
+  "colors": [
+   {
+    "id": "btnStart",
+    "deltaE": 0.43,
+    "expected": "#175436",
+    "rendered": "#185536"
+   },
+   {
+    "id": "vessel[2]",
+    "deltaE": 0.41,
+    "expected": "#1CA0DF",
+    "rendered": "#1C9FDF"
+   },
+   {
+    "id": "vessel[0]",
+    "deltaE": 0.33,
+    "expected": "#1898D8",
+    "rendered": "#1897D7"
+   },
+   {
+    "id": "topbar",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "shift",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "operator",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "tankPanel",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "vessel[1]",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "envTemp",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "envNozzle",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "kpi[0]",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "kpi[1]",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "kpi[2]",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "kpi[3]",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "pressureCard",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "alarmPanel",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "alarm[0]",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "alarm[1]",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "alarm[2]",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "alarm[3]",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "controlPanel",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   },
+   {
+    "id": "modeAuto",
+    "deltaE": 0.0,
+    "expected": "#38BDF8",
+    "rendered": "#38BDF8"
+   },
+   {
+    "id": "btnPause",
+    "deltaE": 0.0,
+    "expected": "#18212D",
+    "rendered": "#18212D"
+   },
+   {
+    "id": "btnEmergency",
+    "deltaE": 0.0,
+    "expected": "#EF4444",
+    "rendered": "#EF4444"
+   },
+   {
+    "id": "statusBar",
+    "deltaE": 0.0,
+    "expected": "#121821",
+    "rendered": "#121821"
+   }
+  ],
+  "geometry": [
+   {
+    "id": "shift",
+    "dx": 1.69,
+    "dy": 0.93,
+    "offset": 1.93,
+    "match": 0.905
+   },
+   {
+    "id": "runState",
+    "dx": -1.04,
+    "dy": 0.9,
+    "offset": 1.38,
+    "match": 0.88
+   },
+   {
+    "id": "operator",
+    "dx": 0.55,
+    "dy": 0.95,
+    "offset": 1.1,
+    "match": 0.893
+   },
+   {
+    "id": "alarm[1]",
+    "dx": 1.09,
+    "dy": -0.01,
+    "offset": 1.09,
+    "match": 0.818
+   },
+   {
+    "id": "vessel[2]",
+    "dx": 0.96,
+    "dy": -0.14,
+    "offset": 0.97,
+    "match": 0.997
+   },
+   {
+    "id": "logo",
+    "dx": -0.58,
+    "dy": 0.62,
+    "offset": 0.85,
+    "match": 0.972
+   },
+   {
+    "id": "alarm[3]",
+    "dx": 0.67,
+    "dy": -0.01,
+    "offset": 0.67,
+    "match": 0.808
+   },
+   {
+    "id": "btnEmergency",
+    "dx": -0.66,
+    "dy": 0.09,
+    "offset": 0.66,
+    "match": 0.935
+   },
+   {
+    "id": "title",
+    "dx": -0.1,
+    "dy": -0.52,
+    "offset": 0.53,
+    "match": 0.942
+   },
+   {
+    "id": "kpi[3]",
+    "dx": 0.33,
+    "dy": 0.41,
+    "offset": 0.53,
+    "match": 0.944
+   },
+   {
+    "id": "tank[2]",
+    "dx": 0.5,
+    "dy": -0.12,
+    "offset": 0.52,
+    "match": 0.982
+   },
+   {
+    "id": "brand",
+    "dx": -0.07,
+    "dy": -0.5,
+    "offset": 0.5,
+    "match": 0.947
+   },
+   {
+    "id": "kpi[2]",
+    "dx": 0.13,
+    "dy": 0.42,
+    "offset": 0.44,
+    "match": 0.967
+   },
+   {
+    "id": "alarm[0]",
+    "dx": 0.44,
+    "dy": 0.02,
+    "offset": 0.44,
+    "match": 0.738
+   },
+   {
+    "id": "kpis",
+    "dx": 0.17,
+    "dy": 0.39,
+    "offset": 0.43,
+    "match": 0.956
+   },
+   {
+    "id": "kpi[0]",
+    "dx": 0.14,
+    "dy": 0.41,
+    "offset": 0.43,
+    "match": 0.956
+   },
+   {
+    "id": "btnPause",
+    "dx": 0.43,
+    "dy": 0.0,
+    "offset": 0.43,
+    "match": 0.943
+   },
+   {
+    "id": "tank[1]",
+    "dx": -0.39,
+    "dy": -0.1,
+    "offset": 0.4,
+    "match": 0.981
+   },
+   {
+    "id": "envNozzle",
+    "dx": 0.11,
+    "dy": -0.37,
+    "offset": 0.39,
+    "match": 0.911
+   },
+   {
+    "id": "kpi[1]",
+    "dx": 0.1,
+    "dy": 0.38,
+    "offset": 0.39,
+    "match": 0.955
+   },
+   {
+    "id": "alarmPanel",
+    "dx": 0.3,
+    "dy": 0.01,
+    "offset": 0.3,
+    "match": 0.848
+   },
+   {
+    "id": "alarms",
+    "dx": 0.3,
+    "dy": 0.01,
+    "offset": 0.3,
+    "match": 0.815
+   },
+   {
+    "id": "speedControl",
+    "dx": -0.06,
+    "dy": 0.29,
+    "offset": 0.3,
+    "match": 0.958
+   },
+   {
+    "id": "envTemp",
+    "dx": -0.06,
+    "dy": -0.26,
+    "offset": 0.27,
+    "match": 0.966
+   },
+   {
+    "id": "pressureCard",
+    "dx": 0.24,
+    "dy": 0.01,
+    "offset": 0.24,
+    "match": 0.941
+   },
+   {
+    "id": "alarmBadge",
+    "dx": -0.22,
+    "dy": -0.01,
+    "offset": 0.22,
+    "match": 0.978
+   },
+   {
+    "id": "controlPanel",
+    "dx": 0.15,
+    "dy": 0.06,
+    "offset": 0.16,
+    "match": 0.978
+   },
+   {
+    "id": "tankPanel",
+    "dx": 0.1,
+    "dy": -0.09,
+    "offset": 0.14,
+    "match": 0.986
+   },
+   {
+    "id": "btnStart",
+    "dx": 0.11,
+    "dy": 0.0,
+    "offset": 0.11,
+    "match": 0.796
+   },
+   {
+    "id": "vessel[1]",
+    "dx": -0.04,
+    "dy": -0.09,
+    "offset": 0.1,
+    "match": 0.999
+   },
+   {
+    "id": "modeService",
+    "dx": -0.1,
+    "dy": -0.01,
+    "offset": 0.1,
+    "match": 0.99
+   },
+   {
+    "id": "tanks",
+    "dx": 0.03,
+    "dy": -0.09,
+    "offset": 0.09,
+    "match": 0.989
+   },
+   {
+    "id": "tank[0]",
+    "dx": -0.04,
+    "dy": -0.08,
+    "offset": 0.09,
+    "match": 0.995
+   },
+   {
+    "id": "alarm[2]",
+    "dx": -0.05,
+    "dy": 0.01,
+    "offset": 0.05,
+    "match": 0.989
+   },
+   {
+    "id": "speedSlider",
+    "dx": 0.04,
+    "dy": -0.0,
+    "offset": 0.04,
+    "match": 1.0
+   },
+   {
+    "id": "clock",
+    "dx": 0.01,
+    "dy": 0.03,
+    "offset": 0.03,
+    "match": 0.993
+   },
+   {
+    "id": "vessel[0]",
+    "dx": 0.01,
+    "dy": -0.02,
+    "offset": 0.03,
+    "match": 0.998
+   },
+   {
+    "id": "modeManual",
+    "dx": 0.03,
+    "dy": -0.0,
+    "offset": 0.03,
+    "match": 0.994
+   },
+   {
+    "id": "pressureChart",
+    "dx": 0.0,
+    "dy": 0.01,
+    "offset": 0.01,
+    "match": 0.986
+   },
+   {
+    "id": "modeSegment",
+    "dx": -0.01,
+    "dy": -0.0,
+    "offset": 0.01,
+    "match": 0.999
+   },
+   {
+    "id": "topbar",
+    "dx": 0.0,
+    "dy": 0.0,
+    "offset": 0.0,
+    "match": 0.887
+   },
+   {
+    "id": "modeAuto",
+    "dx": 0.0,
+    "dy": -0.0,
+    "offset": 0.0,
+    "match": 0.99
+   },
+   {
+    "id": "statusBar",
+    "dx": 0.0,
+    "dy": 0.0,
+    "offset": 0.0,
+    "match": 0.765
+   }
+  ],
+  "text": {
+   "matchRate": 1.0,
+   "onTargetRate": 1.0,
+   "missing": [],
+   "runs": [
+    {
+     "string": "NOVA MAKİNE",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Hat 3 · Dolum İstasyonu",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "ÇALIŞIYOR",
+     "dx": -1.0,
+     "dy": 0.7,
+     "offset": 1.22,
+     "matchedAs": "item"
+    },
+    {
+     "string": "02:14:36",
+     "dx": -1.08,
+     "dy": 1.3,
+     "offset": 1.69,
+     "matchedAs": "item"
+    },
+    {
+     "string": "B Vardiyası",
+     "dx": 1.48,
+     "dy": 1.0,
+     "offset": 1.79,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Operatör: M. Yıldız",
+     "dx": 0.56,
+     "dy": 1.0,
+     "offset": 1.15,
+     "matchedAs": "item"
+    },
+    {
+     "string": "14:32:07",
+     "dx": 0.0,
+     "dy": 0.55,
+     "offset": 0.55,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Perşembe, 25.09.2026",
+     "dx": 0.0,
+     "dy": 0.5,
+     "offset": 0.5,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Tank Seviyeleri",
+     "dx": 0.5,
+     "dy": 0.0,
+     "offset": 0.5,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Son güncelleme 2 sn önce",
+     "dx": 0.02,
+     "dy": 0.8,
+     "offset": 0.8,
+     "matchedAs": "item"
+    },
+    {
+     "string": "72%",
+     "dx": 0.31,
+     "dy": -0.41,
+     "offset": 0.52,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Tank A",
+     "dx": 0.22,
+     "dy": 0.0,
+     "offset": 0.22,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Süt",
+     "dx": -0.5,
+     "dy": 0.0,
+     "offset": 0.5,
+     "matchedAs": "item"
+    },
+    {
+     "string": "7.200",
+     "dx": -0.45,
+     "dy": -0.23,
+     "offset": 0.51,
+     "matchedAs": "item"
+    },
+    {
+     "string": "/ 10.000 L",
+     "dx": -0.5,
+     "dy": -0.23,
+     "offset": 0.55,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Normal",
+     "dx": 0.08,
+     "dy": 0.09,
+     "offset": 0.12,
+     "matchedAs": "item"
+    },
+    {
+     "string": "18%",
+     "dx": -0.0,
+     "dy": -0.41,
+     "offset": 0.41,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Tank B",
+     "dx": -0.34,
+     "dy": 0.0,
+     "offset": 0.34,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Şurup",
+     "dx": -0.69,
+     "dy": 0.0,
+     "offset": 0.69,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.800",
+     "dx": -0.78,
+     "dy": -0.23,
+     "offset": 0.81,
+     "matchedAs": "item"
+    },
+    {
+     "string": "/ 10.000 L",
+     "dx": -0.83,
+     "dy": -0.23,
+     "offset": 0.86,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Düşük",
+     "dx": 0.17,
+     "dy": 0.09,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "91%",
+     "dx": 0.67,
+     "dy": -0.41,
+     "offset": 0.78,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Tank C",
+     "dx": 0.2,
+     "dy": 0.0,
+     "offset": 0.2,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Su",
+     "dx": 0.09,
+     "dy": 0.0,
+     "offset": 0.09,
+     "matchedAs": "item"
+    },
+    {
+     "string": "9.100",
+     "dx": -0.11,
+     "dy": -0.23,
+     "offset": 0.25,
+     "matchedAs": "item"
+    },
+    {
+     "string": "/ 10.000 L",
+     "dx": -0.16,
+     "dy": -0.23,
+     "offset": 0.28,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Normal",
+     "dx": 0.42,
+     "dy": 0.09,
+     "offset": 0.43,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Ürün Sıcaklığı",
+     "dx": -0.01,
+     "dy": 0.0,
+     "offset": 0.01,
+     "matchedAs": "item"
+    },
+    {
+     "string": "4,2",
+     "dx": 0.0,
+     "dy": -0.45,
+     "offset": 0.45,
+     "matchedAs": "item"
+    },
+    {
+     "string": "°C",
+     "dx": -0.02,
+     "dy": -0.45,
+     "offset": 0.45,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Aktif Nozul",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "6/6",
+     "dx": 0.0,
+     "dy": -0.45,
+     "offset": 0.45,
+     "matchedAs": "item"
+    },
+    {
+     "string": "hazır",
+     "dx": -0.02,
+     "dy": -0.45,
+     "offset": 0.45,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Üretim Hızı",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.248",
+     "dx": 0.0,
+     "dy": 0.53,
+     "offset": 0.53,
+     "matchedAs": "item"
+    },
+    {
+     "string": "şişe/dk",
+     "dx": -0.08,
+     "dy": 0.53,
+     "offset": 0.54,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Hedef 1.200 ·",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "+%4,0",
+     "dx": -0.1,
+     "dy": 0.0,
+     "offset": 0.1,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Vardiya Üretimi",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "58.392",
+     "dx": 0.0,
+     "dy": 0.53,
+     "offset": 0.53,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Hedef 60.000 · %97,3 tamamlandı",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "OEE",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "%87,4",
+     "dx": 0.0,
+     "dy": 0.53,
+     "offset": 0.53,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Dün %85,1 ·",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "+2,3 puan",
+     "dx": -0.13,
+     "dy": 0.0,
+     "offset": 0.13,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Red Oranı",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "%0,62",
+     "dx": 0.0,
+     "dy": 0.53,
+     "offset": 0.53,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Limit %1,00 ·",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "+0,08 puan",
+     "dx": 1.11,
+     "dy": 0.0,
+     "offset": 1.11,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Dolum Basıncı",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Ölçülen",
+     "dx": -0.08,
+     "dy": 0.8,
+     "offset": 0.8,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Hedef 2,40 bar",
+     "dx": -0.14,
+     "dy": 0.8,
+     "offset": 0.81,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,1",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,2",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,3",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,4",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,5",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2,6",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "13:30",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "13:45",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "14:00",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "14:15",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "14:30",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Aktif Alarmlar",
+     "dx": 0.25,
+     "dy": 0.0,
+     "offset": 0.25,
+     "matchedAs": "item"
+    },
+    {
+     "string": "3",
+     "dx": -0.48,
+     "dy": 0.09,
+     "offset": 0.49,
+     "matchedAs": "item"
+    },
+    {
+     "string": "A-214 · 14:28",
+     "dx": 0.0,
+     "dy": 0.23,
+     "offset": 0.23,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Tank B seviyesi kritik eşiğe yakın",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "W-031 · 14:05",
+     "dx": 0.0,
+     "dy": 0.23,
+     "offset": 0.23,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Filtre değişimine 36 saat kaldı",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "W-017 · 13:52",
+     "dx": 0.0,
+     "dy": 0.23,
+     "offset": 0.23,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Basınç dalgalanması algılandı",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "I-008 · 13:30",
+     "dx": 0.0,
+     "dy": 0.23,
+     "offset": 0.23,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Vardiya değişimi 16:00'da",
+     "dx": 0.0,
+     "dy": 0.0,
+     "offset": 0.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Çalışma Modu",
+     "dx": 1.0,
+     "dy": 0.0,
+     "offset": 1.0,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Otomatik",
+     "dx": 0.01,
+     "dy": 0.2,
+     "offset": 0.2,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Manuel",
+     "dx": 0.03,
+     "dy": 0.2,
+     "offset": 0.2,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Bakım",
+     "dx": -0.13,
+     "dy": 0.2,
+     "offset": 0.24,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Hedef Hat Hızı",
+     "dx": 0.0,
+     "dy": 0.94,
+     "offset": 0.94,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.200",
+     "dx": -0.17,
+     "dy": 0.94,
+     "offset": 0.96,
+     "matchedAs": "item"
+    },
+    {
+     "string": "şişe/dk",
+     "dx": -0.19,
+     "dy": 0.94,
+     "offset": 0.96,
+     "matchedAs": "item"
+    },
+    {
+     "string": "0",
+     "dx": 0.0,
+     "dy": 0.43,
+     "offset": 0.43,
+     "matchedAs": "item"
+    },
+    {
+     "string": "500",
+     "dx": 0.07,
+     "dy": 0.43,
+     "offset": 0.44,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.000",
+     "dx": 0.09,
+     "dy": 0.43,
+     "offset": 0.44,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.500",
+     "dx": 0.1,
+     "dy": 0.43,
+     "offset": 0.44,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2.000",
+     "dx": 0.09,
+     "dy": 0.43,
+     "offset": 0.44,
+     "matchedAs": "item"
+    },
+    {
+     "string": "BAŞLAT",
+     "dx": 0.39,
+     "dy": 0.0,
+     "offset": 0.39,
+     "matchedAs": "item"
+    },
+    {
+     "string": "DURAKLAT",
+     "dx": 0.83,
+     "dy": 0.0,
+     "offset": 0.83,
+     "matchedAs": "item"
+    },
+    {
+     "string": "ACİL DURDUR",
+     "dx": -0.8,
+     "dy": 0.2,
+     "offset": 0.82,
+     "matchedAs": "item"
+    },
+    {
+     "string": "PLC bağlı",
+     "dx": 0.0,
+     "dy": 0.3,
+     "offset": 0.3,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Reçete:",
+     "dx": 0.02,
+     "dy": 0.3,
+     "offset": 0.3,
+     "matchedAs": "item"
+    },
+    {
+     "string": "R-12 · Ayran 250 ml",
+     "dx": 0.53,
+     "dy": 0.3,
+     "offset": 0.61,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Parti:",
+     "dx": 0.94,
+     "dy": 0.07,
+     "offset": 0.94,
+     "matchedAs": "item"
+    },
+    {
+     "string": "LOT-26-0925-B",
+     "dx": 1.62,
+     "dy": 0.07,
+     "offset": 1.62,
+     "matchedAs": "item"
+    },
+    {
+     "string": "HMI-03 · v2.4.1",
+     "dx": 0.0,
+     "dy": 0.57,
+     "offset": 0.57,
+     "matchedAs": "item"
+    }
+   ],
+   "maxOffset": 1.79
+  }
+ },
+ "thresholds": {
+  "globalSSIM": 0.98,
+  "regionSSIM": 0.9,
+  "colorDeltaE2000": 2.0,
+  "geometryPx": 2.0,
+  "textStringMatch": 1.0,
+  "textPositionPx": 2.0,
+  "regionOverrides": {}
+ }
+}

@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@source "./markup.html";
+
+@theme {
+  --font-sans: "Instrument Sans", sans-serif;
+  /* default radius scale, written in px */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+}

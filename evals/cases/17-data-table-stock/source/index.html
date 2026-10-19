@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Raftan — Stok envanteri</title>
+
+
+<style>
+@font-face{font-family:'Public Sans';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/PublicSans-Bold.ttf') format('truetype');}
+@font-face{font-family:'Public Sans';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/PublicSans-Medium.ttf') format('truetype');}
+@font-face{font-family:'Public Sans';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/PublicSans-Regular.ttf') format('truetype');}
+@font-face{font-family:'Public Sans';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/PublicSans-SemiBold.ttf') format('truetype');}
+@font-face{font-family:'IBM Plex Mono';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/IBMPlexMono-Medium.ttf') format('truetype');}
+@font-face{font-family:'IBM Plex Mono';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/IBMPlexMono-Regular.ttf') format('truetype');}
+@font-face{font-family:'IBM Plex Mono';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/IBMPlexMono-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #F3F5F8;
+  --color-surface: #FFFFFF;
+  --color-stripe: #F6F8FB;
+  --color-head: #F4F6F9;
+  --color-group: #EDF1F6;
+  --color-ink: #111827;
+  --color-text-2: #374151;
+  --color-muted: #6B7280;
+  --color-dim: #9CA3AF;
+  --color-border: #E3E7ED;
+  --color-border-strong: #CDD4DE;
+  --color-primary: #1D63D8;
+  --color-primary-soft: #EAF1FD;
+  --color-edit-row: #F2F7FF;
+  --color-focus-ring: rgba(29, 99, 216, 0.22);
+  --color-ok: #15803D; --color-ok-soft: #E7F6EC; --color-ok-bar: #22A35A;
+  --color-low: #B45309; --color-low-soft: #FEF3E2; --color-low-bar: #F0A020;
+  --color-out: #C2262E; --color-out-soft: #FDECEC;
+  --color-track: #E6EAF0;
+  --color-scroll-track: #EEF1F5;
+  --color-scroll-thumb: #BCC5D2;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-xs: 3px; --radius-sm: 5px; --radius-md: 6px; --radius-lg: 10px; --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(17, 24, 39, 0.05), 0 1px 3px rgba(17, 24, 39, 0.04);
+  --shadow-frozen: 6px 0 8px -4px rgba(17, 24, 39, 0.14);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1366px; height: 768px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Public Sans', sans-serif; font-size: 13px; line-height: 18px; }
+svg.ic { width: 16px; height: 16px; display: block; flex: none; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* app bar */
+.appbar { height: 48px; background: var(--color-surface); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); gap: 28px; }
+.brand { display: flex; align-items: center; gap: var(--space-2); font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+.brand i { width: 28px; height: 28px; border-radius: var(--radius-md); background: var(--color-primary); color: #fff; display: grid; place-items: center; }
+.tabs { display: flex; height: 48px; gap: var(--space-1); }
+.tab { padding: 0 10px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: var(--color-muted); border-bottom: 2px solid transparent; }
+.tab.on { color: var(--color-ink); font-weight: 600; border-bottom-color: var(--color-primary); }
+.appbar .r { margin-left: auto; display: flex; align-items: center; gap: var(--space-2); }
+.depot { height: 30px; padding: 0 8px 0 10px; border-radius: var(--radius-md); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; color: var(--color-text-2); }
+.depot svg.ic { width: 14px; height: 14px; color: var(--color-muted); }
+.ib { width: 32px; height: 32px; border-radius: var(--radius-md); display: grid; place-items: center; color: var(--color-muted); }
+.av { width: 28px; height: 28px; border-radius: 50%; background: #DCE8FB; color: var(--color-primary); font-size: 11px; font-weight: 700; display: grid; place-items: center; margin-left: var(--space-1); }
+
+/* card */
+.page { padding: var(--space-3) var(--space-6); }
+.card { height: 696px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); overflow: hidden; display: flex; flex-direction: column; }
+.tools { height: 52px; flex: none; padding: 0 var(--space-3) 0 var(--space-4); display: flex; align-items: center; gap: var(--space-2); border-bottom: 1px solid var(--color-border); }
+.tools h1 { font-size: 15px; font-weight: 700; line-height: 20px; letter-spacing: -0.2px; }
+.cnt { height: 20px; padding: 0 7px; border-radius: var(--radius-pill); background: var(--color-head); border: 1px solid var(--color-border); font-size: 11px; font-weight: 600; color: var(--color-muted); display: grid; place-items: center; margin-right: var(--space-3); }
+.search { width: 260px; height: 32px; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: var(--space-2); padding: 0 6px 0 10px; font-size: 13px; color: var(--color-ink); }
+.search svg.ic { width: 15px; height: 15px; color: var(--color-muted); }
+.search .v { flex: 1; }
+.search .clr { width: 20px; height: 20px; border-radius: var(--radius-xs); background: var(--color-head); display: grid; place-items: center; color: var(--color-muted); }
+.search .clr svg.ic { width: 12px; height: 12px; }
+.btn { height: 32px; padding: 0 10px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.btn svg.ic { width: 15px; height: 15px; }
+.btn.sec { background: var(--color-surface); border: 1px solid var(--color-border-strong); color: var(--color-text-2); }
+.btn.sec svg.ic { color: var(--color-muted); }
+.btn.on { border-color: #A9C4F2; background: var(--color-primary-soft); color: var(--color-primary); }
+.btn.on svg.ic { color: var(--color-primary); }
+.btn .badge { min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--radius-pill); background: var(--color-primary); color: #fff; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.btn.pri { background: var(--color-primary); color: #fff; }
+.tools .sp { flex: 1; }
+
+/* table */
+.scroller { flex: 1; min-height: 0; overflow: hidden; position: relative; }
+table { width: 1722px; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+th, td { height: 30px; padding: 0 var(--space-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: left; vertical-align: middle; }
+th { height: 36px; background: var(--color-head); border-bottom: 1px solid var(--color-border); font-size: 11px; font-weight: 600; letter-spacing: 0.4px; text-transform: uppercase; color: var(--color-muted); position: relative; }
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+th .sorted { display: inline-flex; align-items: center; gap: 4px; color: var(--color-ink); }
+th .sorted svg.ic { width: 13px; height: 13px; color: var(--color-primary); stroke-width: 2.5; }
+th + th { box-shadow: inset 1px 0 0 var(--color-border); }
+.rz { position: absolute; right: -2px; top: 6px; width: 4px; height: 22px; border-radius: 2px; background: var(--color-primary); z-index: 3; }
+td { border-bottom: 1px solid var(--color-border); color: var(--color-text-2); background: var(--color-surface); }
+tr.alt td { background: var(--color-stripe); }
+td.sk, th.sk { position: sticky; left: 0; z-index: 2; box-shadow: var(--shadow-frozen), inset -1px 0 0 var(--color-border); }
+td.sk.mono { font-size: 12.5px; font-weight: 500; color: var(--color-ink); }
+td.nm { color: var(--color-ink); font-weight: 500; }
+td.mu { color: var(--color-muted); }
+td.tn { font-variant-numeric: tabular-nums; }
+tr.grp td { background: var(--color-group); height: 32px; font-weight: 600; color: var(--color-text-2); border-bottom: 1px solid var(--color-border-strong); }
+tr.grp td.sk { box-shadow: none; }
+.gl { display: flex; align-items: center; gap: 6px; color: var(--color-ink); }
+.gl svg.ic { width: 15px; height: 15px; color: var(--color-muted); stroke-width: 2.25; }
+tr.editing td { background: var(--color-edit-row); }
+td.ed { padding: 0 4px; overflow: visible; }
+.edit { height: 24px; border-radius: var(--radius-sm); border: 1.5px solid var(--color-primary); background: var(--color-surface); box-shadow: 0 0 0 3px var(--color-focus-ring); display: flex; align-items: center; justify-content: flex-end; padding: 0 6px; color: var(--color-ink); font-weight: 500; }
+.edit .cur { margin-right: auto; color: var(--color-muted); font-weight: 400; }
+.edit .caret { width: 1.5px; height: 15px; background: var(--color-primary); margin-left: 1px; }
+.lvl { position: relative; width: 84px; height: 6px; border-radius: var(--radius-pill); background: var(--color-track); }
+.lvl i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: var(--radius-pill); }
+.lvl.ok i { background: var(--color-ok-bar); }
+.lvl.low i { background: var(--color-low-bar); }
+.lvl b { position: absolute; top: -3px; width: 2px; height: 12px; margin-left: -1px; border-radius: 1px; background: #7B8594; }
+.pill { display: inline-flex; align-items: center; gap: 5px; height: 20px; padding: 0 8px 0 7px; border-radius: var(--radius-pill); font-size: 11.5px; font-weight: 600; }
+.pill::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pill.ok { background: var(--color-ok-soft); color: var(--color-ok); }
+.pill.low { background: var(--color-low-soft); color: var(--color-low); }
+.pill.out { background: var(--color-out-soft); color: var(--color-out); }
+tr.tot td { height: 32px; background: var(--color-head); border-top: 1px solid var(--color-border-strong); border-bottom: none; font-weight: 700; color: var(--color-ink); }
+tr.tot td.sk { font-weight: 600; color: var(--color-text-2); }
+tr.tot td.sk span { color: var(--color-muted); font-weight: 500; }
+
+/* scrollbar */
+.hbar { height: 14px; flex: none; display: flex; align-items: center; background: var(--color-surface); border-top: 1px solid var(--color-border); padding-left: 150px; padding-right: 4px; }
+.hbar .track { flex: 1; height: 8px; border-radius: var(--radius-pill); background: var(--color-scroll-track); position: relative; margin-left: 4px; }
+.hbar .thumb { position: absolute; left: 0; top: 0; height: 8px; border-radius: var(--radius-pill); background: var(--color-scroll-thumb); }
+
+/* footer */
+.foot { height: 44px; flex: none; border-top: 1px solid var(--color-border); display: flex; align-items: center; gap: var(--space-3); padding: 0 var(--space-3) 0 var(--space-4); font-size: 12.5px; color: var(--color-muted); }
+.foot .rng { font-weight: 600; color: var(--color-ink); font-variant-numeric: tabular-nums; }
+.sel { height: 28px; padding: 0 6px 0 9px; border-radius: var(--radius-md); border: 1px solid var(--color-border-strong); display: flex; align-items: center; gap: 6px; font-weight: 600; color: var(--color-text-2); font-variant-numeric: tabular-nums; }
+.sel svg.ic { width: 14px; height: 14px; color: var(--color-muted); }
+.foot .sp { flex: 1; }
+.pg { display: flex; gap: 2px; }
+.pg div { min-width: 28px; height: 28px; padding: 0 6px; border-radius: var(--radius-md); display: grid; place-items: center; font-size: 12.5px; font-weight: 500; color: var(--color-text-2); font-variant-numeric: tabular-nums; }
+.pg div.on { background: var(--color-primary); color: #fff; font-weight: 600; }
+.pg div.nav { color: var(--color-muted); }
+.pg div.dis { color: #C7CDD6; }
+.pg svg.ic { width: 15px; height: 15px; }
+</style>
+</head>
+<body>
+<header class="appbar">
+  <div class="brand"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-boxes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"></path> <path d="m7 16.5-4.74-2.85"></path> <path d="m7 16.5 5-3"></path> <path d="M7 16.5v5.17"></path> <path d="M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z"></path> <path d="m17 16.5-5-3"></path> <path d="m17 16.5 4.74-2.85"></path> <path d="M17 16.5v5.17"></path> <path d="M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z"></path> <path d="M12 8 7.26 5.15"></path> <path d="m12 8 4.74-2.85"></path> <path d="M12 13.5V8"></path></svg></i>Raftan</div>
+  <nav class="tabs">
+    <div class="tab">Genel bakış</div>
+    <div class="tab on">Envanter</div>
+    <div class="tab">Satın alma</div>
+    <div class="tab">Sevkiyat</div>
+    <div class="tab">Raporlar</div>
+  </nav>
+  <div class="r">
+    <div class="depot"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-warehouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 21V10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v11"></path> <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 1.132-1.803l7.95-3.974a2 2 0 0 1 1.837 0l7.948 3.974A2 2 0 0 1 22 8z"></path> <path d="M6 13h12"></path> <path d="M6 17h12"></path></svg>Tüm depolar<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+    <div class="ib"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circle-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path> <path d="M12 17h.01"></path></svg></div>
+    <div class="ib"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg></div>
+    <div class="av">DA</div>
+  </div>
+</header>
+
+<main class="page">
+  <section class="card">
+    <div class="tools">
+      <h1>Stok envanteri</h1><span class="cnt">326</span>
+      <div class="search"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path> <circle cx="11" cy="11" r="8"></circle></svg><span class="v">kablo</span><span class="clr"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path> <path d="m6 6 12 12"></path></svg></span></div>
+      <div class="btn sec on"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h20"></path> <path d="M6 12h12"></path> <path d="M9 19h6"></path></svg>Filtreler<span class="badge">3</span></div>
+      <div class="btn sec"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-columns-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect> <path d="M9 3v18"></path> <path d="M15 3v18"></path></svg>Sütunlar<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+      <div class="sp"></div>
+      <div class="btn sec"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path> <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path> <path d="m7 10 5 5 5-5"></path></svg>Dışa aktar</div>
+      <div class="btn pri"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Ürün ekle</div>
+    </div>
+    <div class="scroller">
+      <table>
+        <colgroup><col style="width:150px"><col style="width:270px"><col style="width:124px"><col style="width:150px"><col style="width:76px"><col style="width:112px"><col style="width:116px"><col style="width:140px"><col style="width:104px"><col style="width:112px"><col style="width:88px"><col style="width:150px"><col style="width:130px"></colgroup>
+        <thead><tr>
+          <th class="sk"><span class="sorted">SKU<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"></path> <path d="M12 19V5"></path></svg></span></th>
+          <th>Ürün adı<span class="rz"></span></th>
+          <th>Kategori</th>
+          <th>Tedarikçi</th>
+          <th class="num">Stok</th>
+          <th>Seviye</th>
+          <th class="num">Birim fiyat</th>
+          <th class="num">Stok değeri</th>
+          <th>Durum</th>
+          <th>Son giriş</th>
+          <th>Raf</th><th>Barkod</th><th>Güncelleyen</th>
+        </tr></thead>
+<tbody class="gh"><tr class="grp"><td class="sk" colspan="2"><span class="gl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Depo: Ankara · 6 ürün</span></td><td></td><td></td><td class="num">4.424</td><td></td><td></td><td class="num">₺757.639,20</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+<tbody>
+<tr class="row"><td class="sk mono">FO-8810-SM</td><td class="nm">Fiber optik patch kablo SC-LC 5 m</td><td class="mu">Ağ</td><td class="mu">Linkora Ağ</td><td class="num">0</td><td><div class="lvl out"><i style="width:0.0%"></i><b style="left:15.0%"></b></div></td><td class="num">₺412,00</td><td class="num">₺0,00</td><td><span class="pill out">Tükendi</span></td><td class="mu tn">18.09.2026</td><td class="mono mu">B-12-1</td><td class="mono mu">8690041882031</td><td class="mu">Deniz A.</td></tr>
+<tr class="row alt"><td class="sk mono">HD-2201-4K</td><td class="nm">HDMI 2.1 kablo 3 m, örgülü</td><td class="mu">Görüntü</td><td class="mu">Ekranix Dağıtım</td><td class="num">412</td><td><div class="lvl ok"><i style="width:51.5%"></i><b style="left:15.0%"></b></div></td><td class="num">₺349,50</td><td class="num">₺143.994,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">29.09.2026</td><td class="mono mu">A-04-3</td><td class="mono mu">8690041882154</td><td class="mu">Emre K.</td></tr>
+<tr class="row"><td class="sk mono">KB-1042-S</td><td class="nm">USB-C – USB-C şarj kablosu 1 m</td><td class="mu">Şarj kabloları</td><td class="mu">Voltek Elektronik</td><td class="num">1.248</td><td><div class="lvl ok"><i style="width:62.4%"></i><b style="left:15.0%"></b></div></td><td class="num">₺189,90</td><td class="num">₺236.995,20</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">29.09.2026</td><td class="mono mu">A-01-2</td><td class="mono mu">8690041881702</td><td class="mu">Deniz A.</td></tr>
+<tr class="row alt"><td class="sk mono">KB-1043-B</td><td class="nm">USB-C – Lightning kablo 2 m</td><td class="mu">Şarj kabloları</td><td class="mu">Voltek Elektronik</td><td class="num">86</td><td><div class="lvl low"><i style="width:8.6%"></i><b style="left:15.0%"></b></div></td><td class="num">₺249,00</td><td class="num">₺21.414,00</td><td><span class="pill low">Az kaldı</span></td><td class="mu tn">22.09.2026</td><td class="mono mu">A-01-4</td><td class="mono mu">8690041881719</td><td class="mu">Sena T.</td></tr>
+<tr class="row editing"><td class="sk mono">NW-6005-G</td><td class="nm">Cat6 UTP ağ kablosu, 305 m makara</td><td class="mu">Ağ</td><td class="mu">Linkora Ağ</td><td class="num">38</td><td><div class="lvl ok"><i style="width:63.3%"></i><b style="left:20.0%"></b></div></td><td class="num ed"><div class="edit"><span class="cur">₺</span>3.450,00<span class="caret"></span></div></td><td class="num">₺131.100,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">26.09.2026</td><td class="mono mu">C-07-1</td><td class="mono mu">8690041883318</td><td class="mu">Emre K.</td></tr>
+<tr class="row alt"><td class="sk mono">PW-3301-EU</td><td class="nm">Güç kablosu C13, 1,8 m</td><td class="mu">Güç</td><td class="mu">Akım Kablo</td><td class="num">2.640</td><td><div class="lvl ok"><i style="width:88.0%"></i><b style="left:13.3%"></b></div></td><td class="num">₺84,90</td><td class="num">₺224.136,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">30.09.2026</td><td class="mono mu">D-02-2</td><td class="mono mu">8690041884002</td><td class="mu">Deniz A.</td></tr>
+</tbody>
+<tbody class="gh"><tr class="grp"><td class="sk" colspan="2"><span class="gl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>Depo: Bursa · 4 ürün</span></td><td></td><td></td><td class="num">1.960</td><td></td><td></td><td class="num">₺212.480,00</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+<tbody class="gh"><tr class="grp"><td class="sk" colspan="2"><span class="gl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>Depo: İstanbul · 8 ürün</span></td><td></td><td></td><td class="num">5.955</td><td></td><td></td><td class="num">₺993.688,20</td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+<tbody>
+<tr class="row"><td class="sk mono">AU-5120-3</td><td class="nm">3,5 mm stereo ses kablosu 1,5 m</td><td class="mu">Ses</td><td class="mu">Tınısan Ses</td><td class="num">0</td><td><div class="lvl out"><i style="width:0.0%"></i><b style="left:13.3%"></b></div></td><td class="num">₺74,90</td><td class="num">₺0,00</td><td><span class="pill out">Tükendi</span></td><td class="mu tn">11.09.2026</td><td class="mono mu">E-03-1</td><td class="mono mu">8690041885126</td><td class="mu">Can Y.</td></tr>
+<tr class="row alt"><td class="sk mono">CX-7004-75</td><td class="nm">Koaksiyel anten kablosu 10 m</td><td class="mu">Görüntü</td><td class="mu">Ekranix Dağıtım</td><td class="num">58</td><td><div class="lvl low"><i style="width:11.6%"></i><b style="left:15.0%"></b></div></td><td class="num">₺139,90</td><td class="num">₺8.114,20</td><td><span class="pill low">Az kaldı</span></td><td class="mu tn">24.09.2026</td><td class="mono mu">B-09-2</td><td class="mono mu">8690041882307</td><td class="mu">Sena T.</td></tr>
+<tr class="row"><td class="sk mono">DP-2410-M</td><td class="nm">DisplayPort 1.4 kablo 2 m</td><td class="mu">Görüntü</td><td class="mu">Ekranix Dağıtım</td><td class="num">290</td><td><div class="lvl ok"><i style="width:48.3%"></i><b style="left:15.0%"></b></div></td><td class="num">₺459,90</td><td class="num">₺133.371,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">27.09.2026</td><td class="mono mu">A-06-1</td><td class="mono mu">8690041882416</td><td class="mu">Can Y.</td></tr>
+<tr class="row alt"><td class="sk mono">HD-2204-8K</td><td class="nm">HDMI 2.1 kablo 5 m, 8K</td><td class="mu">Görüntü</td><td class="mu">Ekranix Dağıtım</td><td class="num">64</td><td><div class="lvl low"><i style="width:16.0%"></i><b style="left:20.0%"></b></div></td><td class="num">₺689,00</td><td class="num">₺44.096,00</td><td><span class="pill low">Az kaldı</span></td><td class="mu tn">25.09.2026</td><td class="mono mu">A-04-1</td><td class="mono mu">8690041882168</td><td class="mu">Can Y.</td></tr>
+<tr class="row"><td class="sk mono">KB-1050-W</td><td class="nm">USB-A – USB-C kablo 1 m, beyaz</td><td class="mu">Şarj kabloları</td><td class="mu">Voltek Elektronik</td><td class="num">3.105</td><td><div class="lvl ok"><i style="width:77.6%"></i><b style="left:12.5%"></b></div></td><td class="num">₺129,00</td><td class="num">₺400.545,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">30.09.2026</td><td class="mono mu">A-01-1</td><td class="mono mu">8690041881733</td><td class="mu">Emre K.</td></tr>
+<tr class="row alt"><td class="sk mono">KB-1061-G</td><td class="nm">Mıknatıslı şarj kablosu 1 m</td><td class="mu">Şarj kabloları</td><td class="mu">Voltek Elektronik</td><td class="num">742</td><td><div class="lvl ok"><i style="width:61.8%"></i><b style="left:12.5%"></b></div></td><td class="num">₺219,00</td><td class="num">₺162.498,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">28.09.2026</td><td class="mono mu">A-02-3</td><td class="mono mu">8690041881757</td><td class="mu">Can Y.</td></tr>
+<tr class="row"><td class="sk mono">NW-6012-B</td><td class="nm">Cat6A S/FTP patch kablo 2 m</td><td class="mu">Ağ</td><td class="mu">Linkora Ağ</td><td class="num">1.520</td><td><div class="lvl ok"><i style="width:60.8%"></i><b style="left:12.0%"></b></div></td><td class="num">₺96,50</td><td class="num">₺146.680,00</td><td><span class="pill ok">Stokta</span></td><td class="mu tn">29.09.2026</td><td class="mono mu">C-05-2</td><td class="mono mu">8690041883395</td><td class="mu">Sena T.</td></tr>
+<tr class="row alt"><td class="sk mono">PW-3310-TR</td><td class="nm">Uzatma kablosu 5'li, 3 m</td><td class="mu">Güç</td><td class="mu">Akım Kablo</td><td class="num">176</td><td><div class="lvl low"><i style="width:22.0%"></i><b style="left:25.0%"></b></div></td><td class="num">₺559,00</td><td class="num">₺98.384,00</td><td><span class="pill low">Az kaldı</span></td><td class="mu tn">23.09.2026</td><td class="mono mu">D-01-1</td><td class="mono mu">8690041884019</td><td class="mu">Can Y.</td></tr>
+</tbody>
+        <tfoot><tr class="tot"><td class="sk">Toplam <span>· 14 ürün</span></td><td></td><td></td><td></td><td class="num">10.379</td><td></td><td></td><td class="num">₺1.751.327,40</td><td></td><td></td><td></td><td></td><td></td></tr></tfoot>
+      </table>
+    </div>
+    <div class="hbar"><div class="track"><div class="thumb" style="width:859px"></div></div></div>
+    <footer class="foot">
+      <span class="rng">1–14 / 326</span>
+      <span class="sp"></span>
+      <span>Sayfa başına</span>
+      <div class="sel">14<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevrons-up-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"></path> <path d="m7 9 5-5 5 5"></path></svg></div>
+      <div class="pg">
+        <div class="nav dis"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevrons-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 17-5-5 5-5"></path> <path d="m18 17-5-5 5-5"></path></svg></div><div class="nav dis"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></div><div class="on">1</div><div>2</div><div>3</div><div>…</div><div>24</div><div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></div><div class="nav"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevrons-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 17 5-5-5-5"></path> <path d="m13 17 5-5-5-5"></path></svg></div>
+      </div>
+    </footer>
+  </section>
+</main>
+
+
+</body></html>

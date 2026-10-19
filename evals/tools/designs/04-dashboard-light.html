@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Güneşli — Enerji Özeti</title>
+<script type="application/json" id="case-meta">
+{"id": "04-dashboard-light", "title": "Açık tema ev enerjisi panosu (Windows %125 ölçek)", "category": "dashboard", "profile": "desktop",
+ "viewport": [1440, 900], "dpr": 1.25, "fonts": ["DM Sans"]}
+</script>
+<script type="application/json" id="case-data">
+{"hourly": {"unit": "kW", "hours": ["06","07","08","09","10","11","12","13","14","15","16","17"], "values": [0.2, 1.32, 2.55, 3.58, 4.42, 4.83, 5.07, 4.54, 4.23, 3.64, 2.51, 1.43], "current": 8},
+ "weekly": {"unit": "kWh", "days": ["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"], "today": 3,
+   "production": [28.4, 31.2, 24.6, 33.5, 29.8, 35.1, 32.7], "consumption": [22.1, 20.4, 23.8, 21.6, 24.9, 26.3, 25.2]},
+ "battery": {"level": 0.78, "state": "charging", "powerKw": 1.4},
+ "devices": [{"name": "Klima", "kwh": 5.8}, {"name": "Buzdolabı", "kwh": 2.4}, {"name": "Çamaşır Makinesi", "kwh": 1.8}, {"name": "Aydınlatma", "kwh": 1.4}, {"name": "Diğer", "kwh": 3.8}]}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #F3F6F4;
+  --color-surface: #FFFFFF;
+  --color-ink: #16201A;
+  --color-muted: #6B7A70;
+  --color-dim: #9AA79F;
+  --color-border: #E3E8E4;
+  --color-primary: #1F9D55;
+  --color-primary-soft: #E4F4EA;
+  --color-sun: #FFB020;
+  --color-sun-deep: #FF7A1A;
+  --color-consumption: #B4C3D3;
+  --color-blue: #3B82F6;
+  --color-blue-soft: #E7F0FE;
+  --color-rose: #F0506E;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 40px;
+  --radius-sm: 10px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px; --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(16, 24, 20, 0.06), 0 8px 24px rgba(16, 24, 20, 0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 20px; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.nav { height: 72px; background: var(--color-surface); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 40px; gap: 40px; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.4px; }
+.logo i { width: 36px; height: 36px; border-radius: 50%; background: var(--color-sun); color: #fff; display: grid; place-items: center; }
+.tabs { display: flex; gap: 8px; height: 72px; }
+.tab { padding: 0 14px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: var(--color-muted); border-bottom: 2px solid transparent; }
+.tab.on { color: var(--color-ink); font-weight: 700; border-bottom-color: var(--color-primary); }
+.nav .right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.loc { height: 40px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-bg); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.loc svg.ic { width: 18px; height: 18px; color: var(--color-sun-deep); }
+.iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border); display: grid; place-items: center; position: relative; color: var(--color-muted); }
+.iconbtn b { position: absolute; top: 9px; right: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-rose); border: 2px solid var(--color-surface); box-sizing: content-box; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 14px; font-weight: 700; display: grid; place-items: center; }
+
+.content { padding: 28px 40px; display: flex; flex-direction: column; gap: 20px; }
+.hello { display: flex; align-items: center; gap: 12px; }
+.hello h1 { font-size: 28px; font-weight: 700; line-height: 36px; letter-spacing: -0.6px; }
+.hello p { font-size: 15px; color: var(--color-muted); line-height: 22px; margin-top: 2px; }
+.hello .sp { flex: 1; }
+.btn { height: 42px; padding: 0 16px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+.btn svg.ic { width: 18px; height: 18px; }
+.btn.outline { background: var(--color-surface); border: 1px solid var(--color-border); }
+.btn.dark { background: var(--color-ink); color: #fff; }
+
+.card { background: var(--color-surface); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); padding: 22px 24px; }
+.rowA { display: grid; grid-template-columns: 1.36fr 1fr 1fr; gap: 20px; height: 248px; }
+.solar { background: linear-gradient(155deg, var(--color-sun) 0%, var(--color-sun-deep) 100%); color: #fff; box-shadow: 0 12px 28px rgba(255, 122, 26, 0.28); display: flex; gap: 12px; }
+.solar .l { display: flex; flex-direction: column; width: 200px; flex: none; }
+.lbl { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.solar .lbl { color: rgba(255, 255, 255, 0.9); }
+.solar .v { font-size: 48px; font-weight: 700; line-height: 56px; letter-spacing: -1.5px; margin-top: 18px; }
+.solar .v small { font-size: 22px; font-weight: 500; letter-spacing: 0; margin-left: 4px; }
+.solar .s { font-size: 13px; color: rgba(255, 255, 255, 0.85); margin-top: 4px; }
+.solar .live { margin-top: auto; display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); font-size: 13px; font-weight: 600; }
+.solar .live::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.solar svg#hourly { align-self: flex-end; }
+
+.head { display: flex; align-items: center; gap: 10px; }
+.head h3 { font-size: 16px; font-weight: 700; line-height: 22px; }
+.head .tag { margin-left: auto; height: 26px; padding: 0 10px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.tag.green { background: var(--color-primary-soft); color: var(--color-primary); }
+.tag.green svg.ic { width: 14px; height: 14px; }
+.batt { display: flex; align-items: center; gap: 22px; margin-top: 18px; }
+.ringbox { position: relative; width: 132px; height: 132px; flex: none; }
+.ringbox .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ringbox .c b { font-size: 30px; font-weight: 700; line-height: 34px; letter-spacing: -0.8px; }
+.ringbox .c span { font-size: 12px; color: var(--color-muted); }
+.kv { display: flex; flex-direction: column; gap: 14px; }
+.kv div span { display: block; font-size: 12px; color: var(--color-muted); line-height: 16px; }
+.kv div b { font-size: 17px; font-weight: 700; line-height: 22px; }
+
+.flow { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.flow .it { display: flex; align-items: center; gap: 14px; }
+.flow .ico { width: 44px; height: 44px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.flow .it span { display: block; font-size: 13px; color: var(--color-muted); line-height: 18px; }
+.flow .it b { font-size: 22px; font-weight: 700; line-height: 28px; letter-spacing: -0.4px; }
+.flow .it b small { font-size: 14px; font-weight: 500; color: var(--color-muted); margin-left: 3px; letter-spacing: 0; }
+.split { height: 8px; border-radius: var(--radius-pill); background: var(--color-consumption); overflow: hidden; margin-top: 4px; }
+.split i { display: block; height: 100%; width: 80%; background: var(--color-primary); border-radius: var(--radius-pill); }
+.split-l { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-muted); margin-top: 6px; }
+
+.rowB { display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px; flex: 1; height: 420px; }
+.legend { margin-left: auto; display: flex; gap: 18px; font-size: 13px; color: var(--color-muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+.sub { font-size: 13px; color: var(--color-muted); line-height: 18px; margin-top: 2px; }
+.devs { margin-top: 20px; display: flex; flex-direction: column; gap: 18px; }
+.dev { display: grid; grid-template-columns: 40px 1fr auto; column-gap: 12px; align-items: center; }
+.dev .ico { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--color-bg); color: var(--color-ink); display: grid; place-items: center; grid-row: 1 / 3; }
+.dev .ico svg.ic { width: 18px; height: 18px; }
+.dev .n { font-size: 14px; font-weight: 600; line-height: 20px; }
+.dev .k { font-size: 14px; font-weight: 700; text-align: right; }
+.dev .k small { font-weight: 500; color: var(--color-muted); font-size: 12px; margin-left: 2px; }
+.dev .bar { grid-column: 2 / 4; height: 6px; border-radius: var(--radius-pill); background: var(--color-bg); overflow: hidden; margin-top: 6px; }
+.dev .bar i { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary); }
+</style>
+</head>
+<body>
+<header class="nav" data-node="navbar" data-role="Header">
+  <div class="logo" data-node="logo"><i><i data-icon="lucide:sun" class="ic"></i></i>Güneşli</div>
+  <nav class="tabs" data-node="tabs" data-role="TabBar" data-model="tabs">
+    <div class="tab on" data-node="tab" data-role="Tab" data-state="selected">Özet</div>
+    <div class="tab" data-node="tab" data-role="Tab">Üretim</div>
+    <div class="tab" data-node="tab" data-role="Tab">Tüketim</div>
+    <div class="tab" data-node="tab" data-role="Tab">Batarya</div>
+    <div class="tab" data-node="tab" data-role="Tab">Raporlar</div>
+  </nav>
+  <div class="right">
+    <div class="loc" data-node="weatherChip" data-role="Chip"><i data-icon="lucide:sun-medium" class="ic"></i>Ankara · 24°C</div>
+    <div class="iconbtn" data-node="notifButton" data-role="Button"><i data-icon="lucide:bell" class="ic"></i><b></b></div>
+    <div class="avatar" data-node="avatar" data-role="Avatar">DK</div>
+  </div>
+</header>
+
+<main class="content">
+  <section class="hello" data-node="greeting">
+    <div><h1>İyi günler, Deniz</h1><p>Bugün ürettiğin enerji, evinin 1,8 günlük ihtiyacını karşılıyor.</p></div>
+    <div class="sp"></div>
+    <div class="btn outline" data-node="dateButton" data-role="Button"><i data-icon="lucide:calendar-days" class="ic"></i>25 Eylül 2026<i data-icon="lucide:chevron-down" class="ic"></i></div>
+    <div class="btn dark" data-node="reportButton" data-role="Button"><i data-icon="lucide:download" class="ic"></i>Rapor indir</div>
+  </section>
+
+  <section class="rowA">
+    <div class="card solar" data-node="solarCard" data-role="StatCard">
+      <div class="l">
+        <div class="lbl"><i data-icon="lucide:sun" class="ic"></i>Anlık Üretim</div>
+        <div class="v">4,82<small>kW</small></div>
+        <div class="s">Günün tepesi 5,07 kW · 12:00</div>
+        <div class="live">Canlı</div>
+      </div>
+      <svg id="hourly" data-node="hourlyChart" data-role="BarChart"></svg>
+    </div>
+    <div class="card" data-node="batteryCard" data-role="StatCard">
+      <div class="head"><h3>Ev Bataryası</h3><span class="tag green"><i data-icon="lucide:battery-charging" class="ic"></i>Şarj oluyor</span></div>
+      <div class="batt">
+        <div class="ringbox" data-node="batteryRing" data-role="ProgressRing" data-value="0.78"><svg id="ring"></svg><div class="c"><b>%78</b><span>13,3 kWh</span></div></div>
+        <div class="kv"><div><span>Tam dolum</span><b>~1 sa 45 dk</b></div><div><span>Şarj gücü</span><b>+1,4 kW</b></div><div><span>Sağlık</span><b>%96</b></div></div>
+      </div>
+    </div>
+    <div class="card" data-node="gridCard" data-role="StatCard">
+      <div class="head"><h3>Şebeke</h3><span class="tag green">Net üretici</span></div>
+      <div class="flow">
+        <div class="it"><div class="ico" style="background:var(--color-primary-soft);color:var(--color-primary)"><i data-icon="lucide:arrow-up-right" class="ic"></i></div><div><span>Şebekeye verilen</span><b>12,6<small>kWh</small></b></div></div>
+        <div class="it"><div class="ico" style="background:var(--color-blue-soft);color:var(--color-blue)"><i data-icon="lucide:arrow-down-left" class="ic"></i></div><div><span>Şebekeden alınan</span><b>3,1<small>kWh</small></b></div></div>
+        <div><div class="split" data-node="gridSplit" data-role="Progress" data-value="0.8"><i></i></div><div class="split-l"><span>Verilen %80</span><span>Alınan %20</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rowB">
+    <div class="card" data-node="weeklyCard" data-role="Panel" style="display:flex;flex-direction:column">
+      <div class="head"><div><h3>Haftalık Üretim ve Tüketim</h3><div class="sub">22–28 Eylül · kWh</div></div>
+        <div class="legend"><span><i style="background:var(--color-primary)"></i>Üretim</span><span><i style="background:var(--color-consumption)"></i>Tüketim</span></div></div>
+      <svg id="weekly" data-node="weeklyChart" data-role="BarChart" style="margin-top:16px"></svg>
+    </div>
+    <div class="card" data-node="deviceCard" data-role="Panel">
+      <div class="head"><div><h3>Cihaz Tüketimi</h3><div class="sub">Bugün · toplam 15,2 kWh</div></div></div>
+      <div class="devs" data-node="devices" data-model="devices">
+        <div class="dev" data-node="device" data-role="ListItem"><div class="ico"><i data-icon="lucide:air-vent" class="ic"></i></div><div class="n">Klima</div><div class="k">5,8<small>kWh</small></div><div class="bar"><i style="width:38%"></i></div></div>
+        <div class="dev" data-node="device" data-role="ListItem"><div class="ico"><i data-icon="lucide:refrigerator" class="ic"></i></div><div class="n">Buzdolabı</div><div class="k">2,4<small>kWh</small></div><div class="bar"><i style="width:16%"></i></div></div>
+        <div class="dev" data-node="device" data-role="ListItem"><div class="ico"><i data-icon="lucide:washing-machine" class="ic"></i></div><div class="n">Çamaşır Makinesi</div><div class="k">1,8<small>kWh</small></div><div class="bar"><i style="width:12%"></i></div></div>
+        <div class="dev" data-node="device" data-role="ListItem"><div class="ico"><i data-icon="lucide:lamp" class="ic"></i></div><div class="n">Aydınlatma</div><div class="k">1,4<small>kWh</small></div><div class="bar"><i style="width:9%"></i></div></div>
+        <div class="dev" data-node="device" data-role="ListItem"><div class="ico"><i data-icon="lucide:plug" class="ic"></i></div><div class="n">Diğer</div><div class="k">3,8<small>kWh</small></div><div class="bar"><i style="width:25%"></i></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--@charts-->
+<script>
+const D = JSON.parse(document.getElementById('case-data').textContent);
+const solar = document.getElementById('hourly');
+Charts.bars(solar, {
+  width: 1440 * 0 + solar.parentElement.clientWidth - 48 - 200 - 12, height: 190, padding: { l: 0, r: 0, t: 8, b: 22 },
+  yMax: 5.5, grid: 'none', labelColor: 'rgba(255,255,255,0.85)', font: 'DM Sans', fontSize: 11,
+  barWidth: 14, radius: 5,
+  groups: D.hourly.values.map((v, i) => ({ values: [v], label: i % 3 === 0 ? D.hourly.hours[i] : '',
+    colors: [i === D.hourly.current ? '#FFFFFF' : 'rgba(255,255,255,0.38)'] }))
+});
+const wk = document.getElementById('weekly');
+Charts.bars(wk, {
+  width: wk.parentElement.clientWidth - 48, height: 420 - 44 - 44 - 16, padding: { l: 36, r: 0, t: 6, b: 28 },
+  yMax: 40, yTicks: [0, 10, 20, 30, 40], grid: '#E3E8E4', gridDash: '4 4', labelColor: '#9AA79F', font: 'DM Sans', fontSize: 12,
+  highlightColor: '#16201A', barWidth: 22, innerGap: 6, radius: 6, colors: ['#1F9D55', '#B4C3D3'],
+  groups: D.weekly.days.map((d, i) => ({ label: d, highlight: i === D.weekly.today, values: [D.weekly.production[i], D.weekly.consumption[i]] }))
+});
+Charts.ring(document.getElementById('ring'), { size: 132, thickness: 12, value: D.battery.level, track: '#E4F4EA', stops: [[0, '#34C77B'], [1, '#1F9D55']] });
+Charts.done();
+</script>
+</body>
+</html>

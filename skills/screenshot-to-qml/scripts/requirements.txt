@@ -1,0 +1,11 @@
+# screenshot-to-qml scripts
+PySide6>=6.8            # render.py, qmllint/qmlformat/svgtoqml tools (Essentials + Addons)
+numpy>=1.24
+opencv-python-headless>=4.8
+scikit-image>=0.22
+jsonschema>=4.20
+scipy>=1.11             # shadow_fit.py, gradient_fit.py (optimisation, erf)
+Pillow>=10.1            # font_match.py (FreeType rendering of candidate fonts, variable axes)
+fonttools>=4.47         # fontlib.py (variable-font axes, static instances for bundling)
+threadpoolctl>=3.1      # optional: single-threaded BLAS in the fitters (much faster on busy machines)
+pytesseract>=0.3.10     # text_ocr.py; needs the tesseract binary + tur/eng language data

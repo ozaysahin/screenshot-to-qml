@@ -1,0 +1,13 @@
+{
+ "about": "Icon sets for icon_match.py. Each set is an npm package fetched on demand (npm pack) into the cache; nothing is bundled. kind: stroke sets are matched at several stroke widths. License is the package's own.",
+ "sets": [
+  {"id": "lucide", "package": "lucide-static", "version": "1.48.0", "dir": "icons", "kind": "stroke", "strokeWidth": 2, "license": "ISC"},
+  {"id": "tabler", "package": "@tabler/icons", "version": "3.48.0", "dir": "icons/outline", "kind": "stroke", "strokeWidth": 2, "license": "MIT"},
+  {"id": "tabler-filled", "package": "@tabler/icons", "version": "3.48.0", "dir": "icons/filled", "kind": "fill", "license": "MIT"},
+  {"id": "fa-solid", "package": "@fortawesome/fontawesome-free", "version": "7.3.1", "dir": "svgs/solid", "kind": "fill", "license": "CC BY 4.0", "aliases": ["fa"]},
+  {"id": "fa-regular", "package": "@fortawesome/fontawesome-free", "version": "7.3.1", "dir": "svgs/regular", "kind": "fill", "license": "CC BY 4.0"},
+  {"id": "fa-brands", "package": "@fortawesome/fontawesome-free", "version": "7.3.1", "dir": "svgs/brands", "kind": "fill", "license": "CC BY 4.0"},
+  {"id": "heroicons", "package": "heroicons", "version": "2.2.0", "dir": "24/outline", "kind": "stroke", "strokeWidth": 1.5, "license": "MIT"},
+  {"id": "heroicons-solid", "package": "heroicons", "version": "2.2.0", "dir": "24/solid", "kind": "fill", "license": "MIT"}
+ ]
+}

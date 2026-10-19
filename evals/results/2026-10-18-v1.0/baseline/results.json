@@ -1,0 +1,98 @@
+[
+ {
+  "case": "01-hmi-dolum",
+  "status": "fail",
+  "globalSSIM": 0.994,
+  "regionSSIMMin": 0.9462,
+  "colorDeltaEMax": 0.41,
+  "geometryMaxPx": 1.09,
+  "textMatchRate": 0.9789,
+  "textMaxOffsetPx": 2.68,
+  "textOnTargetRate": 0.9579,
+  "gates": "fail"
+ },
+ {
+  "case": "02-kiosk-kafe",
+  "status": "fail",
+  "globalSSIM": 0.9967,
+  "regionSSIMMin": 0.9473,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 0.6,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 0.62,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "03-dashboard-dark",
+  "status": "fail",
+  "globalSSIM": 0.9969,
+  "regionSSIMMin": 0.9542,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 0.5,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 0.8,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "04-dashboard-light",
+  "status": "fail",
+  "globalSSIM": 0.9965,
+  "regionSSIMMin": 0.9649,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 0.73,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.48,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "05-settings-form",
+  "status": "fail",
+  "globalSSIM": 0.9975,
+  "regionSSIMMin": 0.9664,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.21,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.39,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "06-mobile-aliskanlik",
+  "status": "fail",
+  "globalSSIM": 0.998,
+  "regionSSIMMin": 0.9895,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 0.72,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 0.93,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "07-data-table",
+  "status": "fail",
+  "globalSSIM": 0.9907,
+  "regionSSIMMin": 0.7839,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.94,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.89,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ },
+ {
+  "case": "08-glass-home",
+  "status": "fail",
+  "globalSSIM": 0.9922,
+  "regionSSIMMin": 0.9619,
+  "colorDeltaEMax": null,
+  "geometryMaxPx": 0.55,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 0.51,
+  "textOnTargetRate": 1.0,
+  "gates": "fail"
+ }
+]

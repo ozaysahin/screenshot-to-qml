@@ -1,0 +1,1880 @@
+{
+ "runs": [
+  {
+   "string": "NOVA MAKİNE",
+   "bbox": [
+    91.0,
+    18.0,
+    88.0,
+    11.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:52:07",
+   "bbox": [
+    1760.0,
+    19.0,
+    127.0,
+    21.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 29
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "t",
+   "bbox": [
+    44.0,
+    29.0,
+    11.0,
+    17.0
+   ],
+   "conf": 82.0,
+   "font": {
+    "px": 23
+   },
+   "color": "#38BDF8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Hat 3 Dolum İstasyonu",
+   "bbox": [
+    91.5,
+    35.0,
+    219.0,
+    24.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ÇALIŞIYOR 02:14:36",
+   "bbox": [
+    618.5,
+    31.0,
+    167.0,
+    14.5
+   ],
+   "conf": 91.5,
+   "font": {
+    "px": 16
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "m= B Vardiyası",
+   "bbox": [
+    1424.0,
+    31.5,
+    91.5,
+    14.5
+   ],
+   "conf": 83.7,
+   "font": {
+    "px": 15
+   },
+   "color": "#D8EDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "B\\",
+   "bbox": [
+    1447.0,
+    32.5,
+    7.0,
+    10.5
+   ],
+   "conf": 87.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#D8EDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Operatör: M. Yıldız",
+   "bbox": [
+    1597.5,
+    32.5,
+    116.5,
+    13.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#DFEDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Perşembe, 25.09.2026",
+   "bbox": [
+    1764.0,
+    50.0,
+    123.0,
+    10.5
+   ],
+   "conf": 95.5,
+   "font": {
+    "px": 11
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Tank Seviyeleri",
+   "bbox": [
+    83.0,
+    131.0,
+    117.0,
+    16.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Son güncelleme 2 sn önce",
+   "bbox": [
+    372.0,
+    132.0,
+    154.0,
+    13.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Üretim Hızı",
+   "bbox": [
+    626.0,
+    124.0,
+    68.0,
+    13.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": ":Z Vardiya Üretimi",
+   "bbox": [
+    997.0,
+    124.0,
+    120.0,
+    16.0
+   ],
+   "conf": 87.3,
+   "font": {
+    "px": 14
+   },
+   "color": "#1699D9",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Aktif Alarmlar",
+   "bbox": [
+    1421.5,
+    131.0,
+    108.5,
+    13.0
+   ],
+   "conf": 95.5,
+   "font": {
+    "px": 18
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1.248,",
+   "bbox": [
+    605.5,
+    160.5,
+    143.5,
+    39.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 42
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "58.392",
+   "bbox": [
+    1001.0,
+    160.5,
+    174.5,
+    39.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 54
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "şişe/dk",
+   "bbox": [
+    762.0,
+    184.0,
+    72.5,
+    19.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 20
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "A-214",
+   "bbox": [
+    1459.0,
+    186.0,
+    34.0,
+    9.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:28",
+   "bbox": [
+    1516.5,
+    186.0,
+    34.5,
+    9.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Tank B seviyesi kritik eşiğe yakın",
+   "bbox": [
+    1458.5,
+    204.5,
+    207.5,
+    13.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Hedef 1.200 +%4,0",
+   "bbox": [
+    602.0,
+    229.0,
+    116.0,
+    10.5
+   ],
+   "conf": 87.3,
+   "font": {
+    "px": 11
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Hedef 60.000 - 497,3 tamamlandı",
+   "bbox": [
+    998.0,
+    229.0,
+    198.0,
+    10.5
+   ],
+   "conf": 93.8,
+   "font": {
+    "px": 11
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "W-631",
+   "bbox": [
+    1458.5,
+    260.0,
+    34.5,
+    9.0
+   ],
+   "conf": 78.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:05",
+   "bbox": [
+    1516.5,
+    260.0,
+    34.5,
+    9.0
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "A",
+   "bbox": [
+    1421.0,
+    268.0,
+    14.0,
+    13.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 18
+   },
+   "color": "#F59E0B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Filtre değişimine 36 saat kaldı",
+   "bbox": [
+    1459.0,
+    278.5,
+    189.0,
+    13.5
+   ],
+   "conf": 95.8,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "OEE",
+   "bbox": [
+    624.0,
+    314.5,
+    26.0,
+    10.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "W-617",
+   "bbox": [
+    1458.5,
+    334.0,
+    34.5,
+    9.0
+   ],
+   "conf": 88.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "13:52",
+   "bbox": [
+    1516.5,
+    334.0,
+    34.0,
+    9.0
+   ],
+   "conf": 93.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "A",
+   "bbox": [
+    1421.0,
+    342.0,
+    14.0,
+    13.0
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 18
+   },
+   "color": "#F59E0B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "87,4",
+   "bbox": [
+    601.5,
+    348.5,
+    146.5,
+    47.0
+   ],
+   "conf": 75.0,
+   "font": {
+    "px": 51
+   },
+   "color": "#E6EDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Basınç dalgalanması algılandı",
+   "bbox": [
+    1459.0,
+    352.5,
+    187.0,
+    13.5
+   ],
+   "conf": 95.7,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1-008",
+   "bbox": [
+    1459.5,
+    408.0,
+    33.5,
+    9.0
+   ],
+   "conf": 89.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "13:36",
+   "bbox": [
+    1516.5,
+    408.0,
+    34.5,
+    9.0
+   ],
+   "conf": 85.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Dün %85,1-+2,3 puan",
+   "bbox": [
+    602.0,
+    417.0,
+    127.0,
+    12.5
+   ],
+   "conf": 87.3,
+   "font": {
+    "px": 13
+   },
+   "color": "#727981",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Limit 751,00 - +0,08 puan",
+   "bbox": [
+    998.0,
+    417.0,
+    143.0,
+    12.5
+   ],
+   "conf": 88.6,
+   "font": {
+    "px": 13
+   },
+   "color": "#F59E0B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Vardiya değişimi 16:00'da",
+   "bbox": [
+    1458.5,
+    426.0,
+    159.5,
+    14.0
+   ],
+   "conf": 95.7,
+   "font": {
+    "px": 15
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "@ Dolum Basıncı",
+   "bbox": [
+    601.5,
+    504.5,
+    139.0,
+    17.5
+   ],
+   "conf": 93.7,
+   "font": {
+    "px": 24
+   },
+   "color": "#E6EDE7",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "» Ölçülen",
+   "bbox": [
+    1142.0,
+    505.5,
+    43.0,
+    15.0
+   ],
+   "conf": 93.5,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Hedef 2.40 bar",
+   "bbox": [
+    1231.0,
+    508.0,
+    88.0,
+    10.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "=e",
+   "bbox": [
+    1393.0,
+    537.5,
+    18.0,
+    7.5
+   ],
+   "conf": 66.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#38BDF8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Çalışma Modu",
+   "bbox": [
+    1424.0,
+    535.0,
+    106.0,
+    16.0
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,6",
+   "bbox": [
+    620.5,
+    549.5,
+    21.5,
+    11.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Va",
+   "bbox": [
+    1398.0,
+    578.0,
+    11.0,
+    11.0
+   ],
+   "conf": 64.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#38BDF8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Otomatik",
+   "bbox": [
+    1442.0,
+    598.5,
+    62.5,
+    11.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 16
+   },
+   "color": "#0B0F14",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Manuel",
+   "bbox": [
+    1604.5,
+    599.0,
+    47.0,
+    11.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Bakım",
+   "bbox": [
+    1762.0,
+    599.0,
+    41.0,
+    11.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,5",
+   "bbox": [
+    620.5,
+    629.5,
+    21.5,
+    11.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "72%",
+   "bbox": [
+    103.5,
+    670.0,
+    52.0,
+    22.0
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 31
+   },
+   "color": "#FBF9FF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "18%",
+   "bbox": [
+    267.0,
+    670.0,
+    51.5,
+    22.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 31
+   },
+   "color": "#DFEDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "91%",
+   "bbox": [
+    430.0,
+    670.0,
+    52.0,
+    22.0
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 31
+   },
+   "color": "#FBF9FF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Hedef Hat Hızı",
+   "bbox": [
+    1394.5,
+    674.5,
+    88.5,
+    10.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1.200 şişe/dk",
+   "bbox": [
+    1734.0,
+    669.0,
+    127.5,
+    18.0
+   ],
+   "conf": 93.0,
+   "font": {
+    "px": 19
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "5",
+   "bbox": [
+    499.5,
+    699.0,
+    15.5,
+    16.0
+   ],
+   "conf": 51.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#098BCD",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ee ee ee",
+   "bbox": [
+    1173.0,
+    706.0,
+    69.0,
+    10.5
+   ],
+   "conf": 44.0,
+   "font": {
+    "px": 20
+   },
+   "color": "#C9A542",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,",
+   "bbox": [
+    620.5,
+    710.5,
+    5.5,
+    9.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 10
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "TankA",
+   "bbox": [
+    102.5,
+    736.5,
+    52.5,
+    12.5
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Tank B",
+   "bbox": [
+    266.0,
+    736.5,
+    51.5,
+    12.5
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Tank C",
+   "bbox": [
+    429.5,
+    736.0,
+    51.5,
+    13.0
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 18
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "566",
+   "bbox": [
+    1484.5,
+    755.0,
+    19.5,
+    9.0
+   ],
+   "conf": 90.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "668",
+   "bbox": [
+    1603.5,
+    755.0,
+    20.0,
+    9.0
+   ],
+   "conf": 87.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1.566",
+   "bbox": [
+    1709.0,
+    755.0,
+    34.0,
+    9.0
+   ],
+   "conf": 93.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Süt",
+   "bbox": [
+    118.0,
+    761.5,
+    21.0,
+    10.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Şurup",
+   "bbox": [
+    273.5,
+    761.5,
+    37.0,
+    13.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Su",
+   "bbox": [
+    447.5,
+    761.5,
+    15.5,
+    10.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 15
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2.00",
+   "bbox": [
+    1828.0,
+    761.0,
+    27.0,
+    3.0
+   ],
+   "conf": 89.0,
+   "font": {
+    "px": 4
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "0",
+   "bbox": [
+    1856.5,
+    760.5,
+    5.5,
+    3.5
+   ],
+   "conf": 79.0,
+   "font": {
+    "px": 5
+   },
+   "color": "#556072",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "7.200",
+   "bbox": [
+    62.5,
+    793.0,
+    40.0,
+    10.0
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "10.000 L",
+   "bbox": [
+    130.0,
+    793.0,
+    65.0,
+    10.0
+   ],
+   "conf": 88.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1.800",
+   "bbox": [
+    226.0,
+    793.0,
+    40.0,
+    10.0
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "10.000 L",
+   "bbox": [
+    293.5,
+    793.0,
+    64.5,
+    10.0
+   ],
+   "conf": 89.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "9.100",
+   "bbox": [
+    389.0,
+    793.0,
+    40.0,
+    10.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#DFEDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "10.000 L",
+   "bbox": [
+    456.5,
+    793.0,
+    65.0,
+    10.0
+   ],
+   "conf": 87.5,
+   "font": {
+    "px": 14
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,3",
+   "bbox": [
+    620.5,
+    790.5,
+    21.5,
+    11.5
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "-Al",
+   "bbox": [
+    1538.0,
+    825.0,
+    9.5,
+    10.5
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#121C1C",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "İİ DURAKLAT",
+   "bbox": [
+    1681.5,
+    822.0,
+    135.0,
+    17.0
+   ],
+   "conf": 84.0,
+   "font": {
+    "px": 19
+   },
+   "color": "#F59E0B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Normal",
+   "bbox": [
+    109.0,
+    830.0,
+    39.5,
+    9.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#22C55E",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "A Düşük",
+   "bbox": [
+    266.0,
+    829.5,
+    52.0,
+    12.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#F59E0B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Normal",
+   "bbox": [
+    435.5,
+    830.0,
+    40.0,
+    9.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#22C55E",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "B i",
+   "bbox": [
+    1485.5,
+    833.0,
+    9.0,
+    6.0
+   ],
+   "conf": 70.5,
+   "font": {
+    "px": 8
+   },
+   "color": "#121C1C",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "LA",
+   "bbox": [
+    1524.5,
+    831.5,
+    24.0,
+    7.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 10
+   },
+   "color": "#121C1C",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,2",
+   "bbox": [
+    620.5,
+    871.5,
+    21.5,
+    11.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 12
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "8 ÜrünSıcaklığı",
+   "bbox": [
+    73.5,
+    909.5,
+    96.0,
+    15.5
+   ],
+   "conf": 71.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Aktif Nozul",
+   "bbox": [
+    337.5,
+    912.0,
+    64.0,
+    10.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#778495",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ACİL DURDUR",
+   "bbox": [
+    1561.5,
+    923.0,
+    174.5,
+    24.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 27
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "4,2°c",
+   "bbox": [
+    75.0,
+    938.0,
+    70.0,
+    25.5
+   ],
+   "conf": 75.0,
+   "font": {
+    "px": 27
+   },
+   "color": "#E6EDF5",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "6/6",
+   "bbox": [
+    317.5,
+    936.0,
+    47.0,
+    26.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 36
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "hazır",
+   "bbox": [
+    372.0,
+    947.5,
+    45.5,
+    11.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 16
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2,",
+   "bbox": [
+    620.5,
+    951.5,
+    5.5,
+    9.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 10
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "13:30",
+   "bbox": [
+    635.0,
+    971.5,
+    36.5,
+    9.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "13:45",
+   "bbox": [
+    794.0,
+    971.5,
+    37.0,
+    9.5
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:00",
+   "bbox": [
+    954.0,
+    971.5,
+    36.5,
+    9.5
+   ],
+   "conf": 87.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:15",
+   "bbox": [
+    1113.0,
+    971.5,
+    37.0,
+    9.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "14:530",
+   "bbox": [
+    1273.0,
+    971.5,
+    36.5,
+    9.5
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#5B6878",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "PLC bağlı",
+   "bbox": [
+    49.0,
+    1054.0,
+    54.0,
+    13.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 18
+   },
+   "color": "#1AA95E",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Reçete: R-12 - Ayran 250 mi",
+   "bbox": [
+    154.5,
+    1054.0,
+    144.5,
+    13.0
+   ],
+   "conf": 89.8,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Parti: LOT-26-0925-B",
+   "bbox": [
+    342.5,
+    1053.0,
+    134.5,
+    10.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#E6EDEE",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "HMI-03",
+   "bbox": [
+    1763.0,
+    1053.0,
+    48.0,
+    10.0
+   ],
+   "conf": 84.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "v2.4.1",
+   "bbox": [
+    1838.5,
+    1053.0,
+    48.5,
+    10.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#8A98AB",
+   "colorSnapped": true,
+   "src": "measured"
+  }
+ ],
+ "icons": [
+  {
+   "bbox": [
+    593.0,
+    32.0,
+    12.0,
+    12.0
+   ],
+   "color": "#22C55E",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    57.0,
+    128.0,
+    13.5,
+    18.0
+   ],
+   "color": "#38BDF8",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1656.0,
+    708.5,
+    36.5,
+    35.0
+   ],
+   "color": "#E6EDF5",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    316.0,
+    911.0,
+    13.0,
+    13.0
+   ],
+   "color": "#8A98AB",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    145.0,
+    47.0,
+    3.0,
+    3.0
+   ],
+   "color": "#FFFFFF",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    676.0,
+    234.5,
+    1.5,
+    1.5
+   ],
+   "color": "#427499",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1082.0,
+    234.5,
+    2.0,
+    1.5
+   ],
+   "color": "#64848C",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1069.5,
+    422.5,
+    2.0,
+    1.5
+   ],
+   "color": "#6D898B",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    32.0,
+    1055.0,
+    8.0,
+    8.0
+   ],
+   "color": "#22C55E",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1845.0,
+    132.5,
+    7.5,
+    10.0
+   ],
+   "color": "#FBF9FF",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1824.0,
+    1057.0,
+    2.0,
+    2.0
+   ],
+   "color": "#92B0BA",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1575.0,
+    31.0,
+    11.0,
+    14.0
+   ],
+   "color": "#8A98AB",
+   "ocrGuess": "&",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    642.5,
+    190.0,
+    9.0,
+    9.5
+   ],
+   "color": "#FFFFFF",
+   "ocrGuess": "e",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    601.0,
+    311.5,
+    12.0,
+    14.5
+   ],
+   "color": "#38BDF8",
+   "ocrGuess": "$",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1421.0,
+    194.0,
+    14.0,
+    14.0
+   ],
+   "color": "#F14944",
+   "ocrGuess": "o",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    997.0,
+    312.0,
+    12.0,
+    14.0
+   ],
+   "color": "#38BDF8",
+   "ocrGuess": "B",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    601.0,
+    124.0,
+    14.0,
+    14.0
+   ],
+   "color": "#38BDF8",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    173.5,
+    699.0,
+    15.5,
+    16.0
+   ],
+   "color": "#098BCD",
+   "ocrGuess": ">",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1452.5,
+    821.5,
+    6.0,
+    6.5
+   ],
+   "color": "#175436",
+   "ocrGuess": ">",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    69.0,
+    699.0,
+    15.5,
+    16.0
+   ],
+   "color": "#098BCD",
+   "ocrGuess": "N",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    395.0,
+    699.0,
+    15.5,
+    16.0
+   ],
+   "color": "#098BCD",
+   "ocrGuess": "N",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    216.5,
+    1059.5,
+    2.0,
+    1.5
+   ],
+   "color": "#CCE6E2",
+   "ocrGuess": "-",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1513.0,
+    836.5,
+    6.0,
+    6.0
+   ],
+   "color": "#121C1C",
+   "ocrGuess": "+",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    232.0,
+    699.0,
+    15.5,
+    16.0
+   ],
+   "color": "#BD5D09",
+   "ocrGuess": "N",
+   "match": null,
+   "kind": null
+  }
+ ],
+ "lang": "tur+eng",
+ "scale": 2.0
+}

@@ -1,0 +1,203 @@
+{
+ "05-settings-form": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "effects": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "perf": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "cpp": {
+   "status": "skipped",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "12-ev-charger": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "effects": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "perf": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "cpp": {
+   "status": "skipped",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "18-html-tailwind-billing": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "states": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "effects": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "perf": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "cpp": {
+   "status": "skipped",
+   "errors": [],
+   "errorCount": 0
+  }
+ }
+}

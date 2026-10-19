@@ -1,0 +1,17 @@
+{
+ "provisional": false,
+ "calibratedOn": "evals/results (baseline + skill-v0.4, 16 runs, 2026-09-27)",
+ "compareAt": "design size x dpr (same pixel size as input.png)",
+ "globalSSIM": 0.98,
+ "regionSSIM": 0.9,
+ "regionAlignPx": 1,
+ "maskTextForSSIM": true,
+ "colorDeltaE2000": 2.0,
+ "geometryPx": 2,
+ "textStringMatch": 1.0,
+ "textPositionPx": 2,
+ "qmllintWarnings": 0,
+ "runtimeWarnings": 0,
+ "hardcodedValues": 0,
+ "maxFixIterations": 5
+}

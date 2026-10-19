@@ -1,0 +1,47 @@
+{
+ "id": "07-data-table",
+ "summary": "1440x900 data table with filters, selection, sorting and pagination.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1440,
+   900
+  ],
+  "dpr": 1,
+  "designSize": [
+   1440,
+   900
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Table from a model of 10 rows (mock JSON), using TableView + HorizontalHeaderView or an equivalent ListView with fixed columns.",
+  "Column widths match the source; serial numbers use JetBrains Mono.",
+  "Header checkbox in partially-checked state; row 'rpi5-kapi-03' selected with tinted background.",
+  "Hovered row 'rpi4-lobi-01' reproduced as a hover state (assumed state, documented).",
+  "Sort indicator on 'Son görülme' (descending).",
+  "Status badge component with 3 variants (online/maintenance/offline); CPU bar turns amber above 80%.",
+  "Filter chips: dashed default style and solid active style with a clear icon.",
+  "Pagination: disabled previous, page 1 active, ellipsis, 14, next."
+ ],
+ "niceToHave": [
+  "Sorting and filtering via QML SortFilterProxyModel (Qt 6.10+) or a Python proxy model."
+ ],
+ "allowedApproximations": [
+  "Dashed chip border may be approximated with a Shape dash pattern."
+ ],
+ "forbidden": []
+}

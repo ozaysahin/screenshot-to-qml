@@ -1,0 +1,6271 @@
+{
+ "meta": {
+  "id": "13-form-wizard",
+  "title": "Çok adımlı form sihirbazı — açık takvim, etiketler, dosya yükleme",
+  "category": "form",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 1.25,
+  "captureSize": [
+   1600,
+   1000
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Albert Sans",
+    "qtFamily": "Albert Sans",
+    "legacyFamily": "Albert Sans",
+    "files": [
+     "AlbertSans-Bold.ttf",
+     "AlbertSans-Medium.ttf",
+     "AlbertSans-Regular.ttf",
+     "AlbertSans-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F3F5F9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F3F5F9"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#101828",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#101828"
+   },
+   "text-2": {
+    "hex": "#344054",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#344054"
+   },
+   "muted": {
+    "hex": "#667085",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#667085"
+   },
+   "placeholder": {
+    "hex": "#98A2B3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#98A2B3"
+   },
+   "disabled": {
+    "hex": "#C8CED8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C8CED8"
+   },
+   "border": {
+    "hex": "#E4E7EC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E4E7EC"
+   },
+   "border-strong": {
+    "hex": "#D0D5DD",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#D0D5DD"
+   },
+   "subtle": {
+    "hex": "#F9FAFB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F9FAFB"
+   },
+   "primary": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2F5BEA"
+   },
+   "primary-soft": {
+    "hex": "#EEF2FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EEF2FF"
+   },
+   "primary-line": {
+    "hex": "#C7D4FE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C7D4FE"
+   },
+   "primary-ink": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1E3A9E"
+   },
+   "focus-ring": {
+    "hex": "#2F5BEA",
+    "alpha": 0.18,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(47, 91, 234, 0.18)"
+   },
+   "success": {
+    "hex": "#12B76A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#12B76A"
+   },
+   "pdf": {
+    "hex": "#E5484D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E5484D"
+   },
+   "pdf-soft": {
+    "hex": "#FFF1F1",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFF1F1"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "7": 28.0,
+   "8": 32.0
+  },
+  "radius": {
+   "sm": 6.0,
+   "md": 8.0,
+   "lg": 10.0,
+   "xl": 14.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(16, 24, 40, 0.05)"
+   },
+   "popup": {
+    "css": "0 16px 32px -6px rgba(16, 24, 40, 0.18), 0 4px 10px -2px rgba(16, 24, 40, 0.08)"
+   },
+   "button": {
+    "css": "0 1px 2px rgba(16, 24, 40, 0.06)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Albert Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "count": 1,
+    "example": "Konum ve kurulum"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Telvio"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Ekim 2026"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "3"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "Yeni cihaz kaydı"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 8,
+    "example": "Cihazlar"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Yükleme rampasının sol üst köşesine, kuz"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "9"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "*"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "Cihaz adı"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 40,
+    "example": "28"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Taslak 14:32'de kaydedildi"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "(isteğe bağlı)"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 8,
+    "example": "Pt"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "84/200"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "İş emrinde görünür."
+   },
+   {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "PDF, PNG veya JPG · en fazla 10 MB"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "count": 5,
+    "example": "TAMAMLANDI"
+   },
+   {
+    "family": "Albert Sans",
+    "px": 9,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.3,
+    "count": 1,
+    "example": "PDF"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "appBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1280,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E4E7EC",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     32
+    ]
+   }
+  },
+  {
+   "id": "logo",
+   "role": null,
+   "parent": "appBar",
+   "bbox": [
+    32,
+    11.5,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2F5BEA",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "32px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "breadcrumb",
+   "role": "Breadcrumb",
+   "parent": "appBar",
+   "bbox": [
+    141.86,
+    15.5,
+    202.42,
+    24
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "left",
+      "width": 1,
+      "color": {
+       "hex": "#E4E7EC",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     0,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "autosaveStatus",
+   "role": null,
+   "parent": "appBar",
+   "bbox": [
+    1021.02,
+    17.5,
+    174.98,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "closeButton",
+   "role": "IconButton",
+   "parent": "appBar",
+   "bbox": [
+    1212,
+    9.5,
+    36,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "34px",
+    "rows": "34px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stepper",
+   "role": "Stepper",
+   "parent": null,
+   "bbox": [
+    96,
+    76,
+    1088,
+    44
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center"
+   },
+   "model": {
+    "name": "steps",
+    "count": 5,
+    "itemId": "step"
+   },
+   "value": "2"
+  },
+  {
+   "id": "step[0]",
+   "role": "StepItem",
+   "parent": "stepper",
+   "bbox": [
+    96,
+    81,
+    239.89,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "step[1]",
+   "role": "StepItem",
+   "parent": "stepper",
+   "bbox": [
+    335.89,
+    81,
+    239.89,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "step[2]",
+   "role": "StepItem",
+   "parent": "stepper",
+   "bbox": [
+    575.78,
+    81,
+    239.89,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "step[3]",
+   "role": "StepItem",
+   "parent": "stepper",
+   "bbox": [
+    815.67,
+    81,
+    239.89,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "step[4]",
+   "role": "StepItem",
+   "parent": "stepper",
+   "bbox": [
+    1055.56,
+    81,
+    128.47,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "stepCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    96,
+    140,
+    1088,
+    559
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {}
+  },
+  {
+   "id": "stepHeader",
+   "role": null,
+   "parent": "stepCard",
+   "bbox": [
+    97,
+    141,
+    1086,
+    89
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E4E7EC",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "flex-end",
+    "padding": [
+     20,
+     28,
+     18,
+     28
+    ]
+   }
+  },
+  {
+   "id": "stepForm",
+   "role": null,
+   "parent": "stepCard",
+   "bbox": [
+    125,
+    250,
+    620,
+    424
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 20,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "deviceNameField",
+   "role": "TextField",
+   "parent": "stepForm",
+   "bbox": [
+    125,
+    274,
+    302,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "serialField",
+   "role": "TextField",
+   "parent": "stepForm",
+   "bbox": [
+    443,
+    274,
+    302,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "installDateField",
+   "role": "TextField",
+   "parent": "stepForm",
+   "bbox": [
+    125,
+    358,
+    302,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#2F5BEA",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 4.0,
+      "color": {
+       "hex": "#2F5BEA",
+       "alpha": 0.18
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "focused",
+    "open"
+   ],
+   "value": "2026-10-15"
+  },
+  {
+   "id": "calendarPopup",
+   "role": "Popup",
+   "parent": "stepForm",
+   "bbox": [
+    125,
+    404,
+    302,
+    314
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 16.0,
+      "blur": 32.0,
+      "spread": -6.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.18
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 4.0,
+      "blur": 10.0,
+      "spread": -2.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.08
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     0,
+     12
+    ],
+    "position": "absolute"
+   },
+   "state": [
+    "open"
+   ]
+  },
+  {
+   "id": "prevMonth",
+   "role": "IconButton",
+   "parent": "calendarPopup",
+   "bbox": [
+    138,
+    417,
+    32,
+    32
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "30px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "monthLabel",
+   "role": null,
+   "parent": "calendarPopup",
+   "bbox": [
+    238.02,
+    423,
+    75.97,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "nextMonth",
+   "role": "IconButton",
+   "parent": "calendarPopup",
+   "bbox": [
+    382,
+    417,
+    32,
+    32
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "30px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "weekdayRow",
+   "role": "DayOfWeekRow",
+   "parent": "calendarPopup",
+   "bbox": [
+    138,
+    457,
+    276,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "36px 36px 36px 36px 36px 36px 36px",
+    "rows": "24px",
+    "columnGap": 4,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "monthGrid",
+   "role": "MonthGrid",
+   "parent": "calendarPopup",
+   "bbox": [
+    138,
+    483,
+    276,
+    190
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "36px 36px 36px 36px 36px 36px 36px",
+    "rows": "30px 30px 30px 30px 30px 30px",
+    "columnGap": 4,
+    "rowGap": 2
+   },
+   "model": {
+    "name": "days",
+    "count": 42,
+    "itemId": "day"
+   },
+   "value": "2026-10-15"
+  },
+  {
+   "id": "day[0]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside",
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[1]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside",
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[2]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside",
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[3]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[4]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[5]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[6]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    483,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[7]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[8]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[9]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[10]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "day[11]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#2F5BEA",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "34px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "today"
+   ]
+  },
+  {
+   "id": "day[12]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[13]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    515,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[14]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[15]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[16]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[17]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2F5BEA",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "day[18]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[19]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[20]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    547,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[21]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[22]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[23]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[24]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[25]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[26]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[27]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    579,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[28]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[29]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[30]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[31]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[32]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[33]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "day[34]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    611,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[35]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    138,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[36]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    178,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[37]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    218,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[38]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    258,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[39]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    298,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[40]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    338,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "day[41]",
+   "role": "Button",
+   "parent": "monthGrid",
+   "bbox": [
+    378,
+    643,
+    36,
+    30
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "outside"
+   ]
+  },
+  {
+   "id": "clearDate",
+   "role": "Button",
+   "parent": "calendarPopup",
+   "bbox": [
+    138,
+    687.5,
+    45.94,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "todayButton",
+   "role": "Button",
+   "parent": "calendarPopup",
+   "bbox": [
+    375.61,
+    687.5,
+    38.39,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "locationCombo",
+   "role": "ComboBox",
+   "parent": "stepForm",
+   "bbox": [
+    443,
+    358,
+    302,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "value": "Ankara · Ostim Deposu"
+  },
+  {
+   "id": "noteArea",
+   "role": "TextArea",
+   "parent": "stepForm",
+   "bbox": [
+    443,
+    442,
+    302,
+    88
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     9,
+     12,
+     9,
+     12
+    ]
+   }
+  },
+  {
+   "id": "charCounter",
+   "role": null,
+   "parent": "stepForm",
+   "bbox": [
+    703.13,
+    536,
+    41.88,
+    16
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "tagInput",
+   "role": "TagInput",
+   "parent": "stepForm",
+   "bbox": [
+    443,
+    596,
+    302,
+    78
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "wrap": "wrap",
+    "padding": [
+     7,
+     8,
+     7,
+     8
+    ]
+   },
+   "model": {
+    "name": "tags",
+    "count": 3,
+    "itemId": "tagChip"
+   }
+  },
+  {
+   "id": "tagChip[0]",
+   "role": "Chip",
+   "parent": "tagInput",
+   "bbox": [
+    452,
+    604,
+    100.88,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF2FF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#C7D4FE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "chipRemove[0]",
+   "role": "IconButton",
+   "parent": "tagChip[0]",
+   "bbox": [
+    527.88,
+    609,
+    18,
+    18
+   ],
+   "style": {
+    "radius": 4
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "18px",
+    "rows": "18px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "tagChip[1]",
+   "role": "Chip",
+   "parent": "tagInput",
+   "bbox": [
+    558.88,
+    604,
+    114.33,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF2FF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#C7D4FE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "chipRemove[1]",
+   "role": "IconButton",
+   "parent": "tagChip[1]",
+   "bbox": [
+    648.2,
+    609,
+    18,
+    18
+   ],
+   "style": {
+    "radius": 4
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "18px",
+    "rows": "18px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "tagChip[2]",
+   "role": "Chip",
+   "parent": "tagInput",
+   "bbox": [
+    452,
+    638,
+    63.19,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF2FF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#C7D4FE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "chipRemove[2]",
+   "role": "IconButton",
+   "parent": "tagChip[2]",
+   "bbox": [
+    490.19,
+    643,
+    18,
+    18
+   ],
+   "style": {
+    "radius": 4
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "18px",
+    "rows": "18px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "tagPlaceholder",
+   "role": null,
+   "parent": "tagInput",
+   "bbox": [
+    521.19,
+    642,
+    80.66,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "padding": [
+     0,
+     0,
+     0,
+     6
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "attachments",
+   "role": null,
+   "parent": "stepCard",
+   "bbox": [
+    785,
+    250,
+    370,
+    424
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "dropZone",
+   "role": "DropArea",
+   "parent": "attachments",
+   "bbox": [
+    785,
+    274,
+    370,
+    226
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F9FAFB",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "dashed"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "uploadRow",
+   "role": "ListItem",
+   "parent": "attachments",
+   "bbox": [
+    785,
+    512,
+    370,
+    90
+   ],
+   "style": {
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E4E7EC",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "flex-start",
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   },
+   "state": [
+    "loading"
+   ]
+  },
+  {
+   "id": "uploadProgress",
+   "role": "ProgressBar",
+   "parent": "uploadRow",
+   "bbox": [
+    846,
+    576,
+    218,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4E7EC",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.64"
+  },
+  {
+   "id": "cancelUpload",
+   "role": "IconButton",
+   "parent": "uploadRow",
+   "bbox": [
+    1118,
+    521,
+    28,
+    28
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "28px",
+    "rows": "28px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "infoNote",
+   "role": null,
+   "parent": "attachments",
+   "bbox": [
+    785,
+    614,
+    370,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EEF2FF",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "wizardFooter",
+   "role": "Footer",
+   "parent": null,
+   "bbox": [
+    0,
+    728,
+    1280,
+    72
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E4E7EC",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {}
+  },
+  {
+   "id": "backButton",
+   "role": "Button",
+   "parent": "wizardFooter",
+   "bbox": [
+    96,
+    744.5,
+    85.66,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#D0D5DD",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "saveDraftButton",
+   "role": "Button",
+   "parent": "wizardFooter",
+   "bbox": [
+    902.28,
+    744.5,
+    162.48,
+    40
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "nextButton",
+   "role": "Button",
+   "parent": "wizardFooter",
+   "bbox": [
+    1076.77,
+    744.5,
+    107.23,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2F5BEA",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#101828",
+       "alpha": 0.1
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.14
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     18,
+     0,
+     20
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "Telvio",
+   "owner": "appBar",
+   "bbox": [
+    80,
+    17.5,
+    45.86,
+    20
+   ],
+   "baseline": 33.5,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihazlar",
+   "owner": "breadcrumb",
+   "bbox": [
+    158.86,
+    18.5,
+    51.98,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yeni cihaz kaydı",
+   "owner": "breadcrumb",
+   "bbox": [
+    240.84,
+    18.5,
+    103.44,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Taslak 14:32'de kaydedildi",
+   "owner": "autosaveStatus",
+   "bbox": [
+    1043.02,
+    19.5,
+    152.98,
+    15
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TAMAMLANDI",
+   "owner": "step[0]",
+   "bbox": [
+    140,
+    81,
+    80.94,
+    13
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#12B76A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Cihaz türü",
+   "owner": "step[0]",
+   "bbox": [
+    140,
+    96,
+    66.38,
+    17
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TAMAMLANDI",
+   "owner": "step[1]",
+   "bbox": [
+    379.89,
+    81,
+    80.94,
+    13
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#12B76A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Ağ bağlantısı",
+   "owner": "step[1]",
+   "bbox": [
+    379.89,
+    96,
+    83.97,
+    17
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "step[2]",
+   "bbox": [
+    587.61,
+    89,
+    8.33,
+    17
+   ],
+   "baseline": 102,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ŞU ANKİ ADIM",
+   "owner": "step[2]",
+   "bbox": [
+    619.78,
+    81,
+    82.97,
+    13
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Konum ve kurulum",
+   "owner": "step[2]",
+   "bbox": [
+    619.78,
+    96,
+    120.97,
+    17
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4",
+   "owner": "step[3]",
+   "bbox": [
+    827.09,
+    89,
+    9.16,
+    17
+   ],
+   "baseline": 102,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BEKLİYOR",
+   "owner": "step[3]",
+   "bbox": [
+    859.67,
+    81,
+    58.48,
+    13
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Erişim izinleri",
+   "owner": "step[3]",
+   "bbox": [
+    859.67,
+    96,
+    87.2,
+    17
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5",
+   "owner": "step[4]",
+   "bbox": [
+    1067.23,
+    89,
+    8.64,
+    17
+   ],
+   "baseline": 102,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BEKLİYOR",
+   "owner": "step[4]",
+   "bbox": [
+    1099.56,
+    81,
+    58.48,
+    13
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Özet ve onay",
+   "owner": "step[4]",
+   "bbox": [
+    1099.56,
+    96,
+    84.47,
+    17
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konum ve kurulum",
+   "owner": "stepHeader",
+   "bbox": [
+    125,
+    163,
+    168.02,
+    24
+   ],
+   "baseline": 182,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihazın nereye ve ne zaman kurulacağını belirtin; bu bilgiler teknisyen iş emrine eklenir.",
+   "owner": "stepHeader",
+   "bbox": [
+    125,
+    192,
+    558.09,
+    17
+   ],
+   "baseline": 205,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "*",
+   "owner": "stepHeader",
+   "bbox": [
+    1074.02,
+    193,
+    6.22,
+    15
+   ],
+   "baseline": 205,
+   "lines": 1,
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "zorunlu alan",
+   "owner": "stepHeader",
+   "bbox": [
+    1083.86,
+    193,
+    71.14,
+    15
+   ],
+   "baseline": 205,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz adı",
+   "owner": "stepForm",
+   "bbox": [
+    125,
+    251,
+    55.5,
+    15
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "*",
+   "owner": "stepForm",
+   "bbox": [
+    184.5,
+    251,
+    6.22,
+    15
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ostim-Depo-Kamera-07",
+   "owner": "deviceNameField",
+   "bbox": [
+    138,
+    285,
+    160.59,
+    17
+   ],
+   "baseline": 298,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Seri numarası",
+   "owner": "stepForm",
+   "bbox": [
+    443,
+    251,
+    81.06,
+    15
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "(isteğe bağlı)",
+   "owner": "stepForm",
+   "bbox": [
+    528.06,
+    251,
+    79.53,
+    15
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Örn. TV-C4-000000",
+   "owner": "serialField",
+   "bbox": [
+    480,
+    285,
+    136.39,
+    17
+   ],
+   "baseline": 298,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kurulum tarihi",
+   "owner": "stepForm",
+   "bbox": [
+    125,
+    335,
+    84.36,
+    15
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "*",
+   "owner": "stepForm",
+   "bbox": [
+    213.36,
+    335,
+    6.22,
+    15
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "15.10.2026",
+   "owner": "installDateField",
+   "bbox": [
+    138,
+    369,
+    66.72,
+    17
+   ],
+   "baseline": 382,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Ekim 2026",
+   "owner": "monthLabel",
+   "bbox": [
+    238.02,
+    424,
+    75.97,
+    18
+   ],
+   "baseline": 438,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pt",
+   "owner": "weekdayRow",
+   "bbox": [
+    150.03,
+    462,
+    11.92,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sa",
+   "owner": "weekdayRow",
+   "bbox": [
+    189.33,
+    462,
+    13.33,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ça",
+   "owner": "weekdayRow",
+   "bbox": [
+    228.25,
+    462,
+    15.48,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pe",
+   "owner": "weekdayRow",
+   "bbox": [
+    269.08,
+    462,
+    13.84,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cu",
+   "owner": "weekdayRow",
+   "bbox": [
+    308.06,
+    462,
+    15.88,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ct",
+   "owner": "weekdayRow",
+   "bbox": [
+    349.25,
+    462,
+    13.48,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pz",
+   "owner": "weekdayRow",
+   "bbox": [
+    389.33,
+    462,
+    13.34,
+    14
+   ],
+   "baseline": 473,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "28",
+   "owner": "day[0]",
+   "bbox": [
+    148.02,
+    490,
+    15.95,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "29",
+   "owner": "day[1]",
+   "bbox": [
+    188.16,
+    490,
+    15.67,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "30",
+   "owner": "day[2]",
+   "bbox": [
+    227.98,
+    490,
+    16.03,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1",
+   "owner": "day[3]",
+   "bbox": [
+    273.95,
+    490,
+    4.09,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2",
+   "owner": "day[4]",
+   "bbox": [
+    312.11,
+    490,
+    7.78,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "3",
+   "owner": "day[5]",
+   "bbox": [
+    352.11,
+    490,
+    7.77,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "4",
+   "owner": "day[6]",
+   "bbox": [
+    391.73,
+    490,
+    8.52,
+    15
+   ],
+   "baseline": 502,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "5",
+   "owner": "day[7]",
+   "bbox": [
+    151.94,
+    522,
+    8.11,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "6",
+   "owner": "day[8]",
+   "bbox": [
+    192.05,
+    522,
+    7.91,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "7",
+   "owner": "day[9]",
+   "bbox": [
+    232.38,
+    522,
+    7.25,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "8",
+   "owner": "day[10]",
+   "bbox": [
+    271.91,
+    522,
+    8.17,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "9",
+   "owner": "day[11]",
+   "bbox": [
+    312.02,
+    522,
+    7.95,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "10",
+   "owner": "day[12]",
+   "bbox": [
+    349.83,
+    522,
+    12.34,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "11",
+   "owner": "day[13]",
+   "bbox": [
+    391.91,
+    522,
+    8.17,
+    15
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "12",
+   "owner": "day[14]",
+   "bbox": [
+    150.06,
+    554,
+    11.86,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "13",
+   "owner": "day[15]",
+   "bbox": [
+    190.08,
+    554,
+    11.84,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "14",
+   "owner": "day[16]",
+   "bbox": [
+    229.7,
+    554,
+    12.59,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "15",
+   "owner": "day[17]",
+   "bbox": [
+    269.81,
+    554,
+    12.36,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "16",
+   "owner": "day[18]",
+   "bbox": [
+    310,
+    554,
+    11.98,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "17",
+   "owner": "day[19]",
+   "bbox": [
+    350.33,
+    554,
+    11.33,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "18",
+   "owner": "day[20]",
+   "bbox": [
+    389.88,
+    554,
+    12.25,
+    15
+   ],
+   "baseline": 566,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "19",
+   "owner": "day[21]",
+   "bbox": [
+    150,
+    586,
+    11.98,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "20",
+   "owner": "day[22]",
+   "bbox": [
+    187.98,
+    586,
+    16.03,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "21",
+   "owner": "day[23]",
+   "bbox": [
+    230.06,
+    586,
+    11.86,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "22",
+   "owner": "day[24]",
+   "bbox": [
+    268.22,
+    586,
+    15.56,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "23",
+   "owner": "day[25]",
+   "bbox": [
+    308.22,
+    586,
+    15.55,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "24",
+   "owner": "day[26]",
+   "bbox": [
+    347.86,
+    586,
+    16.28,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "25",
+   "owner": "day[27]",
+   "bbox": [
+    388.06,
+    586,
+    15.88,
+    15
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "26",
+   "owner": "day[28]",
+   "bbox": [
+    148.16,
+    618,
+    15.67,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "27",
+   "owner": "day[29]",
+   "bbox": [
+    188.48,
+    618,
+    15.02,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "28",
+   "owner": "day[30]",
+   "bbox": [
+    228.02,
+    618,
+    15.95,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "29",
+   "owner": "day[31]",
+   "bbox": [
+    268.16,
+    618,
+    15.67,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "30",
+   "owner": "day[32]",
+   "bbox": [
+    307.98,
+    618,
+    16.03,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "31",
+   "owner": "day[33]",
+   "bbox": [
+    350.08,
+    618,
+    11.84,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1",
+   "owner": "day[34]",
+   "bbox": [
+    393.95,
+    618,
+    4.09,
+    15
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2",
+   "owner": "day[35]",
+   "bbox": [
+    152.11,
+    650,
+    7.78,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "3",
+   "owner": "day[36]",
+   "bbox": [
+    192.11,
+    650,
+    7.77,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "4",
+   "owner": "day[37]",
+   "bbox": [
+    231.73,
+    650,
+    8.52,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "5",
+   "owner": "day[38]",
+   "bbox": [
+    271.94,
+    650,
+    8.11,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "6",
+   "owner": "day[39]",
+   "bbox": [
+    312.05,
+    650,
+    7.91,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "7",
+   "owner": "day[40]",
+   "bbox": [
+    352.38,
+    650,
+    7.25,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "8",
+   "owner": "day[41]",
+   "bbox": [
+    391.91,
+    650,
+    8.17,
+    15
+   ],
+   "baseline": 662,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Temizle",
+   "owner": "clearDate",
+   "bbox": [
+    138,
+    689.5,
+    45.94,
+    15
+   ],
+   "baseline": 701.5,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün",
+   "owner": "todayButton",
+   "bbox": [
+    375.61,
+    689.5,
+    38.39,
+    15
+   ],
+   "baseline": 701.5,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konum",
+   "owner": "stepForm",
+   "bbox": [
+    443,
+    335,
+    41.56,
+    15
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "*",
+   "owner": "stepForm",
+   "bbox": [
+    488.56,
+    335,
+    6.22,
+    15
+   ],
+   "baseline": 347,
+   "lines": 1,
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Ostim Deposu",
+   "owner": "locationCombo",
+   "bbox": [
+    480,
+    369,
+    147.13,
+    17
+   ],
+   "baseline": 382,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kurulum notu",
+   "owner": "stepForm",
+   "bbox": [
+    443,
+    419,
+    80.16,
+    15
+   ],
+   "baseline": 431,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yükleme rampasının sol üst köşesine, kuzey cephesine bakacak şekilde monte edilecek.",
+   "owner": "noteArea",
+   "bbox": [
+    456,
+    454,
+    257.78,
+    61
+   ],
+   "baseline": 467,
+   "lines": 3,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İş emrinde görünür.",
+   "owner": "stepForm",
+   "bbox": [
+    443,
+    537,
+    107.22,
+    14
+   ],
+   "baseline": 548,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "84/200",
+   "owner": "charCounter",
+   "bbox": [
+    703.13,
+    537,
+    41.88,
+    14
+   ],
+   "baseline": 548,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Etiketler",
+   "owner": "stepForm",
+   "bbox": [
+    443,
+    573,
+    50.13,
+    15
+   ],
+   "baseline": 585,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "dış mekân",
+   "owner": "tagChip[0]",
+   "bbox": [
+    463,
+    610,
+    60.88,
+    15
+   ],
+   "baseline": 622,
+   "lines": 1,
+   "color": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "gece görüşü",
+   "owner": "tagChip[1]",
+   "bbox": [
+    569.88,
+    610,
+    74.33,
+    15
+   ],
+   "baseline": 622,
+   "lines": 1,
+   "color": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PoE",
+   "owner": "tagChip[2]",
+   "bbox": [
+    463,
+    644,
+    23.19,
+    15
+   ],
+   "baseline": 656,
+   "lines": 1,
+   "color": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Etiket ekle…",
+   "owner": "tagPlaceholder",
+   "bbox": [
+    527.19,
+    643,
+    74.66,
+    17
+   ],
+   "baseline": 656,
+   "lines": 1,
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kurulum belgeleri",
+   "owner": "attachments",
+   "bbox": [
+    785,
+    251,
+    105.7,
+    15
+   ],
+   "baseline": 263,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dosyayı sürükleyip bırakın ya da",
+   "owner": "dropZone",
+   "bbox": [
+    840.88,
+    395,
+    203.3,
+    17
+   ],
+   "baseline": 408,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "göz atın",
+   "owner": "dropZone",
+   "bbox": [
+    1048.09,
+    395,
+    51.03,
+    17
+   ],
+   "baseline": 408,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PDF, PNG veya JPG · en fazla 10 MB",
+   "owner": "dropZone",
+   "bbox": [
+    872.22,
+    419,
+    195.55,
+    14
+   ],
+   "baseline": 430,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PDF",
+   "owner": "uploadRow",
+   "bbox": [
+    806.7,
+    547.5,
+    18.59,
+    11
+   ],
+   "baseline": 556.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 9,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "ostim-yerlesim-plani.pdf",
+   "owner": "uploadRow",
+   "bbox": [
+    846,
+    526,
+    161.84,
+    17
+   ],
+   "baseline": 539,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,4 MB / 3,8 MB · yükleniyor",
+   "owner": "uploadRow",
+   "bbox": [
+    846,
+    546,
+    155.31,
+    14
+   ],
+   "baseline": 557,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%64",
+   "owner": "uploadRow",
+   "bbox": [
+    1081.13,
+    572,
+    24.88,
+    14
+   ],
+   "baseline": 583,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Albert Sans",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tarih onaylandığında kurulum ekibine takvim daveti ve iş emri otomatik gönderilir.",
+   "owner": "infoNote",
+   "bbox": [
+    823,
+    627,
+    304.11,
+    33
+   ],
+   "baseline": 639,
+   "lines": 2,
+   "color": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Geri",
+   "owner": "backButton",
+   "bbox": [
+    137,
+    755.5,
+    27.66,
+    17
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Adım",
+   "owner": "wizardFooter",
+   "bbox": [
+    201.66,
+    756.5,
+    31.3,
+    15
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "wizardFooter",
+   "bbox": [
+    236.59,
+    756.5,
+    7.75,
+    15
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "/ 5",
+   "owner": "wizardFooter",
+   "bbox": [
+    247.97,
+    756.5,
+    15.92,
+    15
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Taslak olarak kaydet",
+   "owner": "saveDraftButton",
+   "bbox": [
+    918.28,
+    755.5,
+    130.48,
+    17
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Devam",
+   "owner": "nextButton",
+   "bbox": [
+    1096.77,
+    755.5,
+    45.23,
+    17
+   ],
+   "baseline": 768.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Albert Sans",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:radar",
+   "owner": "logo",
+   "bbox": [
+    39,
+    18.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "breadcrumb",
+   "bbox": [
+    218.84,
+    20.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-check",
+   "owner": "autosaveStatus",
+   "bbox": [
+    1021.02,
+    19.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#12B76A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "closeButton",
+   "bbox": [
+    1221,
+    18.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "step[0]",
+   "bbox": [
+    104,
+    90,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "step[1]",
+   "bbox": [
+    343.89,
+    90,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3,
+   "filled": false
+  },
+  {
+   "match": "lucide:hash",
+   "owner": "serialField",
+   "bbox": [
+    456,
+    286,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar-days",
+   "owner": "installDateField",
+   "bbox": [
+    398,
+    370,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-left",
+   "owner": "prevMonth",
+   "bbox": [
+    146,
+    425,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "nextMonth",
+   "bbox": [
+    390,
+    425,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:map-pin",
+   "owner": "locationCombo",
+   "bbox": [
+    456,
+    370,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "locationCombo",
+   "bbox": [
+    716,
+    370,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "chipRemove[0]",
+   "bbox": [
+    529.88,
+    611,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "chipRemove[1]",
+   "bbox": [
+    650.2,
+    611,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "chipRemove[2]",
+   "bbox": [
+    492.19,
+    645,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-upload",
+   "owner": "dropZone",
+   "bbox": [
+    960,
+    350,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:file-text",
+   "owner": "uploadRow",
+   "bbox": [
+    808,
+    531.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "cancelUpload",
+   "bbox": [
+    1124,
+    527,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:info",
+   "owner": "infoNote",
+   "bbox": [
+    797,
+    627,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-left",
+   "owner": "backButton",
+   "bbox": [
+    113,
+    756.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-right",
+   "owner": "nextButton",
+   "bbox": [
+    1150,
+    756.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#101828",
+    "alpha": 1.0
+   },
+   "count": 34,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E4E7EC",
+    "alpha": 1.0
+   },
+   "count": 29,
+   "where": [
+    "border",
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#D0D5DD",
+    "alpha": 1.0
+   },
+   "count": 28,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#667085",
+    "alpha": 1.0
+   },
+   "count": 25,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2F5BEA",
+    "alpha": 1.0
+   },
+   "count": 23,
+   "where": [
+    "fill",
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#344054",
+    "alpha": 1.0
+   },
+   "count": 15,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#98A2B3",
+    "alpha": 1.0
+   },
+   "count": 14,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C7D4FE",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C8CED8",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E5484D",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EEF2FF",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E3A9E",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#12B76A",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F9FAFB",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  }
+ ],
+ "data": {
+  "steps": [
+   {
+    "title": "Cihaz türü",
+    "status": "done"
+   },
+   {
+    "title": "Ağ bağlantısı",
+    "status": "done"
+   },
+   {
+    "title": "Konum ve kurulum",
+    "status": "current"
+   },
+   {
+    "title": "Erişim izinleri",
+    "status": "upcoming"
+   },
+   {
+    "title": "Özet ve onay",
+    "status": "upcoming"
+   }
+  ],
+  "form": {
+   "deviceName": "Ostim-Depo-Kamera-07",
+   "serial": "",
+   "serialPlaceholder": "Örn. TV-C4-000000",
+   "installDate": "15.10.2026",
+   "location": "Ankara · Ostim Deposu",
+   "note": "Yükleme rampasının sol üst köşesine, kuzey cephesine bakacak şekilde monte edilecek.",
+   "noteMax": 200,
+   "tags": [
+    "dış mekân",
+    "gece görüşü",
+    "PoE"
+   ]
+  },
+  "calendar": {
+   "month": "Ekim 2026",
+   "firstWeekday": "Pt",
+   "today": "2026-10-09",
+   "selected": "2026-10-15",
+   "days": [
+    {
+     "d": 28,
+     "month": -1
+    },
+    {
+     "d": 29,
+     "month": -1
+    },
+    {
+     "d": 30,
+     "month": -1
+    },
+    {
+     "d": 1,
+     "past": true
+    },
+    {
+     "d": 2,
+     "past": true
+    },
+    {
+     "d": 3,
+     "past": true
+    },
+    {
+     "d": 4,
+     "past": true
+    },
+    {
+     "d": 5,
+     "past": true
+    },
+    {
+     "d": 6,
+     "past": true
+    },
+    {
+     "d": 7,
+     "past": true
+    },
+    {
+     "d": 8,
+     "past": true
+    },
+    {
+     "d": 9,
+     "today": true
+    },
+    {
+     "d": 10
+    },
+    {
+     "d": 11
+    },
+    {
+     "d": 12
+    },
+    {
+     "d": 13
+    },
+    {
+     "d": 14
+    },
+    {
+     "d": 15,
+     "selected": true
+    },
+    {
+     "d": 16
+    },
+    {
+     "d": 17
+    },
+    {
+     "d": 18
+    },
+    {
+     "d": 19
+    },
+    {
+     "d": 20
+    },
+    {
+     "d": 21
+    },
+    {
+     "d": 22
+    },
+    {
+     "d": 23
+    },
+    {
+     "d": 24
+    },
+    {
+     "d": 25
+    },
+    {
+     "d": 26
+    },
+    {
+     "d": 27
+    },
+    {
+     "d": 28
+    },
+    {
+     "d": 29
+    },
+    {
+     "d": 30
+    },
+    {
+     "d": 31
+    },
+    {
+     "d": 1,
+     "month": 1
+    },
+    {
+     "d": 2,
+     "month": 1
+    },
+    {
+     "d": 3,
+     "month": 1
+    },
+    {
+     "d": 4,
+     "month": 1
+    },
+    {
+     "d": 5,
+     "month": 1
+    },
+    {
+     "d": 6,
+     "month": 1
+    },
+    {
+     "d": 7,
+     "month": 1
+    },
+    {
+     "d": 8,
+     "month": 1
+    }
+   ]
+  },
+  "upload": {
+   "file": "ostim-yerlesim-plani.pdf",
+   "loaded": "2,4 MB",
+   "size": "3,8 MB",
+   "progress": 0.64
+  }
+ },
+ "states": {}
+}

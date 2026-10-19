@@ -1,0 +1,74 @@
+{
+ "pass": true,
+ "mode": "production",
+ "files": 26,
+ "gates": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "warnings": [
+    "ValueSlider 'Hedef hat hızı' at (1393, 708): touch target 470×36 < 44 px"
+   ]
+  },
+  "states": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "effects": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "perf": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "cpp": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  }
+ }
+}

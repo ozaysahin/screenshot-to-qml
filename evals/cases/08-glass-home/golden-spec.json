@@ -1,0 +1,2471 @@
+{
+ "meta": {
+  "id": "08-glass-home",
+  "title": "Zor vaka — glassmorphism akıllı ev paneli",
+  "category": "hard",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 2,
+  "captureSize": [
+   2560,
+   1600
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Outfit",
+    "qtFamily": "Outfit",
+    "legacyFamily": "Outfit",
+    "files": [
+     "Outfit-Light.ttf",
+     "Outfit-Medium.ttf",
+     "Outfit-Regular.ttf",
+     "Outfit-SemiBold.ttf"
+    ],
+    "weights": [
+     300,
+     400,
+     500,
+     600
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#0B1020",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0B1020"
+   },
+   "blob-violet": {
+    "hex": "#7C3AED",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7C3AED"
+   },
+   "blob-cyan": {
+    "hex": "#06B6D4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#06B6D4"
+   },
+   "blob-pink": {
+    "hex": "#EC4899",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EC4899"
+   },
+   "glass": {
+    "hex": "#FFFFFF",
+    "alpha": 0.07,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.07)"
+   },
+   "glass-strong": {
+    "hex": "#FFFFFF",
+    "alpha": 0.13,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.13)"
+   },
+   "text": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F5F7FF"
+   },
+   "muted": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(245, 247, 255, 0.62)"
+   },
+   "dim": {
+    "hex": "#F5F7FF",
+    "alpha": 0.38,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(245, 247, 255, 0.38)"
+   },
+   "accent-from": {
+    "hex": "#A78BFA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A78BFA"
+   },
+   "accent-to": {
+    "hex": "#22D3EE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#22D3EE"
+   },
+   "warm": {
+    "hex": "#FCD34D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FCD34D"
+   },
+   "green": {
+    "hex": "#4ADE80",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4ADE80"
+   }
+  },
+  "space": {
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "7": 28.0,
+   "10": 40.0,
+   "12": 48.0
+  },
+  "radius": {
+   "md": 16.0,
+   "lg": 22.0,
+   "xl": 28.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "glass": {
+    "css": "0 24px 60px rgba(3, 6, 20, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12)"
+   },
+   "glow": {
+    "css": "0 0 32px rgba(167, 139, 250, 0.55), 0 8px 24px rgba(34, 211, 238, 0.35)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Outfit",
+    "px": 104,
+    "weight": 300,
+    "lineHeight": 100,
+    "letterSpacing": -4,
+    "count": 1,
+    "example": "21:47"
+   },
+   {
+    "family": "Outfit",
+    "px": 44,
+    "weight": 300,
+    "lineHeight": 48,
+    "letterSpacing": -1.5,
+    "count": 2,
+    "example": "60"
+   },
+   {
+    "family": "Outfit",
+    "px": 32,
+    "weight": 300,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "count": 2,
+    "example": "Kapalı"
+   },
+   {
+    "family": "Outfit",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 34,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "Gece Yarısı Treni"
+   },
+   {
+    "family": "Outfit",
+    "px": 20,
+    "weight": 500,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Perşembe, 25 Eylül"
+   },
+   {
+    "family": "Outfit",
+    "px": 20,
+    "weight": 400,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "%"
+   },
+   {
+    "family": "Outfit",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Salon ışıkları"
+   },
+   {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Film gecesi"
+   },
+   {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Uyku"
+   },
+   {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Ankara · 17° · Açık"
+   },
+   {
+    "family": "Outfit",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Evim · 4 kişi evde"
+   },
+   {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "MA"
+   },
+   {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Sıcak beyaz · 2700K"
+   },
+   {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "4 kapı kilitli"
+   },
+   {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 1.6,
+    "count": 1,
+    "example": "ŞİMDİ ÇALIYOR"
+   },
+   {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "1:42"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "header",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    48,
+    36,
+    1184,
+    100
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 28,
+    "justify": "normal",
+    "align": "flex-end"
+   }
+  },
+  {
+   "id": "clock",
+   "role": "Clock",
+   "parent": "header",
+   "bbox": [
+    48,
+    36,
+    210.98,
+    100
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "profileChip",
+   "role": "Chip",
+   "parent": "header",
+   "bbox": [
+    1043.02,
+    72,
+    188.98,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "playerCard",
+   "role": "MediaPlayer",
+   "parent": null,
+   "bbox": [
+    48,
+    168,
+    500,
+    512
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 28,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     28,
+     28,
+     28,
+     28
+    ]
+   }
+  },
+  {
+   "id": "albumArt",
+   "role": "Image",
+   "parent": "playerCard",
+   "bbox": [
+    76,
+    232,
+    132,
+    132
+   ],
+   "style": {
+    "fillImage": "conic-gradient(from 210deg, rgb(245, 158, 11), rgb(236, 72, 153), rgb(139, 92, 246), rgb(6, 182, 212), rgb(245, 158, 11))",
+    "radius": 22,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 16.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#EC4899",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {}
+  },
+  {
+   "id": "seekBar",
+   "role": "Slider",
+   "parent": "playerCard",
+   "bbox": [
+    76,
+    394,
+    444,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.14
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.43"
+  },
+  {
+   "id": "transport",
+   "role": "ToolBar",
+   "parent": "playerCard",
+   "bbox": [
+    76,
+    444,
+    444,
+    76
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "playButton",
+   "role": "Button",
+   "parent": "transport",
+   "bbox": [
+    260,
+    444,
+    76,
+    76
+   ],
+   "style": {
+    "fillImage": "linear-gradient(135deg, rgb(167, 139, 250) 0%, rgb(34, 211, 238) 100%)",
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 32.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#A78BFA",
+       "alpha": 0.55
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#22D3EE",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "76px",
+    "rows": "76px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "playing"
+   ]
+  },
+  {
+   "id": "volumeSlider",
+   "role": "Slider",
+   "parent": "playerCard",
+   "bbox": [
+    112,
+    631,
+    250.23,
+    6
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.14
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "0.6"
+  },
+  {
+   "id": "outputChip",
+   "role": "Chip",
+   "parent": "playerCard",
+   "bbox": [
+    376.23,
+    616,
+    143.77,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.13
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "roomTiles",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    572,
+    168,
+    660,
+    512
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "318px 318px",
+    "rows": "244px 244px",
+    "columnGap": 24,
+    "rowGap": 24
+   },
+   "model": {
+    "name": "rooms",
+    "count": 4,
+    "itemId": "tile"
+   }
+  },
+  {
+   "id": "tile[0]",
+   "role": "ToggleTile",
+   "parent": "roomTiles",
+   "bbox": [
+    572,
+    168,
+    318,
+    244
+   ],
+   "style": {
+    "fillImage": "linear-gradient(145deg, rgba(167, 139, 250, 0.3) 0%, rgba(34, 211, 238, 0.12) 100%)",
+    "radius": 28,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "tileSwitch[0]",
+   "role": "Switch",
+   "parent": "tile[0]",
+   "bbox": [
+    814,
+    360,
+    52,
+    30
+   ],
+   "style": {
+    "fillImage": "linear-gradient(90deg, rgb(167, 139, 250), rgb(34, 211, 238))",
+    "radius": 999
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "tile[1]",
+   "role": "ThermostatTile",
+   "parent": "roomTiles",
+   "bbox": [
+    914,
+    168,
+    318,
+    244
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 28,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "tile[2]",
+   "role": "ToggleTile",
+   "parent": "roomTiles",
+   "bbox": [
+    572,
+    436,
+    318,
+    244
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 28,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "tileSwitch[1]",
+   "role": "Switch",
+   "parent": "tile[2]",
+   "bbox": [
+    814,
+    628,
+    52,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.16
+    },
+    "radius": 999
+   },
+   "layout": {}
+  },
+  {
+   "id": "tile[3]",
+   "role": "StatusTile",
+   "parent": "roomTiles",
+   "bbox": [
+    914,
+    436,
+    318,
+    244
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 28,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "scenes",
+   "role": "SegmentedControl",
+   "parent": null,
+   "bbox": [
+    48,
+    704,
+    1184,
+    60
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "scenes",
+    "count": 4,
+    "itemId": "scene"
+   }
+  },
+  {
+   "id": "scene[0]",
+   "role": "Button",
+   "parent": "scenes",
+   "bbox": [
+    48,
+    704,
+    153.52,
+    60
+   ],
+   "style": {
+    "fillImage": "linear-gradient(135deg, rgb(167, 139, 250) 0%, rgb(34, 211, 238) 100%)",
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 32.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#A78BFA",
+       "alpha": 0.55
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#22D3EE",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     18
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "scene[1]",
+   "role": "Button",
+   "parent": "scenes",
+   "bbox": [
+    217.52,
+    704,
+    109.3,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     18
+    ]
+   }
+  },
+  {
+   "id": "scene[2]",
+   "role": "Button",
+   "parent": "scenes",
+   "bbox": [
+    342.81,
+    704,
+    119.47,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     18
+    ]
+   }
+  },
+  {
+   "id": "scene[3]",
+   "role": "Button",
+   "parent": "scenes",
+   "bbox": [
+    478.28,
+    704,
+    160.56,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     18
+    ]
+   }
+  },
+  {
+   "id": "addScene",
+   "role": "Button",
+   "parent": "scenes",
+   "bbox": [
+    654.84,
+    704,
+    60,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.07
+    },
+    "radius": 999,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 24.0,
+      "blur": 60.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#030614",
+       "alpha": 0.45
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ],
+    "backdropFilter": "blur(24px) saturate(1.6)"
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "center",
+    "align": "center"
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "21:47",
+   "owner": "clock",
+   "bbox": [
+    48,
+    20,
+    210.98,
+    131
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 104,
+    "weight": 300,
+    "lineHeight": 100,
+    "letterSpacing": -4,
+    "italic": false
+   }
+  },
+  {
+   "string": "Perşembe, 25 Eylül",
+   "owner": "header",
+   "bbox": [
+    286.98,
+    84,
+    166.34,
+    25
+   ],
+   "baseline": 104,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 20,
+    "weight": 500,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · 17° · Açık",
+   "owner": "header",
+   "bbox": [
+    312.98,
+    116,
+    119.42,
+    20
+   ],
+   "baseline": 132,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Evim · 4 kişi evde",
+   "owner": "profileChip",
+   "bbox": [
+    1063.02,
+    90.5,
+    108.98,
+    19
+   ],
+   "baseline": 105.5,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MA",
+   "owner": "profileChip",
+   "bbox": [
+    1193.03,
+    91,
+    21.92,
+    18
+   ],
+   "baseline": 105,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1033",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ŞİMDİ ÇALIYOR",
+   "owner": "playerCard",
+   "bbox": [
+    90,
+    196,
+    112.91,
+    16
+   ],
+   "baseline": 209,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.38
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 1.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Gece Yarısı Treni",
+   "owner": "playerCard",
+   "bbox": [
+    230,
+    268,
+    202.25,
+    35
+   ],
+   "baseline": 296,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 34,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "Koyu Mavi · Liman",
+   "owner": "playerCard",
+   "bbox": [
+    230,
+    307,
+    125.83,
+    20
+   ],
+   "baseline": 323,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1:42",
+   "owner": "playerCard",
+   "bbox": [
+    76,
+    410,
+    26.55,
+    16
+   ],
+   "baseline": 423,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.38
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "-2:16",
+   "owner": "playerCard",
+   "bbox": [
+    487.47,
+    410,
+    32.53,
+    16
+   ],
+   "baseline": 423,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.38
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Salon hoparlörü",
+   "owner": "outputChip",
+   "bbox": [
+    414.23,
+    626,
+    91.77,
+    16
+   ],
+   "baseline": 639,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Salon ışıkları",
+   "owner": "tile[0]",
+   "bbox": [
+    658,
+    193,
+    99.91,
+    23
+   ],
+   "baseline": 211,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sıcak beyaz · 2700K",
+   "owner": "tile[0]",
+   "bbox": [
+    658,
+    217,
+    122.08,
+    18
+   ],
+   "baseline": 231,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "60",
+   "owner": "tile[0]",
+   "bbox": [
+    596,
+    329,
+    50.78,
+    55
+   ],
+   "baseline": 373,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 44,
+    "weight": 300,
+    "lineHeight": 48,
+    "letterSpacing": -1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "%",
+   "owner": "tile[0]",
+   "bbox": [
+    648.78,
+    353,
+    13.2,
+    25
+   ],
+   "baseline": 373,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 20,
+    "weight": 400,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Klima",
+   "owner": "tile[1]",
+   "bbox": [
+    1000,
+    193,
+    46.42,
+    23
+   ],
+   "baseline": 211,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Soğutma · Oda 24,5°",
+   "owner": "tile[1]",
+   "bbox": [
+    1000,
+    217,
+    126.48,
+    18
+   ],
+   "baseline": 231,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "22",
+   "owner": "tile[1]",
+   "bbox": [
+    938,
+    329,
+    44.53,
+    55
+   ],
+   "baseline": 373,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 44,
+    "weight": 300,
+    "lineHeight": 48,
+    "letterSpacing": -1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "tile[1]",
+   "bbox": [
+    984.53,
+    353,
+    21.64,
+    25
+   ],
+   "baseline": 373,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 20,
+    "weight": 400,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Perdeler",
+   "owner": "tile[2]",
+   "bbox": [
+    658,
+    461,
+    68.63,
+    23
+   ],
+   "baseline": 479,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Salon · Yatak odası",
+   "owner": "tile[2]",
+   "bbox": [
+    658,
+    485,
+    113.44,
+    18
+   ],
+   "baseline": 499,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kapalı",
+   "owner": "tile[2]",
+   "bbox": [
+    596,
+    618,
+    86.06,
+    40
+   ],
+   "baseline": 650,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 32,
+    "weight": 300,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güvenlik",
+   "owner": "tile[3]",
+   "bbox": [
+    1000,
+    461,
+    69.22,
+    23
+   ],
+   "baseline": 479,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gece modu",
+   "owner": "tile[3]",
+   "bbox": [
+    1000,
+    485,
+    70.73,
+    18
+   ],
+   "baseline": 499,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Aktif",
+   "owner": "tile[3]",
+   "bbox": [
+    938,
+    618,
+    64.8,
+    40
+   ],
+   "baseline": 650,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 32,
+    "weight": 300,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "4 kapı kilitli",
+   "owner": "tile[3]",
+   "bbox": [
+    1140.3,
+    640,
+    67.7,
+    18
+   ],
+   "baseline": 654,
+   "lines": 1,
+   "color": {
+    "hex": "#4ADE80",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Film gecesi",
+   "owner": "scene[0]",
+   "bbox": [
+    98,
+    724,
+    79.52,
+    20
+   ],
+   "baseline": 740,
+   "lines": 1,
+   "color": {
+    "hex": "#0B1020",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Uyku",
+   "owner": "scene[1]",
+   "bbox": [
+    267.52,
+    724,
+    35.3,
+    20
+   ],
+   "baseline": 740,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sabah",
+   "owner": "scene[2]",
+   "bbox": [
+    392.81,
+    724,
+    45.47,
+    20
+   ],
+   "baseline": 740,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dışarıdayım",
+   "owner": "scene[3]",
+   "bbox": [
+    528.28,
+    724,
+    86.56,
+    20
+   ],
+   "baseline": 740,
+   "lines": 1,
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Outfit",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:moon-star",
+   "owner": "header",
+   "bbox": [
+    286.98,
+    117,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:shuffle",
+   "owner": "transport",
+   "bbox": [
+    84,
+    471,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:skip-back",
+   "owner": "transport",
+   "bbox": [
+    169,
+    468,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:pause",
+   "owner": "playButton",
+   "bbox": [
+    283,
+    467,
+    30,
+    30
+   ],
+   "color": {
+    "hex": "#0B1020",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:skip-forward",
+   "owner": "transport",
+   "bbox": [
+    399,
+    468,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:repeat",
+   "owner": "transport",
+   "bbox": [
+    490,
+    471,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#22D3EE",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:volume-2",
+   "owner": "playerCard",
+   "bbox": [
+    76,
+    623,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:speaker",
+   "owner": "outputChip",
+   "bbox": [
+    390.23,
+    626,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:lightbulb",
+   "owner": "tile[0]",
+   "bbox": [
+    609,
+    203,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#FCD34D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:snowflake",
+   "owner": "tile[1]",
+   "bbox": [
+    951,
+    203,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:minus",
+   "owner": "tile[1]",
+   "bbox": [
+    1129,
+    361,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "tile[1]",
+   "bbox": [
+    1179,
+    361,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:blinds",
+   "owner": "tile[2]",
+   "bbox": [
+    609,
+    471,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:shield-check",
+   "owner": "tile[3]",
+   "bbox": [
+    951,
+    471,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#4ADE80",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:lock",
+   "owner": "tile[3]",
+   "bbox": [
+    1116.3,
+    641,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#4ADE80",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:clapperboard",
+   "owner": "scene[0]",
+   "bbox": [
+    66,
+    724,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#0B1020",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bed-double",
+   "owner": "scene[1]",
+   "bbox": [
+    235.52,
+    724,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sunrise",
+   "owner": "scene[2]",
+   "bbox": [
+    360.81,
+    724,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:door-open",
+   "owner": "scene[3]",
+   "bbox": [
+    496.28,
+    724,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addScene",
+   "bbox": [
+    674.84,
+    724,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 1.0
+   },
+   "count": 22,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.62
+   },
+   "count": 16,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.07
+   },
+   "count": 9,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F5F7FF",
+    "alpha": 0.38
+   },
+   "count": 3,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#4ADE80",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0B1020",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.14
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.13
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.16
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E1033",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#22D3EE",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FCD34D",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "nowPlaying": {
+   "title": "Gece Yarısı Treni",
+   "artist": "Koyu Mavi",
+   "album": "Liman",
+   "position": "1:42",
+   "duration": "3:58",
+   "progress": 0.43,
+   "volume": 0.6,
+   "output": "Salon hoparlörü",
+   "repeat": true
+  },
+  "rooms": [
+   {
+    "name": "Salon ışıkları",
+    "state": "on",
+    "level": 0.6
+   },
+   {
+    "name": "Klima",
+    "state": "cooling",
+    "target": 22
+   },
+   {
+    "name": "Perdeler",
+    "state": "closed"
+   },
+   {
+    "name": "Güvenlik",
+    "state": "armed"
+   }
+  ],
+  "scenes": [
+   "Film gecesi",
+   "Uyku",
+   "Sabah",
+   "Dışarıdayım"
+  ],
+  "activeScene": 0
+ },
+ "states": {}
+}

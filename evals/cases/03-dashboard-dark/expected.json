@@ -1,0 +1,47 @@
+{
+ "id": "03-dashboard-dark",
+ "summary": "1440x900 dark edge-AI fleet dashboard captured at DPR 2 (input is 2880x1800).",
+ "input": {
+  "file": "input.png",
+  "size": [
+   2880,
+   1800
+  ],
+  "dpr": 2,
+  "designSize": [
+   1440,
+   900
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Analysis divides by DPR 2: Theme values and layout are in 1440x900 design pixels.",
+  "Sidebar navigation from a model with a selected item (accent bar + tinted background) and a red count badge.",
+  "Four KPI cards from a model, each with a sparkline (12 points) in its own color.",
+  "Latency chart: two series of 28 points (p50 filled area, p95 line), 5 y-ticks 0-60, 7 day labels.",
+  "Donut with 4 segments (62/37/24/11) and centered total '134'.",
+  "Deployments table with 4 rows; status badge is one component with 3 variants (ok/run/err).",
+  "Search field has placeholderText and a 'Ctrl K' shortcut hint.",
+  "Space Grotesk (numbers, headings) and Inter (body) are both identified and used."
+ ],
+ "niceToHave": [
+  "Segmented 24S/7G/30G switches chart data from mock models."
+ ],
+ "allowedApproximations": [
+  "Area gradients under lines may be approximated with Shape + LinearGradient."
+ ],
+ "forbidden": []
+}

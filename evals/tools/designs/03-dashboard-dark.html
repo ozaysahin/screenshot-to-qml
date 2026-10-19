@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>EdgeWatch — Genel Bakış</title>
+<script type="application/json" id="case-meta">
+{"id": "03-dashboard-dark", "title": "Koyu tema edge-AI filo panosu", "category": "dashboard", "profile": "desktop",
+ "viewport": [1440, 900], "dpr": 2, "fonts": ["Inter", "Space Grotesk"]}
+</script>
+<script type="application/json" id="case-data">
+{"latency": {"unit": "ms", "days": ["Cum", "Cmt", "Paz", "Pzt", "Sal", "Çar", "Per"], "pointsPerDay": 4,
+  "p50": [21.4, 23.0, 23.3, 24.2, 24.2, 22.3, 21.4, 22.3, 19.9, 19.0, 20.4, 19.2, 20.5, 20.4, 21.7, 21.4, 23.2, 24.0, 23.1, 23.0, 21.9, 19.4, 20.1, 19.0, 17.9, 17.3, 19.8, 19.7],
+  "p95": [41.2, 44.9, 44.7, 47.4, 44.7, 43.3, 39.8, 43.9, 39.2, 39.6, 42.4, 34.6, 40.8, 37.9, 41.3, 39.1, 43.5, 44.3, 42.5, 43.5, 41.4, 38.4, 38.6, 37.8, 35.4, 35.0, 38.0, 35.3]},
+ "sparks": [[50.9, 57.3, 65.0, 62.7, 68.3, 63.8, 56.3, 46.5, 50.2, 51.4, 57.3, 74.2],
+            [59.5, 61.5, 62.6, 50.4, 42.8, 36.4, 27.2, 30.7, 35.4, 42.8, 39.9, 45.6],
+            [60.6, 59.7, 54.6, 43.2, 38.9, 44.3, 48.1, 62.2, 69.2, 74.9, 77.7, 78.2],
+            [48.8, 48.5, 44.9, 46.7, 42.6, 50.2, 57.7, 66.1, 76.7, 69.9, 71.6, 62.5]],
+ "models": [{"name": "YOLOv8n", "devices": 62}, {"name": "RT-DETR-L", "devices": 37}, {"name": "FaceNet-TR", "devices": 24}, {"name": "Diğer", "devices": 11}]}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #0A0B10;
+  --color-sidebar: #0E1017;
+  --color-surface: #12141C;
+  --color-surface-2: #1A1D28;
+  --color-border: #232736;
+  --color-text: #ECEEF5;
+  --color-muted: #8B90A3;
+  --color-dim: #5D6275;
+  --color-violet: #7C5CFF;
+  --color-violet-soft: rgba(124, 92, 255, 0.16);
+  --color-cyan: #22D3EE;
+  --color-green: #34D399;
+  --color-green-soft: rgba(52, 211, 153, 0.14);
+  --color-red: #F87171;
+  --color-red-soft: rgba(248, 113, 113, 0.14);
+  --color-amber: #FBBF24;
+  --color-amber-soft: rgba(251, 191, 36, 0.14);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 32px;
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 14px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 20px; display: flex; }
+svg.ic { width: 18px; height: 18px; display: block; flex: none; }
+.num { font-family: 'Space Grotesk', sans-serif; }
+
+.side { width: 240px; height: 900px; background: var(--color-sidebar); border-right: 1px solid var(--color-border); padding: 20px 16px; display: flex; flex-direction: column; flex: none; }
+.logo { display: flex; align-items: center; gap: 10px; padding: 0 8px; }
+.logo .mark { width: 32px; height: 32px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-violet) 0%, var(--color-cyan) 100%); display: grid; place-items: center; color: #fff; }
+.logo b { font-family: 'Space Grotesk', sans-serif; font-size: 19px; font-weight: 600; letter-spacing: -0.3px; }
+.ws { margin-top: 20px; height: 44px; padding: 0 12px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px; }
+.ws .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-green); }
+.ws div { flex: 1; } .ws small { display: block; font-size: 11px; color: var(--color-muted); line-height: 14px; } .ws span { font-size: 13px; font-weight: 500; line-height: 16px; }
+.ws svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.group { margin-top: 24px; }
+.group h6 { font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-dim); padding: 0 12px; margin-bottom: 8px; line-height: 16px; }
+.nav { height: 38px; padding: 0 12px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 12px; color: var(--color-muted); font-weight: 500; position: relative; }
+.nav + .nav { margin-top: 2px; }
+.nav.on { background: var(--color-surface-2); color: var(--color-text); }
+.nav.on::before { content: ''; position: absolute; left: -16px; top: 9px; width: 3px; height: 20px; border-radius: 0 3px 3px 0; background: var(--color-violet); }
+.nav.on svg { color: var(--color-violet); }
+.nav .count { margin-left: auto; font-size: 12px; color: var(--color-dim); }
+.nav .alert { margin-left: auto; min-width: 20px; height: 20px; padding: 0 6px; border-radius: var(--radius-pill); background: var(--color-red); color: #0A0B10; font-size: 11px; font-weight: 700; display: grid; place-items: center; }
+.quota { margin-top: auto; padding: 14px; border-radius: var(--radius-lg); background: var(--color-surface); border: 1px solid var(--color-border); }
+.quota .t { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-muted); }
+.quota .t b { color: var(--color-text); font-weight: 600; }
+.bar { height: 6px; border-radius: var(--radius-pill); background: var(--color-surface-2); margin-top: 10px; overflow: hidden; }
+.bar i { display: block; height: 100%; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--color-violet), var(--color-cyan)); }
+.user { margin-top: 14px; display: flex; align-items: center; gap: 10px; padding: 0 4px; }
+.avatar { width: 36px; height: 36px; border-radius: 50%; background: #2A2340; color: #C4B5FD; font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+.user .who { flex: 1; } .user b { display: block; font-size: 13px; font-weight: 600; line-height: 18px; } .user span { font-size: 12px; color: var(--color-muted); line-height: 16px; }
+.user svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+
+.main { flex: 1; padding: 24px 32px 24px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
+.top { display: flex; align-items: center; gap: 12px; }
+.top h1 { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 600; line-height: 32px; letter-spacing: -0.5px; }
+.top p { font-size: 13px; color: var(--color-muted); line-height: 18px; margin-top: 2px; }
+.top .sp { flex: 1; }
+.search { width: 300px; height: 40px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); display: flex; align-items: center; gap: 10px; padding: 0 8px 0 12px; color: var(--color-dim); }
+.search .ph { flex: 1; font-size: 13px; white-space: nowrap; }
+.kbd { height: 24px; padding: 0 7px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); background: var(--color-surface-2); font-size: 11px; font-weight: 500; color: var(--color-muted); display: grid; place-items: center; }
+.btn { height: 40px; padding: 0 14px; border-radius: var(--radius-md); display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; }
+.btn.ghost { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text); }
+.btn.ghost svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.btn.primary { background: var(--color-violet); color: #fff; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset, 0 6px 20px rgba(124, 92, 255, 0.35); }
+.btn.primary svg.ic { width: 16px; height: 16px; }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.kpi { height: 132px; padding: 18px 20px; position: relative; }
+.kpi .l { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--color-muted); font-weight: 500; }
+.kpi .l i { width: 28px; height: 28px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.kpi .l i svg.ic { width: 16px; height: 16px; }
+.kpi .v { font-size: 32px; font-weight: 600; line-height: 38px; height: 38px; margin-top: 14px; letter-spacing: -0.5px; }
+.kpi .v small { font-size: 16px; color: var(--color-muted); font-weight: 500; margin-left: 4px; letter-spacing: 0; }
+.kpi .d { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--color-dim); }
+.pill { height: 22px; padding: 0 8px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.pill svg.ic { width: 12px; height: 12px; }
+.pill.g { background: var(--color-green-soft); color: var(--color-green); }
+.pill.r { background: var(--color-red-soft); color: var(--color-red); }
+.pill.a { background: var(--color-amber-soft); color: var(--color-amber); }
+.kpi svg.spark { position: absolute; right: 20px; top: 58px; }
+
+.row2 { display: grid; grid-template-columns: 1fr 420px; gap: 20px; height: 322px; }
+.ch { padding: 20px 20px 12px; display: flex; flex-direction: column; }
+.ch-head { display: flex; align-items: flex-start; gap: 16px; }
+.ch-head h3 { font-size: 15px; font-weight: 600; line-height: 20px; }
+.ch-head p { font-size: 12px; color: var(--color-muted); line-height: 16px; margin-top: 2px; }
+.seg { margin-left: auto; display: flex; padding: 3px; border-radius: var(--radius-md); background: var(--color-surface-2); border: 1px solid var(--color-border); }
+.seg div { height: 26px; padding: 0 12px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 12px; font-weight: 600; color: var(--color-muted); }
+.seg div.on { background: var(--color-border); color: var(--color-text); }
+.legend { display: flex; gap: 16px; font-size: 12px; color: var(--color-muted); margin-top: 14px; }
+.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+.donut-wrap { display: flex; align-items: center; gap: 24px; margin-top: 18px; }
+.donut { position: relative; width: 156px; height: 156px; flex: none; }
+.donut .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.donut .c b { font-size: 30px; font-weight: 600; line-height: 34px; }
+.donut .c span { font-size: 12px; color: var(--color-muted); }
+.mlist { flex: 1; display: flex; flex-direction: column; gap: 14px; }
+.mrow { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.mrow i { width: 10px; height: 10px; border-radius: 3px; }
+.mrow span { flex: 1; color: var(--color-text); white-space: nowrap; }
+.mrow b { font-weight: 600; } .mrow em { font-style: normal; color: var(--color-muted); width: 34px; text-align: right; }
+.foot-note { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--color-border); font-size: 12px; color: var(--color-muted); display: flex; align-items: center; gap: 8px; }
+.foot-note svg.ic { width: 14px; height: 14px; color: var(--color-violet); }
+
+.tbl { flex: 1; padding: 18px 20px 8px; display: flex; flex-direction: column; min-height: 0; }
+.tbl .ch-head a { margin-left: auto; font-size: 13px; font-weight: 600; color: var(--color-violet); display: flex; align-items: center; gap: 4px; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th { text-align: left; font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--color-dim); height: 32px; border-bottom: 1px solid var(--color-border); }
+td { height: 46px; border-bottom: 1px solid var(--color-border); font-size: 13px; }
+tr:last-child td { border-bottom: none; }
+td.dev { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+td.dev i { width: 28px; height: 28px; border-radius: var(--radius-md); background: var(--color-surface-2); display: grid; place-items: center; color: var(--color-muted); }
+td.dev i svg.ic { width: 15px; height: 15px; }
+td.mono { font-family: 'Space Grotesk', sans-serif; color: var(--color-muted); }
+td.muted { color: var(--color-muted); }
+.st { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; }
+.st::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.st.ok { background: var(--color-green-soft); color: var(--color-green); }
+.st.err { background: var(--color-red-soft); color: var(--color-red); }
+.st.run { background: var(--color-violet-soft); color: #A996FF; }
+.prog { display: inline-block; width: 80px; height: 4px; border-radius: 2px; background: var(--color-surface-2); vertical-align: middle; margin-left: 10px; overflow: hidden; }
+.prog i { display: block; height: 100%; width: 64%; background: var(--color-violet); }
+</style>
+</head>
+<body>
+<aside class="side" data-node="sidebar" data-role="Sidebar">
+  <div class="logo" data-node="logo"><div class="mark"><i data-icon="lucide:radar" class="ic"></i></div><b>EdgeWatch</b></div>
+  <div class="ws" data-node="workspace" data-role="ComboBox"><span class="dot"></span><div><small>Çalışma alanı</small><span>Ankara Saha · Prod</span></div><i data-icon="lucide:chevrons-up-down" class="ic"></i></div>
+  <div class="group">
+    <h6>İzleme</h6>
+    <nav data-node="navMain" data-model="nav">
+      <div class="nav on" data-node="navItem" data-role="NavItem" data-state="selected"><i data-icon="lucide:layout-dashboard" class="ic"></i>Genel Bakış</div>
+      <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:cpu" class="ic"></i>Cihazlar<span class="count">134</span></div>
+      <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:box" class="ic"></i>Modeller<span class="count">18</span></div>
+      <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:bell" class="ic"></i>Uyarılar<span class="alert">3</span></div>
+      <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:rocket" class="ic"></i>Dağıtımlar</div>
+    </nav>
+  </div>
+  <div class="group">
+    <h6>Yönetim</h6>
+    <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:users" class="ic"></i>Ekip</div>
+    <div class="nav" data-node="navItem" data-role="NavItem"><i data-icon="lucide:settings" class="ic"></i>Ayarlar</div>
+  </div>
+  <div class="quota" data-node="quota" data-role="Progress" data-value="0.67"><div class="t"><span>GPU kotası</span><b>%67</b></div><div class="bar"><i style="width:67%"></i></div></div>
+  <div class="user" data-node="userCard"><div class="avatar">SY</div><div class="who"><b>Selin Yurt</b><span>Platform yöneticisi</span></div><i data-icon="lucide:log-out" class="ic"></i></div>
+</aside>
+
+<main class="main">
+  <div class="top" data-node="topbar" data-role="Header">
+    <div><h1>Genel Bakış</h1><p>Son güncelleme 14:32 · 128 cihaz çevrimiçi</p></div>
+    <div class="sp"></div>
+    <div class="search" data-node="search" data-role="TextField" data-state="placeholder"><i data-icon="lucide:search" class="ic"></i><span class="ph">Cihaz, model veya etiket ara…</span><span class="kbd">Ctrl K</span></div>
+    <div class="btn ghost" data-node="rangeButton" data-role="Button"><i data-icon="lucide:calendar" class="ic"></i>Son 7 gün<i data-icon="lucide:chevron-down" class="ic"></i></div>
+    <div class="btn primary" data-node="deployButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Yeni Dağıtım</div>
+  </div>
+
+  <section class="kpis" data-node="kpis" data-model="kpis">
+    <div class="card kpi" data-node="kpi" data-role="StatCard">
+      <div class="l"><i style="background:var(--color-violet-soft);color:var(--color-violet)"><i data-icon="lucide:cpu" class="ic"></i></i>Aktif Cihaz</div>
+      <div class="v num">128<small>/134</small></div>
+      <div class="d"><span class="pill g"><i data-icon="lucide:arrow-up-right" class="ic"></i>+4</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp0"></svg>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="StatCard">
+      <div class="l"><i style="background:rgba(34,211,238,.14);color:var(--color-cyan)"><i data-icon="lucide:timer" class="ic"></i></i>Ort. Çıkarım Süresi</div>
+      <div class="v num">23,4<small>ms</small></div>
+      <div class="d"><span class="pill g"><i data-icon="lucide:arrow-down-right" class="ic"></i>%4,1</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp1"></svg>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="StatCard">
+      <div class="l"><i style="background:var(--color-amber-soft);color:var(--color-amber)"><i data-icon="lucide:gauge" class="ic"></i></i>GPU Kullanımı</div>
+      <div class="v num">%67</div>
+      <div class="d"><span class="pill a"><i data-icon="lucide:arrow-up-right" class="ic"></i>%8,2</span>geçen haftaya göre</div>
+      <svg class="spark" id="sp2"></svg>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="StatCard">
+      <div class="l"><i style="background:var(--color-red-soft);color:var(--color-red)"><i data-icon="lucide:triangle-alert" class="ic"></i></i>Açık Uyarı</div>
+      <div class="v num">3</div>
+      <div class="d"><span class="pill r"><i data-icon="lucide:arrow-up-right" class="ic"></i>+2</span>son 24 saatte</div>
+      <svg class="spark" id="sp3"></svg>
+    </div>
+  </section>
+
+  <section class="row2">
+    <div class="card ch" data-node="latencyCard" data-role="Panel">
+      <div class="ch-head"><div><h3>Çıkarım Gecikmesi</h3><p>Tüm filo, milisaniye</p></div>
+        <div class="seg" data-node="rangeSegment" data-role="SegmentedControl" data-value="7d">
+          <div data-node="seg24h" data-role="SegmentItem">24S</div><div class="on" data-node="seg7d" data-role="SegmentItem" data-state="selected">7G</div><div data-node="seg30d" data-role="SegmentItem">30G</div></div></div>
+      <div class="legend"><span><i style="background:var(--color-violet)"></i>p50</span><span><i style="background:var(--color-cyan)"></i>p95</span></div>
+      <svg id="lat" data-node="latencyChart" data-role="LineChart"></svg>
+    </div>
+    <div class="card ch" data-node="modelCard" data-role="Panel">
+      <div class="ch-head"><div><h3>Model Dağılımı</h3><p>Cihaz başına aktif model</p></div></div>
+      <div class="donut-wrap">
+        <div class="donut" data-node="modelDonut" data-role="DonutChart"><svg id="donut"></svg><div class="c"><b class="num">134</b><span>cihaz</span></div></div>
+        <div class="mlist" data-node="modelLegend" data-model="models">
+          <div class="mrow" data-node="modelRow"><i style="background:var(--color-violet)"></i><span>YOLOv8n</span><b>62</b><em>%46</em></div>
+          <div class="mrow" data-node="modelRow"><i style="background:var(--color-cyan)"></i><span>RT-DETR-L</span><b>37</b><em>%28</em></div>
+          <div class="mrow" data-node="modelRow"><i style="background:var(--color-amber)"></i><span>FaceNet-TR</span><b>24</b><em>%18</em></div>
+          <div class="mrow" data-node="modelRow"><i style="background:var(--color-dim)"></i><span>Diğer</span><b>11</b><em>%8</em></div>
+        </div>
+      </div>
+      <div class="foot-note"><i data-icon="lucide:sparkles" class="ic"></i>YOLOv8n-int8 geçişi 12 cihazda bekliyor</div>
+    </div>
+  </section>
+
+  <section class="card tbl" data-node="deployTable" data-role="Table">
+    <div class="ch-head"><div><h3>Son Dağıtımlar</h3></div><a>Tümü <i data-icon="lucide:chevron-right" class="ic"></i></a></div>
+    <table>
+      <thead><tr><th style="width:26%">Cihaz</th><th style="width:18%">Model</th><th style="width:12%">Sürüm</th><th style="width:22%">Durum</th><th style="width:11%">Süre</th><th>Zaman</th></tr></thead>
+      <tbody data-node="deployRows" data-model="deployments">
+        <tr data-node="deployRow" data-role="TableRow"><td class="dev"><i><i data-icon="lucide:cpu" class="ic"></i></i>jetson-orin-a12</td><td>YOLOv8n</td><td class="mono">v3.2.0</td><td><span class="st ok">Başarılı</span></td><td class="muted">42 sn</td><td class="muted">2 dk önce</td></tr>
+        <tr data-node="deployRow" data-role="TableRow"><td class="dev"><i><i data-icon="lucide:scan-face" class="ic"></i></i>rpi5-kapi-03</td><td>FaceNet-TR</td><td class="mono">v1.8.1</td><td><span class="st run">Sürüyor</span><span class="prog"><i></i></span></td><td class="muted">—</td><td class="muted">şimdi</td></tr>
+        <tr data-node="deployRow" data-role="TableRow"><td class="dev"><i><i data-icon="lucide:cpu" class="ic"></i></i>jetson-nano-b07</td><td>RT-DETR-L</td><td class="mono">v2.0.4</td><td><span class="st err">Başarısız</span></td><td class="muted">1 dk 12 sn</td><td class="muted">18 dk önce</td></tr>
+        <tr data-node="deployRow" data-role="TableRow"><td class="dev"><i><i data-icon="lucide:circuit-board" class="ic"></i></i>kv260-hat-2</td><td>YOLOv8n-int8</td><td class="mono">v3.2.0</td><td><span class="st ok">Başarılı</span></td><td class="muted">58 sn</td><td class="muted">34 dk önce</td></tr>
+      </tbody>
+    </table>
+  </section>
+</main>
+
+<!--@charts-->
+<script>
+const D = JSON.parse(document.getElementById('case-data').textContent);
+const colors = ['#7C5CFF', '#22D3EE', '#FBBF24', '#F87171'];
+D.sparks.forEach((v, i) => Charts.spark(document.getElementById('sp' + i), { width: 96, height: 36, values: v, color: colors[i], area: 0.25 }));
+const lat = document.getElementById('lat');
+const card = lat.parentElement;
+Charts.line(lat, {
+  width: card.clientWidth - 40, height: card.clientHeight - 20 - 12 - 36 - 34 - 6, padding: { l: 32, r: 16, t: 12, b: 26 },
+  xCount: 28, yMin: 0, yMax: 60, yTicks: [0, 15, 30, 45, 60], xLabels: D.latency.days,
+  grid: '#232736', gridDash: '3 4', labelColor: '#5D6275', font: 'Inter', fontSize: 11,
+  series: [
+    { values: D.latency.p95, color: '#22D3EE', width: 2, area: [0.10, 0] },
+    { values: D.latency.p50, color: '#7C5CFF', width: 2.5, area: [0.35, 0], dot: 'last' }
+  ], dotFill: '#12141C'
+});
+Charts.donut(document.getElementById('donut'), { size: 156, thickness: 18, gap: 4, round: false,
+  segments: D.models.map((m, i) => ({ value: m.devices, color: ['#7C5CFF', '#22D3EE', '#FBBF24', '#5D6275'][i] })) });
+Charts.done();
+</script>
+</body>
+</html>

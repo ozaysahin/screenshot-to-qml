@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Ritim — Bugün</title>
+
+
+<style>
+@font-face{font-family:'Nunito';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/Nunito-Bold.ttf') format('truetype');}
+@font-face{font-family:'Nunito';font-weight:800;font-style:normal;font-display:block;src:url('../../../assets/fonts/Nunito-ExtraBold.ttf') format('truetype');}
+@font-face{font-family:'Nunito';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Nunito-Regular.ttf') format('truetype');}
+@font-face{font-family:'Nunito';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Nunito-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #F7F5FF;
+  --color-surface: #FFFFFF;
+  --color-ink: #1E1B2E;
+  --color-muted: #8E8AA3;
+  --color-border: #ECE9F6;
+  --color-primary: #6D5DFC;
+  --color-pink: #FF6FAE;
+  --color-success: #22C55E;
+  --color-sky: #E0F2FE; --color-sky-ink: #0284C7;
+  --color-amber: #FEF3C7; --color-amber-ink: #D97706;
+  --color-green: #DCFCE7; --color-green-ink: #16A34A;
+  --color-violet: #EDE9FE; --color-violet-ink: #7C3AED;
+  --color-indigo: #E0E7FF; --color-indigo-ink: #4338CA;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --radius-md: 12px; --radius-lg: 16px; --radius-xl: 18px; --radius-2xl: 24px; --radius-pill: 999px;
+  --shadow-row: 0 2px 8px rgba(30, 27, 46, 0.04);
+  --shadow-hero: 0 14px 30px rgba(109, 93, 252, 0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 390px; height: 844px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Nunito', sans-serif; position: relative; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.sb { height: 47px; padding: 14px 26px 0 32px; display: flex; align-items: center; }
+.sb b { font-size: 16px; font-weight: 800; letter-spacing: -0.2px; }
+.sb .r { margin-left: auto; display: flex; gap: 5px; align-items: center; }
+.sb .r svg.ic { width: 18px; height: 18px; stroke-width: 2.2; }
+
+.hdr { padding: 12px 20px 0; display: flex; align-items: center; gap: 12px; }
+.av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFB199 0%, var(--color-pink) 100%); color: #fff; font-size: 16px; font-weight: 800; display: grid; place-items: center; }
+.hdr h1 { font-size: 21px; font-weight: 800; line-height: 26px; letter-spacing: -0.3px; }
+.hdr p { font-size: 13px; font-weight: 600; color: var(--color-muted); line-height: 18px; }
+.bellb { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: var(--color-surface); display: grid; place-items: center; position: relative; box-shadow: var(--shadow-row); }
+.bellb b { position: absolute; top: 11px; right: 12px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-pink); border: 2px solid var(--color-surface); }
+
+.week { display: flex; justify-content: space-between; padding: 0 20px; margin-top: 20px; }
+.day { width: 44px; height: 68px; border-radius: var(--radius-lg); background: var(--color-surface); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; position: relative; }
+.day span { font-size: 11px; font-weight: 700; color: var(--color-muted); line-height: 14px; }
+.day b { font-size: 17px; font-weight: 800; line-height: 22px; }
+.day i { position: absolute; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--color-success); }
+.day.today { background: var(--color-primary); color: #fff; box-shadow: 0 8px 18px rgba(109, 93, 252, 0.35); }
+.day.today span { color: rgba(255, 255, 255, 0.8); }
+.day.future b { color: var(--color-muted); }
+
+.hero { margin: 20px 20px 0; height: 136px; border-radius: var(--radius-2xl); background: linear-gradient(125deg, var(--color-primary) 0%, var(--color-pink) 100%); box-shadow: var(--shadow-hero); color: #fff; padding: 18px 20px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 180px; height: 180px; border-radius: 50%; right: -60px; top: -70px; background: rgba(255, 255, 255, 0.12); }
+.hero .t { flex: 1; position: relative; }
+.hero .t span { font-size: 13px; font-weight: 700; color: rgba(255, 255, 255, 0.85); }
+.hero .t b { display: block; font-size: 26px; font-weight: 800; line-height: 32px; margin-top: 2px; letter-spacing: -0.4px; }
+.hero .t p { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.9); line-height: 18px; }
+.streak { display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px 0 8px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); font-size: 12px; font-weight: 800; margin-top: 10px; }
+.streak svg.ic { width: 14px; height: 14px; }
+.ringbox { position: relative; width: 88px; height: 88px; flex: none; }
+.ringbox b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 19px; font-weight: 800; }
+
+.sec { display: flex; align-items: baseline; padding: 0 20px; margin-top: 24px; }
+.sec h2 { font-size: 18px; font-weight: 800; line-height: 24px; }
+.sec a { margin-left: auto; font-size: 14px; font-weight: 800; color: var(--color-primary); }
+.list { padding: 0 20px; margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.hab { height: 68px; border-radius: var(--radius-xl); background: var(--color-surface); box-shadow: var(--shadow-row); display: flex; align-items: center; gap: 12px; padding: 0 14px 0 12px; }
+.tile { width: 44px; height: 44px; border-radius: var(--radius-md); display: grid; place-items: center; flex: none; }
+.tile svg.ic { width: 22px; height: 22px; }
+.hab .tx { flex: 1; min-width: 0; }
+.hab .tx b { display: block; font-size: 15px; font-weight: 800; line-height: 20px; }
+.hab .tx span { font-size: 12px; font-weight: 600; color: var(--color-muted); line-height: 16px; }
+.mini { height: 5px; border-radius: var(--radius-pill); background: var(--color-border); margin-top: 6px; width: 140px; overflow: hidden; }
+.mini i { display: block; height: 100%; border-radius: var(--radius-pill); }
+.chk { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--color-border); flex: none; display: grid; place-items: center; }
+.chk.on { background: var(--color-success); border-color: var(--color-success); color: #fff; }
+.chk.on svg.ic { width: 16px; height: 16px; stroke-width: 3; }
+.addb { width: 30px; height: 30px; border-radius: 50%; background: var(--color-sky); color: var(--color-sky-ink); display: grid; place-items: center; flex: none; }
+.addb svg.ic { width: 16px; height: 16px; stroke-width: 2.6; }
+.pct { font-size: 13px; font-weight: 800; color: var(--color-green-ink); }
+
+.tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 88px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; padding: 8px 12px 0; box-shadow: 0 -8px 24px rgba(30, 27, 46, 0.06); }
+.tb { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--color-muted); font-size: 11px; font-weight: 700; }
+.tb svg.ic { width: 24px; height: 24px; }
+.tb.on { color: var(--color-primary); }
+.fabw { flex: 1; display: flex; justify-content: center; }
+.fab { width: 58px; height: 58px; border-radius: 50%; margin-top: -26px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-pink) 100%); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 22px rgba(109, 93, 252, 0.45); border: 4px solid var(--color-bg); }
+.fab svg.ic { width: 26px; height: 26px; stroke-width: 2.6; }
+.home-ind { position: absolute; left: 50%; bottom: 8px; width: 134px; height: 5px; margin-left: -67px; border-radius: 3px; background: var(--color-ink); }
+</style>
+</head>
+<body>
+<div class="sb"><b>9:41</b><div class="r"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-antenna-bars-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M6 18l0 -3"></path> <path d="M10 18l0 -6"></path> <path d="M14 18l0 -9"></path> <path d="M18 18l0 -12"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 18l.01 0"></path> <path d="M9.172 15.172a4 4 0 0 1 5.656 0"></path> <path d="M6.343 12.343a8 8 0 0 1 11.314 0"></path> <path d="M3.515 9.515c4.686 -4.687 12.284 -4.687 17 0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-battery-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M6 7h11a2 2 0 0 1 2 2v.5a.5 .5 0 0 0 .5 .5a.5 .5 0 0 1 .5 .5v3a.5 .5 0 0 1 -.5 .5a.5 .5 0 0 0 -.5 .5v.5a2 2 0 0 1 -2 2h-11a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2"></path> <path d="M7 10l0 4"></path> <path d="M10 10l0 4"></path> <path d="M13 10l0 4"></path></svg></div></div>
+
+<header class="hdr">
+  <div class="av">EK</div>
+  <div><h1>Günaydın, Ece</h1><p>Perşembe, 25 Eylül</p></div>
+  <div class="bellb"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path> <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg><b></b></div>
+</header>
+
+<div class="week">
+  <div class="day"><span>Pzt</span><b>22</b><i></i></div>
+  <div class="day"><span>Sal</span><b>23</b><i></i></div>
+  <div class="day"><span>Çar</span><b>24</b><i></i></div>
+  <div class="day today"><span>Per</span><b>25</b></div>
+  <div class="day future"><span>Cum</span><b>26</b></div>
+  <div class="day future"><span>Cmt</span><b>27</b></div>
+  <div class="day future"><span>Paz</span><b>28</b></div>
+</div>
+
+<section class="hero">
+  <div class="t"><span>Bugünkü ilerleme</span><b>4 / 6 hedef</b><p>Harika gidiyorsun, 2 hedef kaldı.</p>
+    <div class="streak"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-flame" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10 2c0 -.88 1.056 -1.331 1.692 -.722c1.958 1.876 3.096 5.995 1.75 9.12l-.08 .174l.012 .003c.625 .133 1.203 -.43 2.303 -2.173l.14 -.224a1 1 0 0 1 1.582 -.153c1.334 1.435 2.601 4.377 2.601 6.27c0 4.265 -3.591 7.705 -8 7.705s-8 -3.44 -8 -7.706c0 -2.252 1.022 -4.716 2.632 -6.301l.605 -.589c.241 -.236 .434 -.43 .618 -.624c1.43 -1.512 2.145 -2.924 2.145 -4.78"></path></svg>12 gün seri</div></div>
+  <div class="ringbox"><svg id="ring" viewBox="0 0 88 88" width="88" height="88"><circle cx="44" cy="44" r="39.5" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="9"></circle><path d="M44,4.5 A39.5,39.5 0 1 1 9.8,63.76" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"></path></svg><b>%67</b></div>
+</section>
+
+<div class="sec"><h2>Alışkanlıklar</h2><a>Düzenle</a></div>
+<div class="list">
+  <div class="hab"><div class="tile" style="background:var(--color-sky);color:var(--color-sky-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-droplet" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M10.708 2.372a2.382 2.382 0 0 0 -.71 .686l-4.892 7.26c-1.981 3.314 -1.22 7.466 1.767 9.882c2.969 2.402 7.286 2.402 10.254 0c2.987 -2.416 3.748 -6.569 1.795 -9.836l-4.919 -7.306c-.722 -1.075 -2.192 -1.376 -3.295 -.686z"></path></svg></div>
+    <div class="tx"><b>Su iç</b><span>6 / 8 bardak</span><div class="mini"><i style="width:75%;background:var(--color-sky-ink)"></i></div></div><div class="addb"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 5l0 14"></path> <path d="M5 12l14 0"></path></svg></div></div>
+  <div class="hab"><div class="tile" style="background:var(--color-amber);color:var(--color-amber-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-book" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M21.5 5.134a1 1 0 0 1 .493 .748l.007 .118v13a1 1 0 0 1 -1.5 .866a8 8 0 0 0 -7.5 -.266v-15.174a10 10 0 0 1 8.5 .708m-10.5 -.707l.001 15.174a8 8 0 0 0 -7.234 .117l-.327 .18l-.103 .044l-.049 .016l-.11 .026l-.061 .01l-.117 .006h-.042l-.11 -.012l-.077 -.014l-.108 -.032l-.126 -.056l-.095 -.056l-.089 -.067l-.06 -.056l-.073 -.082l-.064 -.089l-.022 -.036l-.032 -.06l-.044 -.103l-.016 -.049l-.026 -.11l-.01 -.061l-.004 -.049l-.002 -13.068a1 1 0 0 1 .5 -.866a10 10 0 0 1 8.5 -.707"></path></svg></div>
+    <div class="tx"><b>Kitap oku</b><span>20 dk · tamamlandı</span></div><div class="chk on"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M5 12l5 5l10 -10"></path></svg></div></div>
+  <div class="hab"><div class="tile" style="background:var(--color-green);color:var(--color-green-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-walk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 4a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path> <path d="M7 21l3 -4"></path> <path d="M16 21l-2 -4l-3 -3l1 -6"></path> <path d="M6 12l2 -3l4 -1l3 3l3 1"></path></svg></div>
+    <div class="tx"><b>10.000 adım</b><span>7.412 adım</span><div class="mini"><i style="width:74%;background:var(--color-green-ink)"></i></div></div><div class="pct">%74</div></div>
+  <div class="hab"><div class="tile" style="background:var(--color-violet);color:var(--color-violet-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-yoga" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M4 20h4l1.5 -3"></path> <path d="M17 20l-1 -5h-5l1 -7"></path> <path d="M4 10l4 -1l4 -1l4 1.5l4 1.5"></path> <path d="M10.007 5a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"></path></svg></div>
+    <div class="tx"><b>Meditasyon</b><span>10 dk · 19:00</span></div><div class="chk"></div></div>
+  <div class="hab"><div class="tile" style="background:var(--color-indigo);color:var(--color-indigo-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-moon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 1.992a10 10 0 1 0 9.236 13.838c.341 -.82 -.476 -1.644 -1.298 -1.31a6.5 6.5 0 0 1 -6.864 -10.787l.077 -.08c.551 -.63 .113 -1.653 -.758 -1.653h-.266l-.068 -.006l-.06 -.002z"></path></svg></div>
+    <div class="tx"><b>23:30'da uyu</b><span>Hatırlatıcı 23:00</span></div><div class="chk"></div></div>
+</div>
+
+<nav class="tabbar">
+  <div class="tb on"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler-filled tabler-filled-home" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12.707 2.293l9 9c.63 .63 .184 1.707 -.707 1.707h-1v6a3 3 0 0 1 -3 3h-1v-7a3 3 0 0 0 -2.824 -2.995l-.176 -.005h-2a3 3 0 0 0 -3 3v7h-1a3 3 0 0 1 -3 -3v-6h-1c-.89 0 -1.337 -1.077 -.707 -1.707l9 -9a1 1 0 0 1 1.414 0m.293 11.707a1 1 0 0 1 1 1v7h-4v-7a1 1 0 0 1 .883 -.993l.117 -.007z"></path></svg>Bugün</div>
+  <div class="tb"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-chart-bar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M3 13a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -6"></path> <path d="M15 9a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -10"></path> <path d="M9 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -14"></path> <path d="M4 20h14"></path></svg>İstatistik</div>
+  <div class="fabw"><div class="fab"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 5l0 14"></path> <path d="M5 12l14 0"></path></svg></div></div>
+  <div class="tb"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12"></path> <path d="M16 3v4"></path> <path d="M8 3v4"></path> <path d="M4 11h16"></path> <path d="M11 15h1"></path> <path d="M12 15v3"></path></svg>Takvim</div>
+  <div class="tb"><svg xmlns="http://www.w3.org/2000/svg" class="ic tabler tabler-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path></svg>Profil</div>
+  <div class="home-ind"></div>
+</nav>
+
+
+
+
+
+</body></html>

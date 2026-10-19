@@ -1,0 +1,38 @@
+[
+ {
+  "case": "05-settings-form",
+  "status": "fail",
+  "globalSSIM": 0.9901,
+  "regionSSIMMin": 0.9291,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.97,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 3.3,
+  "textOnTargetRate": 0.9057,
+  "gates": "pass"
+ },
+ {
+  "case": "12-ev-charger",
+  "status": "fail",
+  "globalSSIM": 0.9897,
+  "regionSSIMMin": 0.903,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 3.98,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 3.35,
+  "textOnTargetRate": 0.8511,
+  "gates": "pass"
+ },
+ {
+  "case": "18-html-tailwind-billing",
+  "status": "fail",
+  "globalSSIM": 0.9872,
+  "regionSSIMMin": 0.898,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.25,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.69,
+  "textOnTargetRate": 1.0,
+  "gates": "pass"
+ }
+]

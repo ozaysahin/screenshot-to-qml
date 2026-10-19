@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Tasarım Ekibi — Sohbet</title>
+<script type="application/json" id="case-meta">
+{"id": "16-mobile-chat", "title": "Android ekip sohbeti — balonlar, sesli mesaj, yazıyor göstergesi (2x DPR)", "category": "mobile", "profile": "desktop",
+ "viewport": [360, 800], "dpr": 2, "fonts": ["Be Vietnam Pro"]}
+</script>
+<script type="application/json" id="case-data">
+{"chat": {"title": "Tasarım Ekibi", "subtitle": "8 üye · 3 çevrimiçi", "memberStack": ["SY", "BÖ", "AK"], "moreMembers": 3,
+          "pinned": "Sprint demosu Cuma 14:00'te, Oda 2"},
+ "members": {"Selin Yıldız": {"initials": "SY", "color": "#D6336C"}, "Burak Öztürk": {"initials": "BÖ", "color": "#1C7ED6"}, "Ayşe Kaya": {"initials": "AK", "color": "#E8590C"}},
+ "messages": [
+  {"type": "date", "text": "Bugün"},
+  {"from": "Selin Yıldız", "text": "Günaydın! Onboarding ekranlarının son hâli dosyada.", "time": "09:12", "groupPos": "first"},
+  {"from": "Selin Yıldız", "text": "Özellikle 3. adımdaki izin metnine bakabilir misiniz?", "time": "09:12", "groupPos": "last"},
+  {"from": "Burak Öztürk", "text": "Metin biraz uzun olmuş, bence iki satıra indirelim.", "time": "09:18", "groupPos": "single"},
+  {"from": "me", "text": "Kısalttım, butonu da “Devam et” olarak güncelledim.", "time": "09:24", "read": true, "replyTo": {"from": "Selin Yıldız", "text": "Özellikle 3. adımdaki izin metnine…"}, "groupPos": "first"},
+  {"from": "me", "text": "Prototipi de güncellerim.", "time": "09:25", "read": true, "reactions": [{"icon": "heart", "count": 2}], "groupPos": "last"},
+  {"from": "Ayşe Kaya", "type": "voice", "duration": "0:42", "played": 9, "time": "09:31", "groupPos": "single"}],
+ "waveform": [6, 10, 15, 9, 18, 22, 14, 11, 20, 24, 17, 10, 7, 13, 19, 16, 11, 18, 22, 14, 9, 7, 12, 16, 10, 8, 6, 4],
+ "typing": "Burak",
+ "composer": {"placeholder": "Mesaj yazın…"}}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #FFFFFF;
+  --color-appbar: #FFFFFF;
+  --color-ink: #16181D;
+  --color-text-2: #3C414B;
+  --color-muted: #737985;
+  --color-border: #E8EAEE;
+  --color-chip: #EEF0F3;
+  --color-incoming: #EFF1F4;
+  --color-primary: #0D7F72;
+  --color-primary-soft: #E2F3F0;
+  --color-on-primary: #FFFFFF;
+  --color-on-primary-2: #BFE6DF;
+  --color-read: #8FF0DE;
+  --color-wave: #B9BEC8;
+  --color-heart: #F03E5A;
+  --color-online: #2FB344;
+  --color-selin: #D6336C;
+  --color-burak: #1C7ED6;
+  --color-ayse: #E8590C;
+  --color-extra: #868E96;
+  --color-quote: #FFC4D6;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --radius-bubble: 18px; --radius-tail: 4px; --radius-quote: 8px; --radius-field: 22px; --radius-pill: 999px;
+  --shadow-chip: 0 1px 3px rgba(22, 24, 29, 0.14);
+  --shadow-appbar: 0 1px 0 rgba(22, 24, 29, 0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 360px; height: 800px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Be Vietnam Pro', sans-serif; display: flex; flex-direction: column; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.sb { height: 28px; flex: none; padding: 0 16px 0 18px; display: flex; align-items: center; font-size: 13px; font-weight: 500; color: var(--color-ink); }
+.sb .r { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.sb .r svg.ic { width: 16px; height: 16px; stroke-width: 2.2; }
+
+.appbar { height: 60px; flex: none; display: flex; align-items: center; padding: 0 4px; background: var(--color-appbar); }
+.ib { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--color-text-2); flex: none; }
+.ib svg.ic { width: 22px; height: 22px; }
+.stack { display: flex; margin-left: 4px; flex: none; }
+.stack > div { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--color-appbar); color: #fff; font-size: 10px; font-weight: 600; display: grid; place-items: center; margin-left: -8px; letter-spacing: 0.2px; }
+.stack > div:first-child { margin-left: 0; }
+.stack .more { background: var(--color-chip); color: var(--color-text-2); font-size: 10px; font-weight: 600; }
+.ttl { margin-left: 8px; flex: 1; min-width: 0; }
+.ttl b { display: block; white-space: nowrap; font-size: 16px; font-weight: 600; line-height: 21px; letter-spacing: -0.1px; }
+.ttl span { display: block; font-size: 12px; font-weight: 400; line-height: 16px; color: var(--color-muted); }
+
+.pinned { height: 46px; flex: none; display: flex; align-items: center; gap: 10px; padding: 0 12px 0 16px; background: var(--color-bg); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); }
+.pinned .bar { width: 3px; height: 30px; border-radius: 2px; background: var(--color-primary); flex: none; }
+.pinned .t { flex: 1; min-width: 0; }
+.pinned .t span { display: block; font-size: 10px; font-weight: 600; line-height: 13px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--color-primary); }
+.pinned .t b { display: block; font-size: 13px; font-weight: 400; line-height: 18px; color: var(--color-text-2); white-space: nowrap; }
+.pinned svg.ic { width: 18px; height: 18px; color: var(--color-muted); }
+
+.msgs { flex: 1; min-height: 0; padding: 12px 12px 0; display: flex; flex-direction: column; }
+.thread { display: flex; flex-direction: column; }
+.datechip { align-self: center; height: 24px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--color-chip); font-size: 12px; font-weight: 500; line-height: 24px; color: var(--color-muted); }
+
+.row { display: flex; align-items: flex-end; gap: 6px; }
+.row.in { padding-right: 44px; }
+.row.out { justify-content: flex-end; padding-left: 64px; }
+.gap-s { margin-top: 2px; } .gap-l { margin-top: 12px; }
+.mav { width: 28px; height: 28px; border-radius: 50%; color: #fff; font-size: 10px; font-weight: 600; display: grid; place-items: center; flex: none; letter-spacing: 0.2px; }
+.spacer { width: 28px; flex: none; }
+
+.bub { position: relative; padding: 7px 12px 7px; font-size: 14px; line-height: 20px; max-width: 100%; }
+.bub.in { background: var(--color-incoming); color: var(--color-ink); border-radius: var(--radius-bubble) var(--radius-bubble) var(--radius-bubble) var(--radius-tail); }
+.bub.in.cont { border-radius: var(--radius-tail) var(--radius-bubble) var(--radius-bubble) var(--radius-tail); }
+.bub.out { background: var(--color-primary); color: var(--color-on-primary); border-radius: var(--radius-bubble) var(--radius-bubble) var(--radius-tail) var(--radius-bubble); }
+.bub.out.cont { border-radius: var(--radius-bubble) var(--radius-tail) var(--radius-tail) var(--radius-bubble); }
+.bub .from { display: block; font-size: 12px; font-weight: 600; line-height: 16px; margin-bottom: 1px; }
+.meta { float: right; display: inline-flex; align-items: center; gap: 3px; margin: 6px -2px -3px 10px; font-size: 11px; line-height: 14px; font-weight: 400; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.bub.out .meta { color: var(--color-on-primary-2); }
+.meta svg.ic { width: 15px; height: 15px; stroke-width: 2.2; color: var(--color-read); }
+
+.quote { display: block; margin: 1px -4px 6px; padding: 5px 10px 6px 10px; border-radius: var(--radius-quote); background: rgba(255, 255, 255, 0.14); border-left: 3px solid var(--color-quote); }
+.quote b { display: block; font-size: 12px; font-weight: 600; line-height: 16px; color: var(--color-quote); }
+.quote span { display: block; font-size: 13px; font-weight: 400; line-height: 18px; color: rgba(255, 255, 255, 0.86); white-space: nowrap; }
+
+.react { position: absolute; left: 10px; bottom: -15px; height: 22px; padding: 0 8px 0 6px; border-radius: var(--radius-pill); background: var(--color-bg); border: 1px solid var(--color-border); box-shadow: var(--shadow-chip); display: flex; align-items: center; gap: 3px; font-size: 12px; font-weight: 600; color: var(--color-text-2); }
+.react svg.ic { width: 13px; height: 13px; color: var(--color-heart); }
+
+.voice { display: flex; align-items: center; gap: 10px; margin-top: 3px; }
+.play { width: 36px; height: 36px; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; flex: none; }
+.play svg.ic { width: 16px; height: 16px; margin-left: 2px; }
+.wv { display: flex; flex-direction: column; }
+.wave { height: 24px; display: flex; align-items: center; gap: 2px; }
+.wave i { width: 3px; border-radius: 2px; background: var(--color-wave); display: block; }
+.wave i.p { background: var(--color-primary); }
+.wv .foot { display: flex; align-items: center; margin-top: 2px; font-size: 11px; line-height: 14px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.wv .foot .meta { float: none; margin: 0 0 0 auto; }
+
+.typing { display: flex; align-items: center; gap: 4px; height: 34px; padding: 0 14px; background: var(--color-incoming); border-radius: var(--radius-bubble) var(--radius-bubble) var(--radius-bubble) var(--radius-tail); }
+.typing i { display: block; width: 7px; height: 7px; border-radius: 50%; background: #9AA0AB; }
+.typing i:nth-child(2) { background: #B4B9C2; } .typing i:nth-child(3) { background: #CDD1D8; }
+.typing-l { font-size: 12px; line-height: 16px; color: var(--color-muted); margin-left: 4px; align-self: center; }
+
+.composer { flex: none; display: flex; align-items: center; gap: 6px; padding: 8px 8px 8px 6px; background: var(--color-bg); }
+.field { flex: 1; height: 44px; border-radius: var(--radius-field); background: var(--color-chip); display: flex; align-items: center; padding: 0 12px 0 16px; gap: 12px; font-size: 14px; color: var(--color-muted); }
+.field span { flex: 1; }
+.field svg.ic { width: 20px; height: 20px; color: var(--color-muted); }
+.mic { width: 44px; height: 44px; border-radius: 50%; background: var(--color-primary); color: #fff; display: grid; place-items: center; flex: none; }
+.mic svg.ic { width: 20px; height: 20px; }
+.gesture { height: 16px; flex: none; display: grid; place-items: center; }
+.gesture i { display: block; width: 108px; height: 4px; border-radius: 2px; background: #1F2126; margin-top: -4px; }
+</style>
+</head>
+<body>
+<div class="sb" data-node="statusBar" data-role="StatusBar">14:32<div class="r"><i data-icon="tabler:wifi" class="ic"></i><i data-icon="tabler:antenna-bars-5" class="ic"></i><i data-icon="tabler-filled:battery-4" class="ic"></i></div></div>
+
+<header class="appbar" data-node="appBar" data-role="Header">
+  <div class="ib" data-node="backButton" data-role="IconButton"><i data-icon="lucide:arrow-left" class="ic"></i></div>
+  <div class="stack" data-node="avatarStack" data-model="memberStack">
+    <div data-node="stackAvatar" data-role="Avatar" style="background:var(--color-selin)">SY</div>
+    <div data-node="stackAvatar" data-role="Avatar" style="background:var(--color-burak)">BÖ</div>
+    <div data-node="stackAvatar" data-role="Avatar" style="background:var(--color-ayse)">AK</div>
+    <div class="more" data-node="stackMore" data-role="Badge">+3</div>
+  </div>
+  <div class="ttl"><b>Tasarım Ekibi</b><span>8 üye · 3 çevrimiçi</span></div>
+  <div class="ib" data-node="callButton" data-role="IconButton"><i data-icon="lucide:phone" class="ic"></i></div>
+  <div class="ib" data-node="moreButton" data-role="IconButton"><i data-icon="lucide:ellipsis-vertical" class="ic"></i></div>
+</header>
+
+<div class="pinned" data-node="pinnedBar" data-role="Panel">
+  <div class="bar"></div>
+  <div class="t"><span>Sabitlenmiş mesaj</span><b>Sprint demosu Cuma 14:00'te, Oda 2</b></div>
+  <i data-icon="lucide:pin" class="ic"></i>
+</div>
+
+<main class="msgs" data-node="messageList" data-role="ListView">
+  <div class="datechip" data-node="dateSeparator" data-role="Chip">Bugün</div>
+  <div class="thread" data-node="thread" data-model="messages">
+
+  <div class="row in gap-l" data-node="messageRow" data-role="ListItem">
+    <div class="spacer"></div>
+    <div class="bub in" data-node="bubbleIn" data-role="Bubble"><span class="from" style="color:var(--color-selin)">Selin Yıldız</span>Günaydın! Onboarding ekranlarının son hâli dosyada.<span class="meta">09:12</span></div>
+  </div>
+  <div class="row in gap-s" data-node="messageRow" data-role="ListItem">
+    <div class="mav" data-node="messageAvatar" data-role="Avatar" style="background:var(--color-selin)">SY</div>
+    <div class="bub in cont" data-node="bubbleIn" data-role="Bubble">Özellikle 3. adımdaki izin metnine bakabilir misiniz?<span class="meta">09:12</span></div>
+  </div>
+
+  <div class="row in gap-l" data-node="messageRow" data-role="ListItem">
+    <div class="mav" data-node="messageAvatar" data-role="Avatar" style="background:var(--color-burak)">BÖ</div>
+    <div class="bub in" data-node="bubbleIn" data-role="Bubble"><span class="from" style="color:var(--color-burak)">Burak Öztürk</span>Metin biraz uzun olmuş, bence iki satıra indirelim.<span class="meta">09:18</span></div>
+  </div>
+
+  <div class="row out gap-l" data-node="messageRow" data-role="ListItem">
+    <div class="bub out" data-node="bubbleOut" data-role="Bubble">
+      <span class="quote" data-node="replyQuote" data-role="Panel"><b>Selin Yıldız</b><span>Özellikle 3. adımdaki izin metnine…</span></span>Kısalttım, butonu da “Devam et” olarak güncelledim.<span class="meta">09:24<i data-icon="lucide:check-check" class="ic"></i></span></div>
+  </div>
+  <div class="row out gap-s" data-node="messageRow" data-role="ListItem">
+    <div class="bub out cont" data-node="bubbleOut" data-role="Bubble">Prototipi de güncellerim.<span class="meta">09:25<i data-icon="lucide:check-check" class="ic"></i></span>
+      <div class="react" data-node="reactionChip" data-role="Chip"><i data-icon="tabler-filled:heart" class="ic"></i>2</div></div>
+  </div>
+
+  <div class="row in" style="margin-top:22px" data-node="messageRow" data-role="ListItem">
+    <div class="mav" data-node="messageAvatar" data-role="Avatar" style="background:var(--color-ayse)">AK</div>
+    <div class="bub in" data-node="voiceBubble" data-role="Bubble"><span class="from" style="color:var(--color-ayse)">Ayşe Kaya</span>
+      <div class="voice">
+        <div class="play" data-node="playButton" data-role="IconButton"><i data-icon="tabler-filled:player-play" class="ic"></i></div>
+        <div class="wv">
+          <div class="wave" data-node="waveform" data-role="Waveform" data-model="waveform" data-value="0.32">
+            <i class="p" data-node="waveBar" style="height:6px"></i><i class="p" data-node="waveBar" style="height:10px"></i><i class="p" data-node="waveBar" style="height:15px"></i><i class="p" data-node="waveBar" style="height:9px"></i><i class="p" data-node="waveBar" style="height:18px"></i><i class="p" data-node="waveBar" style="height:22px"></i><i class="p" data-node="waveBar" style="height:14px"></i><i class="p" data-node="waveBar" style="height:11px"></i><i class="p" data-node="waveBar" style="height:20px"></i><i data-node="waveBar" style="height:24px"></i><i data-node="waveBar" style="height:17px"></i><i data-node="waveBar" style="height:10px"></i><i data-node="waveBar" style="height:7px"></i><i data-node="waveBar" style="height:13px"></i><i data-node="waveBar" style="height:19px"></i><i data-node="waveBar" style="height:16px"></i><i data-node="waveBar" style="height:11px"></i><i data-node="waveBar" style="height:18px"></i><i data-node="waveBar" style="height:22px"></i><i data-node="waveBar" style="height:14px"></i><i data-node="waveBar" style="height:9px"></i><i data-node="waveBar" style="height:7px"></i><i data-node="waveBar" style="height:12px"></i><i data-node="waveBar" style="height:16px"></i><i data-node="waveBar" style="height:10px"></i><i data-node="waveBar" style="height:8px"></i><i data-node="waveBar" style="height:6px"></i><i data-node="waveBar" style="height:4px"></i>
+          </div>
+          <div class="foot"><span>0:42</span><span class="meta">09:31</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <div class="row in gap-l" data-node="typingRow" data-role="ListItem">
+    <div class="mav" data-node="messageAvatar" data-role="Avatar" style="background:var(--color-burak)">BÖ</div>
+    <div class="typing" data-node="typingIndicator" data-role="Bubble"><i></i><i></i><i></i></div>
+    <span class="typing-l">Burak yazıyor…</span>
+  </div>
+</main>
+
+<footer class="composer" data-node="composer" data-role="Footer">
+  <div class="ib" data-node="attachButton" data-role="IconButton"><i data-icon="lucide:paperclip" class="ic"></i></div>
+  <div class="field" data-node="messageField" data-role="TextField" data-state="placeholder"><span>Mesaj yazın…</span><i data-icon="lucide:smile" class="ic"></i><i data-icon="lucide:camera" class="ic"></i></div>
+  <div class="mic" data-node="micButton" data-role="Button"><i data-icon="lucide:mic" class="ic"></i></div>
+</footer>
+<div class="gesture" data-node="gestureBar"><i></i></div>
+</body>
+</html>

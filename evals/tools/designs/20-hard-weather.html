@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>rüzgârgülü · İzmir</title>
+<script type="application/json" id="case-meta">
+{"id": "20-hard-weather", "title": "Zor vaka — editoryal hava durumu paneli (İzmir)", "category": "hard", "profile": "desktop",
+ "viewport": [1280, 800], "dpr": 2, "fonts": ["Bricolage Grotesque"],
+ "hardFeatures": ["gradient text (background-clip: text)", "dashed SVG sun-path arc", "vertical rotated label (writing-mode)", "range bars on a shared scale with a scale-mapped gradient", "conic-gradient ring with mask", "rotated compass arrow (225deg)", "mesh background of radial gradients", "wide letter-spacing uppercase label", "font not in the skill catalog"]}
+</script>
+<script type="application/json" id="case-data">
+{"location": {"city": "İzmir", "district": "Konak"}, "date": "30 Eylül 2026, Çarşamba", "updated": "14:20",
+ "now": {"temp": 24, "feels": 25, "high": 27, "low": 18, "condition": "Parçalı bulutlu", "humidity": 58, "pressure": 1014, "uv": 5, "visibility": 16},
+ "sun": {"rise": "07:14", "set": "19:04", "now": "14:20", "progress": 0.6, "daylight": "11 sa 50 dk"},
+ "hourly": [{"t": "Şimdi", "icon": "cloud-sun", "temp": 24}, {"t": "15:00", "icon": "cloud-sun", "temp": 25}, {"t": "16:00", "icon": "sun", "temp": 25},
+            {"t": "17:00", "icon": "sun", "temp": 24}, {"t": "18:00", "icon": "sun", "temp": 22}, {"t": "19:00", "icon": "sunset", "temp": 21},
+            {"t": "20:00", "icon": "moon", "temp": 20}, {"t": "21:00", "icon": "cloud-moon", "temp": 19}],
+ "weekly": {"scaleMin": 16, "scaleMax": 28, "trackPx": 120, "gradient": [["#4F9DF5", 0], ["#56C7C0", 0.3], ["#FFC94D", 0.58], ["#FF6A3D", 1]],
+  "days": [{"day": "Bugün", "date": "30 Eyl", "icon": "cloud-sun", "min": 18, "max": 27, "pop": 10, "now": 24},
+           {"day": "Perşembe", "date": "1 Eki", "icon": "sun", "min": 19, "max": 28, "pop": 0},
+           {"day": "Cuma", "date": "2 Eki", "icon": "sun", "min": 19, "max": 27, "pop": 0},
+           {"day": "Cumartesi", "date": "3 Eki", "icon": "cloud-sun", "min": 18, "max": 25, "pop": 20},
+           {"day": "Pazar", "date": "4 Eki", "icon": "cloud-rain", "min": 17, "max": 22, "pop": 70},
+           {"day": "Pazartesi", "date": "5 Eki", "icon": "cloud-drizzle", "min": 16, "max": 21, "pop": 40},
+           {"day": "Salı", "date": "6 Eki", "icon": "cloud-sun", "min": 17, "max": 24, "pop": 10}]},
+ "aqi": {"value": 42, "scaleMax": 300, "label": "İyi", "pm25": 9, "pm10": 21},
+ "wind": {"deg": 225, "name": "Lodos", "dir": "Güneybatı", "speed": 14, "gust": 26, "unit": "km/sa"}}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #F5F0E8;
+  --color-mesh-peach: #FFD0AE;
+  --color-mesh-sky: #C6DAFF;
+  --color-mesh-butter: #FFE7A3;
+  --color-ink: #1B1A22;
+  --color-ink-2: #46434F;
+  --color-muted: #7B7784;
+  --color-faint: #A7A2AE;
+  --color-line: rgba(27, 26, 34, 0.10);
+  --color-track: rgba(27, 26, 34, 0.08);
+  --color-card: rgba(255, 255, 255, 0.58);
+  --color-card-border: rgba(255, 255, 255, 0.92);
+  --color-temp-from: #FF8A3D;
+  --color-temp-mid: #F2477A;
+  --color-temp-to: #7B5CFF;
+  --color-sun: #FFB21E;
+  --color-sun-deep: #FF7A45;
+  --color-cold: #4F9DF5;
+  --color-cool: #56C7C0;
+  --color-mild: #FFC94D;
+  --color-hot: #FF6A3D;
+  --color-rain: #3F7FE0;
+  --color-night: #6A5FC1;
+  --color-good: #2FB57C;
+  --color-on-ink: #FFFFFF;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --radius-sm: 10px; --radius-md: 16px; --radius-lg: 24px; --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(27, 26, 34, 0.04), 0 14px 36px rgba(27, 26, 34, 0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 800px; overflow: hidden; }
+body {
+  font-family: 'Bricolage Grotesque', sans-serif; color: var(--color-ink); font-size: 15px; line-height: 20px;
+  background:
+    radial-gradient(760px 620px at 6% -6%, var(--color-mesh-peach) 0%, rgba(255, 208, 174, 0) 70%),
+    radial-gradient(720px 640px at 104% 18%, var(--color-mesh-sky) 0%, rgba(198, 218, 255, 0) 70%),
+    radial-gradient(820px 520px at 46% 112%, var(--color-mesh-butter) 0%, rgba(255, 231, 163, 0) 70%),
+    var(--color-bg);
+}
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+.tnum { font-variant-numeric: tabular-nums; }
+.card { background: var(--color-card); border: 1px solid var(--color-card-border); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+
+/* header */
+.header { height: 48px; margin: 28px 48px 0; display: flex; align-items: center; gap: var(--space-5); }
+.brand { display: flex; align-items: center; gap: 10px; font-size: 21px; font-weight: 700; letter-spacing: -0.4px; }
+.brand .mark { width: 28px; height: 28px; border-radius: 50%; background: conic-gradient(from 0deg, var(--color-sun), var(--color-hot), var(--color-temp-mid), var(--color-cold), var(--color-sun)); position: relative; }
+.brand .mark::after { content: ''; position: absolute; left: 9px; top: 9px; width: 10px; height: 10px; border-radius: 50%; background: var(--color-bg); }
+.loc { height: 40px; padding: 0 14px 0 12px; border-radius: var(--radius-pill); background: var(--color-card); border: 1px solid var(--color-card-border); display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; margin-left: 12px; }
+.loc svg.ic { width: 18px; height: 18px; color: var(--color-hot); }
+.loc span { color: var(--color-muted); font-weight: 500; }
+.loc .chev { color: var(--color-muted); width: 16px; height: 16px; }
+.hdr-right { margin-left: auto; display: flex; align-items: center; gap: var(--space-4); }
+.date { font-size: 15px; color: var(--color-ink-2); font-weight: 500; }
+.units { display: flex; padding: 3px; border-radius: var(--radius-pill); background: var(--color-card); border: 1px solid var(--color-card-border); }
+.units div { width: 44px; height: 32px; border-radius: var(--radius-pill); display: grid; place-items: center; font-size: 15px; font-weight: 600; color: var(--color-muted); }
+.units div.on { background: var(--color-ink); color: var(--color-on-ink); }
+.iconbtn { width: 40px; height: 40px; border-radius: 50%; background: var(--color-card); border: 1px solid var(--color-card-border); display: grid; place-items: center; color: var(--color-ink-2); }
+.iconbtn svg.ic { width: 18px; height: 18px; }
+
+/* layout */
+.main { position: absolute; left: 48px; top: 104px; width: 1184px; height: 656px; display: flex; gap: var(--space-6); }
+.left { width: 736px; flex: none; display: flex; flex-direction: column; }
+
+/* hero */
+.hero { height: 262px; display: flex; gap: var(--space-6); }
+.now { flex: 1; min-width: 0; }
+.kicker { font-size: 12px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--color-muted); line-height: 16px; display: flex; align-items: center; gap: 10px; }
+.kicker i { width: 8px; height: 8px; border-radius: 50%; background: var(--color-hot); }
+.temp { font-size: 212px; font-weight: 800; line-height: 164px; letter-spacing: -6px; margin: 6px 0 0 -8px;
+  background: linear-gradient(150deg, var(--color-temp-from) 8%, var(--color-temp-mid) 52%, var(--color-temp-to) 96%);
+  -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block; padding-right: 12px; }
+.cond { display: flex; align-items: center; gap: 10px; margin-top: 10px; font-size: 30px; font-weight: 600; line-height: 36px; letter-spacing: -0.6px; }
+.cond svg.ic { width: 32px; height: 32px; color: var(--color-sun-deep); }
+.facts { display: flex; gap: 18px; margin-top: 8px; font-size: 16px; color: var(--color-muted); line-height: 22px; }
+.facts b { color: var(--color-ink); font-weight: 600; }
+
+.sunpath { width: 320px; flex: none; padding: 18px 20px 16px; display: flex; flex-direction: column; }
+.ctitle { display: flex; align-items: baseline; justify-content: space-between; }
+.ctitle h3 { font-size: 16px; font-weight: 700; line-height: 20px; letter-spacing: -0.2px; }
+.ctitle span { font-size: 13px; color: var(--color-muted); font-weight: 500; }
+.arcwrap { position: relative; margin-top: 12px; height: 140px; }
+.arcwrap svg { position: absolute; left: 0; top: 0; display: block; }
+.suntimes { display: flex; justify-content: space-between; margin-top: 8px; }
+.suntimes div { display: flex; flex-direction: column; }
+.suntimes div:last-child { align-items: flex-end; }
+.suntimes b { font-size: 20px; font-weight: 700; line-height: 24px; letter-spacing: -0.3px; }
+.suntimes span { font-size: 12px; color: var(--color-muted); line-height: 16px; display: flex; align-items: center; gap: 4px; }
+.suntimes span svg.ic { width: 14px; height: 14px; color: var(--color-sun-deep); }
+.remain { position: absolute; left: 0; right: 0; top: 104px; text-align: center; font-size: 12px; color: var(--color-ink-2); font-weight: 600; line-height: 16px; }
+
+/* hourly */
+.hourly { margin-top: 18px; height: 164px; padding: 16px 20px 18px; display: flex; flex-direction: column; }
+.hours { display: flex; margin-top: 12px; gap: 6px; }
+.hour { flex: 1; height: 100px; border-radius: var(--radius-md); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+.hour .t { font-size: 14px; font-weight: 500; color: var(--color-muted); line-height: 18px; }
+.hour svg.ic { width: 28px; height: 28px; }
+.hour .v { font-size: 21px; font-weight: 600; line-height: 24px; letter-spacing: -0.3px; }
+.hour.on { background: var(--color-ink); color: var(--color-on-ink); }
+.hour.on .t { color: var(--color-faint); font-weight: 600; }
+.i-sun { color: #F29A0E; } .i-cloudsun { color: #E7872A; } .i-sunset { color: var(--color-sun-deep); } .i-moon { color: var(--color-night); } .i-rain { color: var(--color-rain); }
+.hour.on .i-cloudsun { color: var(--color-sun); }
+
+/* bottom cards */
+.bottom { margin-top: 18px; flex: 1; min-height: 0; display: flex; gap: var(--space-4); }
+.small { padding: 16px 18px 18px; display: flex; flex-direction: column; }
+.aqi, .wind { width: 262px; flex: none; }
+.details { flex: 1; }
+.pair { display: flex; align-items: center; gap: 16px; margin-top: 12px; }
+.ring { position: relative; width: 108px; height: 108px; flex: none; }
+.ring .arc { position: absolute; inset: 0; border-radius: 50%;
+  background: conic-gradient(from 225deg, #34C38F 0deg, #A8D55B 48deg, #F4C542 92deg, #F5903D 140deg, #E8505B 190deg, #9B5DE5 270deg, transparent 270deg 360deg);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 10px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 11px), #000 calc(100% - 10px)); }
+.ring .knob { position: absolute; left: 0; top: 0; width: 108px; height: 108px; transform: rotate(262.8deg); }
+.ring .knob i { position: absolute; left: 47px; top: -2px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF; border: 3px solid var(--color-ink); }
+.ring .val { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ring .val b { font-size: 32px; font-weight: 700; line-height: 34px; letter-spacing: -1px; }
+.ring .val span { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: var(--color-muted); line-height: 14px; }
+.side-txt .big { font-size: 22px; font-weight: 700; line-height: 26px; color: var(--color-good); letter-spacing: -0.3px; }
+.side-txt .row { margin-top: 8px; display: flex; flex-direction: column; }
+.side-txt .row span { font-size: 12px; color: var(--color-muted); line-height: 15px; }
+.side-txt .row b { font-size: 15px; font-weight: 600; line-height: 19px; }
+.side-txt .speed { font-size: 34px; font-weight: 700; line-height: 34px; letter-spacing: -1px; }
+.side-txt .speed small { font-size: 14px; font-weight: 600; color: var(--color-muted); letter-spacing: 0; margin-left: 3px; }
+
+.compass { position: relative; width: 108px; height: 108px; flex: none; }
+.compass svg.dial { position: absolute; left: 0; top: 0; display: block; }
+.compass .lbl { position: absolute; font-size: 11px; font-weight: 700; color: var(--color-muted); line-height: 12px; width: 12px; text-align: center; }
+.compass .needle { position: absolute; left: 46px; top: 14px; width: 16px; height: 80px; transform: rotate(225deg); transform-origin: 8px 40px; }
+.compass .needle svg { display: block; }
+
+.drow { display: flex; align-items: center; justify-content: space-between; height: 29px; border-bottom: 1px solid var(--color-line); }
+.drow:last-child { border-bottom: none; }
+.drow span { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-ink-2); }
+.drow span svg.ic { width: 16px; height: 16px; color: var(--color-muted); }
+.drow b { font-size: 15px; font-weight: 600; }
+.drow b small { font-size: 13px; font-weight: 500; color: var(--color-muted); margin-left: 3px; }
+.details .list { margin-top: 8px; }
+
+/* weekly */
+.week { flex: 1; display: flex; padding: 22px 22px 18px 0; }
+.vlabel { width: 52px; flex: none; display: flex; justify-content: center; align-items: flex-start; }
+.vlabel span { writing-mode: vertical-rl; transform: rotate(180deg); font-size: 13px; font-weight: 700; letter-spacing: 6px; text-transform: uppercase; color: var(--color-ink); line-height: 16px; white-space: nowrap; }
+.vlabel-wrap { display: flex; flex-direction: column; align-items: center; justify-content: space-between; height: 100%; padding: 2px 0; }
+.vlabel-wrap i { width: 1px; flex: 1; background: var(--color-line); margin: 14px 0 0; }
+.wk { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.deck { font-size: 17px; font-weight: 500; line-height: 23px; color: var(--color-ink-2); letter-spacing: -0.2px; padding-bottom: 14px; border-bottom: 1px solid var(--color-line); }
+.deck b { color: var(--color-ink); font-weight: 700; }
+.days { display: flex; flex-direction: column; }
+.day { height: 78px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--color-line); }
+.day:last-child { border-bottom: none; }
+.day .d { width: 86px; flex: none; }
+.day .d b { display: block; font-size: 17px; font-weight: 600; line-height: 21px; letter-spacing: -0.2px; }
+.day .d span { font-size: 13px; color: var(--color-muted); line-height: 17px; }
+.day .w { width: 40px; flex: none; display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.day .w svg.ic { width: 26px; height: 26px; }
+.day .w span { font-size: 12px; font-weight: 700; color: var(--color-rain); line-height: 14px; }
+.day .lo { width: 34px; flex: none; text-align: right; font-size: 18px; font-weight: 500; color: var(--color-muted); }
+.day .hi { width: 34px; flex: none; text-align: right; font-size: 18px; font-weight: 700; }
+.track { position: relative; width: 120px; height: 8px; flex: none; border-radius: var(--radius-pill); background: var(--color-track); margin-left: 4px; }
+.range { position: absolute; top: 0; height: 8px; border-radius: var(--radius-pill); background-image: linear-gradient(90deg, var(--color-cold) 0%, var(--color-cool) 30%, var(--color-mild) 58%, var(--color-hot) 100%); background-size: 120px 8px; background-repeat: no-repeat; }
+.nowdot { position: absolute; top: -3px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: #FFFFFF; border: 3px solid var(--color-ink); }
+.day.today .d b { font-weight: 700; }
+</style>
+</head>
+<body>
+<header class="header" data-node="header" data-role="Header">
+  <div class="brand" data-node="brand"><span class="mark"></span>rüzgârgülü</div>
+  <div class="loc" data-node="locationPicker" data-role="ComboBox" data-value="izmir-konak"><i data-icon="lucide:map-pin" class="ic"></i>İzmir <span>Konak</span><i data-icon="lucide:chevron-down" class="ic chev"></i></div>
+  <div class="hdr-right">
+    <div class="date" data-node="date">30 Eylül 2026, Çarşamba</div>
+    <div class="units" data-node="unitToggle" data-role="SegmentedControl" data-value="C">
+      <div class="on" data-node="unitC" data-role="SegmentItem" data-state="selected">°C</div>
+      <div data-node="unitF" data-role="SegmentItem">°F</div>
+    </div>
+    <div class="iconbtn" data-node="searchButton" data-role="IconButton"><i data-icon="lucide:search" class="ic"></i></div>
+  </div>
+</header>
+
+<main class="main">
+  <div class="left">
+    <section class="hero" data-node="hero">
+      <div class="now" data-node="current">
+        <div class="kicker" data-node="kicker"><i></i>Anlık durum · Güncellendi 14:20</div>
+        <div class="temp tnum" data-node="currentTemp" data-role="Label">24°</div>
+        <div class="cond"><i data-icon="lucide:cloud-sun" class="ic"></i>Parçalı bulutlu</div>
+        <div class="facts"><span>Hissedilen <b>25°</b></span><span>En yüksek <b>27°</b></span><span>En düşük <b>18°</b></span></div>
+      </div>
+      <section class="card sunpath" data-node="sunPathCard" data-role="Card">
+        <div class="ctitle"><h3>Gün ışığı</h3><span>11 sa 50 dk</span></div>
+        <div class="arcwrap">
+          <svg data-node="sunArc" data-role="Chart" width="280" height="140" viewBox="0 0 280 140">
+            <defs>
+              <linearGradient id="sunTrail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFB21E"/><stop offset="1" stop-color="#FF7A45"/></linearGradient>
+              <linearGradient id="dayFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFB21E" stop-opacity="0.18"/><stop offset="1" stop-color="#FFB21E" stop-opacity="0.02"/></linearGradient>
+              <radialGradient id="sunGlow"><stop offset="0" stop-color="#FFB21E" stop-opacity="0.45"/><stop offset="1" stop-color="#FFB21E" stop-opacity="0"/></radialGradient>
+            </defs>
+            <path d="M28,126 A112,112 0 0 1 252,126 Z" fill="url(#dayFill)"/>
+            <line x1="6" y1="126" x2="274" y2="126" stroke="#1B1A22" stroke-opacity="0.18" stroke-width="1"/>
+            <path d="M28,126 A112,112 0 0 1 252,126" fill="none" stroke="#1B1A22" stroke-opacity="0.28" stroke-width="2" stroke-dasharray="3 6" stroke-linecap="round"/>
+            <path d="M28,126 A112,112 0 0 1 174.61,19.48" fill="none" stroke="url(#sunTrail)" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="28" cy="126" r="4" fill="#FFB21E"/>
+            <circle cx="252" cy="126" r="4" fill="#FFFFFF" stroke="#1B1A22" stroke-opacity="0.35" stroke-width="1.5"/>
+            <circle cx="174.61" cy="19.48" r="19" fill="url(#sunGlow)"/>
+            <circle cx="174.61" cy="19.48" r="9" fill="#FFB21E" stroke="#FFFFFF" stroke-width="3"/>
+          </svg>
+          <div class="remain">Gün batımına 4 sa 44 dk</div>
+        </div>
+        <div class="suntimes">
+          <div><b class="tnum">07:14</b><span><i data-icon="lucide:sunrise" class="ic"></i>Gün doğumu</span></div>
+          <div><b class="tnum">19:04</b><span><i data-icon="lucide:sunset" class="ic"></i>Gün batımı</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="card hourly" data-node="hourlyCard" data-role="Card">
+      <div class="ctitle"><h3>Saatlik tahmin</h3><span>Yağış beklenmiyor · rüzgâr 12–16 km/sa</span></div>
+      <div class="hours" data-node="hours" data-model="hourly">
+        <div class="hour on" data-node="hour" data-role="ListItem" data-state="selected"><span class="t">Şimdi</span><i data-icon="lucide:cloud-sun" class="ic i-cloudsun"></i><span class="v tnum">24°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">15:00</span><i data-icon="lucide:cloud-sun" class="ic i-cloudsun"></i><span class="v tnum">25°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">16:00</span><i data-icon="lucide:sun" class="ic i-sun"></i><span class="v tnum">25°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">17:00</span><i data-icon="lucide:sun" class="ic i-sun"></i><span class="v tnum">24°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">18:00</span><i data-icon="lucide:sun" class="ic i-sun"></i><span class="v tnum">22°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">19:00</span><i data-icon="lucide:sunset" class="ic i-sunset"></i><span class="v tnum">21°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">20:00</span><i data-icon="lucide:moon" class="ic i-moon"></i><span class="v tnum">20°</span></div>
+        <div class="hour" data-node="hour" data-role="ListItem"><span class="t tnum">21:00</span><i data-icon="lucide:cloud-moon" class="ic i-moon"></i><span class="v tnum">19°</span></div>
+      </div>
+    </section>
+
+    <div class="bottom">
+      <section class="card small aqi" data-node="aqiCard" data-role="Card">
+        <div class="ctitle"><h3>Hava kalitesi</h3><span>HKİ · 0–300</span></div>
+        <div class="pair">
+          <div class="ring" data-node="aqiRing" data-role="Gauge" data-value="42">
+            <div class="arc"></div>
+            <div class="knob"><i></i></div>
+            <div class="val"><b class="tnum">42</b><span>HKİ</span></div>
+          </div>
+          <div class="side-txt">
+            <div class="big">İyi</div>
+            <div class="row"><span>PM2,5</span><b class="tnum">9 µg/m³</b></div>
+            <div class="row"><span>PM10</span><b class="tnum">21 µg/m³</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card small wind" data-node="windCard" data-role="Card">
+        <div class="ctitle"><h3>Rüzgâr</h3><span>Lodos</span></div>
+        <div class="pair">
+          <div class="compass" data-node="windCompass" data-role="Gauge" data-value="225">
+            <svg class="dial" width="108" height="108" viewBox="0 0 108 108">
+              <circle cx="54" cy="54" r="53" fill="#FFFFFF" fill-opacity="0.55" stroke="#1B1A22" stroke-opacity="0.12"/>
+              <g stroke="#1B1A22" stroke-opacity="0.28" stroke-width="1.5" stroke-linecap="round">
+                <line x1="54" y1="4" x2="54" y2="10"/><line x1="104" y1="54" x2="98" y2="54"/><line x1="54" y1="104" x2="54" y2="98"/><line x1="4" y1="54" x2="10" y2="54"/>
+              </g>
+              <g stroke="#1B1A22" stroke-opacity="0.16" stroke-width="1" stroke-linecap="round">
+                <line x1="79" y1="10.7" x2="77.5" y2="13.3"/><line x1="97.3" y1="29" x2="94.7" y2="30.5"/><line x1="97.3" y1="79" x2="94.7" y2="77.5"/><line x1="79" y1="97.3" x2="77.5" y2="94.7"/>
+                <line x1="29" y1="97.3" x2="30.5" y2="94.7"/><line x1="10.7" y1="79" x2="13.3" y2="77.5"/><line x1="10.7" y1="29" x2="13.3" y2="30.5"/><line x1="29" y1="10.7" x2="30.5" y2="13.3"/>
+              </g>
+            </svg>
+            <span class="lbl" style="left:48px;top:13px">K</span>
+            <span class="lbl" style="left:83px;top:48px">D</span>
+            <span class="lbl" style="left:48px;top:83px">G</span>
+            <span class="lbl" style="left:13px;top:48px">B</span>
+            <div class="needle" data-node="windArrow" data-role="Indicator" data-value="225">
+              <svg width="16" height="80" viewBox="0 0 16 80">
+                <path d="M8,0 L15,16 L8,12 L1,16 Z" fill="#FF6A3D"/>
+                <line x1="8" y1="12" x2="8" y2="74" stroke="#1B1A22" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="8" cy="40" r="4.5" fill="#1B1A22"/>
+              </svg>
+            </div>
+          </div>
+          <div class="side-txt">
+            <div class="speed tnum">14<small>km/sa</small></div>
+            <div class="row"><span>Hamle</span><b class="tnum">26 km/sa</b></div>
+            <div class="row"><span>Yön</span><b class="tnum">GB · 225°</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card small details" data-node="detailsCard" data-role="Card">
+        <div class="ctitle"><h3>Ayrıntılar</h3></div>
+        <div class="list" data-node="details" data-model="details">
+          <div class="drow" data-node="detail"><span><i data-icon="lucide:droplets" class="ic"></i>Nem</span><b class="tnum">%58</b></div>
+          <div class="drow" data-node="detail"><span><i data-icon="lucide:gauge" class="ic"></i>Basınç</span><b class="tnum">1014<small>hPa</small></b></div>
+          <div class="drow" data-node="detail"><span><i data-icon="lucide:sun-medium" class="ic"></i>UV</span><b class="tnum">5<small>orta</small></b></div>
+          <div class="drow" data-node="detail"><span><i data-icon="lucide:eye" class="ic"></i>Görüş</span><b class="tnum">16<small>km</small></b></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="card week" data-node="weeklyCard" data-role="Card">
+    <div class="vlabel"><div class="vlabel-wrap"><span data-node="weeklyLabel">Haftalık tahmin</span><i></i></div></div>
+    <div class="wk">
+      <p class="deck">Hafta ortası güneşli ve sıcak. <b>Pazar lodosla birlikte yağmur</b>, pazartesi serin.</p>
+      <div class="days" data-node="days" data-model="weekly">
+        <div class="day today" data-node="day" data-role="ListItem" data-state="selected">
+          <div class="d"><b>Bugün</b><span>30 Eyl</span></div>
+          <div class="w"><i data-icon="lucide:cloud-sun" class="ic i-cloudsun"></i></div>
+          <div class="lo tnum">18°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="18-27"><div class="range" style="left:20px;width:90px;background-position:-20px 0"></div><div class="nowdot" style="left:80px"></div></div>
+          <div class="hi tnum">27°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Perşembe</b><span>1 Eki</span></div>
+          <div class="w"><i data-icon="lucide:sun" class="ic i-sun"></i></div>
+          <div class="lo tnum">19°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="19-28"><div class="range" style="left:30px;width:90px;background-position:-30px 0"></div></div>
+          <div class="hi tnum">28°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Cuma</b><span>2 Eki</span></div>
+          <div class="w"><i data-icon="lucide:sun" class="ic i-sun"></i></div>
+          <div class="lo tnum">19°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="19-27"><div class="range" style="left:30px;width:80px;background-position:-30px 0"></div></div>
+          <div class="hi tnum">27°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Cumartesi</b><span>3 Eki</span></div>
+          <div class="w"><i data-icon="lucide:cloud-sun" class="ic i-cloudsun"></i><span class="tnum">%20</span></div>
+          <div class="lo tnum">18°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="18-25"><div class="range" style="left:20px;width:70px;background-position:-20px 0"></div></div>
+          <div class="hi tnum">25°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Pazar</b><span>4 Eki</span></div>
+          <div class="w"><i data-icon="lucide:cloud-rain" class="ic i-rain"></i><span class="tnum">%70</span></div>
+          <div class="lo tnum">17°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="17-22"><div class="range" style="left:10px;width:50px;background-position:-10px 0"></div></div>
+          <div class="hi tnum">22°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Pazartesi</b><span>5 Eki</span></div>
+          <div class="w"><i data-icon="lucide:cloud-drizzle" class="ic i-rain"></i><span class="tnum">%40</span></div>
+          <div class="lo tnum">16°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="16-21"><div class="range" style="left:0px;width:50px;background-position:0px 0"></div></div>
+          <div class="hi tnum">21°</div>
+        </div>
+        <div class="day" data-node="day" data-role="ListItem">
+          <div class="d"><b>Salı</b><span>6 Eki</span></div>
+          <div class="w"><i data-icon="lucide:cloud-sun" class="ic i-cloudsun"></i></div>
+          <div class="lo tnum">17°</div>
+          <div class="track" data-node="rangeBar" data-role="ProgressBar" data-value="17-24"><div class="range" style="left:10px;width:70px;background-position:-10px 0"></div></div>
+          <div class="hi tnum">24°</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

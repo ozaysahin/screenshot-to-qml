@@ -1,0 +1,2293 @@
+{
+ "meta": {
+  "id": "14-form-login-dark",
+  "title": "Koyu giriş ekranı — bölünmüş düzen, yükleniyor durumu, bildirim",
+  "category": "form",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 2,
+  "captureSize": [
+   2560,
+   1600
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Red Hat Display",
+    "qtFamily": "Red Hat Display",
+    "legacyFamily": "Red Hat Display",
+    "files": [
+     "RedHatDisplay-Bold.ttf",
+     "RedHatDisplay-ExtraBold.ttf",
+     "RedHatDisplay-Medium.ttf",
+     "RedHatDisplay-SemiBold.ttf"
+    ],
+    "weights": [
+     500,
+     600,
+     700,
+     800
+    ]
+   },
+   {
+    "css": "Red Hat Text",
+    "qtFamily": "Red Hat Text",
+    "legacyFamily": "Red Hat Text",
+    "files": [
+     "RedHatText-Medium.ttf",
+     "RedHatText-Regular.ttf",
+     "RedHatText-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#0B0D13",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0B0D13"
+   },
+   "panel": {
+    "hex": "#0F1119",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F1119"
+   },
+   "surface": {
+    "hex": "#131722",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#131722"
+   },
+   "surface-2": {
+    "hex": "#191D29",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#191D29"
+   },
+   "border": {
+    "hex": "#262C3A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#262C3A"
+   },
+   "border-strong": {
+    "hex": "#343B4D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#343B4D"
+   },
+   "ink": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F3F4F8"
+   },
+   "text-2": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C5CAD6"
+   },
+   "muted": {
+    "hex": "#8C94A7",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#8C94A7"
+   },
+   "dim": {
+    "hex": "#5F6679",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#5F6679"
+   },
+   "primary": {
+    "hex": "#7C6CFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7C6CFF"
+   },
+   "primary-busy": {
+    "hex": "#6A5BE6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6A5BE6"
+   },
+   "primary-text": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B3AAFF"
+   },
+   "glow-violet": {
+    "hex": "#7C5CFF",
+    "alpha": 0.55,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(124, 92, 255, 0.55)"
+   },
+   "glow-blue": {
+    "hex": "#286EFF",
+    "alpha": 0.42,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(40, 110, 255, 0.42)"
+   },
+   "glow-magenta": {
+    "hex": "#CE46E6",
+    "alpha": 0.34,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(206, 70, 230, 0.34)"
+   },
+   "success": {
+    "hex": "#3DD08F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3DD08F"
+   },
+   "warning": {
+    "hex": "#F4B740",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F4B740"
+   },
+   "warning-soft": {
+    "hex": "#F4B740",
+    "alpha": 0.12,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(244, 183, 64, 0.12)"
+   },
+   "glass": {
+    "hex": "#FFFFFF",
+    "alpha": 0.06,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.06)"
+   },
+   "glass-border": {
+    "hex": "#FFFFFF",
+    "alpha": 0.1,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.10)"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "8": 32.0,
+   "10": 40.0,
+   "12": 48.0
+  },
+  "radius": {
+   "sm": 6.0,
+   "md": 10.0,
+   "lg": 12.0,
+   "xl": 16.0,
+   "panel": 24.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "toast": {
+    "css": "0 18px 40px -8px rgba(0, 0, 0, 0.6), 0 2px 6px rgba(0, 0, 0, 0.35)"
+   },
+   "button": {
+    "css": "0 1px 2px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.12)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Red Hat Display",
+    "px": 44,
+    "weight": 800,
+    "lineHeight": 50,
+    "letterSpacing": -1.2,
+    "count": 2,
+    "example": "Tüm şifreleriniz,"
+   },
+   {
+    "family": "Red Hat Display",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 38,
+    "letterSpacing": -0.6,
+    "count": 1,
+    "example": "Tekrar hoş geldiniz"
+   },
+   {
+    "family": "Red Hat Display",
+    "px": 22,
+    "weight": 800,
+    "lineHeight": 28,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "Sırdaş"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 20,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 2,
+    "count": 1,
+    "example": "••••••••••"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Ekibinizin hesaplarını, anahtarlarını ve"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Sıfır bilgi mimarisi"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Kasanıza erişmek için hesabınızla giriş "
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "deniz.aksoy@kuzeylojistik.com"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Şifremi unuttum"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Şifreleriniz cihazınızda şifrelenir; ana"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "E-posta"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "© 2026 Sırdaş Yazılım A.Ş."
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Caps Lock açık. Şifreler büyük/küçük har"
+   },
+   {
+    "family": "Red Hat Text",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 1.6,
+    "count": 1,
+    "example": "KURUMSAL ŞİFRE KASASI"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "brandPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    16,
+    16,
+    600,
+    768
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F1119",
+     "alpha": 1.0
+    },
+    "fillImage": "radial-gradient(520px 420px at 8% 4%, rgba(124, 92, 255, 0.55), rgba(0, 0, 0, 0) 70%), radial-gradient(560px 480px at 104% 92%, rgba(40, 110, 255, 0.42), rgba(0, 0, 0, 0) 70%), radial-gradient(380px 320px at 70% 38%, rgba(206, 70, 230, 0.34), rgba(0, 0, 0, 0) 72%), none",
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.1
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     40,
+     48,
+     36,
+     48
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "logo",
+   "role": null,
+   "parent": "brandPanel",
+   "bbox": [
+    65,
+    57,
+    502,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "pitch",
+   "role": null,
+   "parent": "brandPanel",
+   "bbox": [
+    65,
+    277,
+    502,
+    394
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "features",
+   "role": null,
+   "parent": "pitch",
+   "bbox": [
+    65,
+    505,
+    502,
+    166
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 20,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "features",
+    "count": 3,
+    "itemId": "feature"
+   }
+  },
+  {
+   "id": "feature[0]",
+   "role": "ListItem",
+   "parent": "features",
+   "bbox": [
+    65,
+    505,
+    502,
+    42
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "flex-start"
+   }
+  },
+  {
+   "id": "feature[1]",
+   "role": "ListItem",
+   "parent": "features",
+   "bbox": [
+    65,
+    567,
+    502,
+    42
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "flex-start"
+   }
+  },
+  {
+   "id": "feature[2]",
+   "role": "ListItem",
+   "parent": "features",
+   "bbox": [
+    65,
+    629,
+    502,
+    42
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "flex-start"
+   }
+  },
+  {
+   "id": "panelFooter",
+   "role": null,
+   "parent": "brandPanel",
+   "bbox": [
+    65,
+    727,
+    502,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center"
+   }
+  },
+  {
+   "id": "loginForm",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    748,
+    144,
+    384,
+    556
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "emailField",
+   "role": "TextField",
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    264,
+    384,
+    46
+   ],
+   "style": {
+    "fill": {
+     "hex": "#131722",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343B4D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   },
+   "state": [
+    "valid"
+   ]
+  },
+  {
+   "id": "passwordField",
+   "role": "TextField",
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    356,
+    384,
+    46
+   ],
+   "style": {
+    "fill": {
+     "hex": "#131722",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343B4D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   },
+   "state": [
+    "warning"
+   ]
+  },
+  {
+   "id": "revealButton",
+   "role": "IconButton",
+   "parent": "passwordField",
+   "bbox": [
+    1093,
+    364,
+    30,
+    30
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "30px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "capsLockHint",
+   "role": null,
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    410,
+    384,
+    18
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rememberCheck",
+   "role": "CheckBox",
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    448,
+    97.84,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "forgotLink",
+   "role": "Link",
+   "parent": "loginForm",
+   "bbox": [
+    1023.36,
+    448,
+    108.64,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "signInButton",
+   "role": "Button",
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    492,
+    384,
+    48
+   ],
+   "style": {
+    "fill": {
+     "hex": "#6A5BE6",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.4
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "loading",
+    "disabled"
+   ]
+  },
+  {
+   "id": "spinner",
+   "role": "BusyIndicator",
+   "parent": "signInButton",
+   "bbox": [
+    872.39,
+    507,
+    18,
+    18
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "orDivider",
+   "role": null,
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    564,
+    384,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "ssoButton",
+   "role": "Button",
+   "parent": "loginForm",
+   "bbox": [
+    748,
+    608,
+    186,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#131722",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343B4D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "securityKeyButton",
+   "role": "Button",
+   "parent": "loginForm",
+   "bbox": [
+    946,
+    608,
+    186,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#131722",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343B4D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "sideFooter",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    656,
+    721,
+    608,
+    32
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center",
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "languageSelect",
+   "role": "ComboBox",
+   "parent": "sideFooter",
+   "bbox": [
+    1161.23,
+    721,
+    102.77,
+    32
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#262C3A",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "sessionToast",
+   "role": "Toast",
+   "parent": null,
+   "bbox": [
+    892,
+    16,
+    372,
+    109
+   ],
+   "style": {
+    "fill": {
+     "hex": "#191D29",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343B4D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 18.0,
+      "blur": 40.0,
+      "spread": -8.0,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.6
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 6.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "position": "absolute",
+    "clip": true
+   },
+   "state": [
+    "open"
+   ]
+  },
+  {
+   "id": "toastClose",
+   "role": "IconButton",
+   "parent": "sessionToast",
+   "bbox": [
+    1225,
+    29,
+    26,
+    26
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "26px",
+    "rows": "26px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "toastTimer",
+   "role": "ProgressBar",
+   "parent": "sessionToast",
+   "bbox": [
+    893,
+    121,
+    370,
+    3
+   ],
+   "style": {
+    "fill": {
+     "hex": "#262C3A",
+     "alpha": 1.0
+    }
+   },
+   "layout": {},
+   "value": "0.62"
+  }
+ ],
+ "text": [
+  {
+   "string": "Sırdaş",
+   "owner": "logo",
+   "bbox": [
+    109,
+    59,
+    62.36,
+    29
+   ],
+   "baseline": 81,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Display",
+    "px": 22,
+    "weight": 800,
+    "lineHeight": 28,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "KURUMSAL ŞİFRE KASASI",
+   "owner": "pitch",
+   "bbox": [
+    65,
+    277,
+    186.42,
+    16
+   ],
+   "baseline": 289,
+   "lines": 1,
+   "color": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 1.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Tüm şifreleriniz,",
+   "owner": "pitch",
+   "bbox": [
+    65,
+    305,
+    310.7,
+    58
+   ],
+   "baseline": 350,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Display",
+    "px": 44,
+    "weight": 800,
+    "lineHeight": 50,
+    "letterSpacing": -1.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "tek bir güvenli kasada.",
+   "owner": "pitch",
+   "bbox": [
+    65,
+    305,
+    444.55,
+    108
+   ],
+   "baseline": 350,
+   "lines": 2,
+   "color": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Display",
+    "px": 44,
+    "weight": 800,
+    "lineHeight": 50,
+    "letterSpacing": -1.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekibinizin hesaplarını, anahtarlarını ve kartlarını tek yerden paylaşın; erişimi saniyeler içinde geri alın.",
+   "owner": "pitch",
+   "bbox": [
+    65,
+    426,
+    406.47,
+    45
+   ],
+   "baseline": 442,
+   "lines": 2,
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sıfır bilgi mimarisi",
+   "owner": "feature[0]",
+   "bbox": [
+    121,
+    505,
+    126.92,
+    20
+   ],
+   "baseline": 520,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şifreleriniz cihazınızda şifrelenir; anahtarınızı biz bile göremeyiz.",
+   "owner": "feature[0]",
+   "bbox": [
+    121,
+    528,
+    388.63,
+    18
+   ],
+   "baseline": 542,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekip kasaları",
+   "owner": "feature[1]",
+   "bbox": [
+    121,
+    567,
+    89.13,
+    20
+   ],
+   "baseline": 582,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Paylaşılan erişimleri rol bazlı izinlerle yönetin.",
+   "owner": "feature[1]",
+   "bbox": [
+    121,
+    590,
+    274.5,
+    18
+   ],
+   "baseline": 604,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sızıntı taraması",
+   "owner": "feature[2]",
+   "bbox": [
+    121,
+    629,
+    108.92,
+    20
+   ],
+   "baseline": 644,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ele geçirilen şifreler için anında uyarı alın.",
+   "owner": "feature[2]",
+   "bbox": [
+    121,
+    652,
+    252,
+    18
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "© 2026 Sırdaş Yazılım A.Ş.",
+   "owner": "panelFooter",
+   "bbox": [
+    65,
+    728,
+    152.56,
+    17
+   ],
+   "baseline": 741,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüm sistemler çalışıyor",
+   "owner": "panelFooter",
+   "bbox": [
+    436.61,
+    728,
+    130.39,
+    17
+   ],
+   "baseline": 741,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tekrar hoş geldiniz",
+   "owner": "loginForm",
+   "bbox": [
+    748,
+    143,
+    246.38,
+    40
+   ],
+   "baseline": 174,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Display",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 38,
+    "letterSpacing": -0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kasanıza erişmek için hesabınızla giriş yapın.",
+   "owner": "loginForm",
+   "bbox": [
+    748,
+    189,
+    289.97,
+    20
+   ],
+   "baseline": 204,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "E-posta",
+   "owner": "loginForm",
+   "bbox": [
+    748,
+    238,
+    49.05,
+    17
+   ],
+   "baseline": 251,
+   "lines": 1,
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "deniz.aksoy@kuzeylojistik.com",
+   "owner": "emailField",
+   "bbox": [
+    791,
+    277,
+    199.98,
+    20
+   ],
+   "baseline": 292,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şifre",
+   "owner": "loginForm",
+   "bbox": [
+    748,
+    330,
+    29.75,
+    17
+   ],
+   "baseline": 343,
+   "lines": 1,
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "••••••••••",
+   "owner": "passwordField",
+   "bbox": [
+    791,
+    366,
+    88.41,
+    26
+   ],
+   "baseline": 386,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 20,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Caps Lock açık. Şifreler büyük/küçük harfe duyarlıdır.",
+   "owner": "capsLockHint",
+   "bbox": [
+    769,
+    410,
+    304,
+    17
+   ],
+   "baseline": 423,
+   "lines": 1,
+   "color": {
+    "hex": "#F4B740",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Beni hatırla",
+   "owner": "rememberCheck",
+   "bbox": [
+    776,
+    449,
+    69.84,
+    18
+   ],
+   "baseline": 463,
+   "lines": 1,
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şifremi unuttum",
+   "owner": "forgotLink",
+   "bbox": [
+    1023.36,
+    449,
+    108.64,
+    18
+   ],
+   "baseline": 463,
+   "lines": 1,
+   "color": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Giriş yapılıyor…",
+   "owner": "signInButton",
+   "bbox": [
+    900.39,
+    506,
+    107.2,
+    20
+   ],
+   "baseline": 521,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.86
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "veya",
+   "owner": "orDivider",
+   "bbox": [
+    926.8,
+    565,
+    26.42,
+    17
+   ],
+   "baseline": 578,
+   "lines": 1,
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kurumsal SSO",
+   "owner": "ssoButton",
+   "bbox": [
+    806.19,
+    621,
+    94.61,
+    18
+   ],
+   "baseline": 635,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güvenlik anahtarı",
+   "owner": "securityKeyButton",
+   "bbox": [
+    993.14,
+    621,
+    116.7,
+    18
+   ],
+   "baseline": 635,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hesabınız yok mu?",
+   "owner": "loginForm",
+   "bbox": [
+    804.03,
+    681,
+    115.08,
+    18
+   ],
+   "baseline": 695,
+   "lines": 1,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14 gün ücretsiz deneyin",
+   "owner": "loginForm",
+   "bbox": [
+    922.36,
+    681,
+    153.59,
+    18
+   ],
+   "baseline": 695,
+   "lines": 1,
+   "color": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Uçtan uca şifreli bağlantı",
+   "owner": "sideFooter",
+   "bbox": [
+    677,
+    728,
+    142.02,
+    17
+   ],
+   "baseline": 741,
+   "lines": 1,
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Türkçe",
+   "owner": "languageSelect",
+   "bbox": [
+    1193.23,
+    728,
+    38.77,
+    17
+   ],
+   "baseline": 741,
+   "lines": 1,
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Oturum süreniz doldu",
+   "owner": "sessionToast",
+   "bbox": [
+    953,
+    32,
+    143.11,
+    18
+   ],
+   "baseline": 46,
+   "lines": 1,
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Güvenliğiniz için 30 dakika işlem yapılmadığında oturum kapatılır. Lütfen tekrar giriş yapın.",
+   "owner": "sessionToast",
+   "bbox": [
+    953,
+    53,
+    224.2,
+    53
+   ],
+   "baseline": 66,
+   "lines": 3,
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Red Hat Text",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:lock-keyhole",
+   "owner": "feature[0]",
+   "bbox": [
+    75,
+    517,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#DAD5FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:users",
+   "owner": "feature[1]",
+   "bbox": [
+    75,
+    579,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#DAD5FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:radar",
+   "owner": "feature[2]",
+   "bbox": [
+    75,
+    641,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#DAD5FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:mail",
+   "owner": "emailField",
+   "bbox": [
+    763,
+    278,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-check",
+   "owner": "emailField",
+   "bbox": [
+    1099,
+    278,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:lock",
+   "owner": "passwordField",
+   "bbox": [
+    763,
+    370,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:eye",
+   "owner": "revealButton",
+   "bbox": [
+    1099,
+    370,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-big-up",
+   "owner": "capsLockHint",
+   "bbox": [
+    748,
+    411.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#F4B740",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "rememberCheck",
+   "bbox": [
+    751,
+    452,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:building-2",
+   "owner": "ssoButton",
+   "bbox": [
+    781.19,
+    621.5,
+    17,
+    17
+   ],
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:key-round",
+   "owner": "securityKeyButton",
+   "bbox": [
+    968.14,
+    621.5,
+    17,
+    17
+   ],
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:shield-check",
+   "owner": "sideFooter",
+   "bbox": [
+    656,
+    729.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:globe",
+   "owner": "languageSelect",
+   "bbox": [
+    1172.23,
+    729.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "languageSelect",
+   "bbox": [
+    1238,
+    729.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:clock-alert",
+   "owner": "sessionToast",
+   "bbox": [
+    915,
+    39,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#F4B740",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:x",
+   "owner": "toastClose",
+   "bbox": [
+    1230,
+    34,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#343B4D",
+    "alpha": 1.0
+   },
+   "count": 20,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8C94A7",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F3F4F8",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C5CAD6",
+    "alpha": 1.0
+   },
+   "count": 7,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#5F6679",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#262C3A",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "border",
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.1
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#131722",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B3AAFF",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F4B740",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#DAD5FF",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F1119",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6A5BE6",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#191D29",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.86
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "brand": {
+   "name": "Sırdaş",
+   "features": [
+    {
+     "icon": "lock-keyhole",
+     "title": "Sıfır bilgi mimarisi",
+     "text": "Şifreleriniz cihazınızda şifrelenir; anahtarınızı biz bile göremeyiz."
+    },
+    {
+     "icon": "users",
+     "title": "Ekip kasaları",
+     "text": "Paylaşılan erişimleri rol bazlı izinlerle yönetin."
+    },
+    {
+     "icon": "radar",
+     "title": "Sızıntı taraması",
+     "text": "Ele geçirilen şifreler için anında uyarı alın."
+    }
+   ]
+  },
+  "form": {
+   "email": "deniz.aksoy@kuzeylojistik.com",
+   "emailValid": true,
+   "passwordLength": 10,
+   "capsLock": true,
+   "remember": true,
+   "submitting": true
+  },
+  "toast": {
+   "kind": "warning",
+   "title": "Oturum süreniz doldu",
+   "text": "Güvenliğiniz için 30 dakika işlem yapılmadığında oturum kapatılır. Lütfen tekrar giriş yapın.",
+   "remaining": 0.62
+  }
+ },
+ "states": {}
+}

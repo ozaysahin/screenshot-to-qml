@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Ritim — Bugün</title>
+<script type="application/json" id="case-meta">
+{"id": "06-mobile-aliskanlik", "title": "Mobil alışkanlık takip ekranı (3x DPR)", "category": "mobile", "profile": "desktop",
+ "viewport": [390, 844], "dpr": 3, "fonts": ["Nunito"]}
+</script>
+<script type="application/json" id="case-data">
+{"progress": {"done": 4, "total": 6}, "streakDays": 12,
+ "week": [{"d": "Pzt", "n": 22, "done": true}, {"d": "Sal", "n": 23, "done": true}, {"d": "Çar", "n": 24, "done": true}, {"d": "Per", "n": 25, "today": true}, {"d": "Cum", "n": 26}, {"d": "Cmt", "n": 27}, {"d": "Paz", "n": 28}],
+ "habits": [{"name": "Su iç", "detail": "6 / 8 bardak", "progress": 0.75},
+            {"name": "Kitap oku", "detail": "20 dk · tamamlandı", "done": true},
+            {"name": "10.000 adım", "detail": "7.412 adım", "progress": 0.74},
+            {"name": "Meditasyon", "detail": "10 dk · 19:00"},
+            {"name": "23:30'da uyu", "detail": "Hatırlatıcı 23:00"}]}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #F7F5FF;
+  --color-surface: #FFFFFF;
+  --color-ink: #1E1B2E;
+  --color-muted: #8E8AA3;
+  --color-border: #ECE9F6;
+  --color-primary: #6D5DFC;
+  --color-pink: #FF6FAE;
+  --color-success: #22C55E;
+  --color-sky: #E0F2FE; --color-sky-ink: #0284C7;
+  --color-amber: #FEF3C7; --color-amber-ink: #D97706;
+  --color-green: #DCFCE7; --color-green-ink: #16A34A;
+  --color-violet: #EDE9FE; --color-violet-ink: #7C3AED;
+  --color-indigo: #E0E7FF; --color-indigo-ink: #4338CA;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px;
+  --radius-md: 12px; --radius-lg: 16px; --radius-xl: 18px; --radius-2xl: 24px; --radius-pill: 999px;
+  --shadow-row: 0 2px 8px rgba(30, 27, 46, 0.04);
+  --shadow-hero: 0 14px 30px rgba(109, 93, 252, 0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 390px; height: 844px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Nunito', sans-serif; position: relative; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.sb { height: 47px; padding: 14px 26px 0 32px; display: flex; align-items: center; }
+.sb b { font-size: 16px; font-weight: 800; letter-spacing: -0.2px; }
+.sb .r { margin-left: auto; display: flex; gap: 5px; align-items: center; }
+.sb .r svg.ic { width: 18px; height: 18px; stroke-width: 2.2; }
+
+.hdr { padding: 12px 20px 0; display: flex; align-items: center; gap: 12px; }
+.av { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #FFB199 0%, var(--color-pink) 100%); color: #fff; font-size: 16px; font-weight: 800; display: grid; place-items: center; }
+.hdr h1 { font-size: 21px; font-weight: 800; line-height: 26px; letter-spacing: -0.3px; }
+.hdr p { font-size: 13px; font-weight: 600; color: var(--color-muted); line-height: 18px; }
+.bellb { margin-left: auto; width: 44px; height: 44px; border-radius: 50%; background: var(--color-surface); display: grid; place-items: center; position: relative; box-shadow: var(--shadow-row); }
+.bellb b { position: absolute; top: 11px; right: 12px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-pink); border: 2px solid var(--color-surface); }
+
+.week { display: flex; justify-content: space-between; padding: 0 20px; margin-top: 20px; }
+.day { width: 44px; height: 68px; border-radius: var(--radius-lg); background: var(--color-surface); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; position: relative; }
+.day span { font-size: 11px; font-weight: 700; color: var(--color-muted); line-height: 14px; }
+.day b { font-size: 17px; font-weight: 800; line-height: 22px; }
+.day i { position: absolute; bottom: 7px; width: 5px; height: 5px; border-radius: 50%; background: var(--color-success); }
+.day.today { background: var(--color-primary); color: #fff; box-shadow: 0 8px 18px rgba(109, 93, 252, 0.35); }
+.day.today span { color: rgba(255, 255, 255, 0.8); }
+.day.future b { color: var(--color-muted); }
+
+.hero { margin: 20px 20px 0; height: 136px; border-radius: var(--radius-2xl); background: linear-gradient(125deg, var(--color-primary) 0%, var(--color-pink) 100%); box-shadow: var(--shadow-hero); color: #fff; padding: 18px 20px; display: flex; align-items: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 180px; height: 180px; border-radius: 50%; right: -60px; top: -70px; background: rgba(255, 255, 255, 0.12); }
+.hero .t { flex: 1; position: relative; }
+.hero .t span { font-size: 13px; font-weight: 700; color: rgba(255, 255, 255, 0.85); }
+.hero .t b { display: block; font-size: 26px; font-weight: 800; line-height: 32px; margin-top: 2px; letter-spacing: -0.4px; }
+.hero .t p { font-size: 13px; font-weight: 600; color: rgba(255, 255, 255, 0.9); line-height: 18px; }
+.streak { display: inline-flex; align-items: center; gap: 4px; height: 26px; padding: 0 10px 0 8px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); font-size: 12px; font-weight: 800; margin-top: 10px; }
+.streak svg.ic { width: 14px; height: 14px; }
+.ringbox { position: relative; width: 88px; height: 88px; flex: none; }
+.ringbox b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 19px; font-weight: 800; }
+
+.sec { display: flex; align-items: baseline; padding: 0 20px; margin-top: 24px; }
+.sec h2 { font-size: 18px; font-weight: 800; line-height: 24px; }
+.sec a { margin-left: auto; font-size: 14px; font-weight: 800; color: var(--color-primary); }
+.list { padding: 0 20px; margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+.hab { height: 68px; border-radius: var(--radius-xl); background: var(--color-surface); box-shadow: var(--shadow-row); display: flex; align-items: center; gap: 12px; padding: 0 14px 0 12px; }
+.tile { width: 44px; height: 44px; border-radius: var(--radius-md); display: grid; place-items: center; flex: none; }
+.tile svg.ic { width: 22px; height: 22px; }
+.hab .tx { flex: 1; min-width: 0; }
+.hab .tx b { display: block; font-size: 15px; font-weight: 800; line-height: 20px; }
+.hab .tx span { font-size: 12px; font-weight: 600; color: var(--color-muted); line-height: 16px; }
+.mini { height: 5px; border-radius: var(--radius-pill); background: var(--color-border); margin-top: 6px; width: 140px; overflow: hidden; }
+.mini i { display: block; height: 100%; border-radius: var(--radius-pill); }
+.chk { width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--color-border); flex: none; display: grid; place-items: center; }
+.chk.on { background: var(--color-success); border-color: var(--color-success); color: #fff; }
+.chk.on svg.ic { width: 16px; height: 16px; stroke-width: 3; }
+.addb { width: 30px; height: 30px; border-radius: 50%; background: var(--color-sky); color: var(--color-sky-ink); display: grid; place-items: center; flex: none; }
+.addb svg.ic { width: 16px; height: 16px; stroke-width: 2.6; }
+.pct { font-size: 13px; font-weight: 800; color: var(--color-green-ink); }
+
+.tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 88px; background: var(--color-surface); border-top: 1px solid var(--color-border); display: flex; padding: 8px 12px 0; box-shadow: 0 -8px 24px rgba(30, 27, 46, 0.06); }
+.tb { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; color: var(--color-muted); font-size: 11px; font-weight: 700; }
+.tb svg.ic { width: 24px; height: 24px; }
+.tb.on { color: var(--color-primary); }
+.fabw { flex: 1; display: flex; justify-content: center; }
+.fab { width: 58px; height: 58px; border-radius: 50%; margin-top: -26px; background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-pink) 100%); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 22px rgba(109, 93, 252, 0.45); border: 4px solid var(--color-bg); }
+.fab svg.ic { width: 26px; height: 26px; stroke-width: 2.6; }
+.home-ind { position: absolute; left: 50%; bottom: 8px; width: 134px; height: 5px; margin-left: -67px; border-radius: 3px; background: var(--color-ink); }
+</style>
+</head>
+<body>
+<div class="sb" data-node="statusBar" data-role="StatusBar"><b>9:41</b><div class="r"><i data-icon="tabler:antenna-bars-5" class="ic"></i><i data-icon="tabler:wifi" class="ic"></i><i data-icon="tabler:battery-3" class="ic"></i></div></div>
+
+<header class="hdr" data-node="header" data-role="Header">
+  <div class="av" data-node="avatar" data-role="Avatar">EK</div>
+  <div><h1>Günaydın, Ece</h1><p>Perşembe, 25 Eylül</p></div>
+  <div class="bellb" data-node="bellButton" data-role="Button"><i data-icon="tabler:bell" class="ic"></i><b></b></div>
+</header>
+
+<div class="week" data-node="weekStrip" data-role="DateStrip" data-model="week">
+  <div class="day" data-node="day" data-role="DayChip" data-state="done"><span>Pzt</span><b>22</b><i></i></div>
+  <div class="day" data-node="day" data-role="DayChip" data-state="done"><span>Sal</span><b>23</b><i></i></div>
+  <div class="day" data-node="day" data-role="DayChip" data-state="done"><span>Çar</span><b>24</b><i></i></div>
+  <div class="day today" data-node="day" data-role="DayChip" data-state="selected"><span>Per</span><b>25</b></div>
+  <div class="day future" data-node="day" data-role="DayChip"><span>Cum</span><b>26</b></div>
+  <div class="day future" data-node="day" data-role="DayChip"><span>Cmt</span><b>27</b></div>
+  <div class="day future" data-node="day" data-role="DayChip"><span>Paz</span><b>28</b></div>
+</div>
+
+<section class="hero" data-node="progressCard" data-role="StatCard">
+  <div class="t"><span>Bugünkü ilerleme</span><b>4 / 6 hedef</b><p>Harika gidiyorsun, 2 hedef kaldı.</p>
+    <div class="streak"><i data-icon="tabler-filled:flame" class="ic"></i>12 gün seri</div></div>
+  <div class="ringbox" data-node="progressRing" data-role="ProgressRing" data-value="0.667"><svg id="ring"></svg><b>%67</b></div>
+</section>
+
+<div class="sec" data-node="sectionHead"><h2>Alışkanlıklar</h2><a>Düzenle</a></div>
+<div class="list" data-node="habits" data-model="habits">
+  <div class="hab" data-node="habit" data-role="ListItem"><div class="tile" style="background:var(--color-sky);color:var(--color-sky-ink)"><i data-icon="tabler-filled:droplet" class="ic"></i></div>
+    <div class="tx"><b>Su iç</b><span>6 / 8 bardak</span><div class="mini"><i style="width:75%;background:var(--color-sky-ink)"></i></div></div><div class="addb" data-node="habitAction" data-role="Button"><i data-icon="tabler:plus" class="ic"></i></div></div>
+  <div class="hab" data-node="habit" data-role="ListItem" data-state="checked"><div class="tile" style="background:var(--color-amber);color:var(--color-amber-ink)"><i data-icon="tabler-filled:book" class="ic"></i></div>
+    <div class="tx"><b>Kitap oku</b><span>20 dk · tamamlandı</span></div><div class="chk on" data-node="habitCheck" data-role="CheckBox" data-state="checked"><i data-icon="tabler:check" class="ic"></i></div></div>
+  <div class="hab" data-node="habit" data-role="ListItem"><div class="tile" style="background:var(--color-green);color:var(--color-green-ink)"><i data-icon="tabler:walk" class="ic"></i></div>
+    <div class="tx"><b>10.000 adım</b><span>7.412 adım</span><div class="mini"><i style="width:74%;background:var(--color-green-ink)"></i></div></div><div class="pct">%74</div></div>
+  <div class="hab" data-node="habit" data-role="ListItem"><div class="tile" style="background:var(--color-violet);color:var(--color-violet-ink)"><i data-icon="tabler:yoga" class="ic"></i></div>
+    <div class="tx"><b>Meditasyon</b><span>10 dk · 19:00</span></div><div class="chk" data-node="habitCheck" data-role="CheckBox"></div></div>
+  <div class="hab" data-node="habit" data-role="ListItem"><div class="tile" style="background:var(--color-indigo);color:var(--color-indigo-ink)"><i data-icon="tabler-filled:moon" class="ic"></i></div>
+    <div class="tx"><b>23:30'da uyu</b><span>Hatırlatıcı 23:00</span></div><div class="chk" data-node="habitCheck" data-role="CheckBox"></div></div>
+</div>
+
+<nav class="tabbar" data-node="tabBar" data-role="TabBar">
+  <div class="tb on" data-node="tabToday" data-role="Tab" data-state="selected"><i data-icon="tabler-filled:home" class="ic"></i>Bugün</div>
+  <div class="tb" data-node="tabStats" data-role="Tab"><i data-icon="tabler:chart-bar" class="ic"></i>İstatistik</div>
+  <div class="fabw"><div class="fab" data-node="fab" data-role="Button"><i data-icon="tabler:plus" class="ic"></i></div></div>
+  <div class="tb" data-node="tabCalendar" data-role="Tab"><i data-icon="tabler:calendar" class="ic"></i>Takvim</div>
+  <div class="tb" data-node="tabProfile" data-role="Tab"><i data-icon="tabler:user" class="ic"></i>Profil</div>
+  <div class="home-ind"></div>
+</nav>
+
+<!--@charts-->
+<script>
+Charts.ring(document.getElementById('ring'), { size: 88, thickness: 9, value: 4 / 6, track: 'rgba(255,255,255,0.25)', color: '#FFFFFF' });
+Charts.done();
+</script>
+</body>
+</html>

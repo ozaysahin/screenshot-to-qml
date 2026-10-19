@@ -1,0 +1,50 @@
+{
+ "id": "16-mobile-chat",
+ "summary": "360x800 Android-style team chat at DPR 2: bubbles with asymmetric radii, reply quote, voice message, typing indicator.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   720,
+   1600
+  ],
+  "dpr": 2,
+  "designSize": [
+   360,
+   800
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Design size 360x800 (input divided by 2).",
+  "App bar: back button, avatar stack of 3 overlapping initials + '+3', title and subtitle, call and more buttons.",
+  "Pinned-message bar with accent bar and uppercase 'SABİTLENMİŞ MESAJ'.",
+  "Messages from a model through one delegate (incoming / outgoing / voice) with per-corner radii (topLeftRadius …); sender names colored per user; avatar only on the last bubble of a group.",
+  "Reply quote inside the first outgoing bubble; timestamps with double read ticks.",
+  "Voice bubble: play button and 28 waveform bars from a model, first 9 in the played color.",
+  "Reaction chip (heart + '2') overlapping the bubble edge; typing indicator with 3 dots.",
+  "Composer: attach button, pill TextField with placeholderText 'Mesaj yazın…', mic button; gesture bar."
+ ],
+ "niceToHave": [
+  "Messages loaded from JSON.",
+  "Animated typing dots."
+ ],
+ "allowedApproximations": [
+  "Waveform as a Repeater of Rectangles or one Shape."
+ ],
+ "forbidden": [
+  "Images for avatars or the waveform."
+ ]
+}

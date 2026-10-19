@@ -1,0 +1,16 @@
+module App.Controls
+Button 1.0 Button.qml
+ComboBox 1.0 ComboBox.qml
+CheckBox 1.0 CheckBox.qml
+FocusRing 1.0 FocusRing.qml
+IconButton 1.0 IconButton.qml
+ProgressBar 1.0 ProgressBar.qml
+RadioButton 1.0 RadioButton.qml
+SegmentedControl 1.0 SegmentedControl.qml
+Slider 1.0 Slider.qml
+SpinBox 1.0 SpinBox.qml
+Switch 1.0 Switch.qml
+TabBar 1.0 TabBar.qml
+TabButton 1.0 TabButton.qml
+TextField 1.0 TextField.qml
+ToolTip 1.0 ToolTip.qml

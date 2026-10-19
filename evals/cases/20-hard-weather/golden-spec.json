@@ -1,0 +1,5531 @@
+{
+ "meta": {
+  "id": "20-hard-weather",
+  "title": "Zor vaka — editoryal hava durumu paneli (İzmir)",
+  "category": "hard",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 2,
+  "captureSize": [
+   2560,
+   1600
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Bricolage Grotesque",
+    "qtFamily": "Bricolage Grotesque",
+    "legacyFamily": "Bricolage Grotesque",
+    "files": [
+     "BricolageGrotesque-Bold.ttf",
+     "BricolageGrotesque-ExtraBold.ttf",
+     "BricolageGrotesque-Light.ttf",
+     "BricolageGrotesque-Medium.ttf",
+     "BricolageGrotesque-Regular.ttf",
+     "BricolageGrotesque-SemiBold.ttf"
+    ],
+    "weights": [
+     300,
+     400,
+     500,
+     600,
+     700,
+     800
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F5F0E8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F5F0E8"
+   },
+   "mesh-peach": {
+    "hex": "#FFD0AE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFD0AE"
+   },
+   "mesh-sky": {
+    "hex": "#C6DAFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C6DAFF"
+   },
+   "mesh-butter": {
+    "hex": "#FFE7A3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFE7A3"
+   },
+   "ink": {
+    "hex": "#1B1A22",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1B1A22"
+   },
+   "ink-2": {
+    "hex": "#46434F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#46434F"
+   },
+   "muted": {
+    "hex": "#7B7784",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7B7784"
+   },
+   "faint": {
+    "hex": "#A7A2AE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A7A2AE"
+   },
+   "line": {
+    "hex": "#1B1A22",
+    "alpha": 0.1,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(27, 26, 34, 0.10)"
+   },
+   "track": {
+    "hex": "#1B1A22",
+    "alpha": 0.08,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(27, 26, 34, 0.08)"
+   },
+   "card": {
+    "hex": "#FFFFFF",
+    "alpha": 0.58,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.58)"
+   },
+   "card-border": {
+    "hex": "#FFFFFF",
+    "alpha": 0.92,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(255, 255, 255, 0.92)"
+   },
+   "temp-from": {
+    "hex": "#FF8A3D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF8A3D"
+   },
+   "temp-mid": {
+    "hex": "#F2477A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F2477A"
+   },
+   "temp-to": {
+    "hex": "#7B5CFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7B5CFF"
+   },
+   "sun": {
+    "hex": "#FFB21E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFB21E"
+   },
+   "sun-deep": {
+    "hex": "#FF7A45",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF7A45"
+   },
+   "cold": {
+    "hex": "#4F9DF5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4F9DF5"
+   },
+   "cool": {
+    "hex": "#56C7C0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#56C7C0"
+   },
+   "mild": {
+    "hex": "#FFC94D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFC94D"
+   },
+   "hot": {
+    "hex": "#FF6A3D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF6A3D"
+   },
+   "rain": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3F7FE0"
+   },
+   "night": {
+    "hex": "#6A5FC1",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6A5FC1"
+   },
+   "good": {
+    "hex": "#2FB57C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2FB57C"
+   },
+   "on-ink": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "8": 32.0,
+   "12": 48.0
+  },
+  "radius": {
+   "sm": 10.0,
+   "md": 16.0,
+   "lg": 24.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(27, 26, 34, 0.04), 0 14px 36px rgba(27, 26, 34, 0.06)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Bricolage Grotesque",
+    "px": 212,
+    "weight": 800,
+    "lineHeight": 164,
+    "letterSpacing": -6,
+    "count": 1,
+    "example": "24°"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -1,
+    "count": 1,
+    "example": "14"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 32,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -1,
+    "count": 1,
+    "example": "42"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 30,
+    "weight": 600,
+    "lineHeight": 36,
+    "letterSpacing": -0.6,
+    "count": 1,
+    "example": "Parçalı bulutlu"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 26,
+    "letterSpacing": -0.3,
+    "count": 1,
+    "example": "İyi"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "rüzgârgülü"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "count": 8,
+    "example": "24°"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "count": 2,
+    "example": "07:14"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "27°"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "18°"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 23,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Pazar lodosla birlikte yağmur"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Bugün"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "count": 6,
+    "example": "Perşembe"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 500,
+    "lineHeight": 23,
+    "letterSpacing": -0.2,
+    "count": 2,
+    "example": "Hafta ortası güneşli ve sıcak."
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "count": 5,
+    "example": "Gün ışığı"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "İzmir"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "25°"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Konak"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Hissedilen"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "°C"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "9 µg/m³"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "30 Eylül 2026, Çarşamba"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Şimdi"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "km/sa"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "15:00"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Nem"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 16,
+    "letterSpacing": 6,
+    "count": 1,
+    "example": "HAFTALIK TAHMİN"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "11 sa 50 dk"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "30 Eyl"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 16,
+    "letterSpacing": 4,
+    "count": 1,
+    "example": "ANLIK DURUM · GÜNCELLENDİ 14:20"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "%20"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Gün batımına 4 sa 44 dk"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Gün doğumu"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "PM2,5"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 1.5,
+    "count": 1,
+    "example": "HKİ"
+   },
+   {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "K"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "header",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    48,
+    28,
+    1184,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "brand",
+   "role": null,
+   "parent": "header",
+   "bbox": [
+    48,
+    38,
+    144.09,
+    28
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "locationPicker",
+   "role": "ComboBox",
+   "parent": "header",
+   "bbox": [
+    224.09,
+    32,
+    173.14,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   },
+   "value": "izmir-konak"
+  },
+  {
+   "id": "date",
+   "role": null,
+   "parent": "header",
+   "bbox": [
+    890.34,
+    42,
+    173.66,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "unitToggle",
+   "role": "SegmentedControl",
+   "parent": "header",
+   "bbox": [
+    1080,
+    32,
+    96,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   "value": "C"
+  },
+  {
+   "id": "unitC",
+   "role": "SegmentItem",
+   "parent": "unitToggle",
+   "bbox": [
+    1084,
+    36,
+    44,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "unitF",
+   "role": "SegmentItem",
+   "parent": "unitToggle",
+   "bbox": [
+    1128,
+    36,
+    44,
+    32
+   ],
+   "style": {
+    "radius": 999
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "searchButton",
+   "role": "IconButton",
+   "parent": "header",
+   "bbox": [
+    1192,
+    32,
+    40,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 50,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "38px",
+    "rows": "38px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "hero",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    48,
+    104,
+    736,
+    262
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 24,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "current",
+   "role": null,
+   "parent": "hero",
+   "bbox": [
+    48,
+    104,
+    392,
+    262
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "kicker",
+   "role": null,
+   "parent": "current",
+   "bbox": [
+    48,
+    104,
+    392,
+    16
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "currentTemp",
+   "role": "Label",
+   "parent": "current",
+   "bbox": [
+    40,
+    126,
+    334.91,
+    164
+   ],
+   "style": {
+    "fillImage": "linear-gradient(150deg, rgb(255, 138, 61) 8%, rgb(242, 71, 122) 52%, rgb(123, 92, 255) 96%)"
+   },
+   "layout": {
+    "padding": [
+     0,
+     12,
+     0,
+     0
+    ]
+   }
+  },
+  {
+   "id": "sunPathCard",
+   "role": "Card",
+   "parent": "hero",
+   "bbox": [
+    464,
+    104,
+    320,
+    262
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     18,
+     20,
+     16,
+     20
+    ]
+   }
+  },
+  {
+   "id": "sunArc",
+   "role": "Chart",
+   "parent": "sunPathCard",
+   "bbox": [
+    485,
+    156,
+    280,
+    140
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute",
+    "clip": true
+   }
+  },
+  {
+   "id": "hourlyCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    48,
+    384,
+    736,
+    164
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     16,
+     20,
+     18,
+     20
+    ]
+   }
+  },
+  {
+   "id": "hours",
+   "role": null,
+   "parent": "hourlyCard",
+   "bbox": [
+    69,
+    434,
+    694,
+    100
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "hourly",
+    "count": 8,
+    "itemId": "hour"
+   }
+  },
+  {
+   "id": "hour[0]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    69,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "hour[1]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    156.5,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[2]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    244,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[3]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    331.5,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[4]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    419,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[5]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    506.5,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[6]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    594,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "hour[7]",
+   "role": "ListItem",
+   "parent": "hours",
+   "bbox": [
+    681.5,
+    434,
+    81.5,
+    100
+   ],
+   "style": {
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "aqiCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    48,
+    566,
+    262,
+    194
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     16,
+     18,
+     18,
+     18
+    ]
+   }
+  },
+  {
+   "id": "aqiRing",
+   "role": "Gauge",
+   "parent": "aqiCard",
+   "bbox": [
+    67,
+    617,
+    108,
+    108
+   ],
+   "style": {},
+   "layout": {},
+   "value": "42"
+  },
+  {
+   "id": "windCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    326,
+    566,
+    262,
+    194
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     16,
+     18,
+     18,
+     18
+    ]
+   }
+  },
+  {
+   "id": "windCompass",
+   "role": "Gauge",
+   "parent": "windCard",
+   "bbox": [
+    345,
+    624.5,
+    108,
+    108
+   ],
+   "style": {},
+   "layout": {},
+   "value": "225"
+  },
+  {
+   "id": "windArrow",
+   "role": "Indicator",
+   "parent": "windCompass",
+   "bbox": [
+    365.06,
+    644.56,
+    67.88,
+    67.88
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "value": "225"
+  },
+  {
+   "id": "detailsCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    604,
+    566,
+    180,
+    194
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     16,
+     18,
+     18,
+     18
+    ]
+   }
+  },
+  {
+   "id": "details",
+   "role": null,
+   "parent": "detailsCard",
+   "bbox": [
+    623,
+    611,
+    142,
+    116
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "details",
+    "count": 4,
+    "itemId": "detail"
+   }
+  },
+  {
+   "id": "detail[0]",
+   "role": null,
+   "parent": "details",
+   "bbox": [
+    623,
+    611,
+    142,
+    29
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center"
+   }
+  },
+  {
+   "id": "detail[1]",
+   "role": null,
+   "parent": "details",
+   "bbox": [
+    623,
+    640,
+    142,
+    29
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center"
+   }
+  },
+  {
+   "id": "detail[2]",
+   "role": null,
+   "parent": "details",
+   "bbox": [
+    623,
+    669,
+    142,
+    29
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center"
+   }
+  },
+  {
+   "id": "detail[3]",
+   "role": null,
+   "parent": "details",
+   "bbox": [
+    623,
+    698,
+    142,
+    29
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "center"
+   }
+  },
+  {
+   "id": "weeklyCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    808,
+    104,
+    434,
+    656
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 0.58
+    },
+    "radius": 24,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#FFFFFF",
+      "alpha": 0.92
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.04
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 36.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     22,
+     18,
+     0
+    ]
+   }
+  },
+  {
+   "id": "weeklyLabel",
+   "role": null,
+   "parent": "weeklyCard",
+   "bbox": [
+    827,
+    129,
+    16,
+    203.94
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "days",
+   "role": null,
+   "parent": "weeklyCard",
+   "bbox": [
+    861,
+    188,
+    358,
+    546
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "weekly",
+    "count": 7,
+    "itemId": "day"
+   }
+  },
+  {
+   "id": "day[0]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    188,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "rangeBar[0]",
+   "role": "ProgressBar",
+   "parent": "day[0]",
+   "bbox": [
+    1055,
+    222.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "18-27"
+  },
+  {
+   "id": "day[1]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    266,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[1]",
+   "role": "ProgressBar",
+   "parent": "day[1]",
+   "bbox": [
+    1055,
+    300.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "19-28"
+  },
+  {
+   "id": "day[2]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    344,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[2]",
+   "role": "ProgressBar",
+   "parent": "day[2]",
+   "bbox": [
+    1055,
+    378.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "19-27"
+  },
+  {
+   "id": "day[3]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    422,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[3]",
+   "role": "ProgressBar",
+   "parent": "day[3]",
+   "bbox": [
+    1055,
+    456.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "18-25"
+  },
+  {
+   "id": "day[4]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    500,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[4]",
+   "role": "ProgressBar",
+   "parent": "day[4]",
+   "bbox": [
+    1055,
+    534.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "17-22"
+  },
+  {
+   "id": "day[5]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    578,
+    358,
+    78
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1B1A22",
+       "alpha": 0.1
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[5]",
+   "role": "ProgressBar",
+   "parent": "day[5]",
+   "bbox": [
+    1055,
+    612.5,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "16-21"
+  },
+  {
+   "id": "day[6]",
+   "role": "ListItem",
+   "parent": "days",
+   "bbox": [
+    861,
+    656,
+    358,
+    78
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "rangeBar[6]",
+   "role": "ProgressBar",
+   "parent": "day[6]",
+   "bbox": [
+    1055,
+    691,
+    120,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B1A22",
+     "alpha": 0.08
+    },
+    "radius": 999
+   },
+   "layout": {},
+   "value": "17-24"
+  }
+ ],
+ "text": [
+  {
+   "string": "rüzgârgülü",
+   "owner": "brand",
+   "bbox": [
+    86,
+    39,
+    106.09,
+    26
+   ],
+   "baseline": 59,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "İzmir",
+   "owner": "locationPicker",
+   "bbox": [
+    263.09,
+    42,
+    38.03,
+    19
+   ],
+   "baseline": 57,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konak",
+   "owner": "locationPicker",
+   "bbox": [
+    309.13,
+    42,
+    47.11,
+    19
+   ],
+   "baseline": 57,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30 Eylül 2026, Çarşamba",
+   "owner": "date",
+   "bbox": [
+    890.34,
+    43,
+    173.66,
+    18
+   ],
+   "baseline": 57,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "unitC",
+   "bbox": [
+    1098.33,
+    43,
+    15.33,
+    18
+   ],
+   "baseline": 57,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°F",
+   "owner": "unitF",
+   "bbox": [
+    1143.03,
+    43,
+    13.92,
+    18
+   ],
+   "baseline": 57,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ANLIK DURUM · GÜNCELLENDİ 14:20",
+   "owner": "kicker",
+   "bbox": [
+    66,
+    105,
+    328.83,
+    14
+   ],
+   "baseline": 116,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 16,
+    "letterSpacing": 4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "24°",
+   "owner": "currentTemp",
+   "bbox": [
+    40,
+    81,
+    322.91,
+    254
+   ],
+   "baseline": 278,
+   "lines": 1,
+   "color": {
+    "hex": "#000000",
+    "alpha": 0.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 212,
+    "weight": 800,
+    "lineHeight": 164,
+    "letterSpacing": -6,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Parçalı bulutlu",
+   "owner": "current",
+   "bbox": [
+    90,
+    300,
+    195.48,
+    36
+   ],
+   "baseline": 328,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 30,
+    "weight": 600,
+    "lineHeight": 36,
+    "letterSpacing": -0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hissedilen",
+   "owner": "current",
+   "bbox": [
+    48,
+    345,
+    76.53,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "25°",
+   "owner": "current",
+   "bbox": [
+    128.52,
+    345,
+    24.59,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "En yüksek",
+   "owner": "current",
+   "bbox": [
+    171.11,
+    345,
+    75.67,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "27°",
+   "owner": "current",
+   "bbox": [
+    250.77,
+    345,
+    22.95,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "En düşük",
+   "owner": "current",
+   "bbox": [
+    291.72,
+    345,
+    67.7,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18°",
+   "owner": "current",
+   "bbox": [
+    363.41,
+    345,
+    21.17,
+    19
+   ],
+   "baseline": 360,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gün ışığı",
+   "owner": "sunPathCard",
+   "bbox": [
+    485,
+    123,
+    64.11,
+    19
+   ],
+   "baseline": 138,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "11 sa 50 dk",
+   "owner": "sunPathCard",
+   "bbox": [
+    699.97,
+    126,
+    63.03,
+    16
+   ],
+   "baseline": 138,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gün batımına 4 sa 44 dk",
+   "owner": "sunPathCard",
+   "bbox": [
+    555.48,
+    261,
+    137.03,
+    14
+   ],
+   "baseline": 272,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "07:14",
+   "owner": "sunPathCard",
+   "bbox": [
+    485,
+    304,
+    52.61,
+    24
+   ],
+   "baseline": 323,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Gün doğumu",
+   "owner": "sunPathCard",
+   "bbox": [
+    503,
+    329,
+    71.08,
+    14
+   ],
+   "baseline": 340,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "19:04",
+   "owner": "sunPathCard",
+   "bbox": [
+    710.39,
+    304,
+    52.61,
+    24
+   ],
+   "baseline": 323,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Gün batımı",
+   "owner": "sunPathCard",
+   "bbox": [
+    703.09,
+    329,
+    59.91,
+    14
+   ],
+   "baseline": 340,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Saatlik tahmin",
+   "owner": "hourlyCard",
+   "bbox": [
+    69,
+    401,
+    108.58,
+    19
+   ],
+   "baseline": 416,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yağış beklenmiyor · rüzgâr 12–16 km/sa",
+   "owner": "hourlyCard",
+   "bbox": [
+    529.72,
+    404,
+    233.28,
+    16
+   ],
+   "baseline": 416,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şimdi",
+   "owner": "hour[0]",
+   "bbox": [
+    90.86,
+    441,
+    37.77,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#A7A2AE",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "24°",
+   "owner": "hour[0]",
+   "bbox": [
+    93.69,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "15:00",
+   "owner": "hour[1]",
+   "bbox": [
+    178.91,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "25°",
+   "owner": "hour[1]",
+   "bbox": [
+    181.19,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "16:00",
+   "owner": "hour[2]",
+   "bbox": [
+    266.41,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "25°",
+   "owner": "hour[2]",
+   "bbox": [
+    268.69,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "17:00",
+   "owner": "hour[3]",
+   "bbox": [
+    353.91,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "24°",
+   "owner": "hour[3]",
+   "bbox": [
+    356.19,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "18:00",
+   "owner": "hour[4]",
+   "bbox": [
+    441.41,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "22°",
+   "owner": "hour[4]",
+   "bbox": [
+    443.69,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "19:00",
+   "owner": "hour[5]",
+   "bbox": [
+    528.91,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "21°",
+   "owner": "hour[5]",
+   "bbox": [
+    531.19,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "20:00",
+   "owner": "hour[6]",
+   "bbox": [
+    616.41,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "20°",
+   "owner": "hour[6]",
+   "bbox": [
+    618.69,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "21:00",
+   "owner": "hour[7]",
+   "bbox": [
+    703.91,
+    441,
+    36.69,
+    17
+   ],
+   "baseline": 454,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "19°",
+   "owner": "hour[7]",
+   "bbox": [
+    706.19,
+    502,
+    32.13,
+    26
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 21,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": -0.3,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Hava kalitesi",
+   "owner": "aqiCard",
+   "bbox": [
+    67,
+    583,
+    95.06,
+    19
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "HKİ · 0–300",
+   "owner": "aqiCard",
+   "bbox": [
+    221.44,
+    586,
+    69.56,
+    16
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "42",
+   "owner": "aqiRing",
+   "bbox": [
+    102.28,
+    644,
+    37.44,
+    39
+   ],
+   "baseline": 674,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 32,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "HKİ",
+   "owner": "aqiRing",
+   "bbox": [
+    109.53,
+    681,
+    22.94,
+    13
+   ],
+   "baseline": 691,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "İyi",
+   "owner": "aqiCard",
+   "bbox": [
+    191,
+    616,
+    24.39,
+    26
+   ],
+   "baseline": 636,
+   "lines": 1,
+   "color": {
+    "hex": "#2FB57C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 26,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "PM2,5",
+   "owner": "aqiCard",
+   "bbox": [
+    191,
+    650,
+    33.7,
+    14
+   ],
+   "baseline": 661,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "9 µg/m³",
+   "owner": "aqiCard",
+   "bbox": [
+    191,
+    665,
+    55.94,
+    18
+   ],
+   "baseline": 679,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "PM10",
+   "owner": "aqiCard",
+   "bbox": [
+    191,
+    692,
+    29.22,
+    14
+   ],
+   "baseline": 703,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "21 µg/m³",
+   "owner": "aqiCard",
+   "bbox": [
+    191,
+    707,
+    65.09,
+    18
+   ],
+   "baseline": 721,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Rüzgâr",
+   "owner": "windCard",
+   "bbox": [
+    345,
+    583,
+    53.17,
+    19
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Lodos",
+   "owner": "windCard",
+   "bbox": [
+    532.23,
+    586,
+    36.77,
+    16
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "K",
+   "owner": "windCompass",
+   "bbox": [
+    395.27,
+    636.5,
+    7.47,
+    13
+   ],
+   "baseline": 646.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "D",
+   "owner": "windCompass",
+   "bbox": [
+    430.2,
+    671.5,
+    7.59,
+    13
+   ],
+   "baseline": 681.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "G",
+   "owner": "windCompass",
+   "bbox": [
+    395.08,
+    706.5,
+    7.84,
+    13
+   ],
+   "baseline": 716.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "B",
+   "owner": "windCompass",
+   "bbox": [
+    360.3,
+    671.5,
+    7.41,
+    13
+   ],
+   "baseline": 681.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14",
+   "owner": "windCard",
+   "bbox": [
+    469,
+    612,
+    39.89,
+    41
+   ],
+   "baseline": 644,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 34,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "km/sa",
+   "owner": "windCard",
+   "bbox": [
+    511.89,
+    631,
+    40.97,
+    17
+   ],
+   "baseline": 644,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Hamle",
+   "owner": "windCard",
+   "bbox": [
+    469,
+    665,
+    35.14,
+    14
+   ],
+   "baseline": 676,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "26 km/sa",
+   "owner": "windCard",
+   "bbox": [
+    469,
+    680,
+    65.7,
+    18
+   ],
+   "baseline": 694,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Yön",
+   "owner": "windCard",
+   "bbox": [
+    469,
+    707,
+    20.64,
+    14
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 15,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "GB · 225°",
+   "owner": "windCard",
+   "bbox": [
+    469,
+    722,
+    63.5,
+    18
+   ],
+   "baseline": 736,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Ayrıntılar",
+   "owner": "detailsCard",
+   "bbox": [
+    623,
+    583,
+    70.55,
+    19
+   ],
+   "baseline": 598,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Nem",
+   "owner": "detail[0]",
+   "bbox": [
+    647,
+    616,
+    30.36,
+    17
+   ],
+   "baseline": 629,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%58",
+   "owner": "detail[0]",
+   "bbox": [
+    732.34,
+    616,
+    32.66,
+    18
+   ],
+   "baseline": 630,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Basınç",
+   "owner": "detail[1]",
+   "bbox": [
+    647,
+    645,
+    43.41,
+    17
+   ],
+   "baseline": 658,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1014",
+   "owner": "detail[1]",
+   "bbox": [
+    702.33,
+    644.5,
+    36.61,
+    18
+   ],
+   "baseline": 658.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "hPa",
+   "owner": "detail[1]",
+   "bbox": [
+    741.94,
+    646.5,
+    23.06,
+    16
+   ],
+   "baseline": 658.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "UV",
+   "owner": "detail[2]",
+   "bbox": [
+    647,
+    674,
+    18.89,
+    17
+   ],
+   "baseline": 687,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5",
+   "owner": "detail[2]",
+   "bbox": [
+    727.38,
+    673.5,
+    9.16,
+    18
+   ],
+   "baseline": 687.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "orta",
+   "owner": "detail[2]",
+   "bbox": [
+    739.53,
+    675.5,
+    25.47,
+    16
+   ],
+   "baseline": 687.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Görüş",
+   "owner": "detail[3]",
+   "bbox": [
+    647,
+    703.5,
+    39.03,
+    17
+   ],
+   "baseline": 716.5,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "16",
+   "owner": "detail[3]",
+   "bbox": [
+    724.75,
+    703,
+    18.31,
+    18
+   ],
+   "baseline": 717,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "km",
+   "owner": "detail[3]",
+   "bbox": [
+    746.06,
+    705,
+    18.94,
+    16
+   ],
+   "baseline": 717,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "HAFTALIK TAHMİN",
+   "owner": "weeklyLabel",
+   "bbox": [
+    827,
+    129,
+    16,
+    203.94
+   ],
+   "baseline": 141,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 16,
+    "letterSpacing": 6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Hafta ortası güneşli ve sıcak.",
+   "owner": "weeklyCard",
+   "bbox": [
+    861,
+    128,
+    222.14,
+    21
+   ],
+   "baseline": 144,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 500,
+    "lineHeight": 23,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pazar lodosla birlikte yağmur",
+   "owner": "weeklyCard",
+   "bbox": [
+    861,
+    128,
+    333.19,
+    44
+   ],
+   "baseline": 144,
+   "lines": 2,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 23,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": ", pazartesi serin.",
+   "owner": "weeklyCard",
+   "bbox": [
+    983.61,
+    151,
+    124.94,
+    21
+   ],
+   "baseline": 167,
+   "lines": 1,
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 500,
+    "lineHeight": 23,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün",
+   "owner": "day[0]",
+   "bbox": [
+    861,
+    206,
+    51.97,
+    21
+   ],
+   "baseline": 222,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "30 Eyl",
+   "owner": "day[0]",
+   "bbox": [
+    861,
+    230,
+    37.14,
+    16
+   ],
+   "baseline": 242,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18°",
+   "owner": "day[0]",
+   "bbox": [
+    1013,
+    215.5,
+    28,
+    22
+   ],
+   "baseline": 232.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "27°",
+   "owner": "day[0]",
+   "bbox": [
+    1190.39,
+    215.5,
+    28.61,
+    22
+   ],
+   "baseline": 232.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Perşembe",
+   "owner": "day[1]",
+   "bbox": [
+    861,
+    284,
+    80.47,
+    21
+   ],
+   "baseline": 300,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "1 Eki",
+   "owner": "day[1]",
+   "bbox": [
+    861,
+    308,
+    24.83,
+    16
+   ],
+   "baseline": 320,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "19°",
+   "owner": "day[1]",
+   "bbox": [
+    1013,
+    293.5,
+    28,
+    22
+   ],
+   "baseline": 310.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "28°",
+   "owner": "day[1]",
+   "bbox": [
+    1190.39,
+    293.5,
+    28.61,
+    22
+   ],
+   "baseline": 310.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Cuma",
+   "owner": "day[2]",
+   "bbox": [
+    861,
+    362,
+    46.08,
+    21
+   ],
+   "baseline": 378,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "2 Eki",
+   "owner": "day[2]",
+   "bbox": [
+    861,
+    386,
+    28.33,
+    16
+   ],
+   "baseline": 398,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "19°",
+   "owner": "day[2]",
+   "bbox": [
+    1013,
+    371.5,
+    28,
+    22
+   ],
+   "baseline": 388.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "27°",
+   "owner": "day[2]",
+   "bbox": [
+    1190.39,
+    371.5,
+    28.61,
+    22
+   ],
+   "baseline": 388.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Cumartesi",
+   "owner": "day[3]",
+   "bbox": [
+    861,
+    440,
+    82.23,
+    21
+   ],
+   "baseline": 456,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "3 Eki",
+   "owner": "day[3]",
+   "bbox": [
+    861,
+    464,
+    28.55,
+    16
+   ],
+   "baseline": 476,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%20",
+   "owner": "day[3]",
+   "bbox": [
+    963.77,
+    467.5,
+    26.45,
+    14
+   ],
+   "baseline": 478.5,
+   "lines": 1,
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "18°",
+   "owner": "day[3]",
+   "bbox": [
+    1013,
+    449.5,
+    28,
+    22
+   ],
+   "baseline": 466.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "25°",
+   "owner": "day[3]",
+   "bbox": [
+    1190.39,
+    449.5,
+    28.61,
+    22
+   ],
+   "baseline": 466.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Pazar",
+   "owner": "day[4]",
+   "bbox": [
+    861,
+    518,
+    44.58,
+    21
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "4 Eki",
+   "owner": "day[4]",
+   "bbox": [
+    861,
+    542,
+    28.45,
+    16
+   ],
+   "baseline": 554,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%70",
+   "owner": "day[4]",
+   "bbox": [
+    963.77,
+    545.5,
+    26.45,
+    14
+   ],
+   "baseline": 556.5,
+   "lines": 1,
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "17°",
+   "owner": "day[4]",
+   "bbox": [
+    1013,
+    527.5,
+    28,
+    22
+   ],
+   "baseline": 544.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "22°",
+   "owner": "day[4]",
+   "bbox": [
+    1190.39,
+    527.5,
+    28.61,
+    22
+   ],
+   "baseline": 544.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Pazartesi",
+   "owner": "day[5]",
+   "bbox": [
+    861,
+    596,
+    73.88,
+    21
+   ],
+   "baseline": 612,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "5 Eki",
+   "owner": "day[5]",
+   "bbox": [
+    861,
+    620,
+    28.58,
+    16
+   ],
+   "baseline": 632,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%40",
+   "owner": "day[5]",
+   "bbox": [
+    963.77,
+    623.5,
+    26.45,
+    14
+   ],
+   "baseline": 634.5,
+   "lines": 1,
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "16°",
+   "owner": "day[5]",
+   "bbox": [
+    1013,
+    605.5,
+    28,
+    22
+   ],
+   "baseline": 622.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "21°",
+   "owner": "day[5]",
+   "bbox": [
+    1190.39,
+    605.5,
+    28.61,
+    22
+   ],
+   "baseline": 622.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Salı",
+   "owner": "day[6]",
+   "bbox": [
+    861,
+    674.5,
+    28.56,
+    21
+   ],
+   "baseline": 690.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 21,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "6 Eki",
+   "owner": "day[6]",
+   "bbox": [
+    861,
+    698.5,
+    29.19,
+    16
+   ],
+   "baseline": 710.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 17,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "17°",
+   "owner": "day[6]",
+   "bbox": [
+    1013,
+    684,
+    28,
+    22
+   ],
+   "baseline": 701,
+   "lines": 1,
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "24°",
+   "owner": "day[6]",
+   "bbox": [
+    1190.39,
+    684,
+    28.61,
+    22
+   ],
+   "baseline": 701,
+   "lines": 1,
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Bricolage Grotesque",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:map-pin",
+   "owner": "locationPicker",
+   "bbox": [
+    237.09,
+    43,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FF6A3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "locationPicker",
+   "bbox": [
+    364.23,
+    43,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FF6A3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:search",
+   "owner": "searchButton",
+   "bbox": [
+    1203,
+    43,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "current",
+   "bbox": [
+    48,
+    302,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#FF7A45",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sunrise",
+   "owner": "sunPathCard",
+   "bbox": [
+    485,
+    329,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#FF7A45",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sunset",
+   "owner": "sunPathCard",
+   "bbox": [
+    685.09,
+    329,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#FF7A45",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "hour[0]",
+   "bbox": [
+    95.75,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#FFB21E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "hour[1]",
+   "bbox": [
+    183.25,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#E7872A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "hour[2]",
+   "bbox": [
+    270.75,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "hour[3]",
+   "bbox": [
+    358.25,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "hour[4]",
+   "bbox": [
+    445.75,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sunset",
+   "owner": "hour[5]",
+   "bbox": [
+    533.25,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#FF7A45",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:moon",
+   "owner": "hour[6]",
+   "bbox": [
+    620.75,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#6A5FC1",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-moon",
+   "owner": "hour[7]",
+   "bbox": [
+    708.25,
+    467,
+    28,
+    28
+   ],
+   "color": {
+    "hex": "#6A5FC1",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:droplets",
+   "owner": "detail[0]",
+   "bbox": [
+    623,
+    617,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:gauge",
+   "owner": "detail[1]",
+   "bbox": [
+    623,
+    646,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun-medium",
+   "owner": "detail[2]",
+   "bbox": [
+    623,
+    675,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:eye",
+   "owner": "detail[3]",
+   "bbox": [
+    623,
+    704.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "day[0]",
+   "bbox": [
+    964,
+    213.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#E7872A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "day[1]",
+   "bbox": [
+    964,
+    291.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:sun",
+   "owner": "day[2]",
+   "bbox": [
+    964,
+    369.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "day[3]",
+   "bbox": [
+    964,
+    439.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#E7872A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-rain",
+   "owner": "day[4]",
+   "bbox": [
+    964,
+    517.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-drizzle",
+   "owner": "day[5]",
+   "bbox": [
+    964,
+    595.5,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cloud-sun",
+   "owner": "day[6]",
+   "bbox": [
+    964,
+    682,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#E7872A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#7B7784",
+    "alpha": 1.0
+   },
+   "count": 50,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 1.0
+   },
+   "count": 48,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.92
+   },
+   "count": 36,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.58
+   },
+   "count": 9,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 0.1
+   },
+   "count": 9,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#46434F",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1B1A22",
+    "alpha": 0.08
+   },
+   "count": 7,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#3F7FE0",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F29A0E",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF7A45",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E7872A",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF6A3D",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6A5FC1",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A7A2AE",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2FB57C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFB21E",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "location": {
+   "city": "İzmir",
+   "district": "Konak"
+  },
+  "date": "30 Eylül 2026, Çarşamba",
+  "updated": "14:20",
+  "now": {
+   "temp": 24,
+   "feels": 25,
+   "high": 27,
+   "low": 18,
+   "condition": "Parçalı bulutlu",
+   "humidity": 58,
+   "pressure": 1014,
+   "uv": 5,
+   "visibility": 16
+  },
+  "sun": {
+   "rise": "07:14",
+   "set": "19:04",
+   "now": "14:20",
+   "progress": 0.6,
+   "daylight": "11 sa 50 dk"
+  },
+  "hourly": [
+   {
+    "t": "Şimdi",
+    "icon": "cloud-sun",
+    "temp": 24
+   },
+   {
+    "t": "15:00",
+    "icon": "cloud-sun",
+    "temp": 25
+   },
+   {
+    "t": "16:00",
+    "icon": "sun",
+    "temp": 25
+   },
+   {
+    "t": "17:00",
+    "icon": "sun",
+    "temp": 24
+   },
+   {
+    "t": "18:00",
+    "icon": "sun",
+    "temp": 22
+   },
+   {
+    "t": "19:00",
+    "icon": "sunset",
+    "temp": 21
+   },
+   {
+    "t": "20:00",
+    "icon": "moon",
+    "temp": 20
+   },
+   {
+    "t": "21:00",
+    "icon": "cloud-moon",
+    "temp": 19
+   }
+  ],
+  "weekly": {
+   "scaleMin": 16,
+   "scaleMax": 28,
+   "trackPx": 120,
+   "gradient": [
+    [
+     "#4F9DF5",
+     0
+    ],
+    [
+     "#56C7C0",
+     0.3
+    ],
+    [
+     "#FFC94D",
+     0.58
+    ],
+    [
+     "#FF6A3D",
+     1
+    ]
+   ],
+   "days": [
+    {
+     "day": "Bugün",
+     "date": "30 Eyl",
+     "icon": "cloud-sun",
+     "min": 18,
+     "max": 27,
+     "pop": 10,
+     "now": 24
+    },
+    {
+     "day": "Perşembe",
+     "date": "1 Eki",
+     "icon": "sun",
+     "min": 19,
+     "max": 28,
+     "pop": 0
+    },
+    {
+     "day": "Cuma",
+     "date": "2 Eki",
+     "icon": "sun",
+     "min": 19,
+     "max": 27,
+     "pop": 0
+    },
+    {
+     "day": "Cumartesi",
+     "date": "3 Eki",
+     "icon": "cloud-sun",
+     "min": 18,
+     "max": 25,
+     "pop": 20
+    },
+    {
+     "day": "Pazar",
+     "date": "4 Eki",
+     "icon": "cloud-rain",
+     "min": 17,
+     "max": 22,
+     "pop": 70
+    },
+    {
+     "day": "Pazartesi",
+     "date": "5 Eki",
+     "icon": "cloud-drizzle",
+     "min": 16,
+     "max": 21,
+     "pop": 40
+    },
+    {
+     "day": "Salı",
+     "date": "6 Eki",
+     "icon": "cloud-sun",
+     "min": 17,
+     "max": 24,
+     "pop": 10
+    }
+   ]
+  },
+  "aqi": {
+   "value": 42,
+   "scaleMax": 300,
+   "label": "İyi",
+   "pm25": 9,
+   "pm10": 21
+  },
+  "wind": {
+   "deg": 225,
+   "name": "Lodos",
+   "dir": "Güneybatı",
+   "speed": 14,
+   "gust": 26,
+   "unit": "km/sa"
+  }
+ },
+ "states": {}
+}

@@ -1,0 +1,11199 @@
+{
+ "meta": {
+  "id": "10-dashboard-ops-dark",
+  "title": "Koyu tema ağ operasyon merkezi (NOC) panosu",
+  "category": "dashboard",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1920,
+   1080
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1920,
+   1080
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Sora",
+    "qtFamily": "Sora",
+    "legacyFamily": "Sora",
+    "files": [
+     "Sora-Bold.ttf",
+     "Sora-Light.ttf",
+     "Sora-Medium.ttf",
+     "Sora-Regular.ttf",
+     "Sora-SemiBold.ttf"
+    ],
+    "weights": [
+     300,
+     400,
+     500,
+     600,
+     700
+    ]
+   },
+   {
+    "css": "DM Mono",
+    "qtFamily": "DM Mono",
+    "legacyFamily": "DM Mono Medium",
+    "files": [
+     "DMMono-Medium.ttf",
+     "DMMono-Regular.ttf"
+    ],
+    "weights": [
+     400,
+     500
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#080B11",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#080B11"
+   },
+   "topbar": {
+    "hex": "#0C1018",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0C1018"
+   },
+   "surface": {
+    "hex": "#0F141D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F141D"
+   },
+   "surface-2": {
+    "hex": "#151C28",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#151C28"
+   },
+   "surface-3": {
+    "hex": "#1B2433",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1B2433"
+   },
+   "border": {
+    "hex": "#1E2736",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1E2736"
+   },
+   "border-strong": {
+    "hex": "#2A3547",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2A3547"
+   },
+   "text": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E6EBF3"
+   },
+   "text-2": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#BAC3D2"
+   },
+   "muted": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7F8BA0"
+   },
+   "dim": {
+    "hex": "#556176",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#556176"
+   },
+   "teal": {
+    "hex": "#2DD4BF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2DD4BF"
+   },
+   "teal-soft": {
+    "hex": "#2DD4BF",
+    "alpha": 0.12,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(45, 212, 191, 0.12)"
+   },
+   "cyan": {
+    "hex": "#38BDF8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#38BDF8"
+   },
+   "violet": {
+    "hex": "#A78BFA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A78BFA"
+   },
+   "blue": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6AA8FF"
+   },
+   "blue-soft": {
+    "hex": "#6AA8FF",
+    "alpha": 0.12,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(106, 168, 255, 0.12)"
+   },
+   "amber": {
+    "hex": "#F5B544",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F5B544"
+   },
+   "amber-soft": {
+    "hex": "#F5B544",
+    "alpha": 0.13,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(245, 181, 68, 0.13)"
+   },
+   "orange": {
+    "hex": "#FB8B4B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FB8B4B"
+   },
+   "orange-soft": {
+    "hex": "#FB8B4B",
+    "alpha": 0.13,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(251, 139, 75, 0.13)"
+   },
+   "red": {
+    "hex": "#F0616D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0616D"
+   },
+   "red-soft": {
+    "hex": "#F0616D",
+    "alpha": 0.14,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(240, 97, 109, 0.14)"
+   },
+   "heat-0": {
+    "hex": "#16323F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#16323F"
+   },
+   "heat-1": {
+    "hex": "#1B5E6B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1B5E6B"
+   },
+   "heat-2": {
+    "hex": "#2E9C8F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2E9C8F"
+   },
+   "heat-3": {
+    "hex": "#E0A93F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E0A93F"
+   },
+   "heat-4": {
+    "hex": "#E5564E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E5564E"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0
+  },
+  "radius": {
+   "xs": 3.0,
+   "sm": 6.0,
+   "md": 8.0,
+   "lg": 12.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "live": {
+    "css": "0 0 0 4px rgba(240, 97, 109, 0.18)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Sora",
+    "px": 38,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": -1,
+    "count": 3,
+    "example": "%47"
+   },
+   {
+    "family": "Sora",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Kuzgun Fiber"
+   },
+   {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "count": 7,
+    "example": "CPU"
+   },
+   {
+    "family": "DM Mono",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "14:32:07"
+   },
+   {
+    "family": "DM Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "612"
+   },
+   {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Genel durum"
+   },
+   {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "%71 · 21:40"
+   },
+   {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Ankara–İstanbul omurga hattında paket ka"
+   },
+   {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 12,
+    "example": "ERR"
+   },
+   {
+    "family": "Sora",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Ağ Operasyonları"
+   },
+   {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "00:47:12"
+   },
+   {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 48,
+    "example": "14:32:07.412"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "MÇ"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "İstanbul Anadolu"
+   },
+   {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "/"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "12 omurga cihazı"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 8,
+    "example": "ort. son 5 dk"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "İndirme"
+   },
+   {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "Pzt"
+   },
+   {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "INC-20931"
+   },
+   {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "syslog · core-*, edge-*, olt-*, dns-*"
+   },
+   {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 1.4,
+    "count": 1,
+    "example": "CANLI"
+   },
+   {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 9,
+    "example": "Normal"
+   },
+   {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "NOC"
+   },
+   {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 15,
+    "example": "UTC+3"
+   },
+   {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "0"
+   },
+   {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 8,
+    "example": "00"
+   },
+   {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "3"
+   },
+   {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "count": 6,
+    "example": "TEPE (24 SA)"
+   },
+   {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "BY"
+   },
+   {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "<10"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "topBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1920,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0C1018",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     24
+    ]
+   }
+  },
+  {
+   "id": "brand",
+   "role": null,
+   "parent": "topBar",
+   "bbox": [
+    24,
+    15.5,
+    187.67,
+    32
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "breadcrumbs",
+   "role": "Breadcrumb",
+   "parent": "topBar",
+   "bbox": [
+    252.67,
+    21.5,
+    369.03,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "liveIndicator",
+   "role": "Badge",
+   "parent": "topBar",
+   "bbox": [
+    641.7,
+    18.5,
+    79.42,
+    26
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F0616D",
+     "alpha": 0.14
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#F0616D",
+      "alpha": 0.35
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     9
+    ]
+   }
+  },
+  {
+   "id": "searchField",
+   "role": "TextField",
+   "parent": "topBar",
+   "bbox": [
+    1272.98,
+    12.5,
+    380,
+    38
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#2A3547",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "clock",
+   "role": null,
+   "parent": "topBar",
+   "bbox": [
+    1672.98,
+    21,
+    111.02,
+    21
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "baseline"
+   }
+  },
+  {
+   "id": "alertsButton",
+   "role": "IconButton",
+   "parent": "topBar",
+   "bbox": [
+    1804,
+    12.5,
+    38,
+    38
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "36px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "userAvatar",
+   "role": "Avatar",
+   "parent": "topBar",
+   "bbox": [
+    1862,
+    14.5,
+    34,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#243552",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "34px",
+    "rows": "34px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "gaugeCard[0]",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    24,
+    88,
+    300,
+    270
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "gaugeState[0]",
+   "role": "Badge",
+   "parent": "gaugeCard[0]",
+   "bbox": [
+    232.81,
+    109,
+    70.19,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2DD4BF",
+     "alpha": 0.12
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "gauge[0]",
+   "role": "Gauge",
+   "parent": "gaugeCard[0]",
+   "bbox": [
+    45,
+    155,
+    258,
+    130
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "center",
+    "align": "normal"
+   },
+   "value": "0.47"
+  },
+  {
+   "id": "gaugeCard[1]",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    344,
+    88,
+    300,
+    270
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "gaugeState[1]",
+   "role": "Badge",
+   "parent": "gaugeCard[1]",
+   "bbox": [
+    565.67,
+    109,
+    57.33,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F5B544",
+     "alpha": 0.13
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "gauge[1]",
+   "role": "Gauge",
+   "parent": "gaugeCard[1]",
+   "bbox": [
+    365,
+    155,
+    258,
+    130
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "center",
+    "align": "normal"
+   },
+   "value": "0.81"
+  },
+  {
+   "id": "gaugeCard[2]",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    664,
+    88,
+    300,
+    270
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "gaugeState[2]",
+   "role": "Badge",
+   "parent": "gaugeCard[2]",
+   "bbox": [
+    872.81,
+    109,
+    70.19,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2DD4BF",
+     "alpha": 0.12
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "gauge[2]",
+   "role": "Gauge",
+   "parent": "gaugeCard[2]",
+   "bbox": [
+    685,
+    155,
+    258,
+    130
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "center",
+    "align": "normal"
+   },
+   "value": "0.66"
+  },
+  {
+   "id": "throughputCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    984,
+    88,
+    912,
+    270
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "throughputLegend",
+   "role": null,
+   "parent": "throughputCard",
+   "bbox": [
+    1661.73,
+    109,
+    213.27,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "throughputChart",
+   "role": "Chart",
+   "parent": "throughputCard",
+   "bbox": [
+    1005,
+    161,
+    870,
+    176
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "heatmapCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    24,
+    378,
+    1172,
+    342
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "heatLegend",
+   "role": null,
+   "parent": "heatmapCard",
+   "bbox": [
+    801.16,
+    402.5,
+    194,
+    23
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "regionSelect",
+   "role": "ComboBox",
+   "parent": "heatmapCard",
+   "bbox": [
+    1007.16,
+    399,
+    167.84,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#151C28",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#2A3547",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     10
+    ]
+   },
+   "value": "İstanbul Anadolu"
+  },
+  {
+   "id": "heatDays",
+   "role": null,
+   "parent": "heatmapCard",
+   "bbox": [
+    45,
+    453,
+    36,
+    220
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "28px 28px 28px 28px 28px 28px 28px",
+    "columnGap": "normal",
+    "rowGap": 4
+   }
+  },
+  {
+   "id": "heatmap",
+   "role": "Chart",
+   "parent": "heatmapCard",
+   "bbox": [
+    89,
+    453,
+    1086,
+    220
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px 41.4062px 41.4219px 41.4219px",
+    "rows": "28px 28px 28px 28px 28px 28px 28px",
+    "columnGap": 4,
+    "rowGap": 4
+   },
+   "model": {
+    "name": "latencyCells",
+    "count": 168,
+    "itemId": "heatCell"
+   }
+  },
+  {
+   "id": "heatCell[0]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[1]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[2]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[3]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "5"
+  },
+  {
+   "id": "heatCell[4]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "5"
+  },
+  {
+   "id": "heatCell[5]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[6]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[7]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "9"
+  },
+  {
+   "id": "heatCell[8]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "11"
+  },
+  {
+   "id": "heatCell[9]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[10]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "16"
+  },
+  {
+   "id": "heatCell[11]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "18"
+  },
+  {
+   "id": "heatCell[12]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[13]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "21"
+  },
+  {
+   "id": "heatCell[14]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "20"
+  },
+  {
+   "id": "heatCell[15]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[16]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[17]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "20"
+  },
+  {
+   "id": "heatCell[18]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "31"
+  },
+  {
+   "id": "heatCell[19]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "34"
+  },
+  {
+   "id": "heatCell[20]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "41"
+  },
+  {
+   "id": "heatCell[21]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    453,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "40"
+  },
+  {
+   "id": "heatCell[22]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "37"
+  },
+  {
+   "id": "heatCell[23]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    453,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[24]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[25]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[26]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[27]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[28]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "5"
+  },
+  {
+   "id": "heatCell[29]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[30]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "6"
+  },
+  {
+   "id": "heatCell[31]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[32]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "11"
+  },
+  {
+   "id": "heatCell[33]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[34]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[35]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "16"
+  },
+  {
+   "id": "heatCell[36]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "14"
+  },
+  {
+   "id": "heatCell[37]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[38]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "21"
+  },
+  {
+   "id": "heatCell[39]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "18"
+  },
+  {
+   "id": "heatCell[40]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "19"
+  },
+  {
+   "id": "heatCell[41]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[42]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "27"
+  },
+  {
+   "id": "heatCell[43]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "29"
+  },
+  {
+   "id": "heatCell[44]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "41"
+  },
+  {
+   "id": "heatCell[45]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    485,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "42"
+  },
+  {
+   "id": "heatCell[46]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "38"
+  },
+  {
+   "id": "heatCell[47]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    485,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[48]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[49]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[50]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "6"
+  },
+  {
+   "id": "heatCell[51]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "5"
+  },
+  {
+   "id": "heatCell[52]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[53]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[54]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[55]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[56]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[57]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[58]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "17"
+  },
+  {
+   "id": "heatCell[59]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "14"
+  },
+  {
+   "id": "heatCell[60]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "18"
+  },
+  {
+   "id": "heatCell[61]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[62]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[63]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[64]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "19"
+  },
+  {
+   "id": "heatCell[65]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[66]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[67]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "34"
+  },
+  {
+   "id": "heatCell[68]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "38"
+  },
+  {
+   "id": "heatCell[69]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    517,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "40"
+  },
+  {
+   "id": "heatCell[70]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "37"
+  },
+  {
+   "id": "heatCell[71]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    517,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "24"
+  },
+  {
+   "id": "heatCell[72]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[73]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "11"
+  },
+  {
+   "id": "heatCell[74]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[75]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "9"
+  },
+  {
+   "id": "heatCell[76]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[77]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "9"
+  },
+  {
+   "id": "heatCell[78]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "5"
+  },
+  {
+   "id": "heatCell[79]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "11"
+  },
+  {
+   "id": "heatCell[80]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "14"
+  },
+  {
+   "id": "heatCell[81]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "12"
+  },
+  {
+   "id": "heatCell[82]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[83]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "16"
+  },
+  {
+   "id": "heatCell[84]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "16"
+  },
+  {
+   "id": "heatCell[85]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "21"
+  },
+  {
+   "id": "heatCell[86]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E5564E",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "62"
+  },
+  {
+   "id": "heatCell[87]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E5564E",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "67"
+  },
+  {
+   "id": "heatCell[88]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "41"
+  },
+  {
+   "id": "heatCell[89]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[90]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[91]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "30"
+  },
+  {
+   "id": "heatCell[92]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "36"
+  },
+  {
+   "id": "heatCell[93]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    549,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "36"
+  },
+  {
+   "id": "heatCell[94]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "39"
+  },
+  {
+   "id": "heatCell[95]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    549,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "29"
+  },
+  {
+   "id": "heatCell[96]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "14"
+  },
+  {
+   "id": "heatCell[97]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[98]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[99]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "9"
+  },
+  {
+   "id": "heatCell[100]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[101]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[102]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[103]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[104]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "17"
+  },
+  {
+   "id": "heatCell[105]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "16"
+  },
+  {
+   "id": "heatCell[106]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "14"
+  },
+  {
+   "id": "heatCell[107]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "20"
+  },
+  {
+   "id": "heatCell[108]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "17"
+  },
+  {
+   "id": "heatCell[109]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "21"
+  },
+  {
+   "id": "heatCell[110]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "24"
+  },
+  {
+   "id": "heatCell[111]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "20"
+  },
+  {
+   "id": "heatCell[112]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "21"
+  },
+  {
+   "id": "heatCell[113]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "28"
+  },
+  {
+   "id": "heatCell[114]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "30"
+  },
+  {
+   "id": "heatCell[115]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "29"
+  },
+  {
+   "id": "heatCell[116]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "35"
+  },
+  {
+   "id": "heatCell[117]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    581,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E5564E",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "58"
+  },
+  {
+   "id": "heatCell[118]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E5564E",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "54"
+  },
+  {
+   "id": "heatCell[119]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    581,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "29"
+  },
+  {
+   "id": "heatCell[120]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[121]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "8"
+  },
+  {
+   "id": "heatCell[122]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "6"
+  },
+  {
+   "id": "heatCell[123]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[124]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[125]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "4"
+  },
+  {
+   "id": "heatCell[126]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "11"
+  },
+  {
+   "id": "heatCell[127]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "12"
+  },
+  {
+   "id": "heatCell[128]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[129]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "19"
+  },
+  {
+   "id": "heatCell[130]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[131]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[132]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "27"
+  },
+  {
+   "id": "heatCell[133]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "23"
+  },
+  {
+   "id": "heatCell[134]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "24"
+  },
+  {
+   "id": "heatCell[135]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[136]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[137]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[138]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[139]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "31"
+  },
+  {
+   "id": "heatCell[140]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "44"
+  },
+  {
+   "id": "heatCell[141]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    613,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E5564E",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "50"
+  },
+  {
+   "id": "heatCell[142]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "46"
+  },
+  {
+   "id": "heatCell[143]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    613,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[144]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    89,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "12"
+  },
+  {
+   "id": "heatCell[145]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    134.41,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[146]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    179.83,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "6"
+  },
+  {
+   "id": "heatCell[147]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    225.25,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "10"
+  },
+  {
+   "id": "heatCell[148]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    270.66,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[149]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    316.08,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[150]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    361.5,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[151]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    406.91,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#16323F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "7"
+  },
+  {
+   "id": "heatCell[152]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    452.33,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "15"
+  },
+  {
+   "id": "heatCell[153]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    497.75,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "13"
+  },
+  {
+   "id": "heatCell[154]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    543.16,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B5E6B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "19"
+  },
+  {
+   "id": "heatCell[155]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    588.58,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[156]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    634,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "22"
+  },
+  {
+   "id": "heatCell[157]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    679.41,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "25"
+  },
+  {
+   "id": "heatCell[158]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    724.83,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "28"
+  },
+  {
+   "id": "heatCell[159]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    770.25,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "27"
+  },
+  {
+   "id": "heatCell[160]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    815.66,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "26"
+  },
+  {
+   "id": "heatCell[161]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    861.08,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "24"
+  },
+  {
+   "id": "heatCell[162]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    906.5,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "28"
+  },
+  {
+   "id": "heatCell[163]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    951.91,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "34"
+  },
+  {
+   "id": "heatCell[164]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    997.33,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "44"
+  },
+  {
+   "id": "heatCell[165]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1042.75,
+    645,
+    41.41,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "47"
+  },
+  {
+   "id": "heatCell[166]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1088.16,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0A93F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "45"
+  },
+  {
+   "id": "heatCell[167]",
+   "role": null,
+   "parent": "heatmap",
+   "bbox": [
+    1133.58,
+    645,
+    41.42,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2E9C8F",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "value": "24"
+  },
+  {
+   "id": "heatHours",
+   "role": null,
+   "parent": "heatmapCard",
+   "bbox": [
+    89,
+    681,
+    1086,
+    16
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "135.75px 135.75px 135.75px 135.75px 135.75px 135.75px 135.75px 135.75px",
+    "rows": "16px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "incidentsCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    1216,
+    378,
+    680,
+    342
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     20,
+     20,
+     20
+    ]
+   }
+  },
+  {
+   "id": "incidentsLink",
+   "role": "Button",
+   "parent": "incidentsCard",
+   "bbox": [
+    1773.97,
+    399,
+    101.03,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 2,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "incidents",
+   "role": null,
+   "parent": "incidentsCard",
+   "bbox": [
+    1237,
+    443,
+    638,
+    250
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "incidents",
+    "count": 5,
+    "itemId": "incidentRow"
+   }
+  },
+  {
+   "id": "incidentRow[0]",
+   "role": "ListItem",
+   "parent": "incidents",
+   "bbox": [
+    1237,
+    443,
+    638,
+    50
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "70px 408px 28px 84px",
+    "rows": "50px",
+    "columnGap": 16,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "severityChip[0]",
+   "role": "Chip",
+   "parent": "incidentRow[0]",
+   "bbox": [
+    1237,
+    457,
+    70,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F0616D",
+     "alpha": 0.14
+    },
+    "radius": 3,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#F0616D",
+       "alpha": 0.35
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "center",
+    "align": "center"
+   },
+   "value": "Kritik"
+  },
+  {
+   "id": "incidentRow[1]",
+   "role": "ListItem",
+   "parent": "incidents",
+   "bbox": [
+    1237,
+    493,
+    638,
+    50
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "70px 408px 28px 84px",
+    "rows": "49px",
+    "columnGap": 16,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "severityChip[1]",
+   "role": "Chip",
+   "parent": "incidentRow[1]",
+   "bbox": [
+    1237,
+    507.5,
+    70,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FB8B4B",
+     "alpha": 0.13
+    },
+    "radius": 3
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "center",
+    "align": "center"
+   },
+   "value": "Yüksek"
+  },
+  {
+   "id": "incidentRow[2]",
+   "role": "ListItem",
+   "parent": "incidents",
+   "bbox": [
+    1237,
+    543,
+    638,
+    50
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "70px 408px 28px 84px",
+    "rows": "49px",
+    "columnGap": 16,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "severityChip[2]",
+   "role": "Chip",
+   "parent": "incidentRow[2]",
+   "bbox": [
+    1237,
+    557.5,
+    70,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FB8B4B",
+     "alpha": 0.13
+    },
+    "radius": 3
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "center",
+    "align": "center"
+   },
+   "value": "Yüksek"
+  },
+  {
+   "id": "incidentRow[3]",
+   "role": "ListItem",
+   "parent": "incidents",
+   "bbox": [
+    1237,
+    593,
+    638,
+    50
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "70px 408px 28px 84px",
+    "rows": "49px",
+    "columnGap": 16,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "severityChip[3]",
+   "role": "Chip",
+   "parent": "incidentRow[3]",
+   "bbox": [
+    1237,
+    607.5,
+    70,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F5B544",
+     "alpha": 0.13
+    },
+    "radius": 3
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "center",
+    "align": "center"
+   },
+   "value": "Orta"
+  },
+  {
+   "id": "incidentRow[4]",
+   "role": "ListItem",
+   "parent": "incidents",
+   "bbox": [
+    1237,
+    643,
+    638,
+    50
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "70px 408px 28px 84px",
+    "rows": "49px",
+    "columnGap": 16,
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "severityChip[4]",
+   "role": "Chip",
+   "parent": "incidentRow[4]",
+   "bbox": [
+    1237,
+    657.5,
+    70,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F5B544",
+     "alpha": 0.13
+    },
+    "radius": 3
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "center",
+    "align": "center"
+   },
+   "value": "Orta"
+  },
+  {
+   "id": "logPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    24,
+    740,
+    1872,
+    316
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F141D",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     14,
+     0,
+     0,
+     0
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "logFilter",
+   "role": "TabBar",
+   "parent": "logPanel",
+   "bbox": [
+    1573.38,
+    756,
+    195.86,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#151C28",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#1E2736",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   "value": "all"
+  },
+  {
+   "id": "logFilterTab[0]",
+   "role": "Tab",
+   "parent": "logFilter",
+   "bbox": [
+    1576.38,
+    759,
+    53.58,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1B2433",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "logFilterTab[1]",
+   "role": "Tab",
+   "parent": "logFilter",
+   "bbox": [
+    1629.95,
+    759,
+    79.45,
+    24
+   ],
+   "style": {
+    "radius": 4
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "logFilterTab[2]",
+   "role": "Tab",
+   "parent": "logFilter",
+   "bbox": [
+    1709.41,
+    759,
+    56.83,
+    24
+   ],
+   "style": {
+    "radius": 4
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "pauseButton",
+   "role": "Button",
+   "parent": "logPanel",
+   "bbox": [
+    1781.23,
+    756,
+    93.77,
+    30
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#2A3547",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "logLines",
+   "role": null,
+   "parent": "logPanel",
+   "bbox": [
+    25,
+    799,
+    1870,
+    256
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0B1017",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#1E2736",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ],
+    "clip": true
+   },
+   "model": {
+    "name": "logLines",
+    "count": 12,
+    "itemId": "logLine"
+   }
+  },
+  {
+   "id": "logLine[0]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    25,
+    800,
+    1870,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F0616D",
+     "alpha": 0.06
+    }
+   },
+   "layout": {
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "logLine[1]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    822,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[2]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    844,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[3]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    866,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[4]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    25,
+    888,
+    1870,
+    22
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F0616D",
+     "alpha": 0.06
+    }
+   },
+   "layout": {
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "logLine[5]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    910,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[6]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    932,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[7]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    954,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[8]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    976,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[9]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    998,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[10]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    1020,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "logLine[11]",
+   "role": "ListItem",
+   "parent": "logLines",
+   "bbox": [
+    45,
+    1042,
+    1830,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  }
+ ],
+ "text": [
+  {
+   "string": "Kuzgun Fiber",
+   "owner": "brand",
+   "bbox": [
+    66,
+    20.5,
+    103.86,
+    21
+   ],
+   "baseline": 36.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "NOC",
+   "owner": "brand",
+   "bbox": [
+    185.86,
+    24.5,
+    19.81,
+    14
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ağ Operasyonları",
+   "owner": "breadcrumbs",
+   "bbox": [
+    252.67,
+    22.5,
+    113.97,
+    17
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Marmara Bölgesi",
+   "owner": "breadcrumbs",
+   "bbox": [
+    396.64,
+    22.5,
+    109.58,
+    17
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Genel durum",
+   "owner": "breadcrumbs",
+   "bbox": [
+    536.22,
+    22.5,
+    85.48,
+    17
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "CANLI",
+   "owner": "liveIndicator",
+   "bbox": [
+    666.7,
+    24.5,
+    43.42,
+    14
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FF8E97",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 1.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Cihaz, IP adresi veya olay no ara…",
+   "owner": "searchField",
+   "bbox": [
+    1311.98,
+    22.5,
+    215.17,
+    17
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "/",
+   "owner": "searchField",
+   "bbox": [
+    1629.38,
+    23.5,
+    7.2,
+    16
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:07",
+   "owner": "clock",
+   "bbox": [
+    1672.98,
+    21,
+    72.02,
+    20
+   ],
+   "baseline": 36,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "UTC+3",
+   "owner": "clock",
+   "bbox": [
+    1751,
+    25,
+    33,
+    14
+   ],
+   "baseline": 36,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "alertsButton",
+   "bbox": [
+    1826.86,
+    12.5,
+    6.27,
+    13
+   ],
+   "baseline": 22.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MÇ",
+   "owner": "userAvatar",
+   "bbox": [
+    1868.47,
+    23.5,
+    21.05,
+    15
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#9CC2FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "CPU",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    45,
+    109,
+    33.27,
+    19
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 omurga cihazı",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    45,
+    130,
+    100.16,
+    15
+   ],
+   "baseline": 142,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Normal",
+   "owner": "gaugeState[0]",
+   "bbox": [
+    252.81,
+    113,
+    42.19,
+    14
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#2DD4BF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%47",
+   "owner": "gauge[0]",
+   "bbox": [
+    134.92,
+    211,
+    78.14,
+    48
+   ],
+   "baseline": 248,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 38,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": -1,
+    "italic": false
+   }
+  },
+  {
+   "string": "ort. son 5 dk",
+   "owner": "gauge[0]",
+   "bbox": [
+    136.77,
+    260,
+    74.47,
+    15
+   ],
+   "baseline": 272,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "gauge[0]",
+   "bbox": [
+    72,
+    271,
+    6.61,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "100",
+   "owner": "gauge[0]",
+   "bbox": [
+    256.19,
+    271,
+    19.81,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TEPE (24 SA)",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    45,
+    305,
+    75.89,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%71 · 21:40",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    45,
+    320,
+    85.81,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EŞİK",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    275.81,
+    305,
+    27.19,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%85",
+   "owner": "gaugeCard[0]",
+   "bbox": [
+    279.59,
+    320,
+    23.41,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bellek",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    365,
+    109,
+    46.67,
+    19
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "ort. 12 cihaz",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    365,
+    130,
+    70.75,
+    15
+   ],
+   "baseline": 142,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Uyarı",
+   "owner": "gaugeState[1]",
+   "bbox": [
+    585.67,
+    113,
+    29.33,
+    14
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%81",
+   "owner": "gauge[1]",
+   "bbox": [
+    458.27,
+    211,
+    71.45,
+    48
+   ],
+   "baseline": 248,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 38,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": -1,
+    "italic": false
+   }
+  },
+  {
+   "string": "ort. son 5 dk",
+   "owner": "gauge[1]",
+   "bbox": [
+    456.77,
+    260,
+    74.47,
+    15
+   ],
+   "baseline": 272,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "gauge[1]",
+   "bbox": [
+    392,
+    271,
+    6.61,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "100",
+   "owner": "gauge[1]",
+   "bbox": [
+    576.19,
+    271,
+    19.81,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TEPE (24 SA)",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    365,
+    305,
+    75.89,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%84 · 22:10",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    365,
+    320,
+    85.81,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EŞİK",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    595.81,
+    305,
+    27.19,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%85",
+   "owner": "gaugeCard[1]",
+   "bbox": [
+    599.59,
+    320,
+    23.41,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bant genişliği",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    685,
+    109,
+    104.13,
+    19
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "786 / 1.200 Gbps",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    685,
+    130,
+    101.16,
+    15
+   ],
+   "baseline": 142,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Normal",
+   "owner": "gaugeState[2]",
+   "bbox": [
+    892.81,
+    113,
+    42.19,
+    14
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#2DD4BF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%66",
+   "owner": "gauge[2]",
+   "bbox": [
+    773.06,
+    211,
+    81.86,
+    48
+   ],
+   "baseline": 248,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 38,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": -1,
+    "italic": false
+   }
+  },
+  {
+   "string": "anlık kullanım",
+   "owner": "gauge[2]",
+   "bbox": [
+    772.78,
+    260,
+    82.42,
+    15
+   ],
+   "baseline": 272,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "gauge[2]",
+   "bbox": [
+    712,
+    271,
+    6.61,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "100",
+   "owner": "gauge[2]",
+   "bbox": [
+    896.19,
+    271,
+    19.81,
+    14
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TEPE (24 SA)",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    685,
+    305,
+    75.89,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%96 · 21:00",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    685,
+    320,
+    85.81,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EŞİK",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    915.81,
+    305,
+    27.19,
+    13
+   ],
+   "baseline": 315,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 1,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "%90",
+   "owner": "gaugeCard[2]",
+   "bbox": [
+    919.59,
+    320,
+    23.41,
+    17
+   ],
+   "baseline": 333,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Trafik hacmi",
+   "owner": "throughputCard",
+   "bbox": [
+    1005,
+    109,
+    92.8,
+    19
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "Son 24 saat · Gbps · 30 dk ortalama",
+   "owner": "throughputCard",
+   "bbox": [
+    1005,
+    130,
+    211.06,
+    15
+   ],
+   "baseline": 142,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İndirme",
+   "owner": "throughputLegend",
+   "bbox": [
+    1679.73,
+    111,
+    47.3,
+    15
+   ],
+   "baseline": 123,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "612",
+   "owner": "throughputLegend",
+   "bbox": [
+    1735.03,
+    110,
+    25.2,
+    18
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yükleme",
+   "owner": "throughputLegend",
+   "bbox": [
+    1790.23,
+    111,
+    51.56,
+    15
+   ],
+   "baseline": 123,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "174",
+   "owner": "throughputLegend",
+   "bbox": [
+    1849.8,
+    110,
+    25.2,
+    18
+   ],
+   "baseline": 124,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "throughputChart",
+   "bbox": [
+    1032.39,
+    306,
+    7,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "250",
+   "owner": "throughputChart",
+   "bbox": [
+    1019.19,
+    270,
+    20.2,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "500",
+   "owner": "throughputChart",
+   "bbox": [
+    1019.19,
+    234,
+    20.2,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "750",
+   "owner": "throughputChart",
+   "bbox": [
+    1019.19,
+    198,
+    20.2,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.000",
+   "owner": "throughputChart",
+   "bbox": [
+    1006,
+    162,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1032.5,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "17:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1133.25,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "20:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1234,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1334.75,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "02:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1435.5,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "05:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1536.25,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "08:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1637,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "11:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1737.75,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:30",
+   "owner": "throughputChart",
+   "bbox": [
+    1838.5,
+    320,
+    33.4,
+    14
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bölge gecikmesi",
+   "owner": "heatmapCard",
+   "bbox": [
+    45,
+    399,
+    126.22,
+    19
+   ],
+   "baseline": 414,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "21–27 Eylül · saatlik p95 · ms",
+   "owner": "heatmapCard",
+   "bbox": [
+    45,
+    420,
+    164.78,
+    15
+   ],
+   "baseline": 432,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "<10",
+   "owner": "heatLegend",
+   "bbox": [
+    809.16,
+    412.5,
+    18,
+    13
+   ],
+   "baseline": 422.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10–20",
+   "owner": "heatLegend",
+   "bbox": [
+    843.16,
+    412.5,
+    30,
+    13
+   ],
+   "baseline": 422.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "20–35",
+   "owner": "heatLegend",
+   "bbox": [
+    883.16,
+    412.5,
+    30,
+    13
+   ],
+   "baseline": 422.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "35–50",
+   "owner": "heatLegend",
+   "bbox": [
+    923.16,
+    412.5,
+    30,
+    13
+   ],
+   "baseline": 422.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": ">50",
+   "owner": "heatLegend",
+   "bbox": [
+    969.16,
+    412.5,
+    18,
+    13
+   ],
+   "baseline": 422.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 10,
+    "weight": 400,
+    "lineHeight": 12,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İstanbul Anadolu",
+   "owner": "regionSelect",
+   "bbox": [
+    1040.16,
+    406,
+    103.84,
+    15
+   ],
+   "baseline": 418,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pzt",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    459,
+    18.66,
+    15
+   ],
+   "baseline": 471,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sal",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    491,
+    18.61,
+    15
+   ],
+   "baseline": 503,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çar",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    523,
+    21.38,
+    15
+   ],
+   "baseline": 535,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Per",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    555,
+    19.83,
+    15
+   ],
+   "baseline": 567,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cum",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    587,
+    28.7,
+    15
+   ],
+   "baseline": 599,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cmt",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    619,
+    26.28,
+    15
+   ],
+   "baseline": 631,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Paz",
+   "owner": "heatDays",
+   "bbox": [
+    45,
+    651,
+    20.38,
+    15
+   ],
+   "baseline": 663,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "00",
+   "owner": "heatHours",
+   "bbox": [
+    89,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "03",
+   "owner": "heatHours",
+   "bbox": [
+    224.75,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "06",
+   "owner": "heatHours",
+   "bbox": [
+    360.5,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "09",
+   "owner": "heatHours",
+   "bbox": [
+    496.25,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12",
+   "owner": "heatHours",
+   "bbox": [
+    632,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "15",
+   "owner": "heatHours",
+   "bbox": [
+    767.75,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18",
+   "owner": "heatHours",
+   "bbox": [
+    903.5,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "21",
+   "owner": "heatHours",
+   "bbox": [
+    1039.25,
+    682,
+    13.2,
+    14
+   ],
+   "baseline": 693,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Açık olaylar",
+   "owner": "incidentsCard",
+   "bbox": [
+    1237,
+    399,
+    88.36,
+    19
+   ],
+   "baseline": 414,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "5",
+   "owner": "incidentsCard",
+   "bbox": [
+    1339.84,
+    402,
+    7.02,
+    14
+   ],
+   "baseline": 413,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Olay yönetimi",
+   "owner": "incidentsLink",
+   "bbox": [
+    1773.97,
+    401,
+    85.03,
+    15
+   ],
+   "baseline": 413,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kritik",
+   "owner": "severityChip[0]",
+   "bbox": [
+    1256.36,
+    461,
+    31.28,
+    14
+   ],
+   "baseline": 472,
+   "lines": 1,
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara–İstanbul omurga hattında paket kaybı",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1323,
+    451,
+    299.28,
+    17
+   ],
+   "baseline": 464,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INC-20931",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1323,
+    469,
+    64.81,
+    16
+   ],
+   "baseline": 481,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "core-ank-01 · xe-0/0/3",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1395.81,
+    469,
+    136.88,
+    15
+   ],
+   "baseline": 481,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BY",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1753.42,
+    461,
+    13.14,
+    13
+   ],
+   "baseline": 471,
+   "lines": 1,
+   "color": {
+    "hex": "#C9B5FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "00:47:12",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1812.59,
+    459,
+    62.41,
+    17
+   ],
+   "baseline": 472,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yüksek",
+   "owner": "severityChip[1]",
+   "bbox": [
+    1251.91,
+    511.5,
+    40.17,
+    14
+   ],
+   "baseline": 522.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FB8B4B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Karşıyaka OLT hat kartı yanıt vermiyor",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1323,
+    501.5,
+    246.31,
+    17
+   ],
+   "baseline": 514.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INC-20928",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1323,
+    519.5,
+    64.81,
+    16
+   ],
+   "baseline": 531.5,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "olt-izm-07 · 1.184 abone etkilendi",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1395.81,
+    519.5,
+    199.91,
+    15
+   ],
+   "baseline": 531.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SA",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1752.78,
+    511.5,
+    14.42,
+    13
+   ],
+   "baseline": 521.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7FE3D3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "01:12:40",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1812.59,
+    509.5,
+    62.41,
+    17
+   ],
+   "baseline": 522.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yüksek",
+   "owner": "severityChip[2]",
+   "bbox": [
+    1251.91,
+    561.5,
+    40.17,
+    14
+   ],
+   "baseline": 572.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FB8B4B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DNS çözümleme gecikmesi eşiği aştı",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1323,
+    551.5,
+    243.16,
+    17
+   ],
+   "baseline": 564.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INC-20925",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1323,
+    569.5,
+    64.81,
+    16
+   ],
+   "baseline": 581.5,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "dns-ist-02 · p95 184 ms",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1395.81,
+    569.5,
+    142,
+    15
+   ],
+   "baseline": 581.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EK",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1753.38,
+    561.5,
+    13.25,
+    13
+   ],
+   "baseline": 571.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFC983",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "00:22:05",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1812.59,
+    559.5,
+    62.41,
+    17
+   ],
+   "baseline": 572.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Orta",
+   "owner": "severityChip[3]",
+   "bbox": [
+    1259.28,
+    611.5,
+    25.42,
+    14
+   ],
+   "baseline": 622.5,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bursa POP'ta UPS bataryadan besleniyor",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1323,
+    601.5,
+    265.39,
+    17
+   ],
+   "baseline": 614.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INC-20919",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1323,
+    619.5,
+    64.81,
+    16
+   ],
+   "baseline": 631.5,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "pop-brs-01 · şarj %38",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1395.81,
+    619.5,
+    129.02,
+    15
+   ],
+   "baseline": 631.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MÇ",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1751.23,
+    611.5,
+    17.53,
+    13
+   ],
+   "baseline": 621.5,
+   "lines": 1,
+   "color": {
+    "hex": "#9CC2FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "02:05:31",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1812.59,
+    609.5,
+    62.41,
+    17
+   ],
+   "baseline": 622.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Orta",
+   "owner": "severityChip[4]",
+   "bbox": [
+    1259.28,
+    661.5,
+    25.42,
+    14
+   ],
+   "baseline": 672.5,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 11,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BGP komşuluğunda tekrarlayan kopma",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1323,
+    651.5,
+    254.75,
+    17
+   ],
+   "baseline": 664.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INC-20917",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1323,
+    669.5,
+    64.81,
+    16
+   ],
+   "baseline": 681.5,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "edge-ank-03 · AS64512",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1395.81,
+    669.5,
+    142.06,
+    15
+   ],
+   "baseline": 681.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BY",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1753.42,
+    661.5,
+    13.14,
+    13
+   ],
+   "baseline": 671.5,
+   "lines": 1,
+   "color": {
+    "hex": "#C9B5FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 10,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "03:41:09",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1812.59,
+    659.5,
+    62.41,
+    17
+   ],
+   "baseline": 672.5,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sistem günlüğü",
+   "owner": "logPanel",
+   "bbox": [
+    45,
+    761,
+    119,
+    19
+   ],
+   "baseline": 776,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": -0.1,
+    "italic": false
+   }
+  },
+  {
+   "string": "syslog · core-*, edge-*, olt-*, dns-*",
+   "owner": "logPanel",
+   "bbox": [
+    176,
+    764,
+    266.41,
+    16
+   ],
+   "baseline": 776,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.284 satır/dk",
+   "owner": "logPanel",
+   "bbox": [
+    1460.56,
+    763,
+    100.81,
+    16
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tümü",
+   "owner": "logFilterTab[0]",
+   "bbox": [
+    1586.38,
+    763,
+    33.58,
+    15
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "WARN",
+   "owner": "logFilterTab[1]",
+   "bbox": [
+    1639.95,
+    763,
+    40.25,
+    15
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "37",
+   "owner": "logFilterTab[1]",
+   "bbox": [
+    1686.2,
+    764,
+    13.2,
+    14
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ERR",
+   "owner": "logFilterTab[2]",
+   "bbox": [
+    1719.41,
+    763,
+    24.22,
+    15
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "6",
+   "owner": "logFilterTab[2]",
+   "bbox": [
+    1749.63,
+    764,
+    6.61,
+    14
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 11,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Duraklat",
+   "owner": "pauseButton",
+   "bbox": [
+    1812.23,
+    763,
+    51.77,
+    15
+   ],
+   "baseline": 775,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Sora",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:07.412",
+   "owner": "logLine[0]",
+   "bbox": [
+    45,
+    802,
+    93.61,
+    17
+   ],
+   "baseline": 815,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ERR",
+   "owner": "logLine[0]",
+   "bbox": [
+    158.22,
+    802,
+    23.41,
+    17
+   ],
+   "baseline": 815,
+   "lines": 1,
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "core-ank-01",
+   "owner": "logLine[0]",
+   "bbox": [
+    209.03,
+    802,
+    85.81,
+    17
+   ],
+   "baseline": 815,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "xe-0/0/3 paket kaybı eşiği aşıldı",
+   "owner": "logLine[0]",
+   "bbox": [
+    326.03,
+    802,
+    257.42,
+    17
+   ],
+   "baseline": 815,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "loss=2.4% rtt=48ms peer=core-ist-02",
+   "owner": "logLine[0]",
+   "bbox": [
+    599.05,
+    802,
+    273.02,
+    17
+   ],
+   "baseline": 815,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:05.087",
+   "owner": "logLine[1]",
+   "bbox": [
+    45,
+    824,
+    93.61,
+    17
+   ],
+   "baseline": 837,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[1]",
+   "bbox": [
+    158.22,
+    824,
+    31.2,
+    17
+   ],
+   "baseline": 837,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "edge-ank-03",
+   "owner": "logLine[1]",
+   "bbox": [
+    209.03,
+    824,
+    85.81,
+    17
+   ],
+   "baseline": 837,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BGP oturumu kuruldu",
+   "owner": "logLine[1]",
+   "bbox": [
+    326.03,
+    824,
+    148.22,
+    17
+   ],
+   "baseline": 837,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "neighbor=10.20.0.1 asn=64512 prefixes=812344",
+   "owner": "logLine[1]",
+   "bbox": [
+    489.86,
+    824,
+    343.2,
+    17
+   ],
+   "baseline": 837,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:04.550",
+   "owner": "logLine[2]",
+   "bbox": [
+    45,
+    846,
+    93.61,
+    17
+   ],
+   "baseline": 859,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "WARN",
+   "owner": "logLine[2]",
+   "bbox": [
+    158.22,
+    846,
+    31.2,
+    17
+   ],
+   "baseline": 859,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "dns-ist-02",
+   "owner": "logLine[2]",
+   "bbox": [
+    209.03,
+    846,
+    78.02,
+    17
+   ],
+   "baseline": 859,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "çözümleme gecikmesi yüksek",
+   "owner": "logLine[2]",
+   "bbox": [
+    326.05,
+    846,
+    202.81,
+    17
+   ],
+   "baseline": 859,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "p95=184ms qps=48210 cache_hit=71%",
+   "owner": "logLine[2]",
+   "bbox": [
+    544.45,
+    846,
+    257.41,
+    17
+   ],
+   "baseline": 859,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:01.903",
+   "owner": "logLine[3]",
+   "bbox": [
+    45,
+    868,
+    93.61,
+    17
+   ],
+   "baseline": 881,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[3]",
+   "bbox": [
+    158.22,
+    868,
+    31.2,
+    17
+   ],
+   "baseline": 881,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "olt-izm-07",
+   "owner": "logLine[3]",
+   "bbox": [
+    209.03,
+    868,
+    78.02,
+    17
+   ],
+   "baseline": 881,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ONT yeniden kaydoldu",
+   "owner": "logLine[3]",
+   "bbox": [
+    326.05,
+    868,
+    156.02,
+    17
+   ],
+   "baseline": 881,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "pon=1/1/4 ont=37 rx=-21.4dBm",
+   "owner": "logLine[3]",
+   "bbox": [
+    497.66,
+    868,
+    218.41,
+    17
+   ],
+   "baseline": 881,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:58.271",
+   "owner": "logLine[4]",
+   "bbox": [
+    45,
+    890,
+    93.61,
+    17
+   ],
+   "baseline": 903,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ERR",
+   "owner": "logLine[4]",
+   "bbox": [
+    158.22,
+    890,
+    23.41,
+    17
+   ],
+   "baseline": 903,
+   "lines": 1,
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "olt-izm-07",
+   "owner": "logLine[4]",
+   "bbox": [
+    209.03,
+    890,
+    78.02,
+    17
+   ],
+   "baseline": 903,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "hat kartı yanıt vermiyor",
+   "owner": "logLine[4]",
+   "bbox": [
+    326.05,
+    890,
+    187.2,
+    17
+   ],
+   "baseline": 903,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "slot=3 retries=5 subscribers=1184",
+   "owner": "logLine[4]",
+   "bbox": [
+    528.86,
+    890,
+    257.41,
+    17
+   ],
+   "baseline": 903,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:55.640",
+   "owner": "logLine[5]",
+   "bbox": [
+    45,
+    912,
+    93.61,
+    17
+   ],
+   "baseline": 925,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[5]",
+   "bbox": [
+    158.22,
+    912,
+    31.2,
+    17
+   ],
+   "baseline": 925,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "core-ist-02",
+   "owner": "logLine[5]",
+   "bbox": [
+    209.03,
+    912,
+    85.81,
+    17
+   ],
+   "baseline": 925,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "LSP yeniden yönlendirildi",
+   "owner": "logLine[5]",
+   "bbox": [
+    326.03,
+    912,
+    195.02,
+    17
+   ],
+   "baseline": 925,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "lsp=ank-ist-primary via=core-esk-01",
+   "owner": "logLine[5]",
+   "bbox": [
+    536.66,
+    912,
+    273.02,
+    17
+   ],
+   "baseline": 925,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:52.118",
+   "owner": "logLine[6]",
+   "bbox": [
+    45,
+    934,
+    93.61,
+    17
+   ],
+   "baseline": 947,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "WARN",
+   "owner": "logLine[6]",
+   "bbox": [
+    158.22,
+    934,
+    31.2,
+    17
+   ],
+   "baseline": 947,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "pop-brs-01",
+   "owner": "logLine[6]",
+   "bbox": [
+    209.03,
+    934,
+    78.02,
+    17
+   ],
+   "baseline": 947,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "UPS bataryadan çalışıyor",
+   "owner": "logLine[6]",
+   "bbox": [
+    326.05,
+    934,
+    187.2,
+    17
+   ],
+   "baseline": 947,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "charge=38% runtime=22m",
+   "owner": "logLine[6]",
+   "bbox": [
+    528.86,
+    934,
+    171.61,
+    17
+   ],
+   "baseline": 947,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:49.764",
+   "owner": "logLine[7]",
+   "bbox": [
+    45,
+    956,
+    93.61,
+    17
+   ],
+   "baseline": 969,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[7]",
+   "bbox": [
+    158.22,
+    956,
+    31.2,
+    17
+   ],
+   "baseline": 969,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "radius-01",
+   "owner": "logLine[7]",
+   "bbox": [
+    209.03,
+    956,
+    70.2,
+    17
+   ],
+   "baseline": 969,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "oturum açıldı",
+   "owner": "logLine[7]",
+   "bbox": [
+    326.03,
+    956,
+    101.41,
+    17
+   ],
+   "baseline": 969,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "user=fbr-4482917 nas=bng-ank-02 ip=100.64.18.23",
+   "owner": "logLine[7]",
+   "bbox": [
+    443.05,
+    956,
+    366.61,
+    17
+   ],
+   "baseline": 969,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:47.332",
+   "owner": "logLine[8]",
+   "bbox": [
+    45,
+    978,
+    93.61,
+    17
+   ],
+   "baseline": 991,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[8]",
+   "bbox": [
+    158.22,
+    978,
+    31.2,
+    17
+   ],
+   "baseline": 991,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "bng-ank-02",
+   "owner": "logLine[8]",
+   "bbox": [
+    209.03,
+    978,
+    78.02,
+    17
+   ],
+   "baseline": 991,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DHCP havuzu kullanımı güncellendi",
+   "owner": "logLine[8]",
+   "bbox": [
+    326.05,
+    978,
+    257.41,
+    17
+   ],
+   "baseline": 991,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "pool=ank-res-3 used=78%",
+   "owner": "logLine[8]",
+   "bbox": [
+    599.06,
+    978,
+    179.41,
+    17
+   ],
+   "baseline": 991,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:44.905",
+   "owner": "logLine[9]",
+   "bbox": [
+    45,
+    1000,
+    93.61,
+    17
+   ],
+   "baseline": 1013,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "WARN",
+   "owner": "logLine[9]",
+   "bbox": [
+    158.22,
+    1000,
+    31.2,
+    17
+   ],
+   "baseline": 1013,
+   "lines": 1,
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "edge-ank-03",
+   "owner": "logLine[9]",
+   "bbox": [
+    209.03,
+    1000,
+    85.81,
+    17
+   ],
+   "baseline": 1013,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BGP komşu durumu değişti",
+   "owner": "logLine[9]",
+   "bbox": [
+    326.03,
+    1000,
+    187.22,
+    17
+   ],
+   "baseline": 1013,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "neighbor=10.20.0.1 state=Idle→Active",
+   "owner": "logLine[9]",
+   "bbox": [
+    528.86,
+    1000,
+    280.83,
+    17
+   ],
+   "baseline": 1013,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:41.480",
+   "owner": "logLine[10]",
+   "bbox": [
+    45,
+    1022,
+    93.61,
+    17
+   ],
+   "baseline": 1035,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[10]",
+   "bbox": [
+    158.22,
+    1022,
+    31.2,
+    17
+   ],
+   "baseline": 1035,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "netflow-col",
+   "owner": "logLine[10]",
+   "bbox": [
+    209.03,
+    1022,
+    85.81,
+    17
+   ],
+   "baseline": 1035,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "dışa aktarım tamamlandı",
+   "owner": "logLine[10]",
+   "bbox": [
+    326.03,
+    1022,
+    179.42,
+    17
+   ],
+   "baseline": 1035,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "flows=2184906 window=60s",
+   "owner": "logLine[10]",
+   "bbox": [
+    521.05,
+    1022,
+    187.2,
+    17
+   ],
+   "baseline": 1035,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:38.027",
+   "owner": "logLine[11]",
+   "bbox": [
+    45,
+    1044,
+    93.61,
+    17
+   ],
+   "baseline": 1057,
+   "lines": 1,
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "INFO",
+   "owner": "logLine[11]",
+   "bbox": [
+    158.22,
+    1044,
+    31.2,
+    17
+   ],
+   "baseline": 1057,
+   "lines": 1,
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "core-esk-01",
+   "owner": "logLine[11]",
+   "bbox": [
+    209.03,
+    1044,
+    85.81,
+    17
+   ],
+   "baseline": 1057,
+   "lines": 1,
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "arayüz sayaçları sıfırlandı",
+   "owner": "logLine[11]",
+   "bbox": [
+    326.03,
+    1044,
+    210.63,
+    17
+   ],
+   "baseline": 1057,
+   "lines": 1,
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "if=et-0/0/1 by=otomasyon",
+   "owner": "logLine[11]",
+   "bbox": [
+    552.25,
+    1044,
+    187.2,
+    17
+   ],
+   "baseline": 1057,
+   "lines": 1,
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "DM Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:radio-tower",
+   "owner": "brand",
+   "bbox": [
+    31,
+    22.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#06121A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.4,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "breadcrumbs",
+   "bbox": [
+    374.64,
+    24.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "breadcrumbs",
+   "bbox": [
+    514.22,
+    24.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:search",
+   "owner": "searchField",
+   "bbox": [
+    1285.98,
+    23.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "alertsButton",
+   "bbox": [
+    1814,
+    22.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:map-pin",
+   "owner": "regionSelect",
+   "bbox": [
+    1018.16,
+    407,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2DD4BF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-down",
+   "owner": "regionSelect",
+   "bbox": [
+    1152,
+    407,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevron-right",
+   "owner": "incidentsLink",
+   "bbox": [
+    1861,
+    402,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:timer",
+   "owner": "incidentRow[0]",
+   "bbox": [
+    1792.59,
+    461,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:timer",
+   "owner": "incidentRow[1]",
+   "bbox": [
+    1792.59,
+    511.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:timer",
+   "owner": "incidentRow[2]",
+   "bbox": [
+    1792.59,
+    561.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:timer",
+   "owner": "incidentRow[3]",
+   "bbox": [
+    1792.59,
+    611.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:timer",
+   "owner": "incidentRow[4]",
+   "bbox": [
+    1792.59,
+    661.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:pause",
+   "owner": "pauseButton",
+   "bbox": [
+    1792.23,
+    764,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#556176",
+    "alpha": 1.0
+   },
+   "count": 63,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2E9C8F",
+    "alpha": 1.0
+   },
+   "count": 57,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1B5E6B",
+    "alpha": 1.0
+   },
+   "count": 48,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#7F8BA0",
+    "alpha": 1.0
+   },
+   "count": 48,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E2736",
+    "alpha": 1.0
+   },
+   "count": 42,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#16323F",
+    "alpha": 1.0
+   },
+   "count": 39,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#BAC3D2",
+    "alpha": 1.0
+   },
+   "count": 27,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E6EBF3",
+    "alpha": 1.0
+   },
+   "count": 22,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E0A93F",
+    "alpha": 1.0
+   },
+   "count": 19,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2A3547",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A78BFA",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6AA8FF",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F141D",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E5564E",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 0.35
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F5B544",
+    "alpha": 0.13
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2DD4BF",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 0.14
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2DD4BF",
+    "alpha": 0.12
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#151C28",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FB8B4B",
+    "alpha": 0.13
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0616D",
+    "alpha": 0.06
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#9CC2FF",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C9B5FF",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FB8B4B",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0C1018",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#243552",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1B2433",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0B1017",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF8E97",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#7FE3D3",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFC983",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#06121A",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "now": "14:32:07",
+  "gauges": [
+   {
+    "name": "CPU",
+    "value": 0.47,
+    "threshold": 0.85,
+    "state": "ok",
+    "caption": "12 omurga cihazı",
+    "peak": "%71 · 21:40"
+   },
+   {
+    "name": "Bellek",
+    "value": 0.81,
+    "threshold": 0.85,
+    "state": "warning",
+    "caption": "ort. 12 cihaz",
+    "peak": "%84 · 22:10"
+   },
+   {
+    "name": "Bant genişliği",
+    "value": 0.66,
+    "threshold": 0.9,
+    "state": "ok",
+    "caption": "786 / 1.200 Gbps",
+    "peak": "%96 · 21:00"
+   }
+  ],
+  "throughput": {
+   "unit": "Gbps",
+   "stepMinutes": 30,
+   "labels": [
+    "14:30",
+    "17:30",
+    "20:30",
+    "23:30",
+    "02:30",
+    "05:30",
+    "08:30",
+    "11:30",
+    "14:30"
+   ],
+   "download": [
+    585,
+    587,
+    619,
+    628,
+    666,
+    680,
+    678,
+    703,
+    725,
+    783,
+    820,
+    856,
+    878,
+    904,
+    899,
+    880,
+    839,
+    795,
+    762,
+    728,
+    666,
+    532,
+    448,
+    353,
+    320,
+    309,
+    285,
+    260,
+    203,
+    185,
+    176,
+    181,
+    220,
+    254,
+    301,
+    339,
+    365,
+    369,
+    395,
+    442,
+    479,
+    504,
+    528,
+    532,
+    536,
+    568,
+    590,
+    616,
+    612
+   ],
+   "upload": [
+    126,
+    139,
+    140,
+    150,
+    168,
+    168,
+    175,
+    179,
+    194,
+    213,
+    222,
+    236,
+    234,
+    245,
+    240,
+    232,
+    216,
+    205,
+    194,
+    175,
+    158,
+    116,
+    101,
+    77,
+    72,
+    65,
+    52,
+    47,
+    39,
+    27,
+    30,
+    27,
+    33,
+    38,
+    55,
+    54,
+    61,
+    64,
+    76,
+    78,
+    92,
+    101,
+    113,
+    117,
+    122,
+    126,
+    137,
+    147,
+    174
+   ]
+  },
+  "heatmap": {
+   "region": "İstanbul Anadolu",
+   "unit": "ms",
+   "metric": "p95",
+   "week": "21–27 Eylül 2026",
+   "days": [
+    "Pzt",
+    "Sal",
+    "Çar",
+    "Per",
+    "Cum",
+    "Cmt",
+    "Paz"
+   ],
+   "steps": [
+    10,
+    20,
+    35,
+    50
+   ],
+   "colors": [
+    "#16323F",
+    "#1B5E6B",
+    "#2E9C8F",
+    "#E0A93F",
+    "#E5564E"
+   ],
+   "values": [
+    [
+     15,
+     4,
+     4,
+     5,
+     5,
+     7,
+     8,
+     9,
+     11,
+     15,
+     16,
+     18,
+     22,
+     21,
+     20,
+     22,
+     23,
+     20,
+     31,
+     34,
+     41,
+     40,
+     37,
+     25
+    ],
+    [
+     8,
+     8,
+     4,
+     4,
+     5,
+     4,
+     6,
+     7,
+     11,
+     13,
+     13,
+     16,
+     14,
+     22,
+     21,
+     18,
+     19,
+     23,
+     27,
+     29,
+     41,
+     42,
+     38,
+     26
+    ],
+    [
+     8,
+     4,
+     6,
+     5,
+     10,
+     4,
+     4,
+     15,
+     15,
+     13,
+     17,
+     14,
+     18,
+     23,
+     23,
+     22,
+     19,
+     23,
+     25,
+     34,
+     38,
+     40,
+     37,
+     24
+    ],
+    [
+     13,
+     11,
+     10,
+     9,
+     10,
+     9,
+     5,
+     11,
+     14,
+     12,
+     13,
+     16,
+     16,
+     21,
+     62,
+     67,
+     41,
+     23,
+     26,
+     30,
+     36,
+     36,
+     39,
+     29
+    ],
+    [
+     14,
+     7,
+     8,
+     9,
+     4,
+     8,
+     10,
+     13,
+     17,
+     16,
+     14,
+     20,
+     17,
+     21,
+     24,
+     20,
+     21,
+     28,
+     30,
+     29,
+     35,
+     58,
+     54,
+     29
+    ],
+    [
+     15,
+     8,
+     6,
+     7,
+     4,
+     4,
+     11,
+     12,
+     15,
+     19,
+     22,
+     26,
+     27,
+     23,
+     24,
+     25,
+     25,
+     25,
+     26,
+     31,
+     44,
+     50,
+     46,
+     26
+    ],
+    [
+     12,
+     10,
+     6,
+     10,
+     7,
+     7,
+     7,
+     7,
+     15,
+     13,
+     19,
+     26,
+     22,
+     25,
+     28,
+     27,
+     26,
+     24,
+     28,
+     34,
+     44,
+     47,
+     45,
+     24
+    ]
+   ]
+  },
+  "incidents": [
+   {
+    "id": "INC-20931",
+    "severity": "Kritik",
+    "title": "Ankara–İstanbul omurga hattında paket kaybı",
+    "where": "core-ank-01 · xe-0/0/3",
+    "duration": "00:47:12",
+    "owner": "BY"
+   },
+   {
+    "id": "INC-20928",
+    "severity": "Yüksek",
+    "title": "Karşıyaka OLT hat kartı yanıt vermiyor",
+    "where": "olt-izm-07 · 1.184 abone etkilendi",
+    "duration": "01:12:40",
+    "owner": "SA"
+   },
+   {
+    "id": "INC-20925",
+    "severity": "Yüksek",
+    "title": "DNS çözümleme gecikmesi eşiği aştı",
+    "where": "dns-ist-02 · p95 184 ms",
+    "duration": "00:22:05",
+    "owner": "EK"
+   },
+   {
+    "id": "INC-20919",
+    "severity": "Orta",
+    "title": "Bursa POP'ta UPS bataryadan besleniyor",
+    "where": "pop-brs-01 · şarj %38",
+    "duration": "02:05:31",
+    "owner": "MÇ"
+   },
+   {
+    "id": "INC-20917",
+    "severity": "Orta",
+    "title": "BGP komşuluğunda tekrarlayan kopma",
+    "where": "edge-ank-03 · AS64512",
+    "duration": "03:41:09",
+    "owner": "BY"
+   }
+  ]
+ },
+ "states": {}
+}

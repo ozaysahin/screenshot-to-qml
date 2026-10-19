@@ -1,0 +1,1007 @@
+{
+ "cases": {
+  "01-hmi-dolum": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 0.9,
+    "weightExact": 0.3611111111111111,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.8611111111111113,
+    "families": [
+     "JetBrains Mono",
+     "Barlow"
+    ],
+    "truthFamilies": [
+     "Barlow",
+     "JetBrains Mono"
+    ],
+    "seconds": 18.7
+   },
+   "icons": {
+    "icons": 21,
+    "top1": 0.8571428571428571,
+    "top3": 0.9523809523809523,
+    "seconds": 16.9
+   }
+  },
+  "02-kiosk-kafe": {
+   "fonts": {
+    "runs": 32,
+    "familyAcc": 1.0,
+    "weightExact": 0.46875,
+    "weightWithin100": 0.875,
+    "pxMAE": 2.6750000000000007,
+    "families": [
+     "Manrope"
+    ],
+    "truthFamilies": [
+     "Manrope"
+    ],
+    "seconds": 20.2
+   },
+   "icons": {
+    "icons": 23,
+    "top1": 0.9565217391304348,
+    "top3": 0.9565217391304348,
+    "seconds": 12.7
+   },
+   "shadows": {
+    "nodes": 5,
+    "detected": 0.6,
+    "clean": 15,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     1.55,
+     1.81,
+     9.67
+    ],
+    "detectedYErrs": [
+     0.07,
+     0.03,
+     7.99
+    ],
+    "blurMAE": 11.22,
+    "blurMedAE": 9.670000000000002,
+    "yMAE": 10.418000000000001,
+    "residual": 1.08,
+    "rawResidual": 2.6759999999999997,
+    "seconds": 35.2
+   },
+   "gradients": {
+    "nodes": 1,
+    "skippedTranslucent": 0,
+    "plain": 19,
+    "falseGradients": 0,
+    "translucent": 0,
+    "translucentAsGradient": 0,
+    "accepted": 1,
+    "angleMAE": 0.09999999999999432,
+    "angleMax": 0.09999999999999432,
+    "endDeltaE": 0.0,
+    "stopCountOK": 1.0,
+    "seconds": 46.3
+   }
+  },
+  "03-dashboard-dark": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 0.775,
+    "weightExact": 0.967741935483871,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.7193548387096773,
+    "families": [
+     "Inter"
+    ],
+    "truthFamilies": [
+     "Inter",
+     "Space Grotesk"
+    ],
+    "seconds": 23.7
+   },
+   "icons": {
+    "icons": 28,
+    "top1": 1.0,
+    "top3": 1.0,
+    "seconds": 13.2
+   },
+   "shadows": {
+    "nodes": 1,
+    "detected": 1.0,
+    "clean": 15,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     0.72
+    ],
+    "detectedYErrs": [
+     0.25
+    ],
+    "blurMAE": 0.7199999999999989,
+    "blurMedAE": 0.7199999999999989,
+    "yMAE": 0.25,
+    "residual": 0.41,
+    "rawResidual": 6.53,
+    "seconds": 15.5
+   }
+  },
+  "04-dashboard-light": {
+   "fonts": {
+    "runs": 32,
+    "familyAcc": 1.0,
+    "weightExact": 0.625,
+    "weightWithin100": 0.84375,
+    "pxMAE": 1.3125000000000002,
+    "families": [
+     "DM Sans"
+    ],
+    "truthFamilies": [
+     "DM Sans"
+    ],
+    "seconds": 18.4
+   },
+   "icons": {
+    "icons": 15,
+    "top1": 0.8666666666666667,
+    "top3": 0.9333333333333333,
+    "seconds": 8.8
+   },
+   "shadows": {
+    "nodes": 5,
+    "detected": 1.0,
+    "clean": 8,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     3.05,
+     3.62,
+     5.36,
+     4.02,
+     3.72
+    ],
+    "detectedYErrs": [
+     0.6,
+     1.31,
+     12.12,
+     1.22,
+     5.21
+    ],
+    "blurMAE": 3.9539999999999997,
+    "blurMedAE": 3.719999999999999,
+    "yMAE": 4.0920000000000005,
+    "residual": 0.646,
+    "rawResidual": 3.0540000000000003,
+    "seconds": 32.6
+   },
+   "gradients": {
+    "nodes": 1,
+    "skippedTranslucent": 0,
+    "plain": 12,
+    "falseGradients": 0,
+    "translucent": 0,
+    "translucentAsGradient": 0,
+    "accepted": 1,
+    "angleMAE": 0.0,
+    "angleMax": 0.0,
+    "endDeltaE": 0.0,
+    "stopCountOK": 1.0,
+    "seconds": 18.6
+   }
+  },
+  "05-settings-form": {
+   "fonts": {
+    "runs": 30,
+    "familyAcc": 1.0,
+    "weightExact": 0.43333333333333335,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.8499999999999999,
+    "families": [
+     "Plus Jakarta Sans"
+    ],
+    "truthFamilies": [
+     "Plus Jakarta Sans"
+    ],
+    "seconds": 18.8
+   },
+   "icons": {
+    "icons": 17,
+    "top1": 0.7647058823529411,
+    "top3": 0.8235294117647058,
+    "seconds": 9.7
+   },
+   "shadows": {
+    "nodes": 7,
+    "detected": 0.8571428571428571,
+    "clean": 12,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     1.52,
+     1.99,
+     1.82,
+     0.33,
+     1.49,
+     0.45
+    ],
+    "detectedYErrs": [
+     0.1,
+     0.42,
+     0.09,
+     0.15,
+     0.06,
+     0.35
+    ],
+    "blurMAE": 2.974285714285714,
+    "blurMedAE": 1.52,
+    "yMAE": 0.1685714285714286,
+    "residual": 0.025714285714285714,
+    "rawResidual": 0.5142857142857143,
+    "seconds": 58.4
+   }
+  },
+  "06-mobile-aliskanlik": {
+   "fonts": {
+    "runs": 30,
+    "familyAcc": 1.0,
+    "weightExact": 0.9,
+    "weightWithin100": 0.9666666666666667,
+    "pxMAE": 0.563333333333333,
+    "families": [
+     "Nunito"
+    ],
+    "truthFamilies": [
+     "Nunito"
+    ],
+    "seconds": 17.7
+   },
+   "icons": {
+    "icons": 17,
+    "top1": 0.9411764705882353,
+    "top3": 0.9411764705882353,
+    "seconds": 12.7
+   },
+   "shadows": {
+    "nodes": 10,
+    "detected": 1.0,
+    "clean": 11,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     1.97,
+     0.34,
+     2.65,
+     1.42,
+     0.98,
+     0.98,
+     0.99,
+     1.01,
+     6.58,
+     0.11
+    ],
+    "detectedYErrs": [
+     0.03,
+     0.02,
+     0.28,
+     0.13,
+     0.18,
+     0.18,
+     0.19,
+     0.2,
+     3.72,
+     0.43
+    ],
+    "blurMAE": 1.7029999999999998,
+    "blurMedAE": 1.0,
+    "yMAE": 0.5359999999999999,
+    "residual": 0.271,
+    "rawResidual": 2.4240000000000004,
+    "seconds": 203.1
+   },
+   "gradients": {
+    "nodes": 3,
+    "skippedTranslucent": 0,
+    "plain": 18,
+    "falseGradients": 0,
+    "translucent": 0,
+    "translucentAsGradient": 0,
+    "accepted": 3,
+    "angleMAE": 0.03333333333333144,
+    "angleMax": 0.09999999999999432,
+    "endDeltaE": 0.5194053092523744,
+    "stopCountOK": 1.0,
+    "seconds": 31.1
+   }
+  },
+  "07-data-table": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 1.0,
+    "weightExact": 0.75,
+    "weightWithin100": 1.0,
+    "pxMAE": 1.2375,
+    "families": [
+     "Inter",
+     "JetBrains Mono"
+    ],
+    "truthFamilies": [
+     "Inter",
+     "JetBrains Mono"
+    ],
+    "seconds": 15.8
+   },
+   "icons": {
+    "icons": 40,
+    "top1": 0.85,
+    "top3": 0.95,
+    "seconds": 20.4
+   },
+   "shadows": {
+    "nodes": 3,
+    "detected": 0.6666666666666666,
+    "clean": 12,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     1.93,
+     1.47
+    ],
+    "detectedYErrs": [
+     0.0,
+     0.78
+    ],
+    "blurMAE": 1.7633333333333334,
+    "blurMedAE": 1.89,
+    "yMAE": 3.6566666666666663,
+    "residual": 0.08,
+    "rawResidual": 0.5533333333333333,
+    "seconds": 20.2
+   }
+  },
+  "08-glass-home": {
+   "fonts": {
+    "runs": 25,
+    "familyAcc": 1.0,
+    "weightExact": 0.88,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.9640000000000001,
+    "families": [
+     "Outfit"
+    ],
+    "truthFamilies": [
+     "Outfit"
+    ],
+    "seconds": 15.9
+   },
+   "icons": {
+    "icons": 20,
+    "top1": 0.9,
+    "top3": 0.9,
+    "seconds": 11.3
+   },
+   "shadows": {
+    "nodes": 13,
+    "detected": 0.3076923076923077,
+    "clean": 5,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     14.38,
+     0.54,
+     4.28,
+     3.11
+    ],
+    "detectedYErrs": [
+     2.85,
+     0.17,
+     3.25,
+     4.97
+    ],
+    "blurMAE": 23.263846153846153,
+    "blurMedAE": 23.86,
+    "yMAE": 15.666153846153849,
+    "residual": 1.7338461538461538,
+    "rawResidual": 3.4738461538461536,
+    "seconds": 48.9
+   },
+   "gradients": {
+    "nodes": 3,
+    "skippedTranslucent": 1,
+    "plain": 0,
+    "falseGradients": 0,
+    "translucent": 13,
+    "translucentAsGradient": 6,
+    "accepted": 2,
+    "angleMAE": 1.7666666666666704,
+    "angleMax": 5.300000000000011,
+    "endDeltaE": 1.9086517901647284,
+    "stopCountOK": 1.0,
+    "seconds": 41.9
+   }
+  },
+  "09-dashboard-sales": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 1.0,
+    "weightExact": 0.8,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.5699999999999996,
+    "families": [
+     "Onest"
+    ],
+    "truthFamilies": [
+     "Onest"
+    ],
+    "seconds": 23.0
+   },
+   "icons": {
+    "icons": 19,
+    "top1": 0.8947368421052632,
+    "top3": 0.8947368421052632,
+    "seconds": 10.7
+   },
+   "shadows": {
+    "nodes": 11,
+    "detected": 0.9090909090909091,
+    "clean": 25,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     0.28,
+     0.08,
+     0.76,
+     0.83,
+     1.25,
+     0.9,
+     2.88,
+     1.54,
+     0.89,
+     0.9
+    ],
+    "detectedYErrs": [
+     0.04,
+     0.18,
+     0.13,
+     0.13,
+     14.46,
+     0.25,
+     1.04,
+     0.21,
+     0.24,
+     0.25
+    ],
+    "blurMAE": 1.21,
+    "blurMedAE": 0.8999999999999999,
+    "yMAE": 2.1254545454545455,
+    "residual": 0.5263636363636364,
+    "rawResidual": 1.869090909090909,
+    "seconds": 128.4
+   },
+   "gradients": {
+    "nodes": 1,
+    "skippedTranslucent": 0,
+    "plain": 34,
+    "falseGradients": 0,
+    "translucent": 0,
+    "translucentAsGradient": 0,
+    "accepted": 1,
+    "angleMAE": 0.0,
+    "angleMax": 0.0,
+    "endDeltaE": 0.0,
+    "stopCountOK": 1.0,
+    "seconds": 38.8
+   }
+  },
+  "10-dashboard-ops-dark": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 1.0,
+    "weightExact": 0.5,
+    "weightWithin100": 0.975,
+    "pxMAE": 1.2324999999999997,
+    "families": [
+     "DM Mono",
+     "Sora"
+    ],
+    "truthFamilies": [
+     "DM Mono",
+     "Sora"
+    ],
+    "seconds": 27.6
+   },
+   "icons": {
+    "icons": 14,
+    "top1": 0.8571428571428571,
+    "top3": 0.9285714285714286,
+    "seconds": 8.5
+   }
+  },
+  "11-hmi-boiler": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 1.0,
+    "weightExact": 0.675,
+    "weightWithin100": 0.925,
+    "pxMAE": 1.8375000000000004,
+    "families": [
+     "Rajdhani"
+    ],
+    "truthFamilies": [
+     "Rajdhani"
+    ],
+    "seconds": 18.3
+   },
+   "icons": {
+    "icons": 19,
+    "top1": 1.0,
+    "top3": 1.0,
+    "seconds": 11.6
+   }
+  },
+  "12-ev-charger": {
+   "fonts": {
+    "runs": 34,
+    "familyAcc": 1.0,
+    "weightExact": 0.6176470588235294,
+    "weightWithin100": 0.6470588235294118,
+    "pxMAE": 6.120588235294118,
+    "families": [
+     "Titillium Web"
+    ],
+    "truthFamilies": [
+     "Titillium Web"
+    ],
+    "seconds": 19.3
+   },
+   "icons": {
+    "icons": 12,
+    "top1": 0.6666666666666666,
+    "top3": 0.6666666666666666,
+    "seconds": 8.1
+   },
+   "gradients": {
+    "nodes": 1,
+    "skippedTranslucent": 0,
+    "plain": 33,
+    "falseGradients": 0,
+    "translucent": 0,
+    "translucentAsGradient": 0,
+    "accepted": 1,
+    "angleMAE": 0.0,
+    "angleMax": 0.0,
+    "endDeltaE": 0.0,
+    "stopCountOK": 1.0,
+    "seconds": 34.0
+   }
+  },
+  "13-form-wizard": {
+   "fonts": {
+    "runs": 33,
+    "familyAcc": 1.0,
+    "weightExact": 0.7575757575757576,
+    "weightWithin100": 0.9696969696969697,
+    "pxMAE": 2.609090909090909,
+    "families": [
+     "Albert Sans"
+    ],
+    "truthFamilies": [
+     "Albert Sans"
+    ],
+    "seconds": 25.5
+   },
+   "icons": {
+    "icons": 21,
+    "top1": 0.9523809523809523,
+    "top3": 1.0,
+    "seconds": 13.4
+   },
+   "shadows": {
+    "nodes": 10,
+    "detected": 0.8,
+    "clean": 17,
+    "falseAlarms": 3,
+    "detectedBlurErrs": [
+     0.0,
+     0.05,
+     6.31,
+     0.05,
+     0.12,
+     0.11,
+     0.4,
+     1.43
+    ],
+    "detectedYErrs": [
+     0.17,
+     0.19,
+     3.7,
+     0.19,
+     0.26,
+     0.39,
+     0.26,
+     0.87
+    ],
+    "blurMAE": 1.0959999999999999,
+    "blurMedAE": 0.26,
+    "yMAE": 3.2380000000000004,
+    "residual": 0.442,
+    "rawResidual": 2.4029999999999996,
+    "seconds": 37.1
+   }
+  },
+  "14-form-login-dark": {
+   "fonts": {
+    "runs": 30,
+    "familyAcc": 0.7,
+    "weightExact": 0.8095238095238095,
+    "weightWithin100": 0.9523809523809523,
+    "pxMAE": 2.9809523809523806,
+    "families": [
+     "Red Hat Text",
+     "Red Hat Display"
+    ],
+    "truthFamilies": [
+     "Red Hat Display",
+     "Red Hat Text"
+    ],
+    "seconds": 36.8
+   },
+   "icons": {
+    "icons": 16,
+    "top1": 1.0,
+    "top3": 1.0,
+    "seconds": 9.2
+   },
+   "shadows": {
+    "nodes": 2,
+    "detected": 1.0,
+    "clean": 7,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     1.06,
+     16.43
+    ],
+    "detectedYErrs": [
+     0.11,
+     7.0
+    ],
+    "blurMAE": 8.745,
+    "blurMedAE": 8.745,
+    "yMAE": 3.555,
+    "residual": 0.21000000000000002,
+    "rawResidual": 0.71,
+    "seconds": 21.0
+   }
+  },
+  "15-mobile-wallet": {
+   "fonts": {
+    "runs": 37,
+    "familyAcc": 1.0,
+    "weightExact": 0.7567567567567568,
+    "weightWithin100": 0.8648648648648649,
+    "pxMAE": 1.2054054054054055,
+    "families": [
+     "Mulish"
+    ],
+    "truthFamilies": [
+     "Mulish"
+    ],
+    "seconds": 24.5
+   },
+   "icons": {
+    "icons": 21,
+    "top1": 1.0,
+    "top3": 1.0,
+    "seconds": 16.6
+   },
+   "shadows": {
+    "nodes": 7,
+    "detected": 0.8571428571428571,
+    "clean": 4,
+    "falseAlarms": 1,
+    "detectedBlurErrs": [
+     1.74,
+     0.13,
+     1.33,
+     1.47,
+     2.56,
+     3.5
+    ],
+    "detectedYErrs": [
+     0.04,
+     0.13,
+     0.01,
+     0.05,
+     4.3,
+     4.27
+    ],
+    "blurMAE": 1.5399999999999996,
+    "blurMedAE": 1.4700000000000006,
+    "yMAE": 1.2814285714285714,
+    "residual": 1.0385714285714285,
+    "rawResidual": 3.2057142857142855,
+    "seconds": 31.6
+   },
+   "gradients": {
+    "nodes": 3,
+    "skippedTranslucent": 0,
+    "plain": 6,
+    "falseGradients": 0,
+    "translucent": 1,
+    "translucentAsGradient": 1,
+    "accepted": 2,
+    "angleMAE": 0.0,
+    "angleMax": 0.0,
+    "endDeltaE": 3.6755206764878445,
+    "stopCountOK": 0.6666666666666666,
+    "seconds": 10.2
+   }
+  },
+  "16-mobile-chat": {
+   "fonts": {
+    "runs": 25,
+    "familyAcc": 1.0,
+    "weightExact": 0.68,
+    "weightWithin100": 0.88,
+    "pxMAE": 4.268,
+    "families": [
+     "Be Vietnam Pro"
+    ],
+    "truthFamilies": [
+     "Be Vietnam Pro"
+    ],
+    "seconds": 24.2
+   },
+   "icons": {
+    "icons": 15,
+    "top1": 0.9333333333333333,
+    "top3": 1.0,
+    "seconds": 10.8
+   },
+   "shadows": {
+    "nodes": 1,
+    "detected": 0.0,
+    "clean": 51,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [],
+    "detectedYErrs": [],
+    "blurMAE": 19.57,
+    "blurMedAE": 19.57,
+    "yMAE": 15.49,
+    "residual": 0.57,
+    "rawResidual": 0.69,
+    "seconds": 220.7
+   }
+  },
+  "17-data-table-stock": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 0.675,
+    "weightExact": 0.5555555555555556,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.7555555555555558,
+    "families": [
+     "Public Sans",
+     "IBM Plex Sans"
+    ],
+    "truthFamilies": [
+     "Public Sans"
+    ],
+    "seconds": 23.8
+   },
+   "icons": {
+    "icons": 21,
+    "top1": 0.9523809523809523,
+    "top3": 1.0,
+    "seconds": 17.5
+   },
+   "shadows": {
+    "nodes": 3,
+    "detected": 0.6666666666666666,
+    "clean": 52,
+    "falseAlarms": 1,
+    "detectedBlurErrs": [
+     1.31,
+     0.0
+    ],
+    "detectedYErrs": [
+     0.04,
+     0.29
+    ],
+    "blurMAE": 3.1033333333333335,
+    "blurMedAE": 1.31,
+    "yMAE": 5.266666666666667,
+    "residual": 2.16,
+    "rawResidual": 4.890000000000001,
+    "seconds": 196.6
+   }
+  },
+  "18-html-tailwind-billing": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 1.0,
+    "weightExact": 0.4,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.695,
+    "families": [
+     "Instrument Sans"
+    ],
+    "truthFamilies": [
+     "Instrument Sans"
+    ],
+    "seconds": 50.3
+   },
+   "icons": {
+    "icons": 29,
+    "top1": 0.9655172413793104,
+    "top3": 0.9655172413793104,
+    "seconds": 42.0
+   },
+   "shadows": {
+    "nodes": 11,
+    "detected": 0.36363636363636365,
+    "clean": 18,
+    "falseAlarms": 1,
+    "detectedBlurErrs": [
+     1.8,
+     1.96,
+     1.32,
+     2.0
+    ],
+    "detectedYErrs": [
+     0.6,
+     0.23,
+     0.37,
+     0.32
+    ],
+    "blurMAE": 5.929090909090909,
+    "blurMedAE": 2.0,
+    "yMAE": 8.098181818181818,
+    "residual": 0.4272727272727273,
+    "rawResidual": 0.5872727272727273,
+    "seconds": 201.1
+   }
+  },
+  "19-html-css-board": {
+   "fonts": {
+    "runs": 30,
+    "familyAcc": 0.8,
+    "weightExact": 0.75,
+    "weightWithin100": 1.0,
+    "pxMAE": 0.5166666666666666,
+    "families": [
+     "Karla",
+     "Oswald"
+    ],
+    "truthFamilies": [
+     "Karla"
+    ],
+    "seconds": 60.8
+   },
+   "icons": {
+    "icons": 45,
+    "top1": 0.9777777777777777,
+    "top3": 0.9777777777777777,
+    "seconds": 43.0
+   },
+   "shadows": {
+    "nodes": 34,
+    "detected": 0.4117647058823529,
+    "clean": 43,
+    "falseAlarms": 4,
+    "detectedBlurErrs": [
+     0.67,
+     0.05,
+     0.19,
+     1.84,
+     0.7,
+     1.7,
+     0.83,
+     0.92,
+     1.72,
+     0.6,
+     0.47,
+     1.92,
+     0.72,
+     1.72
+    ],
+    "detectedYErrs": [
+     0.17,
+     1.11,
+     0.07,
+     1.12,
+     0.11,
+     1.08,
+     0.29,
+     0.52,
+     1.09,
+     0.39,
+     0.3,
+     1.13,
+     0.28,
+     1.09
+    ],
+    "blurMAE": 17.820882352941176,
+    "blurMedAE": 7.6,
+    "yMAE": 9.170588235294119,
+    "residual": 0.3173529411764706,
+    "rawResidual": 0.7355882352941175,
+    "seconds": 225.1
+   }
+  },
+  "20-hard-weather": {
+   "fonts": {
+    "runs": 40,
+    "familyAcc": 0.0,
+    "weightExact": null,
+    "weightWithin100": null,
+    "pxMAE": null,
+    "families": [
+     "Lato"
+    ],
+    "truthFamilies": [
+     "Bricolage Grotesque"
+    ],
+    "seconds": 29.5
+   },
+   "icons": {
+    "icons": 25,
+    "top1": 1.0,
+    "top3": 1.0,
+    "seconds": 12.8
+   },
+   "shadows": {
+    "nodes": 6,
+    "detected": 0.8333333333333334,
+    "clean": 22,
+    "falseAlarms": 0,
+    "detectedBlurErrs": [
+     29.23,
+     12.92,
+     11.71,
+     10.57,
+     30.68
+    ],
+    "detectedYErrs": [
+     12.9,
+     3.55,
+     3.4,
+     7.38,
+     9.88
+    ],
+    "blurMAE": 18.378333333333334,
+    "blurMedAE": 14.04,
+    "yMAE": 6.635000000000001,
+    "residual": 1.278333333333333,
+    "rawResidual": 2.1183333333333336,
+    "seconds": 204.0
+   },
+   "gradients": {
+    "nodes": 1,
+    "skippedTranslucent": 0,
+    "plain": 11,
+    "falseGradients": 4,
+    "translucent": 16,
+    "translucentAsGradient": 2,
+    "accepted": 1,
+    "angleMAE": 7.300000000000011,
+    "angleMax": 7.300000000000011,
+    "endDeltaE": 35.502218897748236,
+    "stopCountOK": 0.0,
+    "seconds": 33.7
+   }
+  }
+ },
+ "pooled": {
+  "fontFamilyAcc": 0.8839541547277937,
+  "fontWeightWithin100": 0.9446374294398611,
+  "iconTop1": 0.9269406392694064,
+  "iconTop3": 0.954337899543379,
+  "shadowBlurMAE": 9.96108527131783,
+  "shadowResidual": 0.6420155038759691,
+  "shadowRawResidual": 1.843643410852713,
+  "shadowDetected": 0.6356589147286822,
+  "shadowFalseAlarms": 10,
+  "shadowClean": 317,
+  "shadowDetectedBlurMedAE": 1.45,
+  "shadowDetectedYMedAE": 0.28500000000000003,
+  "gradientAccepted": 12,
+  "gradientNodes": 14,
+  "gradientFalse": 4,
+  "gradientPlain": 133,
+  "gradientGlass": 9,
+  "gradientTranslucent": 30,
+  "gradientAngleMAE": 0.9142857142857151,
+  "gradientEndDeltaE": 3.8437823018187913
+ }
+}

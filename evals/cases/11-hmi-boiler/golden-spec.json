@@ -1,0 +1,5600 @@
+{
+ "meta": {
+  "id": "11-hmi-boiler",
+  "title": "Yüksek performanslı HMI — kazan dairesi mimik şeması",
+  "category": "hmi",
+  "profile": "embedded-gpu",
+  "lang": "tr",
+  "designSize": [
+   1280,
+   800
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1280,
+   800
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Rajdhani",
+    "qtFamily": "Rajdhani",
+    "legacyFamily": "Rajdhani",
+    "files": [
+     "Rajdhani-Bold.ttf",
+     "Rajdhani-Medium.ttf",
+     "Rajdhani-Regular.ttf",
+     "Rajdhani-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#C9CCCF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C9CCCF"
+   },
+   "panel": {
+    "hex": "#D9DBDD",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#D9DBDD"
+   },
+   "surface": {
+    "hex": "#E8EAEB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E8EAEB"
+   },
+   "surface-2": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F1F2F3"
+   },
+   "border": {
+    "hex": "#A4A9AE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A4A9AE"
+   },
+   "border-strong": {
+    "hex": "#6F757B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6F757B"
+   },
+   "ink": {
+    "hex": "#1D2125",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1D2125"
+   },
+   "text-2": {
+    "hex": "#3F454B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3F454B"
+   },
+   "muted": {
+    "hex": "#62696F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#62696F"
+   },
+   "dark": {
+    "hex": "#343A40",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#343A40"
+   },
+   "on-dark": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F1F2F3"
+   },
+   "on-dark-muted": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#AEB4BA"
+   },
+   "softkey-bar": {
+    "hex": "#B4B8BC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B4B8BC"
+   },
+   "equipment": {
+    "hex": "#50565C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#50565C"
+   },
+   "level": {
+    "hex": "#AFBECB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#AFBECB"
+   },
+   "level-line": {
+    "hex": "#7E93A6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7E93A6"
+   },
+   "supply": {
+    "hex": "#9A5E55",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#9A5E55"
+   },
+   "return": {
+    "hex": "#587590",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#587590"
+   },
+   "gas": {
+    "hex": "#9E8A3E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#9E8A3E"
+   },
+   "flue": {
+    "hex": "#BBBFC3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#BBBFC3"
+   },
+   "alarm": {
+    "hex": "#F2A516",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F2A516"
+   },
+   "alarm-edge": {
+    "hex": "#A86F00",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A86F00"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0
+  },
+  "radius": {
+   "xs": 3.0,
+   "sm": 4.0,
+   "md": 6.0
+  },
+  "shadow": {},
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Rajdhani",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0.5,
+    "count": 3,
+    "example": "80,0"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "K-101"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "count": 1,
+    "example": "14:32:07"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "K-101 baca gazı sıcaklığı yüksek"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Proses şeması"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "212"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1.2,
+    "count": 1,
+    "example": "KAZAN DAİRESİ · BLOK B"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Genel bakış"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1,
+    "count": 1,
+    "example": "ONAYLA"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Kazan gidiş sıcaklığı"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "count": 6,
+    "example": "GENEL BAKIŞ"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "°C"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1,
+    "count": 1,
+    "example": "OTOMATİK"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "P-201"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "78,4 °C"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "bağlı"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "PLC-01"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "TT-104 = 212 °C · Limit 200 °C · Brülör "
+   },
+   {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "count": 1,
+    "example": "ÖNCELİK 2"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 9,
+    "example": "Gidiş"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "1 aktif alarm · onay bekliyor"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "count": 6,
+    "example": "ISITMA GİDİŞ"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "F1"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "count": 5,
+    "example": "ÇALIŞIYOR"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "°C"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.6,
+    "count": 3,
+    "example": "TIC-101"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "count": 10,
+    "example": "TT-104"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "titleBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1280,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#343A40",
+     "alpha": 1.0
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "plantName",
+   "role": null,
+   "parent": "titleBar",
+   "bbox": [
+    16,
+    12,
+    201.78,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "screenTitle",
+   "role": "Title",
+   "parent": "titleBar",
+   "bbox": [
+    250.78,
+    12,
+    83.3,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "plcStatus",
+   "role": "StatusIndicator",
+   "parent": "titleBar",
+   "bbox": [
+    822.66,
+    12,
+    98.34,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "operator",
+   "role": null,
+   "parent": "titleBar",
+   "bbox": [
+    945,
+    12,
+    130.48,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "date",
+   "role": null,
+   "parent": "titleBar",
+   "bbox": [
+    1099.48,
+    12,
+    66.34,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "clock",
+   "role": "Clock",
+   "parent": "titleBar",
+   "bbox": [
+    1189.83,
+    12,
+    74.17,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "alarmBanner",
+   "role": "Banner",
+   "parent": null,
+   "bbox": [
+    0,
+    44,
+    1280,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F2A516",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 2,
+      "color": {
+       "hex": "#A86F00",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     16
+    ]
+   },
+   "state": [
+    "active"
+   ]
+  },
+  {
+   "id": "alarmPriority",
+   "role": "Badge",
+   "parent": "alarmBanner",
+   "bbox": [
+    64,
+    58,
+    85.19,
+    26
+   ],
+   "style": {
+    "radius": 3,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#1D2125",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "ackButton",
+   "role": "Button",
+   "parent": "alarmBanner",
+   "bbox": [
+    1147.3,
+    50,
+    120.7,
+    42
+   ],
+   "style": {
+    "fill": {
+     "hex": "#343A40",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     18,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "mimicPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    12,
+    112,
+    884,
+    604
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D9DBDD",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     14,
+     16,
+     16,
+     16
+    ]
+   }
+  },
+  {
+   "id": "lineLegend",
+   "role": null,
+   "parent": "mimicPanel",
+   "bbox": [
+    633.25,
+    131,
+    245.75,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "mimic",
+   "role": "Canvas",
+   "parent": "mimicPanel",
+   "bbox": [
+    29,
+    165,
+    852,
+    534
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "mimicDiagram",
+   "role": "Diagram",
+   "parent": "mimic",
+   "bbox": [
+    30,
+    166,
+    852,
+    534
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute",
+    "clip": true
+   }
+  },
+  {
+   "id": "pipes",
+   "role": null,
+   "parent": "mimicDiagram",
+   "bbox": [
+    70,
+    206,
+    812,
+    494
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "flowArrows",
+   "role": null,
+   "parent": "mimicDiagram",
+   "bbox": [
+    63,
+    199,
+    819,
+    485
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "boilers",
+   "role": null,
+   "parent": "mimicDiagram",
+   "bbox": [
+    114,
+    252,
+    276,
+    364
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "boilers",
+    "count": 2,
+    "itemId": "boiler"
+   }
+  },
+  {
+   "id": "boiler[0]",
+   "role": "Vessel",
+   "parent": "boilers",
+   "bbox": [
+    114,
+    252,
+    276,
+    120
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "running"
+   ],
+   "value": "0.64"
+  },
+  {
+   "id": "boiler[1]",
+   "role": "Vessel",
+   "parent": "boilers",
+   "bbox": [
+    114,
+    496,
+    276,
+    120
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "standby"
+   ],
+   "value": "0.62"
+  },
+  {
+   "id": "bufferTank",
+   "role": "Vessel",
+   "parent": "mimicDiagram",
+   "bbox": [
+    616,
+    236,
+    132,
+    434
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "pumps",
+   "role": null,
+   "parent": "mimicDiagram",
+   "bbox": [
+    470.94,
+    299,
+    58.13,
+    329
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "pumps",
+    "count": 2,
+    "itemId": "pump"
+   }
+  },
+  {
+   "id": "pump[0]",
+   "role": "Pump",
+   "parent": "pumps",
+   "bbox": [
+    470.94,
+    299,
+    58.13,
+    85
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "running"
+   ]
+  },
+  {
+   "id": "pump[1]",
+   "role": "Pump",
+   "parent": "pumps",
+   "bbox": [
+    473.81,
+    543,
+    52.38,
+    85
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "stopped"
+   ]
+  },
+  {
+   "id": "valves",
+   "role": null,
+   "parent": "mimicDiagram",
+   "bbox": [
+    48,
+    184,
+    531.89,
+    469
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "valves",
+    "count": 3,
+    "itemId": "valve"
+   }
+  },
+  {
+   "id": "valve[0]",
+   "role": "Valve",
+   "parent": "valves",
+   "bbox": [
+    544.72,
+    184,
+    30.56,
+    71
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "open"
+   ]
+  },
+  {
+   "id": "valve[1]",
+   "role": "Valve",
+   "parent": "valves",
+   "bbox": [
+    540.11,
+    434,
+    39.78,
+    71
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "closed"
+   ]
+  },
+  {
+   "id": "valve[2]",
+   "role": "Valve",
+   "parent": "valves",
+   "bbox": [
+    48,
+    620,
+    73.19,
+    33
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "open"
+   ]
+  },
+  {
+   "id": "burner[0]",
+   "role": "Indicator",
+   "parent": "mimic",
+   "bbox": [
+    114,
+    288,
+    36,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "48px",
+    "columnGap": "normal",
+    "rowGap": "normal",
+    "position": "absolute"
+   },
+   "state": [
+    "on"
+   ]
+  },
+  {
+   "id": "burner[1]",
+   "role": "Indicator",
+   "parent": "mimic",
+   "bbox": [
+    114,
+    532,
+    36,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "36px",
+    "rows": "48px",
+    "columnGap": "normal",
+    "rowGap": "normal",
+    "position": "absolute"
+   },
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "sensorTags",
+   "role": null,
+   "parent": "mimic",
+   "bbox": [
+    30,
+    166,
+    852,
+    534
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "model": {
+    "name": "sensorTags",
+    "count": 10,
+    "itemId": "sensorTag"
+   }
+  },
+  {
+   "id": "sensorTag[0]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    204,
+    188,
+    80.64,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F2A516",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#1D2125",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     2,
+     30,
+     3,
+     7
+    ],
+    "position": "absolute"
+   },
+   "state": [
+    "error"
+   ]
+  },
+  {
+   "id": "sensorTag[1]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    402,
+    218,
+    72,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[2]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    402,
+    468,
+    72,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[3]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    642,
+    308,
+    80,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[4]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    642,
+    402,
+    80,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[5]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    642,
+    496,
+    80,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[6]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    760,
+    298,
+    72,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[7]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    760,
+    348,
+    72,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[8]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    760,
+    532,
+    72,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "sensorTag[9]",
+   "role": "Readout",
+   "parent": "sensorTags",
+   "bbox": [
+    134,
+    622,
+    78.86,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     8,
+     4,
+     8
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "setpointPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    908,
+    112,
+    360,
+    604
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D9DBDD",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     14,
+     16,
+     16,
+     16
+    ]
+   }
+  },
+  {
+   "id": "setpoints",
+   "role": null,
+   "parent": "setpointPanel",
+   "bbox": [
+    925,
+    165,
+    326,
+    417
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 12,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "setpoints",
+    "count": 3,
+    "itemId": "setpoint"
+   }
+  },
+  {
+   "id": "setpoint[0]",
+   "role": "SpinBox",
+   "parent": "setpoints",
+   "bbox": [
+    925,
+    165,
+    326,
+    131
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     10,
+     12,
+     12,
+     12
+    ]
+   },
+   "value": "80.0"
+  },
+  {
+   "id": "stepDown[0]",
+   "role": "Button",
+   "parent": "setpoint[0]",
+   "bbox": [
+    938,
+    227,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stepUp[0]",
+   "role": "Button",
+   "parent": "setpoint[0]",
+   "bbox": [
+    1174,
+    227,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "setpoint[1]",
+   "role": "SpinBox",
+   "parent": "setpoints",
+   "bbox": [
+    925,
+    308,
+    326,
+    131
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     10,
+     12,
+     12,
+     12
+    ]
+   },
+   "value": "75.0"
+  },
+  {
+   "id": "stepDown[1]",
+   "role": "Button",
+   "parent": "setpoint[1]",
+   "bbox": [
+    938,
+    370,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stepUp[1]",
+   "role": "Button",
+   "parent": "setpoint[1]",
+   "bbox": [
+    1174,
+    370,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "setpoint[2]",
+   "role": "SpinBox",
+   "parent": "setpoints",
+   "bbox": [
+    925,
+    451,
+    326,
+    131
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     10,
+     12,
+     12,
+     12
+    ]
+   },
+   "value": "2.40"
+  },
+  {
+   "id": "stepDown[2]",
+   "role": "Button",
+   "parent": "setpoint[2]",
+   "bbox": [
+    938,
+    513,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "stepUp[2]",
+   "role": "Button",
+   "parent": "setpoint[2]",
+   "bbox": [
+    1174,
+    513,
+    64,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F2F3",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "60px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "modeRow",
+   "role": null,
+   "parent": "setpointPanel",
+   "bbox": [
+    925,
+    625,
+    326,
+    74
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A4A9AE",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "modeSwitch",
+   "role": "Switch",
+   "parent": "modeRow",
+   "bbox": [
+    1146,
+    638,
+    92,
+    48
+   ],
+   "style": {
+    "fill": {
+     "hex": "#343A40",
+     "alpha": 1.0
+    },
+    "radius": 6
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ],
+   "value": "auto"
+  },
+  {
+   "id": "softKeys",
+   "role": "TabBar",
+   "parent": null,
+   "bbox": [
+    0,
+    728,
+    1280,
+    72
+   ],
+   "style": {
+    "fill": {
+     "hex": "#B4B8BC",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#6F757B",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     12,
+     8,
+     12
+    ]
+   },
+   "model": {
+    "name": "softKeys",
+    "count": 6,
+    "itemId": "softKey"
+   }
+  },
+  {
+   "id": "softKey[0]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    12,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#343A40",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#343A40",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "softKey[1]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    222.67,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "softKey[2]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    433.34,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "softKey[3]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    644.02,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "softKey[4]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    854.69,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "alarmCount",
+   "role": "Badge",
+   "parent": "softKey[4]",
+   "bbox": [
+    1026.7,
+    753,
+    26,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F2A516",
+     "alpha": 1.0
+    },
+    "radius": 3,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#A86F00",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "12px",
+    "rows": "22px",
+    "columnGap": "normal",
+    "rowGap": "normal",
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   }
+  },
+  {
+   "id": "softKey[5]",
+   "role": "Button",
+   "parent": "softKeys",
+   "bbox": [
+    1065.36,
+    737,
+    202.67,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E8EAEB",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#6F757B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     10
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "KAZAN DAİRESİ · BLOK B",
+   "owner": "plantName",
+   "bbox": [
+    16,
+    10,
+    201.78,
+    23
+   ],
+   "baseline": 27,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1.2,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Genel bakış",
+   "owner": "screenTitle",
+   "bbox": [
+    250.78,
+    10,
+    83.3,
+    23
+   ],
+   "baseline": 27,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PLC-01",
+   "owner": "plcStatus",
+   "bbox": [
+    844.66,
+    12,
+    40.09,
+    19
+   ],
+   "baseline": 26,
+   "lines": 1,
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "bağlı",
+   "owner": "plcStatus",
+   "bbox": [
+    890.75,
+    12,
+    30.25,
+    19
+   ],
+   "baseline": 26,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Operatör",
+   "owner": "operator",
+   "bbox": [
+    967,
+    12,
+    53.36,
+    19
+   ],
+   "baseline": 26,
+   "lines": 1,
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "S. Aydın",
+   "owner": "operator",
+   "bbox": [
+    1026.36,
+    12,
+    49.13,
+    19
+   ],
+   "baseline": 26,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30.09.2026",
+   "owner": "date",
+   "bbox": [
+    1099.48,
+    12,
+    66.34,
+    19
+   ],
+   "baseline": 26,
+   "lines": 1,
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:07",
+   "owner": "clock",
+   "bbox": [
+    1189.83,
+    8,
+    74.17,
+    28
+   ],
+   "baseline": 28,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "ÖNCELİK 2",
+   "owner": "alarmPriority",
+   "bbox": [
+    74,
+    62,
+    65.19,
+    18
+   ],
+   "baseline": 75,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "K-101 baca gazı sıcaklığı yüksek",
+   "owner": "alarmBanner",
+   "bbox": [
+    161.19,
+    49,
+    258.25,
+    26
+   ],
+   "baseline": 68,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-104 = 212 °C · Limit 200 °C · Brülör yükü düşürüldü",
+   "owner": "alarmBanner",
+   "bbox": [
+    161.19,
+    72,
+    318.53,
+    19
+   ],
+   "baseline": 86,
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:31:52",
+   "owner": "alarmBanner",
+   "bbox": [
+    1072.8,
+    49,
+    62.5,
+    26
+   ],
+   "baseline": 68,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1 aktif alarm · onay bekliyor",
+   "owner": "alarmBanner",
+   "bbox": [
+    979.52,
+    73,
+    155.78,
+    18
+   ],
+   "baseline": 86,
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ONAYLA",
+   "owner": "ackButton",
+   "bbox": [
+    1189.3,
+    60,
+    60.7,
+    22
+   ],
+   "baseline": 76,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1,
+    "italic": false
+   }
+  },
+  {
+   "string": "Proses şeması",
+   "owner": "mimicPanel",
+   "bbox": [
+    29,
+    128,
+    118.45,
+    26
+   ],
+   "baseline": 147,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Isı üretimi ve tampon tank",
+   "owner": "mimicPanel",
+   "bbox": [
+    159.45,
+    131,
+    160.5,
+    19
+   ],
+   "baseline": 145,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gidiş",
+   "owner": "lineLegend",
+   "bbox": [
+    663.25,
+    132,
+    27.47,
+    18
+   ],
+   "baseline": 145,
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dönüş",
+   "owner": "lineLegend",
+   "bbox": [
+    740.72,
+    132,
+    35.41,
+    18
+   ],
+   "baseline": 145,
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Doğalgaz",
+   "owner": "lineLegend",
+   "bbox": [
+    826.13,
+    132,
+    52.88,
+    18
+   ],
+   "baseline": 145,
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "K-101",
+   "owner": "boiler[0]",
+   "bbox": [
+    247.18,
+    303,
+    45.64,
+    28
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ÇALIŞIYOR · YÜK %62",
+   "owner": "boiler[0]",
+   "bbox": [
+    210.77,
+    329,
+    118.65,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SEVİYE %64",
+   "owner": "boiler[0]",
+   "bbox": [
+    308.8,
+    349,
+    67.74,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "K-102",
+   "owner": "boiler[1]",
+   "bbox": [
+    245.43,
+    548,
+    49.14,
+    28
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BEKLEMEDE",
+   "owner": "boiler[1]",
+   "bbox": [
+    236.81,
+    574,
+    66.38,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SEVİYE %62",
+   "owner": "boiler[1]",
+   "bbox": [
+    309.44,
+    593,
+    66.74,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "T-201",
+   "owner": "bufferTank",
+   "bbox": [
+    658.7,
+    252,
+    46.61,
+    28
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TAMPON TANK",
+   "owner": "bufferTank",
+   "bbox": [
+    642.02,
+    277,
+    80.28,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3.000 L",
+   "owner": "bufferTank",
+   "bbox": [
+    661.17,
+    613,
+    42.35,
+    18
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "P-201",
+   "owner": "pump[0]",
+   "bbox": [
+    483.46,
+    299,
+    33.08,
+    19
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ÇALIŞIYOR",
+   "owner": "pump[0]",
+   "bbox": [
+    470.94,
+    368,
+    58.13,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "P-202",
+   "owner": "pump[1]",
+   "bbox": [
+    482.27,
+    543,
+    35.47,
+    19
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "DURUYOR",
+   "owner": "pump[1]",
+   "bbox": [
+    473.81,
+    612,
+    52.38,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "V-101",
+   "owner": "valve[0]",
+   "bbox": [
+    544.72,
+    222,
+    30.56,
+    19
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "AÇIK",
+   "owner": "valve[0]",
+   "bbox": [
+    546.91,
+    239,
+    26.63,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "V-102",
+   "owner": "valve[1]",
+   "bbox": [
+    543.52,
+    472,
+    32.95,
+    19
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "KAPALI",
+   "owner": "valve[1]",
+   "bbox": [
+    540.11,
+    489,
+    39.78,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "V-301",
+   "owner": "valve[2]",
+   "bbox": [
+    88,
+    620,
+    33.19,
+    19
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "AÇIK",
+   "owner": "valve[2]",
+   "bbox": [
+    88,
+    637,
+    26.63,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "ISITMA GİDİŞ",
+   "owner": "mimicDiagram",
+   "bbox": [
+    790.92,
+    258,
+    77.08,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "ISITMA DÖNÜŞ",
+   "owner": "mimicDiagram",
+   "bbox": [
+    782.89,
+    600,
+    85.11,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "DOĞALGAZ GİRİŞİ",
+   "owner": "mimicDiagram",
+   "bbox": [
+    84,
+    678,
+    102.11,
+    16
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-104",
+   "owner": "sensorTag[0]",
+   "bbox": [
+    213,
+    191,
+    34.42,
+    15
+   ],
+   "baseline": 202,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "212",
+   "owner": "sensorTag[0]",
+   "bbox": [
+    213,
+    203,
+    25.09,
+    25
+   ],
+   "baseline": 221,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[0]",
+   "bbox": [
+    241.09,
+    209,
+    11.55,
+    16
+   ],
+   "baseline": 221,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-101",
+   "owner": "sensorTag[1]",
+   "bbox": [
+    411,
+    221,
+    31.95,
+    15
+   ],
+   "baseline": 232,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "78,4",
+   "owner": "sensorTag[1]",
+   "bbox": [
+    411,
+    233,
+    32.66,
+    25
+   ],
+   "baseline": 251,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[1]",
+   "bbox": [
+    446.66,
+    239,
+    11.55,
+    16
+   ],
+   "baseline": 251,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-102",
+   "owner": "sensorTag[2]",
+   "bbox": [
+    411,
+    471,
+    33.88,
+    15
+   ],
+   "baseline": 482,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "41,2",
+   "owner": "sensorTag[2]",
+   "bbox": [
+    411,
+    483,
+    29.88,
+    25
+   ],
+   "baseline": 501,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[2]",
+   "bbox": [
+    443.88,
+    489,
+    11.55,
+    16
+   ],
+   "baseline": 501,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-201",
+   "owner": "sensorTag[3]",
+   "bbox": [
+    665.06,
+    311,
+    33.88,
+    15
+   ],
+   "baseline": 322,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "72,1",
+   "owner": "sensorTag[3]",
+   "bbox": [
+    660.83,
+    323,
+    27.78,
+    25
+   ],
+   "baseline": 341,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[3]",
+   "bbox": [
+    691.61,
+    329,
+    11.55,
+    16
+   ],
+   "baseline": 341,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-202",
+   "owner": "sensorTag[4]",
+   "bbox": [
+    664.09,
+    405,
+    35.8,
+    15
+   ],
+   "baseline": 416,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "66,4",
+   "owner": "sensorTag[4]",
+   "bbox": [
+    657.67,
+    417,
+    34.11,
+    25
+   ],
+   "baseline": 435,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[4]",
+   "bbox": [
+    694.78,
+    423,
+    11.55,
+    16
+   ],
+   "baseline": 435,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-203",
+   "owner": "sensorTag[5]",
+   "bbox": [
+    664,
+    499,
+    36,
+    15
+   ],
+   "baseline": 510,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "55,8",
+   "owner": "sensorTag[5]",
+   "bbox": [
+    658.02,
+    511,
+    33.41,
+    25
+   ],
+   "baseline": 529,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[5]",
+   "bbox": [
+    694.42,
+    517,
+    11.55,
+    16
+   ],
+   "baseline": 529,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PT-201",
+   "owner": "sensorTag[6]",
+   "bbox": [
+    769,
+    301,
+    35,
+    15
+   ],
+   "baseline": 312,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,35",
+   "owner": "sensorTag[6]",
+   "bbox": [
+    769,
+    313,
+    32.53,
+    25
+   ],
+   "baseline": 331,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "bar",
+   "owner": "sensorTag[6]",
+   "bbox": [
+    804.53,
+    319,
+    17.75,
+    16
+   ],
+   "baseline": 331,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "FT-201",
+   "owner": "sensorTag[7]",
+   "bbox": [
+    769,
+    351,
+    34.11,
+    15
+   ],
+   "baseline": 362,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "213",
+   "owner": "sensorTag[7]",
+   "bbox": [
+    769,
+    363,
+    25.39,
+    25
+   ],
+   "baseline": 381,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "L/dk",
+   "owner": "sensorTag[7]",
+   "bbox": [
+    797.39,
+    369,
+    23.77,
+    16
+   ],
+   "baseline": 381,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TT-301",
+   "owner": "sensorTag[8]",
+   "bbox": [
+    769,
+    535,
+    34.08,
+    15
+   ],
+   "baseline": 546,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "54,6",
+   "owner": "sensorTag[8]",
+   "bbox": [
+    769,
+    547,
+    33.75,
+    25
+   ],
+   "baseline": 565,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "sensorTag[8]",
+   "bbox": [
+    805.75,
+    553,
+    11.55,
+    16
+   ],
+   "baseline": 565,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PT-301",
+   "owner": "sensorTag[9]",
+   "bbox": [
+    143,
+    625,
+    35.2,
+    15
+   ],
+   "baseline": 636,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 14,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "21,4",
+   "owner": "sensorTag[9]",
+   "bbox": [
+    143,
+    637,
+    29.88,
+    25
+   ],
+   "baseline": 655,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 19,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "mbar",
+   "owner": "sensorTag[9]",
+   "bbox": [
+    175.88,
+    643,
+    27.98,
+    16
+   ],
+   "baseline": 655,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ayar değerleri",
+   "owner": "setpointPanel",
+   "bbox": [
+    925,
+    128,
+    116.69,
+    26
+   ],
+   "baseline": 147,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kazan grubu",
+   "owner": "setpointPanel",
+   "bbox": [
+    1053.69,
+    131,
+    76.55,
+    19
+   ],
+   "baseline": 145,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kazan gidiş sıcaklığı",
+   "owner": "setpoint[0]",
+   "bbox": [
+    938,
+    175,
+    142.09,
+    22
+   ],
+   "baseline": 191,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TIC-101",
+   "owner": "setpoint[0]",
+   "bbox": [
+    1198.42,
+    179,
+    39.58,
+    16
+   ],
+   "baseline": 191,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ölçülen",
+   "owner": "setpoint[0]",
+   "bbox": [
+    938,
+    198,
+    43.66,
+    19
+   ],
+   "baseline": 212,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "78,4 °C",
+   "owner": "setpoint[0]",
+   "bbox": [
+    985.47,
+    198,
+    42.83,
+    19
+   ],
+   "baseline": 212,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SP",
+   "owner": "setpoint[0]",
+   "bbox": [
+    1032.78,
+    253,
+    15.5,
+    16
+   ],
+   "baseline": 265,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "80,0",
+   "owner": "setpoint[0]",
+   "bbox": [
+    1059.28,
+    233,
+    63.81,
+    44
+   ],
+   "baseline": 265,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "setpoint[0]",
+   "bbox": [
+    1128.09,
+    249,
+    15.11,
+    22
+   ],
+   "baseline": 265,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tampon tank sıcaklığı",
+   "owner": "setpoint[1]",
+   "bbox": [
+    938,
+    318,
+    152.94,
+    22
+   ],
+   "baseline": 334,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TIC-201",
+   "owner": "setpoint[1]",
+   "bbox": [
+    1196.34,
+    322,
+    41.66,
+    16
+   ],
+   "baseline": 334,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ölçülen",
+   "owner": "setpoint[1]",
+   "bbox": [
+    938,
+    341,
+    43.66,
+    19
+   ],
+   "baseline": 355,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "72,1 °C",
+   "owner": "setpoint[1]",
+   "bbox": [
+    985.47,
+    341,
+    39,
+    19
+   ],
+   "baseline": 355,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SP",
+   "owner": "setpoint[1]",
+   "bbox": [
+    1035.17,
+    396,
+    15.5,
+    16
+   ],
+   "baseline": 408,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "75,0",
+   "owner": "setpoint[1]",
+   "bbox": [
+    1061.67,
+    376,
+    59.03,
+    44
+   ],
+   "baseline": 408,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "setpoint[1]",
+   "bbox": [
+    1125.7,
+    392,
+    15.11,
+    22
+   ],
+   "baseline": 408,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sistem basıncı",
+   "owner": "setpoint[2]",
+   "bbox": [
+    938,
+    461,
+    102.3,
+    22
+   ],
+   "baseline": 477,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "PIC-201",
+   "owner": "setpoint[2]",
+   "bbox": [
+    1195.13,
+    465,
+    42.88,
+    16
+   ],
+   "baseline": 477,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0.6,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ölçülen",
+   "owner": "setpoint[2]",
+   "bbox": [
+    938,
+    484,
+    43.66,
+    19
+   ],
+   "baseline": 498,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,35 bar",
+   "owner": "setpoint[2]",
+   "bbox": [
+    985.47,
+    484,
+    49.89,
+    19
+   ],
+   "baseline": 498,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SP",
+   "owner": "setpoint[2]",
+   "bbox": [
+    1029.47,
+    539,
+    15.5,
+    16
+   ],
+   "baseline": 551,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,40",
+   "owner": "setpoint[2]",
+   "bbox": [
+    1055.97,
+    519,
+    62.33,
+    44
+   ],
+   "baseline": 551,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 34,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "bar",
+   "owner": "setpoint[2]",
+   "bbox": [
+    1123.3,
+    535,
+    23.22,
+    22
+   ],
+   "baseline": 551,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kontrol modu",
+   "owner": "modeRow",
+   "bbox": [
+    938,
+    641,
+    95.61,
+    22
+   ],
+   "baseline": 657,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kaskad sıralama",
+   "owner": "modeRow",
+   "bbox": [
+    938,
+    663,
+    93.7,
+    18
+   ],
+   "baseline": 676,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "OTOMATİK",
+   "owner": "modeRow",
+   "bbox": [
+    1060.42,
+    651,
+    73.58,
+    21
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 1,
+    "italic": false
+   }
+  },
+  {
+   "string": "F1",
+   "owner": "softKey[0]",
+   "bbox": [
+    31.89,
+    757,
+    10.2,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "GENEL BAKIŞ",
+   "owner": "softKey[0]",
+   "bbox": [
+    93,
+    754,
+    97.77,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "F2",
+   "owner": "softKey[1]",
+   "bbox": [
+    241.53,
+    757,
+    12.27,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "KAZANLAR",
+   "owner": "softKey[1]",
+   "bbox": [
+    303.67,
+    754,
+    80.03,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "F3",
+   "owner": "softKey[2]",
+   "bbox": [
+    452.11,
+    757,
+    12.47,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "POMPALAR",
+   "owner": "softKey[2]",
+   "bbox": [
+    514.34,
+    754,
+    82.03,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "F4",
+   "owner": "softKey[3]",
+   "bbox": [
+    662.56,
+    757,
+    12.89,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TRENDLER",
+   "owner": "softKey[3]",
+   "bbox": [
+    725.02,
+    754,
+    75.8,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "F5",
+   "owner": "softKey[4]",
+   "bbox": [
+    873.47,
+    757,
+    12.44,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ALARMLAR",
+   "owner": "softKey[4]",
+   "bbox": [
+    935.69,
+    754,
+    81.02,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "1",
+   "owner": "alarmCount",
+   "bbox": [
+    1037.19,
+    755,
+    5.02,
+    19
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 15,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "F6",
+   "owner": "softKey[5]",
+   "bbox": [
+    1084.02,
+    757,
+    12.69,
+    16
+   ],
+   "baseline": 769,
+   "lines": 1,
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "AYARLAR",
+   "owner": "softKey[5]",
+   "bbox": [
+    1146.36,
+    754,
+    69.03,
+    22
+   ],
+   "baseline": 770,
+   "lines": 1,
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 17,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.8,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:network",
+   "owner": "plcStatus",
+   "bbox": [
+    822.66,
+    14,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:user",
+   "owner": "operator",
+   "bbox": [
+    945,
+    14,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:triangle-alert",
+   "owner": "alarmBanner",
+   "bbox": [
+    19,
+    56,
+    30,
+    30
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.25,
+   "filled": false
+  },
+  {
+   "match": "lucide:check",
+   "owner": "ackButton",
+   "bbox": [
+    1161.3,
+    61,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:flame",
+   "owner": "burner[0]",
+   "bbox": [
+    122,
+    302,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:flame",
+   "owner": "burner[1]",
+   "bbox": [
+    122,
+    546,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#50565C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:triangle-alert",
+   "owner": "sensorTag[0]",
+   "bbox": [
+    258.64,
+    201,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:minus",
+   "owner": "stepDown[0]",
+   "bbox": [
+    957,
+    242,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "stepUp[0]",
+   "bbox": [
+    1193,
+    242,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:minus",
+   "owner": "stepDown[1]",
+   "bbox": [
+    957,
+    385,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "stepUp[1]",
+   "bbox": [
+    1193,
+    385,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:minus",
+   "owner": "stepDown[2]",
+   "bbox": [
+    957,
+    528,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "stepUp[2]",
+   "bbox": [
+    1193,
+    528,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.75,
+   "filled": false
+  },
+  {
+   "match": "lucide:layout-dashboard",
+   "owner": "softKey[0]",
+   "bbox": [
+    61,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:flame",
+   "owner": "softKey[1]",
+   "bbox": [
+    271.67,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:fan",
+   "owner": "softKey[2]",
+   "bbox": [
+    482.34,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chart-line",
+   "owner": "softKey[3]",
+   "bbox": [
+    693.02,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "softKey[4]",
+   "bbox": [
+    903.69,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:settings",
+   "owner": "softKey[5]",
+   "bbox": [
+    1114.36,
+    754,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#6F757B",
+    "alpha": 1.0
+   },
+   "count": 81,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1D2125",
+    "alpha": 1.0
+   },
+   "count": 63,
+   "where": [
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#62696F",
+    "alpha": 1.0
+   },
+   "count": 41,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A4A9AE",
+    "alpha": 1.0
+   },
+   "count": 28,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F1F2F3",
+    "alpha": 1.0
+   },
+   "count": 25,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#3F454B",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E8EAEB",
+    "alpha": 1.0
+   },
+   "count": 10,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#343A40",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "fill",
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#AEB4BA",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A86F00",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F2A516",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#D9DBDD",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B4B8BC",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#50565C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "alarm": {
+   "priority": 2,
+   "time": "14:31:52",
+   "tag": "TT-104",
+   "text": "K-101 baca gazı sıcaklığı yüksek",
+   "value": 212,
+   "limit": 200,
+   "unit": "°C",
+   "active": 1,
+   "acknowledged": false
+  },
+  "boilers": [
+   {
+    "tag": "K-101",
+    "state": "running",
+    "load": 0.62,
+    "level": 0.64,
+    "burner": "on"
+   },
+   {
+    "tag": "K-102",
+    "state": "standby",
+    "load": 0,
+    "level": 0.62,
+    "burner": "off"
+   }
+  ],
+  "pumps": [
+   {
+    "tag": "P-201",
+    "state": "running"
+   },
+   {
+    "tag": "P-202",
+    "state": "stopped"
+   }
+  ],
+  "valves": [
+   {
+    "tag": "V-101",
+    "state": "open",
+    "orientation": "h"
+   },
+   {
+    "tag": "V-102",
+    "state": "closed",
+    "orientation": "h"
+   },
+   {
+    "tag": "V-301",
+    "state": "open",
+    "orientation": "v"
+   }
+  ],
+  "sensorTags": [
+   {
+    "tag": "TT-104",
+    "value": "212",
+    "unit": "°C",
+    "x": 174,
+    "y": 22,
+    "alarm": true
+   },
+   {
+    "tag": "TT-101",
+    "value": "78,4",
+    "unit": "°C",
+    "x": 372,
+    "y": 52
+   },
+   {
+    "tag": "TT-102",
+    "value": "41,2",
+    "unit": "°C",
+    "x": 372,
+    "y": 302
+   },
+   {
+    "tag": "TT-201",
+    "value": "72,1",
+    "unit": "°C",
+    "x": 612,
+    "y": 142
+   },
+   {
+    "tag": "TT-202",
+    "value": "66,4",
+    "unit": "°C",
+    "x": 612,
+    "y": 236
+   },
+   {
+    "tag": "TT-203",
+    "value": "55,8",
+    "unit": "°C",
+    "x": 612,
+    "y": 330
+   },
+   {
+    "tag": "PT-201",
+    "value": "2,35",
+    "unit": "bar",
+    "x": 730,
+    "y": 132
+   },
+   {
+    "tag": "FT-201",
+    "value": "213",
+    "unit": "L/dk",
+    "x": 730,
+    "y": 182
+   },
+   {
+    "tag": "TT-301",
+    "value": "54,6",
+    "unit": "°C",
+    "x": 730,
+    "y": 366
+   },
+   {
+    "tag": "PT-301",
+    "value": "21,4",
+    "unit": "mbar",
+    "x": 104,
+    "y": 456
+   }
+  ],
+  "setpoints": [
+   {
+    "name": "Kazan gidiş sıcaklığı",
+    "loop": "TIC-101",
+    "pv": "78,4",
+    "sp": "80,0",
+    "unit": "°C",
+    "step": 0.5
+   },
+   {
+    "name": "Tampon tank sıcaklığı",
+    "loop": "TIC-201",
+    "pv": "72,1",
+    "sp": "75,0",
+    "unit": "°C",
+    "step": 0.5
+   },
+   {
+    "name": "Sistem basıncı",
+    "loop": "PIC-201",
+    "pv": "2,35",
+    "sp": "2,40",
+    "unit": "bar",
+    "step": 0.05
+   }
+  ],
+  "mode": "auto",
+  "softKeys": [
+   "Genel bakış",
+   "Kazanlar",
+   "Pompalar",
+   "Trendler",
+   "Alarmlar",
+   "Ayarlar"
+  ],
+  "selectedKey": 0
+ },
+ "states": {}
+}

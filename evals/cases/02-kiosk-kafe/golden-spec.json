@@ -1,0 +1,2795 @@
+{
+ "meta": {
+  "id": "02-kiosk-kafe",
+  "title": "Dikey self-servis sipariş kiosku",
+  "category": "kiosk",
+  "profile": "embedded-gpu",
+  "lang": "tr",
+  "designSize": [
+   1080,
+   1920
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1080,
+   1920
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Manrope",
+    "qtFamily": "Manrope",
+    "legacyFamily": "Manrope",
+    "files": [
+     "Manrope-Bold.ttf",
+     "Manrope-ExtraBold.ttf",
+     "Manrope-Medium.ttf",
+     "Manrope-Regular.ttf",
+     "Manrope-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700,
+     800
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#FFF8F1",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFF8F1"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#2B1D14",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2B1D14"
+   },
+   "muted": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#8B7B6E"
+   },
+   "border": {
+    "hex": "#F0E4D8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0E4D8"
+   },
+   "accent": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF6B3D"
+   },
+   "accent-soft": {
+    "hex": "#FFE6DA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFE6DA"
+   },
+   "promo-from": {
+    "hex": "#FF8A4C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF8A4C"
+   },
+   "promo-to": {
+    "hex": "#FF5A36",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF5A36"
+   },
+   "peach": {
+    "hex": "#FDE7D8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FDE7D8"
+   },
+   "peach-ink": {
+    "hex": "#C2410C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C2410C"
+   },
+   "latte": {
+    "hex": "#EFE6DC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EFE6DC"
+   },
+   "latte-ink": {
+    "hex": "#7C5A3C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7C5A3C"
+   },
+   "sage": {
+    "hex": "#E3EFE0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E3EFE0"
+   },
+   "sage-ink": {
+    "hex": "#3F6B3A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#3F6B3A"
+   },
+   "sky": {
+    "hex": "#DDEFF5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#DDEFF5"
+   },
+   "sky-ink": {
+    "hex": "#0E7490",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0E7490"
+   }
+  },
+  "space": {
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 24.0,
+   "6": 32.0,
+   "7": 40.0,
+   "8": 56.0
+  },
+  "radius": {
+   "md": 18.0,
+   "lg": 20.0,
+   "xl": 28.0,
+   "2xl": 32.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 10px 30px rgba(43, 29, 20, 0.07), 0 2px 6px rgba(43, 29, 20, 0.04)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Manrope",
+    "px": 60,
+    "weight": 800,
+    "lineHeight": 68,
+    "letterSpacing": -1.5,
+    "count": 2,
+    "example": "Bugün ne içmek"
+   },
+   {
+    "family": "Manrope",
+    "px": 46,
+    "weight": 800,
+    "lineHeight": 54,
+    "letterSpacing": -1,
+    "count": 1,
+    "example": "Latte + Kruvasan"
+   },
+   {
+    "family": "Manrope",
+    "px": 40,
+    "weight": 800,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "145 ₺"
+   },
+   {
+    "family": "Manrope",
+    "px": 40,
+    "weight": 800,
+    "lineHeight": 48,
+    "letterSpacing": -0.5,
+    "count": 1,
+    "example": "315 ₺"
+   },
+   {
+    "family": "Manrope",
+    "px": 34,
+    "weight": 800,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "count": 1,
+    "example": "Kahveler"
+   },
+   {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": -0.5,
+    "count": 1,
+    "example": "Demlik & Fırın"
+   },
+   {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "85 ₺"
+   },
+   {
+    "family": "Manrope",
+    "px": 27,
+    "weight": 800,
+    "lineHeight": 34,
+    "letterSpacing": -0.3,
+    "count": 4,
+    "example": "Türk Kahvesi"
+   },
+   {
+    "family": "Manrope",
+    "px": 26,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "2"
+   },
+   {
+    "family": "Manrope",
+    "px": 26,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "180 ₺"
+   },
+   {
+    "family": "Manrope",
+    "px": 24,
+    "weight": 500,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Siparişini seç, 5 dakikada masana getire"
+   },
+   {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Kahveler"
+   },
+   {
+    "family": "Manrope",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Tümünü gör"
+   },
+   {
+    "family": "Manrope",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "12 ürün"
+   },
+   {
+    "family": "Manrope",
+    "px": 19,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Sepetim · 3 ürün"
+   },
+   {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "TR"
+   },
+   {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Kızılay Şubesi"
+   },
+   {
+    "family": "Manrope",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "3"
+   },
+   {
+    "family": "Manrope",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 1.2,
+    "count": 1,
+    "example": "GÜNÜN FIRSATI"
+   },
+   {
+    "family": "Manrope",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Çok satan"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "header",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    56,
+    48,
+    968,
+    72
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "logo",
+   "role": "Icon",
+   "parent": "header",
+   "bbox": [
+    56,
+    48,
+    72,
+    72
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2B1D14",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "72px",
+    "rows": "72px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "langToggle",
+   "role": "SegmentedControl",
+   "parent": "header",
+   "bbox": [
+    664.47,
+    53,
+    142,
+    62
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#F0E4D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     6,
+     6,
+     6,
+     6
+    ]
+   },
+   "value": "tr"
+  },
+  {
+   "id": "langTr",
+   "role": "SegmentItem",
+   "parent": "langToggle",
+   "bbox": [
+    671.47,
+    60,
+    64,
+    48
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2B1D14",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64px",
+    "rows": "48px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "langEn",
+   "role": "SegmentItem",
+   "parent": "langToggle",
+   "bbox": [
+    735.47,
+    60,
+    64,
+    48
+   ],
+   "style": {
+    "radius": 999
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64px",
+    "rows": "48px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "serviceChip",
+   "role": "Chip",
+   "parent": "header",
+   "bbox": [
+    822.47,
+    54,
+    201.53,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFE6DA",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     24
+    ]
+   }
+  },
+  {
+   "id": "greeting",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    56,
+    176,
+    968,
+    180
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "promo",
+   "role": "Banner",
+   "parent": null,
+   "bbox": [
+    56,
+    396,
+    968,
+    272
+   ],
+   "style": {
+    "fillImage": "linear-gradient(135deg, rgb(255, 138, 76) 0%, rgb(255, 90, 54) 100%)",
+    "radius": 32
+   },
+   "layout": {
+    "padding": [
+     40,
+     48,
+     40,
+     48
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "categoryTabs",
+   "role": "TabBar",
+   "parent": null,
+   "bbox": [
+    56,
+    712,
+    1024,
+    76
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "normal",
+    "clip": true
+   },
+   "model": {
+    "name": "categories",
+    "count": 5,
+    "itemId": "tab"
+   }
+  },
+  {
+   "id": "tab[0]",
+   "role": "Tab",
+   "parent": "categoryTabs",
+   "bbox": [
+    56,
+    712,
+    193.84,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2B1D14",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#2B1D14",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     26
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "tab[1]",
+   "role": "Tab",
+   "parent": "categoryTabs",
+   "bbox": [
+    265.84,
+    712,
+    168.2,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#F0E4D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     26
+    ]
+   }
+  },
+  {
+   "id": "tab[2]",
+   "role": "Tab",
+   "parent": "categoryTabs",
+   "bbox": [
+    450.05,
+    712,
+    186.22,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#F0E4D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     26
+    ]
+   }
+  },
+  {
+   "id": "tab[3]",
+   "role": "Tab",
+   "parent": "categoryTabs",
+   "bbox": [
+    652.27,
+    712,
+    268.97,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#F0E4D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     26
+    ]
+   }
+  },
+  {
+   "id": "tab[4]",
+   "role": "Tab",
+   "parent": "categoryTabs",
+   "bbox": [
+    937.23,
+    712,
+    173.97,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 999,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#F0E4D8",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     26
+    ]
+   }
+  },
+  {
+   "id": "sectionHead",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    56,
+    836,
+    968,
+    40
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "baseline"
+   }
+  },
+  {
+   "id": "products",
+   "role": "Grid",
+   "parent": null,
+   "bbox": [
+    56,
+    904,
+    968,
+    804
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "472px 472px",
+    "rows": "390px 390px",
+    "columnGap": 24,
+    "rowGap": 24
+   },
+   "model": {
+    "name": "products",
+    "count": 4,
+    "itemId": "product"
+   }
+  },
+  {
+   "id": "product[0]",
+   "role": "ProductCard",
+   "parent": "products",
+   "bbox": [
+    56,
+    904,
+    472,
+    390
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 28,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#000000",
+      "alpha": 0.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 10.0,
+      "blur": 30.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.07
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 6.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     24,
+     20
+    ]
+   }
+  },
+  {
+   "id": "addButton[0]",
+   "role": "Button",
+   "parent": "product[0]",
+   "bbox": [
+    442,
+    1204,
+    64,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FF6B3D",
+     "alpha": 1.0
+    },
+    "radius": 18
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64px",
+    "rows": "64px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "product[1]",
+   "role": "ProductCard",
+   "parent": "products",
+   "bbox": [
+    552,
+    904,
+    472,
+    390
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 28,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#FF6B3D",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 10.0,
+      "blur": 30.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.07
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 6.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     24,
+     20
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "qtyStepper",
+   "role": "SpinBox",
+   "parent": "product[1]",
+   "bbox": [
+    830,
+    1204,
+    172,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFE6DA",
+     "alpha": 1.0
+    },
+    "radius": 18
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     6,
+     6,
+     6,
+     6
+    ]
+   },
+   "value": "2"
+  },
+  {
+   "id": "product[2]",
+   "role": "ProductCard",
+   "parent": "products",
+   "bbox": [
+    56,
+    1318,
+    472,
+    390
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 28,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#000000",
+      "alpha": 0.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 10.0,
+      "blur": 30.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.07
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 6.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     24,
+     20
+    ]
+   }
+  },
+  {
+   "id": "addButton[1]",
+   "role": "Button",
+   "parent": "product[2]",
+   "bbox": [
+    442,
+    1618,
+    64,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FF6B3D",
+     "alpha": 1.0
+    },
+    "radius": 18
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64px",
+    "rows": "64px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "product[3]",
+   "role": "ProductCard",
+   "parent": "products",
+   "bbox": [
+    552,
+    1318,
+    472,
+    390
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 28,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#000000",
+      "alpha": 0.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 10.0,
+      "blur": 30.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.07
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 6.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     20,
+     20,
+     24,
+     20
+    ]
+   }
+  },
+  {
+   "id": "addButton[2]",
+   "role": "Button",
+   "parent": "product[3]",
+   "bbox": [
+    938,
+    1618,
+    64,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FF6B3D",
+     "alpha": 1.0
+    },
+    "radius": 18
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "64px",
+    "rows": "64px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "cartBar",
+   "role": "BottomBar",
+   "parent": null,
+   "bbox": [
+    32,
+    1748,
+    1016,
+    140
+   ],
+   "style": {
+    "fill": {
+     "hex": "#2B1D14",
+     "alpha": 1.0
+    },
+    "radius": 32,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": -12.0,
+      "blur": 40.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#2B1D14",
+       "alpha": 0.18
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 22,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     28,
+     0,
+     28
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "payButton",
+   "role": "Button",
+   "parent": "cartBar",
+   "bbox": [
+    719.97,
+    1772,
+    300.03,
+    92
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FF6B3D",
+     "alpha": 1.0
+    },
+    "radius": 24
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     36,
+     0,
+     44
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "Demlik & Fırın",
+   "owner": "header",
+   "bbox": [
+    148,
+    51,
+    191.22,
+    41
+   ],
+   "baseline": 83,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": -0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kızılay Şubesi",
+   "owner": "header",
+   "bbox": [
+    148,
+    90,
+    114.56,
+    24
+   ],
+   "baseline": 109,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "TR",
+   "owner": "langTr",
+   "bbox": [
+    692.06,
+    72,
+    22.81,
+    24
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#FFF8F1",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EN",
+   "owner": "langEn",
+   "bbox": [
+    755.73,
+    72,
+    23.47,
+    24
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Masaya servis",
+   "owner": "serviceChip",
+   "bbox": [
+    878.47,
+    72,
+    121.53,
+    24
+   ],
+   "baseline": 91,
+   "lines": 1,
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün ne içmek",
+   "owner": "greeting",
+   "bbox": [
+    56,
+    169,
+    443.89,
+    82
+   ],
+   "baseline": 233,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 60,
+    "weight": 800,
+    "lineHeight": 68,
+    "letterSpacing": -1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "istersin?",
+   "owner": "greeting",
+   "bbox": [
+    56,
+    237,
+    244.45,
+    82
+   ],
+   "baseline": 301,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 60,
+    "weight": 800,
+    "lineHeight": 68,
+    "letterSpacing": -1.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "Siparişini seç, 5 dakikada masana getirelim.",
+   "owner": "greeting",
+   "bbox": [
+    56,
+    323,
+    482.42,
+    33
+   ],
+   "baseline": 349,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 24,
+    "weight": 500,
+    "lineHeight": 32,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "GÜNÜN FIRSATI",
+   "owner": "promo",
+   "bbox": [
+    120,
+    443.5,
+    128.81,
+    21
+   ],
+   "baseline": 459.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 1.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Latte + Kruvasan",
+   "owner": "promo",
+   "bbox": [
+    104,
+    485,
+    359.38,
+    63
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 46,
+    "weight": 800,
+    "lineHeight": 54,
+    "letterSpacing": -1,
+    "italic": false
+   }
+  },
+  {
+   "string": "145 ₺",
+   "owner": "promo",
+   "bbox": [
+    104,
+    556,
+    101.41,
+    55
+   ],
+   "baseline": 599,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 40,
+    "weight": 800,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "180 ₺",
+   "owner": "promo",
+   "bbox": [
+    221.41,
+    571,
+    65.23,
+    36
+   ],
+   "baseline": 599,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.7
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 26,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kahveler",
+   "owner": "tab[0]",
+   "bbox": [
+    122,
+    735,
+    93.84,
+    30
+   ],
+   "baseline": 758,
+   "lines": 1,
+   "color": {
+    "hex": "#FFF8F1",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çaylar",
+   "owner": "tab[1]",
+   "bbox": [
+    331.84,
+    735,
+    68.2,
+    30
+   ],
+   "baseline": 758,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Fırından",
+   "owner": "tab[2]",
+   "bbox": [
+    516.05,
+    735,
+    86.22,
+    30
+   ],
+   "baseline": 758,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Soğuk İçecekler",
+   "owner": "tab[3]",
+   "bbox": [
+    718.27,
+    735,
+    168.97,
+    30
+   ],
+   "baseline": 758,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tatlılar",
+   "owner": "tab[4]",
+   "bbox": [
+    1003.23,
+    735,
+    73.97,
+    30
+   ],
+   "baseline": 758,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 22,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kahveler",
+   "owner": "sectionHead",
+   "bbox": [
+    56,
+    833,
+    144.11,
+    46
+   ],
+   "baseline": 869,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 34,
+    "weight": 800,
+    "lineHeight": 40,
+    "letterSpacing": -0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 ürün",
+   "owner": "sectionHead",
+   "bbox": [
+    214.11,
+    848,
+    68.81,
+    27
+   ],
+   "baseline": 869,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tümünü gör",
+   "owner": "sectionHead",
+   "bbox": [
+    882.19,
+    848,
+    115.81,
+    27
+   ],
+   "baseline": 869,
+   "lines": 1,
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çok satan",
+   "owner": "product[0]",
+   "bbox": [
+    130,
+    948.5,
+    73.78,
+    21
+   ],
+   "baseline": 964.5,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Türk Kahvesi",
+   "owner": "product[0]",
+   "bbox": [
+    78,
+    1120,
+    164.97,
+    37
+   ],
+   "baseline": 1149,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 27,
+    "weight": 800,
+    "lineHeight": 34,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Közde, çifte kavrulmuş",
+   "owner": "product[0]",
+   "bbox": [
+    78,
+    1160,
+    187.78,
+    24
+   ],
+   "baseline": 1179,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "85 ₺",
+   "owner": "product[0]",
+   "bbox": [
+    78,
+    1215,
+    62.67,
+    41
+   ],
+   "baseline": 1247,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Latte",
+   "owner": "product[1]",
+   "bbox": [
+    574,
+    1120,
+    68.44,
+    37
+   ],
+   "baseline": 1149,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 27,
+    "weight": 800,
+    "lineHeight": 34,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çift shot, yulaf sütü seçeneği",
+   "owner": "product[1]",
+   "bbox": [
+    574,
+    1160,
+    246.97,
+    24
+   ],
+   "baseline": 1179,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "110 ₺",
+   "owner": "product[1]",
+   "bbox": [
+    574,
+    1215,
+    73.78,
+    41
+   ],
+   "baseline": 1247,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2",
+   "owner": "qtyStepper",
+   "bbox": [
+    908.14,
+    1218,
+    15.72,
+    36
+   ],
+   "baseline": 1246,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Manrope",
+    "px": 26,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Filtre Kahve",
+   "owner": "product[2]",
+   "bbox": [
+    78,
+    1534,
+    153.44,
+    37
+   ],
+   "baseline": 1563,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 27,
+    "weight": 800,
+    "lineHeight": 34,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Etiyopya Yirgacheffe",
+   "owner": "product[2]",
+   "bbox": [
+    78,
+    1574,
+    172.09,
+    24
+   ],
+   "baseline": 1593,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "95 ₺",
+   "owner": "product[2]",
+   "bbox": [
+    78,
+    1629,
+    62.64,
+    41
+   ],
+   "baseline": 1661,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yeni",
+   "owner": "product[3]",
+   "bbox": [
+    626,
+    1362.5,
+    31.13,
+    21
+   ],
+   "baseline": 1378.5,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cold Brew",
+   "owner": "product[3]",
+   "bbox": [
+    574,
+    1534,
+    130.55,
+    37
+   ],
+   "baseline": 1563,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 27,
+    "weight": 800,
+    "lineHeight": 34,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "18 saat soğuk demleme",
+   "owner": "product[3]",
+   "bbox": [
+    574,
+    1574,
+    194.88,
+    24
+   ],
+   "baseline": 1593,
+   "lines": 1,
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "120 ₺",
+   "owner": "product[3]",
+   "bbox": [
+    574,
+    1629,
+    78.28,
+    41
+   ],
+   "baseline": 1661,
+   "lines": 1,
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 30,
+    "weight": 800,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "cartBar",
+   "bbox": [
+    129.27,
+    1775,
+    9.47,
+    22
+   ],
+   "baseline": 1792,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sepetim · 3 ürün",
+   "owner": "cartBar",
+   "bbox": [
+    166,
+    1781,
+    145.47,
+    26
+   ],
+   "baseline": 1801,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.64
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 19,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "315 ₺",
+   "owner": "cartBar",
+   "bbox": [
+    166,
+    1802,
+    97.95,
+    55
+   ],
+   "baseline": 1845,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 40,
+    "weight": 800,
+    "lineHeight": 48,
+    "letterSpacing": -0.5,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ödemeye Geç",
+   "owner": "payButton",
+   "bbox": [
+    763.97,
+    1800,
+    176.03,
+    36
+   ],
+   "baseline": 1828,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Manrope",
+    "px": 26,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:coffee",
+   "owner": "logo",
+   "bbox": [
+    74,
+    66,
+    36,
+    36
+   ],
+   "color": {
+    "hex": "#FFF8F1",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:utensils",
+   "owner": "serviceChip",
+   "bbox": [
+    846.47,
+    73,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:coffee",
+   "owner": "promo",
+   "bbox": [
+    702,
+    480,
+    104,
+    104
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:croissant",
+   "owner": "promo",
+   "bbox": [
+    907,
+    557,
+    84,
+    84
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:coffee",
+   "owner": "tab[0]",
+   "bbox": [
+    84,
+    737,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:leaf",
+   "owner": "tab[1]",
+   "bbox": [
+    293.84,
+    737,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:croissant",
+   "owner": "tab[2]",
+   "bbox": [
+    478.05,
+    737,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cup-soda",
+   "owner": "tab[3]",
+   "bbox": [
+    680.27,
+    737,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:cake-slice",
+   "owner": "tab[4]",
+   "bbox": [
+    965.23,
+    737,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-right",
+   "owner": "sectionHead",
+   "bbox": [
+    1004,
+    851.5,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:flame",
+   "owner": "product[0]",
+   "bbox": [
+    108,
+    951,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:coffee",
+   "owner": "product[0]",
+   "bbox": [
+    246,
+    968,
+    92,
+    92
+   ],
+   "color": {
+    "hex": "#C2410C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addButton[0]",
+   "bbox": [
+    458,
+    1220,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:milk",
+   "owner": "product[1]",
+   "bbox": [
+    742,
+    968,
+    92,
+    92
+   ],
+   "color": {
+    "hex": "#7C5A3C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:minus",
+   "owner": "qtyStepper",
+   "bbox": [
+    849,
+    1223,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "qtyStepper",
+   "bbox": [
+    957,
+    1223,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:bean",
+   "owner": "product[2]",
+   "bbox": [
+    246,
+    1382,
+    92,
+    92
+   ],
+   "color": {
+    "hex": "#3F6B3A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addButton[1]",
+   "bbox": [
+    458,
+    1634,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:snowflake",
+   "owner": "product[3]",
+   "bbox": [
+    604,
+    1365,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:cup-soda",
+   "owner": "product[3]",
+   "bbox": [
+    742,
+    1382,
+    92,
+    92
+   ],
+   "color": {
+    "hex": "#0E7490",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 1.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addButton[2]",
+   "bbox": [
+    954,
+    1634,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  },
+  {
+   "match": "lucide:shopping-bag",
+   "owner": "cartBar",
+   "bbox": [
+    83,
+    1799,
+    38,
+    38
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:arrow-right",
+   "owner": "payButton",
+   "bbox": [
+    954,
+    1803,
+    30,
+    30
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.5,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#2B1D14",
+    "alpha": 1.0
+   },
+   "count": 27,
+   "where": [
+    "fill",
+    "border",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 23,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0E4D8",
+    "alpha": 1.0
+   },
+   "count": 20,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF6B3D",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "fill",
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8B7B6E",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFF8F1",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFE6DA",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.7
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.64
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C2410C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#7C5A3C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#3F6B3A",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0E7490",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "products": [
+   {
+    "name": "Türk Kahvesi",
+    "desc": "Közde, çifte kavrulmuş",
+    "price": 85
+   },
+   {
+    "name": "Latte",
+    "desc": "Çift shot, yulaf sütü seçeneğiyle",
+    "price": 110,
+    "qty": 2
+   },
+   {
+    "name": "Filtre Kahve",
+    "desc": "Etiyopya Yirgacheffe",
+    "price": 95
+   },
+   {
+    "name": "Cold Brew",
+    "desc": "18 saat soğuk demleme",
+    "price": 120
+   }
+  ],
+  "cart": {
+   "items": 3,
+   "total": 315
+  }
+ },
+ "states": {}
+}

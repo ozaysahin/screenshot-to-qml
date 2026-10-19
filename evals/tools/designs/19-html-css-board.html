@@ -1,0 +1,910 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekim içerik takvimi · Kalem</title>
+<script type="application/json" id="case-meta">
+{"id": "19-html-css-board", "title": "HTML/CSS kanban panosu — içerik takvimi (HTML girdi)", "category": "html", "profile": "desktop",
+ "viewport": [1366, 768], "dpr": 2, "fonts": ["Karla"]}
+</script>
+<script type="application/json" id="case-data">
+{"search": "sonbahar", "filters": {"channel": "Tüm kanallar", "month": "Ekim 2026", "highlightOverdue": true}, "view": "board", "today": "2026-10-09",
+ "columns": [
+  {"title": "Fikir", "count": 3, "cards": [
+    {"tags": ["Blog", "Rehber"], "title": "Kapadokya'da kamp: ilk kez gidenler için 10 ipucu", "due": "24 Eki", "checklist": [0, 4], "comments": 2, "people": ["EY"]},
+    {"tags": ["Sosyal"], "title": "Sonbahar rotaları karusel serisi", "due": "27 Eki", "checklist": [1, 3], "people": ["ZK", "MT"]},
+    {"tags": ["Podcast", "Röportaj"], "title": "Konuk: Kaçkarlar'da 20 yıllık bir dağ rehberi", "due": "30 Eki", "checklist": [0, 5], "people": ["SB"]}]},
+  {"title": "Yazılıyor", "count": 4, "cards": [
+    {"tags": ["Blog", "SEO"], "title": "Kışlık uyku tulumu seçerken dikkat edilecekler", "due": "14 Eki", "checklist": [3, 5], "comments": 4, "people": ["ED", "SB"]},
+    {"tags": ["Bülten"], "title": "Ekim bülteni: yeni rotalar ve etkinlikler", "due": "8 Eki", "overdue": true, "checklist": [4, 6], "people": ["MT"]},
+    {"tags": ["Video", "Kampanya"], "title": "Likya Yolu'nu tek başına yürümek: çekim planı", "due": "16 Eki", "checklist": [2, 5], "comments": 7, "people": ["ZK", "EY", "+1"]},
+    {"tags": ["Blog"], "title": "Termos karşılaştırması: 6 modeli test ettik", "due": "20 Eki", "checklist": [1, 4], "people": ["ED"]}]},
+  {"title": "İncelemede", "count": 2, "cards": [
+    {"tags": ["Blog", "Rehber"], "title": "Uludağ'da ilk kış yürüyüşü için hazırlık listesi", "due": "10 Eki", "checklist": [5, 5], "comments": 3, "people": ["SB", "ED"]},
+    {"tags": ["Sosyal"], "title": "Takipçi fotoğrafları: #yoldayız seçkisi", "due": "11 Eki", "checklist": [3, 4], "people": ["ZK"]}]},
+  {"title": "Yayında", "count": 3, "cards": [
+    {"tags": ["Blog"], "title": "Çadır kurarken en sık yapılan 7 hata", "due": "3 Eki", "done": true, "checklist": [5, 5], "comments": 12, "people": ["EY"]},
+    {"tags": ["Bülten"], "title": "Eylül bülteni: yaz sezonunu kapatırken", "due": "1 Eki", "done": true, "checklist": [6, 6], "people": ["MT"]},
+    {"tags": ["Podcast"], "title": "Bölüm 14: Işıksız gecelerde yön bulmak", "due": "6 Eki", "done": true, "checklist": [4, 4], "comments": 5, "people": ["SB", "ZK"]}]}]}
+</script>
+<!--@fonts-->
+<style>
+/* ==========================================================================
+   Kalem — content board
+   ========================================================================== */
+
+:root {
+  --color-bg: #F6F5F1;
+  --color-surface: #FFFFFF;
+  --color-column: #ECEAE4;
+  --color-ink: #1E1C18;
+  --color-text-2: #4A463E;
+  --color-muted: #7C776D;
+  --color-dim: #A39E93;
+  --color-border: #E2DED5;
+  --color-border-strong: #CFCAC0;
+  --color-track: #E7E4DD;
+  --color-primary: #1F6B55;
+  --color-primary-dark: #185544;
+  --color-primary-soft: #E3F0EB;
+  --color-danger: #C23B2A;
+  --color-success: #2E8A5C;
+
+  --color-blog-bg: #E4ECFB;      --color-blog-fg: #2F58B8;
+  --color-newsletter-bg: #FBEFD9; --color-newsletter-fg: #9A5B09;
+  --color-social-bg: #FBE4EC;    --color-social-fg: #B0335F;
+  --color-video-bg: #ECE5FB;     --color-video-fg: #6541B8;
+  --color-podcast-bg: #DDF2EF;   --color-podcast-fg: #1E7A6E;
+
+  --color-idea: #A39E93;
+  --color-writing: #E0A21B;
+  --color-review: #7B5CD6;
+  --color-live: #2E8A5C;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(30, 28, 24, 0.06), 0 0 0 1px rgba(30, 28, 24, 0.05);
+  --shadow-control: 0 1px 1px rgba(30, 28, 24, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 1366px;
+  height: 768px;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+svg.ic {
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Top bar --------------------------------------------------------------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  height: 56px;
+  flex: none;
+  padding: 0 var(--space-6);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.workspace {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  margin-left: -8px;
+  padding: 0 8px 0 12px;
+  border-left: 1px solid var(--color-border);
+  border-radius: 0;
+  font-weight: 500;
+  color: var(--color-text-2);
+}
+
+.workspace svg.ic {
+  width: 14px;
+  height: 14px;
+  color: var(--color-dim);
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.main-nav a[aria-current="page"] {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 280px;
+  height: 36px;
+  padding: 0 6px 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-muted);
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.search input::placeholder {
+  color: var(--color-dim);
+}
+
+.search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-muted);
+}
+
+.icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-muted);
+}
+
+.icon-btn__dot {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-danger);
+}
+
+/* --- Avatars ------------------------------------------------------------- */
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.avatar--lg {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.avatar--ey { background: #F6D8C4; color: #8A3D12; }
+.avatar--zk { background: #CFE6DC; color: #1F6B55; }
+.avatar--mt { background: #D6DDF6; color: #2F4A9E; }
+.avatar--sb { background: #EAD7F2; color: #6E2F8A; }
+.avatar--ed { background: #F4E3B5; color: #7A5608; }
+.avatar--more { background: var(--color-track); color: var(--color-muted); }
+
+.avatars {
+  display: flex;
+  margin-left: auto;
+}
+
+.avatars .avatar {
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+.avatars .avatar + .avatar {
+  margin-left: -6px;
+}
+
+/* --- Toolbar ------------------------------------------------------------- */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 64px;
+  flex: none;
+  padding: 0 var(--space-6);
+}
+
+.toolbar__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-right: var(--space-2);
+}
+
+.toolbar h1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.toolbar__meta {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.select {
+  position: relative;
+  display: flex;
+}
+
+.select select {
+  appearance: none;
+  height: 34px;
+  padding: 0 30px 0 10px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-control);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.select svg.ic {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 16px;
+  height: 16px;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: var(--color-text-2);
+}
+
+.checkbox input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.checkbox input::before {
+  content: "";
+  width: 4px;
+  height: 8px;
+  margin-top: -2px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.checkbox input:checked {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.checkbox input:checked::before {
+  visibility: visible;
+}
+
+.toolbar__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.segmented {
+  display: flex;
+  padding: 3px;
+  border-radius: var(--radius-lg);
+  background: var(--color-column);
+}
+
+.segmented button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.segmented button[aria-pressed="true"] {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: 0 1px 2px rgba(30, 28, 24, 0.12);
+}
+
+.segmented svg.ic {
+  width: 15px;
+  height: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px 0 12px;
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(24, 85, 68, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* --- Board --------------------------------------------------------------- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  flex: 1;
+  min-height: 0;
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-2);
+  border-radius: var(--radius-xl);
+  background: var(--color-column);
+}
+
+.column__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 32px;
+  padding: 0 2px 0 var(--space-2);
+}
+
+.column__header h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.column__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-idea);
+}
+
+.column--writing .column__dot { background: var(--color-writing); }
+.column--review .column__dot { background: var(--color-review); }
+.column--live .column__dot { background: var(--color-live); }
+
+.count {
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(30, 28, 24, 0.07);
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-2);
+}
+
+.column__header .icon-btn {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* --- Card ---------------------------------------------------------------- */
+
+.card {
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.card__tags {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.tag {
+  height: 20px;
+  padding: 0 7px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-text-2);
+}
+
+.tag--channel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tag--blog { background: var(--color-blog-bg); color: var(--color-blog-fg); }
+.tag--newsletter { background: var(--color-newsletter-bg); color: var(--color-newsletter-fg); }
+.tag--social { background: var(--color-social-bg); color: var(--color-social-fg); }
+.tag--video { background: var(--color-video-bg); color: var(--color-video-fg); }
+.tag--podcast { background: var(--color-podcast-bg); color: var(--color-podcast-fg); }
+
+.card__title {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 24px;
+  margin-top: var(--space-3);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.card__meta > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card__meta svg.ic {
+  width: 14px;
+  height: 14px;
+}
+
+.due--overdue {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.due--done {
+  color: var(--color-success);
+}
+
+.checklist {
+  gap: 6px;
+}
+
+.checklist progress {
+  appearance: none;
+  width: 36px;
+  height: 4px;
+  margin-left: 2px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--color-track);
+  overflow: hidden;
+}
+
+.checklist progress::-webkit-progress-bar {
+  border-radius: 2px;
+  background: var(--color-track);
+}
+
+.checklist progress::-webkit-progress-value {
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.checklist progress::-moz-progress-bar {
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.checklist--complete {
+  color: var(--color-success);
+}
+
+.checklist--complete progress::-webkit-progress-value {
+  background: var(--color-success);
+}
+</style>
+</head>
+<body>
+<header class="topbar" data-node="topBar" data-role="Header">
+  <a class="brand" href="#" data-node="brand"><span class="brand__mark"><i data-icon="lucide:pen-line" class="ic"></i></span>Kalem</a>
+  <button class="workspace" type="button" data-node="workspaceSwitcher" data-role="Button">Yolda Dergi<i data-icon="lucide:chevrons-up-down" class="ic"></i></button>
+  <nav class="main-nav" aria-label="Ana menü" data-node="mainNav" data-role="TabBar">
+    <a href="#" data-node="navLink" data-role="Tab">Takvim</a>
+    <a href="#" aria-current="page" data-node="navLink" data-role="Tab" data-state="selected">İçerikler</a>
+    <a href="#" data-node="navLink" data-role="Tab">Varlıklar</a>
+    <a href="#" data-node="navLink" data-role="Tab">Raporlar</a>
+  </nav>
+  <div class="topbar__actions">
+    <label class="search" data-node="searchField" data-role="TextField">
+      <i data-icon="lucide:search" class="ic"></i>
+      <input type="search" name="q" value="sonbahar" placeholder="İçerik ara…" aria-label="İçerik ara">
+      <kbd>Ctrl K</kbd>
+    </label>
+    <button class="icon-btn" type="button" aria-label="Bildirimler" data-node="notificationsButton" data-role="IconButton"><i data-icon="lucide:bell" class="ic"></i><span class="icon-btn__dot"></span></button>
+    <span class="avatar avatar--lg avatar--zk" title="Zeynep Kara" data-node="userAvatar" data-role="Avatar">ZK</span>
+  </div>
+</header>
+
+<main class="page">
+  <div class="toolbar" data-node="toolbar" data-role="ToolBar">
+    <div class="toolbar__title">
+      <h1>Ekim içerik takvimi</h1>
+      <span class="toolbar__meta">12 içerik · 5 yazar</span>
+    </div>
+    <label class="filter" data-node="channelFilterField">Kanal
+      <span class="select">
+        <select name="channel" data-node="channelFilter" data-role="ComboBox" data-value="Tüm kanallar">
+          <option selected>Tüm kanallar</option>
+          <option>Blog</option>
+          <option>Bülten</option>
+          <option>Sosyal</option>
+          <option>Video</option>
+          <option>Podcast</option>
+        </select>
+        <i data-icon="lucide:chevron-down" class="ic"></i>
+      </span>
+    </label>
+    <label class="filter" data-node="monthFilterField">Dönem
+      <span class="select">
+        <select name="month" data-node="monthFilter" data-role="ComboBox" data-value="Ekim 2026">
+          <option>Eylül 2026</option>
+          <option selected>Ekim 2026</option>
+          <option>Kasım 2026</option>
+        </select>
+        <i data-icon="lucide:chevron-down" class="ic"></i>
+      </span>
+    </label>
+    <label class="checkbox" data-node="overdueToggle" data-role="CheckBox" data-state="checked">
+      <input type="checkbox" name="overdue" checked>
+      Gecikenleri vurgula
+    </label>
+    <div class="toolbar__end">
+      <div class="segmented" role="group" aria-label="Görünüm" data-node="viewToggle" data-role="SegmentedControl" data-value="board">
+        <button type="button" aria-pressed="true" data-node="viewBoard" data-role="SegmentItem" data-state="selected"><i data-icon="lucide:square-kanban" class="ic"></i>Pano</button>
+        <button type="button" aria-pressed="false" data-node="viewList" data-role="SegmentItem"><i data-icon="lucide:list" class="ic"></i>Liste</button>
+      </div>
+      <button class="btn btn--primary" type="button" data-node="newContentButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Yeni içerik</button>
+    </div>
+  </div>
+
+  <div class="board" data-node="board" data-model="columns">
+    <!-- Fikir -->
+    <section class="column column--idea" aria-label="Fikir" data-node="column" data-role="Panel">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Fikir</h2>
+        <span class="count" data-node="countBadge" data-role="Badge">3</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><i data-icon="lucide:ellipsis" class="ic"></i></button>
+      </header>
+      <div class="cards" data-node="cardList" data-model="cards">
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog" data-node="tag" data-role="Chip">Blog</span><span class="tag" data-node="tag" data-role="Chip">Rehber</span></div>
+          <h3 class="card__title">Kapadokya'da kamp: ilk kez gidenler için 10 ipucu</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>24 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>0/4<progress max="4" value="0" data-node="checklist" data-role="ProgressBar" data-value="0"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>2</span>
+            <span class="avatars"><span class="avatar avatar--ey" title="Elif Yurt" data-node="avatar" data-role="Avatar">EY</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--social" data-node="tag" data-role="Chip">Sosyal</span></div>
+          <h3 class="card__title">Sonbahar rotaları karusel serisi</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>27 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>1/3<progress max="3" value="1" data-node="checklist" data-role="ProgressBar" data-value="0.33"></progress></span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara" data-node="avatar" data-role="Avatar">ZK</span><span class="avatar avatar--mt" title="Mert Tan" data-node="avatar" data-role="Avatar">MT</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--podcast" data-node="tag" data-role="Chip">Podcast</span><span class="tag" data-node="tag" data-role="Chip">Röportaj</span></div>
+          <h3 class="card__title">Konuk: Kaçkarlar'da 20 yıllık bir dağ rehberi</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>30 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>0/5<progress max="5" value="0" data-node="checklist" data-role="ProgressBar" data-value="0"></progress></span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora" data-node="avatar" data-role="Avatar">SB</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button" data-node="addCardButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Kart ekle</button>
+    </section>
+
+    <!-- Yazılıyor -->
+    <section class="column column--writing" aria-label="Yazılıyor" data-node="column" data-role="Panel">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Yazılıyor</h2>
+        <span class="count" data-node="countBadge" data-role="Badge">4</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><i data-icon="lucide:ellipsis" class="ic"></i></button>
+      </header>
+      <div class="cards" data-node="cardList" data-model="cards">
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog" data-node="tag" data-role="Chip">Blog</span><span class="tag" data-node="tag" data-role="Chip">SEO</span></div>
+          <h3 class="card__title">Kışlık uyku tulumu seçerken dikkat edilecekler</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>14 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>3/5<progress max="5" value="3" data-node="checklist" data-role="ProgressBar" data-value="0.6"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>4</span>
+            <span class="avatars"><span class="avatar avatar--ed" title="Emre Doğan" data-node="avatar" data-role="Avatar">ED</span><span class="avatar avatar--sb" title="Selin Bora" data-node="avatar" data-role="Avatar">SB</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--newsletter" data-node="tag" data-role="Chip">Bülten</span></div>
+          <h3 class="card__title">Ekim bülteni: yeni rotalar ve etkinlikler</h3>
+          <div class="card__meta">
+            <span class="due due--overdue"><i data-icon="lucide:calendar" class="ic"></i>8 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>4/6<progress max="6" value="4" data-node="checklist" data-role="ProgressBar" data-value="0.67"></progress></span>
+            <span class="avatars"><span class="avatar avatar--mt" title="Mert Tan" data-node="avatar" data-role="Avatar">MT</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--video" data-node="tag" data-role="Chip">Video</span><span class="tag" data-node="tag" data-role="Chip">Kampanya</span></div>
+          <h3 class="card__title">Likya Yolu'nu tek başına yürümek: çekim planı</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>16 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>2/5<progress max="5" value="2" data-node="checklist" data-role="ProgressBar" data-value="0.4"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>7</span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara" data-node="avatar" data-role="Avatar">ZK</span><span class="avatar avatar--ey" title="Elif Yurt" data-node="avatar" data-role="Avatar">EY</span><span class="avatar avatar--more" data-node="avatar" data-role="Avatar">+1</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog" data-node="tag" data-role="Chip">Blog</span></div>
+          <h3 class="card__title">Termos karşılaştırması: 6 modeli test ettik</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>20 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>1/4<progress max="4" value="1" data-node="checklist" data-role="ProgressBar" data-value="0.25"></progress></span>
+            <span class="avatars"><span class="avatar avatar--ed" title="Emre Doğan" data-node="avatar" data-role="Avatar">ED</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button" data-node="addCardButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Kart ekle</button>
+    </section>
+
+    <!-- İncelemede -->
+    <section class="column column--review" aria-label="İncelemede" data-node="column" data-role="Panel">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>İncelemede</h2>
+        <span class="count" data-node="countBadge" data-role="Badge">2</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><i data-icon="lucide:ellipsis" class="ic"></i></button>
+      </header>
+      <div class="cards" data-node="cardList" data-model="cards">
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog" data-node="tag" data-role="Chip">Blog</span><span class="tag" data-node="tag" data-role="Chip">Rehber</span></div>
+          <h3 class="card__title">Uludağ'da ilk kış yürüyüşü için hazırlık listesi</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>10 Eki</span>
+            <span class="checklist checklist--complete"><i data-icon="lucide:list-checks" class="ic"></i>5/5<progress max="5" value="5" data-node="checklist" data-role="ProgressBar" data-value="1"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>3</span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora" data-node="avatar" data-role="Avatar">SB</span><span class="avatar avatar--ed" title="Emre Doğan" data-node="avatar" data-role="Avatar">ED</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--social" data-node="tag" data-role="Chip">Sosyal</span></div>
+          <h3 class="card__title">Takipçi fotoğrafları: #yoldayız seçkisi</h3>
+          <div class="card__meta">
+            <span class="due"><i data-icon="lucide:calendar" class="ic"></i>11 Eki</span>
+            <span class="checklist"><i data-icon="lucide:list-checks" class="ic"></i>3/4<progress max="4" value="3" data-node="checklist" data-role="ProgressBar" data-value="0.75"></progress></span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara" data-node="avatar" data-role="Avatar">ZK</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button" data-node="addCardButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Kart ekle</button>
+    </section>
+
+    <!-- Yayında -->
+    <section class="column column--live" aria-label="Yayında" data-node="column" data-role="Panel">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Yayında</h2>
+        <span class="count" data-node="countBadge" data-role="Badge">3</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><i data-icon="lucide:ellipsis" class="ic"></i></button>
+      </header>
+      <div class="cards" data-node="cardList" data-model="cards">
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog" data-node="tag" data-role="Chip">Blog</span></div>
+          <h3 class="card__title">Çadır kurarken en sık yapılan 7 hata</h3>
+          <div class="card__meta">
+            <span class="due due--done"><i data-icon="lucide:circle-check" class="ic"></i>3 Eki</span>
+            <span class="checklist checklist--complete"><i data-icon="lucide:list-checks" class="ic"></i>5/5<progress max="5" value="5" data-node="checklist" data-role="ProgressBar" data-value="1"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>12</span>
+            <span class="avatars"><span class="avatar avatar--ey" title="Elif Yurt" data-node="avatar" data-role="Avatar">EY</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--newsletter" data-node="tag" data-role="Chip">Bülten</span></div>
+          <h3 class="card__title">Eylül bülteni: yaz sezonunu kapatırken</h3>
+          <div class="card__meta">
+            <span class="due due--done"><i data-icon="lucide:circle-check" class="ic"></i>1 Eki</span>
+            <span class="checklist checklist--complete"><i data-icon="lucide:list-checks" class="ic"></i>6/6<progress max="6" value="6" data-node="checklist" data-role="ProgressBar" data-value="1"></progress></span>
+            <span class="avatars"><span class="avatar avatar--mt" title="Mert Tan" data-node="avatar" data-role="Avatar">MT</span></span>
+          </div>
+        </article>
+        <article class="card" data-node="card" data-role="Card">
+          <div class="card__tags"><span class="tag tag--channel tag--podcast" data-node="tag" data-role="Chip">Podcast</span></div>
+          <h3 class="card__title">Bölüm 14: Işıksız gecelerde yön bulmak</h3>
+          <div class="card__meta">
+            <span class="due due--done"><i data-icon="lucide:circle-check" class="ic"></i>6 Eki</span>
+            <span class="checklist checklist--complete"><i data-icon="lucide:list-checks" class="ic"></i>4/4<progress max="4" value="4" data-node="checklist" data-role="ProgressBar" data-value="1"></progress></span>
+            <span class="comments"><i data-icon="lucide:message-square" class="ic"></i>5</span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora" data-node="avatar" data-role="Avatar">SB</span><span class="avatar avatar--zk" title="Zeynep Kara" data-node="avatar" data-role="Avatar">ZK</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button" data-node="addCardButton" data-role="Button"><i data-icon="lucide:plus" class="ic"></i>Kart ekle</button>
+    </section>
+  </div>
+</main>
+</body>
+</html>

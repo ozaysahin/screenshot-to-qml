@@ -1,0 +1,27 @@
+{
+ "project": "project",
+ "configured": true,
+ "built": true,
+ "qtPrefix": null,
+ "configureSeconds": 0.7,
+ "buildSeconds": 39.4,
+ "warnings": {
+  "cmake": 0,
+  "build": 0,
+  "samples": []
+ },
+ "binary": "build/hat-3-dolum-hmi",
+ "grab": {
+  "file": "cpp.png",
+  "ok": true,
+  "seconds": 0.9,
+  "qmlWarnings": [],
+  "stdout": "grabbed cpp.png (1920x1080, rhi, 0 warnings)",
+  "stderr": []
+ },
+ "parity": {
+  "against": "render.png",
+  "ssim": 1.0
+ },
+ "exit": 0
+}

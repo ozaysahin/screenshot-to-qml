@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Evim — Akıllı Ev Paneli</title>
+
+
+<style>
+@font-face{font-family:'Outfit';font-weight:300;font-style:normal;font-display:block;src:url('../../../assets/fonts/Outfit-Light.ttf') format('truetype');}
+@font-face{font-family:'Outfit';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/Outfit-Medium.ttf') format('truetype');}
+@font-face{font-family:'Outfit';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Outfit-Regular.ttf') format('truetype');}
+@font-face{font-family:'Outfit';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Outfit-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #0B1020;
+  --color-blob-violet: #7C3AED;
+  --color-blob-cyan: #06B6D4;
+  --color-blob-pink: #EC4899;
+  --color-glass: rgba(255, 255, 255, 0.07);
+  --color-glass-strong: rgba(255, 255, 255, 0.13);
+  --color-text: #F5F7FF;
+  --color-muted: rgba(245, 247, 255, 0.62);
+  --color-dim: rgba(245, 247, 255, 0.38);
+  --color-accent-from: #A78BFA;
+  --color-accent-to: #22D3EE;
+  --color-warm: #FCD34D;
+  --color-green: #4ADE80;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-10: 40px; --space-12: 48px;
+  --radius-md: 16px; --radius-lg: 22px; --radius-xl: 28px; --radius-pill: 999px;
+  --shadow-glass: 0 24px 60px rgba(3, 6, 20, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  --shadow-glow: 0 0 32px rgba(167, 139, 250, 0.55), 0 8px 24px rgba(34, 211, 238, 0.35);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1280px; height: 800px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Outfit', sans-serif; position: relative; }
+svg.ic { width: 22px; height: 22px; display: block; flex: none; }
+.blob { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.75; }
+.b1 { width: 560px; height: 560px; left: -140px; top: -180px; background: radial-gradient(circle, var(--color-blob-violet) 0%, rgba(124, 58, 237, 0) 70%); }
+.b2 { width: 620px; height: 620px; left: 820px; top: 300px; background: radial-gradient(circle, var(--color-blob-cyan) 0%, rgba(6, 182, 212, 0) 70%); }
+.b3 { width: 420px; height: 420px; left: 420px; top: 480px; background: radial-gradient(circle, var(--color-blob-pink) 0%, rgba(236, 72, 153, 0) 70%); opacity: 0.6; }
+.wrap { position: relative; padding: 36px 48px; display: flex; flex-direction: column; height: 800px; }
+
+.glass { position: relative; background: var(--color-glass); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); border-radius: var(--radius-xl); box-shadow: var(--shadow-glass); }
+.glass::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.05) 42%, rgba(255, 255, 255, 0.18) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+
+.top { display: flex; align-items: flex-end; gap: 28px; }
+.clock { font-size: 104px; font-weight: 300; line-height: 100px; letter-spacing: -4px; }
+.when p { font-size: 20px; font-weight: 500; line-height: 26px; }
+.when span { display: flex; align-items: center; gap: 8px; font-size: 16px; color: var(--color-muted); margin-top: 6px; }
+.when span svg.ic { width: 18px; height: 18px; }
+.top .sp { flex: 1; }
+.who { display: flex; align-items: center; gap: 12px; height: 56px; padding: 0 8px 0 20px; border-radius: var(--radius-pill); margin-bottom: 8px; }
+.who b { font-size: 15px; font-weight: 500; }
+.who i { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #F9A8D4, #A78BFA); display: grid; place-items: center; font-style: normal; font-size: 14px; font-weight: 600; color: #1E1033; }
+
+.grid { display: grid; grid-template-columns: 500px 1fr; gap: 24px; margin-top: 32px; height: 512px; }
+.player { padding: 28px; display: flex; flex-direction: column; }
+.player .lbl { font-size: 13px; font-weight: 500; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-dim); display: flex; align-items: center; gap: 8px; }
+.player .lbl i { width: 6px; height: 6px; border-radius: 50%; background: var(--color-green); box-shadow: 0 0 8px var(--color-green); }
+.trk { display: flex; gap: 22px; margin-top: 20px; align-items: center; }
+.art { width: 132px; height: 132px; border-radius: var(--radius-lg); background: conic-gradient(from 210deg, #F59E0B, #EC4899, #8B5CF6, #06B6D4, #F59E0B); position: relative; flex: none; box-shadow: 0 16px 36px rgba(236, 72, 153, 0.35); }
+.art::after { content: ''; position: absolute; left: 44px; top: 44px; width: 44px; height: 44px; border-radius: 50%; background: var(--color-bg); box-shadow: 0 0 0 10px rgba(11, 16, 32, 0.35); }
+.trk h2 { font-size: 28px; font-weight: 600; line-height: 34px; letter-spacing: -0.4px; }
+.trk p { font-size: 16px; color: var(--color-muted); margin-top: 4px; }
+.prog { margin-top: 30px; }
+.bar { position: relative; height: 6px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.14); }
+.bar .f { position: absolute; left: 0; top: 0; bottom: 0; border-radius: var(--radius-pill); background: linear-gradient(90deg, var(--color-accent-from), var(--color-accent-to)); }
+.bar .k { position: absolute; top: -5px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: #fff; box-shadow: 0 0 12px rgba(34, 211, 238, 0.8); }
+.times { display: flex; justify-content: space-between; font-size: 13px; color: var(--color-dim); margin-top: 10px; font-variant-numeric: tabular-nums; }
+.ctl { display: flex; align-items: center; justify-content: space-between; margin-top: 18px; padding: 0 8px; }
+.ctl .s { color: var(--color-muted); position: relative; }
+.ctl .s.on { color: var(--color-accent-to); }
+.ctl .s.on::after { content: ''; position: absolute; left: 9px; bottom: -10px; width: 4px; height: 4px; border-radius: 50%; background: var(--color-accent-to); }
+.ctl .m svg.ic { width: 28px; height: 28px; }
+.play { width: 76px; height: 76px; border-radius: 50%; background: linear-gradient(135deg, var(--color-accent-from) 0%, var(--color-accent-to) 100%); display: grid; place-items: center; color: #0B1020; box-shadow: var(--shadow-glow); }
+.play svg.ic { width: 30px; height: 30px; fill: #0B1020; }
+.vol { margin-top: auto; display: flex; align-items: center; gap: 14px; color: var(--color-muted); }
+.vol .bar { flex: 1; }
+.vol .bar .f { background: rgba(255, 255, 255, 0.85); }
+.out { display: flex; align-items: center; gap: 8px; height: 36px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-glass-strong); font-size: 13px; color: var(--color-text); }
+.out svg.ic { width: 16px; height: 16px; }
+
+.tiles { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 24px; }
+.tile { padding: 22px 24px; display: flex; flex-direction: column; }
+.tile .h { display: flex; align-items: center; gap: 14px; }
+.tile .ico { width: 48px; height: 48px; border-radius: var(--radius-md); background: var(--color-glass-strong); display: grid; place-items: center; color: var(--color-text); }
+.tile h3 { font-size: 18px; font-weight: 500; line-height: 24px; }
+.tile .sub { font-size: 14px; color: var(--color-muted); line-height: 18px; }
+.tile .big { margin-top: auto; display: flex; align-items: flex-end; justify-content: space-between; }
+.tile .big b { font-size: 44px; font-weight: 300; line-height: 48px; letter-spacing: -1.5px; }
+.tile .big b small { font-size: 20px; font-weight: 400; color: var(--color-muted); letter-spacing: 0; margin-left: 2px; }
+.tile.active { background: linear-gradient(145deg, rgba(167, 139, 250, 0.30) 0%, rgba(34, 211, 238, 0.12) 100%); }
+.tile.active .ico { background: rgba(252, 211, 77, 0.18); color: var(--color-warm); box-shadow: 0 0 24px rgba(252, 211, 77, 0.45); }
+.sw { width: 52px; height: 30px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.16); position: relative; flex: none; }
+.sw::after { content: ''; position: absolute; top: 3px; left: 3px; width: 24px; height: 24px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); }
+.sw.on { background: linear-gradient(90deg, var(--color-accent-from), var(--color-accent-to)); }
+.sw.on::after { left: 25px; background: #fff; }
+.pm { display: flex; gap: 10px; }
+.pm div { width: 40px; height: 40px; border-radius: 50%; background: var(--color-glass-strong); display: grid; place-items: center; }
+.pm svg.ic { width: 18px; height: 18px; }
+.sec-ok { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-green); }
+.sec-ok svg.ic { width: 16px; height: 16px; }
+
+.scenes { display: flex; gap: 16px; margin-top: 24px; }
+.scene { height: 60px; padding: 0 24px 0 18px; border-radius: var(--radius-pill); display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 500; }
+.scene svg.ic { width: 20px; height: 20px; color: var(--color-muted); }
+.scene.on { background: linear-gradient(135deg, var(--color-accent-from) 0%, var(--color-accent-to) 100%); color: #0B1020; font-weight: 600; box-shadow: var(--shadow-glow); }
+.scene.on svg.ic { color: #0B1020; }
+.scene.on::before { display: none; }
+.scenes .add { width: 60px; padding: 0; justify-content: center; }
+.scenes .add svg.ic { color: var(--color-text); }
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
+  <header class="top">
+    <div class="clock">21:47</div>
+    <div class="when"><p>Perşembe, 25 Eylül</p><span><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-moon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 5h4"></path> <path d="M20 3v4"></path> <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg>Ankara · 17° · Açık</span></div>
+    <div class="sp"></div>
+    <div class="who glass"><b>Evim · 4 kişi evde</b><i>MA</i></div>
+  </header>
+
+  <section class="grid">
+    <div class="glass player">
+      <div class="lbl"><i></i>Şimdi çalıyor</div>
+      <div class="trk"><div class="art"></div>
+        <div><h2>Gece Yarısı Treni</h2><p>Koyu Mavi · Liman</p></div></div>
+      <div class="prog"><div class="bar"><div class="f" style="width:43%"></div><div class="k" style="left:43%"></div></div>
+        <div class="times"><span>1:42</span><span>-2:16</span></div></div>
+      <div class="ctl">
+        <div class="s"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 14 4 4-4 4"></path> <path d="m18 2 4 4-4 4"></path> <path d="M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22"></path> <path d="M2 6h1.972a4 4 0 0 1 3.6 2.2"></path> <path d="M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45"></path></svg></div>
+        <div class="s m"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-skip-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.971 4.285A2 2 0 0 1 21 6v12a2 2 0 0 1-3.029 1.715l-9.997-5.998a2 2 0 0 1-.003-3.432z"></path> <path d="M3 20V4"></path></svg></div>
+        <div class="play"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="14" y="3" width="5" height="18" rx="1"></rect> <rect x="5" y="3" width="5" height="18" rx="1"></rect></svg></div>
+        <div class="s m"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-skip-forward" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 4v16"></path> <path d="M6.029 4.285A2 2 0 0 0 3 6v12a2 2 0 0 0 3.029 1.715l9.997-5.998a2 2 0 0 0 .003-3.432z"></path></svg></div>
+        <div class="s on"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"></path> <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path> <path d="m7 22-4-4 4-4"></path> <path d="M21 13v1a4 4 0 0 1-4 4H3"></path></svg></div>
+      </div>
+      <div class="vol"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-volume-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path> <path d="M16 9a5 5 0 0 1 0 6"></path> <path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path></svg>
+        <div class="bar"><div class="f" style="width:60%"></div><div class="k" style="left:60%;box-shadow:none"></div></div>
+        <div class="out"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-speaker" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect> <path d="M12 6h.01"></path> <circle cx="12" cy="14" r="4"></circle> <path d="M12 14h.01"></path></svg>Salon hoparlörü</div></div>
+    </div>
+
+    <div class="tiles">
+      <div class="glass tile active">
+        <div class="h"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path> <path d="M9 18h6"></path> <path d="M10 22h4"></path></svg></div><div><h3>Salon ışıkları</h3><div class="sub">Sıcak beyaz · 2700K</div></div></div>
+        <div class="big"><b>60<small>%</small></b><div class="sw on"></div></div>
+      </div>
+      <div class="glass tile">
+        <div class="h"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-snowflake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 20-1.25-2.5L6 18"></path> <path d="M10 4 8.75 6.5 6 6"></path> <path d="m14 20 1.25-2.5L18 18"></path> <path d="m14 4 1.25 2.5L18 6"></path> <path d="m17 21-3-6h-4"></path> <path d="m17 3-3 6 1.5 3"></path> <path d="M2 12h6.5L10 9"></path> <path d="m20 10-1.5 2 1.5 2"></path> <path d="M22 12h-6.5L14 15"></path> <path d="m4 10 1.5 2L4 14"></path> <path d="m7 21 3-6-1.5-3"></path> <path d="m7 3 3 6h4"></path></svg></div><div><h3>Klima</h3><div class="sub">Soğutma · Oda 24,5°</div></div></div>
+        <div class="big"><b>22<small>°C</small></b><div class="pm"><div><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path></svg></div><div><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div></div></div>
+      </div>
+      <div class="glass tile">
+        <div class="h"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-blinds" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h18"></path> <path d="M20 7H8"></path> <path d="M20 11H8"></path> <path d="M10 19h10"></path> <path d="M8 15h12"></path> <path d="M4 3v14"></path> <circle cx="4" cy="19" r="2"></circle></svg></div><div><h3>Perdeler</h3><div class="sub">Salon · Yatak odası</div></div></div>
+        <div class="big"><b style="font-size:32px;line-height:40px;letter-spacing:-0.5px">Kapalı</b><div class="sw"></div></div>
+      </div>
+      <div class="glass tile">
+        <div class="h"><div class="ico" style="color:var(--color-green)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path> <path d="m9 12 2 2 4-4"></path></svg></div><div><h3>Güvenlik</h3><div class="sub">Gece modu</div></div></div>
+        <div class="big"><b style="font-size:32px;line-height:40px;letter-spacing:-0.5px">Aktif</b><span class="sec-ok"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect> <path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>4 kapı kilitli</span></div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="scenes">
+    <div class="scene on"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-clapperboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.296 3.464 3.02 3.956"></path> <path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3z"></path> <path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path> <path d="m6.18 5.276 3.1 3.899"></path></svg>Film gecesi</div>
+    <div class="scene glass"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bed-double" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"></path> <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"></path> <path d="M12 4v6"></path> <path d="M2 18h20"></path></svg>Uyku</div>
+    <div class="scene glass"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-sunrise" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v8"></path> <path d="m4.93 10.93 1.41 1.41"></path> <path d="M2 18h2"></path> <path d="M20 18h2"></path> <path d="m19.07 10.93-1.41 1.41"></path> <path d="M22 22H2"></path> <path d="m8 6 4-4 4 4"></path> <path d="M16 18a4 4 0 0 0-8 0"></path></svg>Sabah</div>
+    <div class="scene glass"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-door-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 21H2"></path> <path d="M10 3H7a2 2 0 00-2 2v16"></path> <path d="M14 12h.01"></path> <path d="M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z"></path> <path d="M22 21h-3"></path></svg>Dışarıdayım</div>
+    <div class="scene glass add"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div>
+  </nav>
+</div>
+
+
+</body></html>

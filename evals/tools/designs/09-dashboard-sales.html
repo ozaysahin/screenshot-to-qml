@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Kumaşhane — Satış Analitiği</title>
+<script type="application/json" id="case-meta">
+{"id": "09-dashboard-sales", "title": "Açık tema e-ticaret satış analitiği (DPR 1,5)", "category": "dashboard", "profile": "desktop",
+ "viewport": [1440, 900], "dpr": 1.5, "fonts": ["Onest"]}
+</script>
+<script type="application/json" id="case-data">
+{"period": {"range": "1–30 Eylül 2026", "granularity": "month"},
+ "kpis": [
+  {"label": "Toplam ciro", "value": "₺1.284.600", "delta": 22.8, "dir": "up", "note": "geçen yıla göre"},
+  {"label": "Sipariş", "value": "3.912", "delta": 18.4, "dir": "up", "note": "geçen yıla göre"},
+  {"label": "Ort. sepet tutarı", "value": "₺328,40", "delta": 3.7, "dir": "up", "note": "geçen yıla göre"},
+  {"label": "Dönüşüm oranı", "value": "%2,86", "delta": -10.1, "dir": "down", "note": "geçen yıla göre"}],
+ "revenue": {"unit": "₺ bin", "months": ["Eki", "Kas", "Ara", "Oca", "Şub", "Mar", "Nis", "May", "Haz", "Tem", "Ağu", "Eyl"],
+  "current": [842, 1186, 1052, 768, 714, 836, 918, 1024, 962, 884, 1016, 1284],
+  "previous": [704, 968, 890, 652, 618, 702, 781, 842, 816, 745, 861, 1046],
+  "hover": {"index": 7, "label": "Mayıs 2026", "current": "₺1.024.300", "previous": "₺842.100", "delta": "+%21,6"}},
+ "funnel": [
+  {"step": "Ziyaret", "count": 136840, "pct": 100, "width": 1.0},
+  {"step": "Ürün görüntüleme", "count": 58420, "pct": 42.7, "width": 0.65},
+  {"step": "Sepete ekleme", "count": 12960, "pct": 9.5, "width": 0.36},
+  {"step": "Satın alma", "count": 3912, "pct": 2.9, "width": 0.19}],
+ "categories": [
+  {"name": "Nevresim takımı", "share": 34, "amount": 436764, "color": "#2F5BEA"},
+  {"name": "Havlu ve bornoz", "share": 23, "amount": 295458, "color": "#14B8A6"},
+  {"name": "Perde", "share": 18, "amount": 231228, "color": "#F59E0B"},
+  {"name": "Masa örtüsü", "share": 13, "amount": 166998, "color": "#EC4899"},
+  {"name": "Diğer", "share": 12, "amount": 154152, "color": "#A5B0C2"}],
+ "topProducts": [
+  {"rank": 1, "initials": "PS", "name": "Pamuk Saten Nevresim Takımı", "sub": "Nevresim · Çift kişilik", "units": 412, "revenue": 247200, "share": 19.2},
+  {"rank": 2, "initials": "BH", "name": "Bambu Havlu Seti (4'lü)", "sub": "Havlu ve bornoz · 6 renk", "units": 538, "revenue": 161400, "share": 12.6},
+  {"rank": 3, "initials": "KP", "name": "Keten Görünümlü Fon Perde", "sub": "Perde · 140×260 cm", "units": 296, "revenue": 133200, "share": 10.4},
+  {"rank": 4, "initials": "WP", "name": "Waffle Pike", "sub": "Diğer · Tek kişilik", "units": 344, "revenue": 96320, "share": 7.5},
+  {"rank": 5, "initials": "JM", "name": "Jakarlı Masa Örtüsü", "sub": "Masa örtüsü · 160×220 cm", "units": 268, "revenue": 72360, "share": 5.6}]}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #F4F6FA;
+  --color-surface: #FFFFFF;
+  --color-ink: #101828;
+  --color-text-2: #344054;
+  --color-muted: #667085;
+  --color-dim: #98A2B3;
+  --color-border: #E4E7EC;
+  --color-border-soft: #F0F2F5;
+  --color-primary: #2F5BEA;
+  --color-primary-soft: #EBF0FE;
+  --color-primary-2: #5A7DF0;
+  --color-primary-3: #8AA3F4;
+  --color-primary-4: #B9C8F8;
+  --color-previous: #A5B0C2;
+  --color-up: #12805C;
+  --color-up-soft: #E3F6EE;
+  --color-down: #D1343B;
+  --color-down-soft: #FDECEC;
+  --color-teal: #14B8A6;
+  --color-teal-soft: #E0F6F3;
+  --color-amber: #F59E0B;
+  --color-amber-soft: #FEF3DC;
+  --color-pink: #EC4899;
+  --color-pink-soft: #FDE8F2;
+  --color-slate-soft: #EEF1F5;
+  --color-tooltip: #101828;
+  --color-tooltip-muted: #A9B2C3;
+  --color-tooltip-up: #4ADE9B;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px;
+  --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.05);
+  --shadow-tooltip: 0 10px 24px rgba(16, 24, 40, 0.22);
+  --shadow-seg: 0 1px 2px rgba(16, 24, 40, 0.10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Onest', sans-serif; font-size: 14px; line-height: 20px; display: flex; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+/* rail */
+.rail { width: 72px; flex: none; height: 900px; background: var(--color-surface); border-right: 1px solid var(--color-border); display: flex; flex-direction: column; align-items: center; padding: var(--space-5) 0; }
+.mark { width: 40px; height: 40px; border-radius: var(--radius-lg); background: linear-gradient(140deg, #4C74F5 0%, var(--color-primary) 100%); color: #fff; display: grid; place-items: center; font-size: 18px; font-weight: 700; letter-spacing: -0.4px; }
+.rnav { margin-top: 28px; display: flex; flex-direction: column; gap: var(--space-2); }
+.ri { width: 44px; height: 44px; border-radius: var(--radius-lg); display: grid; place-items: center; color: var(--color-dim); position: relative; }
+.ri.on { background: var(--color-primary-soft); color: var(--color-primary); }
+.ri .ind { position: absolute; left: -14px; top: 12px; width: 3px; height: 20px; border-radius: 0 3px 3px 0; background: var(--color-primary); }
+.ri .dot { position: absolute; top: 10px; right: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-down); border: 2px solid var(--color-surface); box-sizing: content-box; }
+.rail .sp { flex: 1; }
+.av { width: 36px; height: 36px; border-radius: 50%; background: #FDE7D8; color: #B4501E; font-size: 13px; font-weight: 600; display: grid; place-items: center; margin-top: var(--space-3); }
+
+/* main */
+.main { flex: 1; min-width: 0; padding: var(--space-6) var(--space-8); display: flex; flex-direction: column; gap: var(--space-5); }
+.top { display: flex; align-items: center; gap: var(--space-3); height: 52px; }
+.top h1 { font-size: 24px; font-weight: 700; line-height: 32px; letter-spacing: -0.5px; }
+.top p { font-size: 13px; line-height: 20px; color: var(--color-muted); }
+.top .sp { flex: 1; }
+.seg { display: flex; padding: 3px; height: 40px; border-radius: var(--radius-md); background: var(--color-surface); border: 1px solid var(--color-border); }
+.seg div { width: 60px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 13px; font-weight: 500; color: var(--color-muted); }
+.seg div.on { background: var(--color-primary-soft); color: var(--color-primary); font-weight: 600; }
+.btn { height: 40px; padding: 0 14px; border-radius: var(--radius-md); display: flex; align-items: center; gap: var(--space-2); font-size: 14px; font-weight: 600; white-space: nowrap; }
+.btn svg.ic { width: 16px; height: 16px; }
+.btn.sec { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-2); box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04); }
+.btn.sec svg.ic { color: var(--color-muted); }
+.btn.pri { background: var(--color-primary); color: #fff; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.14); }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); }
+
+/* KPI */
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-5); height: 128px; flex: none; }
+.kpi { padding: var(--space-4) var(--space-5); display: flex; flex-direction: column; }
+.kpi .kt { display: flex; align-items: center; justify-content: space-between; }
+.kpi .lbl { font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--color-muted); }
+.kpi .ico { width: 28px; height: 28px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.kpi .ico svg.ic { width: 16px; height: 16px; }
+.kpi .v { font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.6px; margin-top: 4px; }
+.kpi .d { display: flex; align-items: center; gap: var(--space-2); margin-top: 6px; font-size: 12px; line-height: 16px; color: var(--color-muted); }
+.delta { height: 22px; padding: 0 7px 0 5px; border-radius: var(--radius-pill); display: inline-flex; align-items: center; gap: 3px; font-size: 12px; font-weight: 600; }
+.delta svg.ic { width: 14px; height: 14px; stroke-width: 2.4; }
+.delta.up { background: var(--color-up-soft); color: var(--color-up); }
+.delta.down { background: var(--color-down-soft); color: var(--color-down); }
+
+/* rows */
+.row { display: grid; grid-template-columns: 1fr 400px; gap: var(--space-5); flex: none; }
+.row.r2 { height: 292px; }
+.row.r3 { height: 320px; }
+.pan { padding: var(--space-5); display: flex; flex-direction: column; min-width: 0; position: relative; }
+.ph { display: flex; align-items: flex-start; gap: var(--space-4); height: 40px; flex: none; }
+.ph h3 { font-size: 16px; font-weight: 600; line-height: 22px; letter-spacing: -0.2px; }
+.ph p { font-size: 12px; line-height: 18px; color: var(--color-muted); }
+.ph .r { margin-left: auto; display: flex; align-items: center; gap: var(--space-4); }
+.legend { display: flex; gap: var(--space-4); font-size: 12px; line-height: 16px; color: var(--color-text-2); font-weight: 500; }
+.legend span { display: flex; align-items: center; gap: var(--space-2); }
+.legend i { width: 20px; height: 0; border-top: 2.5px solid var(--color-primary); border-radius: 2px; }
+.legend i.dash { border-top: none; height: 2px; background: repeating-linear-gradient(90deg, var(--color-previous) 0 5px, transparent 5px 8px); }
+.link { font-size: 13px; font-weight: 600; color: var(--color-primary); display: flex; align-items: center; gap: 2px; }
+.link svg.ic { width: 16px; height: 16px; }
+
+/* revenue chart + tooltip */
+#rev { margin-top: 12px; display: block; }
+.tip { position: absolute; width: 208px; padding: 10px 12px 11px; border-radius: 10px; background: var(--color-tooltip); color: #fff; box-shadow: var(--shadow-tooltip); }
+.tip::before { content: ''; position: absolute; left: -5px; top: 50%; margin-top: -5px; width: 10px; height: 10px; background: var(--color-tooltip); transform: rotate(45deg); border-radius: 2px; }
+.tip .tt { display: flex; justify-content: space-between; align-items: center; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--color-tooltip-muted); }
+.tip .tt b { font-weight: 600; color: var(--color-tooltip-up); }
+.tip .tr { display: flex; align-items: center; gap: var(--space-2); margin-top: 7px; font-size: 12px; line-height: 16px; color: #D5DBE6; }
+.tip .tr i { width: 14px; height: 0; border-top: 2.5px solid #6D8DF7; flex: none; }
+.tip .tr i.dash { border-top: none; height: 2px; background: repeating-linear-gradient(90deg, var(--color-previous) 0 4px, transparent 4px 7px); }
+.tip .tr b { margin-left: auto; font-size: 13px; font-weight: 600; color: #fff; }
+
+/* funnel */
+.fchip { height: 24px; padding: 0 8px; border-radius: var(--radius-pill); background: var(--color-primary-soft); color: var(--color-primary); font-size: 12px; font-weight: 600; display: flex; align-items: center; }
+.funnel { margin-top: 12px; display: flex; flex-direction: column; gap: 4px; }
+.fr { height: 46px; display: grid; grid-template-columns: 128px 1fr 44px; align-items: center; gap: var(--space-3); }
+.fr .n b { display: block; font-size: 13px; font-weight: 500; line-height: 18px; color: var(--color-ink); white-space: nowrap; }
+.fr .n span { font-size: 12px; line-height: 16px; color: var(--color-muted); }
+.fr .track { height: 28px; display: flex; justify-content: center; align-items: center; background: linear-gradient(var(--color-border-soft), var(--color-border-soft)) center / 100% 2px no-repeat; }
+.fr .bar { height: 28px; border-radius: var(--radius-sm); }
+.fr .p { text-align: right; font-size: 13px; font-weight: 600; color: var(--color-text-2); }
+
+/* category share */
+.stack { margin-top: 18px; display: flex; gap: 3px; height: 14px; }
+.stack i { display: block; height: 100%; border-radius: 3px; }
+.stack i:first-child { border-radius: var(--radius-pill) 3px 3px var(--radius-pill); }
+.stack i:last-child { border-radius: 3px var(--radius-pill) var(--radius-pill) 3px; }
+.cats { margin-top: 14px; display: flex; flex-direction: column; }
+.cat { height: 38px; display: flex; align-items: center; gap: 10px; font-size: 13px; border-top: 1px solid var(--color-border-soft); }
+.cat:first-child { border-top: none; }
+.cat i { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.cat span { flex: 1; color: var(--color-text-2); font-weight: 500; }
+.cat em { font-style: normal; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+.cat b { width: 40px; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* top products */
+.cols, .prod { display: grid; grid-template-columns: 28px 1fr 88px 124px 168px; align-items: center; column-gap: var(--space-4); }
+.cols { margin-top: 8px; height: 30px; border-bottom: 1px solid var(--color-border); font-size: 11px; line-height: 16px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--color-dim); }
+.cols .ra, .prod .ra { text-align: right; }
+.prod { height: 40px; border-bottom: 1px solid var(--color-border-soft); font-size: 13px; }
+.prod:last-child { border-bottom: none; }
+.prod .rk { font-weight: 600; color: var(--color-dim); font-variant-numeric: tabular-nums; }
+.prod .pn { display: flex; align-items: center; gap: var(--space-3); min-width: 0; }
+.tile { width: 30px; height: 30px; border-radius: var(--radius-md); display: grid; place-items: center; font-size: 11px; font-weight: 700; letter-spacing: 0.2px; flex: none; }
+.prod .pn b { font-weight: 600; color: var(--color-ink); white-space: nowrap; }
+.prod .pn span { color: var(--color-muted); font-size: 12px; white-space: nowrap; }
+.prod .u { color: var(--color-text-2); font-variant-numeric: tabular-nums; }
+.prod .rv { font-weight: 600; font-variant-numeric: tabular-nums; }
+.share { display: flex; align-items: center; gap: 10px; }
+.share .b { flex: 1; height: 6px; border-radius: var(--radius-pill); background: var(--color-border-soft); overflow: hidden; }
+.share .b i { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary); }
+.share span { width: 38px; text-align: right; font-size: 12px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<aside class="rail" data-node="rail" data-role="Sidebar">
+  <div class="mark" data-node="logo">K</div>
+  <nav class="rnav" data-node="railNav" data-model="nav">
+    <div class="ri" data-node="navItem" data-role="NavItem"><i data-icon="lucide:house" class="ic"></i></div>
+    <div class="ri on" data-node="navItem" data-role="NavItem" data-state="selected"><span class="ind"></span><i data-icon="lucide:chart-line" class="ic"></i></div>
+    <div class="ri" data-node="navItem" data-role="NavItem"><i data-icon="lucide:shopping-bag" class="ic"></i><span class="dot"></span></div>
+    <div class="ri" data-node="navItem" data-role="NavItem"><i data-icon="lucide:package" class="ic"></i></div>
+    <div class="ri" data-node="navItem" data-role="NavItem"><i data-icon="lucide:users" class="ic"></i></div>
+    <div class="ri" data-node="navItem" data-role="NavItem"><i data-icon="lucide:megaphone" class="ic"></i></div>
+  </nav>
+  <div class="sp"></div>
+  <div class="ri" data-node="settingsButton" data-role="IconButton"><i data-icon="lucide:settings" class="ic"></i></div>
+  <div class="av" data-node="userAvatar" data-role="Avatar">EK</div>
+</aside>
+
+<main class="main">
+  <header class="top" data-node="header" data-role="Header">
+    <div data-node="pageTitle"><h1>Satış Analitiği</h1><p>Kumaşhane çevrim içi mağaza · Son güncelleme bugün 09:42</p></div>
+    <div class="sp"></div>
+    <div class="seg" data-node="granularitySegment" data-role="SegmentedControl" data-value="Ay">
+      <div data-node="segDay" data-role="SegmentItem">Gün</div><div data-node="segWeek" data-role="SegmentItem">Hafta</div><div class="on" data-node="segMonth" data-role="SegmentItem" data-state="selected">Ay</div>
+    </div>
+    <div class="btn sec" data-node="dateRangeButton" data-role="Button"><i data-icon="lucide:calendar" class="ic"></i>1–30 Eylül 2026<i data-icon="lucide:chevron-down" class="ic"></i></div>
+    <div class="btn pri" data-node="reportButton" data-role="Button"><i data-icon="lucide:download" class="ic"></i>Rapor indir</div>
+  </header>
+
+  <section class="kpis" data-node="kpis" data-model="kpis">
+    <div class="card kpi" data-node="kpi" data-role="Card">
+      <div class="kt"><span class="lbl">Toplam ciro</span><span class="ico" style="background:var(--color-primary-soft);color:var(--color-primary)"><i data-icon="lucide:wallet" class="ic"></i></span></div>
+      <div class="v">₺1.284.600</div>
+      <div class="d"><span class="delta up" data-node="kpiDelta" data-role="Badge" data-value="up"><i data-icon="lucide:arrow-up-right" class="ic"></i>%22,8</span>geçen yıla göre</div>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="Card">
+      <div class="kt"><span class="lbl">Sipariş</span><span class="ico" style="background:var(--color-teal-soft);color:#0E9384"><i data-icon="lucide:shopping-bag" class="ic"></i></span></div>
+      <div class="v">3.912</div>
+      <div class="d"><span class="delta up" data-node="kpiDelta" data-role="Badge" data-value="up"><i data-icon="lucide:arrow-up-right" class="ic"></i>%18,4</span>geçen yıla göre</div>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="Card">
+      <div class="kt"><span class="lbl">Ort. sepet tutarı</span><span class="ico" style="background:var(--color-amber-soft);color:#C57A06"><i data-icon="lucide:receipt" class="ic"></i></span></div>
+      <div class="v">₺328,40</div>
+      <div class="d"><span class="delta up" data-node="kpiDelta" data-role="Badge" data-value="up"><i data-icon="lucide:arrow-up-right" class="ic"></i>%3,7</span>geçen yıla göre</div>
+    </div>
+    <div class="card kpi" data-node="kpi" data-role="Card">
+      <div class="kt"><span class="lbl">Dönüşüm oranı</span><span class="ico" style="background:var(--color-pink-soft);color:#D0317E"><i data-icon="lucide:percent" class="ic"></i></span></div>
+      <div class="v">%2,86</div>
+      <div class="d"><span class="delta down" data-node="kpiDelta" data-role="Badge" data-value="down"><i data-icon="lucide:arrow-down-right" class="ic"></i>%10,1</span>geçen yıla göre</div>
+    </div>
+  </section>
+
+  <section class="row r2">
+    <div class="card pan" data-node="revenueCard" data-role="Panel">
+      <div class="ph">
+        <div><h3>Aylık ciro</h3><p>Son 12 ay · ₺ bin</p></div>
+        <div class="r legend" data-node="revenueLegend"><span><i></i>Bu dönem</span><span><i class="dash"></i>Önceki dönem</span></div>
+      </div>
+      <svg id="rev" data-node="revenueChart" data-role="Chart" data-state="hover"></svg>
+      <div class="tip" id="tip" data-node="chartTooltip" data-role="Tooltip">
+        <div class="tt">Mayıs 2026<b>+%21,6</b></div>
+        <div class="tr"><i></i>Bu dönem<b>₺1.024.300</b></div>
+        <div class="tr"><i class="dash"></i>Önceki dönem<b>₺842.100</b></div>
+      </div>
+    </div>
+    <div class="card pan" data-node="funnelCard" data-role="Panel">
+      <div class="ph">
+        <div><h3>Dönüşüm hunisi</h3><p>Eylül · tüm kanallar</p></div>
+        <div class="r"><span class="fchip" data-node="funnelTotal" data-role="Badge">Genel %2,86</span></div>
+      </div>
+      <div class="funnel" data-node="funnel" data-model="funnel">
+        <div class="fr" data-node="funnelStep" data-value="1.0"><div class="n"><b>Ziyaret</b><span>136.840</span></div><div class="track"><div class="bar" style="width:100%;background:var(--color-primary)"></div></div><div class="p">%100</div></div>
+        <div class="fr" data-node="funnelStep" data-value="0.427"><div class="n"><b>Ürün görüntüleme</b><span>58.420</span></div><div class="track"><div class="bar" style="width:65%;background:var(--color-primary-2)"></div></div><div class="p">%42,7</div></div>
+        <div class="fr" data-node="funnelStep" data-value="0.095"><div class="n"><b>Sepete ekleme</b><span>12.960</span></div><div class="track"><div class="bar" style="width:36%;background:var(--color-primary-3)"></div></div><div class="p">%9,5</div></div>
+        <div class="fr" data-node="funnelStep" data-value="0.029"><div class="n"><b>Satın alma</b><span>3.912</span></div><div class="track"><div class="bar" style="width:19%;background:var(--color-primary-4)"></div></div><div class="p">%2,9</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row r3">
+    <div class="card pan" data-node="topProductsCard" data-role="Panel">
+      <div class="ph">
+        <div><h3>En çok satan ürünler</h3><p>Eylül · ciroya göre sıralı</p></div>
+        <div class="r"><span class="link" data-node="allProductsLink" data-role="Button">Tümünü gör<i data-icon="lucide:chevron-right" class="ic"></i></span></div>
+      </div>
+      <div class="cols" data-node="productHeader"><span>#</span><span>Ürün</span><span class="ra">Adet</span><span class="ra">Ciro</span><span>Ciro payı</span></div>
+      <div data-node="products" data-model="topProducts">
+        <div class="prod" data-node="productRow" data-role="ListItem"><span class="rk">1</span><div class="pn"><span class="tile" style="background:var(--color-primary-soft);color:var(--color-primary)">PS</span><b>Pamuk Saten Nevresim Takımı</b><span>Nevresim · Çift kişilik</span></div><span class="ra u">412</span><span class="ra rv">₺247.200</span><div class="share"><div class="b"><i style="width:100%"></i></div><span>%19,2</span></div></div>
+        <div class="prod" data-node="productRow" data-role="ListItem"><span class="rk">2</span><div class="pn"><span class="tile" style="background:var(--color-teal-soft);color:#0E9384">BH</span><b>Bambu Havlu Seti (4'lü)</b><span>Havlu ve bornoz · 6 renk</span></div><span class="ra u">538</span><span class="ra rv">₺161.400</span><div class="share"><div class="b"><i style="width:65.6%"></i></div><span>%12,6</span></div></div>
+        <div class="prod" data-node="productRow" data-role="ListItem"><span class="rk">3</span><div class="pn"><span class="tile" style="background:var(--color-amber-soft);color:#C57A06">KP</span><b>Keten Görünümlü Fon Perde</b><span>Perde · 140×260 cm</span></div><span class="ra u">296</span><span class="ra rv">₺133.200</span><div class="share"><div class="b"><i style="width:54.2%"></i></div><span>%10,4</span></div></div>
+        <div class="prod" data-node="productRow" data-role="ListItem"><span class="rk">4</span><div class="pn"><span class="tile" style="background:var(--color-slate-soft);color:#5B6B85">WP</span><b>Waffle Pike</b><span>Diğer · Tek kişilik</span></div><span class="ra u">344</span><span class="ra rv">₺96.320</span><div class="share"><div class="b"><i style="width:39.1%"></i></div><span>%7,5</span></div></div>
+        <div class="prod" data-node="productRow" data-role="ListItem"><span class="rk">5</span><div class="pn"><span class="tile" style="background:var(--color-pink-soft);color:#D0317E">JM</span><b>Jakarlı Masa Örtüsü</b><span>Masa örtüsü · 160×220 cm</span></div><span class="ra u">268</span><span class="ra rv">₺72.360</span><div class="share"><div class="b"><i style="width:29.2%"></i></div><span>%5,6</span></div></div>
+      </div>
+    </div>
+    <div class="card pan" data-node="categoryCard" data-role="Panel">
+      <div class="ph">
+        <div><h3>Kategori payı</h3><p>Eylül cirosu · ₺1.284.600</p></div>
+      </div>
+      <div class="stack" data-node="categoryBar" data-role="Chart" data-model="categorySegments">
+        <i data-node="categorySegment" style="width:34%;background:var(--color-primary)"></i><i data-node="categorySegment" style="width:23%;background:var(--color-teal)"></i><i data-node="categorySegment" style="width:18%;background:var(--color-amber)"></i><i data-node="categorySegment" style="width:13%;background:var(--color-pink)"></i><i data-node="categorySegment" style="width:12%;background:var(--color-previous)"></i>
+      </div>
+      <div class="cats" data-node="categoryLegend" data-model="categories">
+        <div class="cat" data-node="categoryRow" data-role="ListItem"><i style="background:var(--color-primary)"></i><span>Nevresim takımı</span><em>₺436.764</em><b>%34</b></div>
+        <div class="cat" data-node="categoryRow" data-role="ListItem"><i style="background:var(--color-teal)"></i><span>Havlu ve bornoz</span><em>₺295.458</em><b>%23</b></div>
+        <div class="cat" data-node="categoryRow" data-role="ListItem"><i style="background:var(--color-amber)"></i><span>Perde</span><em>₺231.228</em><b>%18</b></div>
+        <div class="cat" data-node="categoryRow" data-role="ListItem"><i style="background:var(--color-pink)"></i><span>Masa örtüsü</span><em>₺166.998</em><b>%13</b></div>
+        <div class="cat" data-node="categoryRow" data-role="ListItem"><i style="background:var(--color-previous)"></i><span>Diğer</span><em>₺154.152</em><b>%12</b></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!--@charts-->
+<script>
+const D = JSON.parse(document.getElementById('case-data').textContent);
+const R = D.revenue;
+const svg = document.getElementById('rev');
+const card = svg.parentElement;
+const W = card.clientWidth - 40, H = card.clientHeight - 20 - 40 - 12 - 22;
+const pad = { l: 40, r: 8, t: 10, b: 26 };
+const yMin = 0, yMax = 1600;
+Charts.line(svg, {
+  width: W, height: H, padding: pad, xCount: 12, yMin, yMax, yTicks: [0, 400, 800, 1200, 1600],
+  yFormat: v => v.toLocaleString('tr-TR'), xLabels: R.months,
+  grid: '#EEF0F4', labelColor: '#98A2B3', font: 'Onest', fontSize: 12,
+  series: [
+    { values: R.previous, color: '#A5B0C2', width: 2, dash: '5 5' },
+    { values: R.current, color: '#2F5BEA', width: 2.5, area: [0.16, 0] }
+  ]
+});
+// hover state: guide line, highlighted points, bold month label
+const NS = 'http://www.w3.org/2000/svg';
+const hx = pad.l + (R.hover.index / 11) * (W - pad.l - pad.r);
+const yv = v => (H - pad.b) + (v - yMin) / (yMax - yMin) * (pad.t - (H - pad.b));
+const mk = (tag, a) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); return e; };
+const guide = mk('line', { x1: hx, x2: hx, y1: pad.t, y2: H - pad.b, stroke: '#C4CBD7', 'stroke-width': 1 });
+guide.dataset.node = 'hoverGuide';
+svg.insertBefore(guide, svg.querySelector('path'));
+const pPrev = mk('circle', { cx: hx, cy: yv(R.previous[R.hover.index]), r: 4, fill: '#FFFFFF', stroke: '#A5B0C2', 'stroke-width': 2 });
+const halo = mk('circle', { cx: hx, cy: yv(R.current[R.hover.index]), r: 11, fill: '#2F5BEA', 'fill-opacity': 0.14 });
+const pCur = mk('circle', { cx: hx, cy: yv(R.current[R.hover.index]), r: 5, fill: '#FFFFFF', stroke: '#2F5BEA', 'stroke-width': 2.5 });
+pCur.dataset.node = 'hoverPoint';
+[pPrev, halo, pCur].forEach(c => svg.appendChild(c));
+const lbl = [...svg.querySelectorAll('text')].find(t => t.textContent === R.months[R.hover.index]);
+lbl.setAttribute('fill', '#101828'); lbl.setAttribute('font-weight', 600);
+// tooltip to the right of the hovered point, arrow pointing at it
+const tip = document.getElementById('tip');
+const sb = svg.getBoundingClientRect(), cb = card.getBoundingClientRect();
+const px = sb.left - cb.left + hx, py = sb.top - cb.top + (yv(R.current[R.hover.index]) + yv(R.previous[R.hover.index])) / 2;
+tip.style.left = Math.round(px + 16) + 'px';
+tip.style.top = Math.round(py - tip.offsetHeight / 2) + 'px';
+Charts.done();
+</script>
+</body>
+</html>

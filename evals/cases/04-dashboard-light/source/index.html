@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Güneşli — Enerji Özeti</title>
+
+
+<style>
+@font-face{font-family:'DM Sans';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/DMSans-Bold.ttf') format('truetype');}
+@font-face{font-family:'DM Sans';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/DMSans-Medium.ttf') format('truetype');}
+@font-face{font-family:'DM Sans';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/DMSans-Regular.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #F3F6F4;
+  --color-surface: #FFFFFF;
+  --color-ink: #16201A;
+  --color-muted: #6B7A70;
+  --color-dim: #9AA79F;
+  --color-border: #E3E8E4;
+  --color-primary: #1F9D55;
+  --color-primary-soft: #E4F4EA;
+  --color-sun: #FFB020;
+  --color-sun-deep: #FF7A1A;
+  --color-consumption: #B4C3D3;
+  --color-blue: #3B82F6;
+  --color-blue-soft: #E7F0FE;
+  --color-rose: #F0506E;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 40px;
+  --radius-sm: 10px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 20px; --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgba(16, 24, 20, 0.06), 0 8px 24px rgba(16, 24, 20, 0.06);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 20px; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+
+.nav { height: 72px; background: var(--color-surface); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 40px; gap: 40px; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.4px; }
+.logo i { width: 36px; height: 36px; border-radius: 50%; background: var(--color-sun); color: #fff; display: grid; place-items: center; }
+.tabs { display: flex; gap: 8px; height: 72px; }
+.tab { padding: 0 14px; display: flex; align-items: center; font-size: 15px; font-weight: 500; color: var(--color-muted); border-bottom: 2px solid transparent; }
+.tab.on { color: var(--color-ink); font-weight: 700; border-bottom-color: var(--color-primary); }
+.nav .right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+.loc { height: 40px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-bg); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.loc svg.ic { width: 18px; height: 18px; color: var(--color-sun-deep); }
+.iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--color-border); display: grid; place-items: center; position: relative; color: var(--color-muted); }
+.iconbtn b { position: absolute; top: 9px; right: 10px; width: 8px; height: 8px; border-radius: 50%; background: var(--color-rose); border: 2px solid var(--color-surface); box-sizing: content-box; }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 14px; font-weight: 700; display: grid; place-items: center; }
+
+.content { padding: 28px 40px; display: flex; flex-direction: column; gap: 20px; }
+.hello { display: flex; align-items: center; gap: 12px; }
+.hello h1 { font-size: 28px; font-weight: 700; line-height: 36px; letter-spacing: -0.6px; }
+.hello p { font-size: 15px; color: var(--color-muted); line-height: 22px; margin-top: 2px; }
+.hello .sp { flex: 1; }
+.btn { height: 42px; padding: 0 16px; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+.btn svg.ic { width: 18px; height: 18px; }
+.btn.outline { background: var(--color-surface); border: 1px solid var(--color-border); }
+.btn.dark { background: var(--color-ink); color: #fff; }
+
+.card { background: var(--color-surface); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); padding: 22px 24px; }
+.rowA { display: grid; grid-template-columns: 1.36fr 1fr 1fr; gap: 20px; height: 248px; }
+.solar { background: linear-gradient(155deg, var(--color-sun) 0%, var(--color-sun-deep) 100%); color: #fff; box-shadow: 0 12px 28px rgba(255, 122, 26, 0.28); display: flex; gap: 12px; }
+.solar .l { display: flex; flex-direction: column; width: 200px; flex: none; }
+.lbl { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+.solar .lbl { color: rgba(255, 255, 255, 0.9); }
+.solar .v { font-size: 48px; font-weight: 700; line-height: 56px; letter-spacing: -1.5px; margin-top: 18px; }
+.solar .v small { font-size: 22px; font-weight: 500; letter-spacing: 0; margin-left: 4px; }
+.solar .s { font-size: 13px; color: rgba(255, 255, 255, 0.85); margin-top: 4px; }
+.solar .live { margin-top: auto; display: inline-flex; align-self: flex-start; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); font-size: 13px; font-weight: 600; }
+.solar .live::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #fff; }
+.solar svg#hourly { align-self: flex-end; }
+
+.head { display: flex; align-items: center; gap: 10px; }
+.head h3 { font-size: 16px; font-weight: 700; line-height: 22px; }
+.head .tag { margin-left: auto; height: 26px; padding: 0 10px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.tag.green { background: var(--color-primary-soft); color: var(--color-primary); }
+.tag.green svg.ic { width: 14px; height: 14px; }
+.batt { display: flex; align-items: center; gap: 22px; margin-top: 18px; }
+.ringbox { position: relative; width: 132px; height: 132px; flex: none; }
+.ringbox .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ringbox .c b { font-size: 30px; font-weight: 700; line-height: 34px; letter-spacing: -0.8px; }
+.ringbox .c span { font-size: 12px; color: var(--color-muted); }
+.kv { display: flex; flex-direction: column; gap: 14px; }
+.kv div span { display: block; font-size: 12px; color: var(--color-muted); line-height: 16px; }
+.kv div b { font-size: 17px; font-weight: 700; line-height: 22px; }
+
+.flow { margin-top: 18px; display: flex; flex-direction: column; gap: 14px; }
+.flow .it { display: flex; align-items: center; gap: 14px; }
+.flow .ico { width: 44px; height: 44px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.flow .it span { display: block; font-size: 13px; color: var(--color-muted); line-height: 18px; }
+.flow .it b { font-size: 22px; font-weight: 700; line-height: 28px; letter-spacing: -0.4px; }
+.flow .it b small { font-size: 14px; font-weight: 500; color: var(--color-muted); margin-left: 3px; letter-spacing: 0; }
+.split { height: 8px; border-radius: var(--radius-pill); background: var(--color-consumption); overflow: hidden; margin-top: 4px; }
+.split i { display: block; height: 100%; width: 80%; background: var(--color-primary); border-radius: var(--radius-pill); }
+.split-l { display: flex; justify-content: space-between; font-size: 12px; color: var(--color-muted); margin-top: 6px; }
+
+.rowB { display: grid; grid-template-columns: 1.7fr 1fr; gap: 20px; flex: 1; height: 420px; }
+.legend { margin-left: auto; display: flex; gap: 18px; font-size: 13px; color: var(--color-muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+.sub { font-size: 13px; color: var(--color-muted); line-height: 18px; margin-top: 2px; }
+.devs { margin-top: 20px; display: flex; flex-direction: column; gap: 18px; }
+.dev { display: grid; grid-template-columns: 40px 1fr auto; column-gap: 12px; align-items: center; }
+.dev .ico { width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--color-bg); color: var(--color-ink); display: grid; place-items: center; grid-row: 1 / 3; }
+.dev .ico svg.ic { width: 18px; height: 18px; }
+.dev .n { font-size: 14px; font-weight: 600; line-height: 20px; }
+.dev .k { font-size: 14px; font-weight: 700; text-align: right; }
+.dev .k small { font-weight: 500; color: var(--color-muted); font-size: 12px; margin-left: 2px; }
+.dev .bar { grid-column: 2 / 4; height: 6px; border-radius: var(--radius-pill); background: var(--color-bg); overflow: hidden; margin-top: 6px; }
+.dev .bar i { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary); }
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="logo"><i><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle> <path d="M12 2v2"></path> <path d="M12 20v2"></path> <path d="m4.93 4.93 1.41 1.41"></path> <path d="m17.66 17.66 1.41 1.41"></path> <path d="M2 12h2"></path> <path d="M20 12h2"></path> <path d="m6.34 17.66-1.41 1.41"></path> <path d="m19.07 4.93-1.41 1.41"></path></svg></i>Güneşli</div>
+  <nav class="tabs">
+    <div class="tab on">Özet</div>
+    <div class="tab">Üretim</div>
+    <div class="tab">Tüketim</div>
+    <div class="tab">Batarya</div>
+    <div class="tab">Raporlar</div>
+  </nav>
+  <div class="right">
+    <div class="loc"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-sun-medium" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle> <path d="M12 3v1"></path> <path d="M12 20v1"></path> <path d="M3 12h1"></path> <path d="M20 12h1"></path> <path d="m18.364 5.636-.707.707"></path> <path d="m6.343 17.657-.707.707"></path> <path d="m5.636 5.636.707.707"></path> <path d="m17.657 17.657.707.707"></path></svg>Ankara · 24°C</div>
+    <div class="iconbtn"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg><b></b></div>
+    <div class="avatar">DK</div>
+  </div>
+</header>
+
+<main class="content">
+  <section class="hello">
+    <div><h1>İyi günler, Deniz</h1><p>Bugün ürettiğin enerji, evinin 1,8 günlük ihtiyacını karşılıyor.</p></div>
+    <div class="sp"></div>
+    <div class="btn outline"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar-days" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path> <path d="M8 13h.01"></path> <path d="M12 13h.01"></path> <path d="M16 13h.01"></path> <path d="M8 17h.01"></path> <path d="M12 17h.01"></path> <path d="M16 17h.01"></path></svg>25 Eylül 2026<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></div>
+    <div class="btn dark"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"></path> <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path> <path d="m7 10 5 5 5-5"></path></svg>Rapor indir</div>
+  </section>
+
+  <section class="rowA">
+    <div class="card solar">
+      <div class="l">
+        <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle> <path d="M12 2v2"></path> <path d="M12 20v2"></path> <path d="m4.93 4.93 1.41 1.41"></path> <path d="m17.66 17.66 1.41 1.41"></path> <path d="M2 12h2"></path> <path d="M20 12h2"></path> <path d="m6.34 17.66-1.41 1.41"></path> <path d="m19.07 4.93-1.41 1.41"></path></svg>Anlık Üretim</div>
+        <div class="v">4,82<small>kW</small></div>
+        <div class="s">Günün tepesi 5,07 kW · 12:00</div>
+        <div class="live">Canlı</div>
+      </div>
+      <svg id="hourly" viewBox="0 0 300 190" width="300" height="190"><path d="M5.5,168 V167.18 Q5.5,162.18 10.5,162.18 H14.5 Q19.5,162.18 19.5,167.18 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="12.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400">06</text><path d="M30.5,168 V134.6 Q30.5,129.6 35.5,129.6 H39.5 Q44.5,129.6 44.5,134.6 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="37.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M55.5,168 V98.82 Q55.5,93.82 60.5,93.82 H64.5 Q69.5,93.82 69.5,98.82 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="62.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M80.5,168 V68.85 Q80.5,63.85 85.5,63.85 H89.5 Q94.5,63.85 94.5,68.85 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="87.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400">09</text><path d="M105.5,168 V44.42 Q105.5,39.42 110.5,39.42 H114.5 Q119.5,39.42 119.5,44.42 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="112.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M130.5,168 V32.49 Q130.5,27.49 135.5,27.49 H139.5 Q144.5,27.49 144.5,32.49 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="137.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M155.5,168 V25.51 Q155.5,20.51 160.5,20.51 H164.5 Q169.5,20.51 169.5,25.51 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="162.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400">12</text><path d="M180.5,168 V40.93 Q180.5,35.93 185.5,35.93 H189.5 Q194.5,35.93 194.5,40.93 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="187.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M205.5,168 V49.95 Q205.5,44.95 210.5,44.95 H214.5 Q219.5,44.95 219.5,49.95 V168 Z" fill="#FFFFFF"></path><text x="212.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M230.5,168 V67.11 Q230.5,62.11 235.5,62.11 H239.5 Q244.5,62.11 244.5,67.11 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="237.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400">15</text><path d="M255.5,168 V99.98 Q255.5,94.98 260.5,94.98 H264.5 Q269.5,94.98 269.5,99.98 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="262.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text><path d="M280.5,168 V131.4 Q280.5,126.4 285.5,126.4 H289.5 Q294.5,126.4 294.5,131.4 V168 Z" fill="rgba(255,255,255,0.38)"></path><text x="287.5" y="182" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-family="DM Sans" font-size="11" font-weight="400"></text></svg>
+    </div>
+    <div class="card">
+      <div class="head"><h3>Ev Bataryası</h3><span class="tag green"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-battery-charging" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 7-3 5h4l-3 5"></path> <path d="M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935"></path> <path d="M22 14v-4"></path> <path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936"></path></svg>Şarj oluyor</span></div>
+      <div class="batt">
+        <div class="ringbox"><svg id="ring" viewBox="0 0 132 132" width="132" height="132"><circle cx="66" cy="66" r="60" fill="none" stroke="#E4F4EA" stroke-width="12"></circle><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34C77B" stop-opacity="1"></stop><stop offset="1" stop-color="#1F9D55" stop-opacity="1"></stop></linearGradient></defs><path d="M66,6 A60,60 0 1 1 7.06,54.77" fill="none" stroke="url(#g1)" stroke-width="12" stroke-linecap="round"></path></svg><div class="c"><b>%78</b><span>13,3 kWh</span></div></div>
+        <div class="kv"><div><span>Tam dolum</span><b>~1 sa 45 dk</b></div><div><span>Şarj gücü</span><b>+1,4 kW</b></div><div><span>Sağlık</span><b>%96</b></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="head"><h3>Şebeke</h3><span class="tag green">Net üretici</span></div>
+      <div class="flow">
+        <div class="it"><div class="ico" style="background:var(--color-primary-soft);color:var(--color-primary)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"></path> <path d="M7 17 17 7"></path></svg></div><div><span>Şebekeye verilen</span><b>12,6<small>kWh</small></b></div></div>
+        <div class="it"><div class="ico" style="background:var(--color-blue-soft);color:var(--color-blue)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-down-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7 7 17"></path> <path d="M17 17H7V7"></path></svg></div><div><span>Şebekeden alınan</span><b>3,1<small>kWh</small></b></div></div>
+        <div><div class="split"><i></i></div><div class="split-l"><span>Verilen %80</span><span>Alınan %20</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rowB">
+    <div class="card" style="display:flex;flex-direction:column">
+      <div class="head"><div><h3>Haftalık Üretim ve Tüketim</h3><div class="sub">22–28 Eylül · kWh</div></div>
+        <div class="legend"><span><i style="background:var(--color-primary)"></i>Üretim</span><span><i style="background:var(--color-consumption)"></i>Tüketim</span></div></div>
+      <svg id="weekly" style="margin-top:16px" viewBox="0 0 796 316" width="796" height="316"><line x1="36" x2="796" y1="288" y2="288" stroke="#E3E8E4" stroke-width="1" stroke-dasharray="4 4"></line><text x="26" y="292" text-anchor="end" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">0</text><line x1="36" x2="796" y1="217.5" y2="217.5" stroke="#E3E8E4" stroke-width="1" stroke-dasharray="4 4"></line><text x="26" y="221.5" text-anchor="end" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">10</text><line x1="36" x2="796" y1="147" y2="147" stroke="#E3E8E4" stroke-width="1" stroke-dasharray="4 4"></line><text x="26" y="151" text-anchor="end" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">20</text><line x1="36" x2="796" y1="76.5" y2="76.5" stroke="#E3E8E4" stroke-width="1" stroke-dasharray="4 4"></line><text x="26" y="80.5" text-anchor="end" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">30</text><line x1="36" x2="796" y1="6" y2="6" stroke="#E3E8E4" stroke-width="1" stroke-dasharray="4 4"></line><text x="26" y="10" text-anchor="end" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">40</text><path d="M65.29,288 V93.78 Q65.29,87.78 71.29,87.78 H81.29 Q87.29,87.78 87.29,93.78 V288 Z" fill="#1F9D55"></path><path d="M93.29,288 V138.19 Q93.29,132.19 99.29,132.19 H109.29 Q115.29,132.19 115.29,138.19 V288 Z" fill="#B4C3D3"></path><text x="90.29" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Pzt</text><path d="M173.86,288 V74.04 Q173.86,68.04 179.86,68.04 H189.86 Q195.86,68.04 195.86,74.04 V288 Z" fill="#1F9D55"></path><path d="M201.86,288 V150.18 Q201.86,144.18 207.86,144.18 H217.86 Q223.86,144.18 223.86,150.18 V288 Z" fill="#B4C3D3"></path><text x="198.86" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Sal</text><path d="M282.43,288 V120.57 Q282.43,114.57 288.43,114.57 H298.43 Q304.43,114.57 304.43,120.57 V288 Z" fill="#1F9D55"></path><path d="M310.43,288 V126.21 Q310.43,120.21 316.43,120.21 H326.43 Q332.43,120.21 332.43,126.21 V288 Z" fill="#B4C3D3"></path><text x="307.43" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Çar</text><path d="M391,288 V57.82 Q391,51.82 397,51.82 H407 Q413,51.82 413,57.82 V288 Z" fill="#1F9D55"></path><path d="M419,288 V141.72 Q419,135.72 425,135.72 H435 Q441,135.72 441,141.72 V288 Z" fill="#B4C3D3"></path><text x="416" y="308" text-anchor="middle" fill="#16201A" font-family="DM Sans" font-size="12" font-weight="700">Per</text><path d="M499.57,288 V83.91 Q499.57,77.91 505.57,77.91 H515.57 Q521.57,77.91 521.57,83.91 V288 Z" fill="#1F9D55"></path><path d="M527.57,288 V118.46 Q527.57,112.46 533.57,112.46 H543.57 Q549.57,112.46 549.57,118.46 V288 Z" fill="#B4C3D3"></path><text x="524.57" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Cum</text><path d="M608.14,288 V46.54 Q608.14,40.54 614.14,40.54 H624.14 Q630.14,40.54 630.14,46.54 V288 Z" fill="#1F9D55"></path><path d="M636.14,288 V108.59 Q636.14,102.59 642.14,102.59 H652.14 Q658.14,102.59 658.14,108.59 V288 Z" fill="#B4C3D3"></path><text x="633.14" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Cmt</text><path d="M716.71,288 V63.46 Q716.71,57.46 722.71,57.46 H732.71 Q738.71,57.46 738.71,63.46 V288 Z" fill="#1F9D55"></path><path d="M744.71,288 V116.34 Q744.71,110.34 750.71,110.34 H760.71 Q766.71,110.34 766.71,116.34 V288 Z" fill="#B4C3D3"></path><text x="741.71" y="308" text-anchor="middle" fill="#9AA79F" font-family="DM Sans" font-size="12" font-weight="400">Paz</text></svg>
+    </div>
+    <div class="card">
+      <div class="head"><div><h3>Cihaz Tüketimi</h3><div class="sub">Bugün · toplam 15,2 kWh</div></div></div>
+      <div class="devs">
+        <div class="dev"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-air-vent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 17.5a2.5 2.5 0 1 1-4 2.03V12"></path> <path d="M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path> <path d="M6 8h12"></path> <path d="M6.6 15.572A2 2 0 1 0 10 17v-5"></path></svg></div><div class="n">Klima</div><div class="k">5,8<small>kWh</small></div><div class="bar"><i style="width:38%"></i></div></div>
+        <div class="dev"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-refrigerator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z"></path> <path d="M5 10h14"></path> <path d="M15 7v6"></path></svg></div><div class="n">Buzdolabı</div><div class="k">2,4<small>kWh</small></div><div class="bar"><i style="width:16%"></i></div></div>
+        <div class="dev"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-washing-machine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h3"></path> <path d="M17 6h.01"></path> <rect width="18" height="20" x="3" y="2" rx="2"></rect> <circle cx="12" cy="13" r="5"></circle> <path d="M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5"></path></svg></div><div class="n">Çamaşır Makinesi</div><div class="k">1,8<small>kWh</small></div><div class="bar"><i style="width:12%"></i></div></div>
+        <div class="dev"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-lamp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12v6"></path> <path d="M4.077 10.615A1 1 0 0 0 5 12h14a1 1 0 0 0 .923-1.385l-3.077-7.384A2 2 0 0 0 15 2H9a2 2 0 0 0-1.846 1.23Z"></path> <path d="M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z"></path></svg></div><div class="n">Aydınlatma</div><div class="k">1,4<small>kWh</small></div><div class="bar"><i style="width:9%"></i></div></div>
+        <div class="dev"><div class="ico"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"></path> <path d="M15 8V2"></path> <path d="M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z"></path> <path d="M9 8V2"></path></svg></div><div class="n">Diğer</div><div class="k">3,8<small>kWh</small></div><div class="bar"><i style="width:25%"></i></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+
+
+</body></html>

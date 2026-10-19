@@ -1,0 +1,705 @@
+{
+ "summary": {
+  "paletteRecall": 0.954,
+  "surfaceRecall": 0.757,
+  "textExact": 0.727,
+  "textCER": 0.133,
+  "fontPxMAE": 1.36
+ },
+ "cases": [
+  {
+   "case": "01-hmi-dolum",
+   "palette": {
+    "recall": 0.846,
+    "n": 13,
+    "found": 11,
+    "missing": [
+     "#04121C (ΔE 3.1)",
+     "#052E14 (ΔE 3.4)"
+    ],
+    "paletteSize": 262
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 27,
+    "found": 27,
+    "meanBoxErrPx": 0.52,
+    "missing": [],
+    "detected": 88
+   },
+   "text": {
+    "exact": 0.663,
+    "n": 95,
+    "cer": 0.175,
+    "pxMAE": 1.38,
+    "missing": [
+     "Red Oranı",
+     "%0,62",
+     "2,1",
+     "2,4",
+     "3",
+     "A-214 · 14:28",
+     "W-031 · 14:05",
+     "W-017 · 13:52",
+     "I-008 · 13:30",
+     "0"
+    ]
+   }
+  },
+  {
+   "case": "02-kiosk-kafe",
+   "palette": {
+    "recall": 1.0,
+    "n": 11,
+    "found": 11,
+    "missing": [],
+    "paletteSize": 279
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 19,
+    "found": 19,
+    "meanBoxErrPx": 0.28,
+    "missing": [],
+    "detected": 58
+   },
+   "text": {
+    "exact": 0.667,
+    "n": 39,
+    "cer": 0.148,
+    "pxMAE": 1.28,
+    "missing": [
+     "TR",
+     "145 ₺",
+     "3"
+    ]
+   }
+  },
+  {
+   "case": "03-dashboard-dark",
+   "palette": {
+    "recall": 1.0,
+    "n": 16,
+    "found": 16,
+    "missing": [],
+    "paletteSize": 235
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 16,
+    "found": 16,
+    "meanBoxErrPx": 0.08,
+    "missing": [],
+    "detected": 48
+   },
+   "text": {
+    "exact": 0.875,
+    "n": 112,
+    "cer": 0.082,
+    "pxMAE": 0.58,
+    "missing": [
+     "3",
+     "/134",
+     "0",
+     "45",
+     "11",
+     "—"
+    ]
+   }
+  },
+  {
+   "case": "04-dashboard-light",
+   "palette": {
+    "recall": 0.9,
+    "n": 10,
+    "found": 9,
+    "missing": [
+     "#9AA79F (ΔE 3.8)"
+    ],
+    "paletteSize": 211
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 9,
+    "found": 9,
+    "meanBoxErrPx": 0.47,
+    "missing": [],
+    "detected": 69
+   },
+   "text": {
+    "exact": 0.743,
+    "n": 74,
+    "cer": 0.1,
+    "pxMAE": 1.14,
+    "missing": [
+     "DK",
+     "4,82",
+     "kW",
+     "0"
+    ]
+   }
+  },
+  {
+   "case": "05-settings-form",
+   "palette": {
+    "recall": 1.0,
+    "n": 13,
+    "found": 13,
+    "missing": [],
+    "paletteSize": 182
+   },
+   "surfaces": {
+    "recall": 0.944,
+    "n": 18,
+    "found": 17,
+    "meanBoxErrPx": 0.11,
+    "missing": [
+     "autoBrightnessSwitch"
+    ],
+    "detected": 31
+   },
+   "text": {
+    "exact": 0.811,
+    "n": 53,
+    "cer": 0.087,
+    "pxMAE": 1.08,
+    "missing": [
+     "Lobi-Kiosk-02 · v4.2.0",
+     "1",
+     "Çevrimiçi",
+     "Değişiklikleri kaydet"
+    ]
+   }
+  },
+  {
+   "case": "06-mobile-aliskanlik",
+   "palette": {
+    "recall": 1.0,
+    "n": 13,
+    "found": 13,
+    "missing": [],
+    "paletteSize": 84
+   },
+   "surfaces": {
+    "recall": 0.875,
+    "n": 16,
+    "found": 14,
+    "meanBoxErrPx": 0.04,
+    "missing": [
+     "habitCheck[0]",
+     "habit[4]"
+    ],
+    "detected": 40
+   },
+   "text": {
+    "exact": 0.872,
+    "n": 39,
+    "cer": 0.045,
+    "pxMAE": 0.32,
+    "missing": [
+     "EK"
+    ]
+   }
+  },
+  {
+   "case": "07-data-table",
+   "palette": {
+    "recall": 0.923,
+    "n": 13,
+    "found": 12,
+    "missing": [
+     "#B45309 (ΔE 8.9)"
+    ],
+    "paletteSize": 198
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 8,
+    "found": 8,
+    "meanBoxErrPx": 0.17,
+    "missing": [],
+    "detected": 62
+   },
+   "text": {
+    "exact": 0.773,
+    "n": 110,
+    "cer": 0.085,
+    "pxMAE": 0.3,
+    "missing": [
+     "—",
+     "—",
+     "—",
+     "1",
+     "2",
+     "…"
+    ]
+   }
+  },
+  {
+   "case": "08-glass-home",
+   "palette": {
+    "recall": 1.0,
+    "n": 6,
+    "found": 6,
+    "missing": [],
+    "paletteSize": 437
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 0,
+    "found": 0,
+    "meanBoxErrPx": null,
+    "missing": [],
+    "detected": 107
+   },
+   "text": {
+    "exact": 0.6,
+    "n": 30,
+    "cer": 0.227,
+    "pxMAE": 3.67,
+    "missing": [
+     "Ankara · 17° · Açık",
+     "Film gecesi",
+     "Dışarıdayım"
+    ]
+   }
+  },
+  {
+   "case": "09-dashboard-sales",
+   "palette": {
+    "recall": 0.962,
+    "n": 26,
+    "found": 25,
+    "missing": [
+     "#5B6B85 (ΔE 3.2)"
+    ],
+    "paletteSize": 225
+   },
+   "surfaces": {
+    "recall": 0.952,
+    "n": 21,
+    "found": 20,
+    "meanBoxErrPx": 0.59,
+    "missing": [
+     "userAvatar"
+    ],
+    "detected": 79
+   },
+   "text": {
+    "exact": 0.654,
+    "n": 127,
+    "cer": 0.123,
+    "pxMAE": 0.46,
+    "missing": [
+     "0",
+     "#",
+     "1",
+     "2",
+     "3",
+     "%10,4",
+     "4",
+     "5",
+     "Eylül cirosu · ₺1.284.600",
+     "₺436.764"
+    ]
+   }
+  },
+  {
+   "case": "10-dashboard-ops-dark",
+   "palette": {
+    "recall": 0.767,
+    "n": 30,
+    "found": 23,
+    "missing": [
+     "#7FE3D3 (ΔE 6.6)",
+     "#9CC2FF (ΔE 6.7)",
+     "#C9B5FF (ΔE 11.9)",
+     "#FB8B4B (ΔE 10.1)",
+     "#FF8E97 (ΔE 10.4)",
+     "#FFC983 (ΔE 5.6)",
+     "#FFFFFF (ΔE 4.9)"
+    ],
+    "paletteSize": 327
+   },
+   "surfaces": {
+    "recall": 0.379,
+    "n": 182,
+    "found": 69,
+    "meanBoxErrPx": 0.16,
+    "missing": [
+     "userAvatar",
+     "heatCell[25]",
+     "heatCell[26]",
+     "heatCell[27]",
+     "heatCell[28]",
+     "heatCell[29]",
+     "heatCell[30]",
+     "heatCell[31]",
+     "heatCell[32]",
+     "heatCell[33]",
+     "heatCell[34]",
+     "heatCell[35]"
+    ],
+    "detected": 214
+   },
+   "text": {
+    "exact": 0.7,
+    "n": 190,
+    "cer": 0.127,
+    "pxMAE": 0.76,
+    "missing": [
+     "/",
+     "UTC+3",
+     "3",
+     "0",
+     "%71 · 21:40",
+     "0",
+     "%84 · 22:10",
+     "0",
+     "%96 · 21:00",
+     "İndirme"
+    ]
+   }
+  },
+  {
+   "case": "11-hmi-boiler",
+   "palette": {
+    "recall": 1.0,
+    "n": 14,
+    "found": 14,
+    "missing": [],
+    "paletteSize": 261
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 35,
+    "found": 35,
+    "meanBoxErrPx": 1.3,
+    "missing": [],
+    "detected": 67
+   },
+   "text": {
+    "exact": 0.618,
+    "n": 110,
+    "cer": 0.273,
+    "pxMAE": 2.78,
+    "missing": [
+     "Operatör",
+     "ÖNCELİK 2",
+     "TT-104",
+     "212",
+     "°C",
+     "41,2",
+     "°C",
+     "66,4",
+     "SP",
+     "SP"
+    ]
+   }
+  },
+  {
+   "case": "12-ev-charger",
+   "palette": {
+    "recall": 1.0,
+    "n": 13,
+    "found": 13,
+    "missing": [],
+    "paletteSize": 161
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 33,
+    "found": 33,
+    "meanBoxErrPx": 0.09,
+    "missing": [],
+    "detected": 51
+   },
+   "text": {
+    "exact": 0.787,
+    "n": 47,
+    "cer": 0.119,
+    "pxMAE": 1.47,
+    "missing": [
+     "%70",
+     "%0",
+     "/kWh",
+     "dk"
+    ]
+   }
+  },
+  {
+   "case": "13-form-wizard",
+   "palette": {
+    "recall": 1.0,
+    "n": 15,
+    "found": 15,
+    "missing": [],
+    "paletteSize": 206
+   },
+   "surfaces": {
+    "recall": 0.944,
+    "n": 18,
+    "found": 17,
+    "meanBoxErrPx": 1.51,
+    "missing": [
+     "stepCard"
+    ],
+    "detected": 45
+   },
+   "text": {
+    "exact": 0.761,
+    "n": 109,
+    "cer": 0.177,
+    "pxMAE": 1.05,
+    "missing": [
+     "3",
+     "4",
+     "5",
+     "*",
+     "*",
+     "(isteğe bağlı)",
+     "*",
+     "1",
+     "3",
+     "4"
+    ]
+   }
+  },
+  {
+   "case": "14-form-login-dark",
+   "palette": {
+    "recall": 1.0,
+    "n": 14,
+    "found": 14,
+    "missing": [],
+    "paletteSize": 224
+   },
+   "surfaces": {
+    "recall": 0.857,
+    "n": 7,
+    "found": 6,
+    "meanBoxErrPx": 0.42,
+    "missing": [
+     "brandPanel"
+    ],
+    "detected": 24
+   },
+   "text": {
+    "exact": 0.719,
+    "n": 32,
+    "cer": 0.127,
+    "pxMAE": 1.9,
+    "missing": [
+     "Ekibinizin hesaplarını, anahtarlarını ve kartlarını tek yerden paylaşın; erişimi saniyeler içinde geri alın."
+    ]
+   }
+  },
+  {
+   "case": "15-mobile-wallet",
+   "palette": {
+    "recall": 1.0,
+    "n": 15,
+    "found": 15,
+    "missing": [],
+    "paletteSize": 141
+   },
+   "surfaces": {
+    "recall": 0.833,
+    "n": 6,
+    "found": 5,
+    "meanBoxErrPx": 0.1,
+    "missing": [
+     "txRows[1]"
+    ],
+    "detected": 29
+   },
+   "text": {
+    "exact": 0.74,
+    "n": 50,
+    "cer": 0.083,
+    "pxMAE": 0.48,
+    "missing": [
+     "DA",
+     "₺48.215"
+    ]
+   }
+  },
+  {
+   "case": "16-mobile-chat",
+   "palette": {
+    "recall": 1.0,
+    "n": 16,
+    "found": 16,
+    "missing": [],
+    "paletteSize": 88
+   },
+   "surfaces": {
+    "recall": 0.739,
+    "n": 23,
+    "found": 17,
+    "meanBoxErrPx": 0.24,
+    "missing": [
+     "appBar",
+     "stackAvatar[0]",
+     "stackAvatar[1]",
+     "stackAvatar[2]",
+     "stackMore",
+     "composer"
+    ],
+    "detected": 27
+   },
+   "text": {
+    "exact": 0.5,
+    "n": 34,
+    "cer": 0.331,
+    "pxMAE": 4.54,
+    "missing": [
+     "SY",
+     "Özellikle 3. adımdaki izin metnine bakabilir misiniz?",
+     "BÖ",
+     "Kısalttım, butonu da “Devam et” olarak güncelledim.",
+     "AK",
+     "BÖ"
+    ]
+   }
+  },
+  {
+   "case": "17-data-table-stock",
+   "palette": {
+    "recall": 1.0,
+    "n": 20,
+    "found": 20,
+    "missing": [],
+    "paletteSize": 198
+   },
+   "surfaces": {
+    "recall": 0.969,
+    "n": 32,
+    "found": 31,
+    "meanBoxErrPx": 0.47,
+    "missing": [
+     "headerCell[9]"
+    ],
+    "detected": 97
+   },
+   "text": {
+    "exact": 0.626,
+    "n": 174,
+    "cer": 0.08,
+    "pxMAE": 1.07,
+    "missing": [
+     "0",
+     "₺",
+     "3.450,00",
+     "Depo: İstanbul · 8 ürün",
+     "0",
+     "…"
+    ]
+   }
+  },
+  {
+   "case": "18-html-tailwind-billing",
+   "palette": {
+    "recall": 0.85,
+    "n": 20,
+    "found": 17,
+    "missing": [
+     "#007A55 (ΔE 21.7)",
+     "#973C00 (ΔE 2.7)",
+     "#BB4D00 (ΔE 4.2)"
+    ],
+    "paletteSize": 224
+   },
+   "surfaces": {
+    "recall": 0.917,
+    "n": 24,
+    "found": 22,
+    "meanBoxErrPx": 0.27,
+    "missing": [
+     "billingCycleSwitch",
+     "invoicesCard"
+    ],
+    "detected": 33
+   },
+   "text": {
+    "exact": 0.745,
+    "n": 94,
+    "cer": 0.086,
+    "pxMAE": 0.78,
+    "missing": [
+     "ZT",
+     "2.988 TL",
+     "Eylül dönemi · 1 gün kaldı"
+    ]
+   }
+  },
+  {
+   "case": "19-html-css-board",
+   "palette": {
+    "recall": 1.0,
+    "n": 32,
+    "found": 32,
+    "missing": [],
+    "paletteSize": 153
+   },
+   "surfaces": {
+    "recall": 0.9,
+    "n": 60,
+    "found": 54,
+    "meanBoxErrPx": 0.51,
+    "missing": [
+     "avatar[0]",
+     "avatar[10]",
+     "avatar[12]",
+     "avatar[13]",
+     "avatar[14]",
+     "avatar[17]"
+    ],
+    "detected": 62
+   },
+   "text": {
+    "exact": 0.87,
+    "n": 108,
+    "cer": 0.052,
+    "pxMAE": 1.27,
+    "missing": [
+     "1/4"
+    ]
+   }
+  },
+  {
+   "case": "20-hard-weather",
+   "palette": {
+    "recall": 1.0,
+    "n": 13,
+    "found": 13,
+    "missing": [],
+    "paletteSize": 209
+   },
+   "surfaces": {
+    "recall": 1.0,
+    "n": 2,
+    "found": 2,
+    "meanBoxErrPx": 0.44,
+    "missing": [],
+    "detected": 52
+   },
+   "text": {
+    "exact": 0.796,
+    "n": 108,
+    "cer": 0.125,
+    "pxMAE": 0.98,
+    "missing": [
+     "°C",
+     "24°",
+     "21 µg/m³",
+     "K",
+     "D",
+     "G",
+     "B",
+     "HAFTALIK TAHMİN"
+    ]
+   }
+  }
+ ]
+}

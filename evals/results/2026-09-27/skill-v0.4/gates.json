@@ -1,0 +1,298 @@
+{
+ "01-hmi-dolum": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "02-kiosk-kafe": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "03-dashboard-dark": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "04-dashboard-light": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "05-settings-form": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "06-mobile-aliskanlik": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "07-data-table": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ },
+ "08-glass-home": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "errorCount": 0
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "id": "12-ev-charger",
+ "summary": "1024x600 7-inch EV charger session screen for the software renderer (embedded-sw).",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1024,
+   600
+  ],
+  "dpr": 1,
+  "designSize": [
+   1024,
+   600
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "embedded-sw",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Fixed 1024x600 canvas; profile embedded-sw: no MultiEffect, RectangularShadow, ShaderEffect or layer effects.",
+  "Big '%70' (Titillium Web Bold) and a 20-segment bar from a model: 14 lit, 6 unlit, target marker at 80 %.",
+  "Four stat tiles from a model (32,6 kWh / 98,4 kW / 9 dk / 293,40); uppercase labels keep the Turkish İ.",
+  "₺ drawn as a vector icon (the font has no ₺ glyph); no fallback-font ₺.",
+  "Connector card with a vector CCS2 face; session id with tabular digits and letter spacing.",
+  "Language selector: exclusive group of 3 from a model with TR checked.",
+  "Red 'ŞARJI DURDUR' button with a 2-stop vertical gradient and a secondary 'Yardım' button."
+ ],
+ "niceToHave": [
+  "Lit segment count bound to the percentage.",
+  "Cost bound to energy x unit price."
+ ],
+ "allowedApproximations": [
+  "CCS2 face as Shape paths or a vector image."
+ ],
+ "forbidden": [
+  "Shader effects, opacity layers or translucent overlays (software scene graph)."
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "id": "01-hmi-dolum",
+ "summary": "1920x1080 dark industrial HMI for a filling line; embedded-gpu profile, touch-first.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1920,
+   1080
+  ],
+  "dpr": 1,
+  "designSize": [
+   1920,
+   1080
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "embedded-gpu",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Fixed 1920x1080 design canvas scaled to the window (fitScale) or equivalent Layouts; aspect preserved.",
+  "Three tank gauges from a model (level 0.72 / 0.18 / 0.91); Tank B uses the warning palette.",
+  "Alarm list from a model of 4 items; severity drives the side bar, icon tile and colors via one delegate.",
+  "Mode selector (Otomatik/Manuel/Bakım) is an exclusive button group with 'Otomatik' checked.",
+  "Speed slider is a real slider: range 0-2000, value 1200, tick labels 0/500/1.000/1.500/2.000.",
+  "BAŞLAT is disabled through enabled:false (styling reacts to the state), not only by opacity.",
+  "Font Awesome glyphs use the bundled Font Awesome 7 Free Solid font with escaped code points (e.g. \\uf275).",
+  "Pressure chart has 31 points plus a dashed setpoint line at 2.40, drawn with Qt Graphs or Shape; axis labels use comma decimals.",
+  "Numbers use JetBrains Mono with tabular figures."
+ ],
+ "niceToHave": [
+  "Clock text bound to a Timer-driven property.",
+  "Alarm badge count bound to the model count."
+ ],
+ "allowedApproximations": [
+  "Tank fill gradients may use Gradient on Rectangle.",
+  "Chart smoothing may differ slightly (catmull-rom vs straight segments)."
+ ],
+ "forbidden": [
+  "MultiEffect/blur shaders (embedded-gpu profile)."
+ ]
+}

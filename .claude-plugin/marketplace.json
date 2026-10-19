@@ -1,0 +1,19 @@
+{
+  "name": "screenshot-to-qml",
+  "description": "Screenshot or HTML to a production Qt Quick / QML app, verified against the source",
+  "owner": {
+    "name": "ozaysahin",
+    "url": "https://github.com/ozaysahin"
+  },
+  "plugins": [
+    {
+      "name": "screenshot-to-qml",
+      "source": "./skills/screenshot-to-qml",
+      "description": "Rebuild UI screenshots or HTML as native Qt Quick / QML projects (PySide6 or C++) and score them against the source",
+      "version": "1.0.0",
+      "license": "MIT",
+      "homepage": "https://github.com/ozaysahin/screenshot-to-qml",
+      "keywords": ["qml", "qt-quick", "pyside6", "screenshot-to-code", "embedded-ui"]
+    }
+  ]
+}

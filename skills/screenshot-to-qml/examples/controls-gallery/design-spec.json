@@ -1,0 +1,36 @@
+{
+ "meta": {"source": "none (token set for the control kit gallery)", "designSize": [1200, 760], "dpr": 1,
+          "profile": "desktop", "mode": "production", "target": "pyside6", "layout": "responsive", "minQt": "6.8",
+          "fonts": [{"css": "Inter", "qtFamily": "Inter"}, {"css": "Font Awesome 7 Free", "qtFamily": "Font Awesome 7 Free"}]},
+ "tokens": {
+  "color": {
+   "bg": {"hex": "#F4F5FA", "alpha": 1, "src": "truth"},
+   "surface": {"hex": "#FFFFFF", "alpha": 1, "src": "truth"},
+   "text": {"hex": "#111827", "alpha": 1, "src": "truth"},
+   "textMuted": {"hex": "#6B7280", "alpha": 1, "src": "truth"},
+   "accent": {"hex": "#4F46E5", "alpha": 1, "src": "truth"},
+   "border": {"hex": "#E5E7EB", "alpha": 1, "src": "truth"},
+   "borderStrong": {"hex": "#CBD2DC", "alpha": 1, "src": "truth"},
+   "danger": {"hex": "#DC2626", "alpha": 1, "src": "truth"}
+  },
+  "space": {"1": 4, "2": 8, "3": 12, "4": 16, "5": 24, "6": 32},
+  "radius": {"sm": 6, "md": 8, "lg": 14},
+  "typeScale": [
+   {"name": "title", "family": "Inter", "px": 22, "weight": 700},
+   {"name": "heading", "family": "Inter", "px": 14, "weight": 600},
+   {"name": "button", "family": "Inter", "px": 14, "weight": 600},
+   {"name": "body", "family": "Inter", "px": 14, "weight": 400},
+   {"name": "caption", "family": "Inter", "px": 12, "weight": 500}
+  ]
+ },
+ "nodes": [],
+ "text": [],
+ "icons": [
+  {"kind": "font-glyph", "match": "fa:magnifying-glass", "codepoint": "U+F002", "bbox": [0, 0, 1, 1]},
+  {"kind": "font-glyph", "match": "fa:plus", "codepoint": "U+F067", "bbox": [0, 0, 1, 1]},
+  {"kind": "font-glyph", "match": "fa:trash-can", "codepoint": "U+F2ED", "bbox": [0, 0, 1, 1]},
+  {"kind": "font-glyph", "match": "fa:gear", "codepoint": "U+F013", "bbox": [0, 0, 1, 1]},
+  {"kind": "font-glyph", "match": "fa:bell", "codepoint": "U+F0F3", "bbox": [0, 0, 1, 1]},
+  {"kind": "font-glyph", "match": "fa:floppy-disk", "codepoint": "U+F0C7", "bbox": [0, 0, 1, 1]}
+ ]
+}

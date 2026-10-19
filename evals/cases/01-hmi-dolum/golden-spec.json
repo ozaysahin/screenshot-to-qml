@@ -1,0 +1,4883 @@
+{
+ "meta": {
+  "id": "01-hmi-dolum",
+  "title": "Endüstriyel HMI — dolum hattı",
+  "category": "hmi",
+  "profile": "embedded-gpu",
+  "lang": "tr",
+  "designSize": [
+   1920,
+   1080
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1920,
+   1080
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Barlow",
+    "qtFamily": "Barlow",
+    "legacyFamily": "Barlow",
+    "files": [
+     "Barlow-Bold.ttf",
+     "Barlow-Medium.ttf",
+     "Barlow-Regular.ttf",
+     "Barlow-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   },
+   {
+    "css": "JetBrains Mono",
+    "qtFamily": "JetBrains Mono",
+    "legacyFamily": "JetBrains Mono",
+    "files": [
+     "JetBrainsMono-Bold.ttf",
+     "JetBrainsMono-Medium.ttf",
+     "JetBrainsMono-Regular.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     700
+    ]
+   },
+   {
+    "css": "Font Awesome 7 Free",
+    "qtFamily": "Font Awesome 7 Free",
+    "legacyFamily": "Font Awesome 7 Free Solid",
+    "files": [
+     "fa-solid-900.ttf"
+    ],
+    "weights": [
+     900
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#0B0F14",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0B0F14"
+   },
+   "panel": {
+    "hex": "#121821",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#121821"
+   },
+   "panel-2": {
+    "hex": "#18212D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#18212D"
+   },
+   "border": {
+    "hex": "#243042",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#243042"
+   },
+   "text": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E6EDF5"
+   },
+   "text-muted": {
+    "hex": "#8A98AB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#8A98AB"
+   },
+   "text-dim": {
+    "hex": "#5B6878",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#5B6878"
+   },
+   "accent": {
+    "hex": "#38BDF8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#38BDF8"
+   },
+   "accent-deep": {
+    "hex": "#0284C7",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0284C7"
+   },
+   "ok": {
+    "hex": "#22C55E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#22C55E"
+   },
+   "warn": {
+    "hex": "#F59E0B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F59E0B"
+   },
+   "danger": {
+    "hex": "#EF4444",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EF4444"
+   },
+   "ok-soft": {
+    "hex": "#22C55E",
+    "alpha": 0.14,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(34, 197, 94, 0.14)"
+   },
+   "warn-soft": {
+    "hex": "#F59E0B",
+    "alpha": 0.14,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(245, 158, 11, 0.14)"
+   },
+   "danger-soft": {
+    "hex": "#EF4444",
+    "alpha": 0.14,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(239, 68, 68, 0.14)"
+   },
+   "accent-soft": {
+    "hex": "#38BDF8",
+    "alpha": 0.12,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "rgba(56, 189, 248, 0.12)"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 24.0,
+   "6": 32.0
+  },
+  "radius": {
+   "sm": 8.0,
+   "md": 10.0,
+   "lg": 14.0,
+   "xl": 16.0,
+   "pill": 999.0
+  },
+  "shadow": {},
+  "other": {},
+  "typeScale": [
+   {
+    "family": "JetBrains Mono",
+    "px": 52,
+    "weight": 500,
+    "lineHeight": 60,
+    "letterSpacing": -1,
+    "count": 4,
+    "example": "1.248"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "72%"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 28,
+    "weight": 500,
+    "lineHeight": 32,
+    "letterSpacing": -0.5,
+    "count": 1,
+    "example": "14:32:07"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 28,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "4,2"
+   },
+   {
+    "family": "Barlow",
+    "px": 26,
+    "weight": 700,
+    "lineHeight": 36.4,
+    "letterSpacing": 2,
+    "count": 1,
+    "example": "ACİL DURDUR"
+   },
+   {
+    "family": "Barlow",
+    "px": 22,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Hat 3 · Dolum İstasyonu"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 22,
+    "weight": 500,
+    "lineHeight": 30.8,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "1.200"
+   },
+   {
+    "family": "Barlow",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": 1,
+    "count": 2,
+    "example": "BAŞLAT"
+   },
+   {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Tank Seviyeleri"
+   },
+   {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Tank A"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 18,
+    "weight": 400,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "şişe/dk"
+   },
+   {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22.4,
+    "letterSpacing": 1,
+    "count": 1,
+    "example": "ÇALIŞIYOR"
+   },
+   {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22.4,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Otomatik"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "°C"
+   },
+   {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 22.4,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Manuel"
+   },
+   {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "B Vardiyası"
+   },
+   {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Tank B seviyesi kritik eşiğe yakın"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "02:14:36"
+   },
+   {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Süt"
+   },
+   {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Üretim Hızı"
+   },
+   {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Hedef Hat Hızı"
+   },
+   {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "+%4,0"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "7.200"
+   },
+   {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "R-12 · Ayran 250 ml"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "LOT-26-0925-B"
+   },
+   {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "Son güncelleme 2 sn önce"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "/ 10.000 L"
+   },
+   {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "Ürün Sıcaklığı"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "şişe/dk"
+   },
+   {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "3"
+   },
+   {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Normal"
+   },
+   {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Perşembe, 25.09.2026"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "count": 11,
+    "example": "2,1"
+   },
+   {
+    "family": "Barlow",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 1.6,
+    "count": 1,
+    "example": "NOVA MAKİNE"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "A-214 · 14:28"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "0"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "topbar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1920,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#243042",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 24,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     32
+    ]
+   }
+  },
+  {
+   "id": "brand",
+   "role": null,
+   "parent": "topbar",
+   "bbox": [
+    32,
+    15.5,
+    520,
+    44
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "logo",
+   "role": "Icon",
+   "parent": "brand",
+   "bbox": [
+    32,
+    15.5,
+    44,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#38BDF8",
+     "alpha": 0.12
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "44px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "title",
+   "role": "Title",
+   "parent": "brand",
+   "bbox": [
+    90,
+    31.5,
+    221.7,
+    28
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "runState",
+   "role": "StatusPill",
+   "parent": "topbar",
+   "bbox": [
+    576,
+    15.5,
+    231.39,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#22C55E",
+     "alpha": 0.14
+    },
+    "radius": 999,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#22C55E",
+      "alpha": 0.35
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     20,
+     0,
+     16
+    ]
+   },
+   "value": "running"
+  },
+  {
+   "id": "shift",
+   "role": "Chip",
+   "parent": "topbar",
+   "bbox": [
+    1408.52,
+    19.5,
+    122.92,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "operator",
+   "role": "Chip",
+   "parent": "topbar",
+   "bbox": [
+    1559.44,
+    19.5,
+    170.16,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "clock",
+   "role": "Clock",
+   "parent": "topbar",
+   "bbox": [
+    1757.59,
+    13.5,
+    130.41,
+    48
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "tankPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    32,
+    100,
+    520,
+    912
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     24,
+     24,
+     24,
+     24
+    ]
+   }
+  },
+  {
+   "id": "tanks",
+   "role": null,
+   "parent": "tankPanel",
+   "bbox": [
+    57,
+    169,
+    470,
+    678
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 20,
+    "justify": "space-between",
+    "align": "normal"
+   },
+   "model": {
+    "name": "tanks",
+    "count": 3,
+    "itemId": "tank"
+   }
+  },
+  {
+   "id": "tank[0]",
+   "role": "Gauge",
+   "parent": "tanks",
+   "bbox": [
+    57,
+    169,
+    143.33,
+    678
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center"
+   },
+   "value": "0.72"
+  },
+  {
+   "id": "vessel[0]",
+   "role": null,
+   "parent": "tank[0]",
+   "bbox": [
+    66.66,
+    169,
+    124,
+    548
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 16,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "tank[1]",
+   "role": "Gauge",
+   "parent": "tanks",
+   "bbox": [
+    220.33,
+    169,
+    143.33,
+    678
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "warning"
+   ],
+   "value": "0.18"
+  },
+  {
+   "id": "vessel[1]",
+   "role": null,
+   "parent": "tank[1]",
+   "bbox": [
+    229.98,
+    169,
+    124,
+    548
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 16,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "tank[2]",
+   "role": "Gauge",
+   "parent": "tanks",
+   "bbox": [
+    383.66,
+    169,
+    143.33,
+    678
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center"
+   },
+   "value": "0.91"
+  },
+  {
+   "id": "vessel[2]",
+   "role": null,
+   "parent": "tank[2]",
+   "bbox": [
+    393.31,
+    169,
+    124,
+    548
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 16,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "envTemp",
+   "role": "Stat",
+   "parent": "tankPanel",
+   "bbox": [
+    57,
+    892,
+    227,
+    95
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "padding": [
+     16,
+     16,
+     16,
+     16
+    ]
+   }
+  },
+  {
+   "id": "envNozzle",
+   "role": "Stat",
+   "parent": "tankPanel",
+   "bbox": [
+    300,
+    892,
+    227,
+    95
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "padding": [
+     16,
+     16,
+     16,
+     16
+    ]
+   }
+  },
+  {
+   "id": "kpis",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    576,
+    100,
+    768,
+    352
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "372px 372px",
+    "rows": "164px 164px",
+    "columnGap": 24,
+    "rowGap": 24
+   },
+   "model": {
+    "name": "kpis",
+    "count": 4,
+    "itemId": "kpi"
+   }
+  },
+  {
+   "id": "kpi[0]",
+   "role": "StatCard",
+   "parent": "kpis",
+   "bbox": [
+    576,
+    100,
+    372,
+    164
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     24,
+     20,
+     24
+    ]
+   }
+  },
+  {
+   "id": "kpi[1]",
+   "role": "StatCard",
+   "parent": "kpis",
+   "bbox": [
+    972,
+    100,
+    372,
+    164
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     24,
+     20,
+     24
+    ]
+   }
+  },
+  {
+   "id": "kpi[2]",
+   "role": "StatCard",
+   "parent": "kpis",
+   "bbox": [
+    576,
+    288,
+    372,
+    164
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     24,
+     20,
+     24
+    ]
+   }
+  },
+  {
+   "id": "kpi[3]",
+   "role": "StatCard",
+   "parent": "kpis",
+   "bbox": [
+    972,
+    288,
+    372,
+    164
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     20,
+     24,
+     20,
+     24
+    ]
+   }
+  },
+  {
+   "id": "pressureCard",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    576,
+    476,
+    768,
+    536
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     24,
+     24,
+     24,
+     24
+    ]
+   }
+  },
+  {
+   "id": "pressureChart",
+   "role": "LineChart",
+   "parent": "pressureCard",
+   "bbox": [
+    601,
+    545,
+    718,
+    442
+   ],
+   "style": {},
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "alarmPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    1368,
+    100,
+    520,
+    380
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     24,
+     24,
+     24,
+     24
+    ]
+   }
+  },
+  {
+   "id": "alarmBadge",
+   "role": "Badge",
+   "parent": "alarmPanel",
+   "bbox": [
+    1835,
+    125,
+    28,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EF4444",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "12px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "alarms",
+   "role": null,
+   "parent": "alarmPanel",
+   "bbox": [
+    1393,
+    169,
+    470,
+    286
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 10,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "alarms",
+    "count": 4,
+    "itemId": "alarm"
+   }
+  },
+  {
+   "id": "alarm[0]",
+   "role": "ListItem",
+   "parent": "alarms",
+   "bbox": [
+    1393,
+    169,
+    470,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     0
+    ],
+    "clip": true
+   },
+   "state": [
+    "danger"
+   ]
+  },
+  {
+   "id": "alarm[1]",
+   "role": "ListItem",
+   "parent": "alarms",
+   "bbox": [
+    1393,
+    243,
+    470,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     0
+    ],
+    "clip": true
+   },
+   "state": [
+    "warning"
+   ]
+  },
+  {
+   "id": "alarm[2]",
+   "role": "ListItem",
+   "parent": "alarms",
+   "bbox": [
+    1393,
+    317,
+    470,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     0
+    ],
+    "clip": true
+   },
+   "state": [
+    "warning"
+   ]
+  },
+  {
+   "id": "alarm[3]",
+   "role": "ListItem",
+   "parent": "alarms",
+   "bbox": [
+    1393,
+    391,
+    470,
+    64
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     0
+    ],
+    "clip": true
+   },
+   "state": [
+    "info"
+   ]
+  },
+  {
+   "id": "controlPanel",
+   "role": "Panel",
+   "parent": null,
+   "bbox": [
+    1368,
+    504,
+    520,
+    508
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     24,
+     24,
+     24,
+     24
+    ]
+   }
+  },
+  {
+   "id": "modeSegment",
+   "role": "SegmentedControl",
+   "parent": "controlPanel",
+   "bbox": [
+    1393,
+    573,
+    470,
+    62
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 10,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#243042",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "150.656px 150.672px 150.672px",
+    "rows": "52px",
+    "columnGap": 4,
+    "rowGap": 4,
+    "padding": [
+     4,
+     4,
+     4,
+     4
+    ]
+   },
+   "value": "auto"
+  },
+  {
+   "id": "modeAuto",
+   "role": "SegmentItem",
+   "parent": "modeSegment",
+   "bbox": [
+    1398,
+    578,
+    150.66,
+    52
+   ],
+   "style": {
+    "fill": {
+     "hex": "#38BDF8",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "150.656px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "modeManual",
+   "role": "SegmentItem",
+   "parent": "modeSegment",
+   "bbox": [
+    1552.66,
+    578,
+    150.67,
+    52
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "150.672px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "modeService",
+   "role": "SegmentItem",
+   "parent": "modeSegment",
+   "bbox": [
+    1707.33,
+    578,
+    150.67,
+    52
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "150.672px",
+    "rows": "52px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "speedControl",
+   "role": null,
+   "parent": "controlPanel",
+   "bbox": [
+    1393,
+    663,
+    470,
+    105.59
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "speedSlider",
+   "role": "Slider",
+   "parent": "speedControl",
+   "bbox": [
+    1393,
+    707.8,
+    470,
+    36
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.6"
+  },
+  {
+   "id": "btnStart",
+   "role": "Button",
+   "parent": "controlPanel",
+   "bbox": [
+    1393,
+    791,
+    227,
+    80
+   ],
+   "style": {
+    "fill": {
+     "hex": "#22C55E",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "opacity": 0.35
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "disabled"
+   ]
+  },
+  {
+   "id": "btnPause",
+   "role": "Button",
+   "parent": "controlPanel",
+   "bbox": [
+    1636,
+    791,
+    227,
+    80
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18212D",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#F59E0B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "btnEmergency",
+   "role": "Button",
+   "parent": "controlPanel",
+   "bbox": [
+    1393,
+    887,
+    470,
+    100
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EF4444",
+     "alpha": 1.0
+    },
+    "radius": 14,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": -6.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#000000",
+       "alpha": 0.25
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "statusBar",
+   "role": "StatusBar",
+   "parent": null,
+   "bbox": [
+    0,
+    1036,
+    1920,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#121821",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#243042",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 32,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     32
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "NOVA MAKİNE",
+   "owner": "brand",
+   "bbox": [
+    90,
+    16.5,
+    91.23,
+    14
+   ],
+   "baseline": 28.5,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 1.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Hat 3 · Dolum İstasyonu",
+   "owner": "title",
+   "bbox": [
+    90,
+    32.5,
+    221.7,
+    26
+   ],
+   "baseline": 54.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 22,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ÇALIŞIYOR",
+   "owner": "runState",
+   "bbox": [
+    617,
+    27.3,
+    85.38,
+    19
+   ],
+   "baseline": 43.3,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 22.4,
+    "letterSpacing": 1,
+    "italic": false
+   }
+  },
+  {
+   "string": "02:14:36",
+   "owner": "runState",
+   "bbox": [
+    714.38,
+    27,
+    72.02,
+    20
+   ],
+   "baseline": 42,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "B Vardiyası",
+   "owner": "shift",
+   "bbox": [
+    1445.77,
+    28,
+    70.67,
+    18
+   ],
+   "baseline": 43,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Operatör: M. Yıldız",
+   "owner": "operator",
+   "bbox": [
+    1596.69,
+    28,
+    117.91,
+    18
+   ],
+   "baseline": 43,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32:07",
+   "owner": "clock",
+   "bbox": [
+    1757.59,
+    10.5,
+    130.41,
+    37
+   ],
+   "baseline": 39.5,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 28,
+    "weight": 500,
+    "lineHeight": 32,
+    "letterSpacing": -0.5,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Perşembe, 25.09.2026",
+   "owner": "clock",
+   "bbox": [
+    1762.72,
+    45.5,
+    125.28,
+    16
+   ],
+   "baseline": 58.5,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "right",
+   "font": {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tank Seviyeleri",
+   "owner": "tankPanel",
+   "bbox": [
+    82.5,
+    126,
+    118.22,
+    22
+   ],
+   "baseline": 144,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Son güncelleme 2 sn önce",
+   "owner": "tankPanel",
+   "bbox": [
+    370.98,
+    128.2,
+    156.02,
+    17
+   ],
+   "baseline": 142.2,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "72%",
+   "owner": "vessel[0]",
+   "bbox": [
+    101.66,
+    661,
+    54,
+    40
+   ],
+   "baseline": 692,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tank A",
+   "owner": "tank[0]",
+   "bbox": [
+    101.78,
+    731,
+    53.75,
+    22
+   ],
+   "baseline": 749,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Süt",
+   "owner": "tank[0]",
+   "bbox": [
+    117.5,
+    757,
+    22.31,
+    18
+   ],
+   "baseline": 772,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "7.200",
+   "owner": "tank[0]",
+   "bbox": [
+    61.45,
+    789,
+    42,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "/ 10.000 L",
+   "owner": "tank[0]",
+   "bbox": [
+    111.84,
+    789,
+    84.02,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Normal",
+   "owner": "tank[0]",
+   "bbox": [
+    107.92,
+    825.91,
+    41.48,
+    16
+   ],
+   "baseline": 838.91,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18%",
+   "owner": "vessel[1]",
+   "bbox": [
+    264.98,
+    661,
+    54,
+    40
+   ],
+   "baseline": 692,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tank B",
+   "owner": "tank[1]",
+   "bbox": [
+    265.34,
+    731,
+    53.28,
+    22
+   ],
+   "baseline": 749,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Şurup",
+   "owner": "tank[1]",
+   "bbox": [
+    272.69,
+    757,
+    38.59,
+    18
+   ],
+   "baseline": 772,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.800",
+   "owner": "tank[1]",
+   "bbox": [
+    224.78,
+    789,
+    42,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "/ 10.000 L",
+   "owner": "tank[1]",
+   "bbox": [
+    275.17,
+    789,
+    84.02,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Düşük",
+   "owner": "tank[1]",
+   "bbox": [
+    282.83,
+    825.91,
+    35.31,
+    16
+   ],
+   "baseline": 838.91,
+   "lines": 1,
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "91%",
+   "owner": "vessel[2]",
+   "bbox": [
+    428.31,
+    661,
+    54,
+    40
+   ],
+   "baseline": 692,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 36,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tank C",
+   "owner": "tank[2]",
+   "bbox": [
+    428.8,
+    731,
+    53.03,
+    22
+   ],
+   "baseline": 749,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Su",
+   "owner": "tank[2]",
+   "bbox": [
+    446.91,
+    757,
+    16.81,
+    18
+   ],
+   "baseline": 772,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "9.100",
+   "owner": "tank[2]",
+   "bbox": [
+    388.11,
+    789,
+    42,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "/ 10.000 L",
+   "owner": "tank[2]",
+   "bbox": [
+    438.5,
+    789,
+    84.02,
+    18
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Normal",
+   "owner": "tank[2]",
+   "bbox": [
+    434.58,
+    825.91,
+    41.48,
+    16
+   ],
+   "baseline": 838.91,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ürün Sıcaklığı",
+   "owner": "envTemp",
+   "bbox": [
+    89.13,
+    908,
+    81.31,
+    17
+   ],
+   "baseline": 922,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4,2",
+   "owner": "envTemp",
+   "bbox": [
+    73,
+    930,
+    50.41,
+    37
+   ],
+   "baseline": 959,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 28,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "°C",
+   "owner": "envTemp",
+   "bbox": [
+    127.41,
+    943,
+    19.2,
+    21
+   ],
+   "baseline": 959,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Aktif Nozul",
+   "owner": "envNozzle",
+   "bbox": [
+    337,
+    908,
+    65.42,
+    17
+   ],
+   "baseline": 922,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "6/6",
+   "owner": "envNozzle",
+   "bbox": [
+    316,
+    930,
+    50.41,
+    37
+   ],
+   "baseline": 959,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 28,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "hazır",
+   "owner": "envNozzle",
+   "bbox": [
+    370.41,
+    943,
+    48.02,
+    21
+   ],
+   "baseline": 959,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 34,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Üretim Hızı",
+   "owner": "kpi[0]",
+   "bbox": [
+    625,
+    122,
+    69.89,
+    18
+   ],
+   "baseline": 137,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.248",
+   "owner": "kpi[0]",
+   "bbox": [
+    601,
+    146,
+    151.02,
+    69
+   ],
+   "baseline": 199,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 52,
+    "weight": 500,
+    "lineHeight": 60,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "şişe/dk",
+   "owner": "kpi[0]",
+   "bbox": [
+    760.02,
+    181,
+    75.61,
+    23
+   ],
+   "baseline": 199,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 18,
+    "weight": 400,
+    "lineHeight": 60,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Hedef 1.200 ·",
+   "owner": "kpi[0]",
+   "bbox": [
+    601,
+    225,
+    77.28,
+    17
+   ],
+   "baseline": 239,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "+%4,0",
+   "owner": "kpi[0]",
+   "bbox": [
+    681.08,
+    225,
+    37.98,
+    17
+   ],
+   "baseline": 239,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Vardiya Üretimi",
+   "owner": "kpi[1]",
+   "bbox": [
+    1021,
+    122,
+    97.17,
+    18
+   ],
+   "baseline": 137,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "58.392",
+   "owner": "kpi[1]",
+   "bbox": [
+    997,
+    146,
+    181.2,
+    69
+   ],
+   "baseline": 199,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 52,
+    "weight": 500,
+    "lineHeight": 60,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Hedef 60.000 · %97,3 tamamlandı",
+   "owner": "kpi[1]",
+   "bbox": [
+    997,
+    225,
+    200.08,
+    17
+   ],
+   "baseline": 239,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "OEE",
+   "owner": "kpi[2]",
+   "bbox": [
+    623.25,
+    310,
+    27.48,
+    18
+   ],
+   "baseline": 325,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%87,4",
+   "owner": "kpi[2]",
+   "bbox": [
+    601,
+    334,
+    151.02,
+    69
+   ],
+   "baseline": 387,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 52,
+    "weight": 500,
+    "lineHeight": 60,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Dün %85,1 ·",
+   "owner": "kpi[2]",
+   "bbox": [
+    601,
+    413,
+    67.05,
+    17
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "+2,3 puan",
+   "owner": "kpi[2]",
+   "bbox": [
+    670.86,
+    413,
+    58.92,
+    17
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Red Oranı",
+   "owner": "kpi[3]",
+   "bbox": [
+    1019.25,
+    310,
+    62.02,
+    18
+   ],
+   "baseline": 325,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%0,62",
+   "owner": "kpi[3]",
+   "bbox": [
+    997,
+    334,
+    151.02,
+    69
+   ],
+   "baseline": 387,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 52,
+    "weight": 500,
+    "lineHeight": 60,
+    "letterSpacing": -1,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Limit %1,00 ·",
+   "owner": "kpi[3]",
+   "bbox": [
+    997,
+    413,
+    74.92,
+    17
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "+0,08 puan",
+   "owner": "kpi[3]",
+   "bbox": [
+    1074.72,
+    413,
+    66.73,
+    17
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dolum Basıncı",
+   "owner": "pressureCard",
+   "bbox": [
+    631,
+    502,
+    110.58,
+    22
+   ],
+   "baseline": 520,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ölçülen",
+   "owner": "pressureCard",
+   "bbox": [
+    1141.08,
+    504.2,
+    44.98,
+    17
+   ],
+   "baseline": 518.2,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hedef 2,40 bar",
+   "owner": "pressureCard",
+   "bbox": [
+    1230.06,
+    504.2,
+    88.94,
+    17
+   ],
+   "baseline": 518.2,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,1",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    948,
+    23.6,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,2",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    867.6,
+    23.41,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,3",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    787.2,
+    23.41,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,4",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    706.8,
+    23.41,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,5",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    626.4,
+    23.41,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2,6",
+   "owner": "pressureChart",
+   "bbox": [
+    619.59,
+    546,
+    23.41,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "13:30",
+   "owner": "pressureChart",
+   "bbox": [
+    633.49,
+    968,
+    39.02,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "13:45",
+   "owner": "pressureChart",
+   "bbox": [
+    792.99,
+    968,
+    39.02,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:00",
+   "owner": "pressureChart",
+   "bbox": [
+    952.49,
+    968,
+    39.02,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:15",
+   "owner": "pressureChart",
+   "bbox": [
+    1111.99,
+    968,
+    39.02,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:30",
+   "owner": "pressureChart",
+   "bbox": [
+    1271.49,
+    968,
+    39.02,
+    17
+   ],
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Aktif Alarmlar",
+   "owner": "alarmPanel",
+   "bbox": [
+    1420.75,
+    126,
+    109.8,
+    22
+   ],
+   "baseline": 144,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "alarmBadge",
+   "bbox": [
+    1845.48,
+    128.91,
+    7.03,
+    16
+   ],
+   "baseline": 141.91,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": 18.2,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "A-214 · 14:28",
+   "owner": "alarm[0]",
+   "bbox": [
+    1458,
+    183,
+    93.61,
+    16
+   ],
+   "baseline": 195,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Tank B seviyesi kritik eşiğe yakın",
+   "owner": "alarm[0]",
+   "bbox": [
+    1458,
+    200,
+    208.92,
+    18
+   ],
+   "baseline": 215,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "W-031 · 14:05",
+   "owner": "alarm[1]",
+   "bbox": [
+    1458,
+    257,
+    93.61,
+    16
+   ],
+   "baseline": 269,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Filtre değişimine 36 saat kaldı",
+   "owner": "alarm[1]",
+   "bbox": [
+    1458,
+    274,
+    190.92,
+    18
+   ],
+   "baseline": 289,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "W-017 · 13:52",
+   "owner": "alarm[2]",
+   "bbox": [
+    1458,
+    331,
+    93.61,
+    16
+   ],
+   "baseline": 343,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Basınç dalgalanması algılandı",
+   "owner": "alarm[2]",
+   "bbox": [
+    1458,
+    348,
+    188.92,
+    18
+   ],
+   "baseline": 363,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "I-008 · 13:30",
+   "owner": "alarm[3]",
+   "bbox": [
+    1458,
+    405,
+    93.61,
+    16
+   ],
+   "baseline": 417,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Vardiya değişimi 16:00'da",
+   "owner": "alarm[3]",
+   "bbox": [
+    1458,
+    422,
+    160.66,
+    18
+   ],
+   "baseline": 437,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çalışma Modu",
+   "owner": "controlPanel",
+   "bbox": [
+    1423,
+    530,
+    108.22,
+    22
+   ],
+   "baseline": 548,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Otomatik",
+   "owner": "modeAuto",
+   "bbox": [
+    1441.25,
+    593.8,
+    64.14,
+    19
+   ],
+   "baseline": 609.8,
+   "lines": 1,
+   "color": {
+    "hex": "#04121C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 22.4,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Manuel",
+   "owner": "modeManual",
+   "bbox": [
+    1603.33,
+    593.8,
+    49.33,
+    19
+   ],
+   "baseline": 609.8,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 22.4,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bakım",
+   "owner": "modeService",
+   "bbox": [
+    1761.09,
+    593.8,
+    43.13,
+    19
+   ],
+   "baseline": 609.8,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 22.4,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Hedef Hat Hızı",
+   "owner": "speedControl",
+   "bbox": [
+    1393,
+    670,
+    90.95,
+    18
+   ],
+   "baseline": 685,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 15,
+    "weight": 400,
+    "lineHeight": 21,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1.200",
+   "owner": "speedControl",
+   "bbox": [
+    1732.17,
+    663,
+    66.02,
+    29
+   ],
+   "baseline": 685,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 22,
+    "weight": 500,
+    "lineHeight": 30.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "şişe/dk",
+   "owner": "speedControl",
+   "bbox": [
+    1804.19,
+    671,
+    58.81,
+    18
+   ],
+   "baseline": 685,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "0",
+   "owner": "speedControl",
+   "bbox": [
+    1393,
+    751.8,
+    7.2,
+    16
+   ],
+   "baseline": 763.8,
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "500",
+   "owner": "speedControl",
+   "bbox": [
+    1483.48,
+    751.8,
+    21.61,
+    16
+   ],
+   "baseline": 763.8,
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1.000",
+   "owner": "speedControl",
+   "bbox": [
+    1588.38,
+    751.8,
+    36.02,
+    16
+   ],
+   "baseline": 763.8,
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1.500",
+   "owner": "speedControl",
+   "bbox": [
+    1707.67,
+    751.8,
+    36.02,
+    16
+   ],
+   "baseline": 763.8,
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2.000",
+   "owner": "speedControl",
+   "bbox": [
+    1826.97,
+    751.8,
+    36.02,
+    16
+   ],
+   "baseline": 763.8,
+   "lines": 1,
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 16.8,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "BAŞLAT",
+   "owner": "btnStart",
+   "bbox": [
+    1484.11,
+    819,
+    77.27,
+    24
+   ],
+   "baseline": 839,
+   "lines": 1,
+   "color": {
+    "hex": "#052E14",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": 1,
+    "italic": false
+   }
+  },
+  {
+   "string": "DURAKLAT",
+   "owner": "btnPause",
+   "bbox": [
+    1711.17,
+    819,
+    106.64,
+    24
+   ],
+   "baseline": 839,
+   "lines": 1,
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": 1,
+    "italic": false
+   }
+  },
+  {
+   "string": "ACİL DURDUR",
+   "owner": "btnEmergency",
+   "bbox": [
+    1560.8,
+    920.8,
+    178.39,
+    31
+   ],
+   "baseline": 946.8,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 26,
+    "weight": 700,
+    "lineHeight": 36.4,
+    "letterSpacing": 2,
+    "italic": false
+   }
+  },
+  {
+   "string": "PLC bağlı",
+   "owner": "statusBar",
+   "bbox": [
+    48,
+    1049.7,
+    55.98,
+    17
+   ],
+   "baseline": 1063.7,
+   "lines": 1,
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Reçete:",
+   "owner": "statusBar",
+   "bbox": [
+    135.98,
+    1049.7,
+    47.69,
+    17
+   ],
+   "baseline": 1063.7,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "R-12 · Ayran 250 ml",
+   "owner": "statusBar",
+   "bbox": [
+    186.47,
+    1049.7,
+    113.59,
+    17
+   ],
+   "baseline": 1063.7,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Parti:",
+   "owner": "statusBar",
+   "bbox": [
+    332.06,
+    1049.2,
+    33.52,
+    17
+   ],
+   "baseline": 1063.2,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Barlow",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "LOT-26-0925-B",
+   "owner": "statusBar",
+   "bbox": [
+    368.38,
+    1049.2,
+    109.2,
+    18
+   ],
+   "baseline": 1063.2,
+   "lines": 1,
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "HMI-03 · v2.4.1",
+   "owner": "statusBar",
+   "bbox": [
+    1762,
+    1048.7,
+    126,
+    18
+   ],
+   "baseline": 1062.7,
+   "lines": 1,
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 19.6,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "fa:industry",
+   "owner": "logo",
+   "bbox": [
+    44,
+    27.5,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F275",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 20,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:calendar",
+   "owner": "shift",
+   "bbox": [
+    1423.52,
+    30.5,
+    12.25,
+    14
+   ],
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F133",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:user",
+   "owner": "operator",
+   "bbox": [
+    1574.44,
+    30.5,
+    12.25,
+    14
+   ],
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F007",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:droplet",
+   "owner": "tankPanel",
+   "bbox": [
+    57,
+    128,
+    13.5,
+    18
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F043",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 18,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:triangle-exclamation",
+   "owner": "tank[1]",
+   "bbox": [
+    265.83,
+    828.5,
+    11,
+    11
+   ],
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F071",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 11,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:temperature-half",
+   "owner": "envTemp",
+   "bbox": [
+    73,
+    910.5,
+    8.13,
+    13
+   ],
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F2C9",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 13,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:gauge-high",
+   "owner": "envNozzle",
+   "bbox": [
+    316,
+    910.5,
+    13,
+    13
+   ],
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F625",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 13,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:gauge-high",
+   "owner": "kpi[0]",
+   "bbox": [
+    601,
+    124,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F625",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:list-check",
+   "owner": "kpi[1]",
+   "bbox": [
+    997,
+    124,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F0AE",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:bolt",
+   "owner": "kpi[2]",
+   "bbox": [
+    601,
+    312,
+    12.25,
+    14
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F0E7",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:flask",
+   "owner": "kpi[3]",
+   "bbox": [
+    997,
+    312,
+    12.25,
+    14
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F0C3",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:gauge-high",
+   "owner": "pressureCard",
+   "bbox": [
+    601,
+    504,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F625",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 18,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:bell",
+   "owner": "alarmPanel",
+   "bbox": [
+    1393,
+    128,
+    15.75,
+    18
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F0F3",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 18,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:circle-exclamation",
+   "owner": "alarm[0]",
+   "bbox": [
+    1421,
+    194,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#EF4444",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F06A",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:triangle-exclamation",
+   "owner": "alarm[1]",
+   "bbox": [
+    1421,
+    268,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F071",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:triangle-exclamation",
+   "owner": "alarm[2]",
+   "bbox": [
+    1421,
+    342,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F071",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:circle-info",
+   "owner": "alarm[3]",
+   "bbox": [
+    1421,
+    416,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F05A",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 14,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:sliders",
+   "owner": "controlPanel",
+   "bbox": [
+    1393,
+    532,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F1DE",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 18,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:play",
+   "owner": "btnStart",
+   "bbox": [
+    1451.61,
+    821,
+    18.5,
+    20
+   ],
+   "color": {
+    "hex": "#052E14",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F04B",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 20,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:pause",
+   "owner": "btnPause",
+   "bbox": [
+    1681.17,
+    821,
+    16,
+    20
+   ],
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F04C",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 20,
+    "weight": 900
+   }
+  },
+  {
+   "match": "fa:hand",
+   "owner": "btnEmergency",
+   "bbox": [
+    1516.8,
+    923,
+    30,
+    28
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "font-glyph",
+   "codepoint": "U+F256",
+   "font": {
+    "family": "Font Awesome 7 Free",
+    "px": 28,
+    "weight": 900
+   }
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#243042",
+    "alpha": 1.0
+   },
+   "count": 58,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8A98AB",
+    "alpha": 1.0
+   },
+   "count": 40,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E6EDF5",
+    "alpha": 1.0
+   },
+   "count": 30,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#5B6878",
+    "alpha": 1.0
+   },
+   "count": 16,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#18212D",
+    "alpha": 1.0
+   },
+   "count": 13,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "fill",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F59E0B",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#121821",
+    "alpha": 1.0
+   },
+   "count": 10,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "count": 7,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 0.35
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EF4444",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#052E14",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#38BDF8",
+    "alpha": 0.12
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 0.14
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#04121C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  }
+ ],
+ "data": {
+  "pressure": {
+   "unit": "bar",
+   "setpoint": 2.4,
+   "from": "13:30",
+   "to": "14:30",
+   "stepMinutes": 2,
+   "values": [
+    2.39,
+    2.4,
+    2.44,
+    2.42,
+    2.45,
+    2.44,
+    2.42,
+    2.44,
+    2.4,
+    2.41,
+    2.37,
+    2.36,
+    2.36,
+    2.37,
+    2.33,
+    2.34,
+    2.36,
+    2.26,
+    2.25,
+    2.26,
+    2.46,
+    2.4,
+    2.45,
+    2.43,
+    2.43,
+    2.43,
+    2.43,
+    2.45,
+    2.4,
+    2.41,
+    2.39
+   ]
+  },
+  "tanks": [
+   {
+    "name": "Tank A",
+    "content": "Süt",
+    "level": 0.72,
+    "liters": 7200,
+    "capacity": 10000
+   },
+   {
+    "name": "Tank B",
+    "content": "Şurup",
+    "level": 0.18,
+    "liters": 1800,
+    "capacity": 10000
+   },
+   {
+    "name": "Tank C",
+    "content": "Su",
+    "level": 0.91,
+    "liters": 9100,
+    "capacity": 10000
+   }
+  ]
+ },
+ "states": {}
+}

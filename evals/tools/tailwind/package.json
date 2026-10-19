@@ -1,0 +1,8 @@
+{
+  "name": "s2q-eval-tailwind",
+  "private": true,
+  "description": "Tailwind CSS CLI used to compile the CSS of eval design 18 (HTML-input case)",
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.3"
+  }
+}

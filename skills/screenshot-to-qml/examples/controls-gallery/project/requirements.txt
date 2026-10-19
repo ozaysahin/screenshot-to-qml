@@ -1,0 +1,4 @@
+# Qt Quick, QML, Layouts, Shapes, Effects, VectorImage, Templates
+PySide6-Essentials>=6.8
+# Uncomment when the UI uses Qt Graphs or other add-on modules:
+# PySide6-Addons>=6.8

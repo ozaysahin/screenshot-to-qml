@@ -1,0 +1,2809 @@
+{
+ "meta": {
+  "id": "06-mobile-aliskanlik",
+  "title": "Mobil alışkanlık takip ekranı (3x DPR)",
+  "category": "mobile",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   390,
+   844
+  ],
+  "dpr": 3,
+  "captureSize": [
+   1170,
+   2532
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Nunito",
+    "qtFamily": "Nunito",
+    "legacyFamily": "Nunito",
+    "files": [
+     "Nunito-Bold.ttf",
+     "Nunito-ExtraBold.ttf",
+     "Nunito-Regular.ttf",
+     "Nunito-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     600,
+     700,
+     800
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F7F5FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F7F5FF"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "ink": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1E1B2E"
+   },
+   "muted": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#8E8AA3"
+   },
+   "border": {
+    "hex": "#ECE9F6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#ECE9F6"
+   },
+   "primary": {
+    "hex": "#6D5DFC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6D5DFC"
+   },
+   "pink": {
+    "hex": "#FF6FAE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF6FAE"
+   },
+   "success": {
+    "hex": "#22C55E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#22C55E"
+   },
+   "sky": {
+    "hex": "#E0F2FE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E0F2FE"
+   },
+   "sky-ink": {
+    "hex": "#0284C7",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0284C7"
+   },
+   "amber": {
+    "hex": "#FEF3C7",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FEF3C7"
+   },
+   "amber-ink": {
+    "hex": "#D97706",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#D97706"
+   },
+   "green": {
+    "hex": "#DCFCE7",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#DCFCE7"
+   },
+   "green-ink": {
+    "hex": "#16A34A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#16A34A"
+   },
+   "violet": {
+    "hex": "#EDE9FE",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#EDE9FE"
+   },
+   "violet-ink": {
+    "hex": "#7C3AED",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7C3AED"
+   },
+   "indigo": {
+    "hex": "#E0E7FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E0E7FF"
+   },
+   "indigo-ink": {
+    "hex": "#4338CA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4338CA"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0
+  },
+  "radius": {
+   "md": 12.0,
+   "lg": 16.0,
+   "xl": 18.0,
+   "2xl": 24.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "row": {
+    "css": "0 2px 8px rgba(30, 27, 46, 0.04)"
+   },
+   "hero": {
+    "css": "0 14px 30px rgba(109, 93, 252, 0.35)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Nunito",
+    "px": 26,
+    "weight": 800,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "4 / 6 hedef"
+   },
+   {
+    "family": "Nunito",
+    "px": 21,
+    "weight": 800,
+    "lineHeight": 26,
+    "letterSpacing": -0.3,
+    "count": 1,
+    "example": "Günaydın, Ece"
+   },
+   {
+    "family": "Nunito",
+    "px": 19,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "%67"
+   },
+   {
+    "family": "Nunito",
+    "px": 18,
+    "weight": 800,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Alışkanlıklar"
+   },
+   {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "22"
+   },
+   {
+    "family": "Nunito",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "9:41"
+   },
+   {
+    "family": "Nunito",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "EK"
+   },
+   {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "Su iç"
+   },
+   {
+    "family": "Nunito",
+    "px": 14,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Düzenle"
+   },
+   {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "%74"
+   },
+   {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Bugünkü ilerleme"
+   },
+   {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Perşembe, 25 Eylül"
+   },
+   {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "12 gün seri"
+   },
+   {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "6 / 8 bardak"
+   },
+   {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "Pzt"
+   },
+   {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Bugün"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "statusBar",
+   "role": "StatusBar",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    390,
+    47
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     14,
+     26,
+     0,
+     32
+    ]
+   }
+  },
+  {
+   "id": "header",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    47,
+    390,
+    56
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     12,
+     20,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "avatar",
+   "role": "Avatar",
+   "parent": "header",
+   "bbox": [
+    20,
+    59,
+    44,
+    44
+   ],
+   "style": {
+    "fillImage": "linear-gradient(135deg, rgb(255, 177, 153) 0%, rgb(255, 111, 174) 100%)",
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "44px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "bellButton",
+   "role": "Button",
+   "parent": "header",
+   "bbox": [
+    326,
+    59,
+    44,
+    44
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "44px",
+    "rows": "44px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "weekStrip",
+   "role": "DateStrip",
+   "parent": null,
+   "bbox": [
+    0,
+    123,
+    390,
+    68
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "normal",
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ]
+   },
+   "model": {
+    "name": "week",
+    "count": 7,
+    "itemId": "day"
+   }
+  },
+  {
+   "id": "day[0]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    20,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "done"
+   ]
+  },
+  {
+   "id": "day[1]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    71,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "done"
+   ]
+  },
+  {
+   "id": "day[2]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    122,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "done"
+   ]
+  },
+  {
+   "id": "day[3]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    173,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#6D5DFC",
+     "alpha": 1.0
+    },
+    "radius": 16,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 8.0,
+      "blur": 18.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#6D5DFC",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "day[4]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    224,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "day[5]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    275,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "day[6]",
+   "role": "DayChip",
+   "parent": "weekStrip",
+   "bbox": [
+    326,
+    123,
+    44,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 16
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 2,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "progressCard",
+   "role": "StatCard",
+   "parent": null,
+   "bbox": [
+    20,
+    211,
+    350,
+    136
+   ],
+   "style": {
+    "fillImage": "linear-gradient(125deg, rgb(109, 93, 252) 0%, rgb(255, 111, 174) 100%)",
+    "radius": 24,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 14.0,
+      "blur": 30.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#6D5DFC",
+       "alpha": 0.35
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     18,
+     20,
+     18,
+     20
+    ],
+    "clip": true
+   }
+  },
+  {
+   "id": "progressRing",
+   "role": "ProgressRing",
+   "parent": "progressCard",
+   "bbox": [
+    262,
+    235,
+    88,
+    88
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.667"
+  },
+  {
+   "id": "sectionHead",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    0,
+    371,
+    390,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "baseline",
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "habits",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    0,
+    407,
+    390,
+    380
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 10,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     0,
+     20,
+     0,
+     20
+    ]
+   },
+   "model": {
+    "name": "habits",
+    "count": 5,
+    "itemId": "habit"
+   }
+  },
+  {
+   "id": "habit[0]",
+   "role": "ListItem",
+   "parent": "habits",
+   "bbox": [
+    20,
+    407,
+    350,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "habitAction",
+   "role": "Button",
+   "parent": "habit[0]",
+   "bbox": [
+    326,
+    426,
+    30,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E0F2FE",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "30px",
+    "rows": "30px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "habit[1]",
+   "role": "ListItem",
+   "parent": "habits",
+   "bbox": [
+    20,
+    485,
+    350,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "habitCheck[0]",
+   "role": "CheckBox",
+   "parent": "habit[1]",
+   "bbox": [
+    326,
+    504,
+    30,
+    30
+   ],
+   "style": {
+    "fill": {
+     "hex": "#22C55E",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#22C55E",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "26px",
+    "rows": "26px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "habit[2]",
+   "role": "ListItem",
+   "parent": "habits",
+   "bbox": [
+    20,
+    563,
+    350,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "habit[3]",
+   "role": "ListItem",
+   "parent": "habits",
+   "bbox": [
+    20,
+    641,
+    350,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "habitCheck[1]",
+   "role": "CheckBox",
+   "parent": "habit[3]",
+   "bbox": [
+    326,
+    660,
+    30,
+    30
+   ],
+   "style": {
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#ECE9F6",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "none",
+    "rows": "none",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "habit[4]",
+   "role": "ListItem",
+   "parent": "habits",
+   "bbox": [
+    20,
+    719,
+    350,
+    68
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 2.0,
+      "blur": 8.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "habitCheck[2]",
+   "role": "CheckBox",
+   "parent": "habit[4]",
+   "bbox": [
+    326,
+    738,
+    30,
+    30
+   ],
+   "style": {
+    "radius": 50,
+    "border": {
+     "width": 2,
+     "color": {
+      "hex": "#ECE9F6",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "none",
+    "rows": "none",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "tabBar",
+   "role": "TabBar",
+   "parent": null,
+   "bbox": [
+    0,
+    756,
+    390,
+    88
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#ECE9F6",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ],
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": -8.0,
+      "blur": 24.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1B2E",
+       "alpha": 0.06
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     12,
+     0,
+     12
+    ],
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "tabToday",
+   "role": "Tab",
+   "parent": "tabBar",
+   "bbox": [
+    12,
+    765,
+    73.2,
+    79
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 3,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "tabStats",
+   "role": "Tab",
+   "parent": "tabBar",
+   "bbox": [
+    85.2,
+    765,
+    73.2,
+    79
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 3,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "fab",
+   "role": "Button",
+   "parent": "tabBar",
+   "bbox": [
+    166,
+    739,
+    58,
+    58
+   ],
+   "style": {
+    "fillImage": "linear-gradient(135deg, rgb(109, 93, 252) 0%, rgb(255, 111, 174) 100%)",
+    "radius": 50,
+    "border": {
+     "width": 4,
+     "color": {
+      "hex": "#F7F5FF",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 10.0,
+      "blur": 22.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#6D5DFC",
+       "alpha": 0.45
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "50px",
+    "rows": "50px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "tabCalendar",
+   "role": "Tab",
+   "parent": "tabBar",
+   "bbox": [
+    231.61,
+    765,
+    73.2,
+    79
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 3,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "tabProfile",
+   "role": "Tab",
+   "parent": "tabBar",
+   "bbox": [
+    304.81,
+    765,
+    73.2,
+    79
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 3,
+    "justify": "normal",
+    "align": "center"
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "9:41",
+   "owner": "statusBar",
+   "bbox": [
+    32,
+    19.5,
+    32.17,
+    22
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "EK",
+   "owner": "avatar",
+   "bbox": [
+    31.64,
+    70,
+    20.7,
+    22
+   ],
+   "baseline": 86,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 16,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Günaydın, Ece",
+   "owner": "header",
+   "bbox": [
+    76,
+    58,
+    135.38,
+    28
+   ],
+   "baseline": 79,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 21,
+    "weight": 800,
+    "lineHeight": 26,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "Perşembe, 25 Eylül",
+   "owner": "header",
+   "bbox": [
+    76,
+    85,
+    114.2,
+    18
+   ],
+   "baseline": 98,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pzt",
+   "owner": "day[0]",
+   "bbox": [
+    33.8,
+    137,
+    16.39,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "22",
+   "owner": "day[0]",
+   "bbox": [
+    31.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sal",
+   "owner": "day[1]",
+   "bbox": [
+    84.77,
+    137,
+    16.47,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23",
+   "owner": "day[1]",
+   "bbox": [
+    82.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çar",
+   "owner": "day[2]",
+   "bbox": [
+    135.19,
+    137,
+    17.63,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "24",
+   "owner": "day[2]",
+   "bbox": [
+    133.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Per",
+   "owner": "day[3]",
+   "bbox": [
+    186.41,
+    137,
+    17.17,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.8
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "25",
+   "owner": "day[3]",
+   "bbox": [
+    184.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cum",
+   "owner": "day[4]",
+   "bbox": [
+    234.31,
+    137,
+    23.36,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "26",
+   "owner": "day[4]",
+   "bbox": [
+    235.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cmt",
+   "owner": "day[5]",
+   "bbox": [
+    286.31,
+    137,
+    21.36,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "27",
+   "owner": "day[5]",
+   "bbox": [
+    286.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Paz",
+   "owner": "day[6]",
+   "bbox": [
+    338.92,
+    137,
+    18.16,
+    15
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 14,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "28",
+   "owner": "day[6]",
+   "bbox": [
+    337.8,
+    153,
+    20.41,
+    23
+   ],
+   "baseline": 170,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 17,
+    "weight": 800,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugünkü ilerleme",
+   "owner": "progressCard",
+   "bbox": [
+    40,
+    227,
+    106.59,
+    18
+   ],
+   "baseline": 240,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4 / 6 hedef",
+   "owner": "progressCard",
+   "bbox": [
+    40,
+    246,
+    126.91,
+    35
+   ],
+   "baseline": 272,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 26,
+    "weight": 800,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "Harika gidiyorsun, 2 hedef kaldı.",
+   "owner": "progressCard",
+   "bbox": [
+    40,
+    280,
+    190.11,
+    18
+   ],
+   "baseline": 293,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.9
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 gün seri",
+   "owner": "progressCard",
+   "bbox": [
+    66,
+    313,
+    63.36,
+    16
+   ],
+   "baseline": 325,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%67",
+   "owner": "progressRing",
+   "bbox": [
+    285.53,
+    266,
+    40.94,
+    26
+   ],
+   "baseline": 285,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 19,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Alışkanlıklar",
+   "owner": "sectionHead",
+   "bbox": [
+    20,
+    371,
+    108.22,
+    24
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 18,
+    "weight": 800,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Düzenle",
+   "owner": "sectionHead",
+   "bbox": [
+    316.02,
+    375,
+    53.98,
+    19
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#6D5DFC",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 14,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Su iç",
+   "owner": "habit[0]",
+   "bbox": [
+    88,
+    414.5,
+    33.84,
+    20
+   ],
+   "baseline": 429.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "6 / 8 bardak",
+   "owner": "habit[0]",
+   "bbox": [
+    88,
+    438.5,
+    65.13,
+    16
+   ],
+   "baseline": 450.5,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kitap oku",
+   "owner": "habit[1]",
+   "bbox": [
+    88,
+    498,
+    68.64,
+    20
+   ],
+   "baseline": 513,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "20 dk · tamamlandı",
+   "owner": "habit[1]",
+   "bbox": [
+    88,
+    522,
+    105.13,
+    16
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10.000 adım",
+   "owner": "habit[2]",
+   "bbox": [
+    88,
+    570.5,
+    87.95,
+    20
+   ],
+   "baseline": 585.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "7.412 adım",
+   "owner": "habit[2]",
+   "bbox": [
+    88,
+    594.5,
+    61.67,
+    16
+   ],
+   "baseline": 606.5,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "%74",
+   "owner": "habit[2]",
+   "bbox": [
+    327.98,
+    588,
+    28.02,
+    18
+   ],
+   "baseline": 601,
+   "lines": 1,
+   "color": {
+    "hex": "#16A34A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 13,
+    "weight": 800,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Meditasyon",
+   "owner": "habit[3]",
+   "bbox": [
+    88,
+    654,
+    82.08,
+    20
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10 dk · 19:00",
+   "owner": "habit[3]",
+   "bbox": [
+    88,
+    678,
+    71.69,
+    16
+   ],
+   "baseline": 690,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 16,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23:30'da uyu",
+   "owner": "habit[4]",
+   "bbox": [
+    88,
+    732,
+    91.14,
+    20
+   ],
+   "baseline": 747,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 15,
+    "weight": 800,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bugün",
+   "owner": "tabToday",
+   "bbox": [
+    31.91,
+    792,
+    33.39,
+    15
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#6D5DFC",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İstatistik",
+   "owner": "tabStats",
+   "bbox": [
+    99.69,
+    792,
+    44.22,
+    15
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Takvim",
+   "owner": "tabCalendar",
+   "bbox": [
+    250.23,
+    792,
+    35.94,
+    15
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Profil",
+   "owner": "tabProfile",
+   "bbox": [
+    327.47,
+    792,
+    27.89,
+    15
+   ],
+   "baseline": 803,
+   "lines": 1,
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Nunito",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": "normal",
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "tabler:antenna-bars-5",
+   "owner": "statusBar",
+   "bbox": [
+    300,
+    21.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler:wifi",
+   "owner": "statusBar",
+   "bbox": [
+    323,
+    21.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler:battery-3",
+   "owner": "statusBar",
+   "bbox": [
+    346,
+    21.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.2,
+   "filled": false
+  },
+  {
+   "match": "tabler:bell",
+   "owner": "bellButton",
+   "bbox": [
+    338,
+    71,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:flame",
+   "owner": "progressCard",
+   "bbox": [
+    48,
+    314,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:droplet",
+   "owner": "habit[0]",
+   "bbox": [
+    43,
+    430,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#0284C7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:plus",
+   "owner": "habitAction",
+   "bbox": [
+    333,
+    433,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#0284C7",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.6,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:book",
+   "owner": "habit[1]",
+   "bbox": [
+    43,
+    508,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#D97706",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:check",
+   "owner": "habitCheck[0]",
+   "bbox": [
+    333,
+    511,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3,
+   "filled": false
+  },
+  {
+   "match": "tabler:walk",
+   "owner": "habit[2]",
+   "bbox": [
+    43,
+    586,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#16A34A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:yoga",
+   "owner": "habit[3]",
+   "bbox": [
+    43,
+    664,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#7C3AED",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:moon",
+   "owner": "habit[4]",
+   "bbox": [
+    43,
+    742,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#4338CA",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:home",
+   "owner": "tabToday",
+   "bbox": [
+    36.59,
+    765,
+    24,
+    24
+   ],
+   "color": {
+    "hex": "#6D5DFC",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:chart-bar",
+   "owner": "tabStats",
+   "bbox": [
+    109.8,
+    765,
+    24,
+    24
+   ],
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:plus",
+   "owner": "fab",
+   "bbox": [
+    182,
+    755,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.6,
+   "filled": false
+  },
+  {
+   "match": "tabler:calendar",
+   "owner": "tabCalendar",
+   "bbox": [
+    256.2,
+    765,
+    24,
+    24
+   ],
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:user",
+   "owner": "tabProfile",
+   "bbox": [
+    329.41,
+    765,
+    24,
+    24
+   ],
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 21,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8E8AA3",
+    "alpha": 1.0
+   },
+   "count": 20,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E1B2E",
+    "alpha": 1.0
+   },
+   "count": 15,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#ECE9F6",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#22C55E",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill",
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6D5DFC",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F7F5FF",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#16A34A",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0284C7",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E0F2FE",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.8
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.85
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 0.9
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#D97706",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#7C3AED",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#4338CA",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "progress": {
+   "done": 4,
+   "total": 6
+  },
+  "streakDays": 12,
+  "week": [
+   {
+    "d": "Pzt",
+    "n": 22,
+    "done": true
+   },
+   {
+    "d": "Sal",
+    "n": 23,
+    "done": true
+   },
+   {
+    "d": "Çar",
+    "n": 24,
+    "done": true
+   },
+   {
+    "d": "Per",
+    "n": 25,
+    "today": true
+   },
+   {
+    "d": "Cum",
+    "n": 26
+   },
+   {
+    "d": "Cmt",
+    "n": 27
+   },
+   {
+    "d": "Paz",
+    "n": 28
+   }
+  ],
+  "habits": [
+   {
+    "name": "Su iç",
+    "detail": "6 / 8 bardak",
+    "progress": 0.75
+   },
+   {
+    "name": "Kitap oku",
+    "detail": "20 dk · tamamlandı",
+    "done": true
+   },
+   {
+    "name": "10.000 adım",
+    "detail": "7.412 adım",
+    "progress": 0.74
+   },
+   {
+    "name": "Meditasyon",
+    "detail": "10 dk · 19:00"
+   },
+   {
+    "name": "23:30'da uyu",
+    "detail": "Hatırlatıcı 23:00"
+   }
+  ]
+ },
+ "states": {}
+}

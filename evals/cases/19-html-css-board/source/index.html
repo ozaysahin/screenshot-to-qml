@@ -1,0 +1,892 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ekim içerik takvimi · Kalem</title>
+
+
+<style>
+@font-face{font-family:'Karla';font-weight:700;font-style:normal;font-display:block;src:url('fonts/Karla-Bold.ttf') format('truetype');}
+@font-face{font-family:'Karla';font-weight:500;font-style:normal;font-display:block;src:url('fonts/Karla-Medium.ttf') format('truetype');}
+@font-face{font-family:'Karla';font-weight:400;font-style:normal;font-display:block;src:url('fonts/Karla-Regular.ttf') format('truetype');}
+@font-face{font-family:'Karla';font-weight:600;font-style:normal;font-display:block;src:url('fonts/Karla-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+/* ==========================================================================
+   Kalem — content board
+   ========================================================================== */
+
+:root {
+  --color-bg: #F6F5F1;
+  --color-surface: #FFFFFF;
+  --color-column: #ECEAE4;
+  --color-ink: #1E1C18;
+  --color-text-2: #4A463E;
+  --color-muted: #7C776D;
+  --color-dim: #A39E93;
+  --color-border: #E2DED5;
+  --color-border-strong: #CFCAC0;
+  --color-track: #E7E4DD;
+  --color-primary: #1F6B55;
+  --color-primary-dark: #185544;
+  --color-primary-soft: #E3F0EB;
+  --color-danger: #C23B2A;
+  --color-success: #2E8A5C;
+
+  --color-blog-bg: #E4ECFB;      --color-blog-fg: #2F58B8;
+  --color-newsletter-bg: #FBEFD9; --color-newsletter-fg: #9A5B09;
+  --color-social-bg: #FBE4EC;    --color-social-fg: #B0335F;
+  --color-video-bg: #ECE5FB;     --color-video-fg: #6541B8;
+  --color-podcast-bg: #DDF2EF;   --color-podcast-fg: #1E7A6E;
+
+  --color-idea: #A39E93;
+  --color-writing: #E0A21B;
+  --color-review: #7B5CD6;
+  --color-live: #2E8A5C;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(30, 28, 24, 0.06), 0 0 0 1px rgba(30, 28, 24, 0.05);
+  --shadow-control: 0 1px 1px rgba(30, 28, 24, 0.05);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 1366px;
+  height: 768px;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: "Karla", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+svg.ic {
+  display: block;
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Top bar --------------------------------------------------------------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  height: 56px;
+  flex: none;
+  padding: 0 var(--space-6);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.workspace {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  margin-left: -8px;
+  padding: 0 8px 0 12px;
+  border-left: 1px solid var(--color-border);
+  border-radius: 0;
+  font-weight: 500;
+  color: var(--color-text-2);
+}
+
+.workspace svg.ic {
+  width: 14px;
+  height: 14px;
+  color: var(--color-dim);
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.main-nav a {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.main-nav a[aria-current="page"] {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-weight: 700;
+}
+
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 280px;
+  height: 36px;
+  padding: 0 6px 0 var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+  color: var(--color-muted);
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.search input::placeholder {
+  color: var(--color-dim);
+}
+
+.search input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.search kbd {
+  padding: 1px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-muted);
+}
+
+.icon-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  color: var(--color-muted);
+}
+
+.icon-btn__dot {
+  position: absolute;
+  top: 6px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border: 1.5px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-danger);
+}
+
+/* --- Avatars ------------------------------------------------------------- */
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 10px;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.avatar--lg {
+  width: 32px;
+  height: 32px;
+  font-size: 12px;
+}
+
+.avatar--ey { background: #F6D8C4; color: #8A3D12; }
+.avatar--zk { background: #CFE6DC; color: #1F6B55; }
+.avatar--mt { background: #D6DDF6; color: #2F4A9E; }
+.avatar--sb { background: #EAD7F2; color: #6E2F8A; }
+.avatar--ed { background: #F4E3B5; color: #7A5608; }
+.avatar--more { background: var(--color-track); color: var(--color-muted); }
+
+.avatars {
+  display: flex;
+  margin-left: auto;
+}
+
+.avatars .avatar {
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+.avatars .avatar + .avatar {
+  margin-left: -6px;
+}
+
+/* --- Toolbar ------------------------------------------------------------- */
+
+.page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 64px;
+  flex: none;
+  padding: 0 var(--space-6);
+}
+
+.toolbar__title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-right: var(--space-2);
+}
+
+.toolbar h1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.toolbar__meta {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.select {
+  position: relative;
+  display: flex;
+}
+
+.select select {
+  appearance: none;
+  height: 34px;
+  padding: 0 30px 0 10px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-control);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.select svg.ic {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 16px;
+  height: 16px;
+  color: var(--color-muted);
+  pointer-events: none;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 14px;
+  color: var(--color-text-2);
+}
+
+.checkbox input {
+  appearance: none;
+  display: grid;
+  place-content: center;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+
+.checkbox input::before {
+  content: "";
+  width: 4px;
+  height: 8px;
+  margin-top: -2px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  visibility: hidden;
+}
+
+.checkbox input:checked {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.checkbox input:checked::before {
+  visibility: visible;
+}
+
+.toolbar__end {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.segmented {
+  display: flex;
+  padding: 3px;
+  border-radius: var(--radius-lg);
+  background: var(--color-column);
+}
+
+.segmented button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 28px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.segmented button[aria-pressed="true"] {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: 0 1px 2px rgba(30, 28, 24, 0.12);
+}
+
+.segmented svg.ic {
+  width: 15px;
+  height: 15px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 14px 0 12px;
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(24, 85, 68, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* --- Board --------------------------------------------------------------- */
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  flex: 1;
+  min-height: 0;
+  padding: 0 var(--space-6) var(--space-4);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: var(--space-2);
+  border-radius: var(--radius-xl);
+  background: var(--color-column);
+}
+
+.column__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  height: 32px;
+  padding: 0 2px 0 var(--space-2);
+}
+
+.column__header h2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.column__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-idea);
+}
+
+.column--writing .column__dot { background: var(--color-writing); }
+.column--review .column__dot { background: var(--color-review); }
+.column--live .column__dot { background: var(--color-live); }
+
+.count {
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: rgba(30, 28, 24, 0.07);
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-text-2);
+}
+
+.column__header .icon-btn {
+  width: 28px;
+  height: 28px;
+  margin-left: auto;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.add-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-lg);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+/* --- Card ---------------------------------------------------------------- */
+
+.card {
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.card__tags {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.tag {
+  height: 20px;
+  padding: 0 7px;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-text-2);
+}
+
+.tag--channel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tag--blog { background: var(--color-blog-bg); color: var(--color-blog-fg); }
+.tag--newsletter { background: var(--color-newsletter-bg); color: var(--color-newsletter-fg); }
+.tag--social { background: var(--color-social-bg); color: var(--color-social-fg); }
+.tag--video { background: var(--color-video-bg); color: var(--color-video-fg); }
+.tag--podcast { background: var(--color-podcast-bg); color: var(--color-podcast-fg); }
+
+.card__title {
+  margin-top: var(--space-2);
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 24px;
+  margin-top: var(--space-3);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-muted);
+}
+
+.card__meta > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card__meta svg.ic {
+  width: 14px;
+  height: 14px;
+}
+
+.due--overdue {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.due--done {
+  color: var(--color-success);
+}
+
+.checklist {
+  gap: 6px;
+}
+
+.checklist progress {
+  appearance: none;
+  width: 36px;
+  height: 4px;
+  margin-left: 2px;
+  border: 0;
+  border-radius: 2px;
+  background: var(--color-track);
+  overflow: hidden;
+}
+
+.checklist progress::-webkit-progress-bar {
+  border-radius: 2px;
+  background: var(--color-track);
+}
+
+.checklist progress::-webkit-progress-value {
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.checklist progress::-moz-progress-bar {
+  border-radius: 2px;
+  background: var(--color-primary);
+}
+
+.checklist--complete {
+  color: var(--color-success);
+}
+
+.checklist--complete progress::-webkit-progress-value {
+  background: var(--color-success);
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand__mark"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-pen-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 21h8"></path> <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"></path></svg></span>Kalem</a>
+  <button class="workspace" type="button">Yolda Dergi<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevrons-up-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 15 5 5 5-5"></path> <path d="m7 9 5-5 5 5"></path></svg></button>
+  <nav class="main-nav" aria-label="Ana menü">
+    <a href="#">Takvim</a>
+    <a href="#" aria-current="page">İçerikler</a>
+    <a href="#">Varlıklar</a>
+    <a href="#">Raporlar</a>
+  </nav>
+  <div class="topbar__actions">
+    <label class="search">
+      <svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 21-4.34-4.34"></path> <circle cx="11" cy="11" r="8"></circle></svg>
+      <input type="search" name="q" value="sonbahar" placeholder="İçerik ara…" aria-label="İçerik ara">
+      <kbd>Ctrl K</kbd>
+    </label>
+    <button class="icon-btn" type="button" aria-label="Bildirimler"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"></path> <path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"></path></svg><span class="icon-btn__dot"></span></button>
+    <span class="avatar avatar--lg avatar--zk" title="Zeynep Kara">ZK</span>
+  </div>
+</header>
+
+<main class="page">
+  <div class="toolbar">
+    <div class="toolbar__title">
+      <h1>Ekim içerik takvimi</h1>
+      <span class="toolbar__meta">12 içerik · 5 yazar</span>
+    </div>
+    <label class="filter">Kanal
+      <span class="select">
+        <select name="channel">
+          <option selected="">Tüm kanallar</option>
+          <option>Blog</option>
+          <option>Bülten</option>
+          <option>Sosyal</option>
+          <option>Video</option>
+          <option>Podcast</option>
+        </select>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </span>
+    </label>
+    <label class="filter">Dönem
+      <span class="select">
+        <select name="month">
+          <option>Eylül 2026</option>
+          <option selected="">Ekim 2026</option>
+          <option>Kasım 2026</option>
+        </select>
+        <svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </span>
+    </label>
+    <label class="checkbox">
+      <input type="checkbox" name="overdue" checked="">
+      Gecikenleri vurgula
+    </label>
+    <div class="toolbar__end">
+      <div class="segmented" role="group" aria-label="Görünüm">
+        <button type="button" aria-pressed="true"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-square-kanban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect> <path d="M8 7v7"></path> <path d="M12 7v4"></path> <path d="M16 7v9"></path></svg>Pano</button>
+        <button type="button" aria-pressed="false"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h.01"></path> <path d="M3 12h.01"></path> <path d="M3 19h.01"></path> <path d="M8 5h13"></path> <path d="M8 12h13"></path> <path d="M8 19h13"></path></svg>Liste</button>
+      </div>
+      <button class="btn btn--primary" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Yeni içerik</button>
+    </div>
+  </div>
+
+  <div class="board">
+    <!-- Fikir -->
+    <section class="column column--idea" aria-label="Fikir">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Fikir</h2>
+        <span class="count">3</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-ellipsis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle> <circle cx="19" cy="12" r="1"></circle> <circle cx="5" cy="12" r="1"></circle></svg></button>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog">Blog</span><span class="tag">Rehber</span></div>
+          <h3 class="card__title">Kapadokya'da kamp: ilk kez gidenler için 10 ipucu</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>24 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>0/4<progress max="4" value="0"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>2</span>
+            <span class="avatars"><span class="avatar avatar--ey" title="Elif Yurt">EY</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--social">Sosyal</span></div>
+          <h3 class="card__title">Sonbahar rotaları karusel serisi</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>27 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>1/3<progress max="3" value="1"></progress></span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara">ZK</span><span class="avatar avatar--mt" title="Mert Tan">MT</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--podcast">Podcast</span><span class="tag">Röportaj</span></div>
+          <h3 class="card__title">Konuk: Kaçkarlar'da 20 yıllık bir dağ rehberi</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>30 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>0/5<progress max="5" value="0"></progress></span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora">SB</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Kart ekle</button>
+    </section>
+
+    <!-- Yazılıyor -->
+    <section class="column column--writing" aria-label="Yazılıyor">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Yazılıyor</h2>
+        <span class="count">4</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-ellipsis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle> <circle cx="19" cy="12" r="1"></circle> <circle cx="5" cy="12" r="1"></circle></svg></button>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog">Blog</span><span class="tag">SEO</span></div>
+          <h3 class="card__title">Kışlık uyku tulumu seçerken dikkat edilecekler</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>14 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>3/5<progress max="5" value="3"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>4</span>
+            <span class="avatars"><span class="avatar avatar--ed" title="Emre Doğan">ED</span><span class="avatar avatar--sb" title="Selin Bora">SB</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--newsletter">Bülten</span></div>
+          <h3 class="card__title">Ekim bülteni: yeni rotalar ve etkinlikler</h3>
+          <div class="card__meta">
+            <span class="due due--overdue"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>8 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>4/6<progress max="6" value="4"></progress></span>
+            <span class="avatars"><span class="avatar avatar--mt" title="Mert Tan">MT</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--video">Video</span><span class="tag">Kampanya</span></div>
+          <h3 class="card__title">Likya Yolu'nu tek başına yürümek: çekim planı</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>16 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>2/5<progress max="5" value="2"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>7</span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara">ZK</span><span class="avatar avatar--ey" title="Elif Yurt">EY</span><span class="avatar avatar--more">+1</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog">Blog</span></div>
+          <h3 class="card__title">Termos karşılaştırması: 6 modeli test ettik</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>20 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>1/4<progress max="4" value="1"></progress></span>
+            <span class="avatars"><span class="avatar avatar--ed" title="Emre Doğan">ED</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Kart ekle</button>
+    </section>
+
+    <!-- İncelemede -->
+    <section class="column column--review" aria-label="İncelemede">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>İncelemede</h2>
+        <span class="count">2</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-ellipsis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle> <circle cx="19" cy="12" r="1"></circle> <circle cx="5" cy="12" r="1"></circle></svg></button>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog">Blog</span><span class="tag">Rehber</span></div>
+          <h3 class="card__title">Uludağ'da ilk kış yürüyüşü için hazırlık listesi</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>10 Eki</span>
+            <span class="checklist checklist--complete"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>5/5<progress max="5" value="5"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>3</span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora">SB</span><span class="avatar avatar--ed" title="Emre Doğan">ED</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--social">Sosyal</span></div>
+          <h3 class="card__title">Takipçi fotoğrafları: #yoldayız seçkisi</h3>
+          <div class="card__meta">
+            <span class="due"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v3"></path> <path d="M16 2v3"></path> <rect x="3" y="3" width="18" height="18" rx="2"></rect> <path d="M3 9h18"></path></svg>11 Eki</span>
+            <span class="checklist"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>3/4<progress max="4" value="3"></progress></span>
+            <span class="avatars"><span class="avatar avatar--zk" title="Zeynep Kara">ZK</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Kart ekle</button>
+    </section>
+
+    <!-- Yayında -->
+    <section class="column column--live" aria-label="Yayında">
+      <header class="column__header">
+        <span class="column__dot"></span>
+        <h2>Yayında</h2>
+        <span class="count">3</span>
+        <button class="icon-btn" type="button" aria-label="Sütun seçenekleri"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-ellipsis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"></circle> <circle cx="19" cy="12" r="1"></circle> <circle cx="5" cy="12" r="1"></circle></svg></button>
+      </header>
+      <div class="cards">
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--blog">Blog</span></div>
+          <h3 class="card__title">Çadır kurarken en sık yapılan 7 hata</h3>
+          <div class="card__meta">
+            <span class="due due--done"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="m16 9-5.5 5.5L8 12"></path></svg>3 Eki</span>
+            <span class="checklist checklist--complete"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>5/5<progress max="5" value="5"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>12</span>
+            <span class="avatars"><span class="avatar avatar--ey" title="Elif Yurt">EY</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--newsletter">Bülten</span></div>
+          <h3 class="card__title">Eylül bülteni: yaz sezonunu kapatırken</h3>
+          <div class="card__meta">
+            <span class="due due--done"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="m16 9-5.5 5.5L8 12"></path></svg>1 Eki</span>
+            <span class="checklist checklist--complete"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>6/6<progress max="6" value="6"></progress></span>
+            <span class="avatars"><span class="avatar avatar--mt" title="Mert Tan">MT</span></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card__tags"><span class="tag tag--channel tag--podcast">Podcast</span></div>
+          <h3 class="card__title">Bölüm 14: Işıksız gecelerde yön bulmak</h3>
+          <div class="card__meta">
+            <span class="due due--done"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="m16 9-5.5 5.5L8 12"></path></svg>6 Eki</span>
+            <span class="checklist checklist--complete"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 5h8"></path> <path d="M13 12h8"></path> <path d="M13 19h8"></path> <path d="m3 17 2 2 4-4"></path> <path d="m3 7 2 2 4-4"></path></svg>4/4<progress max="4" value="4"></progress></span>
+            <span class="comments"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-message-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"></path></svg>5</span>
+            <span class="avatars"><span class="avatar avatar--sb" title="Selin Bora">SB</span><span class="avatar avatar--zk" title="Zeynep Kara">ZK</span></span>
+          </div>
+        </article>
+      </div>
+      <button class="add-card" type="button"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg>Kart ekle</button>
+    </section>
+  </div>
+</main>
+
+
+</body></html>

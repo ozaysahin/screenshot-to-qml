@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>Demlik &amp; Fırın — Sipariş</title>
+
+
+<style>
+@font-face{font-family:'Manrope';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/Manrope-Bold.ttf') format('truetype');}
+@font-face{font-family:'Manrope';font-weight:800;font-style:normal;font-display:block;src:url('../../../assets/fonts/Manrope-ExtraBold.ttf') format('truetype');}
+@font-face{font-family:'Manrope';font-weight:500;font-style:normal;font-display:block;src:url('../../../assets/fonts/Manrope-Medium.ttf') format('truetype');}
+@font-face{font-family:'Manrope';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/Manrope-Regular.ttf') format('truetype');}
+@font-face{font-family:'Manrope';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/Manrope-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #FFF8F1;
+  --color-surface: #FFFFFF;
+  --color-ink: #2B1D14;
+  --color-muted: #8B7B6E;
+  --color-border: #F0E4D8;
+  --color-accent: #FF6B3D;
+  --color-accent-soft: #FFE6DA;
+  --color-promo-from: #FF8A4C;
+  --color-promo-to: #FF5A36;
+  --color-peach: #FDE7D8; --color-peach-ink: #C2410C;
+  --color-latte: #EFE6DC; --color-latte-ink: #7C5A3C;
+  --color-sage: #E3EFE0; --color-sage-ink: #3F6B3A;
+  --color-sky: #DDEFF5; --color-sky-ink: #0E7490;
+  --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px; --space-7: 40px; --space-8: 56px;
+  --radius-md: 18px; --radius-lg: 20px; --radius-xl: 28px; --radius-2xl: 32px; --radius-pill: 999px;
+  --shadow-card: 0 10px 30px rgba(43, 29, 20, 0.07), 0 2px 6px rgba(43, 29, 20, 0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Manrope', sans-serif; position: relative; }
+svg.ic { width: 1em; height: 1em; display: block; }
+.page { padding: 48px 56px 0; }
+
+.header { display: flex; align-items: center; gap: 20px; }
+.logo { width: 72px; height: 72px; border-radius: 50%; background: var(--color-ink); color: var(--color-bg); display: grid; place-items: center; font-size: 36px; }
+.brand h1 { font-size: 30px; font-weight: 800; line-height: 36px; letter-spacing: -0.5px; }
+.brand p { font-size: 18px; font-weight: 500; color: var(--color-muted); line-height: 24px; }
+.header .right { margin-left: auto; display: flex; gap: 16px; align-items: center; }
+.lang { display: flex; padding: 6px; border-radius: var(--radius-pill); background: var(--color-surface); border: 1px solid var(--color-border); }
+.lang div { width: 64px; height: 48px; border-radius: var(--radius-pill); display: grid; place-items: center; font-size: 18px; font-weight: 700; color: var(--color-muted); }
+.lang div.on { background: var(--color-ink); color: var(--color-bg); }
+.serve { height: 60px; padding: 0 24px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; }
+.serve svg { font-size: 22px; }
+
+.greet { margin-top: 56px; }
+.greet h2 { font-size: 60px; font-weight: 800; line-height: 68px; letter-spacing: -1.5px; }
+.greet p { font-size: 24px; font-weight: 500; color: var(--color-muted); line-height: 32px; margin-top: 12px; }
+
+.promo { margin-top: 40px; height: 272px; border-radius: var(--radius-2xl); background: linear-gradient(135deg, var(--color-promo-from) 0%, var(--color-promo-to) 100%); position: relative; overflow: hidden; padding: 40px 48px; color: #fff; }
+.promo .tag { display: inline-flex; height: 36px; padding: 0 16px; border-radius: var(--radius-pill); background: rgba(255, 255, 255, 0.22); align-items: center; font-size: 15px; font-weight: 800; letter-spacing: 1.2px; }
+.promo h3 { font-size: 46px; font-weight: 800; line-height: 54px; margin-top: 18px; letter-spacing: -1px; }
+.promo .price { display: flex; align-items: baseline; gap: 16px; margin-top: 16px; }
+.promo .price b { font-size: 40px; font-weight: 800; line-height: 48px; }
+.promo .price s { font-size: 26px; font-weight: 600; color: rgba(255, 255, 255, 0.7); }
+.promo .bubble { position: absolute; border-radius: 50%; background: rgba(255, 255, 255, 0.16); display: grid; place-items: center; color: #fff; }
+.promo .b1 { width: 240px; height: 240px; right: 150px; top: 16px; font-size: 104px; }
+.promo .b2 { width: 190px; height: 190px; right: -20px; top: 108px; font-size: 84px; background: rgba(255, 255, 255, 0.24); }
+.promo .bubble svg { stroke-width: 1.5; }
+
+.tabs { margin-top: 44px; display: flex; gap: 16px; margin-right: -56px; overflow: hidden; }
+.tab { flex: none; height: 76px; padding: 0 32px 0 26px; border-radius: var(--radius-pill); background: var(--color-surface); border: 2px solid var(--color-border); display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; color: var(--color-ink); }
+.tab svg { font-size: 26px; color: var(--color-muted); }
+.tab.on { background: var(--color-ink); border-color: var(--color-ink); color: var(--color-bg); }
+.tab.on svg { color: var(--color-accent); }
+
+.sec { margin-top: 48px; display: flex; align-items: baseline; gap: 14px; }
+.sec h4 { font-size: 34px; font-weight: 800; line-height: 40px; letter-spacing: -0.5px; }
+.sec span { font-size: 20px; font-weight: 600; color: var(--color-muted); }
+.sec a { margin-left: auto; font-size: 20px; font-weight: 700; color: var(--color-accent); display: flex; align-items: center; gap: 6px; text-decoration: none; }
+
+.grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.card { background: var(--color-surface); border-radius: var(--radius-xl); padding: 20px 20px 24px; box-shadow: var(--shadow-card); border: 2px solid transparent; }
+.card.sel { border-color: var(--color-accent); }
+.art { height: 176px; border-radius: var(--radius-lg); display: grid; place-items: center; font-size: 92px; position: relative; }
+.art svg { stroke-width: 1.5; }
+.art .badge { position: absolute; left: 16px; top: 16px; height: 34px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-ink); font-size: 15px; font-weight: 800; display: flex; align-items: center; gap: 6px; }
+.art .badge svg { font-size: 16px; color: var(--color-accent); stroke-width: 2.5; }
+.card h5 { font-size: 27px; font-weight: 800; line-height: 34px; margin-top: 20px; letter-spacing: -0.3px; }
+.card p { font-size: 18px; font-weight: 500; color: var(--color-muted); line-height: 24px; margin-top: 4px; }
+.card .row { display: flex; align-items: center; margin-top: 20px; }
+.card .row b { font-size: 30px; font-weight: 800; line-height: 36px; }
+.add { margin-left: auto; width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--color-accent); color: #fff; display: grid; place-items: center; font-size: 32px; }
+.add svg { stroke-width: 2.5; }
+.stepper { margin-left: auto; height: 64px; border-radius: var(--radius-md); background: var(--color-accent-soft); display: flex; align-items: center; padding: 6px; gap: 6px; }
+.stepper .s { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 26px; color: var(--color-accent); background: var(--color-surface); }
+.stepper .s svg { stroke-width: 2.5; }
+.stepper .s.plus { background: var(--color-accent); color: #fff; }
+.stepper span { width: 44px; text-align: center; font-size: 26px; font-weight: 800; }
+
+.cart { position: absolute; left: 32px; right: 32px; bottom: 32px; height: 140px; border-radius: var(--radius-2xl); background: var(--color-ink); color: #fff; display: flex; align-items: center; padding: 0 28px 0 28px; gap: 22px; box-shadow: 0 -12px 40px rgba(43, 29, 20, 0.18); }
+.cart .bag { width: 84px; height: 84px; border-radius: 24px; background: rgba(255, 255, 255, 0.1); display: grid; place-items: center; font-size: 38px; position: relative; }
+.cart .bag i { position: absolute; right: -6px; top: -6px; width: 32px; height: 32px; border-radius: 50%; background: var(--color-accent); font-style: normal; font-size: 16px; font-weight: 800; display: grid; place-items: center; border: 3px solid var(--color-ink); }
+.cart .sum p { font-size: 19px; font-weight: 600; color: rgba(255, 255, 255, 0.64); line-height: 24px; }
+.cart .sum b { font-size: 40px; font-weight: 800; line-height: 48px; letter-spacing: -0.5px; }
+.pay { margin-left: auto; height: 92px; padding: 0 36px 0 44px; border-radius: 24px; background: var(--color-accent); display: flex; align-items: center; gap: 14px; font-size: 26px; font-weight: 800; }
+.pay svg { font-size: 30px; stroke-width: 2.5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="header">
+    <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"></path> <path d="M14 2v2"></path> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"></path> <path d="M6 2v2"></path></svg></div>
+    <div class="brand"><h1>Demlik &amp; Fırın</h1><p>Kızılay Şubesi</p></div>
+    <div class="right">
+      <div class="lang">
+        <div class="on">TR</div>
+        <div>EN</div>
+      </div>
+      <div class="serve"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-utensils" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path> <path d="M7 2v20"></path> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>Masaya servis</div>
+    </div>
+  </header>
+
+  <section class="greet">
+    <h2>Bugün ne içmek<br>istersin?</h2>
+    <p>Siparişini seç, 5 dakikada masana getirelim.</p>
+  </section>
+
+  <section class="promo">
+    <div class="tag">GÜNÜN FIRSATI</div>
+    <h3>Latte + Kruvasan</h3>
+    <div class="price"><b>145 ₺</b><s>180 ₺</s></div>
+    <div class="bubble b1"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"></path> <path d="M14 2v2"></path> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"></path> <path d="M6 2v2"></path></svg></div>
+    <div class="bubble b2"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-croissant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.2 18H4.774a1.5 1.5 0 0 1-1.352-.97 11 11 0 0 1 .132-6.487"></path> <path d="M18 10.2V4.774a1.5 1.5 0 0 0-.97-1.352 11 11 0 0 0-6.486.132"></path> <path d="M18 5a4 3 0 0 1 4 3 2 2 0 0 1-2 2 10 10 0 0 0-5.139 1.42"></path> <path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14"></path> <path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676"></path></svg></div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab on"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"></path> <path d="M14 2v2"></path> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"></path> <path d="M6 2v2"></path></svg>Kahveler</div>
+    <div class="tab"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20"></path> <path d="M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13"></path></svg>Çaylar</div>
+    <div class="tab"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-croissant" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.2 18H4.774a1.5 1.5 0 0 1-1.352-.97 11 11 0 0 1 .132-6.487"></path> <path d="M18 10.2V4.774a1.5 1.5 0 0 0-.97-1.352 11 11 0 0 0-6.486.132"></path> <path d="M18 5a4 3 0 0 1 4 3 2 2 0 0 1-2 2 10 10 0 0 0-5.139 1.42"></path> <path d="M5 18a3 4 0 0 0 3 4 2 2 0 0 0 2-2 10 10 0 0 1 1.42-5.14"></path> <path d="M8.709 2.554a10 10 0 0 0-6.155 6.155 1.5 1.5 0 0 0 .676 1.626l9.807 5.42a2 2 0 0 0 2.718-2.718l-5.42-9.807a1.5 1.5 0 0 0-1.626-.676"></path></svg>Fırından</div>
+    <div class="tab"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cup-soda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"></path> <path d="M5 8h14"></path> <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"></path> <path d="m12 8 1-6h2"></path></svg>Soğuk İçecekler</div>
+    <div class="tab"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cake-slice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 13H3"></path> <path d="M16 17H3"></path> <path d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6"></path> <circle cx="9" cy="7" r="2"></circle></svg>Tatlılar</div>
+  </nav>
+
+  <div class="sec"><h4>Kahveler</h4><span>12 ürün</span><a>Tümünü gör <svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="m12 5 7 7-7 7"></path></svg></a></div>
+
+  <section class="grid">
+    <article class="card">
+      <div class="art" style="background:var(--color-peach);color:var(--color-peach-ink)"><span class="badge"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg>Çok satan</span><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"></path> <path d="M14 2v2"></path> <path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"></path> <path d="M6 2v2"></path></svg></div>
+      <h5>Türk Kahvesi</h5><p>Közde, çifte kavrulmuş</p>
+      <div class="row"><b>85 ₺</b><div class="add"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div></div>
+    </article>
+    <article class="card sel">
+      <div class="art" style="background:var(--color-latte);color:var(--color-latte-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-milk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2h8"></path> <path d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"></path> <path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"></path></svg></div>
+      <h5>Latte</h5><p>Çift shot, yulaf sütü seçeneği</p>
+      <div class="row"><b>110 ₺</b>
+        <div class="stepper">
+          <div class="s"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path></svg></div><span>2</span><div class="s plus"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div>
+        </div></div>
+    </article>
+    <article class="card">
+      <div class="art" style="background:var(--color-sage);color:var(--color-sage-ink)"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-bean" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z"></path> <path d="M5.341 10.62a4 4 0 1 0 5.279-5.28"></path></svg></div>
+      <h5>Filtre Kahve</h5><p>Etiyopya Yirgacheffe</p>
+      <div class="row"><b>95 ₺</b><div class="add"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div></div>
+    </article>
+    <article class="card">
+      <div class="art" style="background:var(--color-sky);color:var(--color-sky-ink)"><span class="badge"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-snowflake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 20-1.25-2.5L6 18"></path> <path d="M10 4 8.75 6.5 6 6"></path> <path d="m14 20 1.25-2.5L18 18"></path> <path d="m14 4 1.25 2.5L18 6"></path> <path d="m17 21-3-6h-4"></path> <path d="m17 3-3 6 1.5 3"></path> <path d="M2 12h6.5L10 9"></path> <path d="m20 10-1.5 2 1.5 2"></path> <path d="M22 12h-6.5L14 15"></path> <path d="m4 10 1.5 2L4 14"></path> <path d="m7 21 3-6-1.5-3"></path> <path d="m7 3 3 6h4"></path></svg>Yeni</span><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-cup-soda" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"></path> <path d="M5 8h14"></path> <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"></path> <path d="m12 8 1-6h2"></path></svg></div>
+      <h5>Cold Brew</h5><p>18 saat soğuk demleme</p>
+      <div class="row"><b>120 ₺</b><div class="add"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="M12 5v14"></path></svg></div></div>
+    </article>
+  </section>
+</div>
+
+<footer class="cart">
+  <div class="bag"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-shopping-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 10a4 4 0 0 1-8 0"></path> <path d="M3.103 6.034h17.794"></path> <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg><i>3</i></div>
+  <div class="sum"><p>Sepetim · 3 ürün</p><b>315 ₺</b></div>
+  <div class="pay">Ödemeye Geç<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path> <path d="m12 5 7 7-7 7"></path></svg></div>
+</footer>
+
+
+</body></html>

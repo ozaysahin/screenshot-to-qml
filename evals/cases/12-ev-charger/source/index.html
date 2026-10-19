@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="tr"><head>
+<meta charset="utf-8">
+<title>kıvılcım · Şarj oturumu</title>
+
+
+<style>
+@font-face{font-family:'Titillium Web';font-weight:700;font-style:normal;font-display:block;src:url('../../../assets/fonts/TitilliumWeb-Bold.ttf') format('truetype');}
+@font-face{font-family:'Titillium Web';font-weight:300;font-style:normal;font-display:block;src:url('../../../assets/fonts/TitilliumWeb-Light.ttf') format('truetype');}
+@font-face{font-family:'Titillium Web';font-weight:400;font-style:normal;font-display:block;src:url('../../../assets/fonts/TitilliumWeb-Regular.ttf') format('truetype');}
+@font-face{font-family:'Titillium Web';font-weight:600;font-style:normal;font-display:block;src:url('../../../assets/fonts/TitilliumWeb-SemiBold.ttf') format('truetype');}
+</style>
+<style>
+:root {
+  --color-bg: #0C151E;
+  --color-panel: #131F2B;
+  --color-panel-2: #1B2937;
+  --color-border: #243547;
+  --color-text: #EAF2F8;
+  --color-text-2: #BCCAD6;
+  --color-muted: #8196A9;
+  --color-dim: #5A6E81;
+  --color-accent: #2FE39A;
+  --color-accent-2: #15BF7B;
+  --color-accent-ink: #04281A;
+  --color-accent-soft: #123A2E;
+  --color-seg-off: #213244;
+  --color-danger: #EC4B51;
+  --color-danger-2: #C8323A;
+  --color-on-danger: #FFFFFF;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px; --radius-xl: 16px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1024px; height: 600px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-text); font-family: 'Titillium Web', sans-serif; font-size: 16px; line-height: 22px; }
+svg.ic { width: 20px; height: 20px; display: block; flex: none; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* top bar */
+.topbar { height: 64px; background: var(--color-panel); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 var(--space-6); gap: var(--space-4); }
+.logo { width: 40px; height: 40px; border-radius: var(--radius-md); background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 100%); display: grid; place-items: center; color: var(--color-accent-ink); }
+.logo svg.ic { width: 22px; height: 22px; fill: var(--color-accent-ink); }
+.brand { font-size: 26px; font-weight: 700; line-height: 30px; letter-spacing: -0.3px; }
+.divider { width: 1px; height: 28px; background: var(--color-border); }
+.site { display: flex; flex-direction: column; }
+.site b { font-size: 16px; font-weight: 600; line-height: 20px; color: var(--color-text); }
+.site span { font-size: 13px; line-height: 17px; color: var(--color-muted); }
+.top-right { margin-left: auto; display: flex; align-items: center; gap: var(--space-5); }
+.net { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--color-muted); }
+.net svg.ic { width: 18px; height: 18px; color: var(--color-accent); }
+.langs { display: flex; gap: 4px; padding: 4px; border-radius: var(--radius-md); background: var(--color-bg); border: 1px solid var(--color-border); }
+.lang { width: 52px; height: 36px; border-radius: var(--radius-sm); display: grid; place-items: center; font-size: 16px; font-weight: 700; color: var(--color-muted); letter-spacing: 0.5px; }
+.lang.on { background: var(--color-accent); color: var(--color-accent-ink); }
+.clock { font-size: 26px; font-weight: 600; line-height: 30px; }
+
+/* layout */
+.content { padding: var(--space-5) var(--space-6) 0; display: flex; flex-direction: column; gap: var(--space-3); }
+.row { display: flex; gap: var(--space-4); }
+.card { background: var(--color-panel); border: 1px solid var(--color-border); border-radius: var(--radius-xl); }
+
+/* hero */
+.hero { width: 608px; height: 268px; flex: none; padding: 20px 24px 0; display: flex; flex-direction: column; }
+.hero-top { display: flex; align-items: center; justify-content: space-between; }
+.chip { height: 32px; padding: 0 14px 0 10px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
+.chip svg.ic { width: 16px; height: 16px; fill: var(--color-accent); }
+.eta { font-size: 16px; color: var(--color-muted); }
+.eta b { color: var(--color-text); font-weight: 600; }
+.pct-row { display: flex; align-items: flex-end; gap: var(--space-5); margin-top: 6px; }
+.pct { font-size: 104px; font-weight: 700; line-height: 104px; letter-spacing: -2px; }
+.pct-info { padding-bottom: 16px; }
+.pct-info span { display: block; font-size: 16px; line-height: 20px; color: var(--color-muted); }
+.pct-info b { display: block; font-size: 20px; font-weight: 600; line-height: 26px; color: var(--color-text-2); margin-top: 2px; }
+.segbar { position: relative; margin-top: 12px; }
+.segs { display: flex; gap: 4px; height: 40px; }
+.seg { flex: 1; border-radius: 5px; background: var(--color-seg-off); }
+.seg.on { background: var(--color-accent); }
+.target { position: absolute; top: -6px; bottom: -6px; width: 3px; border-radius: 2px; background: var(--color-text); left: calc((100% - 76px) * 0.8 + 62px - 1.5px); }
+.scale { position: relative; height: 20px; margin-top: 10px; font-size: 14px; line-height: 20px; color: var(--color-dim); font-weight: 600; }
+.scale span { position: absolute; top: 0; }
+.scale .mid { left: 50%; transform: translateX(-50%); }
+.scale .end { right: 0; }
+.scale .tg { left: calc((100% - 76px) * 0.8 + 62px); transform: translateX(-50%); color: var(--color-text); }
+
+/* right column */
+.side { flex: 1; display: flex; flex-direction: column; gap: var(--space-3); }
+.conn { height: 128px; padding: 16px; display: flex; align-items: center; gap: var(--space-4); }
+.conn-ico { width: 96px; height: 96px; flex: none; border-radius: var(--radius-lg); background: var(--color-panel-2); border: 1px solid var(--color-border); display: grid; place-items: center; }
+.conn-txt .lbl { display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.conn-txt .lbl svg.ic { width: 14px; height: 14px; }
+.conn-txt h2 { font-size: 34px; font-weight: 700; line-height: 38px; margin-top: 2px; }
+.conn-txt p { font-size: 15px; line-height: 20px; color: var(--color-text-2); margin-top: 2px; }
+.session { height: 128px; padding: 14px 16px; display: flex; flex-direction: column; }
+.session .lbl { font-size: 13px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.sid { font-size: 24px; font-weight: 600; line-height: 30px; letter-spacing: 2px; margin-top: 2px; }
+.kv { display: flex; margin-top: auto; padding-top: 10px; border-top: 1px solid var(--color-border); }
+.kv div { flex: 1; }
+.kv div + div { padding-left: 12px; }
+.kv span { display: block; font-size: 13px; line-height: 16px; color: var(--color-muted); }
+.kv b { display: flex; align-items: center; font-size: 17px; font-weight: 600; line-height: 22px; margin-top: 2px; }
+.kv b svg.ic { width: 15px; height: 15px; stroke-width: 2.5; margin: 0 -3px 0 1px; }
+
+/* stat tiles */
+.stats { display: flex; gap: var(--space-3); }
+.stat { flex: 1; height: 124px; padding: 14px 18px; display: flex; flex-direction: column; }
+.stat .lbl { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--color-muted); line-height: 18px; }
+.stat .lbl svg.ic { width: 18px; height: 18px; color: var(--color-accent); }
+.stat .val { display: flex; align-items: baseline; margin-top: 8px; }
+.stat .val b { font-size: 42px; font-weight: 700; line-height: 46px; letter-spacing: -0.5px; }
+.stat .val span { font-size: 18px; font-weight: 600; color: var(--color-muted); margin-left: 6px; }
+.stat .val .cur { align-self: center; width: 32px; height: 32px; margin: 2px -4px 0 -7px; stroke-width: 3; color: var(--color-text); }
+.stat .sub { font-size: 14px; line-height: 18px; color: var(--color-dim); margin-top: 4px; font-weight: 600; }
+
+/* actions */
+.actions { display: flex; align-items: center; gap: var(--space-4); margin-top: 4px; }
+.btn { height: 72px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; gap: 12px; }
+.help { width: 200px; background: var(--color-panel-2); border: 1px solid var(--color-border); font-size: 22px; font-weight: 600; color: var(--color-text); }
+.help svg.ic { width: 26px; height: 26px; color: var(--color-text-2); }
+.hint { flex: 1; display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 20px; color: var(--color-muted); }
+.hint svg.ic { width: 22px; height: 22px; color: var(--color-dim); }
+.stop { width: 420px; background: linear-gradient(180deg, var(--color-danger) 0%, var(--color-danger-2) 100%); color: var(--color-on-danger); font-size: 28px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+.stop svg.ic { width: 26px; height: 26px; fill: var(--color-on-danger); }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="logo"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg></div>
+  <div class="brand">kıvılcım</div>
+  <div class="divider"></div>
+  <div class="site"><b>ANK-0417 · Soket B</b><span>Kızılay Otoparkı, Ankara</span></div>
+  <div class="top-right">
+    <div class="net"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-signal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h.01"></path> <path d="M7 20v-4"></path> <path d="M12 20v-8"></path> <path d="M17 20V8"></path> <path d="M22 4v16"></path></svg>Çevrimiçi</div>
+    <div class="langs">
+      <div class="lang on">TR</div>
+      <div class="lang">EN</div>
+      <div class="lang">DE</div>
+    </div>
+    <div class="clock">14:32</div>
+  </div>
+</header>
+
+<main class="content">
+  <div class="row">
+    <section class="card hero">
+      <div class="hero-top">
+        <div class="chip"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg>Şarj ediliyor</div>
+        <div class="eta">Tahmini bitiş <b>14:41</b></div>
+      </div>
+      <div class="pct-row">
+        <div class="pct">%70</div>
+        <div class="pct-info"><span>Batarya doluluğu</span><b>Başlangıç %22 · Hedef %80</b></div>
+      </div>
+      <div class="segbar">
+        <div class="segs">
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+          <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg on"></div><div class="seg"></div>
+          <div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div>
+        </div>
+        <div class="target"></div>
+      </div>
+      <div class="scale tnum"><span>%0</span><span class="mid">%50</span><span class="tg">Hedef %80</span><span class="end">%100</span></div>
+    </section>
+
+    <div class="side">
+      <section class="card conn">
+        <div class="conn-ico">
+          <svg width="64" height="72" viewBox="0 0 64 72" fill="none" stroke-width="2">
+            <path d="M19.35,6 H44.65 A22,22 0 1 1 19.35,6 Z" stroke="#BCCAD6"></path>
+            <circle cx="25" cy="13" r="3" stroke="#BCCAD6"></circle><circle cx="39" cy="13" r="3" stroke="#BCCAD6"></circle>
+            <circle cx="19" cy="25.5" r="4.2" stroke="#5A6E81"></circle><circle cx="32" cy="25.5" r="4.2" stroke="#BCCAD6"></circle><circle cx="45" cy="25.5" r="4.2" stroke="#5A6E81"></circle>
+            <circle cx="25" cy="37" r="4.2" stroke="#5A6E81"></circle><circle cx="39" cy="37" r="4.2" stroke="#5A6E81"></circle>
+            <rect x="11" y="50" width="42" height="21" rx="10.5" stroke="#BCCAD6"></rect>
+            <circle cx="22.5" cy="60.5" r="5.5" fill="#2FE39A" stroke="#2FE39A"></circle><circle cx="41.5" cy="60.5" r="5.5" fill="#2FE39A" stroke="#2FE39A"></circle>
+          </svg>
+        </div>
+        <div class="conn-txt">
+          <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-plug-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z"></path> <path d="m2 22 3-3"></path> <path d="M7.5 13.5 10 11"></path> <path d="M10.5 16.5 13 14"></path> <path d="m18 3-4 4h6l-4 4"></path></svg>Bağlı konnektör</div>
+          <h2>CCS2</h2>
+          <p>DC hızlı şarj · maks. 180 kW</p>
+        </div>
+      </section>
+      <section class="card session">
+        <div class="lbl">Oturum no</div>
+        <div class="sid tnum">2609 3041 7218</div>
+        <div class="kv tnum">
+          <div><span>Başlangıç</span><b>14:07</b></div>
+          <div><span>Geçen süre</span><b>25:14</b></div>
+          <div><span>Birim fiyat</span><b>9,00<svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-turkish-lira" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4 5 9"></path> <path d="m15 8.5-10 5"></path> <path d="M18 12a9 9 0 0 1-9 9V3"></path></svg>/kWh</b></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="stats">
+    <div class="card stat">
+      <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-battery-charging" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m11 7-3 5h4l-3 5"></path> <path d="M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935"></path> <path d="M22 14v-4"></path> <path d="M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936"></path></svg>Aktarılan enerji</div>
+      <div class="val tnum"><b>32,6</b><span>kWh</span></div>
+      <div class="sub">Oturum başından beri</div>
+    </div>
+    <div class="card stat">
+      <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 14 4-4"></path> <path d="M3.34 19a10 10 0 1 1 17.32 0"></path></svg>Anlık güç</div>
+      <div class="val tnum"><b>98,4</b><span>kW</span></div>
+      <div class="sub">400 V · 246 A</div>
+    </div>
+    <div class="card stat">
+      <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"></line> <line x1="12" x2="15" y1="14" y2="11"></line> <circle cx="12" cy="14" r="8"></circle></svg>Kalan süre</div>
+      <div class="val tnum"><b>9</b><span>dk</span></div>
+      <div class="sub">Hedef %80'e kadar</div>
+    </div>
+    <div class="card stat">
+      <div class="lbl"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-receipt-turkish-lira" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 7v10a5 5 0 0 0 5-5"></path> <path d="m14 8-6 3"></path> <path d="M4 3a1 1 0 0 1 1-1 1.3 1.3 0 0 1 .7.2l.933.6a1.3 1.3 0 0 0 1.4 0l.934-.6a1.3 1.3 0 0 1 1.4 0l.933.6a1.3 1.3 0 0 0 1.4 0l.933-.6a1.3 1.3 0 0 1 1.4 0l.934.6a1.3 1.3 0 0 0 1.4 0l.933-.6A1.3 1.3 0 0 1 19 2a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1 1.3 1.3 0 0 1-.7-.2l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.934.6a1.3 1.3 0 0 1-1.4 0l-.933-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-1.4 0l-.934-.6a1.3 1.3 0 0 0-1.4 0l-.933.6a1.3 1.3 0 0 1-.7.2 1 1 0 0 1-1-1z"></path></svg>Tutar</div>
+      <div class="val tnum"><svg xmlns="http://www.w3.org/2000/svg" class="ic cur lucide lucide-turkish-lira" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 4 5 9"></path> <path d="m15 8.5-10 5"></path> <path d="M18 12a9 9 0 0 1-9 9V3"></path></svg><b>293,40</b></div>
+      <div class="sub">KDV dahil</div>
+    </div>
+  </section>
+
+  <div class="actions">
+    <div class="btn help"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-circle-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle> <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path> <path d="M12 17h.01"></path></svg>Yardım</div>
+    <div class="hint"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"></rect> <line x1="2" x2="22" y1="10" y2="10"></line> <path d="M6 14h2"></path></svg>Kartınızı okutarak da şarjı durdurabilirsiniz.</div>
+    <div class="btn stop"><svg xmlns="http://www.w3.org/2000/svg" class="ic lucide lucide-square" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect></svg>Şarjı durdur</div>
+  </div>
+</main>
+
+
+</body></html>

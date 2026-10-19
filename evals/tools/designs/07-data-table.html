@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Cihaz Envanteri</title>
+<script type="application/json" id="case-meta">
+{"id": "07-data-table", "title": "Veri tablosu — filtre, seçim, sıralama, sayfalama", "category": "table", "profile": "desktop",
+ "viewport": [1440, 900], "dpr": 1, "fonts": ["Inter", "JetBrains Mono"]}
+</script>
+<script type="application/json" id="case-data">
+{"total": 134, "page": 1, "pageSize": 10, "pages": 14, "sort": {"column": "lastSeen", "order": "desc"}, "filters": {"type": "Jetson"}, "selected": ["rpi5-kapi-03"],
+ "rows": [
+  {"name": "jetson-orin-a12", "serial": "JOA-24-00812", "type": "Jetson Orin NX", "location": "Ankara · Hat 3", "status": "online", "cpu": 42, "lastSeen": "12 sn önce"},
+  {"name": "jetson-orin-a13", "serial": "JOA-24-00813", "type": "Jetson Orin NX", "location": "Ankara · Hat 3", "status": "online", "cpu": 67, "lastSeen": "18 sn önce"},
+  {"name": "rpi5-kapi-03", "serial": "RP5-23-11204", "type": "Raspberry Pi 5", "location": "Çankaya · Giriş", "status": "online", "cpu": 23, "lastSeen": "25 sn önce"},
+  {"name": "kv260-hat-2", "serial": "KV2-24-00077", "type": "Kria KV260", "location": "Ankara · Hat 2", "status": "online", "cpu": 81, "lastSeen": "31 sn önce"},
+  {"name": "rpi4-lobi-01", "serial": "RP4-21-09982", "type": "Raspberry Pi 4", "location": "Çankaya · Lobi", "status": "online", "cpu": 15, "lastSeen": "1 dk önce"},
+  {"name": "jetson-orin-a14", "serial": "JOA-24-00814", "type": "Jetson Orin NX", "location": "Ankara · Hat 4", "status": "online", "cpu": 55, "lastSeen": "1 dk önce"},
+  {"name": "jetson-orin-a15", "serial": "JOA-24-00815", "type": "Jetson Orin NX", "location": "Ankara · Hat 4", "status": "online", "cpu": 38, "lastSeen": "2 dk önce"},
+  {"name": "jetson-nano-b07", "serial": "JNB-22-03391", "type": "Jetson Nano", "location": "İzmir · Depo", "status": "maintenance", "cpu": null, "lastSeen": "18 dk önce"},
+  {"name": "jetson-tx2-c01", "serial": "JTX-21-00456", "type": "Jetson TX2", "location": "Bursa · Ar-Ge", "status": "offline", "cpu": null, "lastSeen": "3 gün önce"},
+  {"name": "orbitty-tx2-02", "serial": "ORB-20-00121", "type": "Jetson TX2 · Orbitty", "location": "Konya · Saha", "status": "offline", "cpu": null, "lastSeen": "5 gün önce"}]}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-head: #F8FAFC;
+  --color-ink: #0F172A;
+  --color-text-2: #334155;
+  --color-muted: #64748B;
+  --color-dim: #94A3B8;
+  --color-border: #E2E8F0;
+  --color-row-border: #F1F5F9;
+  --color-primary: #0F766E;
+  --color-primary-soft: #F0FDFA;
+  --color-primary-border: #99F6E4;
+  --color-success: #15803D; --color-success-soft: #F0FDF4; --color-success-dot: #22C55E;
+  --color-warning: #B45309; --color-warning-soft: #FFFBEB; --color-warning-bar: #F59E0B;
+  --color-neutral: #64748B; --color-neutral-soft: #F1F5F9;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-8: 32px;
+  --radius-sm: 4px; --radius-md: 6px; --radius-lg: 8px; --radius-xl: 12px; --radius-pill: 999px;
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1440px; height: 900px; overflow: hidden; }
+body { background: var(--color-bg); color: var(--color-ink); font-family: 'Inter', sans-serif; font-size: 14px; line-height: 20px; }
+svg.ic { width: 18px; height: 18px; display: block; flex: none; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+
+.appbar { height: 60px; background: var(--color-surface); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; padding: 0 32px; gap: 36px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; }
+.brand i { width: 32px; height: 32px; border-radius: var(--radius-lg); background: var(--color-primary); color: #fff; display: grid; place-items: center; }
+.links { display: flex; gap: 4px; }
+.links a { height: 36px; padding: 0 12px; border-radius: var(--radius-md); display: flex; align-items: center; font-size: 14px; font-weight: 500; color: var(--color-muted); }
+.links a.on { background: var(--color-neutral-soft); color: var(--color-ink); font-weight: 600; }
+.appbar .r { margin-left: auto; display: flex; align-items: center; gap: 8px; color: var(--color-muted); }
+.ib { width: 36px; height: 36px; border-radius: var(--radius-md); display: grid; place-items: center; }
+.av { width: 32px; height: 32px; border-radius: 50%; background: #CCFBF1; color: var(--color-primary); font-size: 12px; font-weight: 700; display: grid; place-items: center; margin-left: 8px; }
+
+.page { padding: 22px 32px 0; }
+.crumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--color-muted); }
+.crumb svg.ic { width: 14px; height: 14px; color: var(--color-dim); }
+.crumb b { color: var(--color-text-2); font-weight: 500; }
+.ph { display: flex; align-items: center; gap: 10px; margin-top: 6px; }
+.ph h1 { font-size: 24px; font-weight: 700; line-height: 32px; letter-spacing: -0.4px; }
+.cnt { height: 24px; padding: 0 9px; border-radius: var(--radius-pill); background: var(--color-neutral-soft); color: var(--color-muted); font-size: 12px; font-weight: 600; display: grid; place-items: center; }
+.ph .sp { flex: 1; }
+.btn { height: 38px; padding: 0 14px; border-radius: var(--radius-lg); display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; }
+.btn svg.ic { width: 16px; height: 16px; }
+.btn.sec { background: var(--color-surface); border: 1px solid var(--color-border); color: var(--color-text-2); box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04); }
+.btn.pri { background: var(--color-primary); color: #fff; }
+
+.card { margin-top: 18px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xl); box-shadow: var(--shadow-card); overflow: hidden; }
+.tools { height: 64px; padding: 0 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--color-border); }
+.search { width: 300px; height: 38px; border: 1px solid var(--color-border); border-radius: var(--radius-lg); display: flex; align-items: center; gap: 8px; padding: 0 12px; color: var(--color-dim); font-size: 14px; margin-right: 4px; }
+.search svg.ic { width: 16px; height: 16px; }
+.chip { height: 34px; padding: 0 10px 0 12px; border-radius: var(--radius-lg); border: 1px dashed #CBD5E1; display: flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--color-text-2); }
+.chip svg.ic { width: 14px; height: 14px; color: var(--color-dim); }
+.chip b { font-weight: 600; color: var(--color-ink); }
+.chip.on { border: 1px solid var(--color-primary-border); background: var(--color-primary-soft); color: var(--color-primary); }
+.chip.on b { color: var(--color-primary); } .chip.on svg.ic { color: var(--color-primary); }
+.clear { font-size: 13px; font-weight: 600; color: var(--color-primary); margin-left: 6px; }
+.tools .sp { flex: 1; }
+.seg { display: flex; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+.seg div { width: 36px; height: 34px; display: grid; place-items: center; color: var(--color-dim); }
+.seg div.on { background: var(--color-neutral-soft); color: var(--color-ink); }
+.seg div + div { border-left: 1px solid var(--color-border); }
+.seg svg.ic { width: 16px; height: 16px; }
+
+table { width: 100%; border-collapse: collapse; }
+th { height: 42px; background: var(--color-head); border-bottom: 1px solid var(--color-border); text-align: left; font-size: 12px; font-weight: 600; color: var(--color-muted); padding: 0 12px; white-space: nowrap; }
+th .sort { display: inline-flex; align-items: center; gap: 4px; color: var(--color-ink); }
+th .sort svg.ic { width: 14px; height: 14px; color: var(--color-primary); }
+td { height: 52px; border-bottom: 1px solid var(--color-row-border); padding: 0 12px; font-size: 14px; color: var(--color-text-2); white-space: nowrap; }
+th:first-child, td:first-child { width: 48px; padding: 0 0 0 20px; }
+tr.sel td { background: var(--color-primary-soft); }
+tr.hover td { background: var(--color-bg); }
+tr:last-child td { border-bottom: none; }
+.cb { width: 16px; height: 16px; border-radius: var(--radius-sm); border: 1.5px solid #CBD5E1; background: var(--color-surface); display: grid; place-items: center; }
+.cb.on, .cb.ind { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.cb svg.ic { width: 12px; height: 12px; stroke-width: 3; }
+.dev { display: flex; align-items: center; gap: 10px; }
+.dev i { width: 30px; height: 30px; border-radius: var(--radius-lg); background: var(--color-neutral-soft); color: var(--color-muted); display: grid; place-items: center; }
+.dev i svg.ic { width: 16px; height: 16px; }
+.dev b { font-weight: 600; color: var(--color-ink); }
+.st { display: inline-flex; align-items: center; gap: 6px; height: 24px; padding: 0 9px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 600; }
+.st.on { background: var(--color-success-soft); color: var(--color-success); }
+.st.on::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-success-dot); }
+.st.mt { background: var(--color-warning-soft); color: var(--color-warning); }
+.st.mt svg.ic { width: 12px; height: 12px; }
+.st.off { background: var(--color-neutral-soft); color: var(--color-neutral); }
+.st.off::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--color-dim); }
+.cpu { display: flex; align-items: center; gap: 10px; }
+.cpu .b { width: 64px; height: 6px; border-radius: var(--radius-pill); background: var(--color-neutral-soft); overflow: hidden; }
+.cpu .b i { display: block; height: 100%; border-radius: var(--radius-pill); background: var(--color-primary); }
+.cpu .b i.hi { background: var(--color-warning-bar); }
+.cpu span { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--color-muted); width: 30px; }
+.dim { color: var(--color-dim); }
+td.act { width: 52px; color: var(--color-dim); }
+
+.foot { height: 58px; padding: 0 16px 0 20px; display: flex; align-items: center; gap: 16px; border-top: 1px solid var(--color-border); font-size: 13px; color: var(--color-muted); }
+.foot b { color: var(--color-ink); font-weight: 600; }
+.size { height: 32px; padding: 0 8px 0 10px; border: 1px solid var(--color-border); border-radius: var(--radius-md); display: flex; align-items: center; gap: 6px; color: var(--color-text-2); }
+.size svg.ic { width: 14px; height: 14px; color: var(--color-dim); }
+.foot .sp { flex: 1; }
+.pg { display: flex; gap: 4px; }
+.pg div { min-width: 32px; height: 32px; padding: 0 6px; border-radius: var(--radius-md); display: grid; place-items: center; font-size: 13px; font-weight: 500; color: var(--color-text-2); }
+.pg div.on { background: var(--color-primary); color: #fff; font-weight: 600; }
+.pg div.nav { border: 1px solid var(--color-border); }
+.pg div.dis { color: #CBD5E1; }
+.pg svg.ic { width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+<header class="appbar" data-node="appBar" data-role="Header">
+  <div class="brand"><i><i data-icon="tabler:server-2" class="ic"></i></i>Filo Yönetimi</div>
+  <nav class="links" data-node="mainNav" data-role="TabBar">
+    <a data-node="navLink" data-role="Tab">Panel</a><a class="on" data-node="navLink" data-role="Tab" data-state="selected">Envanter</a><a data-node="navLink" data-role="Tab">Dağıtımlar</a><a data-node="navLink" data-role="Tab">Raporlar</a>
+  </nav>
+  <div class="r"><div class="ib"><i data-icon="tabler:help-circle" class="ic"></i></div><div class="ib"><i data-icon="tabler:bell" class="ic"></i></div><div class="av">AK</div></div>
+</header>
+
+<main class="page">
+  <div class="crumb" data-node="breadcrumb" data-role="Breadcrumb">Yönetim<i data-icon="tabler:chevron-right" class="ic"></i><b>Envanter</b></div>
+  <div class="ph" data-node="pageHeader">
+    <h1>Cihaz Envanteri</h1><span class="cnt">134</span>
+    <div class="sp"></div>
+    <div class="btn sec" data-node="exportButton" data-role="Button"><i data-icon="tabler:download" class="ic"></i>Dışa aktar</div>
+    <div class="btn pri" data-node="addButton" data-role="Button"><i data-icon="tabler:plus" class="ic"></i>Cihaz ekle</div>
+  </div>
+
+  <section class="card" data-node="tableCard" data-role="Table">
+    <div class="tools" data-node="toolbar" data-role="ToolBar">
+      <div class="search" data-node="search" data-role="TextField" data-state="placeholder"><i data-icon="tabler:search" class="ic"></i>Ad, seri no veya konum ara…</div>
+      <div class="chip" data-node="filterStatus" data-role="FilterChip">Durum: <b>Tümü</b><i data-icon="tabler:chevron-down" class="ic"></i></div>
+      <div class="chip on" data-node="filterType" data-role="FilterChip" data-state="active">Tür: <b>Jetson</b><i data-icon="tabler:x" class="ic"></i></div>
+      <div class="chip" data-node="filterLocation" data-role="FilterChip">Konum<i data-icon="tabler:chevron-down" class="ic"></i></div>
+      <span class="clear">Filtreleri temizle</span>
+      <div class="sp"></div>
+      <div class="btn sec" data-node="columnsButton" data-role="Button" style="height:34px"><i data-icon="tabler:columns-3" class="ic"></i>Sütunlar</div>
+      <div class="seg" data-node="viewToggle" data-role="SegmentedControl"><div class="on" data-state="selected"><i data-icon="tabler:list" class="ic"></i></div><div><i data-icon="tabler:layout-grid" class="ic"></i></div></div>
+    </div>
+    <table>
+      <thead><tr data-node="headerRow" data-role="HeaderRow">
+        <th><span class="cb ind" data-node="selectAll" data-role="CheckBox" data-state="partial"><i data-icon="tabler:minus" class="ic"></i></span></th>
+        <th style="width:220px">Cihaz</th><th style="width:150px">Seri no</th><th style="width:180px">Tür</th><th style="width:170px">Konum</th><th style="width:140px">Durum</th><th style="width:140px">CPU</th>
+        <th><span class="sort">Son görülme<i data-icon="tabler:arrow-down" class="ic"></i></span></th><th></th></tr></thead>
+      <tbody data-node="rows" data-model="devices">
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-orin-a12</b></div></td><td class="mono">JOA-24-00812</td><td>Jetson Orin NX</td><td>Ankara · Hat 3</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:42%"></i></div><span>42%</span></div></td><td>12 sn önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-orin-a13</b></div></td><td class="mono">JOA-24-00813</td><td>Jetson Orin NX</td><td>Ankara · Hat 3</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:67%"></i></div><span>67%</span></div></td><td>18 sn önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr class="sel" data-node="row" data-role="TableRow" data-state="selected"><td><span class="cb on"><i data-icon="tabler:check" class="ic"></i></span></td><td><div class="dev"><i><i data-icon="tabler:cpu-2" class="ic"></i></i><b>rpi5-kapi-03</b></div></td><td class="mono">RP5-23-11204</td><td>Raspberry Pi 5</td><td>Çankaya · Giriş</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:23%"></i></div><span>23%</span></div></td><td>25 sn önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu-2" class="ic"></i></i><b>kv260-hat-2</b></div></td><td class="mono">KV2-24-00077</td><td>Kria KV260</td><td>Ankara · Hat 2</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i class="hi" style="width:81%"></i></div><span>81%</span></div></td><td>31 sn önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr class="hover" data-node="row" data-role="TableRow" data-state="hovered"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu-2" class="ic"></i></i><b>rpi4-lobi-01</b></div></td><td class="mono">RP4-21-09982</td><td>Raspberry Pi 4</td><td>Çankaya · Lobi</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:15%"></i></div><span>15%</span></div></td><td>1 dk önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-orin-a14</b></div></td><td class="mono">JOA-24-00814</td><td>Jetson Orin NX</td><td>Ankara · Hat 4</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:55%"></i></div><span>55%</span></div></td><td>1 dk önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-orin-a15</b></div></td><td class="mono">JOA-24-00815</td><td>Jetson Orin NX</td><td>Ankara · Hat 4</td><td><span class="st on">Çevrimiçi</span></td><td><div class="cpu"><div class="b"><i style="width:38%"></i></div><span>38%</span></div></td><td>2 dk önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-nano-b07</b></div></td><td class="mono">JNB-22-03391</td><td>Jetson Nano</td><td>İzmir · Depo</td><td><span class="st mt"><i data-icon="tabler:tool" class="ic"></i>Bakımda</span></td><td class="dim">—</td><td>18 dk önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>jetson-tx2-c01</b></div></td><td class="mono">JTX-21-00456</td><td>Jetson TX2</td><td>Bursa · Ar-Ge</td><td><span class="st off">Çevrimdışı</span></td><td class="dim">—</td><td>3 gün önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+        <tr data-node="row" data-role="TableRow"><td><span class="cb"></span></td><td><div class="dev"><i><i data-icon="tabler:cpu" class="ic"></i></i><b>orbitty-tx2-02</b></div></td><td class="mono">ORB-20-00121</td><td>Jetson TX2 · Orbitty</td><td>Konya · Saha</td><td><span class="st off">Çevrimdışı</span></td><td class="dim">—</td><td>5 gün önce</td><td class="act"><i data-icon="tabler:dots-vertical" class="ic"></i></td></tr>
+      </tbody>
+    </table>
+    <div class="foot" data-node="tableFooter" data-role="Footer">
+      <span><b>134</b> kayıttan <b>1–10</b> arası · <b>1</b> seçili</span>
+      <div class="sp"></div>
+      <span>Sayfa başına</span><div class="size" data-node="pageSize" data-role="ComboBox">10<i data-icon="tabler:selector" class="ic"></i></div>
+      <div class="pg" data-node="pagination" data-role="Pagination" data-value="1">
+        <div class="nav dis"><i data-icon="tabler:chevron-left" class="ic"></i></div><div class="on">1</div><div>2</div><div>3</div><div>…</div><div>14</div><div class="nav"><i data-icon="tabler:chevron-right" class="ic"></i></div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

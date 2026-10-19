@@ -1,0 +1,8 @@
+-r skills/screenshot-to-qml/scripts/requirements.txt
+pytest>=8
+ruff>=0.6
+# eval case builder (evals/tools): headless Chromium + font tooling
+playwright>=1.45
+fonttools>=4.50
+brotli
+pyyaml

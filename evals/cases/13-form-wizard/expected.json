@@ -1,0 +1,52 @@
+{
+ "id": "13-form-wizard",
+ "summary": "1280x800 device-registration wizard at DPR 1.25 with an open date-picker popup over the form.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1600,
+   1000
+  ],
+  "dpr": 1.25,
+  "designSize": [
+   1280,
+   800
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "DPR 1.25 handled: design size 1280x800.",
+  "Stepper from a model of 5: 2 completed (check icons), 1 current (ring), 2 upcoming; uppercase captions with Turkish İ.",
+  "Text fields: one filled, one with placeholder; the date field focused (primary border + ring).",
+  "Calendar popup above the form (not clipped by the card): 'Ekim 2026', prev/next, Monday-first weekday row, 42-day grid from a model with disabled, today, selected and outside-month states, 'Temizle'/'Bugün'.",
+  "ComboBox 'Ankara · Ostim Deposu'; TextArea with wrapped note and counter '84/200'.",
+  "Tag input with 3 removable chips from a model and a placeholder.",
+  "Dashed-border drop zone and an upload row with a progress bar at 0.64 and a cancel button.",
+  "Footer: 'Geri' secondary, 'Taslak olarak kaydet' ghost, 'Devam' primary."
+ ],
+ "niceToHave": [
+  "Month grid generated from a date.",
+  "Counter bound to the text length."
+ ],
+ "allowedApproximations": [
+  "Dashed border with a Shape dash pattern.",
+  "Popup shadow merged into one layer."
+ ],
+ "forbidden": [
+  "Popup clipped inside the card.",
+  "Calendar drawn as an image."
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "id": "10-dashboard-ops-dark",
+ "summary": "1920x1080 dark network-operations dashboard: gauges, a 7x24 heatmap, a traffic chart, incidents and a live log.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1920,
+   1080
+  ],
+  "dpr": 1,
+  "designSize": [
+   1920,
+   1080
+  ]
+ },
+ "target": "pyside6",
+ "mode": "production",
+ "profile": "desktop",
+ "minQt": "6.8",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Sora for UI text and DM Mono for numbers, ids, the clock and the log; both bundled.",
+  "Top bar: breadcrumb with the last item emphasized, static 'CANLI' pill, search field with placeholder and '/' hint, clock, bell badge, avatar.",
+  "Three semicircle gauges from one component (0.47 / 0.81 / 0.66) with threshold ticks; arc color and chip follow state (warning on 'Bellek'); no needle.",
+  "Latency heatmap: 168 cells (7 x 24) from a model, colored by a 5-step scale from the data; day and hour labels, legend, region ComboBox.",
+  "Throughput chart: two 49-point series with vertical gradient fills, dotted grid, legend with current values.",
+  "Incident list from a model of 5 rows; severity chip is one component with 3 variants.",
+  "Log panel: 12 lines in DM Mono from a model, colored level tags, columns aligned by the monospace font; the last line clipped by the panel edge."
+ ],
+ "niceToHave": [
+  "Heatmap delegate maps value to color through thresholds.",
+  "Log as a ListView fed by a model."
+ ],
+ "allowedApproximations": [
+  "Curve smoothing and gradient opacity.",
+  "Live dot ring drawn as a second circle."
+ ],
+ "forbidden": [
+  "Gauges or heatmap as images.",
+  "A gauge needle."
+ ]
+}

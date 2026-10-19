@@ -1,0 +1,7576 @@
+{
+ "meta": {
+  "id": "19-html-css-board",
+  "title": "HTML/CSS kanban panosu — içerik takvimi (HTML girdi)",
+  "category": "html",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1366,
+   768
+  ],
+  "dpr": 2,
+  "captureSize": [
+   2732,
+   1536
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Karla",
+    "qtFamily": "Karla",
+    "legacyFamily": "Karla",
+    "files": [
+     "Karla-Bold.ttf",
+     "Karla-Medium.ttf",
+     "Karla-Regular.ttf",
+     "Karla-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F6F5F1",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F6F5F1"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "column": {
+    "hex": "#ECEAE4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#ECEAE4"
+   },
+   "ink": {
+    "hex": "#1E1C18",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1E1C18"
+   },
+   "text-2": {
+    "hex": "#4A463E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4A463E"
+   },
+   "muted": {
+    "hex": "#7C776D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7C776D"
+   },
+   "dim": {
+    "hex": "#A39E93",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A39E93"
+   },
+   "border": {
+    "hex": "#E2DED5",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E2DED5"
+   },
+   "border-strong": {
+    "hex": "#CFCAC0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#CFCAC0"
+   },
+   "track": {
+    "hex": "#E7E4DD",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E7E4DD"
+   },
+   "primary": {
+    "hex": "#1F6B55",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1F6B55"
+   },
+   "primary-dark": {
+    "hex": "#185544",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#185544"
+   },
+   "primary-soft": {
+    "hex": "#E3F0EB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E3F0EB"
+   },
+   "danger": {
+    "hex": "#C23B2A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C23B2A"
+   },
+   "success": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2E8A5C"
+   },
+   "blog-bg": {
+    "hex": "#E4ECFB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E4ECFB"
+   },
+   "blog-fg": {
+    "hex": "#2F58B8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2F58B8"
+   },
+   "newsletter-bg": {
+    "hex": "#FBEFD9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FBEFD9"
+   },
+   "newsletter-fg": {
+    "hex": "#9A5B09",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#9A5B09"
+   },
+   "social-bg": {
+    "hex": "#FBE4EC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FBE4EC"
+   },
+   "social-fg": {
+    "hex": "#B0335F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B0335F"
+   },
+   "video-bg": {
+    "hex": "#ECE5FB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#ECE5FB"
+   },
+   "video-fg": {
+    "hex": "#6541B8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#6541B8"
+   },
+   "podcast-bg": {
+    "hex": "#DDF2EF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#DDF2EF"
+   },
+   "podcast-fg": {
+    "hex": "#1E7A6E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#1E7A6E"
+   },
+   "idea": {
+    "hex": "#A39E93",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#A39E93"
+   },
+   "writing": {
+    "hex": "#E0A21B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E0A21B"
+   },
+   "review": {
+    "hex": "#7B5CD6",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7B5CD6"
+   },
+   "live": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2E8A5C"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0
+  },
+  "radius": {
+   "sm": 4.0,
+   "md": 6.0,
+   "lg": 8.0,
+   "xl": 12.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 2px rgba(30, 28, 24, 0.06), 0 0 0 1px rgba(30, 28, 24, 0.05)"
+   },
+   "control": {
+    "css": "0 1px 1px rgba(30, 28, 24, 0.05)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Karla",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "count": 1,
+    "example": "Ekim içerik takvimi"
+   },
+   {
+    "family": "Karla",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "count": 1,
+    "example": "Kalem"
+   },
+   {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "İçerikler"
+   },
+   {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Yeni içerik"
+   },
+   {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "count": 12,
+    "example": "Kapadokya'da kamp: ilk kez gidenler için"
+   },
+   {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "Yolda Dergi"
+   },
+   {
+    "family": "Karla",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Gecikenleri vurgula"
+   },
+   {
+    "family": "Karla",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Pano"
+   },
+   {
+    "family": "Karla",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 2,
+    "example": "Kanal"
+   },
+   {
+    "family": "Karla",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "12 içerik · 5 yazar"
+   },
+   {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0.2,
+    "count": 1,
+    "example": "ZK"
+   },
+   {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "3"
+   },
+   {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 34,
+    "example": "Rehber"
+   },
+   {
+    "family": "Karla",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Ctrl K"
+   },
+   {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "count": 12,
+    "example": "BLOG"
+   },
+   {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "count": 18,
+    "example": "EY"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "topBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1366,
+    56
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E2DED5",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 24,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     24
+    ]
+   }
+  },
+  {
+   "id": "brand",
+   "role": null,
+   "parent": "topBar",
+   "bbox": [
+    24,
+    12.5,
+    93.41,
+    30
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "workspaceSwitcher",
+   "role": "Button",
+   "parent": "topBar",
+   "bbox": [
+    133.41,
+    11.5,
+    113.61,
+    32
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "left",
+      "width": 1,
+      "color": {
+       "hex": "#E2DED5",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "mainNav",
+   "role": "TabBar",
+   "parent": "topBar",
+   "bbox": [
+    271.02,
+    11.5,
+    318.94,
+    32
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "navLink[0]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    271.02,
+    11.5,
+    70.56,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "navLink[1]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    345.58,
+    11.5,
+    78.66,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "navLink[2]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    428.23,
+    11.5,
+    78.47,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "navLink[3]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    510.7,
+    11.5,
+    79.25,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "searchField",
+   "role": "TextField",
+   "parent": "topBar",
+   "bbox": [
+    974,
+    9.5,
+    280,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2DED5",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     6,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "notificationsButton",
+   "role": "IconButton",
+   "parent": "topBar",
+   "bbox": [
+    1266,
+    11.5,
+    32,
+    32
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "32px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "userAvatar",
+   "role": "Avatar",
+   "parent": "topBar",
+   "bbox": [
+    1310,
+    11.5,
+    32,
+    32
+   ],
+   "style": {
+    "fill": {
+     "hex": "#CFE6DC",
+     "alpha": 1.0
+    },
+    "radius": 50
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "32px",
+    "rows": "32px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "toolbar",
+   "role": "ToolBar",
+   "parent": null,
+   "bbox": [
+    0,
+    56,
+    1366,
+    64
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     24,
+     0,
+     24
+    ]
+   }
+  },
+  {
+   "id": "channelFilterField",
+   "role": null,
+   "parent": "toolbar",
+   "bbox": [
+    337.66,
+    71,
+    170.59,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "channelFilter",
+   "role": "ComboBox",
+   "parent": "channelFilterField",
+   "bbox": [
+    380.25,
+    71,
+    128,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CFCAC0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 1.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     30,
+     0,
+     10
+    ]
+   },
+   "value": "Tüm kanallar"
+  },
+  {
+   "id": "monthFilterField",
+   "role": null,
+   "parent": "toolbar",
+   "bbox": [
+    524.25,
+    71,
+    171.91,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "monthFilter",
+   "role": "ComboBox",
+   "parent": "monthFilterField",
+   "bbox": [
+    575.16,
+    71,
+    121,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CFCAC0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 1.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     0,
+     30,
+     0,
+     10
+    ]
+   },
+   "value": "Ekim 2026"
+  },
+  {
+   "id": "overdueToggle",
+   "role": "CheckBox",
+   "parent": "toolbar",
+   "bbox": [
+    712.16,
+    78,
+    147.16,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   },
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "viewToggle",
+   "role": "SegmentedControl",
+   "parent": "toolbar",
+   "bbox": [
+    1058.34,
+    71,
+    155.48,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECEAE4",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   "value": "board"
+  },
+  {
+   "id": "viewBoard",
+   "role": "SegmentItem",
+   "parent": "viewToggle",
+   "bbox": [
+    1061.34,
+    74,
+    75.25,
+    28
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 6,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.12
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "viewList",
+   "role": "SegmentItem",
+   "parent": "viewToggle",
+   "bbox": [
+    1136.59,
+    74,
+    74.23,
+    28
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "newContentButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    1225.83,
+    71,
+    116.17,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1F6B55",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#185544",
+       "alpha": 0.3
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 0.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 0.12
+      },
+      "inset": true
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "board",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    0,
+    120,
+    1366,
+    648
+   ],
+   "style": {},
+   "layout": {
+    "kind": "grid",
+    "columns": "317.5px 317.5px 317.5px 317.5px",
+    "rows": "632px",
+    "columnGap": 16,
+    "rowGap": 16,
+    "padding": [
+     0,
+     24,
+     16,
+     24
+    ]
+   },
+   "model": {
+    "name": "columns",
+    "count": 4,
+    "itemId": "column"
+   }
+  },
+  {
+   "id": "column[0]",
+   "role": "Panel",
+   "parent": "board",
+   "bbox": [
+    24,
+    120,
+    317.5,
+    632
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECEAE4",
+     "alpha": 1.0
+    },
+    "radius": 12
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     8,
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "id": "countBadge[0]",
+   "role": "Badge",
+   "parent": "column[0]",
+   "bbox": [
+    94.63,
+    134,
+    22,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1E1C18",
+     "alpha": 0.07
+    },
+    "radius": 999
+   },
+   "layout": {
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   }
+  },
+  {
+   "id": "cardList[0]",
+   "role": null,
+   "parent": "column[0]",
+   "bbox": [
+    32,
+    168,
+    301.5,
+    375
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "cards",
+    "count": 3,
+    "itemId": "card"
+   }
+  },
+  {
+   "id": "card[0]",
+   "role": "Card",
+   "parent": "cardList[0]",
+   "bbox": [
+    32,
+    168,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[0]",
+   "role": "Chip",
+   "parent": "card[0]",
+   "bbox": [
+    44,
+    180,
+    43.53,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4ECFB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "tag[1]",
+   "role": "Chip",
+   "parent": "card[0]",
+   "bbox": [
+    91.53,
+    180,
+    53.06,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[0]",
+   "role": "ProgressBar",
+   "parent": "card[0]",
+   "bbox": [
+    152.02,
+    268,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0"
+  },
+  {
+   "id": "avatar[0]",
+   "role": "Avatar",
+   "parent": "card[0]",
+   "bbox": [
+    297.5,
+    258,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6D8C4",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[1]",
+   "role": "Card",
+   "parent": "cardList[0]",
+   "bbox": [
+    32,
+    302,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[2]",
+   "role": "Chip",
+   "parent": "card[1]",
+   "bbox": [
+    44,
+    314,
+    56.16,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FBE4EC",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[1]",
+   "role": "ProgressBar",
+   "parent": "card[1]",
+   "bbox": [
+    148.05,
+    383,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.33"
+  },
+  {
+   "id": "avatar[1]",
+   "role": "Avatar",
+   "parent": "card[1]",
+   "bbox": [
+    275.5,
+    373,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#CFE6DC",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[2]",
+   "role": "Avatar",
+   "parent": "card[1]",
+   "bbox": [
+    297.5,
+    373,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D6DDF6",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[2]",
+   "role": "Card",
+   "parent": "cardList[0]",
+   "bbox": [
+    32,
+    417,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[3]",
+   "role": "Chip",
+   "parent": "card[2]",
+   "bbox": [
+    44,
+    429,
+    65.66,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#DDF2EF",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "tag[4]",
+   "role": "Chip",
+   "parent": "card[2]",
+   "bbox": [
+    113.66,
+    429,
+    61.73,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[2]",
+   "role": "ProgressBar",
+   "parent": "card[2]",
+   "bbox": [
+    152.59,
+    517,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0"
+  },
+  {
+   "id": "avatar[3]",
+   "role": "Avatar",
+   "parent": "card[2]",
+   "bbox": [
+    297.5,
+    507,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EAD7F2",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "addCardButton[0]",
+   "role": "Button",
+   "parent": "column[0]",
+   "bbox": [
+    32,
+    551,
+    301.5,
+    34
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "column[1]",
+   "role": "Panel",
+   "parent": "board",
+   "bbox": [
+    357.5,
+    120,
+    317.5,
+    632
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECEAE4",
+     "alpha": 1.0
+    },
+    "radius": 12
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     8,
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "id": "countBadge[1]",
+   "role": "Badge",
+   "parent": "column[1]",
+   "bbox": [
+    453.73,
+    134,
+    22,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1E1C18",
+     "alpha": 0.07
+    },
+    "radius": 999
+   },
+   "layout": {
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   }
+  },
+  {
+   "id": "cardList[1]",
+   "role": null,
+   "parent": "column[1]",
+   "bbox": [
+    365.5,
+    168,
+    301.5,
+    509
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "cards",
+    "count": 4,
+    "itemId": "card"
+   }
+  },
+  {
+   "id": "card[3]",
+   "role": "Card",
+   "parent": "cardList[1]",
+   "bbox": [
+    365.5,
+    168,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[5]",
+   "role": "Chip",
+   "parent": "card[3]",
+   "bbox": [
+    377.5,
+    180,
+    43.53,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4ECFB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "tag[6]",
+   "role": "Chip",
+   "parent": "card[3]",
+   "bbox": [
+    425.03,
+    180,
+    36.23,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[3]",
+   "role": "ProgressBar",
+   "parent": "card[3]",
+   "bbox": [
+    482.44,
+    268,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.6"
+  },
+  {
+   "id": "avatar[4]",
+   "role": "Avatar",
+   "parent": "card[3]",
+   "bbox": [
+    609,
+    258,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4E3B5",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[5]",
+   "role": "Avatar",
+   "parent": "card[3]",
+   "bbox": [
+    631,
+    258,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EAD7F2",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[4]",
+   "role": "Card",
+   "parent": "cardList[1]",
+   "bbox": [
+    365.5,
+    302,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[7]",
+   "role": "Chip",
+   "parent": "card[4]",
+   "bbox": [
+    377.5,
+    314,
+    56.69,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FBEFD9",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[4]",
+   "role": "ProgressBar",
+   "parent": "card[4]",
+   "bbox": [
+    479.7,
+    383,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.67"
+  },
+  {
+   "id": "avatar[6]",
+   "role": "Avatar",
+   "parent": "card[4]",
+   "bbox": [
+    631,
+    373,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D6DDF6",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[5]",
+   "role": "Card",
+   "parent": "cardList[1]",
+   "bbox": [
+    365.5,
+    417,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[8]",
+   "role": "Chip",
+   "parent": "card[5]",
+   "bbox": [
+    377.5,
+    429,
+    48,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECE5FB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "tag[9]",
+   "role": "Chip",
+   "parent": "card[5]",
+   "bbox": [
+    429.5,
+    429,
+    73.44,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[5]",
+   "role": "ProgressBar",
+   "parent": "card[5]",
+   "bbox": [
+    482.44,
+    517,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.4"
+  },
+  {
+   "id": "avatar[7]",
+   "role": "Avatar",
+   "parent": "card[5]",
+   "bbox": [
+    587,
+    507,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#CFE6DC",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[8]",
+   "role": "Avatar",
+   "parent": "card[5]",
+   "bbox": [
+    609,
+    507,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6D8C4",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[9]",
+   "role": "Avatar",
+   "parent": "card[5]",
+   "bbox": [
+    631,
+    507,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[6]",
+   "role": "Card",
+   "parent": "cardList[1]",
+   "bbox": [
+    365.5,
+    551,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[10]",
+   "role": "Chip",
+   "parent": "card[6]",
+   "bbox": [
+    377.5,
+    563,
+    43.53,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4ECFB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[6]",
+   "role": "ProgressBar",
+   "parent": "card[6]",
+   "bbox": [
+    482.72,
+    651,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.25"
+  },
+  {
+   "id": "avatar[10]",
+   "role": "Avatar",
+   "parent": "card[6]",
+   "bbox": [
+    631,
+    641,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4E3B5",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "addCardButton[1]",
+   "role": "Button",
+   "parent": "column[1]",
+   "bbox": [
+    365.5,
+    685,
+    301.5,
+    34
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "column[2]",
+   "role": "Panel",
+   "parent": "board",
+   "bbox": [
+    691,
+    120,
+    317.5,
+    632
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECEAE4",
+     "alpha": 1.0
+    },
+    "radius": 12
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     8,
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "id": "countBadge[2]",
+   "role": "Badge",
+   "parent": "column[2]",
+   "bbox": [
+    807.23,
+    134,
+    22,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1E1C18",
+     "alpha": 0.07
+    },
+    "radius": 999
+   },
+   "layout": {
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   }
+  },
+  {
+   "id": "cardList[2]",
+   "role": null,
+   "parent": "column[2]",
+   "bbox": [
+    699,
+    168,
+    301.5,
+    241
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "cards",
+    "count": 2,
+    "itemId": "card"
+   }
+  },
+  {
+   "id": "card[7]",
+   "role": "Card",
+   "parent": "cardList[2]",
+   "bbox": [
+    699,
+    168,
+    301.5,
+    126
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[11]",
+   "role": "Chip",
+   "parent": "card[7]",
+   "bbox": [
+    711,
+    180,
+    43.53,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4ECFB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "tag[12]",
+   "role": "Chip",
+   "parent": "card[7]",
+   "bbox": [
+    758.53,
+    180,
+    53.06,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6F5F1",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[7]",
+   "role": "ProgressBar",
+   "parent": "card[7]",
+   "bbox": [
+    815.98,
+    268,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "1"
+  },
+  {
+   "id": "avatar[11]",
+   "role": "Avatar",
+   "parent": "card[7]",
+   "bbox": [
+    942.5,
+    258,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EAD7F2",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[12]",
+   "role": "Avatar",
+   "parent": "card[7]",
+   "bbox": [
+    964.5,
+    258,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F4E3B5",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[8]",
+   "role": "Card",
+   "parent": "cardList[2]",
+   "bbox": [
+    699,
+    302,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[13]",
+   "role": "Chip",
+   "parent": "card[8]",
+   "bbox": [
+    711,
+    314,
+    56.16,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FBE4EC",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[8]",
+   "role": "ProgressBar",
+   "parent": "card[8]",
+   "bbox": [
+    813.17,
+    383,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "0.75"
+  },
+  {
+   "id": "avatar[13]",
+   "role": "Avatar",
+   "parent": "card[8]",
+   "bbox": [
+    964.5,
+    373,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#CFE6DC",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "addCardButton[2]",
+   "role": "Button",
+   "parent": "column[2]",
+   "bbox": [
+    699,
+    417,
+    301.5,
+    34
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  },
+  {
+   "id": "column[3]",
+   "role": "Panel",
+   "parent": "board",
+   "bbox": [
+    1024.5,
+    120,
+    317.5,
+    632
+   ],
+   "style": {
+    "fill": {
+     "hex": "#ECEAE4",
+     "alpha": 1.0
+    },
+    "radius": 12
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     8,
+     8,
+     8,
+     8
+    ]
+   }
+  },
+  {
+   "id": "countBadge[3]",
+   "role": "Badge",
+   "parent": "column[3]",
+   "bbox": [
+    1117.03,
+    134,
+    22,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#1E1C18",
+     "alpha": 0.07
+    },
+    "radius": 999
+   },
+   "layout": {
+    "padding": [
+     0,
+     6,
+     0,
+     6
+    ]
+   }
+  },
+  {
+   "id": "cardList[3]",
+   "role": null,
+   "parent": "column[3]",
+   "bbox": [
+    1032.5,
+    168,
+    301.5,
+    337
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 8,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "cards",
+    "count": 3,
+    "itemId": "card"
+   }
+  },
+  {
+   "id": "card[9]",
+   "role": "Card",
+   "parent": "cardList[3]",
+   "bbox": [
+    1032.5,
+    168,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[14]",
+   "role": "Chip",
+   "parent": "card[9]",
+   "bbox": [
+    1044.5,
+    180,
+    43.53,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E4ECFB",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[9]",
+   "role": "ProgressBar",
+   "parent": "card[9]",
+   "bbox": [
+    1145.31,
+    249,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "1"
+  },
+  {
+   "id": "avatar[14]",
+   "role": "Avatar",
+   "parent": "card[9]",
+   "bbox": [
+    1298,
+    239,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F6D8C4",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[10]",
+   "role": "Card",
+   "parent": "cardList[3]",
+   "bbox": [
+    1032.5,
+    283,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[15]",
+   "role": "Chip",
+   "parent": "card[10]",
+   "bbox": [
+    1044.5,
+    295,
+    56.69,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FBEFD9",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[10]",
+   "role": "ProgressBar",
+   "parent": "card[10]",
+   "bbox": [
+    1142.53,
+    364,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "1"
+  },
+  {
+   "id": "avatar[15]",
+   "role": "Avatar",
+   "parent": "card[10]",
+   "bbox": [
+    1298,
+    354,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#D6DDF6",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "card[11]",
+   "role": "Card",
+   "parent": "cardList[3]",
+   "bbox": [
+    1032.5,
+    398,
+    301.5,
+    107
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 1.0,
+      "color": {
+       "hex": "#1E1C18",
+       "alpha": 0.05
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "padding": [
+     12,
+     12,
+     12,
+     12
+    ]
+   }
+  },
+  {
+   "id": "tag[16]",
+   "role": "Chip",
+   "parent": "card[11]",
+   "bbox": [
+    1044.5,
+    410,
+    65.66,
+    20
+   ],
+   "style": {
+    "fill": {
+     "hex": "#DDF2EF",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {
+    "padding": [
+     0,
+     7,
+     0,
+     7
+    ]
+   }
+  },
+  {
+   "id": "checklist[11]",
+   "role": "ProgressBar",
+   "parent": "card[11]",
+   "bbox": [
+    1145.16,
+    479,
+    36,
+    4
+   ],
+   "style": {
+    "fill": {
+     "hex": "#E7E4DD",
+     "alpha": 1.0
+    },
+    "radius": 2
+   },
+   "layout": {
+    "clip": true
+   },
+   "value": "1"
+  },
+  {
+   "id": "avatar[16]",
+   "role": "Avatar",
+   "parent": "card[11]",
+   "bbox": [
+    1276,
+    469,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#EAD7F2",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "avatar[17]",
+   "role": "Avatar",
+   "parent": "card[11]",
+   "bbox": [
+    1298,
+    469,
+    24,
+    24
+   ],
+   "style": {
+    "fill": {
+     "hex": "#CFE6DC",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 0.0,
+      "blur": 0.0,
+      "spread": 2.0,
+      "color": {
+       "hex": "#FFFFFF",
+       "alpha": 1.0
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "24px",
+    "rows": "24px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "addCardButton[3]",
+   "role": "Button",
+   "parent": "column[3]",
+   "bbox": [
+    1032.5,
+    513,
+    301.5,
+    34
+   ],
+   "style": {
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     8
+    ]
+   }
+  }
+ ],
+ "text": [
+  {
+   "string": "Kalem",
+   "owner": "brand",
+   "bbox": [
+    64,
+    16.5,
+    53.41,
+    22
+   ],
+   "baseline": 33.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 18,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": -0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yolda Dergi",
+   "owner": "workspaceSwitcher",
+   "bbox": [
+    146.41,
+    18.5,
+    72.61,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Takvim",
+   "owner": "navLink[0]",
+   "bbox": [
+    283.02,
+    18.5,
+    46.56,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İçerikler",
+   "owner": "navLink[1]",
+   "bbox": [
+    357.58,
+    18.5,
+    54.66,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Varlıklar",
+   "owner": "navLink[2]",
+   "bbox": [
+    440.23,
+    18.5,
+    54.47,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raporlar",
+   "owner": "navLink[3]",
+   "bbox": [
+    522.7,
+    18.5,
+    55.25,
+    17
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ctrl K",
+   "owner": "searchField",
+   "bbox": [
+    1210.28,
+    20.5,
+    29.72,
+    14
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 18,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ZK",
+   "owner": "userAvatar",
+   "bbox": [
+    1318.09,
+    20.5,
+    15.8,
+    14
+   ],
+   "baseline": 31.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 12,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekim içerik takvimi",
+   "owner": "toolbar",
+   "bbox": [
+    24,
+    76,
+    181.42,
+    23
+   ],
+   "baseline": 94,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 28,
+    "letterSpacing": -0.3,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 içerik · 5 yazar",
+   "owner": "toolbar",
+   "bbox": [
+    215.42,
+    82,
+    98.23,
+    15
+   ],
+   "baseline": 94,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kanal",
+   "owner": "channelFilterField",
+   "bbox": [
+    337.66,
+    80,
+    34.59,
+    15
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dönem",
+   "owner": "monthFilterField",
+   "bbox": [
+    524.25,
+    80,
+    42.91,
+    15
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Gecikenleri vurgula",
+   "owner": "overdueToggle",
+   "bbox": [
+    736.16,
+    79,
+    123.16,
+    17
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Pano",
+   "owner": "viewBoard",
+   "bbox": [
+    1094.34,
+    80,
+    30.25,
+    15
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Liste",
+   "owner": "viewList",
+   "bbox": [
+    1169.59,
+    80,
+    29.23,
+    15
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yeni içerik",
+   "owner": "newContentButton",
+   "bbox": [
+    1259.83,
+    79,
+    68.17,
+    17
+   ],
+   "baseline": 92,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Fikir",
+   "owner": "column[0]",
+   "bbox": [
+    56,
+    135,
+    30.63,
+    17
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "countBadge[0]",
+   "bbox": [
+    101.89,
+    137,
+    7.47,
+    14
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BLOG",
+   "owner": "tag[0]",
+   "bbox": [
+    51,
+    183,
+    29.53,
+    13
+   ],
+   "baseline": 193,
+   "lines": 1,
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Rehber",
+   "owner": "tag[1]",
+   "bbox": [
+    98.53,
+    183,
+    39.06,
+    14
+   ],
+   "baseline": 194,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kapadokya'da kamp: ilk kez gidenler için 10 ipucu",
+   "owner": "card[0]",
+   "bbox": [
+    44,
+    209,
+    268.89,
+    36
+   ],
+   "baseline": 222,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "24 Eki",
+   "owner": "card[0]",
+   "bbox": [
+    62,
+    263,
+    34.42,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0/4",
+   "owner": "card[0]",
+   "bbox": [
+    126.42,
+    263,
+    19.59,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2",
+   "owner": "card[0]",
+   "bbox": [
+    218.02,
+    263,
+    7.09,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EY",
+   "owner": "avatar[0]",
+   "bbox": [
+    303.42,
+    264,
+    12.14,
+    12
+   ],
+   "baseline": 273,
+   "lines": 1,
+   "color": {
+    "hex": "#8A3D12",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "SOSYAL",
+   "owner": "tag[2]",
+   "bbox": [
+    51,
+    317,
+    42.16,
+    13
+   ],
+   "baseline": 327,
+   "lines": 1,
+   "color": {
+    "hex": "#B0335F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Sonbahar rotaları karusel serisi",
+   "owner": "card[1]",
+   "bbox": [
+    44,
+    343,
+    208.84,
+    17
+   ],
+   "baseline": 356,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "27 Eki",
+   "owner": "card[1]",
+   "bbox": [
+    62,
+    378,
+    33.31,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1/3",
+   "owner": "card[1]",
+   "bbox": [
+    125.31,
+    378,
+    16.73,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ZK",
+   "owner": "avatar[1]",
+   "bbox": [
+    280.88,
+    379,
+    13.23,
+    12
+   ],
+   "baseline": 388,
+   "lines": 1,
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "MT",
+   "owner": "avatar[2]",
+   "bbox": [
+    302.27,
+    379,
+    14.47,
+    12
+   ],
+   "baseline": 388,
+   "lines": 1,
+   "color": {
+    "hex": "#2F4A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "PODCAST",
+   "owner": "tag[3]",
+   "bbox": [
+    51,
+    432,
+    51.66,
+    13
+   ],
+   "baseline": 442,
+   "lines": 1,
+   "color": {
+    "hex": "#1E7A6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Röportaj",
+   "owner": "tag[4]",
+   "bbox": [
+    120.66,
+    432,
+    47.73,
+    14
+   ],
+   "baseline": 443,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konuk: Kaçkarlar'da 20 yıllık bir dağ rehberi",
+   "owner": "card[2]",
+   "bbox": [
+    44,
+    458,
+    238.36,
+    36
+   ],
+   "baseline": 471,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "30 Eki",
+   "owner": "card[2]",
+   "bbox": [
+    62,
+    512,
+    35.02,
+    14
+   ],
+   "baseline": 523,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0/5",
+   "owner": "card[2]",
+   "bbox": [
+    127.02,
+    512,
+    19.58,
+    14
+   ],
+   "baseline": 523,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SB",
+   "owner": "avatar[3]",
+   "bbox": [
+    302.86,
+    513,
+    13.27,
+    12
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#6E2F8A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kart ekle",
+   "owner": "addCardButton[0]",
+   "bbox": [
+    62,
+    559,
+    57.44,
+    17
+   ],
+   "baseline": 572,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yazılıyor",
+   "owner": "column[1]",
+   "bbox": [
+    389.5,
+    135,
+    56.23,
+    17
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4",
+   "owner": "countBadge[1]",
+   "bbox": [
+    461.16,
+    137,
+    7.14,
+    14
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BLOG",
+   "owner": "tag[5]",
+   "bbox": [
+    384.5,
+    183,
+    29.53,
+    13
+   ],
+   "baseline": 193,
+   "lines": 1,
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "SEO",
+   "owner": "tag[6]",
+   "bbox": [
+    432.03,
+    183,
+    22.23,
+    14
+   ],
+   "baseline": 194,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kışlık uyku tulumu seçerken dikkat edilecekler",
+   "owner": "card[3]",
+   "bbox": [
+    377.5,
+    209,
+    234.84,
+    36
+   ],
+   "baseline": 222,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14 Eki",
+   "owner": "card[3]",
+   "bbox": [
+    395.5,
+    263,
+    31.44,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3/5",
+   "owner": "card[3]",
+   "bbox": [
+    456.94,
+    263,
+    19.5,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4",
+   "owner": "card[3]",
+   "bbox": [
+    548.44,
+    263,
+    6.89,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ED",
+   "owner": "avatar[4]",
+   "bbox": [
+    614.42,
+    264,
+    13.14,
+    12
+   ],
+   "baseline": 273,
+   "lines": 1,
+   "color": {
+    "hex": "#7A5608",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "SB",
+   "owner": "avatar[5]",
+   "bbox": [
+    636.36,
+    264,
+    13.27,
+    12
+   ],
+   "baseline": 273,
+   "lines": 1,
+   "color": {
+    "hex": "#6E2F8A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "BÜLTEN",
+   "owner": "tag[7]",
+   "bbox": [
+    384.5,
+    317,
+    42.69,
+    13
+   ],
+   "baseline": 327,
+   "lines": 1,
+   "color": {
+    "hex": "#9A5B09",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Ekim bülteni: yeni rotalar ve etkinlikler",
+   "owner": "card[4]",
+   "bbox": [
+    377.5,
+    343,
+    256.44,
+    17
+   ],
+   "baseline": 356,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "8 Eki",
+   "owner": "card[4]",
+   "bbox": [
+    395.5,
+    378,
+    28.88,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#C23B2A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4/6",
+   "owner": "card[4]",
+   "bbox": [
+    454.38,
+    378,
+    19.33,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MT",
+   "owner": "avatar[6]",
+   "bbox": [
+    635.77,
+    379,
+    14.47,
+    12
+   ],
+   "baseline": 388,
+   "lines": 1,
+   "color": {
+    "hex": "#2F4A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "VİDEO",
+   "owner": "tag[8]",
+   "bbox": [
+    384.5,
+    432,
+    34,
+    13
+   ],
+   "baseline": 442,
+   "lines": 1,
+   "color": {
+    "hex": "#6541B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Kampanya",
+   "owner": "tag[9]",
+   "bbox": [
+    436.5,
+    432,
+    59.44,
+    14
+   ],
+   "baseline": 443,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Likya Yolu'nu tek başına yürümek: çekim planı",
+   "owner": "card[5]",
+   "bbox": [
+    377.5,
+    458,
+    267.86,
+    36
+   ],
+   "baseline": 471,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "16 Eki",
+   "owner": "card[5]",
+   "bbox": [
+    395.5,
+    512,
+    31.59,
+    14
+   ],
+   "baseline": 523,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2/5",
+   "owner": "card[5]",
+   "bbox": [
+    457.09,
+    512,
+    19.34,
+    14
+   ],
+   "baseline": 523,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "7",
+   "owner": "card[5]",
+   "bbox": [
+    548.44,
+    512,
+    5.78,
+    14
+   ],
+   "baseline": 523,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ZK",
+   "owner": "avatar[7]",
+   "bbox": [
+    592.38,
+    513,
+    13.23,
+    12
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "EY",
+   "owner": "avatar[8]",
+   "bbox": [
+    614.92,
+    513,
+    12.14,
+    12
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#8A3D12",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "+1",
+   "owner": "avatar[9]",
+   "bbox": [
+    638.33,
+    513,
+    9.34,
+    12
+   ],
+   "baseline": 522,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "BLOG",
+   "owner": "tag[10]",
+   "bbox": [
+    384.5,
+    566,
+    29.53,
+    13
+   ],
+   "baseline": 576,
+   "lines": 1,
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Termos karşılaştırması: 6 modeli test ettik",
+   "owner": "card[6]",
+   "bbox": [
+    377.5,
+    592,
+    246.05,
+    36
+   ],
+   "baseline": 605,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "20 Eki",
+   "owner": "card[6]",
+   "bbox": [
+    395.5,
+    646,
+    34.84,
+    14
+   ],
+   "baseline": 657,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1/4",
+   "owner": "card[6]",
+   "bbox": [
+    460.34,
+    646,
+    16.38,
+    14
+   ],
+   "baseline": 657,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ED",
+   "owner": "avatar[10]",
+   "bbox": [
+    636.42,
+    647,
+    13.14,
+    12
+   ],
+   "baseline": 656,
+   "lines": 1,
+   "color": {
+    "hex": "#7A5608",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kart ekle",
+   "owner": "addCardButton[1]",
+   "bbox": [
+    395.5,
+    693,
+    57.44,
+    17
+   ],
+   "baseline": 706,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İncelemede",
+   "owner": "column[2]",
+   "bbox": [
+    723,
+    135,
+    76.23,
+    17
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2",
+   "owner": "countBadge[2]",
+   "bbox": [
+    814.59,
+    137,
+    7.27,
+    14
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BLOG",
+   "owner": "tag[11]",
+   "bbox": [
+    718,
+    183,
+    29.53,
+    13
+   ],
+   "baseline": 193,
+   "lines": 1,
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Rehber",
+   "owner": "tag[12]",
+   "bbox": [
+    765.53,
+    183,
+    39.06,
+    14
+   ],
+   "baseline": 194,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Uludağ'da ilk kış yürüyüşü için hazırlık listesi",
+   "owner": "card[7]",
+   "bbox": [
+    711,
+    209,
+    256.72,
+    36
+   ],
+   "baseline": 222,
+   "lines": 2,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10 Eki",
+   "owner": "card[7]",
+   "bbox": [
+    729,
+    263,
+    31.86,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5/5",
+   "owner": "card[7]",
+   "bbox": [
+    790.86,
+    263,
+    19.13,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "card[7]",
+   "bbox": [
+    881.98,
+    263,
+    7.25,
+    14
+   ],
+   "baseline": 274,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SB",
+   "owner": "avatar[11]",
+   "bbox": [
+    947.86,
+    264,
+    13.27,
+    12
+   ],
+   "baseline": 273,
+   "lines": 1,
+   "color": {
+    "hex": "#6E2F8A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "ED",
+   "owner": "avatar[12]",
+   "bbox": [
+    969.92,
+    264,
+    13.14,
+    12
+   ],
+   "baseline": 273,
+   "lines": 1,
+   "color": {
+    "hex": "#7A5608",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "SOSYAL",
+   "owner": "tag[13]",
+   "bbox": [
+    718,
+    317,
+    42.16,
+    13
+   ],
+   "baseline": 327,
+   "lines": 1,
+   "color": {
+    "hex": "#B0335F",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Takipçi fotoğrafları: #yoldayız seçkisi",
+   "owner": "card[8]",
+   "bbox": [
+    711,
+    343,
+    245.52,
+    17
+   ],
+   "baseline": 356,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "11 Eki",
+   "owner": "card[8]",
+   "bbox": [
+    729,
+    378,
+    28.64,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3/4",
+   "owner": "card[8]",
+   "bbox": [
+    787.64,
+    378,
+    19.53,
+    14
+   ],
+   "baseline": 389,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ZK",
+   "owner": "avatar[13]",
+   "bbox": [
+    969.88,
+    379,
+    13.23,
+    12
+   ],
+   "baseline": 388,
+   "lines": 1,
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kart ekle",
+   "owner": "addCardButton[2]",
+   "bbox": [
+    729,
+    425,
+    57.44,
+    17
+   ],
+   "baseline": 438,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yayında",
+   "owner": "column[3]",
+   "bbox": [
+    1056.5,
+    135,
+    52.53,
+    17
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "countBadge[3]",
+   "bbox": [
+    1124.3,
+    137,
+    7.47,
+    14
+   ],
+   "baseline": 148,
+   "lines": 1,
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "BLOG",
+   "owner": "tag[14]",
+   "bbox": [
+    1051.5,
+    183,
+    29.53,
+    13
+   ],
+   "baseline": 193,
+   "lines": 1,
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Çadır kurarken en sık yapılan 7 hata",
+   "owner": "card[9]",
+   "bbox": [
+    1044.5,
+    209,
+    237.83,
+    17
+   ],
+   "baseline": 222,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3 Eki",
+   "owner": "card[9]",
+   "bbox": [
+    1062.5,
+    244,
+    27.69,
+    14
+   ],
+   "baseline": 255,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5/5",
+   "owner": "card[9]",
+   "bbox": [
+    1120.19,
+    244,
+    19.13,
+    14
+   ],
+   "baseline": 255,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12",
+   "owner": "card[9]",
+   "bbox": [
+    1211.31,
+    244,
+    11.19,
+    14
+   ],
+   "baseline": 255,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "EY",
+   "owner": "avatar[14]",
+   "bbox": [
+    1303.92,
+    245,
+    12.14,
+    12
+   ],
+   "baseline": 254,
+   "lines": 1,
+   "color": {
+    "hex": "#8A3D12",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "BÜLTEN",
+   "owner": "tag[15]",
+   "bbox": [
+    1051.5,
+    298,
+    42.69,
+    13
+   ],
+   "baseline": 308,
+   "lines": 1,
+   "color": {
+    "hex": "#9A5B09",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Eylül bülteni: yaz sezonunu kapatırken",
+   "owner": "card[10]",
+   "bbox": [
+    1044.5,
+    324,
+    255.05,
+    17
+   ],
+   "baseline": 337,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1 Eki",
+   "owner": "card[10]",
+   "bbox": [
+    1062.5,
+    359,
+    24.55,
+    14
+   ],
+   "baseline": 370,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "6/6",
+   "owner": "card[10]",
+   "bbox": [
+    1117.05,
+    359,
+    19.48,
+    14
+   ],
+   "baseline": 370,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MT",
+   "owner": "avatar[15]",
+   "bbox": [
+    1302.77,
+    360,
+    14.47,
+    12
+   ],
+   "baseline": 369,
+   "lines": 1,
+   "color": {
+    "hex": "#2F4A9E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "PODCAST",
+   "owner": "tag[16]",
+   "bbox": [
+    1051.5,
+    413,
+    51.66,
+    13
+   ],
+   "baseline": 423,
+   "lines": 1,
+   "color": {
+    "hex": "#1E7A6E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 11,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0.5,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "Bölüm 14: Işıksız gecelerde yön bulmak",
+   "owner": "card[11]",
+   "bbox": [
+    1044.5,
+    439,
+    257.09,
+    17
+   ],
+   "baseline": 452,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 19,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "6 Eki",
+   "owner": "card[11]",
+   "bbox": [
+    1062.5,
+    474,
+    27.48,
+    14
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "4/4",
+   "owner": "card[11]",
+   "bbox": [
+    1119.98,
+    474,
+    19.17,
+    14
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5",
+   "owner": "card[11]",
+   "bbox": [
+    1211.16,
+    474,
+    6.88,
+    14
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 12,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "SB",
+   "owner": "avatar[16]",
+   "bbox": [
+    1281.36,
+    475,
+    13.27,
+    12
+   ],
+   "baseline": 484,
+   "lines": 1,
+   "color": {
+    "hex": "#6E2F8A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "ZK",
+   "owner": "avatar[17]",
+   "bbox": [
+    1303.38,
+    475,
+    13.23,
+    12
+   ],
+   "baseline": 484,
+   "lines": 1,
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Karla",
+    "px": 10,
+    "weight": 700,
+    "lineHeight": 10,
+    "letterSpacing": 0.2,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kart ekle",
+   "owner": "addCardButton[3]",
+   "bbox": [
+    1062.5,
+    521,
+    57.44,
+    17
+   ],
+   "baseline": 534,
+   "lines": 1,
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "sonbahar",
+   "owner": "searchField",
+   "bbox": [
+    1011,
+    19,
+    60.68,
+    17
+   ],
+   "baseline": 32,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "field": "input",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tüm kanallar",
+   "owner": "channelFilter",
+   "bbox": [
+    391.25,
+    79.5,
+    85.06,
+    17
+   ],
+   "baseline": 92.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "field": "select",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ekim 2026",
+   "owner": "monthFilter",
+   "bbox": [
+    586.16,
+    79.5,
+    70.31,
+    17
+   ],
+   "baseline": 92.5,
+   "lines": 1,
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "field": "select",
+   "font": {
+    "family": "Karla",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "lucide:pen-line",
+   "owner": "brand",
+   "bbox": [
+    31,
+    19.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:chevrons-up-down",
+   "owner": "workspaceSwitcher",
+   "bbox": [
+    225.02,
+    20.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#A39E93",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:search",
+   "owner": "searchField",
+   "bbox": [
+    987,
+    19.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:bell",
+   "owner": "notificationsButton",
+   "bbox": [
+    1274,
+    19.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:square-kanban",
+   "owner": "viewBoard",
+   "bbox": [
+    1073.34,
+    80.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list",
+   "owner": "viewList",
+   "bbox": [
+    1148.59,
+    80.5,
+    15,
+    15
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "newContentButton",
+   "bbox": [
+    1237.83,
+    80,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:ellipsis",
+   "owner": "column[0]",
+   "bbox": [
+    309.5,
+    136,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[0]",
+   "bbox": [
+    44,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[0]",
+   "bbox": [
+    108.42,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[0]",
+   "bbox": [
+    200.02,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[1]",
+   "bbox": [
+    44,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[1]",
+   "bbox": [
+    107.31,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[2]",
+   "bbox": [
+    44,
+    512,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[2]",
+   "bbox": [
+    109.02,
+    512,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addCardButton[0]",
+   "bbox": [
+    40,
+    560,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:ellipsis",
+   "owner": "column[1]",
+   "bbox": [
+    643,
+    136,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[3]",
+   "bbox": [
+    377.5,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[3]",
+   "bbox": [
+    438.94,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[3]",
+   "bbox": [
+    530.44,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[4]",
+   "bbox": [
+    377.5,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#C23B2A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[4]",
+   "bbox": [
+    436.38,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[5]",
+   "bbox": [
+    377.5,
+    512,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[5]",
+   "bbox": [
+    439.09,
+    512,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[5]",
+   "bbox": [
+    530.44,
+    512,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[6]",
+   "bbox": [
+    377.5,
+    646,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[6]",
+   "bbox": [
+    442.34,
+    646,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addCardButton[1]",
+   "bbox": [
+    373.5,
+    694,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:ellipsis",
+   "owner": "column[2]",
+   "bbox": [
+    976.5,
+    136,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[7]",
+   "bbox": [
+    711,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[7]",
+   "bbox": [
+    772.86,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[7]",
+   "bbox": [
+    863.98,
+    263,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:calendar",
+   "owner": "card[8]",
+   "bbox": [
+    711,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[8]",
+   "bbox": [
+    769.64,
+    378,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addCardButton[2]",
+   "bbox": [
+    707,
+    426,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:ellipsis",
+   "owner": "column[3]",
+   "bbox": [
+    1310,
+    136,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-check",
+   "owner": "card[9]",
+   "bbox": [
+    1044.5,
+    244,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[9]",
+   "bbox": [
+    1102.19,
+    244,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[9]",
+   "bbox": [
+    1193.31,
+    244,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-check",
+   "owner": "card[10]",
+   "bbox": [
+    1044.5,
+    359,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[10]",
+   "bbox": [
+    1099.05,
+    359,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:circle-check",
+   "owner": "card[11]",
+   "bbox": [
+    1044.5,
+    474,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:list-checks",
+   "owner": "card[11]",
+   "bbox": [
+    1101.98,
+    474,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:message-square",
+   "owner": "card[11]",
+   "bbox": [
+    1193.16,
+    474,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "lucide:plus",
+   "owner": "addCardButton[3]",
+   "bbox": [
+    1040.5,
+    522,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#7C776D",
+    "alpha": 1.0
+   },
+   "count": 68,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 1.0
+   },
+   "count": 24,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 19,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2E8A5C",
+    "alpha": 1.0
+   },
+   "count": 14,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E7E4DD",
+    "alpha": 1.0
+   },
+   "count": 13,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#4A463E",
+    "alpha": 1.0
+   },
+   "count": 11,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#CFCAC0",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F6F5F1",
+    "alpha": 1.0
+   },
+   "count": 7,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E2DED5",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1F6B55",
+    "alpha": 1.0
+   },
+   "count": 6,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#CFE6DC",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#ECEAE4",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E4ECFB",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2F58B8",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E1C18",
+    "alpha": 0.07
+   },
+   "count": 4,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#EAD7F2",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6E2F8A",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F6D8C4",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#D6DDF6",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F4E3B5",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#8A3D12",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2F4A9E",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#7A5608",
+    "alpha": 1.0
+   },
+   "count": 3,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FBE4EC",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#DDF2EF",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FBEFD9",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B0335F",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#1E7A6E",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#9A5B09",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C23B2A",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#ECE5FB",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#6541B8",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#A39E93",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "search": "sonbahar",
+  "filters": {
+   "channel": "Tüm kanallar",
+   "month": "Ekim 2026",
+   "highlightOverdue": true
+  },
+  "view": "board",
+  "today": "2026-10-09",
+  "columns": [
+   {
+    "title": "Fikir",
+    "count": 3,
+    "cards": [
+     {
+      "tags": [
+       "Blog",
+       "Rehber"
+      ],
+      "title": "Kapadokya'da kamp: ilk kez gidenler için 10 ipucu",
+      "due": "24 Eki",
+      "checklist": [
+       0,
+       4
+      ],
+      "comments": 2,
+      "people": [
+       "EY"
+      ]
+     },
+     {
+      "tags": [
+       "Sosyal"
+      ],
+      "title": "Sonbahar rotaları karusel serisi",
+      "due": "27 Eki",
+      "checklist": [
+       1,
+       3
+      ],
+      "people": [
+       "ZK",
+       "MT"
+      ]
+     },
+     {
+      "tags": [
+       "Podcast",
+       "Röportaj"
+      ],
+      "title": "Konuk: Kaçkarlar'da 20 yıllık bir dağ rehberi",
+      "due": "30 Eki",
+      "checklist": [
+       0,
+       5
+      ],
+      "people": [
+       "SB"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Yazılıyor",
+    "count": 4,
+    "cards": [
+     {
+      "tags": [
+       "Blog",
+       "SEO"
+      ],
+      "title": "Kışlık uyku tulumu seçerken dikkat edilecekler",
+      "due": "14 Eki",
+      "checklist": [
+       3,
+       5
+      ],
+      "comments": 4,
+      "people": [
+       "ED",
+       "SB"
+      ]
+     },
+     {
+      "tags": [
+       "Bülten"
+      ],
+      "title": "Ekim bülteni: yeni rotalar ve etkinlikler",
+      "due": "8 Eki",
+      "overdue": true,
+      "checklist": [
+       4,
+       6
+      ],
+      "people": [
+       "MT"
+      ]
+     },
+     {
+      "tags": [
+       "Video",
+       "Kampanya"
+      ],
+      "title": "Likya Yolu'nu tek başına yürümek: çekim planı",
+      "due": "16 Eki",
+      "checklist": [
+       2,
+       5
+      ],
+      "comments": 7,
+      "people": [
+       "ZK",
+       "EY",
+       "+1"
+      ]
+     },
+     {
+      "tags": [
+       "Blog"
+      ],
+      "title": "Termos karşılaştırması: 6 modeli test ettik",
+      "due": "20 Eki",
+      "checklist": [
+       1,
+       4
+      ],
+      "people": [
+       "ED"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "İncelemede",
+    "count": 2,
+    "cards": [
+     {
+      "tags": [
+       "Blog",
+       "Rehber"
+      ],
+      "title": "Uludağ'da ilk kış yürüyüşü için hazırlık listesi",
+      "due": "10 Eki",
+      "checklist": [
+       5,
+       5
+      ],
+      "comments": 3,
+      "people": [
+       "SB",
+       "ED"
+      ]
+     },
+     {
+      "tags": [
+       "Sosyal"
+      ],
+      "title": "Takipçi fotoğrafları: #yoldayız seçkisi",
+      "due": "11 Eki",
+      "checklist": [
+       3,
+       4
+      ],
+      "people": [
+       "ZK"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Yayında",
+    "count": 3,
+    "cards": [
+     {
+      "tags": [
+       "Blog"
+      ],
+      "title": "Çadır kurarken en sık yapılan 7 hata",
+      "due": "3 Eki",
+      "done": true,
+      "checklist": [
+       5,
+       5
+      ],
+      "comments": 12,
+      "people": [
+       "EY"
+      ]
+     },
+     {
+      "tags": [
+       "Bülten"
+      ],
+      "title": "Eylül bülteni: yaz sezonunu kapatırken",
+      "due": "1 Eki",
+      "done": true,
+      "checklist": [
+       6,
+       6
+      ],
+      "people": [
+       "MT"
+      ]
+     },
+     {
+      "tags": [
+       "Podcast"
+      ],
+      "title": "Bölüm 14: Işıksız gecelerde yön bulmak",
+      "due": "6 Eki",
+      "done": true,
+      "checklist": [
+       4,
+       4
+      ],
+      "comments": 5,
+      "people": [
+       "SB",
+       "ZK"
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "states": {}
+}

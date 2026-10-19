@@ -1,0 +1,4930 @@
+{
+ "meta": {
+  "id": "07-data-table",
+  "title": "Veri tablosu — filtre, seçim, sıralama, sayfalama",
+  "category": "table",
+  "profile": "desktop",
+  "lang": "tr",
+  "designSize": [
+   1440,
+   900
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1440,
+   900
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Inter",
+    "qtFamily": "Inter",
+    "legacyFamily": "Inter",
+    "files": [
+     "Inter-Bold.ttf",
+     "Inter-Medium.ttf",
+     "Inter-Regular.ttf",
+     "Inter-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   },
+   {
+    "css": "JetBrains Mono",
+    "qtFamily": "JetBrains Mono",
+    "legacyFamily": "JetBrains Mono",
+    "files": [
+     "JetBrainsMono-Bold.ttf",
+     "JetBrainsMono-Medium.ttf",
+     "JetBrainsMono-Regular.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     700
+    ]
+   }
+  ]
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#F8FAFC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F8FAFC"
+   },
+   "surface": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "head": {
+    "hex": "#F8FAFC",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F8FAFC"
+   },
+   "ink": {
+    "hex": "#0F172A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F172A"
+   },
+   "text-2": {
+    "hex": "#334155",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#334155"
+   },
+   "muted": {
+    "hex": "#64748B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#64748B"
+   },
+   "dim": {
+    "hex": "#94A3B8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#94A3B8"
+   },
+   "border": {
+    "hex": "#E2E8F0",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E2E8F0"
+   },
+   "row-border": {
+    "hex": "#F1F5F9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F1F5F9"
+   },
+   "primary": {
+    "hex": "#0F766E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F766E"
+   },
+   "primary-soft": {
+    "hex": "#F0FDFA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0FDFA"
+   },
+   "primary-border": {
+    "hex": "#99F6E4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#99F6E4"
+   },
+   "success": {
+    "hex": "#15803D",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#15803D"
+   },
+   "success-soft": {
+    "hex": "#F0FDF4",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F0FDF4"
+   },
+   "success-dot": {
+    "hex": "#22C55E",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#22C55E"
+   },
+   "warning": {
+    "hex": "#B45309",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#B45309"
+   },
+   "warning-soft": {
+    "hex": "#FFFBEB",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFBEB"
+   },
+   "warning-bar": {
+    "hex": "#F59E0B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F59E0B"
+   },
+   "neutral": {
+    "hex": "#64748B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#64748B"
+   },
+   "neutral-soft": {
+    "hex": "#F1F5F9",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F1F5F9"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0,
+   "8": 32.0
+  },
+  "radius": {
+   "sm": 4.0,
+   "md": 6.0,
+   "lg": 8.0,
+   "xl": 12.0,
+   "pill": 999.0
+  },
+  "shadow": {
+   "card": {
+    "css": "0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04)"
+   }
+  },
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Inter",
+    "px": 24,
+    "weight": 700,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "count": 1,
+    "example": "Cihaz Envanteri"
+   },
+   {
+    "family": "Inter",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Filo Yönetimi"
+   },
+   {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 14,
+    "example": "Envanter"
+   },
+   {
+    "family": "Inter",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "Panel"
+   },
+   {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 34,
+    "example": "Ad, seri no veya konum ara…"
+   },
+   {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "Tümü"
+   },
+   {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 8,
+    "example": "Envanter"
+   },
+   {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 6,
+    "example": "Yönetim"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 10,
+    "example": "JOA-24-00812"
+   },
+   {
+    "family": "Inter",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "AK"
+   },
+   {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 18,
+    "example": "134"
+   },
+   {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 7,
+    "example": "42%"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "id": "appBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    0,
+    0,
+    1440,
+    60
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E2E8F0",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 36,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     32,
+     0,
+     32
+    ]
+   }
+  },
+  {
+   "id": "mainNav",
+   "role": "TabBar",
+   "parent": "appBar",
+   "bbox": [
+    210.05,
+    11.5,
+    329.67,
+    36
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "normal"
+   }
+  },
+  {
+   "id": "navLink[0]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    210.05,
+    11.5,
+    61.05,
+    36
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "navLink[1]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    275.09,
+    11.5,
+    84.16,
+    36
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F1F5F9",
+     "alpha": 1.0
+    },
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "navLink[2]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    363.25,
+    11.5,
+    91.88,
+    36
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "navLink[3]",
+   "role": "Tab",
+   "parent": "mainNav",
+   "bbox": [
+    459.13,
+    11.5,
+    80.59,
+    36
+   ],
+   "style": {
+    "radius": 6
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "breadcrumb",
+   "role": "Breadcrumb",
+   "parent": null,
+   "bbox": [
+    32,
+    82,
+    1376,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "pageHeader",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    32,
+    108,
+    1376,
+    38
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "exportButton",
+   "role": "Button",
+   "parent": "pageHeader",
+   "bbox": [
+    1154.11,
+    108,
+    121.66,
+    38
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "addButton",
+   "role": "Button",
+   "parent": "pageHeader",
+   "bbox": [
+    1285.77,
+    108,
+    122.23,
+    38
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F766E",
+     "alpha": 1.0
+    },
+    "radius": 8
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "tableCard",
+   "role": "Table",
+   "parent": null,
+   "bbox": [
+    32,
+    164,
+    1376,
+    686
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 12,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 3.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.06
+      },
+      "inset": false
+     },
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "clip": true
+   }
+  },
+  {
+   "id": "toolbar",
+   "role": "ToolBar",
+   "parent": "tableCard",
+   "bbox": [
+    33,
+    165,
+    1374,
+    64
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 1,
+      "color": {
+       "hex": "#E2E8F0",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     16
+    ]
+   }
+  },
+  {
+   "id": "search",
+   "role": "TextField",
+   "parent": "toolbar",
+   "bbox": [
+    49,
+    177.5,
+    300,
+    38
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     12,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "placeholder"
+   ]
+  },
+  {
+   "id": "filterStatus",
+   "role": "FilterChip",
+   "parent": "toolbar",
+   "bbox": [
+    361,
+    179.5,
+    131.09,
+    34
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "dashed"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "filterType",
+   "role": "FilterChip",
+   "parent": "toolbar",
+   "bbox": [
+    500.09,
+    179.5,
+    117.34,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#F0FDFA",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#99F6E4",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     12
+    ]
+   },
+   "state": [
+    "active"
+   ]
+  },
+  {
+   "id": "filterLocation",
+   "role": "FilterChip",
+   "parent": "toolbar",
+   "bbox": [
+    625.44,
+    179.5,
+    87.47,
+    34
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#CBD5E1",
+      "alpha": 1.0
+     },
+     "style": "dashed"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     10,
+     0,
+     12
+    ]
+   }
+  },
+  {
+   "id": "columnsButton",
+   "role": "Button",
+   "parent": "toolbar",
+   "bbox": [
+    1197.97,
+    179.5,
+    111.03,
+    34
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    },
+    "shadow": [
+     {
+      "x": 0.0,
+      "y": 1.0,
+      "blur": 2.0,
+      "spread": 0.0,
+      "color": {
+       "hex": "#0F172A",
+       "alpha": 0.04
+      },
+      "inset": false
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     14,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "viewToggle",
+   "role": "SegmentedControl",
+   "parent": "toolbar",
+   "bbox": [
+    1317,
+    178.5,
+    74,
+    36
+   ],
+   "style": {
+    "radius": 8,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "clip": true
+   }
+  },
+  {
+   "id": "headerRow",
+   "role": "HeaderRow",
+   "parent": "tableCard",
+   "bbox": [
+    33,
+    229,
+    1374,
+    42
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "selectAll",
+   "role": "CheckBox",
+   "parent": "headerRow",
+   "bbox": [
+    53,
+    241.75,
+    16,
+    16
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F766E",
+     "alpha": 1.0
+    },
+    "radius": 4,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#0F766E",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "14px",
+    "rows": "14px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   },
+   "state": [
+    "partial"
+   ]
+  },
+  {
+   "id": "rows",
+   "role": null,
+   "parent": "tableCard",
+   "bbox": [
+    33,
+    271,
+    1374,
+    520
+   ],
+   "style": {},
+   "layout": {},
+   "model": {
+    "name": "devices",
+    "count": 10,
+    "itemId": "row"
+   }
+  },
+  {
+   "id": "row[0]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    271,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[1]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    323,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[2]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    375,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "row[3]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    427,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[4]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    479,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "hovered"
+   ]
+  },
+  {
+   "id": "row[5]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    531,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[6]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    583,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[7]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    635,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[8]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    687,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "row[9]",
+   "role": "TableRow",
+   "parent": "rows",
+   "bbox": [
+    33,
+    739,
+    1374,
+    52
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "tableFooter",
+   "role": "Footer",
+   "parent": "tableCard",
+   "bbox": [
+    33,
+    791,
+    1374,
+    58
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "top",
+      "width": 1,
+      "color": {
+       "hex": "#E2E8F0",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 16,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     16,
+     0,
+     20
+    ]
+   }
+  },
+  {
+   "id": "pageSize",
+   "role": "ComboBox",
+   "parent": "tableFooter",
+   "bbox": [
+    1073.5,
+    804.5,
+    53.5,
+    32
+   ],
+   "style": {
+    "radius": 6,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#E2E8F0",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     8,
+     0,
+     10
+    ]
+   }
+  },
+  {
+   "id": "pagination",
+   "role": "Pagination",
+   "parent": "tableFooter",
+   "bbox": [
+    1143,
+    804.5,
+    248,
+    32
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 4,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "value": "1"
+  }
+ ],
+ "text": [
+  {
+   "string": "Filo Yönetimi",
+   "owner": "appBar",
+   "bbox": [
+    74,
+    19.5,
+    100.05,
+    20
+   ],
+   "baseline": 35.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 16,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Panel",
+   "owner": "navLink[0]",
+   "bbox": [
+    222.05,
+    20.5,
+    37.05,
+    17
+   ],
+   "baseline": 34.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Envanter",
+   "owner": "navLink[1]",
+   "bbox": [
+    287.09,
+    20.5,
+    60.16,
+    17
+   ],
+   "baseline": 34.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dağıtımlar",
+   "owner": "navLink[2]",
+   "bbox": [
+    375.25,
+    20.5,
+    67.88,
+    17
+   ],
+   "baseline": 34.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raporlar",
+   "owner": "navLink[3]",
+   "bbox": [
+    471.13,
+    20.5,
+    56.59,
+    17
+   ],
+   "baseline": 34.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "AK",
+   "owner": "appBar",
+   "bbox": [
+    1383.2,
+    21.5,
+    17.59,
+    15
+   ],
+   "baseline": 33.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 700,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Yönetim",
+   "owner": "breadcrumb",
+   "bbox": [
+    32,
+    84,
+    49.67,
+    16
+   ],
+   "baseline": 97,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Envanter",
+   "owner": "breadcrumb",
+   "bbox": [
+    107.67,
+    84,
+    55.02,
+    16
+   ],
+   "baseline": 97,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz Envanteri",
+   "owner": "pageHeader",
+   "bbox": [
+    32,
+    112,
+    177.95,
+    29
+   ],
+   "baseline": 135,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 24,
+    "weight": 700,
+    "lineHeight": 32,
+    "letterSpacing": -0.4,
+    "italic": false
+   }
+  },
+  {
+   "string": "134",
+   "owner": "pageHeader",
+   "bbox": [
+    228.95,
+    119,
+    20.7,
+    15
+   ],
+   "baseline": 131,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Dışa aktar",
+   "owner": "exportButton",
+   "bbox": [
+    1193.11,
+    118,
+    67.66,
+    17
+   ],
+   "baseline": 132,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz ekle",
+   "owner": "addButton",
+   "bbox": [
+    1323.77,
+    118,
+    70.23,
+    17
+   ],
+   "baseline": 132,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ad, seri no veya konum ara…",
+   "owner": "search",
+   "bbox": [
+    86,
+    187.5,
+    191.8,
+    17
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Durum:",
+   "owner": "filterStatus",
+   "bbox": [
+    374,
+    188.5,
+    45.55,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tümü",
+   "owner": "filterStatus",
+   "bbox": [
+    425.55,
+    188.5,
+    35.55,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tür:",
+   "owner": "filterType",
+   "bbox": [
+    513.09,
+    188.5,
+    24.63,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson",
+   "owner": "filterType",
+   "bbox": [
+    543.72,
+    188.5,
+    42.72,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konum",
+   "owner": "filterLocation",
+   "bbox": [
+    638.44,
+    188.5,
+    43.47,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Filtreleri temizle",
+   "owner": "toolbar",
+   "bbox": [
+    726.91,
+    188.5,
+    100.52,
+    16
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sütunlar",
+   "owner": "columnsButton",
+   "bbox": [
+    1236.97,
+    187.5,
+    57.03,
+    17
+   ],
+   "baseline": 201.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Cihaz",
+   "owner": "headerRow",
+   "bbox": [
+    93,
+    241.75,
+    33.02,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Seri no",
+   "owner": "headerRow",
+   "bbox": [
+    313,
+    241.75,
+    40.56,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Tür",
+   "owner": "headerRow",
+   "bbox": [
+    463,
+    241.75,
+    19.44,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konum",
+   "owner": "headerRow",
+   "bbox": [
+    643,
+    241.75,
+    40.77,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Durum",
+   "owner": "headerRow",
+   "bbox": [
+    813,
+    241.75,
+    38.94,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "CPU",
+   "owner": "headerRow",
+   "bbox": [
+    953,
+    241.75,
+    25.42,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Son görülme",
+   "owner": "headerRow",
+   "bbox": [
+    1093,
+    241.75,
+    73.45,
+    15
+   ],
+   "baseline": 253.75,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "left",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-orin-a12",
+   "owner": "row[0]",
+   "bbox": [
+    133,
+    288,
+    103.11,
+    17
+   ],
+   "baseline": 302,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JOA-24-00812",
+   "owner": "row[0]",
+   "bbox": [
+    313,
+    288,
+    93.61,
+    17
+   ],
+   "baseline": 301,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson Orin NX",
+   "owner": "row[0]",
+   "bbox": [
+    463,
+    288,
+    100.41,
+    17
+   ],
+   "baseline": 302,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Hat 3",
+   "owner": "row[0]",
+   "bbox": [
+    643,
+    288,
+    93.95,
+    17
+   ],
+   "baseline": 302,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[0]",
+   "bbox": [
+    834,
+    289,
+    54.83,
+    15
+   ],
+   "baseline": 301,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "42%",
+   "owner": "row[0]",
+   "bbox": [
+    1027,
+    289,
+    21.61,
+    16
+   ],
+   "baseline": 301,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12 sn önce",
+   "owner": "row[0]",
+   "bbox": [
+    1093,
+    288,
+    70.61,
+    17
+   ],
+   "baseline": 302,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-orin-a13",
+   "owner": "row[1]",
+   "bbox": [
+    133,
+    340,
+    103.3,
+    17
+   ],
+   "baseline": 354,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JOA-24-00813",
+   "owner": "row[1]",
+   "bbox": [
+    313,
+    340,
+    93.61,
+    17
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson Orin NX",
+   "owner": "row[1]",
+   "bbox": [
+    463,
+    340,
+    100.41,
+    17
+   ],
+   "baseline": 354,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Hat 3",
+   "owner": "row[1]",
+   "bbox": [
+    643,
+    340,
+    93.95,
+    17
+   ],
+   "baseline": 354,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[1]",
+   "bbox": [
+    834,
+    341,
+    54.83,
+    15
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "67%",
+   "owner": "row[1]",
+   "bbox": [
+    1027,
+    341,
+    21.61,
+    16
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18 sn önce",
+   "owner": "row[1]",
+   "bbox": [
+    1093,
+    340,
+    70.72,
+    17
+   ],
+   "baseline": 354,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "rpi5-kapi-03",
+   "owner": "row[2]",
+   "bbox": [
+    133,
+    392,
+    86.25,
+    17
+   ],
+   "baseline": 406,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "RP5-23-11204",
+   "owner": "row[2]",
+   "bbox": [
+    313,
+    392,
+    93.61,
+    17
+   ],
+   "baseline": 405,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raspberry Pi 5",
+   "owner": "row[2]",
+   "bbox": [
+    463,
+    392,
+    96.86,
+    17
+   ],
+   "baseline": 406,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çankaya · Giriş",
+   "owner": "row[2]",
+   "bbox": [
+    643,
+    392,
+    99.3,
+    17
+   ],
+   "baseline": 406,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[2]",
+   "bbox": [
+    834,
+    393,
+    54.83,
+    15
+   ],
+   "baseline": 405,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23%",
+   "owner": "row[2]",
+   "bbox": [
+    1027,
+    393,
+    21.61,
+    16
+   ],
+   "baseline": 405,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "25 sn önce",
+   "owner": "row[2]",
+   "bbox": [
+    1093,
+    392,
+    73.22,
+    17
+   ],
+   "baseline": 406,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kv260-hat-2",
+   "owner": "row[3]",
+   "bbox": [
+    133,
+    444,
+    85.88,
+    17
+   ],
+   "baseline": 458,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "KV2-24-00077",
+   "owner": "row[3]",
+   "bbox": [
+    313,
+    444,
+    93.61,
+    17
+   ],
+   "baseline": 457,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kria KV260",
+   "owner": "row[3]",
+   "bbox": [
+    463,
+    444,
+    75.13,
+    17
+   ],
+   "baseline": 458,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Hat 2",
+   "owner": "row[3]",
+   "bbox": [
+    643,
+    444,
+    93.84,
+    17
+   ],
+   "baseline": 458,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[3]",
+   "bbox": [
+    834,
+    445,
+    54.83,
+    15
+   ],
+   "baseline": 457,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "81%",
+   "owner": "row[3]",
+   "bbox": [
+    1027,
+    445,
+    21.61,
+    16
+   ],
+   "baseline": 457,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "31 sn önce",
+   "owner": "row[3]",
+   "bbox": [
+    1093,
+    444,
+    70.72,
+    17
+   ],
+   "baseline": 458,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "rpi4-lobi-01",
+   "owner": "row[4]",
+   "bbox": [
+    133,
+    496,
+    80.2,
+    17
+   ],
+   "baseline": 510,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "RP4-21-09982",
+   "owner": "row[4]",
+   "bbox": [
+    313,
+    496,
+    93.61,
+    17
+   ],
+   "baseline": 509,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Raspberry Pi 4",
+   "owner": "row[4]",
+   "bbox": [
+    463,
+    496,
+    97.61,
+    17
+   ],
+   "baseline": 510,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çankaya · Lobi",
+   "owner": "row[4]",
+   "bbox": [
+    643,
+    496,
+    97.55,
+    17
+   ],
+   "baseline": 510,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[4]",
+   "bbox": [
+    834,
+    497,
+    54.83,
+    15
+   ],
+   "baseline": 509,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "15%",
+   "owner": "row[4]",
+   "bbox": [
+    1027,
+    497,
+    21.61,
+    16
+   ],
+   "baseline": 509,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1 dk önce",
+   "owner": "row[4]",
+   "bbox": [
+    1093,
+    496,
+    62.66,
+    17
+   ],
+   "baseline": 510,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-orin-a14",
+   "owner": "row[5]",
+   "bbox": [
+    133,
+    548,
+    103.72,
+    17
+   ],
+   "baseline": 562,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JOA-24-00814",
+   "owner": "row[5]",
+   "bbox": [
+    313,
+    548,
+    93.61,
+    17
+   ],
+   "baseline": 561,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson Orin NX",
+   "owner": "row[5]",
+   "bbox": [
+    463,
+    548,
+    100.41,
+    17
+   ],
+   "baseline": 562,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Hat 4",
+   "owner": "row[5]",
+   "bbox": [
+    643,
+    548,
+    94.34,
+    17
+   ],
+   "baseline": 562,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[5]",
+   "bbox": [
+    834,
+    549,
+    54.83,
+    15
+   ],
+   "baseline": 561,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "55%",
+   "owner": "row[5]",
+   "bbox": [
+    1027,
+    549,
+    21.61,
+    16
+   ],
+   "baseline": 561,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1 dk önce",
+   "owner": "row[5]",
+   "bbox": [
+    1093,
+    548,
+    62.66,
+    17
+   ],
+   "baseline": 562,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-orin-a15",
+   "owner": "row[6]",
+   "bbox": [
+    133,
+    600,
+    102.97,
+    17
+   ],
+   "baseline": 614,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JOA-24-00815",
+   "owner": "row[6]",
+   "bbox": [
+    313,
+    600,
+    93.61,
+    17
+   ],
+   "baseline": 613,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson Orin NX",
+   "owner": "row[6]",
+   "bbox": [
+    463,
+    600,
+    100.41,
+    17
+   ],
+   "baseline": 614,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ankara · Hat 4",
+   "owner": "row[6]",
+   "bbox": [
+    643,
+    600,
+    94.34,
+    17
+   ],
+   "baseline": 614,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimiçi",
+   "owner": "row[6]",
+   "bbox": [
+    834,
+    601,
+    54.83,
+    15
+   ],
+   "baseline": 613,
+   "lines": 1,
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "38%",
+   "owner": "row[6]",
+   "bbox": [
+    1027,
+    601,
+    21.61,
+    16
+   ],
+   "baseline": 613,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 12,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2 dk önce",
+   "owner": "row[6]",
+   "bbox": [
+    1093,
+    600,
+    65.5,
+    17
+   ],
+   "baseline": 614,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-nano-b07",
+   "owner": "row[7]",
+   "bbox": [
+    133,
+    652,
+    114.05,
+    17
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JNB-22-03391",
+   "owner": "row[7]",
+   "bbox": [
+    313,
+    652,
+    93.61,
+    17
+   ],
+   "baseline": 665,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson Nano",
+   "owner": "row[7]",
+   "bbox": [
+    463,
+    652,
+    83.67,
+    17
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "İzmir · Depo",
+   "owner": "row[7]",
+   "bbox": [
+    643,
+    652,
+    79.56,
+    17
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bakımda",
+   "owner": "row[7]",
+   "bbox": [
+    840,
+    653,
+    49.97,
+    15
+   ],
+   "baseline": 665,
+   "lines": 1,
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "—",
+   "owner": "row[7]",
+   "bbox": [
+    953,
+    652,
+    14,
+    17
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "18 dk önce",
+   "owner": "row[7]",
+   "bbox": [
+    1093,
+    652,
+    71.31,
+    17
+   ],
+   "baseline": 666,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "jetson-tx2-c01",
+   "owner": "row[8]",
+   "bbox": [
+    133,
+    704,
+    99.53,
+    17
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "JTX-21-00456",
+   "owner": "row[8]",
+   "bbox": [
+    313,
+    704,
+    93.61,
+    17
+   ],
+   "baseline": 717,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson TX2",
+   "owner": "row[8]",
+   "bbox": [
+    463,
+    704,
+    75.72,
+    17
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Bursa · Ar-Ge",
+   "owner": "row[8]",
+   "bbox": [
+    643,
+    704,
+    89.3,
+    17
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimdışı",
+   "owner": "row[8]",
+   "bbox": [
+    834,
+    705,
+    61.91,
+    15
+   ],
+   "baseline": 717,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "—",
+   "owner": "row[8]",
+   "bbox": [
+    953,
+    704,
+    14,
+    17
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3 gün önce",
+   "owner": "row[8]",
+   "bbox": [
+    1093,
+    704,
+    74.48,
+    17
+   ],
+   "baseline": 718,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "orbitty-tx2-02",
+   "owner": "row[9]",
+   "bbox": [
+    133,
+    756.25,
+    97.09,
+    17
+   ],
+   "baseline": 770.25,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ORB-20-00121",
+   "owner": "row[9]",
+   "bbox": [
+    313,
+    756.25,
+    93.61,
+    17
+   ],
+   "baseline": 769.25,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "JetBrains Mono",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Jetson TX2 · Orbitty",
+   "owner": "row[9]",
+   "bbox": [
+    463,
+    756.25,
+    133.09,
+    17
+   ],
+   "baseline": 770.25,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Konya · Saha",
+   "owner": "row[9]",
+   "bbox": [
+    643,
+    756.25,
+    85.88,
+    17
+   ],
+   "baseline": 770.25,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çevrimdışı",
+   "owner": "row[9]",
+   "bbox": [
+    834,
+    757.25,
+    61.91,
+    15
+   ],
+   "baseline": 769.25,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 12,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "—",
+   "owner": "row[9]",
+   "bbox": [
+    953,
+    756.25,
+    14,
+    17
+   ],
+   "baseline": 770.25,
+   "lines": 1,
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "5 gün önce",
+   "owner": "row[9]",
+   "bbox": [
+    1093,
+    756.25,
+    74.16,
+    17
+   ],
+   "baseline": 770.25,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 14,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "134",
+   "owner": "tableFooter",
+   "bbox": [
+    53,
+    812.5,
+    22.44,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "kayıttan",
+   "owner": "tableFooter",
+   "bbox": [
+    79.09,
+    812.5,
+    48.25,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1–10",
+   "owner": "tableFooter",
+   "bbox": [
+    131,
+    812.5,
+    26.08,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "arası ·",
+   "owner": "tableFooter",
+   "bbox": [
+    160.73,
+    812.5,
+    36.91,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1",
+   "owner": "tableFooter",
+   "bbox": [
+    201.3,
+    812.5,
+    5.5,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "seçili",
+   "owner": "tableFooter",
+   "bbox": [
+    210.45,
+    812.5,
+    31.33,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Sayfa başına",
+   "owner": "tableFooter",
+   "bbox": [
+    978.61,
+    812.5,
+    78.89,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "10",
+   "owner": "pageSize",
+   "bbox": [
+    1084.5,
+    812.5,
+    13.5,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 400,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "1",
+   "owner": "pagination",
+   "bbox": [
+    1192.25,
+    812.5,
+    5.5,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "2",
+   "owner": "pagination",
+   "bbox": [
+    1226.98,
+    812.5,
+    8.02,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "3",
+   "owner": "pagination",
+   "bbox": [
+    1262.92,
+    812.5,
+    8.16,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "…",
+   "owner": "pagination",
+   "bbox": [
+    1297.08,
+    812.5,
+    11.84,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "14",
+   "owner": "pagination",
+   "bbox": [
+    1332.03,
+    812.5,
+    13.94,
+    16
+   ],
+   "baseline": 825.5,
+   "lines": 1,
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Inter",
+    "px": 13,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "tabler:server-2",
+   "owner": "appBar",
+   "bbox": [
+    39,
+    20.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:help-circle",
+   "owner": "appBar",
+   "bbox": [
+    1289,
+    20.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:bell",
+   "owner": "appBar",
+   "bbox": [
+    1333,
+    20.5,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:chevron-right",
+   "owner": "breadcrumb",
+   "bbox": [
+    87.67,
+    85,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:download",
+   "owner": "exportButton",
+   "bbox": [
+    1169.11,
+    119,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:plus",
+   "owner": "addButton",
+   "bbox": [
+    1299.77,
+    119,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:search",
+   "owner": "search",
+   "bbox": [
+    62,
+    188.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:chevron-down",
+   "owner": "filterStatus",
+   "bbox": [
+    467.09,
+    189.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:x",
+   "owner": "filterType",
+   "bbox": [
+    592.44,
+    189.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:chevron-down",
+   "owner": "filterLocation",
+   "bbox": [
+    687.91,
+    189.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:columns-3",
+   "owner": "columnsButton",
+   "bbox": [
+    1212.97,
+    188.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:list",
+   "owner": "viewToggle",
+   "bbox": [
+    1328,
+    188.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:layout-grid",
+   "owner": "viewToggle",
+   "bbox": [
+    1364.5,
+    188.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:minus",
+   "owner": "selectAll",
+   "bbox": [
+    55,
+    243.75,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3,
+   "filled": false
+  },
+  {
+   "match": "tabler:arrow-down",
+   "owner": "headerRow",
+   "bbox": [
+    1170.45,
+    242.75,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[0]",
+   "bbox": [
+    100,
+    289,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[0]",
+   "bbox": [
+    1367,
+    288,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[1]",
+   "bbox": [
+    100,
+    341,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[1]",
+   "bbox": [
+    1367,
+    340,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:check",
+   "owner": "row[2]",
+   "bbox": [
+    55,
+    395,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 3,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu-2",
+   "owner": "row[2]",
+   "bbox": [
+    100,
+    393,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[2]",
+   "bbox": [
+    1367,
+    392,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu-2",
+   "owner": "row[3]",
+   "bbox": [
+    100,
+    445,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[3]",
+   "bbox": [
+    1367,
+    444,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu-2",
+   "owner": "row[4]",
+   "bbox": [
+    100,
+    497,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[4]",
+   "bbox": [
+    1367,
+    496,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[5]",
+   "bbox": [
+    100,
+    549,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[5]",
+   "bbox": [
+    1367,
+    548,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[6]",
+   "bbox": [
+    100,
+    601,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[6]",
+   "bbox": [
+    1367,
+    600,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[7]",
+   "bbox": [
+    100,
+    653,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:tool",
+   "owner": "row[7]",
+   "bbox": [
+    822,
+    655,
+    12,
+    12
+   ],
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[7]",
+   "bbox": [
+    1367,
+    652,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[8]",
+   "bbox": [
+    100,
+    705,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[8]",
+   "bbox": [
+    1367,
+    704,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:cpu",
+   "owner": "row[9]",
+   "bbox": [
+    100,
+    757.25,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:dots-vertical",
+   "owner": "row[9]",
+   "bbox": [
+    1367,
+    756.25,
+    18,
+    18
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:selector",
+   "owner": "pageSize",
+   "bbox": [
+    1104,
+    813.5,
+    14,
+    14
+   ],
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:chevron-left",
+   "owner": "pagination",
+   "bbox": [
+    1151,
+    812.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#CBD5E1",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:chevron-right",
+   "owner": "pagination",
+   "bbox": [
+    1367,
+    812.5,
+    16,
+    16
+   ],
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#334155",
+    "alpha": 1.0
+   },
+   "count": 53,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#64748B",
+    "alpha": 1.0
+   },
+   "count": 36,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E2E8F0",
+    "alpha": 1.0
+   },
+   "count": 27,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#94A3B8",
+    "alpha": 1.0
+   },
+   "count": 20,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F172A",
+    "alpha": 1.0
+   },
+   "count": 19,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F766E",
+    "alpha": 1.0
+   },
+   "count": 12,
+   "where": [
+    "fill",
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 10,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#CBD5E1",
+    "alpha": 1.0
+   },
+   "count": 9,
+   "where": [
+    "border",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#15803D",
+    "alpha": 1.0
+   },
+   "count": 7,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#99F6E4",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#B45309",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F1F5F9",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F0FDFA",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  }
+ ],
+ "data": {
+  "total": 134,
+  "page": 1,
+  "pageSize": 10,
+  "pages": 14,
+  "sort": {
+   "column": "lastSeen",
+   "order": "desc"
+  },
+  "filters": {
+   "type": "Jetson"
+  },
+  "selected": [
+   "rpi5-kapi-03"
+  ],
+  "rows": [
+   {
+    "name": "jetson-orin-a12",
+    "serial": "JOA-24-00812",
+    "type": "Jetson Orin NX",
+    "location": "Ankara · Hat 3",
+    "status": "online",
+    "cpu": 42,
+    "lastSeen": "12 sn önce"
+   },
+   {
+    "name": "jetson-orin-a13",
+    "serial": "JOA-24-00813",
+    "type": "Jetson Orin NX",
+    "location": "Ankara · Hat 3",
+    "status": "online",
+    "cpu": 67,
+    "lastSeen": "18 sn önce"
+   },
+   {
+    "name": "rpi5-kapi-03",
+    "serial": "RP5-23-11204",
+    "type": "Raspberry Pi 5",
+    "location": "Çankaya · Giriş",
+    "status": "online",
+    "cpu": 23,
+    "lastSeen": "25 sn önce"
+   },
+   {
+    "name": "kv260-hat-2",
+    "serial": "KV2-24-00077",
+    "type": "Kria KV260",
+    "location": "Ankara · Hat 2",
+    "status": "online",
+    "cpu": 81,
+    "lastSeen": "31 sn önce"
+   },
+   {
+    "name": "rpi4-lobi-01",
+    "serial": "RP4-21-09982",
+    "type": "Raspberry Pi 4",
+    "location": "Çankaya · Lobi",
+    "status": "online",
+    "cpu": 15,
+    "lastSeen": "1 dk önce"
+   },
+   {
+    "name": "jetson-orin-a14",
+    "serial": "JOA-24-00814",
+    "type": "Jetson Orin NX",
+    "location": "Ankara · Hat 4",
+    "status": "online",
+    "cpu": 55,
+    "lastSeen": "1 dk önce"
+   },
+   {
+    "name": "jetson-orin-a15",
+    "serial": "JOA-24-00815",
+    "type": "Jetson Orin NX",
+    "location": "Ankara · Hat 4",
+    "status": "online",
+    "cpu": 38,
+    "lastSeen": "2 dk önce"
+   },
+   {
+    "name": "jetson-nano-b07",
+    "serial": "JNB-22-03391",
+    "type": "Jetson Nano",
+    "location": "İzmir · Depo",
+    "status": "maintenance",
+    "cpu": null,
+    "lastSeen": "18 dk önce"
+   },
+   {
+    "name": "jetson-tx2-c01",
+    "serial": "JTX-21-00456",
+    "type": "Jetson TX2",
+    "location": "Bursa · Ar-Ge",
+    "status": "offline",
+    "cpu": null,
+    "lastSeen": "3 gün önce"
+   },
+   {
+    "name": "orbitty-tx2-02",
+    "serial": "ORB-20-00121",
+    "type": "Jetson TX2 · Orbitty",
+    "location": "Konya · Saha",
+    "status": "offline",
+    "cpu": null,
+    "lastSeen": "5 gün önce"
+   }
+  ]
+ },
+ "states": {}
+}
