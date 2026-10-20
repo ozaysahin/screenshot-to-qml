@@ -16,14 +16,15 @@ python scripts/check.py PROJECT --source input.png --spec design-spec.json [--th
 ```
 
 It renders at `meta.designSize × meta.dpr`, compares with the source, runs the quality gates,
-and writes `PROJECT/.check/{render.png, diff.png, report.json, gate.json, summary.json}`.
+and writes `PROJECT/.check/{render.png, diff.png, worst.png, report.json, gate.json, summary.json}`.
 
-1. Read the one-line summary and `worstRegions`.
-2. Open `diff.png` (hot colors = differences; boxes = worst regions) and the same crop of the
-   source and render (`probe.py … crop`).
-3. Fix the worst 1–3 regions with targeted edits. Do not rewrite files wholesale.
-4. Re-run. Stop at PASS, or after 5 iterations, or when two iterations improve global SSIM by
-   less than 0.005 — then report what is left.
+1. Read the summary line and the listed failures; do not open `report.json`.
+2. Open `worst.png`: source and render crops of the worst items side by side, each labelled
+   with what failed. It is the one image a round needs; `diff.png` (heat map of the whole
+   screen) only when the cause is not visible there.
+3. Fix every listed item in one pass with targeted edits. Do not rewrite files wholesale.
+4. Re-run. Stop at PASS, at the effort's round limit (quick 3, standard 4, full 6), or when two
+   rounds improve global SSIM by less than 0.005, then report what is left.
 
 ## What the metrics mean
 
@@ -62,9 +63,9 @@ color, so a status dot or a switch knob that is not its own node does not count 
 | Text offsets growing along a line | letter spacing, wrong weight or family, rounded advances | typography.md |
 | Text dy ≈ ±2–4 | line box height/alignment | `height: lineHeight; verticalAlignment: AlignVCenter` |
 | ΔE > 2 on a surface | wrong token, missing alpha, `#RRGGBBAA` order | tokens-theming.md |
-| Region SSIM low, colors right | missing border/shadow/gradient, radius off | crop both images at zoom 4 and compare |
+| Region SSIM low, colors right | missing border/shadow/gradient, radius off | compare the pair in `worst.png` |
 | Missing strings | text in an Image/Canvas, `Font.AllUppercase` on Turkish text (gives I, not İ), a live clock or date instead of the screenshot's value, typo | write real text; show the screenshot's values from mock data |
-| Region SSIM low but geometry fine | border style (dashed), radius or antialiasing of a small control | crop both images at zoom 4 and compare |
+| Region SSIM low but geometry fine | border style (dashed), radius or antialiasing of a small control | compare the pair in `worst.png` |
 | runtime gate | QML warnings (binding loops, undefined properties) | fix every warning |
 | format gate | not qmlformat-clean | `qmlformat -i` (or `pyside6-qmlformat -i`) on the files |
 | a11y: "Tab never reaches it" | `focusPolicy: Qt.NoFocus` (template default for some), a `MouseArea` instead of a control | `focusPolicy: Qt.StrongFocus`; use a kit/Template control |

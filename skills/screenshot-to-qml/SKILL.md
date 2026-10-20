@@ -4,7 +4,7 @@ description: Converts UI screenshots, mockups or HTML/CSS/Tailwind into native Q
 license: MIT (see LICENSE.txt)
 compatibility: Python 3.10+, PySide6 6.8+; rendering checks need a display or Xvfb (Linux)
 metadata:
-  version: "1.0.0"
+  version: "1.0.1"
 ---
 
 # Screenshot → Qt Quick (QML)
@@ -22,6 +22,29 @@ graph — never a web engine or WebView. Three principles drive everything below
 
 Not covered: Qt Widgets (`.ui`) output, wrapping HTML in a WebView, importing Figma files
 (ask for a PNG export instead).
+
+## Work budget
+
+Every tool call re-sends the whole conversation, so a build's cost is set by how many calls
+and images it takes, not by how hard each one is. Work in few, large steps:
+
+| Effort | Use for | Tool calls | `check.py` runs |
+| --- | --- | --- | --- |
+| `quick` | simple screens (settings, forms, lists, one card grid), or a fast first version | ≤ 50 | ≤ 3 |
+| `standard` | dashboards, HMIs, dense or mixed screens | ≤ 80 | ≤ 4 |
+| `full` | the user asks for pixel-exact fidelity | as needed | ≤ 6 |
+
+- Read summaries, not raw files: `spec_view.py` for a spec, `check.py`'s printout and
+  `worst.png` for a check. Never open the JSON files to read them.
+- Do not write ad hoc Python to read pixels, crop images, compare renders or inspect JSON.
+  `probe.py` measures many points and boxes in one call; the sheets show many crops in one
+  image.
+- Open few images: the input once, `overlay.png` and `ocr_sheet.png` once, `worst.png` after
+  each check. Do not open zoomed crops of single elements unless a measurement is ambiguous.
+- Write each file whole in one call, fix everything a check lists before re-running it, and
+  read a reference only when its step needs it.
+- At the budget, stop: list what is left in the README's fidelity report instead of iterating.
+  Spend the last round only on fixes you can name exactly ("padding 17 → 15.5 px").
 
 ## Setup (once per machine)
 
@@ -50,6 +73,7 @@ threshold / gate failed) or 2 (could not run).
 | Layout | `canvas` (fixed kiosk/HMI screen, scaled) · `responsive` (resizable desktop) | canvas for kiosk/HMI/panel screenshots, else responsive |
 | Profile | `desktop` · `embedded-gpu` · `embedded-sw` (references/embedded.md) | `desktop` |
 | Mode | `production` (Theme, models, controls, a11y) · `fidelity` (single static screen, quickest) | `production` |
+| Effort | `quick` · `standard` · `full` (Work budget above) | what `analyze.py` suggests (quick for ≤ 70 text runs and ≤ 60 surfaces) |
 | Screenshot DPR | 1 · 1.25 · 1.5 · 2 · 3 (references/analysis.md) | inferred from size; ask if ambiguous |
 | Minimum Qt | 6.8 LTS or newer | 6.8 |
 
@@ -58,13 +82,13 @@ threshold / gate failed) or 2 (could not run).
 Copy this checklist into your reply and tick it off:
 
 ```
-- [ ] 0 Intake: target, layout, profile, mode, DPR → design size
-- [ ] 1 Measure: analyze.py draft → verify/correct with probe → match.py → validate_spec.py
+- [ ] 0 Intake: target, layout, profile, mode, effort, DPR → design size
+- [ ] 1 Measure: analyze.py draft → fix it from overlay + ocr_sheet → match.py → validate_spec.py
       (HTML input: html_to_spec.py → rename tokens/roles → validate_spec.py)
 - [ ] 2 Plan: component tree, models, controls, states
 - [ ] 3 Scaffold + gen_theme.py
 - [ ] 4 Build components and screens
-- [ ] 5 Check loop until PASS (max 5 rounds)
+- [ ] 5 Check loop until PASS (rounds per effort: 3 / 4 / 6)
 - [ ] 6 Deliver: README fidelity report + preview (+ deploy.py when asked to package)
 ```
 
@@ -89,16 +113,21 @@ substitute them. Details: **references/css-to-qml.md**.
 
 ```bash
 python <skill>/scripts/analyze.py input.png --dpr D --out-dir analysis        # palette + surfaces + OCR
-# -> analysis/design-spec.draft.json and analysis/overlay.png (s# surfaces, t# text, i# icons)
-python <skill>/scripts/probe.py input.png --dpr D crop X Y W H --zoom 4 --out c.png   # look closer
+# -> analysis/design-spec.draft.json, overlay.png (s# surfaces, t# text, i# icons),
+#    ocr_sheet.png (every text run's crop labelled with its id)
+python <skill>/scripts/spec_view.py analysis/design-spec.draft.json             # the draft as a compact table
+python <skill>/scripts/probe.py input.png --dpr D color X Y [X Y ...]       # only for values the draft lacks
 python <skill>/scripts/probe.py input.png --dpr D edges X Y W H             # edges, borders, padding
-python <skill>/scripts/probe.py input.png --dpr D color X Y [X Y ...]       # exact colors
 ```
+
+Look at `overlay.png` and `ocr_sheet.png` once each, compare them with the `spec_view.py`
+table, and fix the draft in one edit. Probe only what the draft is missing or flags as
+`[verify]`.
 
 On the 20 eval screens the draft recovers ~95 % of solid colors (ΔE ≤ 2) and ~94 % of solid
 surfaces (box error mostly < 0.6 px) but misses most cells of dense grids such as heatmaps;
 OCR gets ~73 % of strings exactly and font size within ~1.4 px. So:
-**verify every string** against the image (OCR confuses ı/i, 0/6/8 in monospace, `·` → `-`,
+**verify every string** against `ocr_sheet.png` (OCR confuses ı/i, 0/6/8 in monospace, `·` → `-`,
 `–` in ranges ("10–20", "1–14") → `-`, `%` and `₺`), rename tokens by role, set roles and
 models, delete false surfaces and add missed ones. Then let the matchers fill what the eye is
 bad at:
@@ -157,7 +186,9 @@ The scaffold creates:
 tokens. It ends with the control roles the kit needs (`accentHover`, `surfacePressed`,
 `focusRing`, `controlHeight` …): aliased to spec tokens, derived from them, or assumed. Give
 typeScale entries role names (`title`, `body`, `button`, `caption` …) in the spec and re-run
-rather than editing the QML.
+rather than editing the QML. Measured control sizes go in `tokens.size`
+(`{"controlHeight": 40, "controlPadding": 14}`): an entry with a role's name replaces the
+assumed value.
 
 More detail: conventions in **references/tokens-theming.md**, fonts in
 **references/typography.md**, icons in **references/icons-vectors.md**.
@@ -175,7 +206,10 @@ Rules that apply to every file:
   borders inside boxes, rounded corners do not clip).
 - Text verbatim (Turkish ı/İ, decimal commas, real uppercase strings), wrapped in `qsTr()`
   (data in models and mock files is not).
-- Effects per profile (**references/effects.md**); vector icons, never redrawn by hand.
+- Effects per profile (**references/effects.md**); vector icons, never redrawn by hand:
+  `icon_match.py export lucide:bell --stroke 2 --color "#64748B" --out assets/icons/bell.svg`
+  per matched icon (one shell loop for all), then `VectorImage` for a fixed color or
+  `svgtoqml` when the color must follow Theme tokens (**references/icons-vectors.md**).
 - `Accessible.name` on icon-only buttons, sliders, combos, spin boxes, progress bars and
   informative custom items (**references/a11y-i18n.md**).
 - Run `qmlformat -i` (or `pyside6-qmlformat -i`) on every QML file you write.
@@ -206,8 +240,11 @@ graph for `embedded-sw`), then:
   and **perf** (what the profile's renderer and hardware can afford) and **cpp** (the C++ host
   builds, runs clean and matches).
 
-Fix the worst 1–3 regions per round with targeted edits (open `out/.check/diff.png`), re-run,
-stop at PASS, after 5 rounds, or when improvement stalls (< 0.005 SSIM over two rounds).
+After a failed diff, `check.py` writes `out/.check/worst.png`: source and render crops of the
+worst items side by side, labelled with what failed. Open it (not the full render, not crops
+of your own), fix every listed item in one pass, and re-run. Stop at PASS, at the effort's
+round limit, or when improvement stalls (< 0.005 SSIM over two rounds); list what is left in
+the README.
 How to read failures and what usually causes them: **references/verification.md**.
 
 Never put the screenshot or crops of it into the UI, and never edit thresholds or the spec to
@@ -254,6 +291,8 @@ the `lint` gate fails types newer than `meta.minQt` even when the local PySide6 
 | `font_match.py` · `icon_match.py` | font family/weight/size per run; icon set:name + stroke; `fetch` the caches, `export` an SVG |
 | `shadow_fit.py` · `gradient_fit.py` | CSS box-shadow / linear-gradient of one box (`--box`) or a whole spec |
 | `probe.py` | measure colors, regions, edges; zoomed crops; coordinate ruler |
+| `spec_view.py` | a spec as a compact table (tokens, nodes, text, icons; `--verify`, `--ids`) |
+| `sheet.py` | contact sheets: `compare` (worst items, source \| render) and `ocr` (all text runs) |
 | `validate_spec.py` | schema + consistency checks for design-spec.json |
 | `scaffold.py` | new project (shared `assets/templates/project` + a `pyside6` and/or `cpp` host); `--add-host` |
 | `gen_theme.py` | Theme.qml + Icons.qml from the spec tokens |

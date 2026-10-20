@@ -14,9 +14,11 @@ scene graph, as the device will. When the project has a C++ host (CMakeLists.txt
 built, run and grabbed at the same size (build_cpp.py) and compared with the PySide6 render
 (the cpp gate); without a Qt 6 SDK that gate is skipped with a note. Writes to --out-dir:
   render.png  scene.json  interaction.json  diff.png  report.json  gate.json  summary.json
+  worst.png   (when the diff fails) source and render crops of the worst items, side by side
   cpp.png  cpp.json  cpp-build/   (C++ host)
 
-Prints one PASS/FAIL line per stage and the worst regions to fix next.
+Prints one PASS/FAIL line per stage and the worst regions to fix next. Look at worst.png, not
+at the full render or crops of your own.
 Exit codes: 0 everything passes, 1 a stage failed, 2 could not run.
 """
 from __future__ import annotations
@@ -57,7 +59,7 @@ def main(argv=None) -> int:
     dpr = spec["meta"].get("dpr", 1)
     out = (args.out_dir or args.project / ".check").resolve()
     out.mkdir(parents=True, exist_ok=True)
-    for stale in ("render.png", "scene.json", "interaction.json", "report.json", "diff.png", "gate.json", "summary.json",
+    for stale in ("render.png", "scene.json", "interaction.json", "report.json", "diff.png", "worst.png", "gate.json", "summary.json",
                   "cpp.png", "cpp.json"):
         (out / stale).unlink(missing_ok=True)     # never report an older run's numbers
     py = sys.executable
@@ -91,6 +93,15 @@ def main(argv=None) -> int:
     if diff_rc == 2:
         print("ERROR diff (see the message above)")
         return 2
+    if diff_rc == 1 and (out / "report.json").exists():
+        import sheet
+        try:
+            n = sheet.compare_sheet(args.source, out / "render.png", spec,
+                                    json.loads((out / "report.json").read_text(encoding="utf-8")), out / "worst.png")
+            if n:
+                print(f"worst items, source | render: {out / 'worst.png'} ({n})")
+        except (OSError, KeyError, ValueError) as e:
+            print(f"[warn] worst.png not written: {e}")
 
     cpp_json = None
     if (args.project / "CMakeLists.txt").exists() and not args.no_cpp:

@@ -13,6 +13,12 @@ singletons; scaffold.py creates it). Generates:
               ints lh<Name>; alpha() helper
   Icons.qml   one string per icon-font glyph in spec.icons (kind font-glyph with codepoint)
 
+Control roles the kit needs (controlHeight, controlHeightSm, controlPadding, controlSpacing,
+radiusControl, borderWidth, focusRingWidth, accentHover, surfacePressed, focusRing …) are
+aliased to spec tokens, derived or assumed. Measured sizes go in tokens.size
+({"controlHeight": 40, "controlPadding": 14}); a tokens.size or tokens.color entry with a
+role's name replaces the assumed value.
+
 Token names are made QML-safe: camelCase, no leading digit, and never 'on' + capital
 (signal-handler syntax) — 'onAccent' becomes 'accentInk'.
 The files are qmlformat-ed when qmlformat is available. Rename font tokens by role

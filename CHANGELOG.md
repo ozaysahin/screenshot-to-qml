@@ -2,6 +2,49 @@
 
 All notable changes to this project. Versions follow the roadmap in README.md.
 
+## [1.0.1] — 2026-10-20
+
+Token diet. The build transcripts of the v1.0 eval showed where the cost was: about 200 model
+turns per screen, 63 % of the tool calls before the first check, mostly ad hoc Python to read pixels and
+JSON and about 20 image crops opened one by one. Each call re-sends the whole conversation, so
+the number of calls is what made a screen expensive.
+
+### Added
+- **Work budget** in SKILL.md: `quick` / `standard` / `full` effort with call and check-run
+  limits, and rules: read summaries not raw files, no ad hoc pixel or JSON scripts, few images,
+  whole-file writes, stop at the budget and report what is left. `analyze.py` suggests the
+  effort from the screen's size.
+- `sheet.py`: contact sheets. `check.py` writes `worst.png` after a failed diff (source and
+  render crops of the worst items side by side, labelled with what failed); `analyze.py`
+  writes `ocr_sheet.png` (every text run's crop with its id), so all strings are checked in
+  one look.
+- `spec_view.py`: a design-spec as a compact table (about a quarter of the JSON's size), with
+  `--verify` and `--ids` filters.
+
+### Changed
+- `probe.py region` and `edges` take several boxes per call; output is compact JSON, and
+  `edges` keeps the first and last 4 runs (`--all` for every run).
+- `gen_theme.py` and SKILL.md say how measured control sizes override the assumed roles
+  (`tokens.size`), and SKILL.md gives the icon export command; both used to cost agents
+  several calls reading source code.
+
+### Fixed
+- `diff.py` compared an OCR'd ink box with Qt's line box by their centers when the spec had no
+  baseline, so every string with a descender (y, g, p, ş …) read as 2–3 px off. It now
+  estimates the ink box's baseline from the string's deepest descender. Agents had been
+  spending check rounds on this false alarm.
+
+### Results (case 05, a settings form, claude-opus-5-5)
+| | v1.0 (6 builds) | v1.0.1, first run | v1.0.1, final |
+| --- | --- | --- | --- |
+| Tool calls | 82–151 | 79 | 61 |
+| Tokens processed (cumulative context) | 32–61 M, median ~45 M | 23.7 M | 14.7 M |
+| Images opened | 11–35 | 5 | 5 |
+| Golden-spec result | pass | pass (SSIM 0.9946) | fail: one button 3 px wide, stopped at the 2-check limit |
+
+The final run's miss was a fix the agent had already named when the budget stopped it, so the
+quick budget now allows 3 check runs and asks to spend the last one on exactly named fixes.
+
 ## [1.0.0] — 2026-10-18
 
 ### Added

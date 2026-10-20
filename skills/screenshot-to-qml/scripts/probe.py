@@ -6,12 +6,12 @@ All coordinates are DESIGN px (screenshot px / dpr). Pass --dpr for retina/scale
   python probe.py IMG [--dpr 2] color X Y [X Y ...]
         exact color at points (median of a 3x3 device-px patch) -> hex
 
-  python probe.py IMG [--dpr 2] region X Y W H [--k 3]
+  python probe.py IMG [--dpr 2] region X Y W H [X Y W H ...] [--k 3]
         dominant colors of a box (k-means) with coverage -> fill / text / border candidates
 
-  python probe.py IMG [--dpr 2] edges X Y W H
+  python probe.py IMG [--dpr 2] edges X Y W H [X Y W H ...] [--all]
         solid-run boundaries along the box's center row and column -> element edges,
-        border width, padding
+        border width, padding (the first and last 4 runs; --all for every run)
 
   python probe.py IMG [--dpr 2] crop X Y W H [--zoom 4] --out crop.png
         enlarged crop with a design-px grid, for looking at small details
@@ -19,7 +19,8 @@ All coordinates are DESIGN px (screenshot px / dpr). Pass --dpr for retina/scale
   python probe.py IMG [--dpr 2] ruler [--step 100] --out ruler.png
         full image with a labeled coordinate grid, for reading positions
 
-Output is JSON on stdout (except crop/ruler, which write an image).
+Output is compact JSON on stdout, one line per box or point list (except crop/ruler, which
+write an image). Measure many boxes in one call rather than one call per box.
 Exit codes: 0 ok, 2 error.
 """
 from __future__ import annotations
@@ -87,11 +88,18 @@ def runs(line: np.ndarray, tol: int = 6):
     return out
 
 
-def cmd_edges(img, dpr, x, y, w, h):
+def cmd_edges(img, dpr, x, y, w, h, keep_all=False):
+    """Runs along the center row and column. Borders and padding sit at the two ends, so by
+    default only the first and last 4 runs are kept (the middle, often text, is counted)."""
     x0, y0, x1, y1 = box_px(x, y, w, h, dpr, img.shape)
     row = img[(y0 + y1) // 2, x0:x1]
     col = img[y0:y1, (x0 + x1) // 2]
-    fmt = lambda rs, o: [{"from": round((o + s) / dpr, 2), "len": round(n / dpr, 2), "hex": c} for s, n, c in rs if n >= 1]
+
+    def fmt(rs, o):
+        out = [{"from": round((o + s) / dpr, 2), "len": round(n / dpr, 2), "hex": c} for s, n, c in rs if n >= 1]
+        if keep_all or len(out) <= 9:
+            return out
+        return out[:4] + [{"skipped": len(out) - 8}] + out[-4:]
     return {"box": [x, y, w, h], "horizontal": fmt(runs(row), x0), "vertical": fmt(runs(col), y0)}
 
 
@@ -131,8 +139,8 @@ def main(argv=None) -> int:
     ap.add_argument("--dpr", type=float, default=1.0)
     sub = ap.add_subparsers(dest="cmd", required=True)
     c = sub.add_parser("color"); c.add_argument("xy", type=float, nargs="+")
-    r = sub.add_parser("region"); r.add_argument("box", type=float, nargs=4); r.add_argument("--k", type=int, default=3)
-    e = sub.add_parser("edges"); e.add_argument("box", type=float, nargs=4)
+    r = sub.add_parser("region"); r.add_argument("box", type=float, nargs="+"); r.add_argument("--k", type=int, default=3)
+    e = sub.add_parser("edges"); e.add_argument("box", type=float, nargs="+"); e.add_argument("--all", action="store_true", help="every run, not just the ends")
     k = sub.add_parser("crop"); k.add_argument("box", type=float, nargs=4); k.add_argument("--zoom", type=int, default=4); k.add_argument("--out", required=True)
     u = sub.add_parser("ruler"); u.add_argument("--step", type=int, default=100); u.add_argument("--out", required=True)
     args = ap.parse_args(argv)
@@ -141,15 +149,21 @@ def main(argv=None) -> int:
         if len(args.xy) % 2:
             raise SystemExit("[error] color needs X Y pairs")
         res = cmd_color(img, args.dpr, args.xy)
-    elif args.cmd == "region":
-        res = cmd_region(img, args.dpr, *args.box, args.k)
-    elif args.cmd == "edges":
-        res = cmd_edges(img, args.dpr, *args.box)
+    elif args.cmd in ("region", "edges"):
+        if len(args.box) % 4:
+            raise SystemExit(f"[error] {args.cmd} needs X Y W H groups")
+        boxes = [args.box[i:i + 4] for i in range(0, len(args.box), 4)]
+        fn = (lambda b: cmd_region(img, args.dpr, *b, args.k)) if args.cmd == "region" else (lambda b: cmd_edges(img, args.dpr, *b, args.all))
+        res = fn(boxes[0]) if len(boxes) == 1 else [fn(b) for b in boxes]
     elif args.cmd == "crop":
         res = cmd_crop(img, args.dpr, *args.box, args.zoom, args.out)
     else:
         res = cmd_ruler(img, args.dpr, args.step, args.out)
-    print(json.dumps(res, ensure_ascii=False, indent=1))
+    # compact: one line per result (agents pay for every line they read)
+    if isinstance(res, list):
+        print("[" + ",\n".join(json.dumps(x, ensure_ascii=False, separators=(",", ":")) for x in res) + "]")
+    else:
+        print(json.dumps(res, ensure_ascii=False, separators=(",", ":")))
     return 0
 
 

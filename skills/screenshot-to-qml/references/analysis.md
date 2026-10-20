@@ -94,15 +94,18 @@ knows the target device, ask. Pass `--dpr` to every probe command.
 
 ## Measuring workflow
 
-1. `probe.py IMG --dpr D ruler --out ruler.png` and open it. Note the main regions and their
-   approximate boxes.
-2. For each region, `crop X Y W H --zoom 4 --out c.png` and look at details (borders, radii,
-   icons, shadows).
-3. `region X Y W H` gives the fill (largest cluster) and the text/icon colors (small clusters).
-4. `edges X Y W H` walks the center row and column and returns runs of constant color:
-   element edges, border widths, padding and gaps come straight out of the run lengths.
-5. `color X Y ...` for exact colors of small things (dots, lines, badges).
-6. Record everything in `design-spec.json` (see design-spec.md) while you measure.
+Measure only what the draft lacks or flags, and batch it: each call costs a round trip, so
+one call with ten boxes beats ten calls.
+
+1. `region X Y W H [X Y W H ...]`: fills (largest cluster) and text/icon colors (small
+   clusters) of every box you need, in one call.
+2. `edges X Y W H [X Y W H ...]`: runs of constant color along each box's center row and
+   column; element edges, border widths, padding and gaps come straight out of the run
+   lengths.
+3. `color X Y [X Y ...]` for exact colors of small things (dots, lines, badges).
+4. `crop X Y W H --zoom 4` only for a detail the overlay cannot show (a corner radius, an
+   icon's stroke), not once per region. `ruler` only when the overlay gives no positions.
+5. Record everything in `design-spec.json` (see design-spec.md) while you measure.
 
 ## Colors
 

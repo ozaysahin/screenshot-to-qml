@@ -252,6 +252,21 @@ def text_offset(gold_bbox, rendered: dict, align: str, gold_baseline=None) -> tu
     return ex, ey
 
 
+# How far each character's ink reaches below the baseline, in em (typical UI sans faces).
+DESCENT = {**dict.fromkeys("gjpqyğ", 0.21), **dict.fromkeys("çşÇŞţșȘŢ", 0.17), **dict.fromkeys("()[]{}|", 0.2),
+           **dict.fromkeys(",;", 0.12), "@": 0.17, "Q": 0.1, "/": 0.08, "_": 0.1}
+
+
+def ink_baseline(string: str, bbox, px) -> float | None:
+    """Baseline of a single-line run known only by its ink box (an OCR'd spec): the ink bottom,
+    raised by the deepest descender in the string. Comparing it with the render's baseline is
+    much closer than comparing an ink box's center with a line box's center, which is off by
+    2-3 px whenever the string has descenders (y, g, p, ş …)."""
+    if not px:
+        return None
+    return bbox[1] + bbox[3] - max((DESCENT.get(ch, 0.0) for ch in string), default=0.0) * px
+
+
 SEPARATORS = " ·•|/-–—:,"   # a design's separators may be drawn as their own item or shape
 # characters a screenshot cannot tell apart from their ASCII spelling
 FOLD = {"\u2026": "...", "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"'}
@@ -376,8 +391,12 @@ def text_checks(spec, scene, limit_px: float = 2.0):
             a = align
             if trim:   # separators drawn elsewhere: compare the edge that was not cut
                 a = "end" if lead_cut and not tail_cut else "start" if tail_cut and not lead_cut else "center"
+            gold_base = t.get("baseline")
+            if gold_base is None and t.get("lines", 1) == 1 and px and gh <= 1.1 * px:
+                # an ink box (OCR'd spec; ink spans ≤ ~1 em, a line box ≥ 1.15 em): estimate its baseline
+                gold_base = ink_baseline(want, t["bbox"], px)
             ex, ey = text_offset(t["bbox"], {"textBox": box_of(sg, span), "baseline": sg.get("baseline")},
-                                 a, t.get("baseline"))
+                                 a, gold_base)
             if trim and lead_cut and tail_cut:
                 ex = 0.0                                    # both ends cut: only the baseline is comparable
             if vertical:   # baselines and line boxes do not apply: compare the centers of the turned boxes

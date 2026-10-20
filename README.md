@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="CHANGELOG.md"><img alt="Version 1.0.0" src="https://img.shields.io/badge/version-1.0.0-blue"></a>
+  <a href="CHANGELOG.md"><img alt="Version 1.0.1" src="https://img.shields.io/badge/version-1.0.1-blue"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-green"></a>
   <a href="https://agentskills.io"><img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-compatible-8A2BE2"></a>
   <img alt="Qt 6.8+" src="https://img.shields.io/badge/Qt-6.8%2B-41CD52?logo=qt&logoColor=white">
@@ -129,6 +129,9 @@ Rebuild settings.png (exported at 2×) as a desktop app with English and Turkish
 
 The agent analyzes the image, asks only what it cannot measure (for example a font that is not
 in the catalog), builds the project, and iterates on the worst regions until the check passes.
+It works to a budget: a simple screen takes about 60 tool calls and up to three checks, and the
+checks hand it one contact sheet of the worst spots instead of letting it crop and probe pixels
+by hand (v1.0.1 cut the tokens a settings screen costs by about two thirds).
 You get:
 
 ```text

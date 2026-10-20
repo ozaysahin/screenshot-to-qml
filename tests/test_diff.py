@@ -100,3 +100,17 @@ def test_vertical_text_compares_centers(tiny_spec):
     item["bbox"] = [10.5, 20, 16, 100]
     res = diff.text_checks(tiny_spec, {"texts": [item]})
     assert res["matchRate"] == 1.0 and res["maxOffset"] < 1.0
+
+
+def test_ocr_ink_box_is_compared_by_estimated_baseline(tiny_spec):
+    """An OCR'd spec has ink boxes and no baselines: "Ayarlar" (descender y) must not read as
+    3-4 px off just because an ink box's center is lower than a line box's center."""
+    tiny_spec["text"] = [{"string": "Ayarlar", "bbox": [28.5, 35, 66, 19.5], "font": {"px": 21}}]   # no baseline
+    scene = {"texts": [scene_item("Ayarlar", [("Ayarlar", 28, 50)])]}
+    scene["texts"][0]["lines"][0]["box"] = [28, 30, 66, 28]                                    # Qt line box
+    res = diff.text_checks(tiny_spec, scene)
+    assert res["matchRate"] == 1.0 and res["maxOffset"] < 1.0
+    tiny_spec["text"][0]["string"] = scene["texts"][0]["string"] = scene["texts"][0]["lines"][0]["string"] = "AKTAR"
+    tiny_spec["text"][0]["bbox"] = [28.5, 35, 66, 15]                                           # no descenders
+    res = diff.text_checks(tiny_spec, scene)
+    assert res["maxOffset"] < 1.0

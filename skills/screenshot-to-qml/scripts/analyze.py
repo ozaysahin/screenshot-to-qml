@@ -10,13 +10,15 @@ Writes to --out-dir:
   design-spec.draft.json                    schema-valid draft (validate_spec.py checks it)
   overlay.png                               surfaces (cyan, s#), text runs (magenta, t#),
                                             icon candidates (yellow, i#) with their ids
+  ocr_sheet.png (+ _2, _3 …)                every text run's crop labelled with its id, to check
+                                            all OCR strings in one look (spec_view.py --text lists them)
   with --match: match.py on the draft (fonts, icons, shadows, gradients written into it,
   design-spec.draft.match-report.json). A first look only: run match.py again on the
   corrected spec, since the matchers measure inside the draft's boxes.
 
 The draft is a starting point, not the answer. Next steps for the agent:
-  1. open overlay.png next to the screenshot; fix OCR strings (verify every one), delete
-     false surfaces, add missed ones (probe.py edges/region), mark roles
+  1. open overlay.png and ocr_sheet.png once; compare `spec_view.py draft --text` with the
+     sheet and fix the strings, delete false surfaces, add missed ones, mark roles
   2. rename color tokens by role (bg, surface, text, textMuted, accent …)
   3. python match.py IMG design-spec.json --out design-spec.json (fonts, icons, shadows,
      gradients); confirm what its report lists; add models for repeats
@@ -208,16 +210,24 @@ def main(argv=None) -> int:
     spec = build_spec(args.image, args.dpr, pal, geo, txt, args)
     (out / "design-spec.draft.json").write_text(json.dumps(spec, indent=1, ensure_ascii=False))
     draw_overlay(img, args.dpr, spec, out / "overlay.png")
+    sheets = []
+    if spec["text"]:
+        import sheet
+        sheets = sheet.ocr_sheets(args.image, spec, out / "ocr_sheet.png")
     if args.match:
         import match
         draft = out / "design-spec.draft.json"
         match.main([str(args.image), str(draft), "--out", str(draft), "--dpr", str(args.dpr),
                     "--report", str(out / "design-spec.draft.match-report.json")])
         spec = json.loads(draft.read_text())
+    simple = len(spec["text"]) <= 70 and len(spec["nodes"]) <= 60
+    print(f"suggested effort: {'quick' if simple else 'standard'} ({len(spec['text'])} text runs, "
+          f"{len(spec['nodes'])} surfaces; quick ≤ 70 and ≤ 60)")
     print(f"design {spec['meta']['designSize'][0]}x{spec['meta']['designSize'][1]} @{args.dpr:g}x: "
           f"{len(spec['tokens']['color'])} colors, {len(spec['nodes'])} surfaces, {len(spec['text'])} text runs "
           f"({sum(t['verify'] for t in spec['text'])} to verify), {len(spec['icons'])} icon candidates "
-          f"-> {out}/design-spec.draft.json, overlay.png")
+          f"-> {out}/design-spec.draft.json, overlay.png"
+          + (f", {', '.join(p.name for p in sheets)}" if sheets else ""))
     return 0
 
 
