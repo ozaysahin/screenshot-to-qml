@@ -9,7 +9,8 @@
 ## Profiles
 
 Set `meta.profile` in the spec and pass `--profile` to `scaffold.py`; both hosts then default to
-the right scene graph and `check.py` checks the rules below.
+the right scene graph and `check.py` checks the rules below. A board whose image ships Qt 5.15
+(many automotive and industrial BSPs) also needs `--min-qt 5.15` (**target-qt5.md**).
 
 | Profile | Hardware | Rendering | Rules |
 | --- | --- | --- | --- |

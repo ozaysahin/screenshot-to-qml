@@ -1,0 +1,1012 @@
+{
+ "runs": [
+  {
+   "string": "14:32",
+   "bbox": [
+    800.0,
+    33.0,
+    79.0,
+    26.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 36
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "8 18°C",
+   "bbox": [
+    925.0,
+    38.0,
+    61.5,
+    18.5
+   ],
+   "conf": 92.5,
+   "font": {
+    "px": 26
+   },
+   "color": "#D3D7DB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Çar 28 Eki",
+   "bbox": [
+    1026.0,
+    38.5,
+    93.5,
+    20.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "my",
+   "bbox": [
+    860.0,
+    99.0,
+    26.0,
+    22.0
+   ],
+   "conf": 61.0,
+   "font": {
+    "px": 30
+   },
+   "color": "#FFB020",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "jab)",
+   "bbox": [
+    1034.5,
+    98.0,
+    24.5,
+    21.5
+   ],
+   "conf": 59.0,
+   "font": {
+    "px": 23
+   },
+   "color": "#26303B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "350 |",
+   "bbox": [
+    859.0,
+    182.5,
+    88.0,
+    38.5
+   ],
+   "conf": 89.0,
+   "font": {
+    "px": 53
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "120",
+   "bbox": [
+    415.0,
+    205.5,
+    29.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "4",
+   "bbox": [
+    1484.5,
+    205.5,
+    11.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "100",
+   "bbox": [
+    350.5,
+    218.5,
+    31.0,
+    15.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "140",
+   "bbox": [
+    477.5,
+    218.5,
+    31.0,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "7",
+   "bbox": [
+    564.5,
+    229.0,
+    16.5,
+    16.5
+   ],
+   "conf": 85.0,
+   "font": {
+    "px": 23
+   },
+   "color": "#687380",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "3",
+   "bbox": [
+    1393.0,
+    233.5,
+    9.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Atatürk Bulvarı",
+   "bbox": [
+    858.0,
+    239.0,
+    157.0,
+    18.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 24
+   },
+   "color": "#E2E6E9",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "80",
+   "bbox": [
+    301.5,
+    254.5,
+    22.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "160",
+   "bbox": [
+    532.0,
+    254.5,
+    30.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "7",
+   "bbox": [
+    595.0,
+    261.0,
+    12.5,
+    9.5
+   ],
+   "conf": 66.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#323D4A",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Kızılay yönü",
+   "bbox": [
+    858.5,
+    270.5,
+    84.5,
+    15.5
+   ],
+   "conf": 95.5,
+   "font": {
+    "px": 16
+   },
+   "color": "#788493",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "<1000 DEV/DK",
+   "bbox": [
+    1445.0,
+    272.0,
+    98.0,
+    10.0
+   ],
+   "conf": 90.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "60",
+   "bbox": [
+    265.5,
+    307.5,
+    22.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "180",
+   "bbox": [
+    567.5,
+    307.5,
+    31.0,
+    15.5
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "2",
+   "bbox": [
+    1332.0,
+    307.5,
+    9.0,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "m!",
+   "bbox": [
+    1458.0,
+    327.0,
+    67.5,
+    29.5
+   ],
+   "conf": 63.0,
+   "font": {
+    "px": 41
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "PA Varış 14:58",
+   "bbox": [
+    748.5,
+    340.0,
+    110.5,
+    17.0
+   ],
+   "conf": 78.7,
+   "font": {
+    "px": 18
+   },
+   "color": "#C7D0DA",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "S 23km",
+   "bbox": [
+    945.5,
+    339.0,
+    73.5,
+    15.5
+   ],
+   "conf": 88.5,
+   "font": {
+    "px": 21
+   },
+   "color": "#C7D0DA",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "26 dk",
+   "bbox": [
+    1132.0,
+    339.0,
+    43.0,
+    14.0
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 19
+   },
+   "color": "#D3D7DB",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "40",
+   "bbox": [
+    252.0,
+    371.5,
+    23.0,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "200",
+   "bbox": [
+    579.0,
+    371.5,
+    34.0,
+    15.5
+   ],
+   "conf": 87.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "MENZİL",
+   "bbox": [
+    740.0,
+    416.5,
+    47.5,
+    11.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ORT. TÜKETİM",
+   "bbox": [
+    904.0,
+    416.5,
+    89.0,
+    11.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 13
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "YOLCULUK A",
+   "bbox": [
+    1067.5,
+    419.0,
+    81.0,
+    9.0
+   ],
+   "conf": 93.5,
+   "font": {
+    "px": 12
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "20",
+   "bbox": [
+    266.0,
+    435.5,
+    21.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "220",
+   "bbox": [
+    566.5,
+    435.5,
+    33.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "412.",
+   "bbox": [
+    740.5,
+    451.5,
+    56.5,
+    28.5
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 40
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "6,1.",
+   "bbox": [
+    905.0,
+    451.5,
+    42.0,
+    31.5
+   ],
+   "conf": 91.0,
+   "font": {
+    "px": 34
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "128,4.",
+   "bbox": [
+    1068.0,
+    451.5,
+    91.5,
+    31.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 34
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "km/sa",
+   "bbox": [
+    398.5,
+    458.0,
+    63.0,
+    18.0
+   ],
+   "conf": 90.0,
+   "font": {
+    "px": 24
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "km",
+   "bbox": [
+    806.5,
+    467.5,
+    20.0,
+    12.5
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "km",
+   "bbox": [
+    1167.0,
+    467.5,
+    20.5,
+    12.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "on",
+   "bbox": [
+    1460.5,
+    466.5,
+    8.0,
+    2.5
+   ],
+   "conf": 74.0,
+   "font": {
+    "px": 5
+   },
+   "color": "#26303B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "N",
+   "bbox": [
+    1508.0,
+    467.0,
+    12.0,
+    18.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 25
+   },
+   "color": "#26303B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "L/100",
+   "bbox": [
+    957.0,
+    468.5,
+    38.0,
+    11.5
+   ],
+   "conf": 90.0,
+   "font": {
+    "px": 16
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "240",
+   "bbox": [
+    530.0,
+    488.5,
+    34.5,
+    15.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#99A0A8",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Ayaz FM 103,1",
+   "bbox": [
+    797.5,
+    557.0,
+    108.0,
+    16.5
+   ],
+   "conf": 94.7,
+   "font": {
+    "px": 18
+   },
+   "color": "#FFFFFF",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "dg) 12",
+   "bbox": [
+    1138.0,
+    566.0,
+    40.0,
+    16.0
+   ],
+   "conf": 78.5,
+   "font": {
+    "px": 17
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "Akşam Yolu canlı",
+   "bbox": [
+    797.5,
+    579.0,
+    114.5,
+    13.5
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#727E8C",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ECO",
+   "bbox": [
+    1485.5,
+    573.0,
+    33.0,
+    13.0
+   ],
+   "conf": 95.0,
+   "font": {
+    "px": 18
+   },
+   "color": "#2FD67B",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "gi",
+   "bbox": [
+    250.5,
+    655.5,
+    20.0,
+    19.5
+   ],
+   "conf": 81.0,
+   "font": {
+    "px": 21
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "ODO",
+   "bbox": [
+    819.5,
+    659.0,
+    28.5,
+    10.0
+   ],
+   "conf": 88.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "48.216 km",
+   "bbox": [
+    866.0,
+    655.5,
+    95.0,
+    16.5
+   ],
+   "conf": 96.0,
+   "font": {
+    "px": 22
+   },
+   "color": "#E2E6E9",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "B",
+   "bbox": [
+    978.0,
+    659.0,
+    6.5,
+    10.0
+   ],
+   "conf": 92.0,
+   "font": {
+    "px": 14
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "1.204,7 km",
+   "bbox": [
+    1002.0,
+    655.5,
+    98.0,
+    18.5
+   ],
+   "conf": 93.0,
+   "font": {
+    "px": 19
+   },
+   "color": "#E2E6E9",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "8",
+   "bbox": [
+    1316.0,
+    654.5,
+    10.0,
+    21.0
+   ],
+   "conf": 94.0,
+   "font": {
+    "px": 29
+   },
+   "color": "#7D8A99",
+   "colorSnapped": true,
+   "src": "measured"
+  },
+  {
+   "string": "MM",
+   "bbox": [
+    1416.0,
+    659.0,
+    46.0,
+    12.0
+   ],
+   "conf": 66.0,
+   "font": {
+    "px": 17
+   },
+   "color": "#E2E6E9",
+   "colorSnapped": true,
+   "src": "measured"
+  }
+ ],
+ "icons": [
+  {
+   "bbox": [
+    1105.0,
+    339.0,
+    16.0,
+    16.0
+   ],
+   "color": "#7D8A99",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    789.0,
+    200.0,
+    21.0,
+    24.0
+   ],
+   "color": "#35C8FF",
+   "ocrGuess": ">",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    400.5,
+    550.5,
+    59.0,
+    59.0
+   ],
+   "color": "#FFFFFF",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1595.0,
+    202.5,
+    14.0,
+    19.5
+   ],
+   "color": "#687380",
+   "ocrGuess": "/",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    540.0,
+    202.5,
+    9.0,
+    12.5
+   ],
+   "color": "#323D4A",
+   "ocrGuess": "/",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1371.0,
+    202.5,
+    14.0,
+    19.5
+   ],
+   "color": "#687380",
+   "ocrGuess": "\\",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1460.5,
+    572.5,
+    15.0,
+    15.5
+   ],
+   "color": "#2FD67B",
+   "ocrGuess": "@",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1643.0,
+    244.0,
+    12.0,
+    10.5
+   ],
+   "color": "#323D4A",
+   "ocrGuess": "/",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    985.0,
+    103.5,
+    9.0,
+    13.0
+   ],
+   "color": "#06080B",
+   "ocrGuess": "P",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    805.5,
+    100.5,
+    19.0,
+    16.0
+   ],
+   "color": "#2FD67B",
+   "ocrGuess": "e",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1092.0,
+    97.0,
+    26.0,
+    26.0
+   ],
+   "color": "#26303B",
+   "ocrGuess": "©",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    564.5,
+    514.5,
+    16.5,
+    17.0
+   ],
+   "color": "#687380",
+   "ocrGuess": "N",
+   "match": null,
+   "kind": null
+  },
+  {
+   "bbox": [
+    1303.0,
+    240.5,
+    17.0,
+    17.0
+   ],
+   "color": "#F2F5F8",
+   "ocrGuess": "<<",
+   "match": null,
+   "kind": null
+  }
+ ],
+ "lang": "tur+eng",
+ "scale": 2.0
+}

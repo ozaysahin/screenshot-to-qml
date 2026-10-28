@@ -1,6 +1,6 @@
 # screenshot-to-qml — eval set
 
-Twenty original, synthetic UI screens used to measure the skill. Each case has a
+Twenty-one original, synthetic UI screens used to measure the skill. Each case has a
 screenshot input **and** a machine-extracted ground truth, so every score is a
 number, not an opinion.
 
@@ -31,10 +31,13 @@ No company screens are used.
 | `18-html-tailwind-billing` | 1280×800 | 1 | 1280×800 | Instrument Sans | **HTML input**: Tailwind v4 page (oklch palette, rings, real form elements) |
 | `19-html-css-board` | 1366×768 | 2 | 2732×1536 | Karla | **HTML input**: hand-written CSS kanban with `<input>`, `<select>`, checkbox |
 | `20-hard-weather` | 1280×800 | 2 | 2560×1600 | Bricolage Grotesque | **Hard case**: a font outside the skill's catalog, gradient text, rotated label, conic ring |
+| `21-auto-cluster` | 1920×720 | 1 | 1920×720 | Rajdhani | **Qt 5.15 + C++** (`minQt` 5.15, target `cpp`): car instrument cluster, two 270° dials with generated ticks and a redline, telltales, navigation card |
 
 Every case uses Turkish text (ç ğ ı İ ö ş ü) so OCR and font coverage are tested. By plan
 category: dashboard 4 (03, 04, 09, 10), HMI/kiosk 4 (01, 02, 11, 12), form 3 (05, 13, 14),
-mobile 3 (06, 15, 16), table 2 (07, 17), HTML input 2 (18, 19), hard 2 (08, 20).
+mobile 3 (06, 15, 16), table 2 (07, 17), HTML input 2 (18, 19), hard 2 (08, 20), automotive 1 (21).
+Case 21 (v1.1) asks for a Qt 5.15 project with a C++ host; `prepare_run.py` words its prompt
+accordingly. It has no agent runs yet, so the results below cover cases 01–20.
 
 **HTML-input cases** (category `html`) give the agent `source/` (the page and its fonts), not
 `input.png`; the PNG is the reference the result is scored against. All other cases give only
@@ -47,7 +50,7 @@ cases/<id>/
 ├── input.png          # the "screenshot": what the skill receives
 ├── golden-spec.json   # ground truth extracted from the live DOM
 ├── expected.json      # rubric: common + must-have + allowed approximations + forbidden
-├── thresholds.json    # numeric gates, calibrated on the 2026-09-27 baseline (01–08; 09–20 reuse them)
+├── thresholds.json    # numeric gates, calibrated on the 2026-09-27 baseline (01–08; 09–21 reuse them)
 └── source/index.html  # static HTML snapshot for the HTML-input path (no JS, no hint attributes)
                        # HTML-input cases: source/fonts/ too, so the folder is the agent's input as is
 ```

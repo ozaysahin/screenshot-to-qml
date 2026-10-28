@@ -1,0 +1,52 @@
+{
+ "id": "21-auto-cluster",
+ "summary": "1920x720 digital instrument cluster for Qt 5.15 (C++ host, embedded-gpu): speedometer and tachometer dials, telltales, navigation, trip and media cards.",
+ "input": {
+  "file": "input.png",
+  "size": [
+   1920,
+   720
+  ],
+  "dpr": 1,
+  "designSize": [
+   1920,
+   720
+  ]
+ },
+ "target": "cpp",
+ "mode": "production",
+ "profile": "embedded-gpu",
+ "minQt": "5.15",
+ "common": [
+  "Project runs offscreen (QT_QPA_PLATFORM=offscreen) with zero QML warnings or errors.",
+  "No web engine, WebView or screenshot image embedded as a background; the UI is built from Qt Quick items.",
+  "All colors, font sizes, spacing and radii come from a Theme singleton; no raw hex or pixel literals elsewhere (production mode).",
+  "Fonts are bundled under assets/fonts and loaded by scanning the folder; QML uses the family names returned by QFontDatabase.",
+  "All visible text matches golden-spec text[].string verbatim, including Turkish characters (ç ğ ı İ ö ş ü) and uppercase transforms.",
+  "Repeated patterns listed in golden-spec nodes[].model are generated from a model (Repeater/ListView/GridView/TableView), not copy-pasted items.",
+  "Interactive controls are keyboard reachable and expose Accessible.role/name.",
+  "README lists every value whose source is not 'truth'-equivalent (assumed/low confidence) and every approximation with its reason."
+ ],
+ "mustHave": [
+  "Qt 5.15 dialect: versioned imports, QtGraphicalEffects instead of MultiEffect, no Qt 6-only types or properties (qt5.py check is clean); a C++ host (CMake, Qt5) that builds against Qt 5.15.",
+  "Two 270-degree dials drawn as vectors (Shape arcs) from the 135-degree start: track, value arc and needle bound to a speed (87 of 240) and an rpm (2.4 of 8) property, not baked in.",
+  "Tick marks and scale labels generated from the scale (13 speed labels, 9 rpm labels, minor ticks), placed on circles; the rpm redline from 6.5 drawn in red (track segment, ticks, '7' and '8').",
+  "Big '87' and 'D' in Rajdhani Bold, 'km/sa', the 90 speed-limit sign, the P R N D selector from a model with D selected and the ECO chip.",
+  "Telltales from a model of 6 (2 on: green lights, amber engine; 4 off in the dim color) and the two turn arrows (left on, right off).",
+  "Navigation card: maneuver icon tile, '350 m', 'Atatürk Bulvarı', progress at 0.62, 3 route items.",
+  "Trip tiles from a model of 3 with uppercase labels keeping the Turkish İ ('MENZİL', 'ORT. TÜKETİM'); media card; fuel (6 of 10) and coolant (5 of 10) segment bars from models; odometer line."
+ ],
+ "niceToHave": [
+  "Needle and arc animate between values (Behavior on the bound property).",
+  "Lit segment counts bound to fuel and coolant levels."
+ ],
+ "allowedApproximations": [
+  "Dial arcs with round instead of butt caps.",
+  "Telltale glyphs as SVG images."
+ ],
+ "forbidden": [
+  "Qt 6-only QML (MultiEffect, VectorImage, per-corner radius, versionless imports).",
+  "A raster image of a dial or of the input.",
+  "Blur or shadow effects (embedded-gpu flat cluster)."
+ ]
+}

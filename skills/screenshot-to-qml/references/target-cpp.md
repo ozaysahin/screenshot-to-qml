@@ -3,7 +3,8 @@
 One project, two hosts: the `qml/` tree, `assets/`, `i18n/` and `mock/` are shared; `main.py`
 runs them with PySide6, `CMakeLists.txt` + `src/main.cpp` compile them into one executable.
 Build and check the QML with the PySide6 host as usual; the C++ host runs the same files,
-within the limits under Pitfalls, and `check.py` proves it frame by frame.
+within the limits under Pitfalls, and `check.py` proves it frame by frame. This file is the
+Qt 6.8+ host; a Qt 5.15 board gets its own host and dialect (**target-qt5.md**).
 
 ## Contents
 - Create

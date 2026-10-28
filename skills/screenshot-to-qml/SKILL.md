@@ -1,10 +1,10 @@
 ---
 name: screenshot-to-qml
-description: Converts UI screenshots, mockups or HTML/CSS/Tailwind into native Qt Quick (QML) projects for PySide6 and/or C++ (CMake), with measured colors, spacing, fonts, icons and effects, a Theme singleton, QtQuick.Templates controls, a render-and-diff verification loop, and packaging for desktops or embedded boards (Raspberry Pi, Jetson). Use when the user shares a UI screenshot or HTML and wants a native Qt/QML desktop, kiosk, HMI or embedded interface without a web engine.
+description: Converts UI screenshots, mockups or HTML/CSS/Tailwind into native Qt Quick (QML) projects for PySide6 and/or C++ (CMake) on Qt 6.8+ or Qt 5.15 (automotive and industrial boards), with measured colors, spacing, fonts, icons and effects, a Theme singleton, QtQuick.Templates controls, a render-and-diff verification loop, and packaging for desktops or embedded boards (Raspberry Pi, Jetson, Yocto). Use when the user shares a UI screenshot or HTML and wants a native Qt/QML desktop, kiosk, HMI, instrument cluster or embedded interface without a web engine.
 license: MIT (see LICENSE.txt)
-compatibility: Python 3.10+, PySide6 6.8+; rendering checks need a display or Xvfb (Linux)
+compatibility: Python 3.10+, PySide6 6.8+ (the check loop, also for Qt 5.15 targets); rendering checks need a display or Xvfb (Linux)
 metadata:
-  version: "1.0.1"
+  version: "1.1.0"
 ---
 
 # Screenshot → Qt Quick (QML)
@@ -69,13 +69,13 @@ threshold / gate failed) or 2 (could not run).
 | Decision | Options | Default |
 | --- | --- | --- |
 | Input | screenshot · HTML page (+ its CSS/fonts) | what the user gave; HTML → render it at the design size (step 1) |
-| Target | `pyside6` · `cpp` · `both` (one qml/ tree, two hosts: references/target-cpp.md) | `pyside6` |
+| Target | `pyside6` · `cpp` · `both` (one qml/ tree, two hosts: references/target-cpp.md) | `pyside6` (`cpp` for Qt 5.15) |
 | Layout | `canvas` (fixed kiosk/HMI screen, scaled) · `responsive` (resizable desktop) | canvas for kiosk/HMI/panel screenshots, else responsive |
 | Profile | `desktop` · `embedded-gpu` · `embedded-sw` (references/embedded.md) | `desktop` |
 | Mode | `production` (Theme, models, controls, a11y) · `fidelity` (single static screen, quickest) | `production` |
 | Effort | `quick` · `standard` · `full` (Work budget above) | what `analyze.py` suggests (quick for ≤ 70 text runs and ≤ 60 surfaces) |
 | Screenshot DPR | 1 · 1.25 · 1.5 · 2 · 3 (references/analysis.md) | inferred from size; ask if ambiguous |
-| Minimum Qt | 6.8 LTS or newer | 6.8 |
+| Minimum Qt | 6.8 LTS or newer · 5.15 (Qt 5 boards: clusters, IVI, industrial BSPs; references/target-qt5.md) | 6.8 |
 
 ## Workflow
 
@@ -168,6 +168,7 @@ The spec is also the test: `diff.py` scores every node box and looks for every t
 python <skill>/scripts/scaffold.py out/ --name "App Name" --layout canvas|responsive --fonts analysis/fonts/* \
        --target pyside6|cpp|both --profile desktop|embedded-gpu|embedded-sw \
        --controls Button,TextField,Switch        # or all (default) / none
+       [--min-qt 5.15]                           # Qt 5.15 dialect + Qt 5 C++ host (references/target-qt5.md)
 python <skill>/scripts/gen_theme.py design-spec.json out/qml/App/Style        # Theme.qml + Icons.qml
 ```
 
@@ -209,7 +210,8 @@ Rules that apply to every file:
 - Effects per profile (**references/effects.md**); vector icons, never redrawn by hand:
   `icon_match.py export lucide:bell --stroke 2 --color "#64748B" --out assets/icons/bell.svg`
   per matched icon (one shell loop for all), then `VectorImage` for a fixed color or
-  `svgtoqml` when the color must follow Theme tokens (**references/icons-vectors.md**).
+  `svgtoqml` when the color must follow Theme tokens (**references/icons-vectors.md**); on Qt
+  5.15 the kit's `SvgIcon` (**references/target-qt5.md**).
 - `Accessible.name` on icon-only buttons, sliders, combos, spin boxes, progress bars and
   informative custom items (**references/a11y-i18n.md**).
 - Run `qmlformat -i` (or `pyside6-qmlformat -i`) on every QML file you write.
@@ -217,12 +219,13 @@ Rules that apply to every file:
 HTML input: **references/css-to-qml.md** (map the extracted CSS, not the markup, to QML).
 C++ host: **references/target-cpp.md** (build and
 check the QML with the PySide6 host; the C++ host runs the same files). Embedded devices:
-**references/embedded.md**.
+**references/embedded.md**. Qt 5.15: **references/target-qt5.md** (write the 5.15 dialect from
+the start; `qt5.py check` lists what 5.15 cannot load).
 
 ### 5 · Check loop
 
 ```bash
-python <skill>/scripts/check.py out/ --source input.png --spec design-spec.json [--qt ~/Qt/6.8.3/gcc_64]
+python <skill>/scripts/check.py out/ --source input.png --spec design-spec.json [--qt ~/Qt/6.8.3/gcc_64 | ~/Qt/5.15.2/gcc_64]
 ```
 
 Renders at designSize × DPR (headless Linux: under Xvfb automatically; the software scene
@@ -277,6 +280,9 @@ Keep the chat reply short: what was built, the check result, what needs the user
 | `RectangularShadow` | 6.9 | `MultiEffect` shadow |
 | `FlexboxLayout` (tech preview) | 6.10 | `Flow` / `RowLayout` |
 
+`meta.minQt: "5.15"` replaces this table with the Qt 5.15 dialect (references/target-qt5.md):
+the `lint` gate then fails everything `qt5.py check` lists.
+
 Check `python -c "import PySide6; print(PySide6.__version__)"` and use only what the target has:
 the `lint` gate fails types newer than `meta.minQt` even when the local PySide6 accepts them.
 
@@ -294,6 +300,7 @@ the `lint` gate fails types newer than `meta.minQt` even when the local PySide6 
 | `spec_view.py` | a spec as a compact table (tokens, nodes, text, icons; `--verify`, `--ids`) |
 | `sheet.py` | contact sheets: `compare` (worst items, source \| render) and `ocr` (all text runs) |
 | `validate_spec.py` | schema + consistency checks for design-spec.json |
+| `qt5.py` | Qt 5.15: `check` what 5.15 cannot load, `port` a Qt 6 tree's imports, pragmas and qmldirs |
 | `scaffold.py` | new project (shared `assets/templates/project` + a `pyside6` and/or `cpp` host); `--add-host` |
 | `gen_theme.py` | Theme.qml + Icons.qml from the spec tokens |
 | `render.py` | headless render at size × DPR + `scene.json` (texts, images, QML warnings, perf); `--interact` → `interaction.json`; `--lang xx` loads a translation; `--scenegraph software` |
@@ -311,6 +318,11 @@ Font Awesome glyphs by code point, both hosts (PySide6 and C++). `check.py` pass
 global SSIM 0.994, worst region 0.943, ΔE 0.43, geometry ≤ 1.9 px, 95/95 strings matched, all
 13 gates clean; the C++ binary's frame equals the PySide6 render (SSIM 1.000). Read its files
 when you need a concrete pattern.
+
+`examples/auto-cluster/` — a 1920×720 car instrument cluster on Qt 5.15 with the C++ host: a
+reusable `Dial` (one Shape, generated ticks and labels, a needle bound to `value`), telltales
+from a model, `SvgIcon` icons. `check.py` passes it with global SSIM 0.999, 61/61 strings, all
+13 gates; the Qt 5.15.13 binary runs without QML warnings and matches the PySide6 render.
 
 `examples/controls-gallery/` — every kit control in its states, English UI with a Turkish
 translation (`i18n/app_tr.qm`), both hosts; all 13 gates clean (Tab reaches all 27 enabled

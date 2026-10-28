@@ -10,7 +10,7 @@ select = ["E", "F", "W", "I", "B", "UP"]
 ignore = ["E501", "E731", "E702"]
 
 [tool.ruff.lint.isort]
-known-first-party = ["probe", "diff", "render", "quality_gate", "check", "scaffold", "conftest", "build_cpp", "deploy", "match", "font_match", "fontlib", "icon_match", "shadow_fit", "gradient_fit"]
+known-first-party = ["probe", "diff", "render", "quality_gate", "check", "scaffold", "conftest", "build_cpp", "deploy", "match", "font_match", "fontlib", "icon_match", "shadow_fit", "gradient_fit", "qt5", "gen_theme", "prepare_run"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

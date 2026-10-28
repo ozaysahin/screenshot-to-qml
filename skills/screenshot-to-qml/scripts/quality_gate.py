@@ -10,6 +10,7 @@ Usage:
 Gates (error = fails the gate, warning = reported only):
   lint       qmllint over qml/**.qml with -I qml                        error per warning
              types newer than --min-qt (RectangularShadow 6.9, …)       error
+             --min-qt 5.15: everything 5.15 cannot load (qt5.py check)  error
   format     qmlformat drift (file differs from its formatted output)  error per file
   runtime    QML warnings recorded by render.py in scene.json          error per warning
   hardcode   color / font literals outside Style files (production)    error per hit
@@ -73,7 +74,7 @@ NAMED_COLOR = re.compile(r'\b(?:color|border\.color|strokeColor|fillColor)\s*:\s
 FONT_LITERAL = re.compile(r'\bfont\.(?:pixelSize|pointSize)\s*:\s*\d|\bfont\.family\s*:\s*"|pixelSize\s*:\s*\d+\s*[,}]')
 SOFT_LITERAL = re.compile(r'\b(?:radius|spacing|columnSpacing|rowSpacing)\s*:\s*([1-9]\d*(?:\.\d+)?)\s*$')
 SHADER_EFFECT = re.compile(r"^\s*(MultiEffect|RectangularShadow|ShaderEffect)\s*\{|\blayer\.effect\s*:"
-                           r"|^\s*import\s+Qt5Compat\.GraphicalEffects")
+                           r"|^\s*import\s+(?:Qt5Compat\.GraphicalEffects|QtGraphicalEffects)\b")
 BLUR = re.compile(r"\bblurEnabled\s*:\s*true|\bblurMax\s*:|^\s*(FastBlur|GaussianBlur|DropShadow|Glow|RecursiveBlur)\s*\{")
 LAYER = re.compile(r"\blayer\.enabled\s*:\s*true")
 WEBENGINE = re.compile(r'^\s*import\s+Qt(?:WebEngine|WebView)\b|QWebEngine|QtWebEngine', re.M)
@@ -107,6 +108,10 @@ def parse_qt(v: str) -> tuple[int, int]:
 
 def newer_than(project: Path, qml_files: list[Path], min_qt: str) -> list[str]:
     floor = parse_qt(min_qt)
+    if floor < (6, 0):      # Qt 5.15: the whole dialect (imports, modules, types, properties)
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import qt5
+        return [f"{item} (meta.minQt {min_qt})" for item in qt5.check_project(project)]
     out = []
     rx = re.compile(r"^\s*(" + "|".join(NEWER_TYPES) + r")\s*\{")
     for f in qml_files:
@@ -128,18 +133,36 @@ def gate_lint(project: Path, qml_files: list[Path], min_qt: str = "6.8") -> tupl
         out = Path(tmp.name)
     # absolute paths: qmllint 6.12 misses a file's own qmldir entry (singletons) for relative paths
     project = project.resolve()
-    subprocess.run([exe, "-I", str(project / "qml"), "--json", str(out), *(str(f.resolve()) for f in qml_files)],
-                   capture_output=True, text=True)
+    shim = Path(__file__).resolve().parent.parent / "assets" / "qt5-shim"     # Qt 5.15: QtGraphicalEffects
+    root, offset = project, 0
+    tmpdir = None
+    if parse_qt(min_qt) < (6, 0):
+        # Qt 5.15 has no `pragma ComponentBehavior`, and Qt 6's qmllint reports every outer id used in
+        # a delegate without it. Lint a copy with the pragma added: code valid when bound is valid
+        # unbound too. Line numbers are mapped back (-1).
+        tmpdir = tempfile.TemporaryDirectory()
+        root, offset = Path(tmpdir.name), 1
+        shutil.copytree(project / "qml", root / "qml")
+        for f in (root / "qml").rglob("*.qml"):
+            f.write_text("pragma ComponentBehavior: Bound\n" + f.read_text(encoding="utf-8"), encoding="utf-8")
+        qml_files = [root / f.resolve().relative_to(project) for f in qml_files]
+    subprocess.run([exe, "-I", str(root / "qml"), "-I", str(shim), "--json", str(out),
+                    *(str(f.resolve()) for f in qml_files)], capture_output=True, text=True)
     try:
         data = json.loads(out.read_text())
     except (OSError, json.JSONDecodeError):
         return ["qmllint produced no JSON output"], []
+    finally:
+        if tmpdir is not None:
+            tmpdir.cleanup()
     errors = []
     for f in data.get("files", []):
         for w in f.get("warnings", []):
             if w.get("type") in ("warning", "critical"):
-                rel = Path(f["filename"]).relative_to(project) if f["filename"].startswith(str(project)) else f["filename"]
-                errors.append(f"{rel}:{w.get('line')}: [{w.get('id')}] {w.get('message')}")
+                name = f["filename"]
+                rel = Path(name).relative_to(root) if name.startswith(str(root)) else name
+                line = w.get("line")
+                errors.append(f"{rel}:{line - offset if isinstance(line, int) else line}: [{w.get('id')}] {w.get('message')}")
     return errors + compat, []
 
 
@@ -323,7 +346,7 @@ def gate_i18n(project: Path, qml_files: list[Path], mode: str) -> tuple[list, li
     return errors, warns
 
 
-def gate_effects(project: Path, qml_files: list[Path], profile: str) -> tuple[list, list]:
+def gate_effects(project: Path, qml_files: list[Path], profile: str, min_qt: str = "6.8") -> tuple[list, list]:
     errors, warns = [], []
     layers = []
     for f in qml_files:
@@ -336,7 +359,7 @@ def gate_effects(project: Path, qml_files: list[Path], profile: str) -> tuple[li
                 if profile == "embedded-sw":
                     errors.append(f"{rel}:{i}: {what.strip()} is not drawn by the software scene graph "
                                   "(embedded-sw): flat fallback (effects.md)")
-                elif "Qt5Compat" in line:
+                elif "Qt5Compat" in line and parse_qt(min_qt) >= (6, 0):
                     warns.append(f"{rel}:{i}: Qt5Compat.GraphicalEffects is legacy; use MultiEffect (RectangularShadow from Qt 6.9)")
             if profile == "embedded-gpu" and BLUR.search(line):
                 warns.append(f"{rel}:{i}: blur on embedded-gpu costs full-screen passes; prefer a static tint")
@@ -380,7 +403,7 @@ def gate_cpp(cpp: dict | None) -> tuple[list, list] | None:
     errors, warns = [], []
     if not cpp.get("built"):
         err = cpp.get("error", "build failed")
-        if "not found" in err:           # no Qt 6 SDK or cmake here: say so, do not fail
+        if "not found" in err:           # no Qt SDK or cmake here: say so, do not fail
             return [], [f"C++ host not built: {err}"]
         return [f"C++ host: {err}: {' | '.join(cpp.get('log', [])[-3:])}"], []
     grab = cpp.get("grab")
@@ -389,7 +412,14 @@ def gate_cpp(cpp: dict | None) -> tuple[list, list] | None:
             errors.append("C++ binary did not produce a frame: " + " | ".join(grab.get("stderr", [])[-3:]))
         errors += [f"C++ run QML: {w}" for w in grab.get("qmlWarnings", [])]
     par = (cpp.get("parity") or {}).get("ssim")
-    if cpp.get("parity") is not None:
+    if (cpp.get("parity") or {}).get("qt") == 5:
+        t, limit = cpp["parity"].get("maxTileDiff"), cpp["parity"].get("limit", 24)
+        if t is None:
+            errors.append("C++ (Qt 5.15) frame and PySide6 render differ in size")
+        elif t > limit:
+            errors.append(f"Qt 5.15 frame differs from the PySide6 render (max tile difference {t} > {limit}): "
+                          "a file missing from the resource, or a type Qt 5.15 draws differently")
+    elif cpp.get("parity") is not None:
         if par is None:
             errors.append("C++ frame and PySide6 render differ in size")
         elif par < 0.98:
@@ -441,7 +471,7 @@ def main(argv=None) -> int:
         "a11y": lambda: gate_a11y(interaction, args.profile, args.mode),
         "states": lambda: gate_states(interaction, args.mode, args.profile),
         "i18n": lambda: gate_i18n(project, qml_files, args.mode),
-        "effects": lambda: gate_effects(project, qml_files, args.profile),
+        "effects": lambda: gate_effects(project, qml_files, args.profile, args.min_qt),
         "perf": lambda: gate_perf(scene, args.profile),
         "cpp": lambda: gate_cpp(cpp),
     }

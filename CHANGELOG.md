@@ -2,6 +2,50 @@
 
 All notable changes to this project. Versions follow the roadmap in README.md.
 
+## [1.1.0] — 2026-10-28
+
+Qt 5.15 and automotive. Many instrument clusters, head units and industrial panels still ship
+Qt 5.15 LTS, so the skill now targets it end to end, with a car instrument cluster as the new
+reference example.
+
+### Added
+- **Qt 5.15 target** (`meta.minQt: "5.15"`, `scaffold.py --min-qt 5.15`): the kit and the
+  generated Theme in the Qt 5.15 dialect (versioned imports, no `ComponentBehavior` pragma, no
+  Qt 6-only types or properties) and a Qt 5 C++ host (CMake, `find_package(Qt5)`, one embedded
+  resource, qmlcachegen when Qt5QuickCompiler is installed). `references/target-qt5.md` maps
+  every Qt 6 construct the skill uses to its 5.15 form.
+- `qt5.py`: `check` lists everything Qt 5.15 cannot load (MultiEffect, VectorImage,
+  RectangularShadow, per-corner radius, stretch factors, versionless imports, value-type lists,
+  `??=` …) with the replacement; `port` rewrites a Qt 6 tree's imports, pragmas, qmldirs and
+  rendering hints (a Shape's curve renderer becomes a 4-sample layer).
+- `SvgIcon` (Qt 5.15 kit): Theme-colored SVG icons with `Image` + `ColorOverlay`.
+- Verification of Qt 5.15 projects: the check loop renders them with PySide6 through
+  `assets/qt5-shim` (`QtGraphicalEffects` → Qt 6's `Qt5Compat`); the `lint` gate applies the
+  5.15 rules and lints a copy with the Bound pragma added; the `cpp` gate builds the host
+  against Qt 5.15, runs it and compares its frame by blurred 32-px tiles, since Qt 5 lays text
+  out up to ~1–2 px differently from Qt 6.
+- `examples/auto-cluster`: a 1920×720 car instrument cluster rebuilt for Qt 5.15 with the C++
+  host — a reusable `Dial` (one Shape, ticks and labels generated from the scale, a needle
+  bound to `value`), telltales from a model, navigation, trip and media cards. Global SSIM
+  0.999, 61/61 strings, geometry ≤ 1.1 px, all 13 gates; the Qt 5.15.13 binary runs without QML
+  warnings and matches the reference render.
+- Eval case `21-auto-cluster` (category `automotive`, `minQt` 5.15, target `cpp`);
+  `prepare_run.py` asks for a Qt 5.15 C++ project for it.
+- `docs/img/demo.gif` (`docs/tools/demo_gif.py`): the cluster screenshot wiping into the running
+  app, whose dials are then driven through `MockData`.
+- CI job `qt5-host`: Ubuntu's Qt 5.15 builds and runs the cluster's host; the full check runs
+  with it.
+
+### Changed
+- `deploy.py`: Qt 5.15 projects get an `install.sh` that builds with the board's Qt 5.15, and a
+  desktop bundle runs `windeployqt` / `macdeployqt --qmldir qml` when the SDK has them.
+- The design-spec schema accepts `minQt` `5.15`.
+
+### Fixed
+- `build_cpp.py` dropped the grab when `cv2` had been imported in the same process (opencv-python
+  points `QT_QPA_PLATFORM_PLUGIN_PATH` at its own Qt); the variable is now removed for the
+  binary's run.
+
 ## [1.0.1] — 2026-10-20
 
 Token diet. The build transcripts of the v1.0 eval showed where the cost was: about 200 model

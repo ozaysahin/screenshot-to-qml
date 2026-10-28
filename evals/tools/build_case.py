@@ -339,6 +339,7 @@ def post_process(spec: dict, meta: dict, lib: dict) -> dict:
             "designSize": [w, h], "dpr": dpr, "captureSize": [round(w * dpr), round(h * dpr)],
             "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
             "fonts": fonts,
+            **{k: meta[k] for k in ("minQt", "target") if k in meta},
         },
         "tokens": spec["tokens"],
         "nodes": spec["nodes"],

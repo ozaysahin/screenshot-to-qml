@@ -19,6 +19,7 @@ jobs:
       - name: QML format and lint (examples + template kit)
         run: |
           pip install "PySide6>=6.8"
+          python skills/screenshot-to-qml/scripts/qt5.py check skills/screenshot-to-qml/examples/auto-cluster/project
           for d in skills/screenshot-to-qml/examples/hmi-dolum/project skills/screenshot-to-qml/examples/controls-gallery/project skills/screenshot-to-qml/assets/templates/project; do
             (cd "$d" && find qml -name '*.qml' ! -name 'Main.*.qml' -print0 | xargs -0 -n1 sh -c 'pyside6-qmlformat "$0" | diff -q - "$0" >/dev/null || { echo "not formatted: $0"; exit 1; }' \
               && find "$PWD/qml" -name '*.qml' ! -name 'Main.*.qml' -print0 | xargs -0 pyside6-qmllint -I qml --max-warnings 0) || exit 1
@@ -101,6 +102,42 @@ jobs:
           path: |
             cpp-check/*.png
             cpp-check/*.json
+
+  qt5-host:
+    # the Qt 5.15 target: the cluster example's C++ host built against Ubuntu's Qt 5.15, run
+    # headless and compared with the PySide6 render; then the full check.py with the Qt 5 host
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Qt 5.15, build tools, Xvfb, Qt runtime libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qtbase5-dev qtdeclarative5-dev qtquickcontrols2-5-dev libqt5svg5-dev \
+            qml-module-qtquick2 qml-module-qtquick-window2 qml-module-qtquick-layouts qml-module-qtquick-controls2 \
+            qml-module-qtquick-templates2 qml-module-qtquick-shapes qml-module-qtgraphicaleffects \
+            cmake ninja-build g++ xvfb libxcb-cursor0 libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 \
+            libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-shape0 libxcb-xinerama0 libxcb-xfixes0 \
+            libegl1 libgl1 libopengl0 libfontconfig1 libdbus-1-3 tesseract-ocr tesseract-ocr-tur
+      - run: pip install -r skills/screenshot-to-qml/scripts/requirements.txt pytest
+      - name: Qt 5.15 tests (dialect, scaffold, gates, the cluster's C++ host on Qt 5.15)
+        run: pytest -q -rs tests/test_qt5.py
+      - name: Cluster example, full check with the Qt 5.15 host
+        run: |
+          python skills/screenshot-to-qml/scripts/check.py skills/screenshot-to-qml/examples/auto-cluster/project \
+            --source skills/screenshot-to-qml/examples/auto-cluster/input.png \
+            --spec skills/screenshot-to-qml/examples/auto-cluster/design-spec.json \
+            --out-dir qt5-check
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qt5-check
+          path: |
+            qt5-check/*.png
+            qt5-check/*.json
 
   eval-cases-rebuild:
     runs-on: ubuntu-latest

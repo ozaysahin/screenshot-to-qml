@@ -12,7 +12,9 @@ the window with Tab, hover and press (render.py --interact; hover is skipped on 
 profiles) for the a11y and states gates. The embedded-sw profile renders with the software
 scene graph, as the device will. When the project has a C++ host (CMakeLists.txt), it is
 built, run and grabbed at the same size (build_cpp.py) and compared with the PySide6 render
-(the cpp gate); without a Qt 6 SDK that gate is skipped with a note. Writes to --out-dir:
+(the cpp gate); without a Qt SDK that gate is skipped with a note. A Qt 5.15 project
+(meta.minQt 5.15) renders here with PySide6 through assets/qt5-shim; its C++ host built
+against Qt 5.15 is the real 5.15 run. Writes to --out-dir:
   render.png  scene.json  interaction.json  diff.png  report.json  gate.json  summary.json
   worst.png   (when the diff fails) source and render crops of the worst items, side by side
   cpp.png  cpp.json  cpp-build/   (C++ host)
@@ -50,7 +52,8 @@ def main(argv=None) -> int:
     ap.add_argument("--mode", choices=["production", "fidelity"], default="production")
     ap.add_argument("--backend", type=Path)
     ap.add_argument("--no-interact", action="store_true", help="skip the keyboard/pointer probe (a11y, states)")
-    ap.add_argument("--qt", type=Path, help="Qt prefix for the C++ host (else $QT_DIR or the system Qt)")
+    ap.add_argument("--qt", type=Path, help="Qt prefix for the C++ host (else $QT_DIR or the system Qt; "
+                    "Qt 5.15 for a --min-qt 5.15 project)")
     ap.add_argument("--no-cpp", action="store_true", help="do not build the C++ host")
     args = ap.parse_args(argv)
 

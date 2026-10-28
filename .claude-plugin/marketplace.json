@@ -10,7 +10,7 @@
       "name": "screenshot-to-qml",
       "source": "./skills/screenshot-to-qml",
       "description": "Rebuild UI screenshots or HTML as native Qt Quick / QML projects (PySide6 or C++) and score them against the source",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "license": "MIT",
       "homepage": "https://github.com/ozaysahin/screenshot-to-qml",
       "keywords": ["qml", "qt-quick", "pyside6", "screenshot-to-code", "embedded-ui"]

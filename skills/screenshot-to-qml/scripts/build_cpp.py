@@ -7,7 +7,8 @@ Usage:
                       [--install DIR] [--json cpp.json]
 
 PROJECT_DIR holds CMakeLists.txt + src/main.cpp (scaffold.py --target cpp, or --add-host cpp).
-Qt is found through --qt, $QT_DIR, $Qt6_DIR or CMAKE_PREFIX_PATH, else the system's Qt 6.
+Qt is found through --qt, $QT_DIR, $Qt6_DIR / $Qt5_DIR or CMAKE_PREFIX_PATH, else the system's Qt
+(Qt 6.8+, or Qt 5.15 for a project scaffolded with --min-qt 5.15: the real 5.15 run of its QML).
 
 Steps:
   configure  cmake -S PROJECT -B BUILD (Ninja when available)
@@ -17,7 +18,8 @@ Steps:
   compare    SSIM of the grab against another render (the PySide6 one): both hosts run the same
              qml/ tree and normally match at 1.000; below 0.98 fails (exit 1): a file missing
              from the binary (an image outside qml/ or assets/, a folder without qmldir) or a
-             C++-only difference
+             C++-only difference. A Qt 5.15 host is compared by blurred 32-px tiles instead
+             (text lays out up to ~2 px differently in Qt 5); a tile above 24 fails
   install    cmake --install BUILD --prefix DIR (bundles Qt when it comes from an SDK)
 
 Writes a JSON report (--json): {configured, built, warnings, binary, grab: {...}, parity, installed}.
@@ -38,7 +40,7 @@ from pathlib import Path
 
 
 def qt_prefix(arg: Path | None) -> str | None:
-    for cand in (arg, os.environ.get("QT_DIR"), os.environ.get("Qt6_DIR")):
+    for cand in (arg, os.environ.get("QT_DIR"), os.environ.get("Qt6_DIR"), os.environ.get("Qt5_DIR")):
         if cand:
             return str(Path(cand).resolve())
     return None
@@ -72,6 +74,28 @@ def ssim(a: Path, b: Path) -> float | None:
     if x is None or y is None or x.shape != y.shape:
         return None
     return float(structural_similarity(x, y))
+
+
+# Qt 5.15 vs the Qt 6 (PySide6) render: text lays out up to ~2 px differently, so a plain SSIM
+# says little. Compare blurred 32-px tiles instead: a missing image, icon or panel moves a tile
+# far more than text drift does (gallery: drift peaks at ~18, a missing 30-px icon at ~28).
+QT5_TILE_LIMIT = 24.0
+
+
+def tile_diff(a: Path, b: Path, tile: int = 32, blur: int = 7) -> float | None:
+    """Largest mean |a - b| (0-255) over tile×tile blocks of the blurred frames."""
+    try:
+        import cv2
+        import numpy as np
+    except ImportError:
+        return None
+    x, y = cv2.imread(str(a)), cv2.imread(str(b))
+    if x is None or y is None or x.shape != y.shape:
+        return None
+    d = np.abs(cv2.GaussianBlur(x, (blur, blur), 0).astype(np.float32)
+               - cv2.GaussianBlur(y, (blur, blur), 0).astype(np.float32)).mean(axis=2)
+    h, w = d.shape
+    return float(max(d[r:r + tile, c:c + tile].mean() for r in range(0, h, tile) for c in range(0, w, tile)))
 
 
 def main(argv=None) -> int:
@@ -112,6 +136,8 @@ def main(argv=None) -> int:
         return done(2)
     prefix = qt_prefix(args.qt)
     report["qtPrefix"] = prefix
+    qt5 = "find_package(Qt5" in (project / "CMakeLists.txt").read_text()
+    report["qtMajor"] = 5 if qt5 else 6
     build = (args.build_dir or project / "build").resolve()
     cfg = [cmake, "-S", str(project), "-B", str(build), f"-DCMAKE_BUILD_TYPE={args.config}"]
     if shutil.which("ninja") and not (build / "CMakeCache.txt").exists():
@@ -129,9 +155,10 @@ def main(argv=None) -> int:
         report["error"] = "configure failed"
         report["log"] = tail
         log = res.stdout + res.stderr
-        if re.search(r'provided by\s+"Qt6"|Qt6_FOUND to FALSE|Failed to find required Qt component|'
+        if re.search(r'provided by\s+"Qt[56]"|Qt[56]_FOUND to FALSE|Failed to find required Qt component|'
                      r'Could not find a (?:configuration file for )?package', log):
-            report["error"] = "Qt 6.8+ CMake package not found or incomplete (pass --qt or set QT_DIR)"
+            need = "Qt 5.15 (qtdeclarative5-dev / the board SDK)" if qt5 else "Qt 6.8+"
+            report["error"] = f"{need} CMake package not found or incomplete (pass --qt or set QT_DIR)"
         return done(2)
     report["configured"] = True
     cfg_warn = len(re.findall(r"CMake Warning", res.stdout + res.stderr))
@@ -172,6 +199,10 @@ def main(argv=None) -> int:
         genv = dict(env, APP_GRAB=str(grab), APP_GRAB_SIZE=f"{w}x{h}", APP_GRAB_WAIT_MS=str(args.wait_ms),
                     QT_SCALE_FACTOR=f"{args.dpr:g}")
         genv.pop("QT_SCALE_FACTOR_ROUNDING_POLICY", None)
+        if "cv2" in genv.get("QT_QPA_PLATFORM_PLUGIN_PATH", ""):   # set by `import cv2` (opencv-python's own Qt)
+            genv.pop("QT_QPA_PLATFORM_PLUGIN_PATH")
+        if qt5:     # Qt 5 adds a factor from the screen's DPI (Xvfb: 1.04); the grab uses QT_SCALE_FACTOR only
+            genv["QT_ENABLE_HIGHDPI_SCALING"] = "0"
         if args.lang:
             genv["APP_LANG"] = args.lang
         cmd = [str(binary)]
@@ -199,9 +230,17 @@ def main(argv=None) -> int:
         if args.compare and grab.exists():
             v = ssim(grab, args.compare)
             report["parity"] = {"against": str(args.compare), "ssim": None if v is None else round(v, 5)}
-            print(f"parity with {args.compare.name}: SSIM {v:.5f}" if v is not None else "parity: sizes differ")
-            if v is None or v < 0.98:
-                code = 1
+            if qt5:
+                t = tile_diff(grab, args.compare)
+                report["parity"].update(qt=5, maxTileDiff=None if t is None else round(t, 1), limit=QT5_TILE_LIMIT)
+                print(f"parity with {args.compare.name} (Qt 5.15 vs Qt 6): SSIM {v:.4f}, max tile difference {t:.1f} "
+                      f"(limit {QT5_TILE_LIMIT:g})" if v is not None and t is not None else "parity: sizes differ")
+                if t is None or t > QT5_TILE_LIMIT:
+                    code = 1
+            else:
+                print(f"parity with {args.compare.name}: SSIM {v:.5f}" if v is not None else "parity: sizes differ")
+                if v is None or v < 0.98:
+                    code = 1
 
     if args.install:
         res, secs = run([cmake, "--install", str(build), "--prefix", str(args.install.resolve()), "--config", args.config], env=env)

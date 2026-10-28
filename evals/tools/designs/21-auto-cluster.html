@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Ayaz · Dijital gösterge paneli</title>
+<script type="application/json" id="case-meta">
+{"id": "21-auto-cluster", "title": "Dijital gösterge paneli — 12,3 inç, şehir içi sürüş", "category": "automotive", "profile": "embedded-gpu",
+ "minQt": "5.15", "target": "cpp", "viewport": [1920, 720], "dpr": 1, "fonts": ["Rajdhani"]}
+</script>
+<script type="application/json" id="case-data">
+{"speed": {"value": 87, "max": 240, "unit": "km/sa", "limit": 90, "labels": [0, 20, 40, 60, 80, 100, 120, 140, 160, 180, 200, 220, 240]},
+ "rpm": {"value": 2.4, "max": 8, "redline": 6.5, "labels": [0, 1, 2, 3, 4, 5, 6, 7, 8]},
+ "gear": "D", "gears": ["P", "R", "N", "D"], "mode": "ECO",
+ "telltales": [{"icon": "bulb", "state": "on", "color": "green"}, {"icon": "engine", "state": "on", "color": "amber"},
+               {"icon": "battery-automotive", "state": "off"}, {"icon": "parking-circle", "state": "off"},
+               {"icon": "gas-station", "state": "off"}, {"icon": "steering-wheel", "state": "off"}],
+ "nav": {"distance": "350 m", "street": "Atatürk Bulvarı", "direction": "Kızılay yönü", "progress": 0.62,
+         "arrival": "14:58", "remaining": "23 km", "duration": "26 dk"},
+ "trip": [{"label": "Menzil", "value": "412", "unit": "km"}, {"label": "Ort. tüketim", "value": "6,1", "unit": "L/100"},
+          {"label": "Yolculuk A", "value": "128,4", "unit": "km"}],
+ "fuel": {"segments": 10, "lit": 6}, "coolant": {"segments": 10, "lit": 5},
+ "odo": "48.216 km", "tripB": "1.204,7 km", "clock": "14:32", "outside": "18°C", "date": "Çar 28 Eki",
+ "turn": {"left": true, "right": false}}
+</script>
+<!--@fonts-->
+<style>
+:root {
+  --color-bg: #06080B;
+  --color-face: #0A0E13;
+  --color-face-border: #161D26;
+  --color-hub: #080B0F;
+  --color-hub-border: #131A22;
+  --color-panel: #0D1218;
+  --color-border: #18212B;
+  --color-track: #18202A;
+  --color-tick: #323D4A;
+  --color-tick-major: #5F6C7B;
+  --color-text: #F2F5F8;
+  --color-text-2: #C7D0DA;
+  --color-muted: #7D8A99;
+  --color-dim: #26303B;
+  --color-accent: #35C8FF;
+  --color-accent-soft: #0F2A3A;
+  --color-ok: #2FD67B;
+  --color-ok-soft: #0E2A1C;
+  --color-warn: #FFB020;
+  --color-danger: #FF4B4B;
+  --color-redline: #4A1B20;
+  --color-sign: #FFFFFF;
+  --color-sign-ring: #E5383B;
+  --color-sign-ink: #0B0E12;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 20px; --space-6: 24px;
+  --radius-sm: 4px; --radius-md: 12px; --radius-lg: 18px; --radius-xl: 22px; --radius-pill: 999px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1920px; height: 720px; overflow: hidden; }
+body { position: relative; background: var(--color-bg); color: var(--color-text); font-family: 'Rajdhani', sans-serif; font-size: 18px; line-height: 22px; }
+svg.ic { width: 24px; height: 24px; display: block; flex: none; }
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* turn signals */
+.turn { position: absolute; top: 26px; width: 48px; height: 48px; }
+.turn svg.ic { width: 48px; height: 48px; }
+.turn.left { left: 56px; color: var(--color-ok); }
+.turn.right { right: 56px; color: var(--color-dim); }
+
+/* dials */
+.dial { position: absolute; top: 118px; width: 524px; height: 524px; }
+.dial.speed { left: 168px; }
+.dial.rpm { left: 1228px; }
+.dial svg.face { position: absolute; left: 0; top: 0; }
+.scale-box { position: absolute; left: 0; top: 0; width: 524px; height: 524px; }
+.lbl-num { position: absolute; width: 60px; height: 26px; margin: -13px 0 0 -30px; text-align: center; font-size: 24px; font-weight: 600; line-height: 26px; color: var(--color-muted); }
+.lbl-num.red { color: var(--color-danger); }
+.readout { position: absolute; left: 132px; width: 260px; text-align: center; }
+.big { top: 186px; font-size: 156px; font-weight: 700; line-height: 156px; letter-spacing: -2px; }
+.unit { top: 336px; font-size: 26px; font-weight: 500; line-height: 30px; color: var(--color-muted); }
+.rpm-unit { top: 150px; font-size: 16px; font-weight: 600; line-height: 20px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--color-muted); }
+.limit { position: absolute; left: 226px; top: 426px; width: 72px; height: 72px; border-radius: 50%; background: var(--color-sign); border: 7px solid var(--color-sign-ring); display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 700; line-height: 30px; color: var(--color-sign-ink); }
+.gears { position: absolute; left: 132px; top: 344px; width: 260px; display: flex; justify-content: center; gap: 22px; }
+.gear { width: 26px; height: 34px; text-align: center; font-size: 28px; font-weight: 600; line-height: 30px; color: var(--color-dim); }
+.gear.on { color: var(--color-accent); border-bottom: 3px solid var(--color-accent); }
+.eco { position: absolute; left: 207px; top: 442px; width: 110px; height: 40px; border-radius: var(--radius-pill); background: var(--color-ok-soft); color: var(--color-ok); display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 20px; font-weight: 700; line-height: 22px; letter-spacing: 2px; }
+.eco svg.ic { width: 20px; height: 20px; }
+
+/* center column */
+.center { position: absolute; left: 720px; top: 26px; width: 480px; }
+.status { height: 44px; display: flex; align-items: center; justify-content: center; gap: 18px; }
+.clock { font-size: 40px; font-weight: 600; line-height: 44px; }
+.sep { width: 1px; height: 24px; background: var(--color-border); }
+.temp { display: flex; align-items: center; gap: 6px; font-size: 24px; font-weight: 600; line-height: 28px; color: var(--color-text-2); }
+.temp svg.ic { width: 22px; height: 22px; color: var(--color-muted); }
+.date { font-size: 24px; font-weight: 500; line-height: 28px; color: var(--color-muted); }
+.telltales { height: 36px; margin-top: 22px; display: flex; justify-content: center; gap: 26px; }
+.tt { width: 32px; height: 32px; margin-top: 2px; color: var(--color-dim); }
+.tt svg.ic { width: 32px; height: 32px; }
+.tt.green { color: var(--color-ok); }
+.tt.amber { color: var(--color-warn); }
+
+.card { background: var(--color-panel); border: 1px solid var(--color-border); }
+.nav { margin-top: 22px; height: 228px; border-radius: var(--radius-xl); padding: 22px 24px; display: flex; flex-direction: column; }
+.nav-top { display: flex; gap: 20px; }
+.maneuver { width: 92px; height: 92px; flex: none; border-radius: var(--radius-lg); background: var(--color-accent-soft); display: grid; place-items: center; color: var(--color-accent); }
+.maneuver svg.ic { width: 56px; height: 56px; stroke-width: 2.25; }
+.dist { font-size: 60px; font-weight: 700; line-height: 62px; }
+.street { font-size: 26px; font-weight: 600; line-height: 30px; color: var(--color-text-2); }
+.towards { font-size: 18px; font-weight: 500; line-height: 22px; color: var(--color-muted); margin-top: 2px; }
+.progress { margin-top: 20px; height: 8px; border-radius: 4px; background: var(--color-track); }
+.progress-fill { width: 62%; height: 8px; border-radius: 4px; background: var(--color-accent); }
+.eta { margin-top: 18px; display: flex; justify-content: space-between; }
+.eta-item { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 600; line-height: 24px; color: var(--color-text-2); }
+.eta-item svg.ic { width: 20px; height: 20px; color: var(--color-muted); }
+.trip { margin-top: 20px; display: flex; gap: 12px; }
+.tile { width: 152px; height: 118px; border-radius: var(--radius-lg); padding: 16px 18px; }
+.tile-lbl { font-size: 14px; font-weight: 600; line-height: 18px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--color-muted); }
+.tile-val { display: flex; align-items: baseline; gap: 6px; margin-top: 10px; }
+.tile-val b { font-size: 44px; font-weight: 700; line-height: 48px; }
+.tile-val span { font-size: 18px; font-weight: 600; line-height: 22px; color: var(--color-muted); }
+.media { margin-top: 20px; height: 76px; border-radius: var(--radius-lg); padding: 0 20px 0 14px; display: flex; align-items: center; gap: 14px; }
+.cover { width: 48px; height: 48px; flex: none; border-radius: var(--radius-md); background: var(--color-accent-soft); display: grid; place-items: center; color: var(--color-accent); }
+.cover svg.ic { width: 26px; height: 26px; }
+.media-txt { flex: 1; }
+.media-txt b { display: block; font-size: 20px; font-weight: 600; line-height: 24px; color: var(--color-text); }
+.media-txt span { display: block; font-size: 16px; font-weight: 500; line-height: 20px; color: var(--color-muted); }
+.media-side { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 600; line-height: 20px; color: var(--color-muted); }
+.media-side svg.ic { width: 22px; height: 22px; color: var(--color-muted); }
+
+/* bottom bar */
+.meter { position: absolute; top: 650px; height: 30px; display: flex; align-items: center; gap: 10px; }
+.meter.fuel { left: 248px; }
+.meter.coolant { left: 1308px; }
+.meter svg.ic { width: 26px; height: 26px; color: var(--color-muted); }
+.meter .end { width: 14px; text-align: center; font-size: 16px; font-weight: 600; line-height: 20px; color: var(--color-muted); }
+.segs { display: flex; gap: 5px; }
+.seg { width: 24px; height: 12px; border-radius: 3px; background: var(--color-dim); }
+.seg.on { background: var(--color-text-2); }
+.odo { position: absolute; left: 720px; top: 650px; width: 480px; height: 30px; display: flex; align-items: center; justify-content: center; gap: 14px; }
+.odo .k { font-size: 16px; font-weight: 600; line-height: 20px; letter-spacing: 2px; color: var(--color-muted); }
+.odo .v { font-size: 24px; font-weight: 600; line-height: 28px; color: var(--color-text-2); }
+</style>
+</head>
+<body>
+<div class="turn left" data-node="turnLeft" data-role="Indicator" data-state="on"><i data-icon="tabler-filled:arrow-big-left" class="ic"></i></div>
+<div class="turn right" data-node="turnRight" data-role="Indicator" data-state="off"><i data-icon="tabler-filled:arrow-big-right" class="ic"></i></div>
+
+<section class="dial speed" data-node="speedGauge" data-role="Gauge" data-value="87">
+  <svg class="face" width="524" height="524" viewBox="0 0 524 524" data-node="speedDial"></svg>
+  <div class="scale-box" data-node="speedScale" data-model="speedScale"></div>
+  <div class="readout big tnum" data-node="speedValue">87</div>
+  <div class="readout unit" data-node="speedUnit">km/sa</div>
+  <div class="limit" data-node="speedLimit" data-role="Badge">90</div>
+</section>
+
+<section class="dial rpm" data-node="rpmGauge" data-role="Gauge" data-value="2.4">
+  <svg class="face" width="524" height="524" viewBox="0 0 524 524" data-node="rpmDial"></svg>
+  <div class="scale-box" data-node="rpmScale" data-model="rpmScale"></div>
+  <div class="readout rpm-unit" data-node="rpmUnit">×1000 dev/dk</div>
+  <div class="readout big" data-node="gearValue">D</div>
+  <div class="gears" data-node="gearSelector" data-model="gears" data-value="D">
+    <div class="gear" data-node="gear">P</div>
+    <div class="gear" data-node="gear">R</div>
+    <div class="gear" data-node="gear">N</div>
+    <div class="gear on" data-node="gear" data-state="selected">D</div>
+  </div>
+  <div class="eco" data-node="driveMode" data-role="Chip"><i data-icon="tabler-filled:leaf" class="ic"></i>ECO</div>
+</section>
+
+<div class="center">
+  <div class="status" data-node="statusBar" data-role="Header">
+    <div class="clock tnum" data-node="clock" data-role="Clock">14:32</div>
+    <div class="sep"></div>
+    <div class="temp" data-node="outsideTemp"><i data-icon="tabler:temperature" class="ic"></i>18°C</div>
+    <div class="sep"></div>
+    <div class="date" data-node="date">Çar 28 Eki</div>
+  </div>
+  <div class="telltales" data-node="telltales" data-model="telltales">
+    <div class="tt green" data-node="telltale" data-role="Indicator" data-state="on"><i data-icon="tabler-filled:bulb" class="ic"></i></div>
+    <div class="tt amber" data-node="telltale" data-role="Indicator" data-state="on"><i data-icon="tabler-filled:engine" class="ic"></i></div>
+    <div class="tt" data-node="telltale" data-role="Indicator" data-state="off"><i data-icon="tabler-filled:battery-automotive" class="ic"></i></div>
+    <div class="tt" data-node="telltale" data-role="Indicator" data-state="off"><i data-icon="tabler-filled:parking-circle" class="ic"></i></div>
+    <div class="tt" data-node="telltale" data-role="Indicator" data-state="off"><i data-icon="tabler-filled:gas-station" class="ic"></i></div>
+    <div class="tt" data-node="telltale" data-role="Indicator" data-state="off"><i data-icon="tabler:steering-wheel" class="ic"></i></div>
+  </div>
+
+  <section class="card nav" data-node="navCard" data-role="Card">
+    <div class="nav-top">
+      <div class="maneuver" data-node="maneuverIcon" data-role="Icon"><i data-icon="tabler:corner-up-right" class="ic"></i></div>
+      <div>
+        <div class="dist tnum" data-node="maneuverDistance">350 m</div>
+        <div class="street" data-node="streetName">Atatürk Bulvarı</div>
+        <div class="towards" data-node="direction">Kızılay yönü</div>
+      </div>
+    </div>
+    <div class="progress" data-node="maneuverProgress" data-role="ProgressBar" data-value="0.62"><div class="progress-fill"></div></div>
+    <div class="eta" data-node="routeInfo" data-model="routeInfo">
+      <div class="eta-item" data-node="routeItem"><i data-icon="tabler:flag" class="ic"></i>Varış 14:58</div>
+      <div class="eta-item" data-node="routeItem"><i data-icon="tabler:route" class="ic"></i>23 km</div>
+      <div class="eta-item" data-node="routeItem"><i data-icon="tabler:clock" class="ic"></i>26 dk</div>
+    </div>
+  </section>
+
+  <div class="trip" data-node="tripInfo" data-model="tripInfo">
+    <section class="card tile" data-node="tripTile" data-role="Card">
+      <div class="tile-lbl">Menzil</div>
+      <div class="tile-val"><b class="tnum">412</b><span>km</span></div>
+    </section>
+    <section class="card tile" data-node="tripTile" data-role="Card">
+      <div class="tile-lbl">Ort. tüketim</div>
+      <div class="tile-val"><b class="tnum">6,1</b><span>L/100</span></div>
+    </section>
+    <section class="card tile" data-node="tripTile" data-role="Card">
+      <div class="tile-lbl">Yolculuk A</div>
+      <div class="tile-val"><b class="tnum">128,4</b><span>km</span></div>
+    </section>
+  </div>
+
+  <section class="card media" data-node="mediaCard" data-role="Card">
+    <div class="cover" data-node="mediaIcon" data-role="Icon"><i data-icon="tabler:radio" class="ic"></i></div>
+    <div class="media-txt">
+      <b data-node="mediaTitle">Ayaz FM 103,1</b>
+      <span data-node="mediaSubtitle">Akşam Yolu · canlı</span>
+    </div>
+    <div class="media-side" data-node="volume"><i data-icon="tabler:volume" class="ic"></i>12</div>
+  </section>
+</div>
+
+<div class="meter fuel" data-node="fuelGauge" data-role="ProgressBar" data-value="0.6">
+  <i data-icon="tabler-filled:gas-station" class="ic"></i>
+  <div class="end">E</div>
+  <div class="segs" data-node="fuelSegments" data-model="fuelSegments">
+    <div class="seg on" data-node="fuelSegment" data-state="checked"></div><div class="seg on" data-node="fuelSegment" data-state="checked"></div><div class="seg on" data-node="fuelSegment" data-state="checked"></div><div class="seg on" data-node="fuelSegment" data-state="checked"></div><div class="seg on" data-node="fuelSegment" data-state="checked"></div>
+    <div class="seg on" data-node="fuelSegment" data-state="checked"></div><div class="seg" data-node="fuelSegment"></div><div class="seg" data-node="fuelSegment"></div><div class="seg" data-node="fuelSegment"></div><div class="seg" data-node="fuelSegment"></div>
+  </div>
+  <div class="end">F</div>
+</div>
+
+<div class="odo tnum" data-node="odometer">
+  <span class="k">ODO</span><span class="v">48.216 km</span>
+  <span class="k">B</span><span class="v">1.204,7 km</span>
+</div>
+
+<div class="meter coolant" data-node="coolantGauge" data-role="ProgressBar" data-value="0.5">
+  <i data-icon="tabler:temperature" class="ic"></i>
+  <div class="end">C</div>
+  <div class="segs" data-node="coolantSegments" data-model="coolantSegments">
+    <div class="seg on" data-node="coolantSegment" data-state="checked"></div><div class="seg on" data-node="coolantSegment" data-state="checked"></div><div class="seg on" data-node="coolantSegment" data-state="checked"></div><div class="seg on" data-node="coolantSegment" data-state="checked"></div><div class="seg on" data-node="coolantSegment" data-state="checked"></div>
+    <div class="seg" data-node="coolantSegment"></div><div class="seg" data-node="coolantSegment"></div><div class="seg" data-node="coolantSegment"></div><div class="seg" data-node="coolantSegment"></div><div class="seg" data-node="coolantSegment"></div>
+  </div>
+  <div class="end">H</div>
+</div>
+
+<script>
+// dial geometry: center (262, 262) in each 524 px dial; 270° sweep from 135° (bottom left) clockwise
+(function () {
+  const NS = "http://www.w3.org/2000/svg", C = 262, A0 = 135, SWEEP = 270;
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const pt = (r, a) => [C + r * Math.cos(a * Math.PI / 180), C + r * Math.sin(a * Math.PI / 180)];
+  const f = v => Math.round(v * 100) / 100;
+  const arc = (r, a0, a1) => {
+    const [x0, y0] = pt(r, a0), [x1, y1] = pt(r, a1);
+    return `M ${f(x0)} ${f(y0)} A ${r} ${r} 0 ${a1 - a0 > 180 ? 1 : 0} 1 ${f(x1)} ${f(y1)}`;
+  };
+  const el = (svg, tag, attrs) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); svg.appendChild(e); return e; };
+  function dial(svg, scaleBox, opts) {
+    el(svg, "circle", {cx: C, cy: C, r: 261, fill: css("--color-face"), stroke: css("--color-face-border"), "stroke-width": 2, "data-node": opts.id + "Face"});
+    el(svg, "circle", {cx: C, cy: C, r: 140, fill: css("--color-hub"), stroke: css("--color-hub-border"), "stroke-width": 2, "data-node": opts.id + "Hub"});
+    el(svg, "path", {d: arc(236, A0, A0 + SWEEP), fill: "none", stroke: css("--color-track"), "stroke-width": 18, "stroke-linecap": "butt", "data-node": opts.id + "Track"});
+    if (opts.redline != null) {
+      const a = A0 + SWEEP * opts.redline / opts.max;
+      el(svg, "path", {d: arc(236, a, A0 + SWEEP), fill: "none", stroke: css("--color-redline"), "stroke-width": 18, "data-node": opts.id + "Redline"});
+    }
+    const av = A0 + SWEEP * opts.value / opts.max;
+    el(svg, "path", {d: arc(236, A0, av), fill: "none", stroke: css("--color-accent"), "stroke-width": 18, "stroke-linecap": "butt",
+                     "data-node": opts.id + "Arc", "data-value": f(opts.value / opts.max)});
+    for (let v = 0; v <= opts.max + 1e-9; v += opts.minor) {
+      const major = Math.abs(v / opts.major - Math.round(v / opts.major)) < 1e-6;
+      const a = A0 + SWEEP * v / opts.max;
+      const [x0, y0] = pt(212, a), [x1, y1] = pt(major ? 192 : 200, a);
+      const red = opts.redline != null && v >= opts.redline - 1e-9;
+      el(svg, "line", {x1: f(x0), y1: f(y0), x2: f(x1), y2: f(y1), "stroke-width": 3, "stroke-linecap": "round",
+                       stroke: red ? css("--color-danger") : css(major ? "--color-tick-major" : "--color-tick")});
+      if (major) {
+        const [lx, ly] = pt(166, a);
+        const d = document.createElement("div");
+        d.className = "lbl-num tnum" + (red ? " red" : "");
+        d.dataset.node = opts.id + "Label";
+        d.style.left = f(lx) + "px"; d.style.top = f(ly) + "px";
+        d.textContent = String(Math.round(v / opts.labelStep));
+        scaleBox.appendChild(d);
+      }
+    }
+    const [x0, y0] = pt(214, av), [x1, y1] = pt(258, av);
+    el(svg, "line", {x1: f(x0), y1: f(y0), x2: f(x1), y2: f(y1), stroke: css("--color-text"), "stroke-width": 6, "stroke-linecap": "round", "data-node": opts.id + "Needle"});
+  }
+  const data = JSON.parse(document.getElementById("case-data").textContent);
+  dial(document.querySelector("[data-node=speedDial]"), document.querySelector("[data-node=speedScale]"),
+       {id: "speed", value: data.speed.value, max: 240, minor: 10, major: 20, labelStep: 1});
+  dial(document.querySelector("[data-node=rpmDial]"), document.querySelector("[data-node=rpmScale]"),
+       {id: "rpm", value: data.rpm.value, max: 8, minor: 0.5, major: 1, labelStep: 1, redline: data.rpm.redline});
+})();
+</script>
+</body>
+</html>

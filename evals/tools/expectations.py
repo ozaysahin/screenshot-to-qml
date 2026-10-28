@@ -381,6 +381,31 @@ CASES_SPEC = {
         "forbidden": ["Raster crops of the input."],
         "thresholds": {"note": "Font is outside the catalog: text is scored by position (left/center/right edge and baseline), not by glyph shapes."},
     },
+    "21-auto-cluster": {
+        "summary": "1920x720 digital instrument cluster for Qt 5.15 (C++ host, embedded-gpu): speedometer and "
+                   "tachometer dials, telltales, navigation, trip and media cards.",
+        "mustHave": [
+            "Qt 5.15 dialect: versioned imports, QtGraphicalEffects instead of MultiEffect, no Qt 6-only types or "
+            "properties (qt5.py check is clean); a C++ host (CMake, Qt5) that builds against Qt 5.15.",
+            "Two 270-degree dials drawn as vectors (Shape arcs) from the 135-degree start: track, value arc and needle "
+            "bound to a speed (87 of 240) and an rpm (2.4 of 8) property, not baked in.",
+            "Tick marks and scale labels generated from the scale (13 speed labels, 9 rpm labels, minor ticks), "
+            "placed on circles; the rpm redline from 6.5 drawn in red (track segment, ticks, '7' and '8').",
+            "Big '87' and 'D' in Rajdhani Bold, 'km/sa', the 90 speed-limit sign, the P R N D selector from a model "
+            "with D selected and the ECO chip.",
+            "Telltales from a model of 6 (2 on: green lights, amber engine; 4 off in the dim color) and the two turn "
+            "arrows (left on, right off).",
+            "Navigation card: maneuver icon tile, '350 m', 'Atatürk Bulvarı', progress at 0.62, 3 route items.",
+            "Trip tiles from a model of 3 with uppercase labels keeping the Turkish İ ('MENZİL', 'ORT. TÜKETİM'); "
+            "media card; fuel (6 of 10) and coolant (5 of 10) segment bars from models; odometer line.",
+        ],
+        "niceToHave": ["Needle and arc animate between values (Behavior on the bound property).",
+                       "Lit segment counts bound to fuel and coolant levels."],
+        "allowedApproximations": ["Dial arcs with round instead of butt caps.", "Telltale glyphs as SVG images."],
+        "forbidden": ["Qt 6-only QML (MultiEffect, VectorImage, per-corner radius, versionless imports).",
+                      "A raster image of a dial or of the input.", "Blur or shadow effects (embedded-gpu flat cluster)."],
+        "thresholds": {},
+    },
 }
 
 
@@ -398,7 +423,8 @@ def main() -> None:
                        "fonts": "source/fonts (the build's font files)"}
                       if meta.get("category") == "html" else
                       {"file": "input.png", "size": meta["captureSize"], "dpr": meta["dpr"], "designSize": meta["designSize"]}),
-            "target": "pyside6", "mode": "production", "profile": meta["profile"], "minQt": "6.8",
+            "target": meta.get("target", "pyside6"), "mode": "production", "profile": meta["profile"],
+            "minQt": meta.get("minQt", "6.8"),
             "common": COMMON,
             "mustHave": spec["mustHave"],
             "niceToHave": spec["niceToHave"],

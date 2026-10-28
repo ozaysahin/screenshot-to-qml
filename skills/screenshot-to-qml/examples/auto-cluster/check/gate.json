@@ -1,0 +1,72 @@
+{
+ "pass": true,
+ "mode": "production",
+ "files": 13,
+ "gates": {
+  "lint": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "format": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "runtime": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "hardcode": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "embed": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "fonts": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "webengine": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "a11y": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "states": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "i18n": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "effects": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "perf": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  },
+  "cpp": {
+   "status": "pass",
+   "errors": [],
+   "warnings": []
+  }
+ }
+}

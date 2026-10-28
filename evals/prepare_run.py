@@ -41,6 +41,13 @@ SCREENSHOT_TASK = (
     "Screenshot DPR: {dpr}. Target: {profile}. Use a `Window` root in `qml/App/Main.qml` (module `App`)\n"
     "and bundle fonts in `project/assets/fonts`."
 )
+QT5_TASK = (
+    "Rebuild this screen (`input.png`) as a native Qt Quick project for Qt 5.15 with a C++ (CMake) host in\n"
+    "`./project`; the QML must load on Qt 5.15. Screenshot DPR: {dpr}. Target: {profile}. Use a `Window` root in\n"
+    "`qml/App/Main.qml` (module `App`) and bundle fonts in `project/assets/fonts`. Qt 5.15 for the build: Linux\n"
+    "`apt install qtdeclarative5-dev qtquickcontrols2-5-dev qml-module-qtquick-controls2 qml-module-qtquick-shapes\n"
+    "qml-module-qtgraphicaleffects`, Windows `aqt install-qt windows desktop 5.15.2 win64_msvc2019_64`."
+)
 HTML_TASK = (
     "Rebuild this page (`source/index.html`, its fonts are in `source/fonts`) as a native PySide6 Qt Quick\n"
     "project in `./project`. The page is designed for a {w}×{h} viewport; the result is compared with the\n"
@@ -64,7 +71,9 @@ SKILL_LINE = ("The `screenshot-to-qml` agent skill is installed at `{skill}`; re
 
 def prompt(meta: dict, skill: Path | str | None, os_name: str = "linux") -> str:
     w, h = meta["designSize"]
-    task = (HTML_TASK if meta.get("category") == "html" else SCREENSHOT_TASK).format(
+    template = (HTML_TASK if meta.get("category") == "html"
+                else QT5_TASK if str(meta.get("minQt", "6.8")).startswith("5.") else SCREENSHOT_TASK)
+    task = template.format(
         dpr=meta["dpr"], profile=meta.get("profile", "desktop"), w=w, h=h)
     rules = RULES.format(skill_note=" (and read the skill folder below)" if skill else "", env=ENV[os_name])
     parts = [task, rules] + ([SKILL_LINE.format(skill=skill)] if skill else [])

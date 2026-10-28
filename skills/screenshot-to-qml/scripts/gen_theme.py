@@ -21,6 +21,7 @@ role's name replaces the assumed value.
 
 Token names are made QML-safe: camelCase, no leading digit, and never 'on' + capital
 (signal-handler syntax) — 'onAccent' becomes 'accentInk'.
+meta.minQt 5.15 writes the Qt 5.15 dialect (import QtQuick 2.15; references/target-qt5.md).
 The files are qmlformat-ed when qmlformat is available. Rename font tokens by role
 (title, body, caption …) in the spec (typeScale[].name) and re-run instead of editing the QML.
 
@@ -320,6 +321,11 @@ def main(argv=None) -> int:
     spec = json.loads(args.spec.read_text())
     args.out.mkdir(parents=True, exist_ok=True)
     files = {"Theme.qml": build_theme(spec), "Icons.qml": build_icons(spec)}
+    min_qt = str(spec["meta"].get("minQt", "6.8"))
+    if min_qt.split(".")[0].isdigit() and int(min_qt.split(".")[0]) < 6:     # Qt 5.15 dialect
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import qt5
+        files = {k: qt5.port_text(v, set())[0] for k, v in files.items()}
     fmt = None if args.no_format else (shutil.which("pyside6-qmlformat") or shutil.which("qmlformat"))
     for name, text in files.items():
         path = args.out / name

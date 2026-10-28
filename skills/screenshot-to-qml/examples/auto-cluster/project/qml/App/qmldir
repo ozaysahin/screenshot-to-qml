@@ -1,0 +1,11 @@
+module App
+singleton MockData 1.0 MockData.qml
+Main 1.0 Main.qml
+Dial 1.0 Dial.qml
+Card 1.0 Card.qml
+StatusRow 1.0 StatusRow.qml
+TelltaleRow 1.0 TelltaleRow.qml
+NavCard 1.0 NavCard.qml
+TripTile 1.0 TripTile.qml
+MediaCard 1.0 MediaCard.qml
+SegmentMeter 1.0 SegmentMeter.qml

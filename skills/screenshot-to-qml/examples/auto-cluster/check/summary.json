@@ -1,0 +1,14 @@
+{
+ "pass": true,
+ "diff": true,
+ "gates": true,
+ "metrics": {
+  "globalSSIM": 0.999,
+  "regionSSIMMin": 0.9826,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.06,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.05,
+  "textOnTargetRate": 1.0
+ }
+}

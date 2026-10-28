@@ -162,7 +162,21 @@ def desktop(args, project: Path, name: str) -> int:
     if not args.build:
         print("C++ desktop bundle: python build_cpp.py PROJECT --install PROJECT/dist (run with --build)")
         return 0
-    return 0 if subprocess.call(cmd) == 0 else 1
+    if subprocess.call(cmd) != 0:
+        return 1
+    if is_qt5(project):     # Qt 5 has no CMake deploy step: run the platform's deploy tool when the SDK has it
+        bins = [Path(args.qt) / "bin"] if args.qt else []
+        tool = next((str(b / t) for b in bins for t in ("windeployqt.exe", "windeployqt", "macdeployqt")
+                     if (b / t).exists()), None) or shutil.which("windeployqt") or shutil.which("macdeployqt")
+        dist = project / "dist"
+        target = None
+        if tool:
+            target = next(dist.rglob("*.exe"), None) if "windeployqt" in tool else next(dist.rglob("*.app"), None)
+        if tool and target:
+            return 0 if subprocess.call([tool, "--qmldir", str(project / "qml"), str(target)]) == 0 else 1
+        print("Qt 5.15: the binary is in dist/; bundle Qt with windeployqt / macdeployqt --qmldir qml, "
+              "or run it on a system with Qt 5.15 (a board image, a distro)")
+    return 0
 
 
 # ------------------------------------------------------------------ device
@@ -235,7 +249,12 @@ WantedBy=multi-user.target
 """
 
 
-def install_sh(args, sl: str, exe: str) -> str:
+def is_qt5(project: Path) -> bool:
+    cm = project / "CMakeLists.txt"
+    return cm.exists() and "find_package(Qt5" in cm.read_text()
+
+
+def install_sh(args, sl: str, exe: str, qt5: bool = False) -> str:
     common = f"""#!/bin/sh
 # Run on the board from the project folder: sudo sh deploy/device/install.sh
 set -e
@@ -253,6 +272,14 @@ for d in i18n mock; do [ -d "$d" ] && cp -r "$d" "$PREFIX/"; done
 python3 -m venv "$PREFIX/.venv"
 "$PREFIX/.venv/bin/pip" install --upgrade pip
 "$PREFIX/.venv/bin/pip" install -r "$PREFIX/requirements.txt"
+"""
+    elif qt5:
+        body = f"""# builds with the board's Qt 5.15 (apt install qtdeclarative5-dev qml-module-qtquick-shapes
+# qml-module-qtgraphicaleffects libqt5svg5 cmake ninja-build g++, or the Yocto/Buildroot SDK's meta-qt5)
+cmake -S . -B build-device -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build-device
+cmake --install build-device --prefix "$PREFIX"
+test -x "$PREFIX/bin/{exe}"
 """
     else:
         body = f"""# builds with the board's Qt 6.8+ (apt install qt6-declarative-dev qt6-base-dev cmake ninja-build g++)
@@ -276,7 +303,7 @@ def device(args, project: Path, name: str, profile: str) -> int:
     out = project / "deploy" / "device"
     out.mkdir(parents=True, exist_ok=True)
     files = {"app.env": env_file(args, profile), f"{sl}.service": service(args, name, exe),
-             "install.sh": install_sh(args, sl, exe)}
+             "install.sh": install_sh(args, sl, exe, is_qt5(project))}
     display = args.display or ("linuxfb" if profile == "embedded-sw" else "eglfs")
     if display == "eglfs":
         files["kms.json"] = kms_json()

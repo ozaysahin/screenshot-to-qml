@@ -1,0 +1,1948 @@
+{
+ "pass": true,
+ "metrics": {
+  "globalSSIM": 0.999,
+  "regionSSIMMin": 0.9826,
+  "colorDeltaEMax": 0.0,
+  "geometryMaxPx": 1.06,
+  "textMatchRate": 1.0,
+  "textMaxOffsetPx": 1.05,
+  "textOnTargetRate": 1.0
+ },
+ "worstRegions": [
+  {
+   "id": "routeItem[1]",
+   "role": null,
+   "ssim": 0.9826,
+   "bbox": [
+    942.75,
+    335,
+    77.45,
+    24
+   ],
+   "ssimUnaligned": 0.9431,
+   "alignShift": [
+    -1.0,
+    0.0
+   ],
+   "limit": 0.9
+  },
+  {
+   "id": "routeInfo",
+   "role": null,
+   "ssim": 0.9911,
+   "bbox": [
+    745,
+    335,
+    430,
+    24
+   ],
+   "limit": 0.9
+  },
+  {
+   "id": "speedLimit",
+   "role": "Badge",
+   "ssim": 0.9922,
+   "bbox": [
+    394,
+    544,
+    72,
+    72
+   ],
+   "limit": 0.9
+  }
+ ],
+ "failures": [],
+ "details": {
+  "regions": [
+   {
+    "id": "routeItem[1]",
+    "role": null,
+    "ssim": 0.9826,
+    "bbox": [
+     942.75,
+     335,
+     77.45,
+     24
+    ],
+    "ssimUnaligned": 0.9431,
+    "alignShift": [
+     -1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "routeInfo",
+    "role": null,
+    "ssim": 0.9911,
+    "bbox": [
+     745,
+     335,
+     430,
+     24
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLimit",
+    "role": "Badge",
+    "ssim": 0.9922,
+    "bbox": [
+     394,
+     544,
+     72,
+     72
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "routeItem[2]",
+    "role": null,
+    "ssim": 0.9924,
+    "bbox": [
+     1102.72,
+     335,
+     72.28,
+     24
+    ],
+    "ssimUnaligned": 0.8766,
+    "alignShift": [
+     -1.0,
+     0.0
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "outsideTemp",
+    "role": null,
+    "ssim": 0.9934,
+    "bbox": [
+     917.64,
+     34,
+     69.95,
+     28
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedNeedle",
+    "role": null,
+    "ssim": 0.9947,
+    "bbox": [
+     274.28,
+     174.29,
+     26.56,
+     35.08
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmArc",
+    "role": null,
+    "ssim": 0.9948,
+    "bbox": [
+     1254,
+     241.28,
+     69.12,
+     305.6
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[11]",
+    "role": null,
+    "ssim": 0.9951,
+    "bbox": [
+     553.36,
+     430.52,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "routeItem[0]",
+    "role": null,
+    "ssim": 0.9958,
+    "bbox": [
+     745,
+     335,
+     115.23,
+     24
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedArc",
+    "role": null,
+    "ssim": 0.9964,
+    "bbox": [
+     194,
+     191.83,
+     93.56,
+     355.05
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmRedline",
+    "role": null,
+    "ssim": 0.9964,
+    "bbox": [
+     1656.88,
+     356.87,
+     69.12,
+     190.01
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmNeedle",
+    "role": null,
+    "ssim": 0.9964,
+    "bbox": [
+     1281.27,
+     228.35,
+     35.6,
+     25.86
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[3]",
+    "role": null,
+    "ssim": 0.997,
+    "bbox": [
+     246.63,
+     303.47,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[10]",
+    "role": null,
+    "ssim": 0.997,
+    "bbox": [
+     566,
+     367,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[1]",
+    "role": null,
+    "ssim": 0.9971,
+    "bbox": [
+     246.63,
+     430.52,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[9]",
+    "role": null,
+    "ssim": 0.9971,
+    "bbox": [
+     553.36,
+     303.47,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[7]",
+    "role": null,
+    "ssim": 0.9971,
+    "bbox": [
+     1622.8,
+     399.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tripTile[2]",
+    "role": "Card",
+    "ssim": 0.9977,
+    "bbox": [
+     1048,
+     398,
+     152,
+     118
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedGauge",
+    "role": "Gauge",
+    "ssim": 0.9979,
+    "bbox": [
+     168,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedDial",
+    "role": null,
+    "ssim": 0.9979,
+    "bbox": [
+     168,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedFace",
+    "role": null,
+    "ssim": 0.9979,
+    "bbox": [
+     169,
+     119,
+     522,
+     522
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedTrack",
+    "role": null,
+    "ssim": 0.9979,
+    "bbox": [
+     194,
+     144.01,
+     472,
+     402.87
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedScale",
+    "role": null,
+    "ssim": 0.9979,
+    "bbox": [
+     168,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[2]",
+    "role": null,
+    "ssim": 0.998,
+    "bbox": [
+     1306.63,
+     303.47,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmGauge",
+    "role": "Gauge",
+    "ssim": 0.9981,
+    "bbox": [
+     1228,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmDial",
+    "role": null,
+    "ssim": 0.9981,
+    "bbox": [
+     1228,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmFace",
+    "role": null,
+    "ssim": 0.9981,
+    "bbox": [
+     1229,
+     119,
+     522,
+     522
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmTrack",
+    "role": null,
+    "ssim": 0.9981,
+    "bbox": [
+     1254,
+     144.01,
+     472,
+     402.87
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmScale",
+    "role": null,
+    "ssim": 0.9981,
+    "bbox": [
+     1228,
+     118,
+     524,
+     524
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tripInfo",
+    "role": null,
+    "ssim": 0.9981,
+    "bbox": [
+     720,
+     398,
+     480,
+     118
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tripTile[0]",
+    "role": "Card",
+    "ssim": 0.9982,
+    "bbox": [
+     720,
+     398,
+     152,
+     118
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "tripTile[1]",
+    "role": "Card",
+    "ssim": 0.9982,
+    "bbox": [
+     884,
+     398,
+     152,
+     118
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[2]",
+    "role": null,
+    "ssim": 0.9983,
+    "bbox": [
+     234,
+     367,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[8]",
+    "role": null,
+    "ssim": 0.9984,
+    "bbox": [
+     517.38,
+     249.61,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedUnit",
+    "role": null,
+    "ssim": 0.9984,
+    "bbox": [
+     300,
+     454,
+     260,
+     30
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[12]",
+    "role": null,
+    "ssim": 0.9985,
+    "bbox": [
+     517.38,
+     484.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[6]",
+    "role": null,
+    "ssim": 0.9985,
+    "bbox": [
+     1613.36,
+     303.47,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "driveMode",
+    "role": "Chip",
+    "ssim": 0.9985,
+    "bbox": [
+     1435,
+     560,
+     110,
+     40
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "odometer",
+    "role": null,
+    "ssim": 0.9985,
+    "bbox": [
+     720,
+     650,
+     480,
+     30
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedHub",
+    "role": null,
+    "ssim": 0.9986,
+    "bbox": [
+     290,
+     240,
+     280,
+     280
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[1]",
+    "role": null,
+    "ssim": 0.9986,
+    "bbox": [
+     1297.19,
+     399.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "gearSelector",
+    "role": null,
+    "ssim": 0.9986,
+    "bbox": [
+     1360,
+     462,
+     260,
+     34
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "gear[0]",
+    "role": null,
+    "ssim": 0.9986,
+    "bbox": [
+     1405,
+     462,
+     26,
+     34
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "fuelGauge",
+    "role": "ProgressBar",
+    "ssim": 0.9987,
+    "bbox": [
+     248,
+     650,
+     369,
+     30
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "navCard",
+    "role": "Card",
+    "ssim": 0.9988,
+    "bbox": [
+     720,
+     150,
+     480,
+     228
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "mediaIcon",
+    "role": "Icon",
+    "ssim": 0.9989,
+    "bbox": [
+     735,
+     550,
+     48,
+     48
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "coolantGauge",
+    "role": "ProgressBar",
+    "ssim": 0.9989,
+    "bbox": [
+     1308,
+     650,
+     369,
+     30
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[8]",
+    "role": null,
+    "ssim": 0.999,
+    "bbox": [
+     1577.38,
+     484.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "gear[3]",
+    "role": null,
+    "ssim": 0.999,
+    "bbox": [
+     1549,
+     462,
+     26,
+     34
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[4]",
+    "role": null,
+    "ssim": 0.9991,
+    "bbox": [
+     282.61,
+     249.61,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmHub",
+    "role": null,
+    "ssim": 0.9991,
+    "bbox": [
+     1350,
+     240,
+     280,
+     280
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "mediaCard",
+    "role": "Card",
+    "ssim": 0.9991,
+    "bbox": [
+     720,
+     536,
+     480,
+     76
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[0]",
+    "role": null,
+    "ssim": 0.9992,
+    "bbox": [
+     282.61,
+     484.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[0]",
+    "role": null,
+    "ssim": 0.9992,
+    "bbox": [
+     1342.61,
+     484.38,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[5]",
+    "role": null,
+    "ssim": 0.9993,
+    "bbox": [
+     336.47,
+     213.63,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[7]",
+    "role": null,
+    "ssim": 0.9993,
+    "bbox": [
+     463.52,
+     213.63,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedValue",
+    "role": null,
+    "ssim": 0.9993,
+    "bbox": [
+     300,
+     304,
+     260,
+     156
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "maneuverIcon",
+    "role": "Icon",
+    "ssim": 0.9995,
+    "bbox": [
+     745,
+     173,
+     92,
+     92
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[3]",
+    "role": null,
+    "ssim": 0.9996,
+    "bbox": [
+     1367.77,
+     228.97,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[5]",
+    "role": null,
+    "ssim": 0.9996,
+    "bbox": [
+     1552.22,
+     228.97,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "statusBar",
+    "role": "Header",
+    "ssim": 0.9996,
+    "bbox": [
+     720,
+     26,
+     480,
+     44
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "rpmLabel[4]",
+    "role": null,
+    "ssim": 0.9997,
+    "bbox": [
+     1460,
+     201,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "gearValue",
+    "role": null,
+    "ssim": 0.9997,
+    "bbox": [
+     1360,
+     304,
+     260,
+     156
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "speedLabel[6]",
+    "role": null,
+    "ssim": 0.9999,
+    "bbox": [
+     400,
+     201,
+     60,
+     26
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "mediaTitle",
+    "role": null,
+    "ssim": 0.9999,
+    "bbox": [
+     797,
+     552,
+     324.97,
+     24
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "gear[1]",
+    "role": null,
+    "ssim": 1.0,
+    "bbox": [
+     1453,
+     462,
+     26,
+     34
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "telltales",
+    "role": null,
+    "ssim": 1.0,
+    "bbox": [
+     720,
+     92,
+     480,
+     36
+    ],
+    "limit": 0.9
+   },
+   {
+    "id": "maneuverDistance",
+    "role": null,
+    "ssim": 1.0,
+    "bbox": [
+     857,
+     173,
+     159.75,
+     62
+    ],
+    "limit": 0.9
+   }
+  ],
+  "colors": [
+   {
+    "id": "speedLimit",
+    "deltaE": 0.0,
+    "expected": "#FFFFFF",
+    "rendered": "#FFFFFF"
+   },
+   {
+    "id": "driveMode",
+    "deltaE": 0.0,
+    "expected": "#0E2A1C",
+    "rendered": "#0E2A1C"
+   },
+   {
+    "id": "navCard",
+    "deltaE": 0.0,
+    "expected": "#0D1218",
+    "rendered": "#0D1218"
+   },
+   {
+    "id": "maneuverIcon",
+    "deltaE": 0.0,
+    "expected": "#0F2A3A",
+    "rendered": "#0F2A3A"
+   },
+   {
+    "id": "tripTile[0]",
+    "deltaE": 0.0,
+    "expected": "#0D1218",
+    "rendered": "#0D1218"
+   },
+   {
+    "id": "tripTile[1]",
+    "deltaE": 0.0,
+    "expected": "#0D1218",
+    "rendered": "#0D1218"
+   },
+   {
+    "id": "tripTile[2]",
+    "deltaE": 0.0,
+    "expected": "#0D1218",
+    "rendered": "#0D1218"
+   },
+   {
+    "id": "mediaCard",
+    "deltaE": 0.0,
+    "expected": "#0D1218",
+    "rendered": "#0D1218"
+   },
+   {
+    "id": "mediaIcon",
+    "deltaE": 0.0,
+    "expected": "#0F2A3A",
+    "rendered": "#0F2A3A"
+   }
+  ],
+  "geometry": [
+   {
+    "id": "routeItem[2]",
+    "dx": -1.02,
+    "dy": -0.27,
+    "offset": 1.06,
+    "match": 0.953
+   },
+   {
+    "id": "speedLabel[11]",
+    "dx": 0.09,
+    "dy": -0.67,
+    "offset": 0.68,
+    "match": 0.947
+   },
+   {
+    "id": "speedLabel[1]",
+    "dx": 0.03,
+    "dy": -0.66,
+    "offset": 0.66,
+    "match": 0.951
+   },
+   {
+    "id": "speedLabel[4]",
+    "dx": -0.04,
+    "dy": -0.6,
+    "offset": 0.6,
+    "match": 0.957
+   },
+   {
+    "id": "speedLabel[8]",
+    "dx": 0.02,
+    "dy": -0.6,
+    "offset": 0.6,
+    "match": 0.956
+   },
+   {
+    "id": "routeItem[1]",
+    "dx": -0.53,
+    "dy": -0.23,
+    "offset": 0.58,
+    "match": 0.872
+   },
+   {
+    "id": "speedLabel[5]",
+    "dx": 0.04,
+    "dy": -0.57,
+    "offset": 0.57,
+    "match": 0.958
+   },
+   {
+    "id": "speedLabel[7]",
+    "dx": 0.09,
+    "dy": -0.55,
+    "offset": 0.55,
+    "match": 0.955
+   },
+   {
+    "id": "tripTile[2]",
+    "dx": 0.04,
+    "dy": -0.55,
+    "offset": 0.55,
+    "match": 0.973
+   },
+   {
+    "id": "tripInfo",
+    "dx": 0.06,
+    "dy": -0.51,
+    "offset": 0.52,
+    "match": 0.97
+   },
+   {
+    "id": "tripTile[0]",
+    "dx": 0.1,
+    "dy": -0.51,
+    "offset": 0.52,
+    "match": 0.97
+   },
+   {
+    "id": "routeInfo",
+    "dx": -0.37,
+    "dy": -0.33,
+    "offset": 0.49,
+    "match": 0.858
+   },
+   {
+    "id": "tripTile[1]",
+    "dx": 0.02,
+    "dy": -0.45,
+    "offset": 0.45,
+    "match": 0.966
+   },
+   {
+    "id": "odometer",
+    "dx": -0.42,
+    "dy": -0.14,
+    "offset": 0.45,
+    "match": 0.932
+   },
+   {
+    "id": "speedLimit",
+    "dx": 0.04,
+    "dy": -0.4,
+    "offset": 0.41,
+    "match": 0.983
+   },
+   {
+    "id": "clock",
+    "dx": 0.34,
+    "dy": 0.2,
+    "offset": 0.4,
+    "match": 0.963
+   },
+   {
+    "id": "rpmLabel[7]",
+    "dx": 0.33,
+    "dy": 0.22,
+    "offset": 0.39,
+    "match": 0.958
+   },
+   {
+    "id": "mediaTitle",
+    "dx": 0.02,
+    "dy": -0.34,
+    "offset": 0.34,
+    "match": 0.964
+   },
+   {
+    "id": "routeItem[0]",
+    "dx": 0.0,
+    "dy": -0.33,
+    "offset": 0.33,
+    "match": 0.948
+   },
+   {
+    "id": "driveMode",
+    "dx": -0.23,
+    "dy": -0.23,
+    "offset": 0.32,
+    "match": 0.961
+   },
+   {
+    "id": "statusBar",
+    "dx": 0.29,
+    "dy": 0.08,
+    "offset": 0.3,
+    "match": 0.967
+   },
+   {
+    "id": "date",
+    "dx": 0.25,
+    "dy": -0.11,
+    "offset": 0.27,
+    "match": 0.94
+   },
+   {
+    "id": "speedLabel[3]",
+    "dx": 0.08,
+    "dy": 0.23,
+    "offset": 0.24,
+    "match": 0.972
+   },
+   {
+    "id": "speedLabel[9]",
+    "dx": 0.08,
+    "dy": 0.23,
+    "offset": 0.24,
+    "match": 0.974
+   },
+   {
+    "id": "rpmLabel[2]",
+    "dx": 0.15,
+    "dy": 0.19,
+    "offset": 0.24,
+    "match": 0.972
+   },
+   {
+    "id": "outsideTemp",
+    "dx": 0.21,
+    "dy": -0.1,
+    "offset": 0.23,
+    "match": 0.966
+   },
+   {
+    "id": "maneuverDistance",
+    "dx": 0.03,
+    "dy": 0.22,
+    "offset": 0.23,
+    "match": 0.991
+   },
+   {
+    "id": "rpmLabel[6]",
+    "dx": -0.01,
+    "dy": 0.21,
+    "offset": 0.21,
+    "match": 0.975
+   },
+   {
+    "id": "rpmLabel[8]",
+    "dx": 0.15,
+    "dy": 0.15,
+    "offset": 0.21,
+    "match": 0.98
+   },
+   {
+    "id": "speedLabel[0]",
+    "dx": 0.07,
+    "dy": 0.17,
+    "offset": 0.18,
+    "match": 0.986
+   },
+   {
+    "id": "speedLabel[12]",
+    "dx": 0.09,
+    "dy": 0.16,
+    "offset": 0.18,
+    "match": 0.984
+   },
+   {
+    "id": "rpmLabel[0]",
+    "dx": 0.07,
+    "dy": 0.17,
+    "offset": 0.18,
+    "match": 0.986
+   },
+   {
+    "id": "rpmLabel[3]",
+    "dx": 0.05,
+    "dy": -0.15,
+    "offset": 0.16,
+    "match": 0.985
+   },
+   {
+    "id": "rpmLabel[5]",
+    "dx": 0.05,
+    "dy": -0.15,
+    "offset": 0.16,
+    "match": 0.986
+   },
+   {
+    "id": "mediaCard",
+    "dx": 0.01,
+    "dy": -0.16,
+    "offset": 0.16,
+    "match": 0.97
+   },
+   {
+    "id": "speedValue",
+    "dx": 0.12,
+    "dy": 0.07,
+    "offset": 0.14,
+    "match": 0.995
+   },
+   {
+    "id": "speedLabel[6]",
+    "dx": -0.03,
+    "dy": -0.12,
+    "offset": 0.13,
+    "match": 0.992
+   },
+   {
+    "id": "gear[0]",
+    "dx": 0.13,
+    "dy": 0.01,
+    "offset": 0.13,
+    "match": 0.99
+   },
+   {
+    "id": "streetName",
+    "dx": 0.04,
+    "dy": 0.12,
+    "offset": 0.13,
+    "match": 0.989
+   },
+   {
+    "id": "speedLabel[10]",
+    "dx": 0.04,
+    "dy": -0.12,
+    "offset": 0.12,
+    "match": 0.989
+   },
+   {
+    "id": "rpmLabel[1]",
+    "dx": 0.05,
+    "dy": 0.11,
+    "offset": 0.12,
+    "match": 0.988
+   },
+   {
+    "id": "rpmLabel[4]",
+    "dx": 0.11,
+    "dy": -0.05,
+    "offset": 0.12,
+    "match": 0.992
+   },
+   {
+    "id": "speedLabel[2]",
+    "dx": 0.06,
+    "dy": -0.09,
+    "offset": 0.11,
+    "match": 0.993
+   },
+   {
+    "id": "speedUnit",
+    "dx": 0.06,
+    "dy": 0.1,
+    "offset": 0.11,
+    "match": 0.99
+   },
+   {
+    "id": "rpmHub",
+    "dx": 0.07,
+    "dy": 0.08,
+    "offset": 0.11,
+    "match": 0.996
+   },
+   {
+    "id": "gearValue",
+    "dx": 0.09,
+    "dy": 0.06,
+    "offset": 0.11,
+    "match": 0.997
+   },
+   {
+    "id": "speedHub",
+    "dx": 0.1,
+    "dy": 0.04,
+    "offset": 0.1,
+    "match": 0.994
+   },
+   {
+    "id": "gear[2]",
+    "dx": 0.09,
+    "dy": -0.04,
+    "offset": 0.1,
+    "match": 0.992
+   },
+   {
+    "id": "gear[3]",
+    "dx": -0.01,
+    "dy": -0.09,
+    "offset": 0.09,
+    "match": 0.997
+   },
+   {
+    "id": "speedGauge",
+    "dx": 0.04,
+    "dy": -0.06,
+    "offset": 0.07,
+    "match": 0.994
+   },
+   {
+    "id": "speedDial",
+    "dx": 0.04,
+    "dy": -0.06,
+    "offset": 0.07,
+    "match": 0.994
+   },
+   {
+    "id": "speedFace",
+    "dx": 0.04,
+    "dy": -0.06,
+    "offset": 0.07,
+    "match": 0.994
+   },
+   {
+    "id": "speedScale",
+    "dx": 0.04,
+    "dy": -0.06,
+    "offset": 0.07,
+    "match": 0.994
+   },
+   {
+    "id": "navCard",
+    "dx": -0.06,
+    "dy": 0.02,
+    "offset": 0.07,
+    "match": 0.98
+   },
+   {
+    "id": "maneuverIcon",
+    "dx": -0.0,
+    "dy": -0.07,
+    "offset": 0.07,
+    "match": 0.997
+   },
+   {
+    "id": "rpmTrack",
+    "dx": 0.03,
+    "dy": 0.05,
+    "offset": 0.06,
+    "match": 0.997
+   },
+   {
+    "id": "rpmArc",
+    "dx": -0.06,
+    "dy": 0.0,
+    "offset": 0.06,
+    "match": 0.999
+   },
+   {
+    "id": "speedTrack",
+    "dx": 0.04,
+    "dy": -0.02,
+    "offset": 0.05,
+    "match": 0.994
+   },
+   {
+    "id": "speedArc",
+    "dx": -0.03,
+    "dy": -0.05,
+    "offset": 0.05,
+    "match": 0.997
+   },
+   {
+    "id": "rpmRedline",
+    "dx": 0.05,
+    "dy": -0.01,
+    "offset": 0.05,
+    "match": 0.996
+   },
+   {
+    "id": "gear[1]",
+    "dx": -0.04,
+    "dy": 0.02,
+    "offset": 0.05,
+    "match": 0.996
+   },
+   {
+    "id": "rpmGauge",
+    "dx": 0.02,
+    "dy": 0.04,
+    "offset": 0.04,
+    "match": 0.997
+   },
+   {
+    "id": "rpmDial",
+    "dx": 0.02,
+    "dy": 0.04,
+    "offset": 0.04,
+    "match": 0.997
+   },
+   {
+    "id": "rpmFace",
+    "dx": 0.02,
+    "dy": 0.04,
+    "offset": 0.04,
+    "match": 0.997
+   },
+   {
+    "id": "rpmScale",
+    "dx": 0.02,
+    "dy": 0.04,
+    "offset": 0.04,
+    "match": 0.997
+   },
+   {
+    "id": "gearSelector",
+    "dx": 0.02,
+    "dy": -0.03,
+    "offset": 0.04,
+    "match": 0.994
+   },
+   {
+    "id": "telltale[3]",
+    "dx": 0.01,
+    "dy": -0.04,
+    "offset": 0.04,
+    "match": 0.998
+   },
+   {
+    "id": "speedNeedle",
+    "dx": -0.01,
+    "dy": -0.02,
+    "offset": 0.03,
+    "match": 0.999
+   },
+   {
+    "id": "turnRight",
+    "dx": 0.01,
+    "dy": -0.0,
+    "offset": 0.01,
+    "match": 1.0
+   },
+   {
+    "id": "rpmNeedle",
+    "dx": 0.0,
+    "dy": -0.01,
+    "offset": 0.01,
+    "match": 0.999
+   },
+   {
+    "id": "telltale[0]",
+    "dx": 0.0,
+    "dy": -0.01,
+    "offset": 0.01,
+    "match": 0.997
+   },
+   {
+    "id": "telltale[2]",
+    "dx": 0.0,
+    "dy": -0.01,
+    "offset": 0.01,
+    "match": 0.998
+   },
+   {
+    "id": "telltale[4]",
+    "dx": -0.0,
+    "dy": 0.01,
+    "offset": 0.01,
+    "match": 0.999
+   },
+   {
+    "id": "fuelGauge",
+    "dx": 0.0,
+    "dy": 0.01,
+    "offset": 0.01,
+    "match": 0.999
+   },
+   {
+    "id": "coolantGauge",
+    "dx": -0.0,
+    "dy": 0.01,
+    "offset": 0.01,
+    "match": 0.999
+   },
+   {
+    "id": "turnLeft",
+    "dx": 0.0,
+    "dy": -0.0,
+    "offset": 0.0,
+    "match": 1.0
+   },
+   {
+    "id": "telltales",
+    "dx": -0.0,
+    "dy": -0.0,
+    "offset": 0.0,
+    "match": 0.999
+   },
+   {
+    "id": "telltale[1]",
+    "dx": -0.0,
+    "dy": -0.0,
+    "offset": 0.0,
+    "match": 0.999
+   },
+   {
+    "id": "telltale[5]",
+    "dx": 0.0,
+    "dy": -0.0,
+    "offset": 0.0,
+    "match": 0.994
+   },
+   {
+    "id": "mediaIcon",
+    "dx": 0.0,
+    "dy": 0.0,
+    "offset": 0.0,
+    "match": 0.998
+   }
+  ],
+  "text": {
+   "matchRate": 1.0,
+   "onTargetRate": 1.0,
+   "missing": [],
+   "runs": [
+    {
+     "string": "0",
+     "dx": -0.0,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "20",
+     "dx": 0.01,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "40",
+     "dx": -0.01,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "60",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "80",
+     "dx": 0.0,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "100",
+     "dx": 0.01,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "120",
+     "dx": 0.0,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "140",
+     "dx": 0.01,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "160",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "180",
+     "dx": 0.01,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "200",
+     "dx": 0.0,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "220",
+     "dx": 0.0,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "240",
+     "dx": 0.0,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "87",
+     "dx": 0.01,
+     "dy": 0.08,
+     "offset": 0.08,
+     "matchedAs": "item"
+    },
+    {
+     "string": "km/sa",
+     "dx": 0.0,
+     "dy": 0.17,
+     "offset": 0.17,
+     "matchedAs": "item"
+    },
+    {
+     "string": "90",
+     "dx": -0.08,
+     "dy": -0.61,
+     "offset": 0.62,
+     "matchedAs": "item"
+    },
+    {
+     "string": "0",
+     "dx": 0.0,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1",
+     "dx": 0.01,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "2",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "3",
+     "dx": 0.02,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "4",
+     "dx": 0.01,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "5",
+     "dx": 0.0,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "6",
+     "dx": 0.0,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "7",
+     "dx": 0.03,
+     "dy": -0.18,
+     "offset": 0.18,
+     "matchedAs": "item"
+    },
+    {
+     "string": "8",
+     "dx": 0.01,
+     "dy": -0.19,
+     "offset": 0.19,
+     "matchedAs": "item"
+    },
+    {
+     "string": "×1000 DEV/DK",
+     "dx": -0.01,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "D",
+     "dx": 0.0,
+     "dy": 0.08,
+     "offset": 0.08,
+     "matchedAs": "item"
+    },
+    {
+     "string": "P",
+     "dx": 0.01,
+     "dy": 0.03,
+     "offset": 0.03,
+     "matchedAs": "item"
+    },
+    {
+     "string": "R",
+     "dx": -0.01,
+     "dy": 0.03,
+     "offset": 0.03,
+     "matchedAs": "item"
+    },
+    {
+     "string": "N",
+     "dx": 0.0,
+     "dy": 0.03,
+     "offset": 0.03,
+     "matchedAs": "item"
+    },
+    {
+     "string": "D",
+     "dx": 0.0,
+     "dy": 0.03,
+     "offset": 0.03,
+     "matchedAs": "item"
+    },
+    {
+     "string": "ECO",
+     "dx": -0.3,
+     "dy": -0.41,
+     "offset": 0.51,
+     "matchedAs": "item"
+    },
+    {
+     "string": "14:32",
+     "dx": 0.36,
+     "dy": 0.19,
+     "offset": 0.41,
+     "matchedAs": "item"
+    },
+    {
+     "string": "18°C",
+     "dx": 0.33,
+     "dy": -0.19,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Çar 28 Eki",
+     "dx": 0.3,
+     "dy": -0.19,
+     "offset": 0.36,
+     "matchedAs": "item"
+    },
+    {
+     "string": "350 m",
+     "dx": 0.0,
+     "dy": 0.3,
+     "offset": 0.3,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Atatürk Bulvarı",
+     "dx": 0.0,
+     "dy": 0.17,
+     "offset": 0.17,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Kızılay yönü",
+     "dx": 0.0,
+     "dy": 0.23,
+     "offset": 0.23,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Varış 14:58",
+     "dx": 0.0,
+     "dy": -0.41,
+     "offset": 0.41,
+     "matchedAs": "item"
+    },
+    {
+     "string": "23 km",
+     "dx": -0.52,
+     "dy": -0.41,
+     "offset": 0.66,
+     "matchedAs": "item"
+    },
+    {
+     "string": "26 dk",
+     "dx": -0.97,
+     "dy": -0.41,
+     "offset": 1.05,
+     "matchedAs": "item"
+    },
+    {
+     "string": "MENZİL",
+     "dx": 0.0,
+     "dy": 0.02,
+     "offset": 0.02,
+     "matchedAs": "item"
+    },
+    {
+     "string": "412",
+     "dx": 0.0,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "km",
+     "dx": -0.03,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "ORT. TÜKETİM",
+     "dx": 0.0,
+     "dy": 0.02,
+     "offset": 0.02,
+     "matchedAs": "item"
+    },
+    {
+     "string": "6,1",
+     "dx": 0.0,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "L/100",
+     "dx": -0.03,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "YOLCULUK A",
+     "dx": 0.0,
+     "dy": 0.02,
+     "offset": 0.02,
+     "matchedAs": "item"
+    },
+    {
+     "string": "128,4",
+     "dx": 0.0,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "km",
+     "dx": -0.05,
+     "dy": -0.59,
+     "offset": 0.59,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Ayaz FM 103,1",
+     "dx": 0.0,
+     "dy": -0.41,
+     "offset": 0.41,
+     "matchedAs": "item"
+    },
+    {
+     "string": "Akşam Yolu · canlı",
+     "dx": 0.0,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "12",
+     "dx": 0.03,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "E",
+     "dx": -0.01,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "F",
+     "dx": 0.01,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "ODO",
+     "dx": -0.41,
+     "dy": 0.38,
+     "offset": 0.56,
+     "matchedAs": "item"
+    },
+    {
+     "string": "48.216 km",
+     "dx": -0.42,
+     "dy": -0.19,
+     "offset": 0.46,
+     "matchedAs": "item"
+    },
+    {
+     "string": "B",
+     "dx": -0.5,
+     "dy": 0.38,
+     "offset": 0.63,
+     "matchedAs": "item"
+    },
+    {
+     "string": "1.204,7 km",
+     "dx": -0.52,
+     "dy": -0.19,
+     "offset": 0.55,
+     "matchedAs": "item"
+    },
+    {
+     "string": "C",
+     "dx": 0.01,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    },
+    {
+     "string": "H",
+     "dx": -0.01,
+     "dy": 0.38,
+     "offset": 0.38,
+     "matchedAs": "item"
+    }
+   ],
+   "maxOffset": 1.05
+  }
+ },
+ "thresholds": {
+  "globalSSIM": 0.98,
+  "regionSSIM": 0.9,
+  "colorDeltaE2000": 2.0,
+  "geometryPx": 2.0,
+  "textStringMatch": 1.0,
+  "textPositionPx": 2.0,
+  "regionOverrides": {}
+ }
+}

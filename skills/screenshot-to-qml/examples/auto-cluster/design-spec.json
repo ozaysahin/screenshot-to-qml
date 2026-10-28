@@ -1,0 +1,4599 @@
+{
+ "meta": {
+  "id": "21-auto-cluster",
+  "title": "Dijital gösterge paneli — 12,3 inç, şehir içi sürüş",
+  "category": "automotive",
+  "profile": "embedded-gpu",
+  "lang": "tr",
+  "designSize": [
+   1920,
+   720
+  ],
+  "dpr": 1,
+  "captureSize": [
+   1920,
+   720
+  ],
+  "units": "CSS px at 1x (design px). Multiply by dpr for input.png pixels.",
+  "fonts": [
+   {
+    "css": "Rajdhani",
+    "qtFamily": "Rajdhani",
+    "legacyFamily": "Rajdhani",
+    "files": [
+     "Rajdhani-Bold.ttf",
+     "Rajdhani-Medium.ttf",
+     "Rajdhani-Regular.ttf",
+     "Rajdhani-SemiBold.ttf"
+    ],
+    "weights": [
+     400,
+     500,
+     600,
+     700
+    ]
+   }
+  ],
+  "minQt": "5.15",
+  "target": "cpp",
+  "mode": "production",
+  "layout": "canvas"
+ },
+ "tokens": {
+  "color": {
+   "bg": {
+    "hex": "#06080B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#06080B"
+   },
+   "face": {
+    "hex": "#0A0E13",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0A0E13"
+   },
+   "face-border": {
+    "hex": "#161D26",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#161D26"
+   },
+   "hub": {
+    "hex": "#080B0F",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#080B0F"
+   },
+   "hub-border": {
+    "hex": "#131A22",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#131A22"
+   },
+   "panel": {
+    "hex": "#0D1218",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0D1218"
+   },
+   "border": {
+    "hex": "#18212B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#18212B"
+   },
+   "track": {
+    "hex": "#18202A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#18202A"
+   },
+   "tick": {
+    "hex": "#323D4A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#323D4A"
+   },
+   "tick-major": {
+    "hex": "#5F6C7B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#5F6C7B"
+   },
+   "text": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#F2F5F8"
+   },
+   "text-2": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#C7D0DA"
+   },
+   "muted": {
+    "hex": "#7D8A99",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#7D8A99"
+   },
+   "dim": {
+    "hex": "#26303B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#26303B"
+   },
+   "accent": {
+    "hex": "#35C8FF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#35C8FF"
+   },
+   "accent-soft": {
+    "hex": "#0F2A3A",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0F2A3A"
+   },
+   "ok": {
+    "hex": "#2FD67B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#2FD67B"
+   },
+   "ok-soft": {
+    "hex": "#0E2A1C",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0E2A1C"
+   },
+   "warn": {
+    "hex": "#FFB020",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFB020"
+   },
+   "danger": {
+    "hex": "#FF4B4B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FF4B4B"
+   },
+   "redline": {
+    "hex": "#4A1B20",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#4A1B20"
+   },
+   "sign": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#FFFFFF"
+   },
+   "sign-ring": {
+    "hex": "#E5383B",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#E5383B"
+   },
+   "sign-ink": {
+    "hex": "#0B0E12",
+    "alpha": 1.0,
+    "src": "truth",
+    "conf": 1.0,
+    "css": "#0B0E12"
+   }
+  },
+  "space": {
+   "1": 4.0,
+   "2": 8.0,
+   "3": 12.0,
+   "4": 16.0,
+   "5": 20.0,
+   "6": 24.0
+  },
+  "radius": {
+   "sm": 4.0,
+   "md": 12.0,
+   "lg": 18.0,
+   "xl": 22.0,
+   "pill": 999.0
+  },
+  "shadow": {},
+  "other": {},
+  "typeScale": [
+   {
+    "family": "Rajdhani",
+    "px": 156,
+    "weight": 700,
+    "lineHeight": 156,
+    "letterSpacing": -2,
+    "count": 2,
+    "example": "87",
+    "name": "display"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 60,
+    "weight": 700,
+    "lineHeight": 62,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "350 m",
+    "name": "navDistance"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 44,
+    "weight": 700,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "412",
+    "name": "tileValue"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 40,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "14:32",
+    "name": "clock"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "90",
+    "name": "limit"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "P",
+    "name": "gear"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 26,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Atatürk Bulvarı",
+    "name": "street"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 26,
+    "weight": 500,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "km/sa",
+    "name": "speedUnit"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "count": 22,
+    "example": "0",
+    "name": "dialLabel"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "18°C",
+    "name": "reading"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 500,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Çar 28 Eki",
+    "name": "date"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 2,
+    "count": 1,
+    "example": "ECO",
+    "name": "chip"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "count": 4,
+    "example": "Varış 14:58",
+    "name": "route"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 3,
+    "example": "km",
+    "name": "unit"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Kızılay yönü",
+    "name": "caption"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 1.6,
+    "count": 1,
+    "example": "×1000 DEV/DK",
+    "name": "overline"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 5,
+    "example": "12",
+    "name": "small"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 2,
+    "count": 2,
+    "example": "ODO",
+    "name": "odoLabel"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "count": 1,
+    "example": "Akşam Yolu · canlı",
+    "name": "mediaSub"
+   },
+   {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 1.4,
+    "count": 3,
+    "example": "MENZİL",
+    "name": "tileLabel"
+   }
+  ],
+  "size": {
+   "dial": 524,
+   "dialFace": 261,
+   "hubRadius": 140,
+   "arcRadius": 236,
+   "arcWidth": 18,
+   "tickOuter": 212,
+   "tickMinorInner": 200,
+   "tickMajorInner": 192,
+   "tickWidth": 3,
+   "labelRadius": 166,
+   "needleInner": 214,
+   "needleOuter": 258,
+   "needleWidth": 6,
+   "readoutWidth": 260,
+   "turnIcon": 48,
+   "telltale": 32,
+   "telltaleGap": 26,
+   "limitSign": 72,
+   "limitRing": 7,
+   "gearCell": 26,
+   "gearGap": 22,
+   "gearMark": 3,
+   "chipWidth": 110,
+   "chipHeight": 40,
+   "centerWidth": 480,
+   "navHeight": 228,
+   "maneuver": 92,
+   "progressHeight": 8,
+   "tileWidth": 152,
+   "tileHeight": 118,
+   "mediaHeight": 76,
+   "cover": 48,
+   "segmentWidth": 24,
+   "segmentHeight": 12,
+   "segmentGap": 5,
+   "segmentRadius": 3,
+   "meterIcon": 26,
+   "meterEnd": 14
+  }
+ },
+ "nodes": [
+  {
+   "id": "turnLeft",
+   "role": "Indicator",
+   "parent": null,
+   "bbox": [
+    56,
+    26,
+    48,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "state": [
+    "on"
+   ]
+  },
+  {
+   "id": "turnRight",
+   "role": "Indicator",
+   "parent": null,
+   "bbox": [
+    1816,
+    26,
+    48,
+    48
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "speedGauge",
+   "role": "Gauge",
+   "parent": null,
+   "bbox": [
+    168,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "value": "87"
+  },
+  {
+   "id": "speedDial",
+   "role": null,
+   "parent": "speedGauge",
+   "bbox": [
+    168,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute",
+    "clip": true
+   }
+  },
+  {
+   "id": "speedFace",
+   "role": null,
+   "parent": "speedDial",
+   "bbox": [
+    169,
+    119,
+    522,
+    522
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "speedHub",
+   "role": null,
+   "parent": "speedDial",
+   "bbox": [
+    290,
+    240,
+    280,
+    280
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "speedTrack",
+   "role": null,
+   "parent": "speedDial",
+   "bbox": [
+    194,
+    144.01,
+    472,
+    402.87
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "speedArc",
+   "role": null,
+   "parent": "speedDial",
+   "bbox": [
+    194,
+    191.83,
+    93.56,
+    355.05
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.36"
+  },
+  {
+   "id": "speedNeedle",
+   "role": null,
+   "parent": "speedDial",
+   "bbox": [
+    274.28,
+    174.29,
+    26.56,
+    35.08
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "speedScale",
+   "role": null,
+   "parent": "speedGauge",
+   "bbox": [
+    168,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "model": {
+    "name": "speedScale",
+    "count": 13,
+    "itemId": "speedLabel"
+   }
+  },
+  {
+   "id": "speedLabel[0]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    282.61,
+    484.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[1]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    246.63,
+    430.52,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[2]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    234,
+    367,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[3]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    246.63,
+    303.47,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[4]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    282.61,
+    249.61,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[5]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    336.47,
+    213.63,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[6]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    400,
+    201,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[7]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    463.52,
+    213.63,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[8]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    517.38,
+    249.61,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[9]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    553.36,
+    303.47,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[10]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    566,
+    367,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[11]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    553.36,
+    430.52,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLabel[12]",
+   "role": null,
+   "parent": "speedScale",
+   "bbox": [
+    517.38,
+    484.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedValue",
+   "role": null,
+   "parent": "speedGauge",
+   "bbox": [
+    300,
+    304,
+    260,
+    156
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedUnit",
+   "role": null,
+   "parent": "speedGauge",
+   "bbox": [
+    300,
+    454,
+    260,
+    30
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "speedLimit",
+   "role": "Badge",
+   "parent": "speedGauge",
+   "bbox": [
+    394,
+    544,
+    72,
+    72
+   ],
+   "style": {
+    "fill": {
+     "hex": "#FFFFFF",
+     "alpha": 1.0
+    },
+    "radius": 50,
+    "border": {
+     "width": 7,
+     "color": {
+      "hex": "#E5383B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "center",
+    "align": "center",
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmGauge",
+   "role": "Gauge",
+   "parent": null,
+   "bbox": [
+    1228,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "value": "2.4"
+  },
+  {
+   "id": "rpmDial",
+   "role": null,
+   "parent": "rpmGauge",
+   "bbox": [
+    1228,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute",
+    "clip": true
+   }
+  },
+  {
+   "id": "rpmFace",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1229,
+    119,
+    522,
+    522
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rpmHub",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1350,
+    240,
+    280,
+    280
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rpmTrack",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1254,
+    144.01,
+    472,
+    402.87
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rpmRedline",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1656.88,
+    356.87,
+    69.12,
+    190.01
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rpmArc",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1254,
+    241.28,
+    69.12,
+    305.6
+   ],
+   "style": {},
+   "layout": {},
+   "value": "0.3"
+  },
+  {
+   "id": "rpmNeedle",
+   "role": null,
+   "parent": "rpmDial",
+   "bbox": [
+    1281.27,
+    228.35,
+    35.6,
+    25.86
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "rpmScale",
+   "role": null,
+   "parent": "rpmGauge",
+   "bbox": [
+    1228,
+    118,
+    524,
+    524
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   },
+   "model": {
+    "name": "rpmScale",
+    "count": 9,
+    "itemId": "rpmLabel"
+   }
+  },
+  {
+   "id": "rpmLabel[0]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1342.61,
+    484.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[1]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1297.19,
+    399.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[2]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1306.63,
+    303.47,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[3]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1367.77,
+    228.97,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[4]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1460,
+    201,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[5]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1552.22,
+    228.97,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[6]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1613.36,
+    303.47,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[7]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1622.8,
+    399.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmLabel[8]",
+   "role": null,
+   "parent": "rpmScale",
+   "bbox": [
+    1577.38,
+    484.38,
+    60,
+    26
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "rpmUnit",
+   "role": null,
+   "parent": "rpmGauge",
+   "bbox": [
+    1360,
+    268,
+    260,
+    20
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "gearValue",
+   "role": null,
+   "parent": "rpmGauge",
+   "bbox": [
+    1360,
+    304,
+    260,
+    156
+   ],
+   "style": {},
+   "layout": {
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "gearSelector",
+   "role": null,
+   "parent": "rpmGauge",
+   "bbox": [
+    1360,
+    462,
+    260,
+    34
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 22,
+    "justify": "center",
+    "align": "normal",
+    "position": "absolute"
+   },
+   "model": {
+    "name": "gears",
+    "count": 4,
+    "itemId": "gear"
+   },
+   "value": "D"
+  },
+  {
+   "id": "gear[0]",
+   "role": null,
+   "parent": "gearSelector",
+   "bbox": [
+    1405,
+    462,
+    26,
+    34
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "gear[1]",
+   "role": null,
+   "parent": "gearSelector",
+   "bbox": [
+    1453,
+    462,
+    26,
+    34
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "gear[2]",
+   "role": null,
+   "parent": "gearSelector",
+   "bbox": [
+    1501,
+    462,
+    26,
+    34
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "gear[3]",
+   "role": null,
+   "parent": "gearSelector",
+   "bbox": [
+    1549,
+    462,
+    26,
+    34
+   ],
+   "style": {
+    "border": [
+     {
+      "side": "bottom",
+      "width": 3,
+      "color": {
+       "hex": "#35C8FF",
+       "alpha": 1.0
+      },
+      "style": "solid"
+     }
+    ]
+   },
+   "layout": {},
+   "state": [
+    "selected"
+   ]
+  },
+  {
+   "id": "driveMode",
+   "role": "Chip",
+   "parent": "rpmGauge",
+   "bbox": [
+    1435,
+    560,
+    110,
+    40
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0E2A1C",
+     "alpha": 1.0
+    },
+    "radius": 999
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "center",
+    "align": "center",
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "statusBar",
+   "role": "Header",
+   "parent": null,
+   "bbox": [
+    720,
+    26,
+    480,
+    44
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 18,
+    "justify": "center",
+    "align": "center"
+   }
+  },
+  {
+   "id": "clock",
+   "role": "Clock",
+   "parent": "statusBar",
+   "bbox": [
+    798.64,
+    26,
+    82,
+    44
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "outsideTemp",
+   "role": null,
+   "parent": "statusBar",
+   "bbox": [
+    917.64,
+    34,
+    69.95,
+    28
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 6,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "date",
+   "role": null,
+   "parent": "statusBar",
+   "bbox": [
+    1024.59,
+    34,
+    96.75,
+    28
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "telltales",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    720,
+    92,
+    480,
+    36
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 26,
+    "justify": "center",
+    "align": "normal"
+   },
+   "model": {
+    "name": "telltales",
+    "count": 6,
+    "itemId": "telltale"
+   }
+  },
+  {
+   "id": "telltale[0]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    799,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "on"
+   ]
+  },
+  {
+   "id": "telltale[1]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    857,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "on"
+   ]
+  },
+  {
+   "id": "telltale[2]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    915,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "telltale[3]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    973,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "telltale[4]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    1031,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "telltale[5]",
+   "role": "Indicator",
+   "parent": "telltales",
+   "bbox": [
+    1089,
+    94,
+    32,
+    32
+   ],
+   "style": {},
+   "layout": {},
+   "state": [
+    "off"
+   ]
+  },
+  {
+   "id": "navCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    720,
+    150,
+    480,
+    228
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D1218",
+     "alpha": 1.0
+    },
+    "radius": 22,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#18212B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "column",
+    "gap": 0,
+    "justify": "normal",
+    "align": "normal",
+    "padding": [
+     22,
+     24,
+     22,
+     24
+    ]
+   }
+  },
+  {
+   "id": "maneuverIcon",
+   "role": "Icon",
+   "parent": "navCard",
+   "bbox": [
+    745,
+    173,
+    92,
+    92
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F2A3A",
+     "alpha": 1.0
+    },
+    "radius": 18
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "92px",
+    "rows": "92px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "maneuverDistance",
+   "role": null,
+   "parent": "navCard",
+   "bbox": [
+    857,
+    173,
+    159.75,
+    62
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "streetName",
+   "role": null,
+   "parent": "navCard",
+   "bbox": [
+    857,
+    235,
+    159.75,
+    30
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "direction",
+   "role": null,
+   "parent": "navCard",
+   "bbox": [
+    857,
+    267,
+    159.75,
+    22
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "maneuverProgress",
+   "role": "ProgressBar",
+   "parent": "navCard",
+   "bbox": [
+    745,
+    309,
+    430,
+    8
+   ],
+   "style": {
+    "fill": {
+     "hex": "#18202A",
+     "alpha": 1.0
+    },
+    "radius": 4
+   },
+   "layout": {},
+   "value": "0.62"
+  },
+  {
+   "id": "routeInfo",
+   "role": null,
+   "parent": "navCard",
+   "bbox": [
+    745,
+    335,
+    430,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 0,
+    "justify": "space-between",
+    "align": "normal"
+   },
+   "model": {
+    "name": "routeInfo",
+    "count": 3,
+    "itemId": "routeItem"
+   }
+  },
+  {
+   "id": "routeItem[0]",
+   "role": null,
+   "parent": "routeInfo",
+   "bbox": [
+    745,
+    335,
+    115.23,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "routeItem[1]",
+   "role": null,
+   "parent": "routeInfo",
+   "bbox": [
+    942.75,
+    335,
+    77.45,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "routeItem[2]",
+   "role": null,
+   "parent": "routeInfo",
+   "bbox": [
+    1102.72,
+    335,
+    72.28,
+    24
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "tripInfo",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    720,
+    398,
+    480,
+    118
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 12,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "tripInfo",
+    "count": 3,
+    "itemId": "tripTile"
+   }
+  },
+  {
+   "id": "tripTile[0]",
+   "role": "Card",
+   "parent": "tripInfo",
+   "bbox": [
+    720,
+    398,
+    152,
+    118
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D1218",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#18212B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     16,
+     18,
+     16,
+     18
+    ]
+   }
+  },
+  {
+   "id": "tripTile[1]",
+   "role": "Card",
+   "parent": "tripInfo",
+   "bbox": [
+    884,
+    398,
+    152,
+    118
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D1218",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#18212B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     16,
+     18,
+     16,
+     18
+    ]
+   }
+  },
+  {
+   "id": "tripTile[2]",
+   "role": "Card",
+   "parent": "tripInfo",
+   "bbox": [
+    1048,
+    398,
+    152,
+    118
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D1218",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#18212B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "padding": [
+     16,
+     18,
+     16,
+     18
+    ]
+   }
+  },
+  {
+   "id": "mediaCard",
+   "role": "Card",
+   "parent": null,
+   "bbox": [
+    720,
+    536,
+    480,
+    76
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0D1218",
+     "alpha": 1.0
+    },
+    "radius": 18,
+    "border": {
+     "width": 1,
+     "color": {
+      "hex": "#18212B",
+      "alpha": 1.0
+     },
+     "style": "solid"
+    }
+   },
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "normal",
+    "align": "center",
+    "padding": [
+     0,
+     20,
+     0,
+     14
+    ]
+   }
+  },
+  {
+   "id": "mediaIcon",
+   "role": "Icon",
+   "parent": "mediaCard",
+   "bbox": [
+    735,
+    550,
+    48,
+    48
+   ],
+   "style": {
+    "fill": {
+     "hex": "#0F2A3A",
+     "alpha": 1.0
+    },
+    "radius": 12
+   },
+   "layout": {
+    "kind": "grid",
+    "columns": "48px",
+    "rows": "48px",
+    "columnGap": "normal",
+    "rowGap": "normal"
+   }
+  },
+  {
+   "id": "mediaTitle",
+   "role": null,
+   "parent": "mediaCard",
+   "bbox": [
+    797,
+    552,
+    324.97,
+    24
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "mediaSubtitle",
+   "role": null,
+   "parent": "mediaCard",
+   "bbox": [
+    797,
+    576,
+    324.97,
+    20
+   ],
+   "style": {},
+   "layout": {}
+  },
+  {
+   "id": "volume",
+   "role": null,
+   "parent": "mediaCard",
+   "bbox": [
+    1135.97,
+    563,
+    43.03,
+    22
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 8,
+    "justify": "normal",
+    "align": "center"
+   }
+  },
+  {
+   "id": "fuelGauge",
+   "role": "ProgressBar",
+   "parent": null,
+   "bbox": [
+    248,
+    650,
+    369,
+    30
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "position": "absolute"
+   },
+   "value": "0.6"
+  },
+  {
+   "id": "fuelSegments",
+   "role": null,
+   "parent": "fuelGauge",
+   "bbox": [
+    308,
+    659,
+    285,
+    12
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "fuelSegments",
+    "count": 10,
+    "itemId": "fuelSegment"
+   }
+  },
+  {
+   "id": "fuelSegment[0]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    308,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[1]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    337,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[2]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    366,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[3]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    395,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[4]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    424,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[5]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    453,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "fuelSegment[6]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    482,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "fuelSegment[7]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    511,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "fuelSegment[8]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    540,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "fuelSegment[9]",
+   "role": null,
+   "parent": "fuelSegments",
+   "bbox": [
+    569,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "odometer",
+   "role": null,
+   "parent": null,
+   "bbox": [
+    720,
+    650,
+    480,
+    30
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 14,
+    "justify": "center",
+    "align": "center",
+    "position": "absolute"
+   }
+  },
+  {
+   "id": "coolantGauge",
+   "role": "ProgressBar",
+   "parent": null,
+   "bbox": [
+    1308,
+    650,
+    369,
+    30
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 10,
+    "justify": "normal",
+    "align": "center",
+    "position": "absolute"
+   },
+   "value": "0.5"
+  },
+  {
+   "id": "coolantSegments",
+   "role": null,
+   "parent": "coolantGauge",
+   "bbox": [
+    1368,
+    659,
+    285,
+    12
+   ],
+   "style": {},
+   "layout": {
+    "kind": "flex",
+    "direction": "row",
+    "gap": 5,
+    "justify": "normal",
+    "align": "normal"
+   },
+   "model": {
+    "name": "coolantSegments",
+    "count": 10,
+    "itemId": "coolantSegment"
+   }
+  },
+  {
+   "id": "coolantSegment[0]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1368,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "coolantSegment[1]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1397,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "coolantSegment[2]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1426,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "coolantSegment[3]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1455,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "coolantSegment[4]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1484,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#C7D0DA",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {},
+   "state": [
+    "checked"
+   ]
+  },
+  {
+   "id": "coolantSegment[5]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1513,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "coolantSegment[6]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1542,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "coolantSegment[7]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1571,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "coolantSegment[8]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1600,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  },
+  {
+   "id": "coolantSegment[9]",
+   "role": null,
+   "parent": "coolantSegments",
+   "bbox": [
+    1629,
+    659,
+    24,
+    12
+   ],
+   "style": {
+    "fill": {
+     "hex": "#26303B",
+     "alpha": 1.0
+    },
+    "radius": 3
+   },
+   "layout": {}
+  }
+ ],
+ "text": [
+  {
+   "string": "0",
+   "owner": "speedLabel[0]",
+   "bbox": [
+    306.27,
+    482.38,
+    12.69,
+    30
+   ],
+   "baseline": 504.38,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "20",
+   "owner": "speedLabel[1]",
+   "bbox": [
+    264.44,
+    428.52,
+    24.38,
+    30
+   ],
+   "baseline": 450.52,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "40",
+   "owner": "speedLabel[2]",
+   "bbox": [
+    251.27,
+    365,
+    25.47,
+    30
+   ],
+   "baseline": 387,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "60",
+   "owner": "speedLabel[3]",
+   "bbox": [
+    264.09,
+    301.47,
+    25.05,
+    30
+   ],
+   "baseline": 323.47,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "80",
+   "owner": "speedLabel[4]",
+   "bbox": [
+    299.88,
+    247.61,
+    25.47,
+    30
+   ],
+   "baseline": 269.61,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "100",
+   "owner": "speedLabel[5]",
+   "bbox": [
+    349.86,
+    211.63,
+    33.2,
+    30
+   ],
+   "baseline": 233.63,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "120",
+   "owner": "speedLabel[6]",
+   "bbox": [
+    413.89,
+    199,
+    32.22,
+    30
+   ],
+   "baseline": 221,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "140",
+   "owner": "speedLabel[7]",
+   "bbox": [
+    476.86,
+    211.63,
+    33.31,
+    30
+   ],
+   "baseline": 233.63,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "160",
+   "owner": "speedLabel[8]",
+   "bbox": [
+    530.92,
+    247.61,
+    32.89,
+    30
+   ],
+   "baseline": 269.61,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "180",
+   "owner": "speedLabel[9]",
+   "bbox": [
+    566.7,
+    301.47,
+    33.31,
+    30
+   ],
+   "baseline": 323.47,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "200",
+   "owner": "speedLabel[10]",
+   "bbox": [
+    577.47,
+    365,
+    37.05,
+    30
+   ],
+   "baseline": 387,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "220",
+   "owner": "speedLabel[11]",
+   "bbox": [
+    565.33,
+    428.52,
+    36.06,
+    30
+   ],
+   "baseline": 450.52,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "240",
+   "owner": "speedLabel[12]",
+   "bbox": [
+    528.8,
+    482.38,
+    37.16,
+    30
+   ],
+   "baseline": 504.38,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "87",
+   "owner": "speedValue",
+   "bbox": [
+    356.09,
+    282,
+    147.8,
+    199
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 156,
+    "weight": 700,
+    "lineHeight": 156,
+    "letterSpacing": -2,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "km/sa",
+   "owner": "speedUnit",
+   "bbox": [
+    396.72,
+    452,
+    66.56,
+    33
+   ],
+   "baseline": 476,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 26,
+    "weight": 500,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "90",
+   "owner": "speedLimit",
+   "bbox": [
+    414.08,
+    561,
+    31.84,
+    38
+   ],
+   "baseline": 589,
+   "lines": 1,
+   "color": {
+    "hex": "#0B0E12",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 30,
+    "weight": 700,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "0",
+   "owner": "rpmLabel[0]",
+   "bbox": [
+    1366.27,
+    482.38,
+    12.69,
+    30
+   ],
+   "baseline": 504.38,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1",
+   "owner": "rpmLabel[1]",
+   "bbox": [
+    1323.25,
+    397.38,
+    7.86,
+    30
+   ],
+   "baseline": 419.38,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "2",
+   "owner": "rpmLabel[2]",
+   "bbox": [
+    1330.77,
+    301.47,
+    11.7,
+    30
+   ],
+   "baseline": 323.47,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "3",
+   "owner": "rpmLabel[3]",
+   "bbox": [
+    1391.7,
+    226.97,
+    12.11,
+    30
+   ],
+   "baseline": 248.97,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "4",
+   "owner": "rpmLabel[4]",
+   "bbox": [
+    1483.59,
+    199,
+    12.8,
+    30
+   ],
+   "baseline": 221,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "5",
+   "owner": "rpmLabel[5]",
+   "bbox": [
+    1576.25,
+    226.97,
+    11.94,
+    30
+   ],
+   "baseline": 248.97,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "6",
+   "owner": "rpmLabel[6]",
+   "bbox": [
+    1637.17,
+    301.47,
+    12.38,
+    30
+   ],
+   "baseline": 323.47,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "7",
+   "owner": "rpmLabel[7]",
+   "bbox": [
+    1647.84,
+    397.38,
+    9.89,
+    30
+   ],
+   "baseline": 419.38,
+   "lines": 1,
+   "color": {
+    "hex": "#FF4B4B",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "8",
+   "owner": "rpmLabel[8]",
+   "bbox": [
+    1600.97,
+    482.38,
+    12.8,
+    30
+   ],
+   "baseline": 504.38,
+   "lines": 1,
+   "color": {
+    "hex": "#FF4B4B",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 26,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "×1000 DEV/DK",
+   "owner": "rpmUnit",
+   "bbox": [
+    1434.69,
+    267,
+    110.63,
+    21
+   ],
+   "baseline": 282,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 1.6,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "D",
+   "owner": "gearValue",
+   "bbox": [
+    1447.86,
+    282,
+    84.28,
+    199
+   ],
+   "baseline": 427,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 156,
+    "weight": 700,
+    "lineHeight": 156,
+    "letterSpacing": -2,
+    "italic": false
+   }
+  },
+  {
+   "string": "P",
+   "owner": "gear[0]",
+   "bbox": [
+    1410.59,
+    459,
+    14.8,
+    36
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "R",
+   "owner": "gear[1]",
+   "bbox": [
+    1458.41,
+    459,
+    15.19,
+    36
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "N",
+   "owner": "gear[2]",
+   "bbox": [
+    1505.83,
+    459,
+    16.33,
+    36
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "D",
+   "owner": "gear[3]",
+   "bbox": [
+    1554.22,
+    459,
+    15.55,
+    36
+   ],
+   "baseline": 485,
+   "lines": 1,
+   "color": {
+    "hex": "#35C8FF",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 28,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ECO",
+   "owner": "driveMode",
+   "bbox": [
+    1484.3,
+    567,
+    37.39,
+    26
+   ],
+   "baseline": 586,
+   "lines": 1,
+   "color": {
+    "hex": "#2FD67B",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 700,
+    "lineHeight": 22,
+    "letterSpacing": 2,
+    "italic": false
+   }
+  },
+  {
+   "string": "14:32",
+   "owner": "clock",
+   "bbox": [
+    798.64,
+    22,
+    82,
+    51
+   ],
+   "baseline": 59,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 40,
+    "weight": 600,
+    "lineHeight": 44,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "18°C",
+   "owner": "outsideTemp",
+   "bbox": [
+    945.64,
+    33,
+    41.95,
+    30
+   ],
+   "baseline": 55,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Çar 28 Eki",
+   "owner": "date",
+   "bbox": [
+    1024.59,
+    33,
+    96.75,
+    30
+   ],
+   "baseline": 55,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 500,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "350 m",
+   "owner": "maneuverDistance",
+   "bbox": [
+    857,
+    165,
+    154.14,
+    77
+   ],
+   "baseline": 221,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 60,
+    "weight": 700,
+    "lineHeight": 62,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "Atatürk Bulvarı",
+   "owner": "streetName",
+   "bbox": [
+    857,
+    233,
+    159.75,
+    33
+   ],
+   "baseline": 257,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 26,
+    "weight": 600,
+    "lineHeight": 30,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Kızılay yönü",
+   "owner": "direction",
+   "bbox": [
+    857,
+    266,
+    87.09,
+    23
+   ],
+   "baseline": 283,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 500,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Varış 14:58",
+   "owner": "routeItem[0]",
+   "bbox": [
+    773,
+    334,
+    87.23,
+    26
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "23 km",
+   "owner": "routeItem[1]",
+   "bbox": [
+    970.75,
+    334,
+    49.45,
+    26
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "26 dk",
+   "owner": "routeItem[2]",
+   "bbox": [
+    1130.72,
+    334,
+    44.28,
+    26
+   ],
+   "baseline": 353,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "MENZİL",
+   "owner": "tripTile[0]",
+   "bbox": [
+    739,
+    415,
+    50.22,
+    18
+   ],
+   "baseline": 428,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 1.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "412",
+   "owner": "tripTile[0]",
+   "bbox": [
+    739,
+    439,
+    60.2,
+    56
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 44,
+    "weight": 700,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "km",
+   "owner": "tripTile[0]",
+   "bbox": [
+    805.2,
+    463,
+    22.38,
+    23
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ORT. TÜKETİM",
+   "owner": "tripTile[1]",
+   "bbox": [
+    903,
+    415,
+    92.22,
+    18
+   ],
+   "baseline": 428,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 1.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "6,1",
+   "owner": "tripTile[1]",
+   "bbox": [
+    903,
+    439,
+    46.78,
+    56
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 44,
+    "weight": 700,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "L/100",
+   "owner": "tripTile[1]",
+   "bbox": [
+    955.78,
+    463,
+    40.28,
+    23
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "YOLCULUK A",
+   "owner": "tripTile[2]",
+   "bbox": [
+    1067,
+    415,
+    83.28,
+    18
+   ],
+   "baseline": 428,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 14,
+    "weight": 600,
+    "lineHeight": 18,
+    "letterSpacing": 1.4,
+    "italic": false,
+    "transform": "uppercase"
+   }
+  },
+  {
+   "string": "128,4",
+   "owner": "tripTile[2]",
+   "bbox": [
+    1067,
+    439,
+    93.03,
+    56
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 44,
+    "weight": 700,
+    "lineHeight": 48,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "km",
+   "owner": "tripTile[2]",
+   "bbox": [
+    1166.03,
+    463,
+    22.38,
+    23
+   ],
+   "baseline": 480,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 18,
+    "weight": 600,
+    "lineHeight": 22,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Ayaz FM 103,1",
+   "owner": "mediaTitle",
+   "bbox": [
+    797,
+    551,
+    109.78,
+    26
+   ],
+   "baseline": 570,
+   "lines": 1,
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 20,
+    "weight": 600,
+    "lineHeight": 24,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "Akşam Yolu · canlı",
+   "owner": "mediaSubtitle",
+   "bbox": [
+    797,
+    575,
+    116.22,
+    21
+   ],
+   "baseline": 590,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 500,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "12",
+   "owner": "volume",
+   "bbox": [
+    1165.97,
+    563,
+    13.03,
+    21
+   ],
+   "baseline": 578,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "E",
+   "owner": "fuelGauge",
+   "bbox": [
+    287.16,
+    654,
+    7.69,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "F",
+   "owner": "fuelGauge",
+   "bbox": [
+    606.36,
+    654,
+    7.27,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "ODO",
+   "owner": "odometer",
+   "bbox": [
+    818.41,
+    654,
+    32.55,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 2,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "48.216 km",
+   "owner": "odometer",
+   "bbox": [
+    864.95,
+    650,
+    97.81,
+    30
+   ],
+   "baseline": 672,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "B",
+   "owner": "odometer",
+   "bbox": [
+    976.77,
+    654,
+    10.84,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 2,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "1.204,7 km",
+   "owner": "odometer",
+   "bbox": [
+    1001.61,
+    650,
+    99.98,
+    30
+   ],
+   "baseline": 672,
+   "lines": 1,
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "align": "start",
+   "font": {
+    "family": "Rajdhani",
+    "px": 24,
+    "weight": 600,
+    "lineHeight": 28,
+    "letterSpacing": 0,
+    "italic": false,
+    "tabularNums": true
+   }
+  },
+  {
+   "string": "C",
+   "owner": "coolantGauge",
+   "bbox": [
+    1346.67,
+    654,
+    8.64,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  },
+  {
+   "string": "H",
+   "owner": "coolantGauge",
+   "bbox": [
+    1665.41,
+    654,
+    9.19,
+    21
+   ],
+   "baseline": 669,
+   "lines": 1,
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "align": "center",
+   "font": {
+    "family": "Rajdhani",
+    "px": 16,
+    "weight": 600,
+    "lineHeight": 20,
+    "letterSpacing": 0,
+    "italic": false
+   }
+  }
+ ],
+ "icons": [
+  {
+   "match": "tabler-filled:arrow-big-left",
+   "owner": "turnLeft",
+   "bbox": [
+    56,
+    26,
+    48,
+    48
+   ],
+   "color": {
+    "hex": "#2FD67B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:arrow-big-right",
+   "owner": "turnRight",
+   "bbox": [
+    1816,
+    26,
+    48,
+    48
+   ],
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:leaf",
+   "owner": "driveMode",
+   "bbox": [
+    1458.3,
+    570,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#2FD67B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:temperature",
+   "owner": "outsideTemp",
+   "bbox": [
+    917.64,
+    37,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:bulb",
+   "owner": "telltale[0]",
+   "bbox": [
+    799,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#2FD67B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:engine",
+   "owner": "telltale[1]",
+   "bbox": [
+    857,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#FFB020",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:battery-automotive",
+   "owner": "telltale[2]",
+   "bbox": [
+    915,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:parking-circle",
+   "owner": "telltale[3]",
+   "bbox": [
+    973,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler-filled:gas-station",
+   "owner": "telltale[4]",
+   "bbox": [
+    1031,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:steering-wheel",
+   "owner": "telltale[5]",
+   "bbox": [
+    1089,
+    94,
+    32,
+    32
+   ],
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:corner-up-right",
+   "owner": "maneuverIcon",
+   "bbox": [
+    763,
+    191,
+    56,
+    56
+   ],
+   "color": {
+    "hex": "#35C8FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2.25,
+   "filled": false
+  },
+  {
+   "match": "tabler:flag",
+   "owner": "routeItem[0]",
+   "bbox": [
+    745,
+    337,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:route",
+   "owner": "routeItem[1]",
+   "bbox": [
+    942.75,
+    337,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:clock",
+   "owner": "routeItem[2]",
+   "bbox": [
+    1102.72,
+    337,
+    20,
+    20
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:radio",
+   "owner": "mediaIcon",
+   "bbox": [
+    746,
+    561,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#35C8FF",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler:volume",
+   "owner": "volume",
+   "bbox": [
+    1135.97,
+    563,
+    22,
+    22
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  },
+  {
+   "match": "tabler-filled:gas-station",
+   "owner": "fuelGauge",
+   "bbox": [
+    248,
+    652,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "filled": true
+  },
+  {
+   "match": "tabler:temperature",
+   "owner": "coolantGauge",
+   "bbox": [
+    1308,
+    652,
+    26,
+    26
+   ],
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "kind": "svg",
+   "strokeWidth": 2,
+   "filled": false
+  }
+ ],
+ "colorsUsed": [
+  {
+   "color": {
+    "hex": "#7D8A99",
+    "alpha": 1.0
+   },
+   "count": 45,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#18212B",
+    "alpha": 1.0
+   },
+   "count": 20,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#C7D0DA",
+    "alpha": 1.0
+   },
+   "count": 18,
+   "where": [
+    "fill",
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#26303B",
+    "alpha": 1.0
+   },
+   "count": 17,
+   "where": [
+    "fill",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#F2F5F8",
+    "alpha": 1.0
+   },
+   "count": 8,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0D1218",
+    "alpha": 1.0
+   },
+   "count": 5,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#E5383B",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#35C8FF",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "border",
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#2FD67B",
+    "alpha": 1.0
+   },
+   "count": 4,
+   "where": [
+    "text",
+    "icon"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0F2A3A",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FF4B4B",
+    "alpha": 1.0
+   },
+   "count": 2,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFFFFF",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0E2A1C",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#18202A",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "fill"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#0B0E12",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "text"
+   ]
+  },
+  {
+   "color": {
+    "hex": "#FFB020",
+    "alpha": 1.0
+   },
+   "count": 1,
+   "where": [
+    "icon"
+   ]
+  }
+ ],
+ "data": {
+  "speed": {
+   "value": 87,
+   "max": 240,
+   "unit": "km/sa",
+   "limit": 90,
+   "labels": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    100,
+    120,
+    140,
+    160,
+    180,
+    200,
+    220,
+    240
+   ]
+  },
+  "rpm": {
+   "value": 2.4,
+   "max": 8,
+   "redline": 6.5,
+   "labels": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "gear": "D",
+  "gears": [
+   "P",
+   "R",
+   "N",
+   "D"
+  ],
+  "mode": "ECO",
+  "telltales": [
+   {
+    "icon": "bulb",
+    "state": "on",
+    "color": "green"
+   },
+   {
+    "icon": "engine",
+    "state": "on",
+    "color": "amber"
+   },
+   {
+    "icon": "battery-automotive",
+    "state": "off"
+   },
+   {
+    "icon": "parking-circle",
+    "state": "off"
+   },
+   {
+    "icon": "gas-station",
+    "state": "off"
+   },
+   {
+    "icon": "steering-wheel",
+    "state": "off"
+   }
+  ],
+  "nav": {
+   "distance": "350 m",
+   "street": "Atatürk Bulvarı",
+   "direction": "Kızılay yönü",
+   "progress": 0.62,
+   "arrival": "14:58",
+   "remaining": "23 km",
+   "duration": "26 dk"
+  },
+  "trip": [
+   {
+    "label": "Menzil",
+    "value": "412",
+    "unit": "km"
+   },
+   {
+    "label": "Ort. tüketim",
+    "value": "6,1",
+    "unit": "L/100"
+   },
+   {
+    "label": "Yolculuk A",
+    "value": "128,4",
+    "unit": "km"
+   }
+  ],
+  "fuel": {
+   "segments": 10,
+   "lit": 6
+  },
+  "coolant": {
+   "segments": 10,
+   "lit": 5
+  },
+  "odo": "48.216 km",
+  "tripB": "1.204,7 km",
+  "clock": "14:32",
+  "outside": "18°C",
+  "date": "Çar 28 Eki",
+  "turn": {
+   "left": true,
+   "right": false
+  }
+ },
+ "states": {}
+}

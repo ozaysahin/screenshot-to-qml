@@ -7,10 +7,10 @@
 
 <p align="center">
   <a href="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="CHANGELOG.md"><img alt="Version 1.0.1" src="https://img.shields.io/badge/version-1.0.1-blue"></a>
+  <a href="CHANGELOG.md"><img alt="Version 1.1.0" src="https://img.shields.io/badge/version-1.1.0-blue"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-green"></a>
   <a href="https://agentskills.io"><img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-compatible-8A2BE2"></a>
-  <img alt="Qt 6.8+" src="https://img.shields.io/badge/Qt-6.8%2B-41CD52?logo=qt&logoColor=white">
+  <img alt="Qt 6.8+ and 5.15" src="https://img.shields.io/badge/Qt-6.8%2B%20%C2%B7%205.15-41CD52?logo=qt&logoColor=white">
   <img alt="Python 3.10+" src="https://img.shields.io/badge/python-3.10%2B-3776AB?logo=python&logoColor=white">
 </p>
 
@@ -24,14 +24,18 @@
 </p>
 
 <p align="center">
-  <img src="docs/img/hero.png" alt="Input screenshot, the generated Qt Quick app, and their pixel difference">
+  <img src="docs/img/demo.gif" width="960" alt="A car instrument cluster screenshot wipes into the rebuilt Qt Quick app, whose dials then move live">
 </p>
+
+<p align="center"><sub>A screenshot of a 12.3" instrument cluster, rebuilt as a Qt 5.15 C++ app by the skill.
+Every frame after the wipe is grabbed from the running QML (<a href="skills/screenshot-to-qml/examples/auto-cluster">example</a>).</sub></p>
 
 Most "image to UI" prompts stop at *looks about right*. **screenshot-to-qml** gives a coding
 agent (Claude Code, Codex CLI and others) a measured workflow instead: it reads exact colors,
 spacing, fonts and icons off the screenshot, builds a tokenized QML project, renders it
 headlessly at the screenshot's size and DPR, and scores it against the source until it passes.
-The result is native Qt: no browser, no WebView, from desktops down to a Raspberry Pi panel.
+The result is native Qt: no browser, no WebView, from desktops down to a Raspberry Pi panel or
+a car's instrument cluster on Qt 5.15.
 
 ## Features
 
@@ -51,6 +55,9 @@ The result is native Qt: no browser, no WebView, from desktops down to a Raspber
   reachability and visible focus driven by real input to the running window.
 - **One QML tree, two hosts.** The same `qml/` runs from PySide6 or compiles into a C++ binary
   with CMake (Qt 6.8+, QML compiled ahead of time). Both renders are compared.
+- **Qt 5.15 for automotive and industrial boards.** `--min-qt 5.15` writes the Qt 5.15 dialect
+  (versioned imports, QtGraphicalEffects, no Qt 6-only types) and a Qt 5 C++ host. The check
+  builds it against Qt 5.15, runs it and compares its frame with the reference render.
 - **Down to the board.** Profiles for desktop, GPU boards (Raspberry Pi, Jetson) and GPU-less
   panels (software renderer), with kiosk packaging: eglfs/linuxfb, systemd unit, installer.
 
@@ -108,6 +115,7 @@ python skills/screenshot-to-qml/scripts/icon_match.py fetch         # icon index
 | Xvfb | headless rendering on Linux servers | `apt install xvfb libxcb-cursor0` |
 | Playwright + Chromium | HTML input only | `pip install playwright && python -m playwright install chromium` |
 | Qt 6.8+ with CMake files | the C++ host only | Qt online installer, `aqt`, or a distro with Qt 6.8 (Debian 13) |
+| Qt 5.15 with CMake files | Qt 5.15 targets only | `apt install qtdeclarative5-dev qml-module-qtquick-shapes qml-module-qtgraphicaleffects`, `aqt install-qt … 5.15.2`, or the board's SDK |
 
 On Windows, set `PYTHONUTF8=1` before running the scripts.
 
@@ -125,6 +133,10 @@ Turn dashboard.html into a C++ Qt app for a 7" Raspberry Pi 5 panel.
 
 ```text
 Rebuild settings.png (exported at 2×) as a desktop app with English and Turkish translations.
+```
+
+```text
+Rebuild cluster.png as a Qt 5.15 instrument cluster in C++ for our i.MX 8 board.
 ```
 
 The agent analyzes the image, asks only what it cannot measure (for example a font that is not
@@ -179,11 +191,12 @@ flowchart LR
 | `font_match.py` · `icon_match.py` · `shadow_fit.py` · `gradient_fit.py` | the four matchers on their own (`fetch` builds the font and icon caches) |
 | `validate_spec.py` · `gen_theme.py` | spec checks; spec tokens → `Theme.qml` / `Icons.qml` |
 | `probe.py` | colors at points, dominant colors of a box, edge/border/padding runs, zoomed crops |
-| `scaffold.py` | new project with the control kit, a PySide6 host, a C++ host or both |
+| `scaffold.py` | new project with the control kit, a PySide6 host, a C++ host or both; `--min-qt 5.15` for a Qt 5 C++ host |
+| `qt5.py` | Qt 5.15: lists what 5.15 cannot load, ports a Qt 6 tree's imports, pragmas and qmldirs |
 | `render.py` | headless render at size × DPR and a scene dump; `--interact` drives Tab, hover and press |
 | `diff.py` | SSIM (global and per region), ΔE2000, template-matched geometry, text matching |
 | `quality_gate.py` | lint, format, runtime warnings, literals, screenshot embedding, fonts, web engine, a11y, states, i18n, effects, perf, cpp |
-| `build_cpp.py` | builds the C++ host, grabs a frame and compares it with the PySide6 render |
+| `build_cpp.py` | builds the C++ host (Qt 6 or Qt 5.15), grabs a frame and compares it with the PySide6 render |
 | `check.py` | all of the above in one command |
 | `deploy.py` | pyside6-deploy or `cmake --install` bundles for desktops; env file, systemd unit and installer for boards |
 
@@ -195,9 +208,13 @@ state, missing accessible names, untranslatable strings, effects the target cann
 images or animations an embedded board cannot afford, and a C++ build that fails or draws a
 different frame.
 
-### Reference result
+### Reference results
 
-The HMI above ([`examples/hmi-dolum`](skills/screenshot-to-qml/examples/hmi-dolum)), a
+<p align="center">
+  <img src="docs/img/hero.png" alt="Input screenshot, the generated Qt Quick app, and their pixel difference">
+</p>
+
+An industrial HMI ([`examples/hmi-dolum`](skills/screenshot-to-qml/examples/hmi-dolum)), a
 1920×1080 screenshot rebuilt in production mode:
 
 | Metric | Result | Gate |
@@ -209,6 +226,13 @@ The HMI above ([`examples/hmi-dolum`](skills/screenshot-to-qml/examples/hmi-dolu
 | Text strings found / max offset | 95 of 95 / 1.8 px | 100 % / ≤ 2 px |
 | 13 quality gates | clean | 0 errors |
 | C++ host's frame vs the PySide6 render | SSIM 1.000 | ≥ 0.98 |
+
+The instrument cluster in the GIF ([`examples/auto-cluster`](skills/screenshot-to-qml/examples/auto-cluster)),
+1920×720, Qt 5.15 with the C++ host: global SSIM 0.999, worst region 0.983, ΔE 0.0, geometry
+≤ 1.1 px, 61 of 61 strings, all 13 gates clean. The binary built against Qt 5.15.13 runs with no
+QML warnings and draws the same frame as the reference render (max 32-px tile difference 14.7 of
+24 allowed). Its `Dial` component (one `Shape`, generated ticks and labels, a needle bound to
+`value`) drives both the speedometer and the tachometer.
 
 ### Control kit
 
@@ -225,7 +249,8 @@ a Turkish translation and passes all 13 gates.
 
 Twenty original eval screens (dashboards, HMIs, a kiosk, forms, phone screens, dense tables,
 two HTML pages and two hard cases), each built once by an agent that sees only its input and
-the skill, scored against ground truth extracted from the live DOM.
+the skill, scored against ground truth extracted from the live DOM. (Case 21, the Qt 5.15
+instrument cluster, was added in v1.1; agent runs on it come next.)
 [Full results](evals/results/2026-10-18-v1.0/README.md).
 
 **Skill v1.0 with Claude Opus, all 20 cases:**
@@ -305,9 +330,9 @@ or dark backdrops: in the glassmorphism case only 4 of 13 are found. Per-case nu
 
 ### Eval set
 
-<p align="center"><img src="docs/img/evals.png" alt="The twenty eval screens"></p>
+<p align="center"><img src="docs/img/evals.png" alt="The twenty-one eval screens"></p>
 
-All twenty screens are original designs with fictional brands, built from HTML so that every
+All twenty-one screens are original designs with fictional brands, built from HTML so that every
 color, box, string and font is known exactly. [`evals/`](evals/README.md) holds the cases, the
 builder, the scorer, and a harness that hands any agent the same folders and prompt
 (`prepare_run.py`, `run_agent.py`), so you can rerun the comparison with your own agent or
@@ -321,6 +346,7 @@ model.
 | Windows | used for the Codex runs; set `PYTHONUTF8=1`, Tesseract must be on `PATH` |
 | macOS | not tested yet |
 | Targets | desktop · `embedded-gpu` (Raspberry Pi, Jetson; eglfs) · `embedded-sw` (software renderer; linuxfb) |
+| Qt | 6.8+ (PySide6 and C++) · 5.15 (C++; tested with Qt 5.15.13 on Ubuntu 24.04) |
 
 ## Limitations
 
@@ -336,9 +362,9 @@ model.
 ```text
 skills/screenshot-to-qml/   the installable skill: SKILL.md, references/, scripts/, assets/, examples/
 .claude-plugin/             Claude Code plugin marketplace manifest
-evals/                      20 cases, case builder, scorers, agent harness, results
+evals/                      21 cases, case builder, scorers, agent harness, results
 tests/                      pytest suite: scripts, schema, control kit, gates, renders, C++ builds
-docs/                       README images; docs/tools draws the eval and matcher sheets
+docs/                       README images; docs/tools draws the eval and matcher sheets and the demo GIF
 ```
 
 ## Roadmap
@@ -350,7 +376,8 @@ docs/                       README images; docs/tools draws the eval and matcher
 | 0.6 | font, icon, shadow and gradient matching | ✅ |
 | 0.7 | C++ host, embedded profiles, deployment | ✅ |
 | 1.0 | 20 eval cases, HTML input, multi-model and Codex CLI runs | ✅ |
-| 1.1 | automotive instrument cluster case; Codex CLI on more cases with a verified font catalog | next |
+| 1.1 | Qt 5.15 target (C++ host), automotive instrument cluster example and eval case | ✅ |
+| 1.2 | agent runs on the cluster case; Codex CLI on more cases with a verified font catalog | next |
 
 ## Contributing
 

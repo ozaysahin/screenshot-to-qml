@@ -69,7 +69,7 @@
     },
     "minQt": {
      "type": "string",
-     "pattern": "^6\\.\\d+$"
+     "pattern": "^(6\\.\\d+|5\\.15)$"
     },
     "lang": {
      "type": "string"

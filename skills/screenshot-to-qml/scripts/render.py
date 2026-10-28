@@ -11,7 +11,8 @@ Usage:
 
 PROJECT_DIR should contain qml/<Module>/qmldir (loaded with loadFromModule); without one,
 qml/<Module>/<Component>.qml (or main.qml) is loaded by file path. Fonts in
-assets/fonts/*.ttf|otf are registered before loading.
+assets/fonts/*.ttf|otf are registered before loading. Qt 5.15 projects (qt5.py) load too:
+assets/qt5-shim maps `import QtGraphicalEffects 1.15` to Qt 6's Qt5Compat module.
 
 The root object must be a Window/ApplicationWindow; it is resized to --size
 (logical px) and rendered at --dpr, so the PNG is size x dpr pixels.
@@ -499,6 +500,8 @@ def main(argv: list[str]) -> int:
     engine = QQmlApplicationEngine()
     engine.warnings.connect(lambda ws: warnings.extend(w.toString() for w in ws))
     engine.addImportPath(str(project / "qml"))
+    # Qt 5.15 projects import QtGraphicalEffects 1.15: the shim maps it to Qt5Compat.GraphicalEffects
+    engine.addImportPath(str(Path(__file__).resolve().parent.parent / "assets" / "qt5-shim"))
     if main_file is None:
         engine.loadFromModule(args.module, args.component)
     else:

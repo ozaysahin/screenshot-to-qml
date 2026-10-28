@@ -1,0 +1,4 @@
+module QtGraphicalEffects
+# Check-loop shim, never shipped: lets PySide6 (Qt 6) load Qt 5.15 QML that imports
+# QtGraphicalEffects 1.15. Qt 6 has the same types in Qt5Compat.GraphicalEffects.
+import Qt5Compat.GraphicalEffects
