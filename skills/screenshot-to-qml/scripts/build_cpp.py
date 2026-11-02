@@ -201,6 +201,8 @@ def main(argv=None) -> int:
         genv.pop("QT_SCALE_FACTOR_ROUNDING_POLICY", None)
         if "cv2" in genv.get("QT_QPA_PLATFORM_PLUGIN_PATH", ""):   # set by `import cv2` (opencv-python's own Qt)
             genv.pop("QT_QPA_PLATFORM_PLUGIN_PATH")
+        if platform.system() == "Windows" and prefix:     # the binary loads Qt's DLLs from PATH
+            genv["PATH"] = str(Path(prefix) / "bin") + os.pathsep + genv.get("PATH", "")
         if qt5:     # Qt 5 adds a factor from the screen's DPI (Xvfb: 1.04); the grab uses QT_SCALE_FACTOR only
             genv["QT_ENABLE_HIGHDPI_SCALING"] = "0"
         if args.lang:

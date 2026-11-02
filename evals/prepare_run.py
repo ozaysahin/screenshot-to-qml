@@ -10,8 +10,9 @@ For every case this creates RUNS_DIR/<case-id>/ holding only what the agent may 
   PROMPT.md              the task, identical for every agent and arm
 
 With --skill PATH (a `screenshot-to-qml` skill folder) the prompt tells the agent to read the
-skill first; the skill is copied to RUNS_DIR/_skill/full/screenshot-to-qml, and case 01 gets a
-copy without `examples/hmi-dolum` (that example is the answer to case 01). Without --skill the
+skill first; the skill is copied to RUNS_DIR/_skill/full/screenshot-to-qml, and a case whose
+answer ships as a skill example gets a copy without it (01: `examples/hmi-dolum`, 21:
+`examples/auto-cluster`). Without --skill the
 run is a baseline. --os windows changes the environment line for agents on Windows; --portable
 writes the skill path relative to the case folder, for a RUNS_DIR handed to another machine.
 
@@ -35,6 +36,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CASES = ROOT / "evals" / "cases"
+# skill examples that are the answer to an eval case: that case gets a skill copy without them
+ANSWER_EXAMPLES = {"01-": "hmi-dolum", "21-": "auto-cluster"}
 
 SCREENSHOT_TASK = (
     "Rebuild this screen (`input.png`) as a native PySide6 Qt Quick project in `./project`.\n"
@@ -46,7 +49,10 @@ QT5_TASK = (
     "`./project`; the QML must load on Qt 5.15. Screenshot DPR: {dpr}. Target: {profile}. Use a `Window` root in\n"
     "`qml/App/Main.qml` (module `App`) and bundle fonts in `project/assets/fonts`. Qt 5.15 for the build: Linux\n"
     "`apt install qtdeclarative5-dev qtquickcontrols2-5-dev qml-module-qtquick-controls2 qml-module-qtquick-shapes\n"
-    "qml-module-qtgraphicaleffects`, Windows `aqt install-qt windows desktop 5.15.2 win64_msvc2019_64`."
+    "qml-module-qtgraphicaleffects`; Windows (MinGW, no Visual Studio needed) `pip install aqtinstall cmake ninja`,\n"
+    "`aqt install-qt windows desktop 5.15.2 win64_mingw81 -O C:\\Qt` and\n"
+    "`aqt install-tool windows desktop tools_mingw qt.tools.win64_mingw810 -O C:\\Qt` (compiler in\n"
+    "`C:\\Qt\\Tools\\mingw810_64\\bin`)."
 )
 HTML_TASK = (
     "Rebuild this page (`source/index.html`, its fonts are in `source/fonts`) as a native PySide6 Qt Quick\n"
@@ -109,14 +115,18 @@ def main(argv=None) -> int:
         if not (args.skill / "SKILL.md").exists():
             print(f"[error] no SKILL.md in {args.skill}", file=sys.stderr)
             return 2
-        need_no_example = any(c.name.startswith("01-") for c in cases)
-        for variant in ("full", "no-example") if need_no_example else ("full",):
+        variants = {"full": None}
+        for c in cases:
+            ex = next((e for pre, e in ANSWER_EXAMPLES.items() if c.name.startswith(pre)), None)
+            if ex:
+                variants[f"no-{ex}"] = ex
+        for variant, ex in variants.items():
             dst = (args.runs / "_skill" / variant / "screenshot-to-qml").resolve()
             if dst.exists():
                 shutil.rmtree(dst)
             shutil.copytree(args.skill, dst, ignore=shutil.ignore_patterns("__pycache__", ".check", "out", "build"))
-            if variant == "no-example":
-                shutil.rmtree(dst / "examples" / "hmi-dolum", ignore_errors=True)
+            if ex:
+                shutil.rmtree(dst / "examples" / ex, ignore_errors=True)
             skills[variant] = dst
     for case in cases:
         meta = json.loads((case / "golden-spec.json").read_text())["meta"]
@@ -128,7 +138,8 @@ def main(argv=None) -> int:
             shutil.copytree(case / "source", d / "source")
         else:
             shutil.copy2(case / "input.png", d / "input.png")
-        skill = skills.get("no-example" if case.name.startswith("01-") else "full")
+        ex = next((e for pre, e in ANSWER_EXAMPLES.items() if case.name.startswith(pre)), None)
+        skill = skills.get(f"no-{ex}" if ex else "full")
         if skill and args.portable:
             skill = "../" + skill.relative_to(args.runs.resolve()).as_posix()
         (d / "PROMPT.md").write_text(prompt(meta, skill, args.os))

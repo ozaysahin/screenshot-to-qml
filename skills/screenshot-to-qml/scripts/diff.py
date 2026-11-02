@@ -18,6 +18,11 @@ Metrics (all coordinates in design px; images are compared at full pixel size):
                substring of a line (split or merged runs are fine); onTargetRate = share of
                runs found within textPositionPx
 
+  specAudit    (needs --draft) the spec's text ink boxes against analyze.py's measured boxes of
+               the same strings; ≥ 3 runs (and ≥ 10 %) more than 3 px off fail the check: the spec
+               was typed in, not measured, and a render built to it proves nothing
+  --fonts-dir  the project's fonts: how deep each glyph reaches below the baseline, for ink boxes
+
 Pass/fail uses --thresholds (evals/cases/*/thresholds.json format) or built-in defaults.
 Exit codes: 0 pass, 1 below threshold, 2 error.
 """
@@ -257,14 +262,97 @@ DESCENT = {**dict.fromkeys("gjpqyğ", 0.21), **dict.fromkeys("çşÇŞţșȘŢ",
            **dict.fromkeys(",;", 0.12), "@": 0.17, "Q": 0.1, "/": 0.08, "_": 0.1}
 
 
-def ink_baseline(string: str, bbox, px) -> float | None:
+class GlyphDescent:
+    """How far each character reaches below the baseline (em), read from the project's own font
+    files (assets/fonts) for the run's family and weight; the DESCENT table when the face is not
+    there. A table value can be off by 0.05 em for a given face (Rajdhani's comma: 0.07, table
+    0.12), which at 44 px is a 2 px false alarm."""
+
+    def __init__(self, fonts_dir: Path | None = None):
+        self.faces: dict[str, list[tuple[int, Path]]] = {}
+        self.cache: dict[tuple, float | None] = {}
+        self.loaded: dict[Path, object] = {}
+        if fonts_dir and fonts_dir.is_dir():
+            try:
+                from fontTools.ttLib import TTFont
+            except ImportError:
+                return
+            for f in sorted(fonts_dir.iterdir()):
+                if f.suffix.lower() not in (".ttf", ".otf"):
+                    continue
+                try:
+                    t = TTFont(f, lazy=True)
+                    name = t["name"]
+                    fams = {name.getDebugName(16), name.getDebugName(1)} - {None}
+                    weight = t["OS/2"].usWeightClass
+                except Exception:   # a broken or unusual font file: fall back to the table
+                    continue
+                for fam in fams:
+                    self.faces.setdefault(fam.lower(), []).append((weight, f))
+
+    def _face(self, family: str | None, weight: int):
+        faces = self.faces.get((family or "").lower())
+        if not faces:
+            return None
+        path = min(faces, key=lambda wf: abs(wf[0] - weight))[1]
+        if path not in self.loaded:
+            from fontTools.ttLib import TTFont
+            self.loaded[path] = TTFont(path)
+        return self.loaded[path]
+
+    def glyph(self, ch: str, family: str | None, weight: int) -> tuple[float, float, float] | None:
+        """(descent, left bearing, right bearing) in em from the face's outline, or None."""
+        key = (ch, (family or "").lower(), weight)
+        if key not in self.cache:
+            self.cache[key] = None
+            face = self._face(family, weight)
+            if face is not None:
+                try:
+                    from fontTools.pens.boundsPen import BoundsPen
+                    gname = face.getBestCmap().get(ord(ch))
+                    if gname:
+                        gs = face.getGlyphSet()
+                        pen = BoundsPen(gs)
+                        gs[gname].draw(pen)
+                        upm = face["head"].unitsPerEm
+                        x0, y0, x1, _ = pen.bounds or (0, 0, gs[gname].width, 0)
+                        self.cache[key] = (max(0.0, -y0) / upm, x0 / upm, (gs[gname].width - x1) / upm)
+                except Exception:
+                    self.cache[key] = None
+        return self.cache[key]
+
+    def has(self, family: str | None) -> bool:
+        return (family or "").lower() in self.faces
+
+    def char(self, ch: str, family: str | None = None, weight: int = 400) -> float:
+        g = self.glyph(ch, family, weight)
+        return DESCENT.get(ch, 0.0) if g is None else g[0]
+
+    def bearings(self, s: str, family: str | None, weight: int) -> tuple[float, float] | None:
+        """Left bearing of the first glyph and right bearing of the last (em): the gap between a
+        run's ink box and its advance box, which is what Qt lays out and scene.json reports."""
+        s = s.strip()
+        if not s or not self.has(family):
+            return None
+        a, b = self.glyph(s[0], family, weight), self.glyph(s[-1], family, weight)
+        return (a[1], b[2]) if a and b else None
+
+    def string(self, s: str, family: str | None = None, weight: int = 400) -> float:
+        return max((self.char(ch, family, weight) for ch in s), default=0.0)
+
+
+TABLE_DESCENT = GlyphDescent()
+
+
+def ink_baseline(string: str, bbox, px, family: str | None = None, weight: int = 400,
+                 descent: GlyphDescent | None = None) -> float | None:
     """Baseline of a single-line run known only by its ink box (an OCR'd spec): the ink bottom,
     raised by the deepest descender in the string. Comparing it with the render's baseline is
     much closer than comparing an ink box's center with a line box's center, which is off by
     2-3 px whenever the string has descenders (y, g, p, ş …)."""
     if not px:
         return None
-    return bbox[1] + bbox[3] - max((DESCENT.get(ch, 0.0) for ch in string), default=0.0) * px
+    return bbox[1] + bbox[3] - (descent or TABLE_DESCENT).string(string, family, weight) * px
 
 
 SEPARATORS = " ·•|/-–—:,"   # a design's separators may be drawn as their own item or shape
@@ -325,7 +413,42 @@ def text_segments(scene) -> list[dict]:
 NEAR_PX = 24          # design px: short strings ("1", "°C") may match a substring only this close
 
 
-def text_checks(spec, scene, limit_px: float = 2.0):
+AUDIT_PX = 3.0          # a spec ink box this far from analyze.py's measured OCR box was not measured
+AUDIT_RADIUS = 14.0     # design px: how far apart two boxes of one string may be to be the same run
+AUDIT_MIN = 3           # failing runs needed (and ≥ 10 % of the compared ones) before the spec is called unmeasured
+
+
+def spec_audit(spec: dict, draft: dict) -> dict:
+    """Compare the spec's text ink boxes with the boxes analyze.py measured for the same strings.
+
+    The check is only as strict as the spec: a spec whose boxes were typed in by hand passes a
+    render built to the same guesses. OCR boxes are measured ink, so a spec ink box that moved
+    by more than AUDIT_PX from the draft's box of the same string (same place) was not
+    measured. Line boxes (golden specs, HTML input) are not compared: their sizes differ from
+    ink by design."""
+    measured = [(norm_text(u["string"]).strip(), u["bbox"]) for u in draft.get("text", []) if u.get("bbox")]
+    rows = []
+    for t in spec.get("text", []):
+        px = (t.get("font") or {}).get("px")
+        x, y, w, h = t["bbox"]
+        if not px or t.get("lines", 1) != 1 or h > 1.1 * px:
+            continue
+        want = norm_text(t["string"]).strip()
+        cands = [b for s_, b in measured if s_ == want
+                 and abs((b[0] + b[2] / 2) - (x + w / 2)) <= AUDIT_RADIUS and abs((b[1] + b[3] / 2) - (y + h / 2)) <= AUDIT_RADIUS]
+        if not cands:
+            continue
+        b = min(cands, key=lambda b: abs(b[0] - x) + abs(b[1] - y))
+        align = t.get("align", "start")
+        dx = (b[0] + b[2] - x - w) if align == "end" else (b[0] + b[2] / 2 - x - w / 2) if align == "center" else (b[0] - x)
+        dy = (b[1] + b[3] / 2) - (y + h / 2)
+        rows.append({"string": t["string"], "dx": round(dx, 1), "dy": round(dy, 1)})
+    off = [r for r in rows if max(abs(r["dx"]), abs(r["dy"])) > AUDIT_PX]
+    return {"compared": len(rows), "off": sorted(off, key=lambda r: -max(abs(r["dx"]), abs(r["dy"]))),
+            "unmeasured": len(off) >= AUDIT_MIN and len(off) >= 0.1 * max(1, len(rows))}
+
+
+def text_checks(spec, scene, limit_px: float = 2.0, descent: GlyphDescent | None = None):
     """Match every spec text run to rendered text.
 
     A run may match a whole Text item, one line of a multi-line item, or a substring of a line
@@ -392,10 +515,19 @@ def text_checks(spec, scene, limit_px: float = 2.0):
             if trim:   # separators drawn elsewhere: compare the edge that was not cut
                 a = "end" if lead_cut and not tail_cut else "start" if tail_cut and not lead_cut else "center"
             gold_base = t.get("baseline")
+            gold_box = t["bbox"]
             if gold_base is None and t.get("lines", 1) == 1 and px and gh <= 1.1 * px:
                 # an ink box (OCR'd spec; ink spans ≤ ~1 em, a line box ≥ 1.15 em): estimate its baseline
-                gold_base = ink_baseline(want, t["bbox"], px)
-            ex, ey = text_offset(t["bbox"], {"textBox": box_of(sg, span), "baseline": sg.get("baseline")},
+                f = t.get("font", {})
+                fam, wt = f.get("family"), int(f.get("weight") or 400)
+                gold_base = ink_baseline(want, t["bbox"], px, fam, wt, descent)
+                # and widen it to the advance box Qt reports, by the face's own side bearings
+                # (a big "87" centered by its ink sits 3-4 px off where it is centered by its advances)
+                br = descent.bearings(trimmed if trim else want, fam, wt) if descent else None
+                if br and not vertical:
+                    ls = float(f.get("letterSpacing") or 0)
+                    gold_box = [gx - br[0] * px, gy, gw + (br[0] + br[1]) * px + ls, gh]
+            ex, ey = text_offset(gold_box, {"textBox": box_of(sg, span), "baseline": sg.get("baseline")},
                                  a, gold_base)
             if trim and lead_cut and tail_cut:
                 ex = 0.0                                    # both ends cut: only the baseline is comparable
@@ -467,6 +599,8 @@ def main(argv=None) -> int:
     ap.add_argument("--out", type=Path)
     ap.add_argument("--heatmap", type=Path)
     ap.add_argument("--top", type=int, default=3)
+    ap.add_argument("--fonts-dir", type=Path, help="the project's fonts (descender depths for OCR'd ink boxes)")
+    ap.add_argument("--draft", type=Path, help="analyze.py's design-spec.draft.json: audit the spec's text boxes against it")
     args = ap.parse_args(argv)
 
     spec = json.loads(args.spec.read_text())
@@ -487,7 +621,8 @@ def main(argv=None) -> int:
     regions = sorted(region_ssim(spec, smap, mask, dpr, src, ren), key=lambda r: r["ssim"])
     colors = sorted(color_checks(spec, src, ren, mask, dpr), key=lambda c: -c["deltaE"])
     geom = sorted(geometry_checks(spec, src, ren, dpr), key=lambda g: -g["offset"])
-    text = text_checks(spec, json.loads(args.scene.read_text()), th["textPositionPx"]) if args.scene else None
+    text = (text_checks(spec, json.loads(args.scene.read_text()), th["textPositionPx"], GlyphDescent(args.fonts_dir))
+            if args.scene else None)
 
     failures = []
     if g_ssim < th["globalSSIM"]:
@@ -511,6 +646,12 @@ def main(argv=None) -> int:
                 failures.append(f"text '{r['string'][:30]}' off by ({r['dx']:+}, {r['dy']:+}) px")
 
     worst = regions[: args.top]
+    audit = spec_audit(spec, json.loads(args.draft.read_text())) if args.draft and args.draft.exists() else None
+    if audit and audit["unmeasured"]:
+        worst_off = max(max(abs(r["dx"]), abs(r["dy"])) for r in audit["off"])
+        failures.insert(0, f"spec not measured: {len(audit['off'])} of {audit['compared']} text boxes are up to {worst_off:.1f} px "
+                           f"from analyze.py's measured boxes (e.g. {', '.join(repr(r['string']) for r in audit['off'][:4])}); "
+                           "the check is only as strict as the spec: take boxes from the draft or probe.py, not by eye")
     report = {
         "pass": not failures,
         "metrics": {
@@ -524,7 +665,7 @@ def main(argv=None) -> int:
         },
         "worstRegions": worst,
         "failures": failures,
-        "details": {"regions": regions, "colors": colors, "geometry": geom, "text": text},
+        "details": {"regions": regions, "colors": colors, "geometry": geom, "text": text, "specAudit": audit},
         "thresholds": th,
     }
     if args.out:
@@ -541,6 +682,14 @@ def main(argv=None) -> int:
         print("  - " + f)
     if len(failures) > 25:
         print(f"  … {len(failures) - 25} more (see report)")
+    kinds = {f.split()[0] for f in failures}
+    if kinds & {"geometry", "text"}:      # how to read the numbers, so nobody opens diff.py to find out
+        print("  how to read: geometry (dx, dy) = where the node's source crop sits in the render, minus where "
+              "the spec puts it (+dx: render too far right); text (dx, dy) = the run's edge by its align "
+              "(start/center/end) and its baseline, render minus spec (+dy: render too low)")
+    if "region" in kinds:
+        print("  how to read: region = SSIM inside the node's box at the best ±1 px shift; low with small geometry "
+              "offsets means the content differs (icon, stroke, radius, a missing item), not its position")
     return 0 if report["pass"] else 1
 
 

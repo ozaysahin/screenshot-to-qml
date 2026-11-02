@@ -89,7 +89,12 @@ def main(argv=None) -> int:
 
     print("== diff")
     cmd = [py, str(HERE / "diff.py"), str(args.source), str(out / "render.png"), "--spec", str(args.spec),
-           "--scene", str(out / "scene.json"), "--out", str(out / "report.json"), "--heatmap", str(out / "diff.png")]
+           "--scene", str(out / "scene.json"), "--out", str(out / "report.json"), "--heatmap", str(out / "diff.png"),
+           "--fonts-dir", str(args.project / "assets" / "fonts")]
+    draft = next((d for d in (args.spec.parent / "analysis" / "design-spec.draft.json",
+                              args.spec.parent / "design-spec.draft.json") if d.exists()), None)
+    if draft is not None:
+        cmd += ["--draft", str(draft)]
     if args.thresholds:
         cmd += ["--thresholds", str(args.thresholds)]
     diff_rc = run(cmd)

@@ -5,7 +5,8 @@ Usage:
   python icon_match.py fetch [--sets lucide,tabler]              # npm pack + index (once)
   python icon_match.py match IMG --spec design-spec.json [--dpr 2] [--top 3] [--out icons.json]
   python icon_match.py match IMG --box X Y W H [--dpr 2]           # one icon, design px
-  python icon_match.py export lucide:gauge [--stroke 2] [--color "#1E293B"] --out assets/icons
+  python icon_match.py export lucide:gauge [tabler:bell …] [--stroke 2] [--color "#1E293B"] --out assets/icons
+                                     (--out x.svg for one icon written to that file)
 
 `fetch` downloads the sets in assets/catalog/icons.json (Lucide, Tabler outline and filled,
 Font Awesome solid / regular / brands, Heroicons outline and solid; about 11,700 icons) with
@@ -316,11 +317,12 @@ def match_many(img, dpr: float, boxes: list, index: dict | None = None, top: int
     return out
 
 
-def export(icon_id: str, out_dir: Path, stroke: float | None, color: str) -> Path:
+def export(icon_id: str, out: Path, stroke: float | None, color: str) -> Path:
+    """Write set:name as an SVG: into the folder `out`, or to `out` itself when it ends in .svg."""
     s = next(s for s in catalog() if s["id"] == icon_id.split(":", 1)[0])
     svg = svg_source(svg_path(icon_id).read_text(), stroke if s["kind"] == "stroke" else None, color).strip() + "\n"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    dst = out_dir / f"{icon_id.split(':', 1)[1]}.svg"
+    dst = out if out.suffix.lower() == ".svg" else out / f"{icon_id.split(':', 1)[1]}.svg"
+    dst.parent.mkdir(parents=True, exist_ok=True)
     dst.write_text(svg)
     return dst
 
@@ -338,7 +340,7 @@ def main(argv=None) -> int:
     m.add_argument("--top", type=int, default=3)
     m.add_argument("--out", type=Path)
     e = sub.add_parser("export")
-    e.add_argument("icon", help="set:name, e.g. lucide:gauge")
+    e.add_argument("icon", nargs="+", help="set:name, e.g. lucide:gauge; several at once with --out a folder")
     e.add_argument("--stroke", type=float, default=None)
     e.add_argument("--color", default="#000000")
     e.add_argument("--out", type=Path, required=True)
@@ -358,7 +360,15 @@ def main(argv=None) -> int:
         return 0 if ok else 2
 
     if args.cmd == "export":
-        print(export(args.icon, args.out, args.stroke, args.color))
+        if len(args.icon) > 1 and args.out.suffix.lower() == ".svg":
+            print("[error] several icons need --out to be a folder", file=sys.stderr)
+            return 2
+        for icon in args.icon:
+            try:
+                print(export(icon, args.out, args.stroke, args.color))
+            except (StopIteration, FileNotFoundError, OSError) as e:
+                print(f"[error] {icon}: {e or 'unknown set or icon'}", file=sys.stderr)
+                return 2
         return 0
 
     img = load_rgb(args.image)

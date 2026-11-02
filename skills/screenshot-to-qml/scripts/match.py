@@ -235,10 +235,17 @@ def main(argv=None) -> int:
     if "fonts" in report:
         fams = ", ".join(f"{f['family']} ({f['runs']} runs)" for f in report["fonts"]["families"])
         print(f"fonts      {fams}" + ("  — OUTSIDE THE CATALOG: substitute, see the report" if report["fonts"]["outsideCatalog"] else ""))
+        sizes = sorted({(round(r["px"]), r["weight"]) for r in report["fonts"].get("runs", []) if r.get("px")}, reverse=True)
+        if sizes:   # the measured scale, rounded: snap near-duplicates (39/40, 45/44) to one token
+            print("  sizes    " + "  ".join(f"{px}px/{w}" for px, w in sizes[:16]) + (" …" if len(sizes) > 16 else ""))
     if "icons" in report:
         n_ok = sum("check" not in r for r in report["icons"])
         print(f"icons      {n_ok}/{len(report['icons'])} confident"
-              + (f"; check {len(report['icons']) - n_ok} (see the report)" if n_ok < len(report["icons"]) else ""))
+              + (f"; check {len(report['icons']) - n_ok}:" if n_ok < len(report["icons"]) else ""))
+        for r in report["icons"]:     # what to confirm, so nobody has to open the JSON report
+            if "check" in r:
+                alts = " | ".join(f"{c['id']} {c['score']:.2f}" for c in r.get("candidates", [])[:3])
+                print(f"  {r['id']:<14} {alts or '(no candidate)'}")
     if "shadows" in report:
         sh = [r for r in report["shadows"] if r["hasShadow"]]
         print(f"shadows    {len(sh)} of {len(report['shadows'])} surfaces: " + "; ".join(f"{r['id']} {r['css']}" for r in sh[:6])

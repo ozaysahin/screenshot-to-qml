@@ -260,3 +260,15 @@ def test_cluster_cpp_host_builds_and_runs_on_qt515(tmp_path):
     assert report["qtMajor"] == 5 and report["grab"]["qmlWarnings"] == []
     assert "Qt 5.15" in report["grab"]["stdout"]
     assert report["parity"]["maxTileDiff"] <= 24
+
+
+def test_prepare_run_hides_the_answer_example(tmp_path):
+    """Case 21's answer ships as examples/auto-cluster: its agent gets a skill copy without it."""
+    sys.path.insert(0, str(ROOT / "evals"))
+    import prepare_run
+    assert prepare_run.main([str(tmp_path), "--cases", "21,05", "--skill", str(SKILL)]) == 0
+    no_ex = tmp_path / "_skill" / "no-auto-cluster" / "screenshot-to-qml"
+    assert no_ex.is_dir() and not (no_ex / "examples" / "auto-cluster").exists()
+    assert (tmp_path / "_skill" / "full" / "screenshot-to-qml" / "examples" / "auto-cluster").is_dir()
+    assert "no-auto-cluster" in (tmp_path / "21-auto-cluster" / "PROMPT.md").read_text()
+    assert "/full/" in (tmp_path / "05-settings-form" / "PROMPT.md").read_text()

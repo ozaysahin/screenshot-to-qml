@@ -120,7 +120,7 @@ def newer_than(project: Path, qml_files: list[Path], min_qt: str) -> list[str]:
             if m and NEWER_TYPES[m.group(1)] > floor:
                 need = "{}.{}".format(*NEWER_TYPES[m.group(1)])
                 out.append(f"{f.relative_to(project)}:{i}: {m.group(1)} needs Qt {need}; the project's minimum is "
-                           f"{min_qt} (meta.minQt): use the fallback in SKILL.md's Qt version table")
+                           f"{min_qt} (meta.minQt): use the fallback in references/effects.md (Qt version gates)")
     return out
 
 

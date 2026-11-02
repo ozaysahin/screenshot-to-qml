@@ -68,6 +68,6 @@ Resources: plain files next to `main.py` are fine for apps; for single-file depl
 ## Versions
 
 Minimum Qt 6.8 LTS by default (VectorImage, PathRectangle, loadFromModule, CurveRenderer).
-Newer features are used only when `PySide6.__version__` allows (see SKILL.md version table).
+Newer features are used only when `PySide6.__version__` allows (see the Qt version gates in effects.md).
 On Raspberry Pi OS the distro packages (`python3-pyside6.*`) may be older than 6.8 — check
 before using 6.8+ types, or install from pip in a venv.

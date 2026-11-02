@@ -15,6 +15,8 @@ Writes to --out-dir:
   with --match: match.py on the draft (fonts, icons, shadows, gradients written into it,
   design-spec.draft.match-report.json). A first look only: run match.py again on the
   corrected spec, since the matchers measure inside the draft's boxes.
+Prints the draft as a spec_view.py table at the end (--no-view to skip), so the next step
+needs no extra call.
 
 The draft is a starting point, not the answer. Next steps for the agent:
   1. open overlay.png and ocr_sheet.png once; compare `spec_view.py draft --text` with the
@@ -193,6 +195,7 @@ def main(argv=None) -> int:
     ap.add_argument("--layout", choices=["canvas", "responsive"], default="responsive")
     ap.add_argument("--no-ocr", action="store_true", help="skip text recognition (no tesseract)")
     ap.add_argument("--match", action="store_true", help="also run match.py on the draft (first look)")
+    ap.add_argument("--no-view", action="store_true", help="do not print the draft as a spec_view.py table")
     args = ap.parse_args(argv)
 
     img = palette_mod.load(str(args.image))
@@ -228,6 +231,10 @@ def main(argv=None) -> int:
           f"({sum(t['verify'] for t in spec['text'])} to verify), {len(spec['icons'])} icon candidates "
           f"-> {out}/design-spec.draft.json, overlay.png"
           + (f", {', '.join(p.name for p in sheets)}" if sheets else ""))
+    if not args.no_view:          # the table the next step needs, in this call instead of another one
+        import spec_view
+        print()
+        spec_view.main([str(out / "design-spec.draft.json")])
     return 0
 
 

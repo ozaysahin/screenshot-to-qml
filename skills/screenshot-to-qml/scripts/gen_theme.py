@@ -335,6 +335,13 @@ def main(argv=None) -> int:
     n_colors = len(spec["tokens"].get("color", {}))
     n_fonts = len(spec["tokens"].get("typeScale", []))
     print(f"wrote {args.out}/Theme.qml ({n_colors} colors, {n_fonts} font tokens) and Icons.qml")
+    # the token names components will use, so nobody has to open Theme.qml to find them
+    kinds: dict[str, list[str]] = {}
+    for m in re.finditer(r"readonly property (\w+) (\w+):", files["Theme.qml"]):
+        kinds.setdefault(m.group(1), []).append(m.group(2))
+    for kind in ("color", "font", "int", "real", "string"):
+        if kinds.get(kind):
+            print(f"  {kind:<6} " + " ".join(kinds[kind]))
     return 0
 
 

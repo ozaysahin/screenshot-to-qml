@@ -114,3 +114,35 @@ def test_ocr_ink_box_is_compared_by_estimated_baseline(tiny_spec):
     tiny_spec["text"][0]["bbox"] = [28.5, 35, 66, 15]                                           # no descenders
     res = diff.text_checks(tiny_spec, scene)
     assert res["maxOffset"] < 1.0
+
+
+def test_glyph_metrics_come_from_the_projects_font():
+    """Descender depth and side bearings from the bundled face, the table without it."""
+    from pathlib import Path
+
+    import diff
+    fonts = Path(__file__).resolve().parent.parent / "skills/screenshot-to-qml/examples/auto-cluster/project/assets/fonts"
+    m = diff.GlyphDescent(fonts)
+    assert m.has("Rajdhani") and not m.has("Inter")
+    assert abs(m.char(",", "Rajdhani", 700) - 0.107) < 0.01          # the table says 0.12
+    assert m.char(",", "Inter", 700) == diff.DESCENT[","]             # face not bundled: table
+    lsb, rsb = m.bearings("87", "Rajdhani", 700)
+    assert 0.03 < lsb < 0.08 and 0 <= rsb < 0.05
+    assert m.bearings("87", "Inter", 700) is None
+
+
+def test_spec_audit_flags_typed_in_boxes():
+    import diff
+    draft = {"text": [{"string": s, "bbox": [x, 100, 40, 16]} for s, x in (("Alpha", 10), ("Beta", 80), ("Gamma", 150),
+                                                                            ("Delta", 220), ("Eps", 290))]}
+    good = {"text": [{"string": u["string"], "bbox": [u["bbox"][0] + 0.5, 100.5, 40, 16], "font": {"px": 16}}
+                     for u in draft["text"]]}
+    assert not diff.spec_audit(good, draft)["unmeasured"]
+    typed = {"text": [{"string": u["string"], "bbox": [u["bbox"][0] + 6, 104, 40, 16], "font": {"px": 16}}
+                      for u in draft["text"]]}
+    audit = diff.spec_audit(typed, draft)
+    assert audit["unmeasured"] and audit["compared"] == 5 and len(audit["off"]) == 5
+    # line boxes (golden specs) are not compared
+    lines = {"text": [{"string": u["string"], "bbox": [u["bbox"][0] + 6, 96, 40, 24], "font": {"px": 16}}
+                      for u in draft["text"]]}
+    assert diff.spec_audit(lines, draft)["compared"] == 0

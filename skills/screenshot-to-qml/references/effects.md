@@ -1,6 +1,7 @@
 # Effects: shadows, gradients, blur, clipping
 
 ## Contents
+- Qt version gates
 - Profile rules
 - Shadows
 - Gradients
@@ -8,6 +9,22 @@
 - Rounded clipping and gradient borders
 - Dashed and dotted borders
 - Opacity of groups
+
+## Qt version gates
+
+Use only what the project's minimum Qt (`meta.minQt`) has: the `lint` gate fails newer types
+even when the local PySide6 accepts them.
+
+| Feature | Min Qt | Fallback |
+| --- | --- | --- |
+| `loadFromModule`, `MultiEffect` | 6.5 | `engine.load(url)`, layered rects |
+| per-corner `Rectangle` radius | 6.7 | Shape `PathRectangle`/`PathSvg` |
+| `VectorImage`, `svgtoqml`, `PathRectangle` | 6.8 | `Image` + `sourceSize` |
+| `RectangularShadow` | 6.9 | `MultiEffect` shadow |
+| `FlexboxLayout` (tech preview) | 6.10 | `Flow` / `RowLayout` |
+
+`meta.minQt: "5.15"` replaces this table with the Qt 5.15 dialect (target-qt5.md): the `lint`
+gate then fails everything `qt5.py check` lists.
 
 ## Profile rules
 

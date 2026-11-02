@@ -2,6 +2,44 @@
 
 All notable changes to this project. Versions follow the roadmap in README.md.
 
+## [1.1.1] — 2026-11-02
+
+Fewer tokens for Claude, and a check that cannot be fooled by its own spec. Case 21 (the Qt 5.15
+cluster) was run with Claude and Codex CLI; the build transcripts showed where the tokens went.
+
+### Changed
+- **`effort: medium` in SKILL.md's frontmatter.** Claude Code runs the skill at medium reasoning
+  effort (the session's level otherwise). On case 21, Claude Code at medium with this release
+  used 4.75M input tokens (4.6M of them cache reads) and 59k output tokens in 48 turns. The v1.1.0
+  run (default effort, as a subagent carrying a larger tool set) used 7.5M and 88k; Codex CLI
+  (gpt-6-astra, medium) used 1.8M and 19k.
+- **SKILL.md is a third shorter** (12 k characters, was 19.7 k): the Qt version table moved to
+  `references/effects.md`, the scripts table to the new `references/scripts.md`. New rules:
+  write all QML files in one call (a heredoc or a generator script), keep reasoning short, read
+  printouts instead of sources, `--help`, JSON or the match report.
+- `analyze.py` prints the draft as a `spec_view.py` table (`--no-view` to skip); with `--match`,
+  one call gives the draft, the first font/icon match and what to confirm.
+- `match.py` lists the icons to confirm with their alternatives and the measured size scale;
+  `gen_theme.py` prints every token name it wrote; `diff.py` prints how to read geometry, text
+  and region failures. Agents had been opening the report JSON, Theme.qml and diff.py for this.
+- `icon_match.py export` takes several icons per call and writes to a file when `--out` ends in
+  `.svg` (SKILL.md's example made folders named `bell.svg`; agents spent calls undoing them).
+
+### Added
+- **Spec audit** (`diff.py --draft`, passed by `check.py` when `analysis/design-spec.draft.json`
+  exists): a spec whose text ink boxes stray more than 3 px from analyze.py's measured boxes
+  for the same strings (≥ 3 runs and ≥ 10 %) fails the check. The check is only as strict as
+  the spec; Codex CLI's case-21 build passed its own check against a spec written by hand.
+- **Glyph metrics from the project's own fonts** (`diff.py --fonts-dir`): descender depth and
+  side bearings come from the bundled face instead of a generic table, so OCR'd ink boxes are
+  compared with Qt's advance boxes correctly. Fixes false alarms on commas (Rajdhani's comma
+  sits 0.107 em below the baseline, the table said 0.12) and ink-centered big numbers.
+- `prepare_run.py` hides `examples/auto-cluster` from case 21's agent (it is the answer), as it
+  already hid `examples/hmi-dolum` from case 01; Windows prompts install Qt 5.15 with MinGW.
+
+### Fixed
+- `build_cpp.py` puts the Qt prefix's `bin` on `PATH` for the binary's run on Windows (Qt DLLs).
+
 ## [1.1.0] — 2026-10-28
 
 Qt 5.15 and automotive. Many instrument clusters, head units and industrial panels still ship

@@ -7,7 +7,7 @@
 
 <p align="center">
   <a href="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/ozaysahin/screenshot-to-qml/actions/workflows/ci.yml/badge.svg"></a>
-  <a href="CHANGELOG.md"><img alt="Version 1.1.0" src="https://img.shields.io/badge/version-1.1.0-blue"></a>
+  <a href="CHANGELOG.md"><img alt="Version 1.1.1" src="https://img.shields.io/badge/version-1.1.1-blue"></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-green"></a>
   <a href="https://agentskills.io"><img alt="Agent Skills" src="https://img.shields.io/badge/Agent%20Skills-compatible-8A2BE2"></a>
   <img alt="Qt 6.8+ and 5.15" src="https://img.shields.io/badge/Qt-6.8%2B%20%C2%B7%205.15-41CD52?logo=qt&logoColor=white">
@@ -141,9 +141,10 @@ Rebuild cluster.png as a Qt 5.15 instrument cluster in C++ for our i.MX 8 board.
 
 The agent analyzes the image, asks only what it cannot measure (for example a font that is not
 in the catalog), builds the project, and iterates on the worst regions until the check passes.
-It works to a budget: a simple screen takes about 60 tool calls and up to three checks, and the
-checks hand it one contact sheet of the worst spots instead of letting it crop and probe pixels
-by hand (v1.0.1 cut the tokens a settings screen costs by about two thirds).
+It works to a budget: up to 40 tool calls and three checks for a simple screen, 60 and four for
+a dense one, and the checks hand it one contact sheet of the worst spots instead of letting it
+crop and probe pixels by hand. In Claude Code the skill runs at medium reasoning effort
+(`effort: medium` in its frontmatter), which cut the output tokens of a dense cluster screen by a third.
 You get:
 
 ```text
